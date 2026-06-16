@@ -2,6 +2,9 @@
 
 ## 2026-06-17
 
+- Added a GitHub Actions workflow for GitHub Pages previews on every push to `main`.
+- The workflow builds the Vite site, uploads the `dist` artifact, and deploys it through the official GitHub Pages deployment action.
+- Added `vite.config.js` with relative asset base for GitHub Pages project-site hosting.
 - Created the initial Mstar Holding frontend in an empty GitHub repository.
 - Built the homepage-first structure with transparent navigation, a full-screen hero video placeholder, operations video placeholder, and growth video placeholder.
 - Added future-ready HTML5 video tags using `autoplay muted loop playsinline preload="metadata"` and poster fallbacks.
@@ -22,9 +25,11 @@
 - `index.html`
 - `src/main.js`
 - `src/styles.css`
+- `vite.config.js`
 - `public/media/hero-poster.png`
 - `public/media/operations-poster.png`
 - `public/media/growth-poster.png`
+- `.github/workflows/deploy-pages.yml`
 - `AGENT.md`
 - `DESIGNER.md`
 
@@ -45,6 +50,8 @@
 - `git config user.email "codex@openai.com"`
 - `git commit -m "Build cinematic Mstar Holding homepage"`
 - `git push -u origin main`
+- `git commit -m "Add GitHub Pages preview workflow"`
+- `git push`
 
 ## Build Status
 
@@ -66,6 +73,7 @@
 
 ## Next Steps
 
+- In GitHub, go to Settings -> Pages and set Build and deployment Source to GitHub Actions if it is not already selected.
 - Replace poster-only placeholders with final HTML5 video sources when brand media is available.
 - Expand secondary pages or routed sections after homepage review.
 - Add final company contact details and real newsroom content.

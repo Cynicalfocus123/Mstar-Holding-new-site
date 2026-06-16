@@ -2,6 +2,12 @@
 
 ## 2026-06-17
 
+### Preview Workflow
+
+- GitHub Pages preview workflow added so pushed changes build and deploy the current cinematic homepage from `dist`.
+- Vite uses relative built paths so preview media and assets resolve under the repository Pages URL.
+- Visual QA should still be done locally before push; the hosted preview is the shared review surface after Actions completes.
+
 ### Visual System
 
 - Direction: cinematic, premium, institutional, corporate, minimal.
