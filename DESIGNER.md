@@ -2,6 +2,11 @@
 
 ## 2026-06-17
 
+### Business Page Link Fix
+
+- Updated homepage and Business page navigation to use project-site-safe relative links so the `Explore Our Businesses` CTA opens the Business page from the GitHub Pages preview.
+- Preserved the existing visual design; this was a routing-only fix.
+
 ### Business Page
 
 - Created Business page with cinematic HTML5 video hero, sector sections, smooth CTA buttons, SEO metadata, and homepage CTA link.

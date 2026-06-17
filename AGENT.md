@@ -2,6 +2,8 @@
 
 ## 2026-06-17
 
+- Fixed GitHub Pages project-site navigation by changing homepage Business links from absolute `/business` URLs to repo-safe `business/` links.
+- Updated Business page navigation and CTA links to use relative paths back to homepage sections, preserving correct routing under both local Vite and GitHub Pages preview paths.
 - Created Business page with cinematic HTML5 video hero, sector sections, smooth CTA buttons, SEO metadata, and homepage CTA link.
 - Added `business/index.html` as a static Vite page for `/business/`, with a root redirect guard so `/business` opens the Business page during local Vite routing.
 - Updated both homepage `Explore Our Businesses` CTAs to link to `/business`.
