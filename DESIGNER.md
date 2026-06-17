@@ -2,6 +2,20 @@
 
 ## 2026-06-17
 
+### Business Page
+
+- Created Business page with cinematic HTML5 video hero, sector sections, smooth CTA buttons, SEO metadata, and homepage CTA link.
+- The Business page keeps the homepage visual language exactly: cinematic full-bleed media, black/charcoal foundations, white typography, muted body copy, gold line accents, transparent navigation, and no boxed text areas.
+- The top hero uses the homepage video-section structure with native HTML5 video attributes, poster fallback, `object-fit: cover`, full-section readability gradients, and reduced-motion support.
+- The sector navigation row sits directly under the hero with text links, spacing, thin border lines, subtle hover motion, and horizontal mobile scrolling instead of cards or boxed containers.
+- Sector sections alternate text/media layout on desktop and stack safely on mobile, with large cinematic media areas and text placed directly on the page background.
+- Sector copy is grammar-checked and crawlable for Real Estate, Food & Hospitality, Import / Export, Defense, E-commerce & Technology, and Entertainment.
+- Business page buttons use the homepage lightweight outline CTA family: thin border, transparent glass feel, rounded pill geometry, smooth hover lift, and arrow motion.
+- The final CTA section stays open and unboxed, with `Partner with a Multi-Sector Holding Company` and a `Contact Us` button linking to `/contact`.
+- Responsive rules: use `clamp()` typography, flexible grids, safe gutters, horizontal-overflow guards, mobile stacking, and no clipped text or buttons at 320px through desktop widths.
+- No-box rule remains mandatory: no cards, panels, content boxes, boxed backgrounds, or nested containers for page content; only media frames and clickable buttons are framed.
+- SEO requirement for every new page: unique title and meta description, canonical URL, Open Graph metadata, Twitter/X card metadata, robots metadata, JSON-LD where appropriate, one clear `<h1>`, proper heading hierarchy, and crawlable text without fake claims.
+
 ### Hero Video Asset Replacement
 
 - Replaced main homepage hero video asset only; layout and responsive styling unchanged.

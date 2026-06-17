@@ -2,6 +2,17 @@
 
 ## 2026-06-17
 
+- Created Business page with cinematic HTML5 video hero, sector sections, smooth CTA buttons, SEO metadata, and homepage CTA link.
+- Added `business/index.html` as a static Vite page for `/business/`, with a root redirect guard so `/business` opens the Business page during local Vite routing.
+- Updated both homepage `Explore Our Businesses` CTAs to link to `/business`.
+- Added Business page SEO: unique title, meta description, canonical URL, Open Graph metadata, Twitter/X card metadata, robots metadata, and JSON-LD for `Organization`, `WebPage`, `ItemList`, and `BreadcrumbList`.
+- Built the Business page with one clear `<h1>`, six crawlable sector sections, a clean horizontal sector anchor row, responsive alternating media/text layouts, and a final `Contact Us` CTA linking to `/contact`.
+- Reused the homepage cinematic no-box design system: white typography, black/charcoal backgrounds, poster-backed HTML5 video placeholders, thin gold line accents, and lightweight outline CTA transitions.
+- Grammar-checked all new Business page copy before saving; fixed the supplied SEO apostrophe encoding in `Mstar Holding's diversified business portfolio`.
+- Verified the homepage CTA click reaches the Business page and confirmed no horizontal overflow at 320px, 360px, 390px, 430px, tablet, and desktop widths.
+- Browser/IAB was used for route, DOM, responsive, console-error, and interaction checks. Screenshot capture through Browser/IAB timed out, so Playwright CLI with the installed Chrome channel was used only for screenshot fallback.
+- Serena was used for project activation, instructions, and memory checks.
+- Context7 was requested by the brief, but the callable `resolve-library-id` / `query-docs` tools were not exposed in this Codex thread after tool discovery; work continued using the existing static Vite project patterns.
 - Replaced main homepage hero video asset only; layout and responsive styling unchanged.
 - Grammar-checked operations sector label update: changed `Technology` to `E-commerce & Technology` and added `Entertainment` to its right.
 - Adjusted the sector label grid so the six-label row wraps cleanly across desktop, tablet, and mobile.
@@ -36,6 +47,7 @@
 - `index.html`
 - `src/main.js`
 - `src/styles.css`
+- `business/index.html`
 - `vite.config.js`
 - `public/media/hero-poster.png`
 - `public/media/operations-poster.png`
@@ -51,12 +63,18 @@
 - `git status --short --branch`
 - `git remote -v`
 - `Get-ChildItem -Recurse -File | Select-Object -First 200 FullName`
+- `Get-Content -LiteralPath index.html -TotalCount 120`
+- `Get-Content -LiteralPath index.html -Tail 120`
+- `rg -n "business|hero|video|metadata|seo|button|route" index.html src\main.js src\styles.css`
 - `npm.cmd install`
 - `npm.cmd install --save-dev vite@8.0.16`
+- `npx.cmd prettier --write index.html business/index.html src/styles.css vite.config.js AGENT.md DESIGNER.md`
 - `npm.cmd run build`
 - `npm.cmd run lint`
 - `npm.cmd test`
 - `npm.cmd audit`
+- Browser verification at `http://127.0.0.1:5174/business`
+- Playwright screenshot fallback at 1280px desktop and 390px mobile with installed Chrome channel
 - Browser verification at `http://127.0.0.1:5173`
 - `git config user.name "Codex"`
 - `git config user.email "codex@openai.com"`
@@ -94,6 +112,11 @@
 
 ## Verification Notes
 
+- `/business` redirects to `/business/` in local Vite and loads `Business Portfolio | Mstar Holding`.
+- Homepage hero and operations `Explore Our Businesses` CTAs both link to `/business`; a scoped hero CTA click was verified in Browser/IAB.
+- Business page Browser/IAB checks confirmed one `<h1>`, all six sector anchors, seven HTML5 video/video-placeholder elements, complete SEO metadata, no console errors, no Vite overlay, and no page-level horizontal overflow.
+- Responsive checks passed at 320px, 360px, 390px, 430px, tablet, and desktop widths; the sector anchor row scrolls horizontally on small screens by design.
+- Visual QA inspected desktop and mobile screenshots captured through Playwright CLI fallback because Browser/IAB screenshot capture timed out on the video page.
 - Desktop browser check confirmed nav labels, section order, video placeholder attributes, and no horizontal overflow.
 - Mobile browser check confirmed the menu toggle is visible, opens the menu, updates `aria-expanded`, locks page scroll, shows all six nav items, and has no horizontal overflow.
 - Visual QA compared the generated homepage concept with the rendered desktop screenshot and mobile menu screenshot.
