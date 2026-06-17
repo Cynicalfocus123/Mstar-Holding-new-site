@@ -2,6 +2,7 @@
 
 ## 2026-06-17
 
+- Replaced main homepage hero video asset only; layout and responsive styling unchanged.
 - Grammar-checked operations sector label update: changed `Technology` to `E-commerce & Technology` and added `Entertainment` to its right.
 - Adjusted the sector label grid so the six-label row wraps cleanly across desktop, tablet, and mobile.
 - Added the approved grammar-checked `Explore Our Businesses` CTA under the operations headline, linking to `/business`.
@@ -70,6 +71,8 @@
 - `git commit -m "Add operations business CTA"`
 - `git push`
 - `git commit -m "Update operations sector labels"`
+- `git push`
+- `git commit -m "Replace homepage hero video asset"`
 - `git push`
 
 ## Permanent Rules

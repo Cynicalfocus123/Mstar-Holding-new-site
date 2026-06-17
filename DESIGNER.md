@@ -2,6 +2,11 @@
 
 ## 2026-06-17
 
+### Hero Video Asset Replacement
+
+- Replaced main homepage hero video asset only; layout and responsive styling unchanged.
+- Existing hero HTML5 video path, poster behavior, sizing rules, overlays, and responsive formatting remain unchanged.
+
 ### Operations Sector Labels
 
 - Grammar-checked sector labels updated from `Technology` to `E-commerce & Technology`, with `Entertainment` added to its right.
