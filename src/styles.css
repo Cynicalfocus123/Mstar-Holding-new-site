@@ -501,8 +501,18 @@ h2 {
     linear-gradient(180deg, #050505 0%, #0a0d0e 44%, #050505 100%), var(--black);
 }
 
+.business-hero {
+  min-height: clamp(540px, 34.5vw, 656px);
+}
+
+.business-hero .section-content {
+  padding-top: calc(var(--header-height) + 44px);
+  padding-bottom: clamp(64px, 7vw, 96px);
+}
+
+.business-hero .section-video,
 .business-hero .section-poster {
-  object-position: 64% center;
+  object-position: center;
 }
 
 .sector-nav {
@@ -848,9 +858,18 @@ h2 {
     min-height: 92svh;
   }
 
+  .business-hero {
+    min-height: clamp(560px, 138vw, 680px);
+  }
+
   .section-content {
     width: 100%;
     padding-bottom: 64px;
+  }
+
+  .business-hero .section-content {
+    padding-top: calc(var(--header-height) + 36px);
+    padding-bottom: 88px;
   }
 
   .hero-content {

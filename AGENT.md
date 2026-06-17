@@ -2,6 +2,9 @@
 
 ## 2026-06-17
 
+- Updated Business page header video and reduced header section height to a shorter responsive banner format.
+- Added `public/videos/business-page-video.mp4` from the supplied `business page video .mp4` asset and applied it only to the Business Portfolio header video.
+- Added Business-page-only hero height rules using the 1901x656 banner ratio while preserving existing typography, button styling, no-box layout, sector videos, and homepage hero media.
 - Changed homepage operations headline from `A Multi-Sector Portfolio Built for Growth` to the approved grammar-checked text `One Group. Multiple Sectors. Built for Growth.` without changing headline CSS, font, size, line spacing, layout, video, button, or sector labels.
 - Removed the homepage large link-row section containing `About Mstar Holding`, `Our Businesses`, `Global Presence`, `News & Media`, and `Contact Us`, including its arrows, dividers, hover states, spacing, and related `.link-band` CSS.
 - Added zero-size non-visual anchors for `#global-presence` and `#news-media` so the existing main navigation links remain valid after the link-row section removal.

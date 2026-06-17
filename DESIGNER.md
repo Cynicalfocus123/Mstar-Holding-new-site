@@ -2,6 +2,13 @@
 
 ## 2026-06-17
 
+### Business Header Video Banner
+
+- Updated Business page header video and reduced header section height to a shorter responsive banner format.
+- The new `business-page-video.mp4` asset is used only in the Business Portfolio header section.
+- Business header sizing now follows the requested 1901x656 desktop banner ratio with responsive mobile/tablet clamps.
+- Preserved Business page typography, CTA styling, transitions, sector media, and the no-box design system.
+
 ### Homepage Headline And Link-Row Patch
 
 - Changed the operations section headline to `One Group. Multiple Sectors. Built for Growth.` with no changes to its font, size, line spacing, layout, responsive behavior, media, CTA button, or sector labels.
