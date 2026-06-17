@@ -2,6 +2,11 @@
 
 ## 2026-06-17
 
+### Operations Sector Labels
+
+- Grammar-checked sector labels updated from `Technology` to `E-commerce & Technology`, with `Entertainment` added to its right.
+- Sector label grid now supports six labels while preserving the same white typography, spacing, and gold accent line style across desktop, tablet, and mobile.
+
 ### Operations CTA
 
 - Added the approved grammar-checked `Explore Our Businesses` CTA below `A Multi-Sector Portfolio Built for Growth`.

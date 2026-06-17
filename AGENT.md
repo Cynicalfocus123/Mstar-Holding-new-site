@@ -2,6 +2,8 @@
 
 ## 2026-06-17
 
+- Grammar-checked operations sector label update: changed `Technology` to `E-commerce & Technology` and added `Entertainment` to its right.
+- Adjusted the sector label grid so the six-label row wraps cleanly across desktop, tablet, and mobile.
 - Added the approved grammar-checked `Explore Our Businesses` CTA under the operations headline, linking to `/business`.
 - Styled the operations CTA as a premium lightweight outline pill and verified it fits within the responsive safe zone.
 - Fixed mobile text cutoff across the homepage by adding safer responsive text widths, line heights, wrapping behavior, and horizontal overflow guards.
@@ -66,6 +68,8 @@
 - `git commit -m "Fix mobile homepage text cutoff"`
 - `git push`
 - `git commit -m "Add operations business CTA"`
+- `git push`
+- `git commit -m "Update operations sector labels"`
 - `git push`
 
 ## Permanent Rules
