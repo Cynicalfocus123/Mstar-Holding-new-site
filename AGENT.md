@@ -2,6 +2,9 @@
 
 ## 2026-06-17
 
+- Changed homepage operations headline from `A Multi-Sector Portfolio Built for Growth` to the approved grammar-checked text `One Group. Multiple Sectors. Built for Growth.` without changing headline CSS, font, size, line spacing, layout, video, button, or sector labels.
+- Removed the homepage large link-row section containing `About Mstar Holding`, `Our Businesses`, `Global Presence`, `News & Media`, and `Contact Us`, including its arrows, dividers, hover states, spacing, and related `.link-band` CSS.
+- Added zero-size non-visual anchors for `#global-presence` and `#news-media` so the existing main navigation links remain valid after the link-row section removal.
 - Fixed GitHub Pages project-site navigation by changing homepage Business links from absolute `/business` URLs to repo-safe `business/` links.
 - Updated Business page navigation and CTA links to use relative paths back to homepage sections, preserving correct routing under both local Vite and GitHub Pages preview paths.
 - Created Business page with cinematic HTML5 video hero, sector sections, smooth CTA buttons, SEO metadata, and homepage CTA link.

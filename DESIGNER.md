@@ -2,6 +2,13 @@
 
 ## 2026-06-17
 
+### Homepage Headline And Link-Row Patch
+
+- Changed the operations section headline to `One Group. Multiple Sectors. Built for Growth.` with no changes to its font, size, line spacing, layout, responsive behavior, media, CTA button, or sector labels.
+- Removed the large homepage link-row section and its related arrows, dividers, hover treatment, spacing, and `.link-band` CSS.
+- Preserved the cinematic no-box design system and kept homepage spacing flowing directly from the introduction section into the contact section.
+- Added non-visual zero-size anchors only to keep existing main navigation targets valid after the visible link-row section was removed.
+
 ### Business Page Link Fix
 
 - Updated homepage and Business page navigation to use project-site-safe relative links so the `Explore Our Businesses` CTA opens the Business page from the GitHub Pages preview.
