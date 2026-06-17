@@ -2,6 +2,12 @@
 
 ## 2026-06-17
 
+### Business Header Video Source Logic
+
+- Fixed Business page header video selection so phone portrait views use the mobile video while desktop, tablet, and phone landscape use the desktop video.
+- Source selection now uses phone portrait viewport/screen detection with explicit video reload behavior instead of relying on `<source media>` alone.
+- Preserved the Business page design, text, buttons, homepage media, sector videos, and no-box visual system.
+
 ### Business Header Mobile Video
 
 - Added mobile-only Business page header video source for phone screens while preserving desktop video behavior.

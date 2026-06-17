@@ -2,6 +2,8 @@
 
 ## 2026-06-17
 
+- Fixed Business page header video selection so phone portrait views use the mobile video while desktop, tablet, and phone landscape use the desktop video.
+- Replaced Business header `<source media>` selection with viewport/screen-size JavaScript detection and explicit `video.load()` reload behavior for reliable phone portrait switching.
 - Added mobile-only Business page header video source for phone screens while preserving desktop video behavior.
 - Renamed the existing Business header desktop video asset to `public/videos/business-page-header-desktop.mp4` and added the supplied phone video as `public/videos/business-page-header-mobile.mp4`.
 - Updated only the Business Portfolio header `<video>` to use responsive HTML5 `<source>` elements and added orientation-safe Business-header CSS without changing text, buttons, homepage video, or sector videos.
