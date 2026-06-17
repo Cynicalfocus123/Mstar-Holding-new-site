@@ -2,6 +2,12 @@
 
 ## 2026-06-17
 
+### Operations CTA
+
+- Added the approved grammar-checked `Explore Our Businesses` CTA below `A Multi-Sector Portfolio Built for Growth`.
+- CTA uses a thin white outline, subtle transparent glass fill, white text, and a small right-arrow mark without adding cards, panels, or content boxes.
+- Responsive spacing keeps the CTA between the headline and sector labels without overlap or clipping.
+
 ### Mobile Text Safe Zones
 
 - Fixed homepage text cutoff by constraining headings, paragraphs, navigation, CTAs, link bands, and footer text to safe responsive widths.

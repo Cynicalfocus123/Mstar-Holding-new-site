@@ -368,6 +368,66 @@ h2 {
   bottom: 2px;
 }
 
+.outline-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2.2vw, 16px);
+  width: fit-content;
+  max-width: 100%;
+  min-height: clamp(44px, 5vw, 54px);
+  padding-block: clamp(11px, 1.4vw, 14px);
+  padding-inline: clamp(18px, 4vw, 28px);
+  border: 1px solid rgba(246, 243, 236, 0.82);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--ink);
+  font-size: clamp(0.88rem, 1.05vw, 1rem);
+  font-weight: 600;
+  line-height: 1.2;
+  backdrop-filter: blur(10px);
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    transform 220ms ease;
+}
+
+.outline-cta:hover,
+.outline-cta:focus-visible {
+  border-color: var(--ink);
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-1px);
+}
+
+.outline-cta span:first-child {
+  min-width: 0;
+  overflow-wrap: normal;
+}
+
+.cta-arrow {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(18px, 2vw, 24px);
+  height: 1px;
+  background: currentColor;
+}
+
+.cta-arrow::after {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.operations-cta {
+  margin-top: clamp(28px, 5vh, 48px);
+}
+
 .scroll-cue {
   position: absolute;
   left: 50%;
@@ -641,6 +701,10 @@ h2 {
   .cta-row {
     gap: 18px 30px;
     margin-top: 34px;
+  }
+
+  .operations-cta {
+    margin-top: 28px;
   }
 
   .theme-list {

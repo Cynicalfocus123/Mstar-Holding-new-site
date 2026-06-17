@@ -2,6 +2,8 @@
 
 ## 2026-06-17
 
+- Added the approved grammar-checked `Explore Our Businesses` CTA under the operations headline, linking to `/business`.
+- Styled the operations CTA as a premium lightweight outline pill and verified it fits within the responsive safe zone.
 - Fixed mobile text cutoff across the homepage by adding safer responsive text widths, line heights, wrapping behavior, and horizontal overflow guards.
 - Audited the grammar-checked hero headline `Putting Big Ideas into Action`; no text wording change was needed in this patch.
 - Added the grammar-check rule to Serena project conventions memory.
@@ -62,6 +64,8 @@
 - `git commit -m "Update hero headline and video"`
 - `git push`
 - `git commit -m "Fix mobile homepage text cutoff"`
+- `git push`
+- `git commit -m "Add operations business CTA"`
 - `git push`
 
 ## Permanent Rules
