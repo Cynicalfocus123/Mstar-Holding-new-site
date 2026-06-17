@@ -2,6 +2,9 @@
 
 ## 2026-06-17
 
+- Fixed mobile text cutoff across the homepage by adding safer responsive text widths, line heights, wrapping behavior, and horizontal overflow guards.
+- Audited the grammar-checked hero headline `Putting Big Ideas into Action`; no text wording change was needed in this patch.
+- Added the grammar-check rule to Serena project conventions memory.
 - Grammar-checked hero headline changed from `Building Long-Term Value Across Industries` to `Putting Big Ideas into Action`.
 - Added `Mstar Holding Company Intro.mp4` as `public/videos/mstar-holding-company-intro.mp4` for the first hero section only.
 - Reduced hero headline sizing so it stays uncropped on desktop, tablet, and mobile.
@@ -57,6 +60,8 @@
 - `git commit -m "Add GitHub Pages preview workflow"`
 - `git push`
 - `git commit -m "Update hero headline and video"`
+- `git push`
+- `git commit -m "Fix mobile homepage text cutoff"`
 - `git push`
 
 ## Permanent Rules

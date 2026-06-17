@@ -2,6 +2,12 @@
 
 ## 2026-06-17
 
+### Mobile Text Safe Zones
+
+- Fixed homepage text cutoff by constraining headings, paragraphs, navigation, CTAs, link bands, and footer text to safe responsive widths.
+- Added horizontal overflow guards after correcting text container sizing, wrapping, and section overflow behavior.
+- Audited the grammar-checked hero headline `Putting Big Ideas into Action`; no text wording change was needed in this patch.
+
 ### Hero Text And Video Patch
 
 - Grammar-checked hero headline changed from `Building Long-Term Value Across Industries` to `Putting Big Ideas into Action`.
