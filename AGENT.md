@@ -2,6 +2,9 @@
 
 ## 2026-06-17
 
+- Grammar-checked hero headline changed from `Building Long-Term Value Across Industries` to `Putting Big Ideas into Action`.
+- Added `Mstar Holding Company Intro.mp4` as `public/videos/mstar-holding-company-intro.mp4` for the first hero section only.
+- Reduced hero headline sizing so it stays uncropped on desktop, tablet, and mobile.
 - Added a GitHub Actions workflow for GitHub Pages previews on every push to `main`.
 - The workflow builds the Vite site, uploads the `dist` artifact, and deploys it through the official GitHub Pages deployment action.
 - Added `vite.config.js` with relative asset base for GitHub Pages project-site hosting.
@@ -29,6 +32,7 @@
 - `public/media/hero-poster.png`
 - `public/media/operations-poster.png`
 - `public/media/growth-poster.png`
+- `public/videos/mstar-holding-company-intro.mp4`
 - `.github/workflows/deploy-pages.yml`
 - `AGENT.md`
 - `DESIGNER.md`
@@ -52,6 +56,14 @@
 - `git push -u origin main`
 - `git commit -m "Add GitHub Pages preview workflow"`
 - `git push`
+- `git commit -m "Update hero headline and video"`
+- `git push`
+
+## Permanent Rules
+
+- Every time new text is added or existing text is changed, check grammar before saving.
+- Fix grammar naturally unless the user explicitly says to keep the exact wording.
+- Document the grammar-checked wording in the changelog when text is changed.
 
 ## Build Status
 

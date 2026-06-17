@@ -2,6 +2,18 @@
 
 ## 2026-06-17
 
+### Hero Text And Video Patch
+
+- Grammar-checked hero headline changed from `Building Long-Term Value Across Industries` to `Putting Big Ideas into Action`.
+- The first hero now uses `public/videos/mstar-holding-company-intro.mp4` as the only live HTML5 video source.
+- Hero headline sizing reduced with responsive clamps to preserve cinematic scale without cropping.
+
+### Permanent Text Rule
+
+- Every time new text is added or existing text is changed, check grammar before saving.
+- Fix grammar naturally unless the user explicitly says to keep the exact wording.
+- Document the grammar-checked wording in the changelog when text is changed.
+
 ### Preview Workflow
 
 - GitHub Pages preview workflow added so pushed changes build and deploy the current cinematic homepage from `dist`.

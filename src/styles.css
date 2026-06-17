@@ -215,7 +215,14 @@ body.nav-open .site-header::before {
 .section-poster {
   object-fit: cover;
   object-position: center;
+}
+
+.section-video {
   z-index: -3;
+}
+
+.section-poster {
+  z-index: -4;
 }
 
 .hero-section .section-poster {
@@ -290,11 +297,12 @@ h2 {
   max-width: 920px;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 0.96;
+  line-height: 1.02;
 }
 
 h1 {
-  font-size: clamp(3.8rem, 8.2vw, 8.4rem);
+  max-width: 820px;
+  font-size: clamp(2.4rem, 6vw, 6.5rem);
 }
 
 h2 {
@@ -565,7 +573,7 @@ h2 {
   }
 
   h1 {
-    font-size: clamp(3rem, 16vw, 5.4rem);
+    font-size: clamp(2.4rem, 12vw, 4.2rem);
   }
 
   h2 {
