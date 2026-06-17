@@ -510,6 +510,13 @@ h2 {
   padding-bottom: clamp(64px, 7vw, 96px);
 }
 
+.business-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .business-hero .section-video,
 .business-hero .section-poster {
   object-position: center;
@@ -952,6 +959,21 @@ h2 {
 
   .business-cta .outline-cta {
     flex: 0 1 auto;
+  }
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .business-hero {
+    height: 72svh;
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 932px) and (orientation: landscape) {
+  .business-hero {
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 656px;
   }
 }
 

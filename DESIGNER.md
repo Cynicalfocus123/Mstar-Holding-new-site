@@ -2,10 +2,17 @@
 
 ## 2026-06-17
 
+### Business Header Mobile Video
+
+- Added mobile-only Business page header video source for phone screens while preserving desktop video behavior.
+- Business Portfolio header now uses a mobile MP4 source for screens up to 767px and the existing desktop video asset for tablet and desktop.
+- Added orientation-safe Business header height handling for phone portrait and mobile landscape without changing Business page text, buttons, sector videos, or homepage media.
+- Preserved the no-box design system and existing header scrim/readability treatment.
+
 ### Business Header Video Banner
 
 - Updated Business page header video and reduced header section height to a shorter responsive banner format.
-- The new `business-page-video.mp4` asset is used only in the Business Portfolio header section.
+- The new desktop header video asset is used only in the Business Portfolio header section and is stored as `business-page-header-desktop.mp4`.
 - Business header sizing now follows the requested 1901x656 desktop banner ratio with responsive mobile/tablet clamps.
 - Preserved Business page typography, CTA styling, transitions, sector media, and the no-box design system.
 
