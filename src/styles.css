@@ -783,6 +783,7 @@ h2 {
 .company-media::after {
   position: absolute;
   inset: 0;
+  z-index: 2;
   content: "";
   background:
     linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0)),
@@ -800,15 +801,15 @@ h2 {
 }
 
 .company-media-video {
-  z-index: -1;
+  z-index: 1;
 }
 
 .company-media img {
-  z-index: -2;
+  z-index: 0;
 }
 
 .company-media > img:only-child {
-  z-index: -1;
+  z-index: 1;
 }
 
 .sector-section.is-changing .company-copy,

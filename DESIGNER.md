@@ -2,6 +2,14 @@
 
 ## 2026-06-18
 
+### Mstar Property Live Deployment Video
+
+- Fixed Mstar Property company video loading by correcting the actual media path/rendering issue.
+- Confirmed the deployed GitHub Pages video URL was missing before this patch, so the issue was stale repository deployment output rather than user browser cache or local playback.
+- Removed the separate fallback image from the Mstar Property video render branch so the uploaded video is the only visible company media below the existing scrim.
+- Preserved Seniorhome, Buyhomeforless, all other company media, logo support, company controls, header, footer, CTA, layout, SEO, and no-box visual system.
+- Permanent workflow note: when changes are complete, commit and push automatically; do not ask the user whether to push.
+
 ### Business Mobile Company Text Controls
 
 - Replaced the mobile native company dropdown with text-style company controls.

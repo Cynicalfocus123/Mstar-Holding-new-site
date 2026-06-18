@@ -110,8 +110,7 @@ const businessSectors = [
         description:
           "Real estate solutions focused on quality developments, strategic locations, and long-term value.",
         mediaType: "video",
-        // Replace placeholder media paths with final company assets when available.
-        mediaSrc: "../videos/placeholders/mstar-property.mp4",
+        mediaSrc: "../videos/business-mstar-property.mp4",
         poster: "../media/hero-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -346,7 +345,6 @@ const renderCompanyMedia = (company) => {
       >
         <source src="${escapeHtml(company.mediaSrc)}" type="video/mp4" />
       </video>
-      <img src="${escapeHtml(poster)}" alt="" loading="lazy" aria-hidden="true" />
     `;
   }
 
@@ -366,6 +364,28 @@ const renderCompanyLogo = (company) => {
       loading="lazy"
     />
   `;
+};
+
+const playCompanyMediaVideos = (root = document) => {
+  if (prefersReducedMotion) {
+    return;
+  }
+
+  root.querySelectorAll(".company-media-video").forEach((video) => {
+    if (video instanceof HTMLVideoElement) {
+      const playVideo = () => {
+        if (!video.currentSrc) {
+          video.load();
+        }
+
+        void video.play().catch(() => {});
+      };
+
+      playVideo();
+      requestAnimationFrame(playVideo);
+      window.setTimeout(playVideo, 250);
+    }
+  });
 };
 
 const renderBusinessSectors = () => {
@@ -493,6 +513,7 @@ const setActiveCompany = (sectorIndex, companyIndex) => {
 
   if (companyMedia) {
     companyMedia.innerHTML = renderCompanyMedia(company);
+    playCompanyMediaVideos(companyMedia);
   }
 
   section.querySelectorAll("[data-company-index]").forEach((tab) => {
@@ -514,6 +535,7 @@ const setActiveCompany = (sectorIndex, companyIndex) => {
 };
 
 renderBusinessSectors();
+playCompanyMediaVideos(businessSectorsRoot);
 
 businessSectorsRoot?.addEventListener("click", (event) => {
   const target = event.target;
