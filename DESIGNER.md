@@ -2,6 +2,14 @@
 
 ## 2026-06-18
 
+### Food Business Copy And Videos
+
+- Updated Foodonlines.com copy to `We bring groceries to your door for less.`
+- Updated One Taste copy to describe ready-to-eat MRE meal solutions for troops, emergency response, disaster relief, and remote operations.
+- Added the uploaded Foodonlines.com video to Foodonlines.com company media only.
+- Added the uploaded One Taste MRE video to One Taste company media only.
+- Preserved Real Estate company videos, company logos, company controls, header, footer, CTA, arrows, layout, SEO, and no-box visual system.
+
 ### BuyHomeForLess Business Video
 
 - Added the uploaded BuyHomeForLess video to BuyHomeForLess company media only.

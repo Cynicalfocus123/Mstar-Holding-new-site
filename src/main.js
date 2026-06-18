@@ -153,10 +153,10 @@ const businessSectors = [
     companies: [
       {
         name: "Foodonlines.com",
-        description:
-          "Food commerce operations focused on consumer access, practical fulfillment, and market growth.",
-        mediaType: "image",
-        mediaSrc: "../media/operations-poster.png",
+        description: "We bring groceries to your door for less.",
+        mediaType: "video",
+        mediaSrc: "../videos/business-foodonlines.mp4",
+        poster: "../media/operations-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/foodonlines.svg",
@@ -165,9 +165,10 @@ const businessSectors = [
       {
         name: "One Taste",
         description:
-          "Hospitality experiences shaped around approachable service, consistent quality, and everyday demand.",
-        mediaType: "image",
-        mediaSrc: "../media/hero-poster.png",
+          "One Taste provides ready-to-eat MRE meal solutions designed for military troops, emergency response, disaster relief, and remote operations where fast, reliable nutrition is essential.",
+        mediaType: "video",
+        mediaSrc: "../videos/business-one-taste.mp4",
+        poster: "../media/hero-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/one-taste.svg",
