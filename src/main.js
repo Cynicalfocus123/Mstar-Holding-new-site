@@ -108,7 +108,7 @@ const businessSectors = [
       {
         name: "Mstar Property",
         description:
-          "Real estate solutions focused on quality developments, strategic locations, and long-term value.",
+          "We develop affordable family homes to large-scale luxury mansion communities, creating quality residential projects designed for modern living, long-term value, and premium locations.",
         mediaType: "video",
         mediaSrc: "../videos/business-mstar-property.mp4",
         poster: "../media/hero-poster.png",
@@ -118,9 +118,9 @@ const businessSectors = [
         logoAlt: "Mstar Property logo",
       },
       {
-        name: "Buyhomeforless",
+        name: "BuyHomeForLess",
         description:
-          "Residential property opportunities designed to make home ownership more accessible and affordable.",
+          "We offer a wide range of land, homes, and condos, from affordable properties to high-end real estate for sale, rent, and development opportunities.",
         mediaType: "image",
         mediaSrc: "../media/operations-poster.png",
         ctaLabel: "View Company",
@@ -129,15 +129,16 @@ const businessSectors = [
         logoAlt: "Buyhomeforless logo",
       },
       {
-        name: "Seniorhome",
+        name: "Senior Home",
         description:
-          "Housing solutions tailored to comfort, accessibility, and quality living for senior residents.",
-        mediaType: "image",
-        mediaSrc: "../media/growth-poster.png",
+          "Asia and Thailand's leading senior care home developer, creating comfortable, affordable communities with spacious open-floor-plan designs tailored to the unique needs of seniors.",
+        mediaType: "video",
+        mediaSrc: "../videos/business-senior-home.mp4",
+        poster: "../media/growth-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/seniorhome.svg",
-        logoAlt: "Seniorhome logo",
+        logoAlt: "Senior Home logo",
       },
     ],
   },

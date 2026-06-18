@@ -2,6 +2,12 @@
 
 ## 2026-06-18
 
+- Updated Real Estate company copy for Mstar Property, BuyHomeForLess, and Senior Home.
+- Added the uploaded senior care video to Senior Home company media only.
+- Preserved Mstar Property video, BuyHomeForLess media, company logos, company controls, header, footer, CTA, arrows, layout, SEO, and no-box visual system.
+
+## 2026-06-18
+
 - Replaced the Mstar Property Business page video with the lighter compressed MP4 supplied by the user.
 - Kept the deployed video path unchanged at `public/videos/business-mstar-property.mp4` so the Business page continues to load `business-mstar-property.mp4`.
 - Preserved header, footer, layout, logo, tabs, CTA, arrows, text, and all other company media.
