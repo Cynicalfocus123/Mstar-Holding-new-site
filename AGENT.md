@@ -2,6 +2,12 @@
 
 ## 2026-06-18
 
+- Replaced the Mstar Property Business page video with the lighter compressed MP4 supplied by the user.
+- Kept the deployed video path unchanged at `public/videos/business-mstar-property.mp4` so the Business page continues to load `business-mstar-property.mp4`.
+- Preserved header, footer, layout, logo, tabs, CTA, arrows, text, and all other company media.
+
+## 2026-06-18
+
 - Fixed Mstar Property company video loading by correcting the actual media path/rendering issue.
 - Confirmed the deployed GitHub Pages video URL was missing before this patch, so the issue was stale repository deployment output rather than user browser cache or local playback.
 - Removed the separate fallback image from the Mstar Property video render branch so the media frame contains the uploaded video only, plus the existing scrim.

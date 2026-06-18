@@ -2,6 +2,12 @@
 
 ## 2026-06-18
 
+### Mstar Property Compressed Video Replacement
+
+- Replaced the Mstar Property Business page video with the lighter compressed MP4 supplied by the user.
+- Kept the deployed video path unchanged at `public/videos/business-mstar-property.mp4` so the Business page continues to load `business-mstar-property.mp4`.
+- Preserved header, footer, layout, logo, tabs, CTA, arrows, text, and all other company media.
+
 ### Mstar Property Live Deployment Video
 
 - Fixed Mstar Property company video loading by correcting the actual media path/rendering issue.
