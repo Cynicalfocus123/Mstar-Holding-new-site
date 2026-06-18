@@ -427,7 +427,7 @@ const renderBusinessSectors = () => {
         <section
           class="sector-section business-sector"
           id="${sector.id}"
-          aria-labelledby="${sector.id}-title"
+          aria-label="${escapeHtml(sector.name)}"
           data-sector-index="${sectorIndex}"
           data-active-company="0"
         >
@@ -436,8 +436,6 @@ const renderBusinessSectors = () => {
           </div>
           <div class="sector-copy sector-heading">
             <p class="sector-label">${escapeHtml(sector.name)}</p>
-            <h2 id="${sector.id}-title">${escapeHtml(sector.headline)}</h2>
-            <p>${escapeHtml(sector.description)}</p>
           </div>
           <div class="company-tabs" role="tablist" aria-label="${escapeHtml(sector.name)} companies">
             ${tabs}

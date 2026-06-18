@@ -2,6 +2,12 @@
 
 ## 2026-06-18
 
+- Removed the extra sector-level headline and description text from all Business page sectors.
+- Preserved company names, company descriptions, logos, videos, media, tabs/text controls, CTA, arrows, header, footer, SEO, and no-box visual system.
+- Confirmed bottom sector previews were not restored.
+
+## 2026-06-18
+
 - Updated Foodonlines.com copy to `We bring groceries to your door for less.`
 - Updated One Taste copy to describe ready-to-eat MRE meal solutions for troops, emergency response, disaster relief, and remote operations.
 - Added the uploaded Foodonlines.com video to Foodonlines.com company media only.

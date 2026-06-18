@@ -2,6 +2,13 @@
 
 ## 2026-06-18
 
+### Business Sector Intro Text Removal
+
+- Removed the extra sector-level headline and description text from all Business page sectors.
+- Preserved company names, company descriptions, logos, videos, media, tabs/text controls, CTA, arrows, header, footer, SEO, and no-box visual system.
+- Confirmed bottom sector previews were not restored.
+- Business sectors now show the sector label, company text controls, active company content, active company media, CTA, and arrows without adding cards, panels, dividers, boxes, or replacement copy.
+
 ### Food Business Copy And Videos
 
 - Updated Foodonlines.com copy to `We bring groceries to your door for less.`
@@ -73,12 +80,12 @@
 
 - The Business page now uses the approved Option 2 direction: Sector with Company Tabs.
 - The Business page video header stays first, followed by premium full-width sector sections rendered from data.
-- Each sector presents a small gold sector label, a large white headline, a short description, company controls, active company copy, and active company media.
+- Each sector presents a small gold sector label, company controls, active company copy, and active company media without the removed sector-level headline or description.
 - The layout supports multiple companies per sector without hard-coding individual section markup.
 
 ### Desktop Tabs Behavior
 
-- Desktop uses horizontal company tabs under the sector headline and description.
+- Desktop uses horizontal company tabs under the sector label.
 - The active company tab uses a refined gold underline and stronger white text.
 - Inactive tabs stay white/gray and transition lightly on hover or focus.
 - Tabs update the active company name, description, media, CTA, selected tab state, and index count.
@@ -88,7 +95,7 @@
 
 - Phone portrait uses text-style company controls instead of a native browser dropdown.
 - The controls match the dark and gold design language, stay within the viewport, and update the active company content.
-- Mobile portrait order is sector label, headline, description, company text controls, full-width media, company copy, CTA, and bottom controls.
+- Mobile portrait order is sector label, company text controls, full-width media, company copy, CTA, and bottom controls.
 
 ### Landscape Behavior
 
