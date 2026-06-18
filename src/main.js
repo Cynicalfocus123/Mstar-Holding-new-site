@@ -232,8 +232,9 @@ const businessSectors = [
         name: "Mstar Defense",
         description:
           "Defense-focused operations supporting strategic industry partnerships, manufacturing, and technology development.",
-        mediaType: "image",
-        mediaSrc: "../media/hero-poster.png",
+        mediaType: "video",
+        mediaSrc: "../videos/business-mstar-defense.mp4",
+        poster: "../media/hero-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/mstar-defense.svg",
