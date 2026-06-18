@@ -200,8 +200,9 @@ const businessSectors = [
         name: "American Buying Service",
         description:
           "Buying and sourcing support for cross-border commerce, distribution needs, and international partnerships.",
-        mediaType: "image",
-        mediaSrc: "../media/growth-poster.png",
+        mediaType: "video",
+        mediaSrc: "../videos/business-american-buying-service.mp4",
+        poster: "../media/growth-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/american-buying-service.svg",
