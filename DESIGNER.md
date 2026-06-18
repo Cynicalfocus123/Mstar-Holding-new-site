@@ -2,6 +2,14 @@
 
 ## 2026-06-18
 
+### Business Sector Title Enlargement
+
+- Enlarged Business page sector name text so each sector title visually reads as a major section heading.
+- Kept only one real page H1 for SEO while using H1-size visual styling for sector names.
+- Preserved company content, logos, videos, tabs/text controls, CTA, arrows, header, footer, SEO, and no-box visual system.
+- Confirmed removed sector intro headline/description text was not restored.
+- Sector titles remain unboxed, white, normal-case, and directly on the cinematic page background.
+
 ### Business Sector Intro Text Removal
 
 - Removed the extra sector-level headline and description text from all Business page sectors.

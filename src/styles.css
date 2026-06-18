@@ -689,6 +689,16 @@ h2 {
   margin-top: 0;
 }
 
+.sector-heading .sector-label {
+  width: min(820px, 100%);
+  color: var(--ink);
+  font-size: clamp(2.35rem, 5vw, 5.6rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: none;
+}
+
 .company-tabs {
   grid-area: tabs;
   display: flex;
