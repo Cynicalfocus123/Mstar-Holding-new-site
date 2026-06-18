@@ -1,5 +1,58 @@
 # Designer Notes
 
+## 2026-06-18
+
+### Approved Business Page Option 2 Layout
+
+- The Business page now uses the approved Option 2 direction: Sector with Company Tabs.
+- The Business page video header stays first, followed by premium full-width sector sections rendered from data.
+- Each sector presents a small gold sector label, a large white headline, a short description, company controls, active company copy, active company media, and preview links to other sectors.
+- The layout supports multiple companies per sector without hard-coding individual section markup.
+
+### Desktop Tabs Behavior
+
+- Desktop uses horizontal company tabs under the sector headline and description.
+- The active company tab uses a refined gold underline and stronger white text.
+- Inactive tabs stay white/gray and transition lightly on hover or focus.
+- Tabs update the active company name, description, media, CTA, selected tab state, and index count.
+- Keyboard behavior supports arrow, Home, and End navigation for company tabs.
+
+### Mobile Dropdown Behavior
+
+- Phone portrait uses a compact native company selector instead of cramped tabs.
+- The selector matches the dark and gold design language, stays within the viewport, and updates the active company content.
+- Mobile portrait order is sector label, headline, description, selector, full-width media, company copy, CTA, and bottom controls.
+
+### Landscape Behavior
+
+- Phone landscape keeps horizontal tabs with safe horizontal scrolling when needed.
+- Phone landscape preserves the Business header desktop video behavior and does not force portrait mobile video.
+- Tablet keeps the desktop-style tab behavior.
+
+### Company Media Rules
+
+- Company media supports image or native HTML5 video.
+- Video media uses `autoplay`, `muted`, `loop`, `playsinline`, and `preload="metadata"` with poster fallback support.
+- Media frames are cinematic and responsive without becoming heavy card UI.
+- Placeholder media paths are documented in the data structure and should be replaced with final approved assets later.
+
+### Button Transition Rules
+
+- Company CTAs use the current homepage/business outline pill style.
+- Buttons stay transparent or subtly filled, with a thin outline, white text, a small arrow mark, smooth hover, and slight arrow movement.
+- Controls use thin circular arrows that match the premium CTA direction without bulky filled styling.
+
+### No-Box Visual Rule
+
+- Text must sit directly on the cinematic page background or section scrim.
+- Do not add cards, boxed text panels, white containers, dashboard modules, or boxed backgrounds behind copy.
+- Allowed framing is limited to media frames, buttons, thin dividers, gold tab underlines, and small sector preview media.
+
+### SEO Requirement
+
+- Business page SEO must keep a unique title, meta description, canonical URL, Open Graph metadata, Twitter/X metadata, robots metadata, and JSON-LD for `Organization`, `WebPage`, `ItemList`, and `BreadcrumbList`.
+- Sector and company text must remain crawlable and must not include fake reviews, ratings, financial claims, or misleading schema.
+
 ## 2026-06-17
 
 ### Business Header Video Source Logic

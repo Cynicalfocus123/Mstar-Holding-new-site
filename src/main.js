@@ -92,6 +92,493 @@ window.addEventListener("resize", updateBusinessHeroVideo);
 window.addEventListener("orientationchange", updateBusinessHeroVideo);
 window.addEventListener("pageshow", scheduleBusinessHeroVideoUpdate);
 
+const businessSectorsRoot = document.querySelector("[data-business-sectors]");
+
+const businessSectors = [
+  {
+    name: "Real Estate",
+    id: "real-estate",
+    headline: "Building Enduring Value",
+    description:
+      "Strategic real estate development focused on long-term value, premium locations, and scalable regional growth.",
+    poster: "../media/hero-poster.png",
+    companies: [
+      {
+        name: "Mstar Property",
+        description:
+          "Real estate solutions focused on quality developments, strategic locations, and long-term value.",
+        mediaType: "video",
+        // Replace placeholder media paths with final company assets when available.
+        mediaSrc: "../videos/placeholders/mstar-property.mp4",
+        poster: "../media/hero-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+      {
+        name: "Buyhomeforless",
+        description:
+          "Residential property opportunities designed to make home ownership more accessible and affordable.",
+        mediaType: "image",
+        mediaSrc: "../media/operations-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+      {
+        name: "Seniorhome",
+        description:
+          "Housing solutions tailored to comfort, accessibility, and quality living for senior residents.",
+        mediaType: "image",
+        mediaSrc: "../media/growth-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+    ],
+  },
+  {
+    name: "Food & Hospitality",
+    id: "food-hospitality",
+    headline: "Elevating Experiences Every Day",
+    description:
+      "Food and hospitality ventures designed around consumer demand, operational quality, and market expansion.",
+    poster: "../media/operations-poster.png",
+    companies: [
+      {
+        name: "Foodonlines.com",
+        description:
+          "Food commerce operations focused on consumer access, practical fulfillment, and market growth.",
+        mediaType: "image",
+        mediaSrc: "../media/operations-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+      {
+        name: "One Taste",
+        description:
+          "Hospitality experiences shaped around approachable service, consistent quality, and everyday demand.",
+        mediaType: "image",
+        mediaSrc: "../media/hero-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+      {
+        name: "Seniorhome.net",
+        description:
+          "Hospitality-adjacent support designed around comfort, accessibility, and quality daily living.",
+        mediaType: "image",
+        mediaSrc: "../media/growth-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+    ],
+  },
+  {
+    name: "Import / Export",
+    id: "import-export",
+    headline: "Connecting Markets, Creating Opportunities",
+    description:
+      "Cross-border trade and supply operations supporting regional commerce, distribution, and international partnerships.",
+    poster: "../media/growth-poster.png",
+    companies: [
+      {
+        name: "American Buying Service",
+        description:
+          "Buying and sourcing support for cross-border commerce, distribution needs, and international partnerships.",
+        mediaType: "image",
+        mediaSrc: "../media/growth-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+      {
+        name: "ABS Fulfillment",
+        description:
+          "Fulfillment operations supporting trade flows, practical logistics, and scalable distribution activity.",
+        mediaType: "image",
+        mediaSrc: "../media/operations-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+    ],
+  },
+  {
+    name: "Defense",
+    id: "defense",
+    headline: "Supporting Strategic Industry Growth",
+    description:
+      "Defense-focused operations supporting manufacturing, technology development, and strategic industry partnerships.",
+    poster: "../media/hero-poster.png",
+    companies: [
+      {
+        name: "Mstar Defense",
+        description:
+          "Defense-focused operations supporting strategic industry partnerships, manufacturing, and technology development.",
+        mediaType: "image",
+        mediaSrc: "../media/hero-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+    ],
+  },
+  {
+    name: "E-commerce & Technology",
+    id: "ecommerce-technology",
+    headline: "Building Digital Platforms for Growth",
+    description:
+      "Digital commerce and technology initiatives built to support scalable platforms, modern operations, and future-ready growth.",
+    poster: "../media/operations-poster.png",
+    companies: [
+      {
+        name: "Foodonlines.com",
+        description:
+          "Digital food commerce designed to support modern customer access, practical ordering, and market reach.",
+        mediaType: "image",
+        mediaSrc: "../media/operations-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+      {
+        name: "Hizoz.com",
+        description:
+          "A digital platform initiative built around scalable technology, modern operations, and growth potential.",
+        mediaType: "image",
+        mediaSrc: "../media/growth-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+      {
+        name: "Mstar Technology",
+        description:
+          "Technology operations supporting platform development, digital infrastructure, and future-ready growth.",
+        mediaType: "image",
+        mediaSrc: "../media/hero-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+    ],
+  },
+  {
+    name: "Entertainment",
+    id: "entertainment",
+    headline: "Creating Destination Experiences",
+    description:
+      "Entertainment ventures focused on destination experiences, media opportunities, events, and lifestyle-driven growth.",
+    poster: "../media/growth-poster.png",
+    companies: [
+      {
+        name: "Boogoo Music Festival",
+        description:
+          "Event-focused entertainment shaped around destination experiences, audiences, and lifestyle-driven growth.",
+        mediaType: "image",
+        mediaSrc: "../media/growth-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+      {
+        name: "Mstar Airsoft",
+        description:
+          "Entertainment operations focused on active destination experiences, events, and audience engagement.",
+        mediaType: "image",
+        mediaSrc: "../media/hero-poster.png",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+      },
+    ],
+  },
+];
+
+const escapeHtml = (value) =>
+  String(value).replace(
+    /[&<>"']/g,
+    (character) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[character],
+  );
+
+const renderCompanyMedia = (company) => {
+  const label = `${company.name} media`;
+  const poster = company.poster || company.mediaSrc;
+
+  if (company.mediaType === "video") {
+    return `
+      <video
+        class="company-media-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="${escapeHtml(poster)}"
+        aria-label="${escapeHtml(label)}"
+      >
+        <source src="${escapeHtml(company.mediaSrc)}" type="video/mp4" />
+      </video>
+      <img src="${escapeHtml(poster)}" alt="" loading="lazy" aria-hidden="true" />
+    `;
+  }
+
+  return `<img src="${escapeHtml(company.mediaSrc)}" alt="${escapeHtml(label)}" loading="lazy" />`;
+};
+
+const renderBusinessSectors = () => {
+  if (!businessSectorsRoot) {
+    return;
+  }
+
+  const sectorLinks = businessSectors
+    .map((sector) => `<a href="#${sector.id}">${escapeHtml(sector.name)}</a>`)
+    .join("");
+
+  const sectorSections = businessSectors
+    .map((sector, sectorIndex) => {
+      const company = sector.companies[0];
+      const count = sector.companies.length;
+      const tabs = sector.companies
+        .map(
+          (companyItem, companyIndex) => `
+            <button
+              class="company-tab${companyIndex === 0 ? " is-active" : ""}"
+              type="button"
+              role="tab"
+              id="${sector.id}-tab-${companyIndex}"
+              aria-selected="${companyIndex === 0}"
+              aria-controls="${sector.id}-panel"
+              tabindex="${companyIndex === 0 ? "0" : "-1"}"
+              data-sector-index="${sectorIndex}"
+              data-company-index="${companyIndex}"
+            >
+              ${escapeHtml(companyItem.name)}
+            </button>
+          `,
+        )
+        .join("");
+      const options = sector.companies
+        .map(
+          (companyItem, companyIndex) =>
+            `<option value="${companyIndex}">${escapeHtml(companyItem.name)}</option>`,
+        )
+        .join("");
+      const previews = businessSectors
+        .filter((preview) => preview.id !== sector.id)
+        .map(
+          (preview) => `
+            <a class="sector-preview" href="#${preview.id}">
+              <span class="sector-preview-media">
+                <img src="${escapeHtml(preview.poster)}" alt="" loading="lazy" />
+              </span>
+              <span>${escapeHtml(preview.name)}</span>
+            </a>
+          `,
+        )
+        .join("");
+
+      return `
+        <section
+          class="sector-section business-sector"
+          id="${sector.id}"
+          aria-labelledby="${sector.id}-title"
+          data-sector-index="${sectorIndex}"
+          data-active-company="0"
+        >
+          <div class="sector-bg" aria-hidden="true">
+            <img src="${escapeHtml(sector.poster)}" alt="" loading="lazy" />
+          </div>
+          <div class="sector-copy sector-heading">
+            <p class="sector-label">${escapeHtml(sector.name)}</p>
+            <h2 id="${sector.id}-title">${escapeHtml(sector.headline)}</h2>
+            <p>${escapeHtml(sector.description)}</p>
+          </div>
+          <div class="company-tabs" role="tablist" aria-label="${escapeHtml(sector.name)} companies">
+            ${tabs}
+          </div>
+          <label class="company-selector">
+            <span>Company</span>
+            <select data-company-select data-sector-index="${sectorIndex}">
+              ${options}
+            </select>
+          </label>
+          <div
+            class="company-showcase"
+            id="${sector.id}-panel"
+            role="tabpanel"
+            aria-labelledby="${sector.id}-tab-0"
+            tabindex="0"
+          >
+            <div class="company-copy" data-company-copy>
+              <p class="company-count">${String(1).padStart(2, "0")} / ${String(count).padStart(2, "0")}</p>
+              <h3>${escapeHtml(company.name)}</h3>
+              <p>${escapeHtml(company.description)}</p>
+              <a class="outline-cta dark-outline" href="${escapeHtml(company.ctaHref)}">
+                <span>${escapeHtml(company.ctaLabel)}</span>
+                <span class="cta-arrow" aria-hidden="true"></span>
+              </a>
+            </div>
+            <div class="company-media" data-company-media>
+              ${renderCompanyMedia(company)}
+            </div>
+          </div>
+          <div class="company-controls" aria-label="${escapeHtml(sector.name)} company controls">
+            <button class="company-nav-button is-prev" type="button" aria-label="Previous company" data-company-prev data-sector-index="${sectorIndex}"></button>
+            <span data-company-total>${String(1).padStart(2, "0")} / ${String(count).padStart(2, "0")}</span>
+            <button class="company-nav-button is-next" type="button" aria-label="Next company" data-company-next data-sector-index="${sectorIndex}"></button>
+          </div>
+          <nav class="sector-previews" aria-label="Other business sectors">
+            ${previews}
+          </nav>
+        </section>
+      `;
+    })
+    .join("");
+
+  businessSectorsRoot.innerHTML = `
+    <nav class="sector-nav" aria-label="Business sectors">${sectorLinks}</nav>
+    ${sectorSections}
+  `;
+};
+
+const setActiveCompany = (sectorIndex, companyIndex) => {
+  const sector = businessSectors[sectorIndex];
+  const section = businessSectorsRoot?.querySelector(
+    `[data-sector-index="${sectorIndex}"]`,
+  );
+
+  if (!sector || !(section instanceof HTMLElement)) {
+    return;
+  }
+
+  const nextIndex =
+    (companyIndex + sector.companies.length) % sector.companies.length;
+  const company = sector.companies[nextIndex];
+  const companyCopy = section.querySelector("[data-company-copy]");
+  const companyMedia = section.querySelector("[data-company-media]");
+  const panel = section.querySelector('[role="tabpanel"]');
+  const select = section.querySelector("[data-company-select]");
+  const total = section.querySelector("[data-company-total]");
+  const countText = `${String(nextIndex + 1).padStart(2, "0")} / ${String(sector.companies.length).padStart(2, "0")}`;
+
+  section.dataset.activeCompany = String(nextIndex);
+  section.classList.add("is-changing");
+
+  if (companyCopy) {
+    companyCopy.innerHTML = `
+      <p class="company-count">${countText}</p>
+      <h3>${escapeHtml(company.name)}</h3>
+      <p>${escapeHtml(company.description)}</p>
+      <a class="outline-cta dark-outline" href="${escapeHtml(company.ctaHref)}">
+        <span>${escapeHtml(company.ctaLabel)}</span>
+        <span class="cta-arrow" aria-hidden="true"></span>
+      </a>
+    `;
+  }
+
+  if (companyMedia) {
+    companyMedia.innerHTML = renderCompanyMedia(company);
+  }
+
+  section.querySelectorAll("[data-company-index]").forEach((tab) => {
+    const isActive = Number(tab.dataset.companyIndex) === nextIndex;
+    tab.classList.toggle("is-active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+    tab.setAttribute("tabindex", isActive ? "0" : "-1");
+  });
+
+  if (panel) {
+    panel.setAttribute("aria-labelledby", `${sector.id}-tab-${nextIndex}`);
+  }
+
+  if (select instanceof HTMLSelectElement) {
+    select.value = String(nextIndex);
+  }
+
+  if (total) {
+    total.textContent = countText;
+  }
+
+  window.setTimeout(() => section.classList.remove("is-changing"), 180);
+};
+
+renderBusinessSectors();
+
+businessSectorsRoot?.addEventListener("click", (event) => {
+  const target = event.target;
+
+  if (!(target instanceof HTMLElement)) {
+    return;
+  }
+
+  const tab = target.closest("[data-company-index]");
+  const previous = target.closest("[data-company-prev]");
+  const next = target.closest("[data-company-next]");
+
+  if (tab instanceof HTMLElement) {
+    setActiveCompany(
+      Number(tab.dataset.sectorIndex),
+      Number(tab.dataset.companyIndex),
+    );
+    tab.focus();
+    return;
+  }
+
+  const control = previous || next;
+
+  if (control instanceof HTMLElement) {
+    const sectorIndex = Number(control.dataset.sectorIndex);
+    const section = businessSectorsRoot.querySelector(
+      `[data-sector-index="${sectorIndex}"]`,
+    );
+    const currentIndex = Number(section?.dataset.activeCompany || 0);
+    setActiveCompany(sectorIndex, currentIndex + (next ? 1 : -1));
+  }
+});
+
+businessSectorsRoot?.addEventListener("change", (event) => {
+  const target = event.target;
+
+  if (
+    target instanceof HTMLSelectElement &&
+    target.hasAttribute("data-company-select")
+  ) {
+    setActiveCompany(Number(target.dataset.sectorIndex), Number(target.value));
+  }
+});
+
+businessSectorsRoot?.addEventListener("keydown", (event) => {
+  const target = event.target;
+
+  if (
+    !(target instanceof HTMLElement) ||
+    !target.matches("[data-company-index]")
+  ) {
+    return;
+  }
+
+  if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
+    return;
+  }
+
+  event.preventDefault();
+
+  const sectorIndex = Number(target.dataset.sectorIndex);
+  const currentIndex = Number(target.dataset.companyIndex);
+  const lastIndex = businessSectors[sectorIndex].companies.length - 1;
+  const nextIndex =
+    event.key === "Home"
+      ? 0
+      : event.key === "End"
+        ? lastIndex
+        : currentIndex + (event.key === "ArrowRight" ? 1 : -1);
+
+  setActiveCompany(sectorIndex, nextIndex);
+  businessSectorsRoot
+    .querySelector(
+      `[data-sector-index="${sectorIndex}"] [data-company-index="${(nextIndex + lastIndex + 1) % (lastIndex + 1)}"]`,
+    )
+    ?.focus();
+});
+
 if (prefersReducedMotion) {
   document.querySelectorAll("video").forEach((video) => {
     video.removeAttribute("autoplay");

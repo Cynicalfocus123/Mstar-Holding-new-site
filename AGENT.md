@@ -1,5 +1,68 @@
 # Agent Changelog
 
+## 2026-06-18
+
+- Redesigned the Business page with an approved sector-with-company-tabs layout, mobile dropdown selector, company media area, smooth transitions, and multi-company support per sector.
+- Replaced the previous static Business sector list with a data-driven renderer for Real Estate, Food & Hospitality, Import / Export, Defense, E-commerce & Technology, and Entertainment.
+- Added separate selectable company entries for each required company, including Mstar Technology positioned under Hizoz.com in E-commerce & Technology.
+- Preserved the existing Business page header video source logic: phone portrait uses the mobile video, while desktop, tablet, and phone landscape use the desktop video.
+- Added keyboard-accessible company tabs, compact portrait mobile company selectors, previous/next company cycling controls, and small preview links for other sectors.
+- Kept the Mstar Holding visual identity: dark cinematic background, white typography, refined gold accents, no-box text treatment, outline CTA styling, and subtle transitions.
+- Kept Business page SEO metadata and JSON-LD in place while preserving crawlable sector/company text through rendered DOM and a `noscript` fallback.
+- Grammar-checked all new Business page copy before saving.
+
+## Files Changed
+
+- `business/index.html`
+- `src/main.js`
+- `src/styles.css`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\459e622b-7b53-4a1c-8321-b4f2d9cc1f5e\pasted-text.txt`
+- `Get-Content -LiteralPath AGENT.md`
+- `Get-Content -LiteralPath DESIGNER.md`
+- `git status --short --branch`
+- `rg --files`
+- `Get-Content -LiteralPath business\index.html -TotalCount 180`
+- `Get-Content -LiteralPath business\index.html -Tail 180`
+- `Select-String -Path business\index.html,src\main.js,src\styles.css -Pattern "business|sector|company|video|metadata|tabs|hero"`
+- `Get-Content -LiteralPath src\main.js`
+- `Get-Content -LiteralPath src\styles.css`
+- `npx.cmd prettier --write business/index.html src/main.js src/styles.css`
+- `npm.cmd run build`
+- `npm.cmd run lint`
+- `npm.cmd test`
+- `npm.cmd run dev -- --port 5173`
+- Browser/IAB checks at `http://127.0.0.1:5173/business/`
+
+## Build, Lint, And Test Status
+
+- Passed: `npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Browser/IAB confirmed `Business Portfolio | Mstar Holding`, one Business page H1, six rendered business sectors, no Vite overlay, no console warnings/errors, and no horizontal overflow.
+- Desktop confirmed company tabs are visible, the mobile selector is hidden, and tab/arrow interactions update active company name, description, count, media, and selected tab state.
+- Mobile portrait checks at 320px, 360px, 390px, and 430px confirmed the compact company dropdown is visible, tabs are hidden, media scales correctly, and the Business header uses the mobile video source.
+- Phone landscape and tablet checks confirmed horizontal tabs remain available and the Business header uses the desktop video source.
+- A mobile selector bug was found and fixed so native select changes update the active company content.
+
+## Tooling Notes
+
+- Serena was used for project activation and project memory checks.
+- Context7 was considered per project instructions, but the callable `resolve-library-id` / `query-docs` tools were not exposed after tool discovery; no fresh library/API documentation was needed for this static Vite patch.
+- Browser/IAB was used for rendered desktop, tablet, mobile, interaction, console, video-source, and overflow checks.
+
+## Next Steps
+
+- Replace placeholder company media paths with final approved company images or HTML5 videos.
+- Replace placeholder `View Company` href values when final company destination pages or links are available.
+
 ## 2026-06-17
 
 - Fixed Business page header video selection so phone portrait views use the mobile video while desktop, tablet, and phone landscape use the desktop video.
