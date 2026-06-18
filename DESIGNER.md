@@ -2,6 +2,15 @@
 
 ## 2026-06-18
 
+### Business Company Logo Support
+
+- Added optional company logo support to the Business page company renderer.
+- Logos render above the active company text when provided.
+- Header, footer, current CSS style, layout, tabs, dropdown, CTA, media, and no-box visual system were preserved.
+- Logo implementation is responsive and scales correctly across desktop, tablet, and mobile devices without affecting existing layouts.
+- Do not add logo images to the header, footer, navigation, tabs, media frame, sector headline area, or any new card or box.
+- If no final logo file exists for a company, do not add a live logo path; the renderer must skip the image and leave the current company content spacing unchanged.
+
 ### Business Sector Preview Removal
 
 - Removed repeated bottom sector preview rows from each Business page sector so each sector stands alone and users continue through the page by scrolling.

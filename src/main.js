@@ -94,6 +94,8 @@ window.addEventListener("pageshow", scheduleBusinessHeroVideoUpdate);
 
 const businessSectorsRoot = document.querySelector("[data-business-sectors]");
 
+// Company entries can optionally include `logo` and `logoAlt` when final logo
+// assets are added under public/media/logos.
 const businessSectors = [
   {
     name: "Real Estate",
@@ -113,6 +115,8 @@ const businessSectors = [
         poster: "../media/hero-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
+        // logo: "../media/logos/mstar-property.png",
+        // logoAlt: "Mstar Property logo",
       },
       {
         name: "Buyhomeforless",
@@ -323,6 +327,21 @@ const renderCompanyMedia = (company) => {
   return `<img src="${escapeHtml(company.mediaSrc)}" alt="${escapeHtml(label)}" loading="lazy" />`;
 };
 
+const renderCompanyLogo = (company) => {
+  if (!company.logo) {
+    return "";
+  }
+
+  return `
+    <img
+      class="business-company-logo"
+      src="${escapeHtml(company.logo)}"
+      alt="${escapeHtml(company.logoAlt || `${company.name} logo`)}"
+      loading="lazy"
+    />
+  `;
+};
+
 const renderBusinessSectors = () => {
   if (!businessSectorsRoot) {
     return;
@@ -396,6 +415,7 @@ const renderBusinessSectors = () => {
           >
             <div class="company-copy" data-company-copy>
               <p class="company-count">${String(1).padStart(2, "0")} / ${String(count).padStart(2, "0")}</p>
+              ${renderCompanyLogo(company)}
               <h3>${escapeHtml(company.name)}</h3>
               <p>${escapeHtml(company.description)}</p>
               <a class="outline-cta dark-outline" href="${escapeHtml(company.ctaHref)}">
@@ -449,6 +469,7 @@ const setActiveCompany = (sectorIndex, companyIndex) => {
   if (companyCopy) {
     companyCopy.innerHTML = `
       <p class="company-count">${countText}</p>
+      ${renderCompanyLogo(company)}
       <h3>${escapeHtml(company.name)}</h3>
       <p>${escapeHtml(company.description)}</p>
       <a class="outline-cta dark-outline" href="${escapeHtml(company.ctaHref)}">

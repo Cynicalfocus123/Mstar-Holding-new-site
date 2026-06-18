@@ -2,6 +2,58 @@
 
 ## 2026-06-18
 
+- Added optional company logo support to the Business page company renderer.
+- Logos render above the active company text when provided.
+- Header, footer, current CSS style, layout, tabs, dropdown, CTA, media, and no-box visual system were preserved.
+- Logo implementation is responsive and scales correctly across desktop, tablet, and mobile devices without affecting existing layouts.
+- No live logo paths were added because no final logo files exist in `public/media/logos/`; a commented example data shape was added for future logo assets.
+
+## Files Changed
+
+- `src/main.js`
+- `src/styles.css`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\a641a2a7-1041-46ff-8d5c-7c4b2f4ce3f1\pasted-text.txt`
+- `Get-Content -LiteralPath AGENT.md`
+- `Get-Content -LiteralPath DESIGNER.md`
+- `git status --short --branch`
+- `Get-ChildItem -Recurse -File public`
+- `Get-Content -LiteralPath src\main.js | Select-Object -Skip 80 -First 430`
+- `Select-String -Path src\main.js,src\styles.css -Pattern "company-copy|business-company-logo|logo|renderCompany|setActiveCompany|company-tabs|company-selector"`
+- `npx.cmd prettier --write src/main.js src/styles.css AGENT.md DESIGNER.md`
+- `npm.cmd run build`
+- `npm.cmd run lint`
+- `npm.cmd test`
+- Browser/IAB rendered checks at `http://127.0.0.1:5173/business/`
+
+## Build, Lint, And Test Status
+
+- Passed: `npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Browser/IAB confirmed the Business page still renders six sectors, desktop tabs remain visible, mobile portrait dropdown remains visible, CTA text remains `View Company`, company media remains in place, and no horizontal overflow is present.
+- Browser/IAB confirmed no `.business-company-logo` image renders when no logo is configured, no broken images appear, and mobile dropdown switching still updates the active company content.
+- Browser/IAB confirmed the phone portrait Business header still uses the mobile video source.
+
+## Tooling Notes
+
+- Browser/IAB was used for rendered desktop and mobile checks.
+- Context7 was not used because this patch did not require library, framework, SDK, API, CLI, or cloud service documentation.
+- Serena was not needed for this narrow renderer/CSS cleanup.
+
+## Next Steps
+
+- Add final company logo files under `public/media/logos/`, then add live `logo` and `logoAlt` fields to the relevant company data objects.
+
+## 2026-06-18
+
 - Removed repeated bottom sector preview rows from each Business page sector so each sector stands alone and users continue through the page by scrolling.
 - Removed generated bottom sector thumbnail/link markup from the Business page renderer.
 - Removed the now-unused sector preview CSS, responsive preview grid slots, and mobile preview scrolling rules.
