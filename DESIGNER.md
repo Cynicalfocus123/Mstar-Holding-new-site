@@ -2,6 +2,11 @@
 
 ## 2026-06-19
 
+### Foodonlines Business Video Update
+
+- Replaced Foodonlines.com company media with the newly uploaded Foodonlines video.
+- Preserved Foodonlines.com text, One Taste text/video, Real Estate company videos, company logos, company controls, header, footer, CTA, arrows, layout, SEO, and no-box visual system.
+
 ### Senior Home Business Video Update
 
 - Replaced Senior Home / SeniorHome.net company media with the uploaded senior care video.

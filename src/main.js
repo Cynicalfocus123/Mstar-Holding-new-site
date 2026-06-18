@@ -155,7 +155,7 @@ const businessSectors = [
         name: "Foodonlines.com",
         description: "We bring groceries to your door for less.",
         mediaType: "video",
-        mediaSrc: "../videos/business-foodonlines.mp4",
+        mediaSrc: "../videos/business-foodonlines-2.mp4",
         poster: "../media/operations-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
