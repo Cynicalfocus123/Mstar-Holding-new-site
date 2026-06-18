@@ -400,13 +400,6 @@ const renderBusinessSectors = () => {
           `,
         )
         .join("");
-      const options = sector.companies
-        .map(
-          (companyItem, companyIndex) =>
-            `<option value="${companyIndex}">${escapeHtml(companyItem.name)}</option>`,
-        )
-        .join("");
-
       return `
         <section
           class="sector-section business-sector"
@@ -426,12 +419,6 @@ const renderBusinessSectors = () => {
           <div class="company-tabs" role="tablist" aria-label="${escapeHtml(sector.name)} companies">
             ${tabs}
           </div>
-          <label class="company-selector">
-            <span>Company</span>
-            <select data-company-select data-sector-index="${sectorIndex}">
-              ${options}
-            </select>
-          </label>
           <div
             class="company-showcase"
             id="${sector.id}-panel"
@@ -485,7 +472,6 @@ const setActiveCompany = (sectorIndex, companyIndex) => {
   const companyCopy = section.querySelector("[data-company-copy]");
   const companyMedia = section.querySelector("[data-company-media]");
   const panel = section.querySelector('[role="tabpanel"]');
-  const select = section.querySelector("[data-company-select]");
   const total = section.querySelector("[data-company-total]");
   const countText = `${String(nextIndex + 1).padStart(2, "0")} / ${String(sector.companies.length).padStart(2, "0")}`;
 
@@ -518,10 +504,6 @@ const setActiveCompany = (sectorIndex, companyIndex) => {
 
   if (panel) {
     panel.setAttribute("aria-labelledby", `${sector.id}-tab-${nextIndex}`);
-  }
-
-  if (select instanceof HTMLSelectElement) {
-    select.value = String(nextIndex);
   }
 
   if (total) {
@@ -562,17 +544,6 @@ businessSectorsRoot?.addEventListener("click", (event) => {
     );
     const currentIndex = Number(section?.dataset.activeCompany || 0);
     setActiveCompany(sectorIndex, currentIndex + (next ? 1 : -1));
-  }
-});
-
-businessSectorsRoot?.addEventListener("change", (event) => {
-  const target = event.target;
-
-  if (
-    target instanceof HTMLSelectElement &&
-    target.hasAttribute("data-company-select")
-  ) {
-    setActiveCompany(Number(target.dataset.sectorIndex), Number(target.value));
   }
 });
 

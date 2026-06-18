@@ -2,6 +2,52 @@
 
 ## 2026-06-18
 
+- Replaced the mobile native company dropdown with text-style company controls.
+- Preserved latest company logo support.
+- Preserved Business page layout, header, footer, media, CTA, arrows, SEO, and no-box visual system.
+- Confirmed no bottom sector previews were restored.
+- Removed the Business company `<select>` renderer and reused the existing company tab buttons for mobile portrait.
+
+## Files Changed
+
+- `src/main.js`
+- `src/styles.css`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath AGENT.md`
+- `Get-Content -LiteralPath DESIGNER.md`
+- `git status --short --branch`
+- `Select-String -Path src\main.js,src\styles.css -Pattern "company-selector|company-tabs|data-company-select|business-company-logo|company-tab|role=\"tab\""`
+- `npx.cmd prettier --write src/main.js src/styles.css AGENT.md DESIGNER.md`
+- `npm.cmd run build`
+- `npm.cmd run lint`
+- `npm.cmd test`
+- Browser/IAB rendered checks at `http://127.0.0.1:5173/business/`
+
+## Build, Lint, And Test Status
+
+- Passed: `npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Browser/IAB confirmed desktop, tablet, mobile portrait, and mobile landscape use text-style company buttons with no native company `<select>` rendered.
+- Browser/IAB confirmed mobile portrait text-tab click updates the active company, placeholder logo, media, CTA, and count.
+- Browser/IAB confirmed desktop tabs still update the active company, placeholder logo, media, CTA, and count.
+- Browser/IAB confirmed arrows still cycle companies, no bottom sector previews were restored, no horizontal overflow is present, no Vite overlay appears, and no console warnings/errors appear.
+
+## Tooling Notes
+
+- Browser/IAB was used for rendered desktop, tablet, mobile portrait, mobile landscape, tab, arrow, console, and overflow checks.
+- Context7 was not used because this patch did not require library, framework, SDK, API, CLI, or cloud service documentation.
+- Serena was not needed for this narrow Business page UI fix.
+
+## 2026-06-18
+
 - Added placeholder logo support to Business page company renderer.
 - Each company now displays a placeholder logo above the active company text.
 - Real logos can be swapped in later by replacing files in `public/media/logos/`.

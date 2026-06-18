@@ -2,6 +2,15 @@
 
 ## 2026-06-18
 
+### Business Mobile Company Text Controls
+
+- Replaced the mobile native company dropdown with text-style company controls.
+- Preserved latest company logo support.
+- Preserved Business page layout, header, footer, media, CTA, arrows, SEO, and no-box visual system.
+- Confirmed no bottom sector previews were restored.
+- Mobile portrait company controls should use the same clean text-tab language as desktop, with active gold treatment and horizontal scrolling when needed.
+- Do not use a native `<select>` dropdown for the Business page company controls on mobile.
+
 ### Business Placeholder Logos
 
 - Added placeholder logo support to Business page company renderer.
@@ -42,11 +51,11 @@
 - Tabs update the active company name, description, media, CTA, selected tab state, and index count.
 - Keyboard behavior supports arrow, Home, and End navigation for company tabs.
 
-### Mobile Dropdown Behavior
+### Mobile Company Text Controls
 
-- Phone portrait uses a compact native company selector instead of cramped tabs.
-- The selector matches the dark and gold design language, stays within the viewport, and updates the active company content.
-- Mobile portrait order is sector label, headline, description, selector, full-width media, company copy, CTA, and bottom controls.
+- Phone portrait uses text-style company controls instead of a native browser dropdown.
+- The controls match the dark and gold design language, stay within the viewport, and update the active company content.
+- Mobile portrait order is sector label, headline, description, company text controls, full-width media, company copy, CTA, and bottom controls.
 
 ### Landscape Behavior
 

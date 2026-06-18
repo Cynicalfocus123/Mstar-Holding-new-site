@@ -1176,18 +1176,20 @@ h2 {
   .sector-section {
     grid-template-areas:
       "heading"
-      "selector"
+      "tabs"
       "media"
       "copy"
       "controls";
   }
 
   .company-tabs {
-    display: none;
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 18px;
   }
 
   .company-selector {
-    display: block;
+    display: none;
   }
 
   .company-media {
