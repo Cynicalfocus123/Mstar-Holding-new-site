@@ -2,6 +2,11 @@
 
 ## 2026-06-18
 
+### BuyHomeForLess Business Video
+
+- Added the uploaded BuyHomeForLess video to BuyHomeForLess company media only.
+- Preserved Mstar Property video, Senior Home video, company text, company logos, company controls, header, footer, CTA, arrows, layout, SEO, and no-box visual system.
+
 ### Real Estate Company Copy And Senior Home Video
 
 - Updated Real Estate company copy for Mstar Property, BuyHomeForLess, and Senior Home.

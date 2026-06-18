@@ -121,8 +121,9 @@ const businessSectors = [
         name: "BuyHomeForLess",
         description:
           "We offer a wide range of land, homes, and condos, from affordable properties to high-end real estate for sale, rent, and development opportunities.",
-        mediaType: "image",
-        mediaSrc: "../media/operations-poster.png",
+        mediaType: "video",
+        mediaSrc: "../videos/business-buyhomeforless.mp4",
+        poster: "../media/operations-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/buyhomeforless.svg",
