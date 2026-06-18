@@ -179,7 +179,7 @@ const businessSectors = [
         description:
           "Hospitality-adjacent support designed around comfort, accessibility, and quality daily living.",
         mediaType: "video",
-        mediaSrc: "../videos/business-seniorhome-private-nursing-hut.mp4",
+        mediaSrc: "../videos/business-hospitality-senior-home-care.mp4",
         poster: "../media/growth-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",

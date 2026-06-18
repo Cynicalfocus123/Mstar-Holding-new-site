@@ -2,6 +2,10 @@
 
 ## 2026-06-19
 
+- Replaced the Food & Hospitality / Hospitality SeniorHome.net video with the newly uploaded senior care video.
+- Preserved the Real Estate Senior Home media unchanged.
+- Preserved all other company videos, text, logos, company controls, header, footer, CTA, arrows, layout, SEO, and no-box visual system.
+
 - Added the uploaded private nursing hut video to Food & Hospitality Seniorhome.net company media.
 - Reverted Real Estate Senior Home company media back to the original `business-senior-home.mp4` video.
 - Preserved Business page layout, company text, logos, controls, CTA, arrows, header, footer, SEO, bottom preview removal, and no-box visual system.
