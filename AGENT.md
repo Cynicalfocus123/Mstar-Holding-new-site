@@ -2,6 +2,58 @@
 
 ## 2026-06-18
 
+- Added placeholder logo support to Business page company renderer.
+- Each company now displays a placeholder logo above the active company text.
+- Real logos can be swapped in later by replacing files in `public/media/logos/`.
+- Header, footer, current CSS style, layout, tabs, dropdown, CTA, media, and responsive behavior were preserved.
+- Added transparent placeholder SVG wordmark assets for every current Business page company.
+
+## Files Changed
+
+- `src/main.js`
+- `AGENT.md`
+- `DESIGNER.md`
+- `public/media/logos/*.svg`
+
+## Commands Run
+
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\548692e3-188f-49af-aae3-935a5276ebfb\pasted-text.txt`
+- `Get-Content -LiteralPath AGENT.md`
+- `Get-Content -LiteralPath DESIGNER.md`
+- `git status --short --branch`
+- `Get-ChildItem -Recurse -File public`
+- `Get-Content -LiteralPath src\main.js | Select-Object -Skip 80 -First 430`
+- `Select-String -Path src\main.js,src\styles.css -Pattern "company-copy|business-company-logo|logo|renderCompany|setActiveCompany|company-tabs|company-selector"`
+- `npx.cmd prettier --write src/main.js src/styles.css AGENT.md DESIGNER.md`
+- `npm.cmd run build`
+- `npm.cmd run lint`
+- `npm.cmd test`
+- Browser/IAB rendered checks at `http://127.0.0.1:5173/business/`
+
+## Build, Lint, And Test Status
+
+- Passed: `npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Browser/IAB confirmed placeholder logos render above active company text on desktop and phone portrait.
+- Browser/IAB confirmed mobile dropdown switching updates the active placeholder logo with the company name, description, media, CTA, and count.
+- Browser/IAB confirmed no broken images, no horizontal overflow, desktop tabs remain visible, mobile portrait dropdown remains visible, media placement remains unchanged, and the phone portrait Business header still uses the mobile video source.
+
+## Tooling Notes
+
+- Browser/IAB was used for rendered desktop and mobile checks.
+- Context7 was not used because this patch did not require library, framework, SDK, API, CLI, or cloud service documentation.
+- Serena was not needed for this narrow data/assets update.
+
+## Next Steps
+
+- Replace the transparent SVG placeholders in `public/media/logos/` with final approved logo files when available.
+
+## 2026-06-18
+
 - Added optional company logo support to the Business page company renderer.
 - Logos render above the active company text when provided.
 - Header, footer, current CSS style, layout, tabs, dropdown, CTA, media, and no-box visual system were preserved.

@@ -2,6 +2,14 @@
 
 ## 2026-06-18
 
+### Business Placeholder Logos
+
+- Added placeholder logo support to Business page company renderer.
+- Each company now displays a placeholder logo above the active company text.
+- Real logos can be swapped in later by replacing files in `public/media/logos/`.
+- Header, footer, current CSS style, layout, tabs, dropdown, CTA, media, and responsive behavior were preserved.
+- Placeholder logos must stay transparent, simple, premium, unboxed, and inside the existing company copy area only.
+
 ### Business Company Logo Support
 
 - Added optional company logo support to the Business page company renderer.
