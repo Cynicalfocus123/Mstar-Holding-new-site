@@ -2,6 +2,12 @@
 
 ## 2026-06-19
 
+### Hospitality Seniorhome Video Update
+
+- Added the uploaded private nursing hut video to Food & Hospitality Seniorhome.net company media.
+- Reverted Real Estate Senior Home company media back to the original `business-senior-home.mp4` video.
+- Preserved Business page layout, company text, logos, controls, CTA, arrows, header, footer, SEO, bottom preview removal, and no-box visual system.
+
 ### Foodonlines Business Video Update
 
 - Replaced Foodonlines.com company media with the newly uploaded Foodonlines video.

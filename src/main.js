@@ -134,7 +134,7 @@ const businessSectors = [
         description:
           "Asia and Thailand's leading senior care home developer, creating comfortable, affordable communities with spacious open-floor-plan designs tailored to the unique needs of seniors.",
         mediaType: "video",
-        mediaSrc: "../videos/business-senior-home-care.mp4",
+        mediaSrc: "../videos/business-senior-home.mp4",
         poster: "../media/growth-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -178,8 +178,9 @@ const businessSectors = [
         name: "Seniorhome.net",
         description:
           "Hospitality-adjacent support designed around comfort, accessibility, and quality daily living.",
-        mediaType: "image",
-        mediaSrc: "../media/growth-poster.png",
+        mediaType: "video",
+        mediaSrc: "../videos/business-seniorhome-private-nursing-hut.mp4",
+        poster: "../media/growth-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/seniorhome-net.svg",
