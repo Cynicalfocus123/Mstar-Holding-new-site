@@ -361,19 +361,6 @@ const renderBusinessSectors = () => {
             `<option value="${companyIndex}">${escapeHtml(companyItem.name)}</option>`,
         )
         .join("");
-      const previews = businessSectors
-        .filter((preview) => preview.id !== sector.id)
-        .map(
-          (preview) => `
-            <a class="sector-preview" href="#${preview.id}">
-              <span class="sector-preview-media">
-                <img src="${escapeHtml(preview.poster)}" alt="" loading="lazy" />
-              </span>
-              <span>${escapeHtml(preview.name)}</span>
-            </a>
-          `,
-        )
-        .join("");
 
       return `
         <section
@@ -425,9 +412,6 @@ const renderBusinessSectors = () => {
             <span data-company-total>${String(1).padStart(2, "0")} / ${String(count).padStart(2, "0")}</span>
             <button class="company-nav-button is-next" type="button" aria-label="Next company" data-company-next data-sector-index="${sectorIndex}"></button>
           </div>
-          <nav class="sector-previews" aria-label="Other business sectors">
-            ${previews}
-          </nav>
         </section>
       `;
     })

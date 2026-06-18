@@ -2,14 +2,65 @@
 
 ## 2026-06-18
 
+- Removed repeated bottom sector preview rows from each Business page sector so each sector stands alone and users continue through the page by scrolling.
+- Removed generated bottom sector thumbnail/link markup from the Business page renderer.
+- Removed the now-unused sector preview CSS, responsive preview grid slots, and mobile preview scrolling rules.
+- Preserved the approved sector-with-company-tabs layout, company media, desktop tabs, mobile dropdown selector, company switching, page count/arrows, SEO metadata, and Business header responsive video logic.
+
+## 2026-06-18
+
 - Redesigned the Business page with an approved sector-with-company-tabs layout, mobile dropdown selector, company media area, smooth transitions, and multi-company support per sector.
 - Replaced the previous static Business sector list with a data-driven renderer for Real Estate, Food & Hospitality, Import / Export, Defense, E-commerce & Technology, and Entertainment.
 - Added separate selectable company entries for each required company, including Mstar Technology positioned under Hizoz.com in E-commerce & Technology.
 - Preserved the existing Business page header video source logic: phone portrait uses the mobile video, while desktop, tablet, and phone landscape use the desktop video.
-- Added keyboard-accessible company tabs, compact portrait mobile company selectors, previous/next company cycling controls, and small preview links for other sectors.
+- Added keyboard-accessible company tabs, compact portrait mobile company selectors, previous/next company cycling controls, and standalone sector sections that continue naturally by page scroll.
 - Kept the Mstar Holding visual identity: dark cinematic background, white typography, refined gold accents, no-box text treatment, outline CTA styling, and subtle transitions.
 - Kept Business page SEO metadata and JSON-LD in place while preserving crawlable sector/company text through rendered DOM and a `noscript` fallback.
 - Grammar-checked all new Business page copy before saving.
+
+## Files Changed
+
+- `src/main.js`
+- `src/styles.css`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `git status --short --branch`
+- `Get-Content -LiteralPath src\main.js | Select-Object -First 220`
+- `Select-String -Path src\main.js,src\styles.css,AGENT.md,DESIGNER.md -Pattern "preview|SectorPreview|sector-previews|sector thumbnail|Other sector|bottom sector"`
+- `Get-Content -LiteralPath src\main.js | Select-Object -Skip 330 -First 130`
+- `Get-Content -LiteralPath src\styles.css | Select-Object -Skip 520 -First 400`
+- `npx.cmd prettier --write src/main.js src/styles.css AGENT.md DESIGNER.md`
+- `npm.cmd run build`
+- `npm.cmd run lint`
+- `npm.cmd test`
+- Browser/IAB checks at `http://127.0.0.1:5173/business/`
+- Browser/IAB rendered state checks for desktop and 390px phone portrait
+
+## Build, Lint, And Test Status
+
+- Passed: `npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Browser/IAB confirmed no `.sector-previews` or `.sector-preview` elements render on the Business page.
+- Browser/IAB confirmed six sector sections still render, desktop company tabs remain visible, mobile portrait dropdown remains available, company controls remain present, no Vite overlay appears, no console warnings/errors appear, and no horizontal overflow is present.
+
+## Tooling Notes
+
+- Browser/IAB was used for rendered checks.
+- Serena was not needed for this narrow cleanup.
+- Context7 was not used because this patch did not require library, framework, SDK, API, CLI, or cloud service documentation.
+
+## Next Steps
+
+- Replace placeholder company media and `View Company` links when final approved assets and destinations are available.
+
+## 2026-06-18 Previous Patch Details
 
 ## Files Changed
 

@@ -541,14 +541,12 @@ h2 {
 }
 
 .sector-nav::-webkit-scrollbar,
-.company-tabs::-webkit-scrollbar,
-.sector-previews::-webkit-scrollbar {
+.company-tabs::-webkit-scrollbar {
   display: none;
 }
 
 .sector-nav a,
-.company-tab,
-.sector-preview {
+.company-tab {
   position: relative;
   color: rgba(246, 243, 236, 0.78);
   font-size: clamp(0.88rem, 1vw, 1rem);
@@ -583,9 +581,7 @@ h2 {
 .sector-nav a:focus-visible,
 .company-tab:hover,
 .company-tab:focus-visible,
-.company-tab.is-active,
-.sector-preview:hover,
-.sector-preview:focus-visible {
+.company-tab.is-active {
   color: var(--ink);
   transform: translateY(-1px);
 }
@@ -607,8 +603,7 @@ h2 {
     "heading heading"
     "tabs tabs"
     "copy media"
-    "controls media"
-    "previews previews";
+    "controls media";
   gap: clamp(24px, 4vw, 54px) clamp(36px, 7vw, 116px);
   align-items: center;
   min-height: clamp(760px, 92svh, 1060px);
@@ -732,8 +727,7 @@ h2 {
 
 .company-selector select:focus-visible,
 .company-tab:focus-visible,
-.company-nav-button:focus-visible,
-.sector-preview:focus-visible {
+.company-nav-button:focus-visible {
   outline: 1px solid var(--gold-strong);
   outline-offset: 5px;
 }
@@ -862,44 +856,6 @@ h2 {
   border-color: var(--gold-strong);
   background: rgba(201, 167, 106, 0.1);
   transform: translateY(-1px);
-}
-
-.sector-previews {
-  grid-area: previews;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 24px);
-  padding-top: clamp(18px, 3vw, 32px);
-  border-top: 1px solid rgba(246, 243, 236, 0.12);
-}
-
-.sector-preview {
-  display: grid;
-  gap: 12px;
-  min-width: 0;
-}
-
-.sector-preview-media {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.sector-preview-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.68;
-  transition:
-    opacity 220ms ease,
-    transform 220ms ease;
-}
-
-.sector-preview:hover img,
-.sector-preview:focus-visible img {
-  opacity: 0.9;
-  transform: scale(1.04);
 }
 
 .outline-cta .cta-arrow {
@@ -1073,17 +1029,12 @@ h2 {
       "tabs"
       "copy"
       "media"
-      "controls"
-      "previews";
+      "controls";
     min-height: auto;
   }
 
   .company-media {
     min-height: clamp(300px, 58vw, 520px);
-  }
-
-  .sector-previews {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -1201,18 +1152,6 @@ h2 {
     font-size: clamp(1.9rem, 9vw, 3.25rem);
   }
 
-  .sector-previews {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: none;
-  }
-
-  .sector-preview {
-    flex: 0 0 min(190px, 58vw);
-  }
-
   .business-cta .outline-cta {
     flex: 0 1 auto;
   }
@@ -1230,8 +1169,7 @@ h2 {
       "selector"
       "media"
       "copy"
-      "controls"
-      "previews";
+      "controls";
   }
 
   .company-tabs {

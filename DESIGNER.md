@@ -2,11 +2,19 @@
 
 ## 2026-06-18
 
+### Business Sector Preview Removal
+
+- Removed repeated bottom sector preview rows from each Business page sector so each sector stands alone and users continue through the page by scrolling.
+- Do not include bottom sector preview thumbnails or links.
+- Each sector stands on its own, and users continue to the next sector by scrolling.
+- Do not add `SectorPreviewLinks`, bottom sector preview rows, sector thumbnail strips, small preview thumbnails, or repeated links to other sectors inside each sector section.
+- Keep Business sector navigation at the top of the Business content, company tabs on desktop, the mobile company dropdown, company media, active company copy, CTA buttons, and company count/arrows.
+
 ### Approved Business Page Option 2 Layout
 
 - The Business page now uses the approved Option 2 direction: Sector with Company Tabs.
 - The Business page video header stays first, followed by premium full-width sector sections rendered from data.
-- Each sector presents a small gold sector label, a large white headline, a short description, company controls, active company copy, active company media, and preview links to other sectors.
+- Each sector presents a small gold sector label, a large white headline, a short description, company controls, active company copy, and active company media.
 - The layout supports multiple companies per sector without hard-coding individual section markup.
 
 ### Desktop Tabs Behavior
@@ -46,7 +54,7 @@
 
 - Text must sit directly on the cinematic page background or section scrim.
 - Do not add cards, boxed text panels, white containers, dashboard modules, or boxed backgrounds behind copy.
-- Allowed framing is limited to media frames, buttons, thin dividers, gold tab underlines, and small sector preview media.
+- Allowed framing is limited to media frames, buttons, thin dividers, and gold tab underlines.
 
 ### SEO Requirement
 
