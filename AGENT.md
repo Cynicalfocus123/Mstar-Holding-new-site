@@ -1,5 +1,10 @@
 # Agent Changelog
 
+## 2026-06-19
+
+- Replaced Senior Home / SeniorHome.net company media with the uploaded senior care video.
+- Preserved Mstar Property video, BuyHomeForLess video, company text, company logos, company controls, header, footer, CTA, arrows, layout, SEO, and no-box visual system.
+
 ## 2026-06-18
 
 - Enlarged Business page sector name text so each sector title visually reads as a major section heading.

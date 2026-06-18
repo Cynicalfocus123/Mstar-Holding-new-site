@@ -134,7 +134,7 @@ const businessSectors = [
         description:
           "Asia and Thailand's leading senior care home developer, creating comfortable, affordable communities with spacious open-floor-plan designs tailored to the unique needs of seniors.",
         mediaType: "video",
-        mediaSrc: "../videos/business-senior-home.mp4",
+        mediaSrc: "../videos/business-senior-home-care.mp4",
         poster: "../media/growth-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",

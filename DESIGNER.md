@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-06-19
+
+### Senior Home Business Video Update
+
+- Replaced Senior Home / SeniorHome.net company media with the uploaded senior care video.
+- Preserved Mstar Property video, BuyHomeForLess video, company text, company logos, company controls, header, footer, CTA, arrows, layout, SEO, and no-box visual system.
+
 ## 2026-06-18
 
 ### Business Sector Title Enlargement
