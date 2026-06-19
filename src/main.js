@@ -114,7 +114,7 @@ const businessSectors = [
         poster: "../media/hero-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
-        logo: "../media/logos/mstar-property.svg",
+        logo: "../media/logos/mstar-property-logo.png",
         logoAlt: "Mstar Property logo",
       },
       {
@@ -126,8 +126,8 @@ const businessSectors = [
         poster: "../media/operations-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
-        logo: "../media/logos/buyhomeforless.svg",
-        logoAlt: "Buyhomeforless logo",
+        logo: "../media/logos/buyhomeforless-logo.png",
+        logoAlt: "BuyHomeForLess logo",
       },
       {
         name: "Senior Home",
@@ -159,7 +159,7 @@ const businessSectors = [
         poster: "../media/operations-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
-        logo: "../media/logos/foodonlines.svg",
+        logo: "../media/logos/foodonlines-logo.png",
         logoAlt: "Foodonlines.com logo",
       },
       {
@@ -238,7 +238,7 @@ const businessSectors = [
         poster: "../media/hero-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
-        logo: "../media/logos/mstar-defense.svg",
+        logo: "../media/logos/mstar-defense-logo.png",
         logoAlt: "Mstar Defense logo",
       },
     ],
@@ -259,7 +259,7 @@ const businessSectors = [
         mediaSrc: "../media/operations-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
-        logo: "../media/logos/foodonlines.svg",
+        logo: "../media/logos/foodonlines-logo.png",
         logoAlt: "Foodonlines.com logo",
       },
       {
