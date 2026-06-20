@@ -2,6 +2,9 @@
 
 ## 2026-06-21
 
+- Adjusted desktop-only Business page layout so sector titles use less horizontal space and company media/video boxes render wider.
+- Preserved tablet/mobile layout, company text, company logo placement, company logo size, CTA styling, sticky desktop sector behavior, spacing, hero, header, footer, SEO, and no-box visual system.
+
 - Added uploaded Business page videos for Mstar Airsoft, Mstar Technology, and Boogoo.
 - Preserved all other company videos, logos, text, CTA links, sticky sector page-scroll behavior, bright Business page layout, hero, header, footer, SEO, and no-box visual system.
 - Confirmed all new company videos scale correctly across desktop, tablet, mobile, and mobile landscape.
