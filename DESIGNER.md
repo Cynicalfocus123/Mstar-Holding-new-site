@@ -2,6 +2,13 @@
 
 ## 2026-06-20
 
+### Business Logo Scale And SeniorCaring Logos
+
+- Increased Business page active company logo sizing so all company logos remain large and readable, matching the Foodonlines.com visual scale.
+- Added the SeniorCaring.net logo to both the Real Estate Senior Home and Food & Hospitality SeniorHome.net company entries.
+- Reduced company name heading size so sector titles remain the primary visual anchor.
+- Preserved hero, header, footer, company videos, CTA, SEO, responsive layout, and no-box visual system.
+
 ### Business Company Hierarchy Refinement
 
 - Reduced Business page active company logo size and company name heading size so sector titles remain the primary visual anchor.

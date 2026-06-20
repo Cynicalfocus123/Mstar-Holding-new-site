@@ -709,7 +709,7 @@ h2 {
   width: min(620px, 100%);
   margin: 10px 0 0;
   color: #111;
-  font-size: clamp(1.72rem, 3.15vw, 3.35rem);
+  font-size: clamp(1.55rem, 2.65vw, 2.85rem);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.04;
@@ -718,11 +718,11 @@ h2 {
 .business-company-logo {
   display: block;
   width: auto;
-  max-width: min(170px, 100%);
-  max-height: 62px;
+  max-width: min(320px, 100%);
+  max-height: 150px;
   height: auto;
   object-fit: contain;
-  margin: 0 0 18px;
+  margin: 0 0 20px;
 }
 
 .company-action {
@@ -1093,7 +1093,7 @@ h2 {
   }
 
   .company-copy h3 {
-    font-size: clamp(1.55rem, 7.2vw, 2.55rem);
+    font-size: clamp(1.45rem, 6.2vw, 2.25rem);
   }
 
   .business-cta .outline-cta {
