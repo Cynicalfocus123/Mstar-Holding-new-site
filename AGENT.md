@@ -2,6 +2,9 @@
 
 ## 2026-06-20
 
+- Replaced the Business page Mstar Property logo with the supplied black-background logo version.
+- Preserved the existing Business page logo mapping, layout, videos, hero, header, footer, CTA, SEO, and company copy.
+
 - Removed internal Business sector/company scrolling so all companies now scroll with the main page flow.
 - Fixed tablet Business page text alignment and responsive wrapping.
 - Normalized active company logo sizing to match the Boogoo Music Festival visual scale, including Mstar Technology.

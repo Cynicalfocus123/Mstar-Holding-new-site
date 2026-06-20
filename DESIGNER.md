@@ -2,6 +2,11 @@
 
 ## 2026-06-20
 
+### Mstar Property Black Background Logo
+
+- Replaced the Business page Mstar Property logo with the supplied black-background logo version.
+- Preserved the existing Business page logo mapping, layout, videos, hero, header, footer, CTA, SEO, and company copy.
+
 ### Business Main-Flow Company Layout And Logo Normalization
 
 - Removed internal Business sector/company scrolling so all companies now scroll with the main page flow.
