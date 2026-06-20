@@ -2,6 +2,11 @@
 
 ## 2026-06-20
 
+- Replaced Business page click-to-switch company tabs with stacked scrollable company blocks inside each sector.
+- Each company now appears visibly in sequence with its existing logo, text, media/video, and CTA.
+- Removed company selector/tabs as reveal controls while preserving the bright Business page layout, hero, header, footer, videos, logos, SEO, and no-box visual system.
+- Confirmed desktop, tablet, and mobile layouts scroll naturally with no horizontal overflow.
+
 - Added real Business page logos for American Buying Service, Boogoo, Hizoz, ABS Fulfillment, Mstar Technology, Mstar Defense, and Mstar Airsoft.
 - Increased active company logo display size by about 30%.
 - Preserved mobile text-only company selectors, company videos, bright Business page layout, hero, header, footer, CTA, arrows, SEO, and no-box visual system.

@@ -2,6 +2,13 @@
 
 ## 2026-06-20
 
+### Business Stacked Company Sections
+
+- Replaced Business page click-to-switch company tabs with stacked scrollable company blocks inside each sector.
+- Each company now appears visibly in sequence with its existing logo, text, media/video, and CTA.
+- Removed company selector/tabs as reveal controls while preserving the bright Business page layout, hero, header, footer, videos, logos, SEO, and no-box visual system.
+- Confirmed desktop, tablet, and mobile layouts scroll naturally with no horizontal overflow.
+
 ### Remaining Business Company Logos
 
 - Added real Business page logos for American Buying Service, Boogoo, Hizoz, ABS Fulfillment, Mstar Technology, Mstar Defense, and Mstar Airsoft.

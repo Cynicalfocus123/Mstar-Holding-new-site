@@ -372,6 +372,25 @@ const renderCompanyLogo = (company) => {
   `;
 };
 
+const renderCompanyBlock = (company) => `
+  <article class="company-block">
+    <div class="company-copy">
+      ${renderCompanyLogo(company)}
+      <h3>${escapeHtml(company.name)}</h3>
+      <p>${escapeHtml(company.description)}</p>
+    </div>
+    <div class="company-media">
+      ${renderCompanyMedia(company)}
+    </div>
+    <div class="company-action">
+      <a class="outline-cta dark-outline" href="${escapeHtml(company.ctaHref)}">
+        <span>${escapeHtml(company.ctaLabel)}</span>
+        <span class="cta-arrow" aria-hidden="true"></span>
+      </a>
+    </div>
+  </article>
+`;
+
 const playCompanyMediaVideos = (root = document) => {
   if (prefersReducedMotion) {
     return;
@@ -404,35 +423,13 @@ const renderBusinessSectors = () => {
     .join("");
 
   const sectorSections = businessSectors
-    .map((sector, sectorIndex) => {
-      const company = sector.companies[0];
-      const count = sector.companies.length;
-      const tabs = sector.companies
-        .map(
-          (companyItem, companyIndex) => `
-            <button
-              class="company-tab${companyIndex === 0 ? " is-active" : ""}"
-              type="button"
-              role="tab"
-              id="${sector.id}-tab-${companyIndex}"
-              aria-selected="${companyIndex === 0}"
-              aria-controls="${sector.id}-panel"
-              tabindex="${companyIndex === 0 ? "0" : "-1"}"
-              data-sector-index="${sectorIndex}"
-              data-company-index="${companyIndex}"
-            >
-              <span>${escapeHtml(companyItem.name)}</span>
-            </button>
-          `,
-        )
-        .join("");
+    .map((sector) => {
+      const companyBlocks = sector.companies.map(renderCompanyBlock).join("");
       return `
         <section
           class="sector-section business-sector"
           id="${sector.id}"
           aria-label="${escapeHtml(sector.name)}"
-          data-sector-index="${sectorIndex}"
-          data-active-company="0"
         >
           <div class="sector-bg" aria-hidden="true">
             <img src="${escapeHtml(sector.poster)}" alt="" loading="lazy" />
@@ -440,33 +437,8 @@ const renderBusinessSectors = () => {
           <div class="sector-copy sector-heading">
             <p class="sector-label">${escapeHtml(sector.name)}</p>
           </div>
-          <div class="company-tabs" role="tablist" aria-label="${escapeHtml(sector.name)} companies">
-            ${tabs}
-          </div>
-          <div
-            class="company-showcase"
-            id="${sector.id}-panel"
-            role="tabpanel"
-            aria-labelledby="${sector.id}-tab-0"
-            tabindex="0"
-          >
-            <div class="company-copy" data-company-copy>
-              ${renderCompanyLogo(company)}
-              <h3>${escapeHtml(company.name)}</h3>
-              <p>${escapeHtml(company.description)}</p>
-              <a class="outline-cta dark-outline" href="${escapeHtml(company.ctaHref)}">
-                <span>${escapeHtml(company.ctaLabel)}</span>
-                <span class="cta-arrow" aria-hidden="true"></span>
-              </a>
-            </div>
-            <div class="company-media" data-company-media>
-              ${renderCompanyMedia(company)}
-            </div>
-          </div>
-          <div class="company-controls" aria-label="${escapeHtml(sector.name)} company controls">
-            <button class="company-nav-button is-prev" type="button" aria-label="Previous company" data-company-prev data-sector-index="${sectorIndex}"></button>
-            <span data-company-total>${String(1).padStart(2, "0")} / ${String(count).padStart(2, "0")}</span>
-            <button class="company-nav-button is-next" type="button" aria-label="Next company" data-company-next data-sector-index="${sectorIndex}"></button>
+          <div class="company-list">
+            ${companyBlocks}
           </div>
         </section>
       `;
@@ -479,131 +451,8 @@ const renderBusinessSectors = () => {
   `;
 };
 
-const setActiveCompany = (sectorIndex, companyIndex) => {
-  const sector = businessSectors[sectorIndex];
-  const section = businessSectorsRoot?.querySelector(
-    `[data-sector-index="${sectorIndex}"]`,
-  );
-
-  if (!sector || !(section instanceof HTMLElement)) {
-    return;
-  }
-
-  const nextIndex =
-    (companyIndex + sector.companies.length) % sector.companies.length;
-  const company = sector.companies[nextIndex];
-  const companyCopy = section.querySelector("[data-company-copy]");
-  const companyMedia = section.querySelector("[data-company-media]");
-  const panel = section.querySelector('[role="tabpanel"]');
-  const total = section.querySelector("[data-company-total]");
-  const countText = `${String(nextIndex + 1).padStart(2, "0")} / ${String(sector.companies.length).padStart(2, "0")}`;
-
-  section.dataset.activeCompany = String(nextIndex);
-  section.classList.add("is-changing");
-
-  if (companyCopy) {
-    companyCopy.innerHTML = `
-      ${renderCompanyLogo(company)}
-      <h3>${escapeHtml(company.name)}</h3>
-      <p>${escapeHtml(company.description)}</p>
-      <a class="outline-cta dark-outline" href="${escapeHtml(company.ctaHref)}">
-        <span>${escapeHtml(company.ctaLabel)}</span>
-        <span class="cta-arrow" aria-hidden="true"></span>
-      </a>
-    `;
-  }
-
-  if (companyMedia) {
-    companyMedia.innerHTML = renderCompanyMedia(company);
-    playCompanyMediaVideos(companyMedia);
-  }
-
-  section.querySelectorAll("[data-company-index]").forEach((tab) => {
-    const isActive = Number(tab.dataset.companyIndex) === nextIndex;
-    tab.classList.toggle("is-active", isActive);
-    tab.setAttribute("aria-selected", String(isActive));
-    tab.setAttribute("tabindex", isActive ? "0" : "-1");
-  });
-
-  if (panel) {
-    panel.setAttribute("aria-labelledby", `${sector.id}-tab-${nextIndex}`);
-  }
-
-  if (total) {
-    total.textContent = countText;
-  }
-
-  window.setTimeout(() => section.classList.remove("is-changing"), 180);
-};
-
 renderBusinessSectors();
 playCompanyMediaVideos(businessSectorsRoot);
-
-businessSectorsRoot?.addEventListener("click", (event) => {
-  const target = event.target;
-
-  if (!(target instanceof HTMLElement)) {
-    return;
-  }
-
-  const tab = target.closest("[data-company-index]");
-  const previous = target.closest("[data-company-prev]");
-  const next = target.closest("[data-company-next]");
-
-  if (tab instanceof HTMLElement) {
-    setActiveCompany(
-      Number(tab.dataset.sectorIndex),
-      Number(tab.dataset.companyIndex),
-    );
-    tab.focus();
-    return;
-  }
-
-  const control = previous || next;
-
-  if (control instanceof HTMLElement) {
-    const sectorIndex = Number(control.dataset.sectorIndex);
-    const section = businessSectorsRoot.querySelector(
-      `[data-sector-index="${sectorIndex}"]`,
-    );
-    const currentIndex = Number(section?.dataset.activeCompany || 0);
-    setActiveCompany(sectorIndex, currentIndex + (next ? 1 : -1));
-  }
-});
-
-businessSectorsRoot?.addEventListener("keydown", (event) => {
-  const target = event.target;
-
-  if (
-    !(target instanceof HTMLElement) ||
-    !target.matches("[data-company-index]")
-  ) {
-    return;
-  }
-
-  if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
-    return;
-  }
-
-  event.preventDefault();
-
-  const sectorIndex = Number(target.dataset.sectorIndex);
-  const currentIndex = Number(target.dataset.companyIndex);
-  const lastIndex = businessSectors[sectorIndex].companies.length - 1;
-  const nextIndex =
-    event.key === "Home"
-      ? 0
-      : event.key === "End"
-        ? lastIndex
-        : currentIndex + (event.key === "ArrowRight" ? 1 : -1);
-
-  setActiveCompany(sectorIndex, nextIndex);
-  businessSectorsRoot
-    .querySelector(
-      `[data-sector-index="${sectorIndex}"] [data-company-index="${(nextIndex + lastIndex + 1) % (lastIndex + 1)}"]`,
-    )
-    ?.focus();
-});
 
 if (prefersReducedMotion) {
   document.querySelectorAll("video").forEach((video) => {
