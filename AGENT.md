@@ -2,6 +2,10 @@
 
 ## 2026-06-21
 
+- Corrected desktop-only Business company media sizing so video/media frames render wider without increasing height.
+- Adjusted desktop grid/aspect-ratio behavior only.
+- Preserved tablet/mobile layout, company text, logo placement, logo size, CTA, sticky desktop sector behavior, sector spacing, hero, header, footer, SEO, and no-box visual system.
+
 - Adjusted desktop-only Business page layout so sector titles use less horizontal space and company media/video boxes render wider.
 - Preserved tablet/mobile layout, company text, company logo placement, company logo size, CTA styling, sticky desktop sector behavior, spacing, hero, header, footer, SEO, and no-box visual system.
 
