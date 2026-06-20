@@ -2,6 +2,12 @@
 
 ## 2026-06-20
 
+### Business Selector Text-Only Controls
+
+- Removed logos/icons/images from Business page company selector boxes across desktop, tablet, and mobile.
+- Company selector boxes now display company names only.
+- Preserved active company logos above company content, media, CTA, arrows, header, footer, layout, SEO, and no-box visual system.
+
 ### Mobile Business Selector Refinement
 
 - Reduced mobile Business page company selector button height.

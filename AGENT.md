@@ -2,6 +2,10 @@
 
 ## 2026-06-20
 
+- Removed logos/icons/images from Business page company selector boxes across desktop, tablet, and mobile.
+- Company selector boxes now display company names only.
+- Preserved active company logos above company content, media, CTA, arrows, header, footer, layout, SEO, and no-box visual system.
+
 - Reduced mobile Business page company selector button height.
 - Removed logos/icons from inside mobile selector buttons so they now show text only.
 - Preserved desktop/tablet layout, active company logo, media, CTA, header, footer, and overall Business page structure.

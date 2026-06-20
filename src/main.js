@@ -372,22 +372,6 @@ const renderCompanyLogo = (company) => {
   `;
 };
 
-const renderCompanyTabLogo = (company) => {
-  if (!company.logo) {
-    return "";
-  }
-
-  return `
-    <img
-      class="company-tab-logo"
-      src="${escapeHtml(company.logo)}"
-      alt=""
-      loading="lazy"
-      aria-hidden="true"
-    />
-  `;
-};
-
 const playCompanyMediaVideos = (root = document) => {
   if (prefersReducedMotion) {
     return;
@@ -437,7 +421,6 @@ const renderBusinessSectors = () => {
               data-sector-index="${sectorIndex}"
               data-company-index="${companyIndex}"
             >
-              ${renderCompanyTabLogo(companyItem)}
               <span>${escapeHtml(companyItem.name)}</span>
             </button>
           `,
