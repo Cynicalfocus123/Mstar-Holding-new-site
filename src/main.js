@@ -434,11 +434,13 @@ const renderBusinessSectors = () => {
           <div class="sector-bg" aria-hidden="true">
             <img src="${escapeHtml(sector.poster)}" alt="" loading="lazy" />
           </div>
-          <div class="sector-copy sector-heading">
-            <p class="sector-label">${escapeHtml(sector.name)}</p>
-          </div>
-          <div class="company-list">
-            ${companyBlocks}
+          <div class="business-sector-layout">
+            <div class="sector-copy sector-heading">
+              <h2 class="sector-label">${escapeHtml(sector.name)}</h2>
+            </div>
+            <div class="company-list">
+              ${companyBlocks}
+            </div>
           </div>
         </section>
       `;

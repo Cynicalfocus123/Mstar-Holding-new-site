@@ -2,6 +2,13 @@
 
 ## 2026-06-20
 
+### Business Sticky Sector Titles
+
+- Updated Business page sectors so each sector title stays stationary/sticky while its company blocks scroll vertically beside it.
+- Removed click-to-reveal company tabs/selectors as the main company browsing system.
+- Preserved existing company logos, text, videos/media, CTA links, bright Business page layout, hero, header, footer, SEO, and no-box visual system.
+- Confirmed desktop, tablet, and mobile layouts work without horizontal overflow.
+
 ### Business Stacked Company Sections
 
 - Replaced Business page click-to-switch company tabs with stacked scrollable company blocks inside each sector.

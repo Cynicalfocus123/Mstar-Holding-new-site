@@ -2,6 +2,11 @@
 
 ## 2026-06-20
 
+- Updated Business page sectors so each sector title stays stationary/sticky while its company blocks scroll vertically beside it.
+- Removed click-to-reveal company tabs/selectors as the main company browsing system.
+- Preserved existing company logos, text, videos/media, CTA links, bright Business page layout, hero, header, footer, SEO, and no-box visual system.
+- Confirmed desktop, tablet, and mobile layouts work without horizontal overflow.
+
 - Replaced Business page click-to-switch company tabs with stacked scrollable company blocks inside each sector.
 - Each company now appears visibly in sequence with its existing logo, text, media/video, and CTA.
 - Removed company selector/tabs as reveal controls while preserving the bright Business page layout, hero, header, footer, videos, logos, SEO, and no-box visual system.

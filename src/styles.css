@@ -590,7 +590,7 @@ h2 {
   position: relative;
   display: block;
   padding: clamp(88px, 12vw, 150px) var(--gutter);
-  overflow: hidden;
+  overflow: visible;
   isolation: isolate;
   background: transparent;
 }
@@ -612,9 +612,19 @@ h2 {
   min-width: 0;
 }
 
+.business-sector-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(42px, 7vw, 120px);
+  align-items: start;
+  min-height: clamp(660px, 78svh, 900px);
+}
+
 .sector-heading {
-  grid-area: heading;
   width: min(1040px, 100%);
+  position: sticky;
+  top: clamp(90px, 10vh, 140px);
+  align-self: start;
 }
 
 .sector-label {
@@ -663,17 +673,24 @@ h2 {
 .company-list {
   display: grid;
   gap: clamp(72px, 10vw, 132px);
-  margin-top: clamp(48px, 7vw, 92px);
+  min-width: 0;
+  max-height: clamp(620px, 78svh, 900px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: clamp(8px, 1.2vw, 16px);
+  scrollbar-color: rgba(154, 117, 56, 0.45) transparent;
+  scrollbar-width: thin;
 }
 
 .company-block {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "copy media"
-    "action media";
-  gap: clamp(24px, 4vw, 54px) clamp(36px, 7vw, 116px);
-  align-items: center;
+    "copy"
+    "action"
+    "media";
+  gap: clamp(24px, 4vw, 42px);
+  align-items: start;
   min-width: 0;
 }
 
@@ -728,7 +745,7 @@ h2 {
 .company-media {
   position: relative;
   grid-area: media;
-  min-height: clamp(360px, 45vw, 640px);
+  min-height: clamp(360px, 42vw, 640px);
   overflow: hidden;
   isolation: isolate;
   border-radius: 8px;
@@ -936,12 +953,19 @@ h2 {
     min-height: auto;
   }
 
-  .company-block {
+  .business-sector-layout {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "copy"
-      "media"
-      "action";
+    min-height: auto;
+  }
+
+  .sector-heading {
+    position: static;
+  }
+
+  .company-list {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
   }
 
   .company-media {
@@ -1081,6 +1105,13 @@ h2 {
   .business-hero {
     height: 72svh;
     min-height: 520px;
+  }
+
+  .company-block {
+    grid-template-areas:
+      "copy"
+      "media"
+      "action";
   }
 
   .company-media {
