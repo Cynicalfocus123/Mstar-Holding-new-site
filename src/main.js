@@ -427,18 +427,18 @@ const renderBusinessSectors = () => {
       const companyBlocks = sector.companies.map(renderCompanyBlock).join("");
       return `
         <section
-          class="sector-section business-sector"
+          class="sector-section business-sector business-sector-section"
           id="${sector.id}"
           aria-label="${escapeHtml(sector.name)}"
         >
           <div class="sector-bg" aria-hidden="true">
             <img src="${escapeHtml(sector.poster)}" alt="" loading="lazy" />
           </div>
-          <div class="business-sector-layout">
-            <div class="sector-copy sector-heading">
-              <h2 class="sector-label">${escapeHtml(sector.name)}</h2>
+          <div class="business-sector-layout business-sector-grid">
+            <div class="sector-copy sector-heading business-sector-sticky">
+              <h2 class="sector-label business-sector-title">${escapeHtml(sector.name)}</h2>
             </div>
-            <div class="company-list">
+            <div class="company-list business-sector-companies">
               ${companyBlocks}
             </div>
           </div>

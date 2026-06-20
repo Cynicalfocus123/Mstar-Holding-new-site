@@ -29,14 +29,12 @@
 html {
   scroll-behavior: smooth;
   background: var(--black);
-  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   background: var(--black);
   color: var(--ink);
-  overflow-x: hidden;
   word-break: normal;
 }
 
@@ -614,15 +612,18 @@ h2 {
 
 .business-sector-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: clamp(48px, 6vw, 86px);
+  grid-template-columns: minmax(220px, 30vw) minmax(0, 1fr);
+  gap: clamp(42px, 7vw, 120px);
   align-items: start;
   min-height: 0;
 }
 
 .sector-heading {
   width: min(1040px, 100%);
+  position: sticky;
+  top: clamp(88px, 10vh, 132px);
   align-self: start;
+  height: fit-content;
 }
 
 .sector-label {
@@ -670,7 +671,7 @@ h2 {
 
 .company-list {
   display: grid;
-  gap: clamp(72px, 10vw, 132px);
+  gap: clamp(80px, 12vw, 160px);
   min-width: 0;
   overflow: visible;
 }
@@ -968,6 +969,26 @@ h2 {
 
   .company-media {
     min-height: clamp(300px, 58vw, 520px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .business-sector-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(48px, 6vw, 86px);
+  }
+
+  .sector-heading {
+    position: static;
+    top: auto;
+  }
+
+  .company-block {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "copy"
+      "media"
+      "action";
   }
 }
 

@@ -2,6 +2,12 @@
 
 ## 2026-06-20
 
+- Fixed Business page sector scrolling to match the reference video.
+- Sector titles remain sticky on desktop while companies scroll beside them using the main page scroll.
+- Removed nested company scrolling and reveal-based company navigation.
+- Tablet/mobile now use a safe stacked layout without horizontal overflow.
+- Preserved logos, videos, text, CTA links, hero, header, footer, SEO, and no-box visual system.
+
 - Replaced the Business page Mstar Property logo with the supplied black-background logo version.
 - Preserved the existing Business page logo mapping, layout, videos, hero, header, footer, CTA, SEO, and company copy.
 
