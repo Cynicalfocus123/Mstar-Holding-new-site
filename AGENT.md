@@ -2,6 +2,11 @@
 
 ## 2026-06-21
 
+- Refined desktop-only Business page layout to prevent company title/copy overlap with media.
+- Reduced desktop media width slightly and rebalanced copy/media proportions.
+- Improved desktop sticky sector title typography and wrapping for multi-line sector names such as Import / Export and Food & Hospitality.
+- Preserved tablet/mobile layout, logo placement, logo sizing, CTA styling, sticky desktop sector behavior, sector spacing, hero, header, footer, SEO, and no-box visual system.
+
 - Corrected desktop-only Business company media sizing so video/media frames render wider without increasing height.
 - Adjusted desktop grid/aspect-ratio behavior only.
 - Preserved tablet/mobile layout, company text, logo placement, logo size, CTA, sticky desktop sector behavior, sector spacing, hero, header, footer, SEO, and no-box visual system.

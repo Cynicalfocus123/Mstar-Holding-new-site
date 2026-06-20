@@ -2,6 +2,13 @@
 
 ## 2026-06-21
 
+### Desktop Business Text And Media Overlap Fix
+
+- Refined desktop-only Business page layout to prevent company title/copy overlap with media.
+- Reduced desktop media width slightly and rebalanced copy/media proportions.
+- Improved desktop sticky sector title typography and wrapping for multi-line sector names such as Import / Export and Food & Hospitality.
+- Preserved tablet/mobile layout, logo placement, logo sizing, CTA styling, sticky desktop sector behavior, sector spacing, hero, header, footer, SEO, and no-box visual system.
+
 ### Desktop Business Media Aspect Ratio Fix
 
 - Corrected desktop-only Business company media sizing so video/media frames render wider without increasing height.

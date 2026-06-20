@@ -884,19 +884,36 @@ h2 {
 
 @media (min-width: 1101px) {
   .business-sector-layout {
-    grid-template-columns: minmax(160px, 20vw) minmax(0, 1fr);
-    gap: clamp(32px, 4vw, 64px);
+    grid-template-columns: minmax(150px, 17vw) minmax(0, 1fr);
+    gap: clamp(32px, 3vw, 48px);
   }
 
   .sector-heading .sector-label {
-    width: min(520px, 100%);
+    width: min(560px, 100%);
     font-size: clamp(2.1rem, 3.7vw, 4.6rem);
+    line-height: 0.98;
+    text-wrap: balance;
   }
 
   .company-block {
-    grid-template-columns: minmax(210px, 0.46fr) minmax(620px, 1.54fr);
-    gap: clamp(24px, 3.4vw, 52px) clamp(30px, 3.4vw, 48px);
+    grid-template-columns: minmax(310px, 0.68fr) minmax(540px, 1.12fr);
+    gap: clamp(24px, 3.4vw, 52px) clamp(40px, 3.2vw, 52px);
     align-items: center;
+  }
+
+  .company-copy {
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .business-company-title {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+
+  .company-copy p {
+    max-width: 100%;
   }
 
   .company-media {
