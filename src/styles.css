@@ -587,7 +587,7 @@ h2 {
 .sector-section {
   position: relative;
   display: block;
-  padding: clamp(88px, 12vw, 150px) var(--gutter);
+  padding: clamp(60px, 8vw, 96px) var(--gutter);
   overflow: visible;
   isolation: isolate;
   background: transparent;
@@ -671,7 +671,7 @@ h2 {
 
 .company-list {
   display: grid;
-  gap: clamp(80px, 12vw, 160px);
+  gap: clamp(52px, 7vw, 96px);
   min-width: 0;
   overflow: visible;
 }
@@ -688,7 +688,7 @@ h2 {
 }
 
 .company-block + .company-block {
-  padding-top: clamp(72px, 9vw, 120px);
+  padding-top: clamp(40px, 5.5vw, 68px);
   border-top: 1px solid rgba(17, 17, 17, 0.1);
 }
 
@@ -973,9 +973,14 @@ h2 {
 }
 
 @media (max-width: 1100px) {
+  .sector-section {
+    padding-top: clamp(48px, 7vw, 76px);
+    padding-bottom: clamp(48px, 7vw, 76px);
+  }
+
   .business-sector-layout {
     grid-template-columns: minmax(0, 1fr);
-    gap: clamp(48px, 6vw, 86px);
+    gap: clamp(36px, 5vw, 64px);
   }
 
   .sector-heading {
@@ -989,6 +994,15 @@ h2 {
       "copy"
       "media"
       "action";
+    gap: clamp(22px, 3.5vw, 38px);
+  }
+
+  .company-list {
+    gap: clamp(42px, 6vw, 72px);
+  }
+
+  .company-block + .company-block {
+    padding-top: clamp(34px, 5vw, 56px);
   }
 }
 
@@ -1085,17 +1099,17 @@ h2 {
 
   .sector-section {
     gap: 34px;
-    padding-top: 82px;
-    padding-bottom: 82px;
+    padding-top: 44px;
+    padding-bottom: 48px;
   }
 
   .company-list {
-    gap: 68px;
-    margin-top: 42px;
+    gap: 42px;
+    margin-top: 24px;
   }
 
   .company-block + .company-block {
-    padding-top: 68px;
+    padding-top: 34px;
   }
 
   .sector-copy h2,

@@ -1,5 +1,11 @@
 # Agent Changelog
 
+## 2026-06-21
+
+- Tightened Business page vertical spacing between sectors and company blocks across desktop, tablet, and mobile.
+- Preserved sticky desktop sector title behavior, normal page-scroll company browsing, company logos, videos, text, CTA links, hero, header, footer, SEO, and no-box visual system.
+- Confirmed no internal company scrolling or large blank gaps remain.
+
 ## 2026-06-20
 
 - Fixed Business page sector scrolling to match the reference video.
