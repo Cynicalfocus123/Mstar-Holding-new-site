@@ -2,6 +2,10 @@
 
 ## 2026-06-21
 
+- Added uploaded Business page videos for Mstar Airsoft, Mstar Technology, and Boogoo.
+- Preserved all other company videos, logos, text, CTA links, sticky sector page-scroll behavior, bright Business page layout, hero, header, footer, SEO, and no-box visual system.
+- Confirmed all new company videos scale correctly across desktop, tablet, mobile, and mobile landscape.
+
 - Tightened Business page vertical spacing between sectors and company blocks across desktop, tablet, and mobile.
 - Preserved sticky desktop sector title behavior, normal page-scroll company browsing, company logos, videos, text, CTA links, hero, header, footer, SEO, and no-box visual system.
 - Confirmed no internal company scrolling or large blank gaps remain.
