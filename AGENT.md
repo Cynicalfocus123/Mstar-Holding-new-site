@@ -2,6 +2,10 @@
 
 ## 2026-06-20
 
+- Reduced Business page active company logo size and company name heading size so sector titles remain the primary visual anchor.
+- Improved company-to-sector hierarchy to better match the approved sample reference.
+- Preserved hero, header, footer, company assets, CTA, videos, responsive behavior, and no-box visual system.
+
 - Updated Business page sectors so each sector title stays stationary/sticky while its company blocks scroll vertically beside it.
 - Removed click-to-reveal company tabs/selectors as the main company browsing system.
 - Preserved existing company logos, text, videos/media, CTA links, bright Business page layout, hero, header, footer, SEO, and no-box visual system.

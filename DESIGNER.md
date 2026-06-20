@@ -2,6 +2,12 @@
 
 ## 2026-06-20
 
+### Business Company Hierarchy Refinement
+
+- Reduced Business page active company logo size and company name heading size so sector titles remain the primary visual anchor.
+- Improved company-to-sector hierarchy to better match the approved sample reference.
+- Preserved hero, header, footer, company assets, CTA, videos, responsive behavior, and no-box visual system.
+
 ### Business Sticky Sector Titles
 
 - Updated Business page sectors so each sector title stays stationary/sticky while its company blocks scroll vertically beside it.
