@@ -171,7 +171,7 @@ const businessSectors = [
         poster: "../media/hero-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
-        logo: "../media/logos/one-taste.svg",
+        logo: "../media/logos/one-taste-logo.png",
         logoAlt: "One Taste logo",
       },
       {
@@ -376,7 +376,7 @@ const renderCompanyBlock = (company) => `
   <article class="company-block">
     <div class="company-copy">
       ${renderCompanyLogo(company)}
-      <h3>${escapeHtml(company.name)}</h3>
+      <h3 class="business-company-title">${escapeHtml(company.name)}</h3>
       <p>${escapeHtml(company.description)}</p>
     </div>
     <div class="company-media">

@@ -2,6 +2,13 @@
 
 ## 2026-06-20
 
+- Removed internal Business sector/company scrolling so all companies now scroll with the main page flow.
+- Fixed tablet Business page text alignment and responsive wrapping.
+- Normalized active company logo sizing to match the Boogoo Music Festival visual scale, including Mstar Technology.
+- Updated One Taste, American Buying Service, and Mstar Property logos with the latest uploaded logo files.
+- Reduced company name heading size so sector titles remain the dominant section anchors.
+- Preserved hero, header, footer, company videos, CTA, SEO, responsive layout, and no-box visual system.
+
 - Increased Business page active company logo sizing so all company logos remain large and readable, matching the Foodonlines.com visual scale.
 - Added the SeniorCaring.net logo to both the Real Estate Senior Home and Food & Hospitality SeniorHome.net company entries.
 - Reduced company name heading size so sector titles remain the primary visual anchor.
