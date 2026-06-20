@@ -2,6 +2,11 @@
 
 ## 2026-06-20
 
+- Added real Business page logos for American Buying Service, Boogoo, Hizoz, ABS Fulfillment, Mstar Technology, Mstar Defense, and Mstar Airsoft.
+- Increased active company logo display size by about 30%.
+- Preserved mobile text-only company selectors, company videos, bright Business page layout, hero, header, footer, CTA, arrows, SEO, and no-box visual system.
+- Confirmed logos remain responsive and clean on the white/off-white section background.
+
 - Removed logos/icons/images from Business page company selector boxes across desktop, tablet, and mobile.
 - Company selector boxes now display company names only.
 - Preserved active company logos above company content, media, CTA, arrows, header, footer, layout, SEO, and no-box visual system.
