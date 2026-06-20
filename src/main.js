@@ -372,6 +372,22 @@ const renderCompanyLogo = (company) => {
   `;
 };
 
+const renderCompanyTabLogo = (company) => {
+  if (!company.logo) {
+    return "";
+  }
+
+  return `
+    <img
+      class="company-tab-logo"
+      src="${escapeHtml(company.logo)}"
+      alt=""
+      loading="lazy"
+      aria-hidden="true"
+    />
+  `;
+};
+
 const playCompanyMediaVideos = (root = document) => {
   if (prefersReducedMotion) {
     return;
@@ -421,7 +437,8 @@ const renderBusinessSectors = () => {
               data-sector-index="${sectorIndex}"
               data-company-index="${companyIndex}"
             >
-              ${escapeHtml(companyItem.name)}
+              ${renderCompanyTabLogo(companyItem)}
+              <span>${escapeHtml(companyItem.name)}</span>
             </button>
           `,
         )
@@ -451,7 +468,6 @@ const renderBusinessSectors = () => {
             tabindex="0"
           >
             <div class="company-copy" data-company-copy>
-              <p class="company-count">${String(1).padStart(2, "0")} / ${String(count).padStart(2, "0")}</p>
               ${renderCompanyLogo(company)}
               <h3>${escapeHtml(company.name)}</h3>
               <p>${escapeHtml(company.description)}</p>
@@ -504,7 +520,6 @@ const setActiveCompany = (sectorIndex, companyIndex) => {
 
   if (companyCopy) {
     companyCopy.innerHTML = `
-      <p class="company-count">${countText}</p>
       ${renderCompanyLogo(company)}
       <h3>${escapeHtml(company.name)}</h3>
       <p>${escapeHtml(company.description)}</p>

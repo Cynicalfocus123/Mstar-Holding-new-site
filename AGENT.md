@@ -1,5 +1,13 @@
 # Agent Changelog
 
+## 2026-06-20
+
+- Updated Business page sector sections below the hero to the approved bright white/off-white responsive layout.
+- Kept the Business hero video/header unchanged.
+- Preserved data-driven multi-company sector tabs, mobile text controls, logos, videos, CTA, arrows, SEO, and no-box visual system.
+- Removed the mockup-style bottom feature/icon row and kept the play button only inside the video/media frame.
+- Confirmed desktop, tablet, and mobile layouts remain responsive with no horizontal overflow.
+
 ## 2026-06-19
 
 - Replaced Business page placeholder logos with real uploaded logos for Mstar Defense, Foodonlines.com, Mstar Property, and BuyHomeForLess.
