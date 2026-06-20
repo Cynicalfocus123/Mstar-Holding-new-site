@@ -2,6 +2,10 @@
 
 ## 2026-06-20
 
+- Reduced mobile Business page company selector button height.
+- Removed logos/icons from inside mobile selector buttons so they now show text only.
+- Preserved desktop/tablet layout, active company logo, media, CTA, header, footer, and overall Business page structure.
+
 - Updated Business page sector sections below the hero to the approved bright white/off-white responsive layout.
 - Kept the Business hero video/header unchanged.
 - Preserved data-driven multi-company sector tabs, mobile text controls, logos, videos, CTA, arrows, SEO, and no-box visual system.

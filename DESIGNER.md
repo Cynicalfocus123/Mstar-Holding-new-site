@@ -2,6 +2,12 @@
 
 ## 2026-06-20
 
+### Mobile Business Selector Refinement
+
+- Reduced mobile Business page company selector button height.
+- Removed logos/icons from inside mobile selector buttons so they now show text only.
+- Preserved desktop/tablet layout, active company logo, media, CTA, header, footer, and overall Business page structure.
+
 ### Business Bright Sector Layout
 
 - Updated Business page sector sections below the hero to the approved bright white/off-white responsive layout.
