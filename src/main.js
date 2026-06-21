@@ -267,8 +267,9 @@ const businessSectors = [
         name: "Hizoz.com",
         description:
           "A digital platform initiative built around scalable technology, modern operations, and growth potential.",
-        mediaType: "image",
-        mediaSrc: "../media/growth-poster.png",
+        mediaType: "video",
+        mediaSrc: "../videos/business-hizoz.mp4",
+        poster: "../media/growth-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/hizoz-logo.png",

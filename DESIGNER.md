@@ -1,5 +1,13 @@
 # Designer Notes
 
+## 2026-06-22
+
+### Hizoz Business Video
+
+- Added the uploaded Business page video for Hizoz.com.
+- Preserved all other company videos, logos, text, CTA links, sticky sector page-scroll behavior, bright Business page layout, hero, header, footer, SEO, and no-box visual system.
+- Confirmed the Hizoz.com video scales correctly across desktop, tablet, mobile, and mobile landscape.
+
 ## 2026-06-21
 
 ### E-commerce Foodonlines Store Video
