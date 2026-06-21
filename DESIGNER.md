@@ -2,6 +2,13 @@
 
 ## 2026-06-22
 
+### Hizoz And ABS Fulfillment Videos
+
+- Replaced the Hizoz.com Business page video with the newly uploaded Hizoz video.
+- Added the uploaded ABS Fulfillment video under the Import / Export sector.
+- Preserved American Buying Service video, all other company videos, logos, text, CTA links, sticky sector page-scroll behavior, bright Business page layout, hero, header, footer, SEO, and no-box visual system.
+- Confirmed the Hizoz.com and ABS Fulfillment videos scale correctly across desktop, tablet, mobile, and mobile landscape.
+
 ### Hizoz Business Video
 
 - Added the uploaded Business page video for Hizoz.com.

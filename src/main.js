@@ -212,8 +212,9 @@ const businessSectors = [
         name: "ABS Fulfillment",
         description:
           "Fulfillment operations supporting trade flows, practical logistics, and scalable distribution activity.",
-        mediaType: "image",
-        mediaSrc: "../media/operations-poster.png",
+        mediaType: "video",
+        mediaSrc: "../videos/business-abs-fulfillment.mp4",
+        poster: "../media/operations-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/abs-fulfillment-logo.png",
