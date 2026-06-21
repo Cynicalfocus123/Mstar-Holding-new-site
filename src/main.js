@@ -336,6 +336,9 @@ const escapeHtml = (value) =>
       })[character],
   );
 
+const formatSectorTitle = (value) =>
+  escapeHtml(value).replaceAll("E-commerce", "E&#8209;commerce");
+
 const renderCompanyMedia = (company) => {
   const label = `${company.name} media`;
   const poster = company.poster || company.mediaSrc;
@@ -422,7 +425,10 @@ const renderBusinessSectors = () => {
   }
 
   const sectorLinks = businessSectors
-    .map((sector) => `<a href="#${sector.id}">${escapeHtml(sector.name)}</a>`)
+    .map(
+      (sector) =>
+        `<a href="#${sector.id}">${formatSectorTitle(sector.name)}</a>`,
+    )
     .join("");
 
   const sectorSections = businessSectors
@@ -439,7 +445,7 @@ const renderBusinessSectors = () => {
           </div>
           <div class="business-sector-layout business-sector-grid">
             <div class="sector-copy sector-heading business-sector-sticky">
-              <h2 class="sector-label business-sector-title">${escapeHtml(sector.name)}</h2>
+              <h2 class="sector-label business-sector-title">${formatSectorTitle(sector.name)}</h2>
             </div>
             <div class="company-list business-sector-companies">
               ${companyBlocks}

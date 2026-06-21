@@ -669,6 +669,14 @@ h2 {
   text-transform: none;
 }
 
+.business-sector-title {
+  max-width: 12ch;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+
 .company-list {
   display: grid;
   gap: clamp(52px, 7vw, 96px);
@@ -884,19 +892,24 @@ h2 {
 
 @media (min-width: 1101px) {
   .business-sector-layout {
-    grid-template-columns: minmax(150px, 17vw) minmax(0, 1fr);
-    gap: clamp(32px, 3vw, 48px);
+    grid-template-columns: minmax(220px, 22vw) minmax(0, 1fr);
+    gap: clamp(32px, 3vw, 52px);
   }
 
   .sector-heading .sector-label {
-    width: min(560px, 100%);
-    font-size: clamp(2.1rem, 3.7vw, 4.6rem);
-    line-height: 0.98;
+    width: min(8.8ch, 100%);
+    max-width: 8.8ch;
+    font-size: clamp(3rem, 4.1vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
     text-wrap: balance;
   }
 
   .company-block {
-    grid-template-columns: minmax(310px, 0.68fr) minmax(540px, 1.12fr);
+    grid-template-columns: minmax(300px, 0.68fr) minmax(480px, 1.12fr);
     gap: clamp(24px, 3.4vw, 52px) clamp(40px, 3.2vw, 52px);
     align-items: center;
   }
@@ -1031,6 +1044,17 @@ h2 {
     top: auto;
   }
 
+  .sector-heading .sector-label {
+    max-width: 12ch;
+    font-size: clamp(2.8rem, 8vw, 4.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    text-wrap: balance;
+  }
+
   .company-block {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
@@ -1159,6 +1183,17 @@ h2 {
   .business-cta h2 {
     font-size: clamp(2.05rem, 10vw, 3.7rem);
     line-height: 1.08;
+  }
+
+  .sector-heading .sector-label {
+    max-width: 100%;
+    font-size: clamp(2.4rem, 11vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    text-wrap: balance;
   }
 
   .sector-copy p,

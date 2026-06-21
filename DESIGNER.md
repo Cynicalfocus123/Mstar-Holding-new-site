@@ -2,6 +2,12 @@
 
 ## 2026-06-21
 
+### Business Sector Title Wrapping Fix
+
+- Fixed Business page sector title typography and wrapping so long sector names such as E-commerce & Technology scale cleanly across desktop, tablet, and mobile.
+- Prevented broken hyphen wrapping such as `E-` / `commerce`.
+- Preserved sticky desktop sector behavior, company layout, logos, videos, CTA, hero, header, footer, SEO, and no-box visual system.
+
 ### Desktop Business Text And Media Overlap Fix
 
 - Refined desktop-only Business page layout to prevent company title/copy overlap with media.
