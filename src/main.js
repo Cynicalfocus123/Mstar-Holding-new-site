@@ -255,8 +255,9 @@ const businessSectors = [
         name: "Foodonlines.com",
         description:
           "Digital food commerce designed to support modern customer access, practical ordering, and market reach.",
-        mediaType: "image",
-        mediaSrc: "../media/operations-poster.png",
+        mediaType: "video",
+        mediaSrc: "../videos/business-ecommerce-foodonlines.mp4",
+        poster: "../media/operations-poster.png",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/foodonlines-logo.png",

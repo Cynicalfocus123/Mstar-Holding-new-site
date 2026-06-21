@@ -2,6 +2,11 @@
 
 ## 2026-06-21
 
+### E-commerce Foodonlines Store Video
+
+- Added the uploaded Foodonlines.com store video to the E-commerce & Technology Foodonlines.com company entry only.
+- Preserved the Food & Hospitality Foodonlines.com video, company text, logos, CTA, hero, header, footer, SEO, sticky sector behavior, and no-box visual system.
+
 ### Business Sector Title Wrapping Fix
 
 - Fixed Business page sector title typography and wrapping so long sector names such as E-commerce & Technology scale cleanly across desktop, tablet, and mobile.
