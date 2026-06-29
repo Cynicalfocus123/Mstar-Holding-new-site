@@ -17,6 +17,68 @@
 
 ## 2026-06-29
 
+- Replaced the homepage `A Holding Company Built for Enduring Value` section with the approved sticky `News and Media` section.
+- Added four safe placeholder article cards with image, category, title, excerpt, date, and arrow treatment.
+- Added the reusable `newsArticles` data array and `sortedNewsArticles` latest-first sorting by ISO `dateSort`.
+- Created `news/index.html` with the consistent Mstar header/footer, page-specific SEO metadata, intro copy, and responsive article grid.
+- Updated `News & Media` navigation links and the homepage News CTA/cards to use `news/`.
+- Added the News page to the Vite multi-page build input so GitHub Pages output includes `dist/news/index.html`.
+- Preserved the top hero video, One Group section, Investing section, bright homepage style, GitHub Pages relative paths, and existing safe placeholder imagery.
+- Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
+
+## Files Changed
+
+- `index.html`
+- `news/index.html`
+- `business/index.html`
+- `src/main.js`
+- `src/styles.css`
+- `vite.config.js`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\dcd62b1e-1ed9-4b14-8ecf-4f10603a6b57\pasted-text.txt`
+- `Get-Content -LiteralPath AGENT.md`
+- `Get-Content -LiteralPath DESIGNER.md`
+- `git status --short --branch`
+- `Test-Path -LiteralPath WEIGHT.md`
+- `rg -n "A Holding Company Built for Enduring Value|News & Media|news-media|home-" index.html src\main.js src\styles.css business\index.html`
+- `Get-Content -LiteralPath package.json`
+- `Get-Content -LiteralPath index.html | Select-Object -First 380`
+- `Get-Content -LiteralPath business\index.html | Select-Object -First 260`
+- `Get-Content -LiteralPath src\main.js | Select-Object -First 140`
+- `Get-Content -LiteralPath src\styles.css | Select-Object -Skip ... -First ...`
+- `npx.cmd prettier --write index.html news/index.html business/index.html src/main.js src/styles.css`
+- `npx.cmd prettier --write vite.config.js`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+- Static build/link checks with `rg` and `Get-ChildItem`
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Static build confirmed `dist/news/index.html` is emitted.
+- Static checks confirmed the homepage News section replaced the old Enduring Value section.
+- Static checks confirmed the homepage CTA and News cards use `news/`.
+- Static checks confirmed `News & Media` nav links now point to `news/` from the homepage and `../news/` from the Business page.
+- Static checks confirmed article data includes `isPlaceholder: true` and sorts latest-first by `dateSort`.
+- CSS inspection confirmed the homepage News layout uses a sticky left column on desktop and natural main-page scrolling for right-side cards, with no internal scrolling box.
+- CSS inspection confirmed the News page grid is 4 columns on desktop, 2 columns on tablet, and 1 column on mobile.
+- Static asset checks confirmed the reused placeholder image paths exist under `public/media/homepage`.
+- No live-server, localhost preview, or local dev server was launched for this patch.
+- GitHub Pages relative asset and navigation paths are preserved.
+- Git commit hash: reported in final handoff after commit/push because the hash is only known after this documentation is committed.
+
+## 2026-06-29
+
 - Replaced the One Group transform-skew sector collage with clip-path slanted panels.
 - Fixed black gaps/bars behind sector images by removing collage/image skew transforms and using off-white card backgrounds.
 - Widened and rebalanced the One Group sector collage so all six panels fit on desktop without horizontal overflow.

@@ -93,6 +93,59 @@ window.addEventListener("orientationchange", updateBusinessHeroVideo);
 window.addEventListener("pageshow", scheduleBusinessHeroVideoUpdate);
 
 const businessSectorsRoot = document.querySelector("[data-business-sectors]");
+const homeNewsRoot = document.querySelector("[data-home-news-list]");
+const newsGridRoot = document.querySelector("[data-news-grid]");
+
+const newsArticles = [
+  {
+    category: "Company News",
+    title: "Mstar Holding continues multi-sector portfolio development",
+    date: "June 2026",
+    dateSort: "2026-06-01",
+    excerpt:
+      "Updates from Mstar Holding as the group continues developing businesses across real assets, trade, hospitality, technology, and strategic sectors.",
+    image: "media/homepage/sector-real-estate.png",
+    url: "news/",
+    isPlaceholder: true,
+  },
+  {
+    category: "Portfolio",
+    title: "Building stronger links across regional business sectors",
+    date: "June 2026",
+    dateSort: "2026-06-01",
+    excerpt:
+      "A look at how Mstar Holding connects operating companies, partnerships, and long-term growth opportunities across Asia.",
+    image: "media/homepage/sector-import-export.png",
+    url: "news/",
+    isPlaceholder: true,
+  },
+  {
+    category: "Expansion",
+    title: "Regional growth remains a core focus for Mstar Holding",
+    date: "May 2026",
+    dateSort: "2026-05-01",
+    excerpt:
+      "Mstar Holding continues to evaluate opportunities across infrastructure, partnerships, and resilient market sectors.",
+    image: "media/homepage/sector-defense.png",
+    url: "news/",
+    isPlaceholder: true,
+  },
+  {
+    category: "Innovation",
+    title: "Technology and operations support the group's next chapter",
+    date: "May 2026",
+    dateSort: "2026-05-01",
+    excerpt:
+      "The group continues building digital, operational, and strategic capabilities across its portfolio.",
+    image: "media/homepage/sector-ecommerce-technology.png",
+    url: "news/",
+    isPlaceholder: true,
+  },
+];
+
+const sortedNewsArticles = [...newsArticles].sort(
+  (a, b) => new Date(b.dateSort) - new Date(a.dateSort),
+);
 
 // Company entries can optionally include `logo` and `logoAlt` when final logo
 // assets are added under public/media/logos.
@@ -342,6 +395,87 @@ const escapeHtml = (value) =>
 const formatSectorTitle = (value) =>
   escapeHtml(value).replaceAll("E-commerce", "E&#8209;commerce");
 
+const withPathPrefix = (path, prefix = "") => {
+  if (/^(?:[a-z]+:)?\/\//i.test(path) || path.startsWith("#")) {
+    return path;
+  }
+
+  return `${prefix}${path}`;
+};
+
+const renderNewsArticleCard = (article, variant, options = {}) => {
+  const assetPrefix = options.assetPrefix || "";
+  const urlPrefix = options.urlPrefix || "";
+  const cardClass = variant === "home" ? "home-news-card" : "news-article-card";
+  const mediaClass =
+    variant === "home" ? "home-news-card-media" : "news-article-media";
+  const bodyClass =
+    variant === "home" ? "home-news-card-body" : "news-article-body";
+  const categoryClass =
+    variant === "home" ? "home-news-pill" : "news-article-category";
+  const titleClass =
+    variant === "home" ? "home-news-card-title" : "news-article-title";
+  const excerptClass =
+    variant === "home" ? "home-news-card-excerpt" : "news-article-excerpt";
+  const dateClass =
+    variant === "home" ? "home-news-card-date" : "news-article-date";
+  const metaClass =
+    variant === "home" ? "home-news-card-meta" : "news-article-meta";
+  const arrowClass =
+    variant === "home" ? "home-news-card-arrow" : "news-article-arrow";
+  const placeholderLabel =
+    variant === "news" && article.isPlaceholder
+      ? '<span class="news-placeholder-label">Placeholder article</span>'
+      : "";
+
+  return `
+    <a class="${cardClass}" href="${escapeHtml(withPathPrefix(article.url, urlPrefix))}">
+      <span class="${mediaClass}">
+        <img
+          src="${escapeHtml(withPathPrefix(article.image, assetPrefix))}"
+          alt=""
+          loading="lazy"
+        />
+      </span>
+      <span class="${bodyClass}">
+        <span class="${categoryClass}">${escapeHtml(article.category)}</span>
+        <span class="${titleClass}">${escapeHtml(article.title)}</span>
+        <span class="${excerptClass}">${escapeHtml(article.excerpt)}</span>
+        <span class="${metaClass}">
+          <span class="${dateClass}">${escapeHtml(article.date)}</span>
+          ${placeholderLabel}
+          <span class="${arrowClass}" aria-hidden="true"></span>
+        </span>
+      </span>
+    </a>
+  `;
+};
+
+const renderNewsArticles = () => {
+  if (homeNewsRoot) {
+    homeNewsRoot.innerHTML = sortedNewsArticles
+      .slice(0, 4)
+      .map((article) =>
+        renderNewsArticleCard(article, "home", {
+          assetPrefix: homeNewsRoot.dataset.newsAssetPrefix || "",
+          urlPrefix: homeNewsRoot.dataset.newsUrlPrefix || "",
+        }),
+      )
+      .join("");
+  }
+
+  if (newsGridRoot) {
+    newsGridRoot.innerHTML = sortedNewsArticles
+      .map((article) =>
+        renderNewsArticleCard(article, "news", {
+          assetPrefix: newsGridRoot.dataset.newsAssetPrefix || "",
+          urlPrefix: newsGridRoot.dataset.newsUrlPrefix || "",
+        }),
+      )
+      .join("");
+  }
+};
+
 const renderCompanyMedia = (company) => {
   const label = `${company.name} media`;
   const poster = company.poster || company.mediaSrc;
@@ -465,6 +599,7 @@ const renderBusinessSectors = () => {
   `;
 };
 
+renderNewsArticles();
 renderBusinessSectors();
 playCompanyMediaVideos(businessSectorsRoot);
 

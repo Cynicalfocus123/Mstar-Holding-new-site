@@ -2,6 +2,28 @@
 
 ## 2026-06-29
 
+### Approved News And Media Homepage Section
+
+- Replaced the previous Enduring Value homepage section with the approved `News and Media` section.
+- The section uses the bright Mstar visual system: white/off-white background, charcoal text, restrained gold accents, and premium rounded article cards.
+- Desktop uses sticky-left / scrolling-right behavior: the left title, intro, and CTA remain sticky while the right-side news cards move naturally with the main page scroll.
+- The right-side article list is not an internal scrolling box; it remains part of the normal page flow.
+- Tablet and mobile stack safely with no intended horizontal page overflow.
+- Homepage CTA text is `All News and Activities` and links to `news/`.
+- Homepage cards link to `news/` until real article detail pages are added.
+
+### News Page Grid
+
+- Added `news/index.html` with a bright white/off-white News and Media page.
+- The News page keeps the consistent Mstar header/footer and page-specific SEO metadata.
+- The article grid is 4 cards per row on desktop, 2 cards per row on tablet, and 1 card per row on mobile.
+- Placeholder article labels are intentionally small and quiet so the page can be reviewed without looking temporary or unfinished.
+- Placeholder articles are temporary; real articles and article detail pages will be added later.
+- Article display follows the latest-first rule using `dateSort` in ISO date format.
+- Reused existing homepage sector images as placeholder media rather than adding heavy new assets.
+
+## 2026-06-29
+
 ### Clip-Path Sector Collage Fix
 
 - Replaced the One Group transform-skew collage with clip-path slanted image panels so images fill the panels without black gaps.

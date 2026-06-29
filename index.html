@@ -15,6 +15,12 @@
         );
       }
 
+      if (window.location.pathname === "/news") {
+        window.location.replace(
+          "/news/" + window.location.search + window.location.hash,
+        );
+      }
+
       if (window.location.pathname === "/contact") {
         window.location.replace("/#contact");
       }
@@ -44,7 +50,7 @@
         <a href="#about">About</a>
         <a href="business/">Business</a>
         <a href="#global-presence">Global Presence</a>
-        <a href="#news-media">News &amp; Media</a>
+        <a href="news/">News &amp; Media</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -286,31 +292,30 @@
       </section>
 
       <section
-        class="home-bright-section home-value-section intro-section"
-        id="about"
-        aria-labelledby="intro-title"
+        class="home-bright-section home-news-section"
+        id="news-media"
+        aria-labelledby="home-news-title"
       >
-        <div class="home-bright-inner home-split-media">
-          <div class="home-bright-copy-block intro-copy">
-            <span class="home-bright-line" aria-hidden="true"></span>
-            <h2 class="home-bright-title" id="intro-title">
-              A Holding Company Built for Enduring Value
-            </h2>
-            <p class="home-bright-copy">
-              Mstar Holding develops and supports businesses across real assets,
-              trade, hospitality, technology, and strategic sectors with a focus
-              on disciplined growth and cross-border opportunity.
+        <div class="home-news-inner">
+          <div class="home-news-copy">
+            <span class="home-news-kicker" aria-hidden="true"></span>
+            <h2 class="home-news-title" id="home-news-title">News and Media</h2>
+            <p class="home-news-description">
+              Explore the latest news, updates, and developments from Mstar
+              Holding.
             </p>
+            <a class="home-news-cta" href="news/">
+              <span>All News and Activities</span>
+              <span class="cta-arrow" aria-hidden="true"></span>
+            </a>
           </div>
-          <figure class="home-curved-media">
-            <img
-              src="media/operations-poster.png"
-              alt=""
-              width="1792"
-              height="1024"
-              loading="lazy"
-            />
-          </figure>
+          <div
+            class="home-news-list"
+            data-home-news-list
+            data-news-asset-prefix=""
+            data-news-url-prefix=""
+            aria-label="Latest news articles"
+          ></div>
         </div>
       </section>
 
@@ -319,7 +324,7 @@
         id="global-presence"
         aria-hidden="true"
       ></span>
-      <span class="section-anchor" id="news-media" aria-hidden="true"></span>
+      <span class="section-anchor" id="about" aria-hidden="true"></span>
 
       <section
         class="home-bright-section home-contact-section contact-section"
