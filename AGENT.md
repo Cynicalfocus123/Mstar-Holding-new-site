@@ -17,6 +17,53 @@
 
 ## 2026-06-29
 
+- Added exact user-provided homepage sector images to the `One Group. Multiple Sectors. Built for Growth.` slanted image grid.
+- Added exact user-provided gold icon set to the `Investing in the Future of Regional Expansion` theme row.
+- Processed the uploaded light bulb and other icon outputs into transparent 512px PNG files with gold line art and no white, black, or checkerboard backgrounds.
+- Preserved the existing top hero video, navigation, CTA links, SEO metadata, JSON-LD, and approved bright white/off-white homepage design.
+- Preserved responsive desktop slanted panels, tablet 3x2 sector grid, mobile horizontal sector tiles, and clean `E-commerce & Technology` wrapping.
+- Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
+
+## Files Changed
+
+- `index.html`
+- `src/styles.css`
+- `public/media/homepage/*.png`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath AGENT.md -TotalCount 120`
+- `Get-Content -LiteralPath DESIGNER.md -TotalCount 120`
+- `Test-Path -LiteralPath WEIGHT.md`
+- `Get-ChildItem -LiteralPath 'site content pic and video' -File | Select-Object Name,Length | Sort-Object Name`
+- `Get-ChildItem -LiteralPath 'site content pic and video\icons' -File | Select-Object Name,Length | Sort-Object Name`
+- Bundled Python/Pillow image metadata and transparent PNG processing checks
+- `rg -n "media/homepage|home-theme-title|home-theme-copy|home-sector-label" index.html src\styles.css`
+- `Get-ChildItem -LiteralPath public\media\homepage -File | Select-Object Name,Length | Sort-Object Name`
+- `npx.cmd prettier --write index.html src/styles.css`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Static asset check confirmed all eleven required homepage asset paths exist in `public/media/homepage`.
+- Static asset check confirmed there are no extra unused files in `public/media/homepage`.
+- Static icon check confirmed all five icon files are RGBA PNGs with transparent corners.
+- Rendered browser check was started before the user said local live verification was not needed; it confirmed the six sector images, five icon entries, no broken images, no console warnings/errors, and no horizontal overflow at desktop, 1024 x 1366 tablet, and 430 x 932 mobile.
+- GitHub Pages build compatibility is preserved through the existing relative Vite asset paths.
+- Git commit hash: reported in final handoff after commit/push because the hash is only known after this documentation is committed.
+
+## 2026-06-29
+
 - Redesigned the homepage sections after the top hero into a bright white/off-white institutional layout.
 - Preserved the existing dark top hero video, navigation, SEO metadata, JSON-LD, CTA destinations, and footer.
 - Rebuilt `One Group. Multiple Sectors. Built for Growth.` with open editorial copy, an `Explore Our Businesses` CTA, and six responsive sector image panels using existing poster assets.

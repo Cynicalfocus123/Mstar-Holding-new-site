@@ -2,6 +2,25 @@
 
 ## 2026-06-29
 
+### Homepage Sector Images And Growth Icons
+
+- The `One Group. Multiple Sectors. Built for Growth.` section now uses the exact six user-provided images in the slanted sector collage.
+- Sector mapping is Real Estate -> `real estate image.png`, Food & Hospitality -> `senior home.png`, Import / Export -> `mstar logistic.png`, Defense -> `mstar defense.png`, E-commerce & Technology -> `909155fa-c8d5-401f-a65e-fcf2ed21aa88.png`, and Entertainment -> `mstar hairsoft home page.png`.
+- The desktop collage keeps the bright editorial left side with six angled image panels on the right, dark bottom gradients for label readability, and restrained gold line accents.
+- Tablet keeps the same image set in a safe 3x2 grid to avoid cramped slanted crops.
+- Mobile keeps horizontally scrollable sector tiles with readable labels and protected `E-commerce & Technology` wrapping.
+
+### Exact Gold Icon Row
+
+- The `Investing in the Future of Regional Expansion` icon row now uses the exact uploaded gold icon set: house, growth chart, light bulb, globe, and handshake.
+- Icons are transparent PNG gold line art with no white square, black square, or checkerboard background.
+- Desktop keeps five clean columns with thin dividers, gold icons, black labels, and muted gray supporting copy.
+- Tablet wraps the icon row to 3 + 2 when needed for readability.
+- Mobile keeps the row horizontally scrollable without page-level horizontal overflow.
+- The no-box rule and white/off-white premium visual system remain preserved.
+
+## 2026-06-29
+
 ### Bright Homepage Sections After Dark Hero
 
 - Approved bright homepage direction implemented after the existing dark hero video.
