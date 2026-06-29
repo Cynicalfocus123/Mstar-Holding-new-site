@@ -2,6 +2,17 @@
 
 ## 2026-06-29
 
+### Clip-Path Sector Collage Fix
+
+- Replaced the One Group transform-skew collage with clip-path slanted image panels so images fill the panels without black gaps.
+- Removed image skew/counter-skew transforms; images now remain unskewed with `object-fit: cover` and per-sector object positioning.
+- Desktop keeps six clean slanted panels with white/off-white separators created by the page background and panel gaps.
+- Tablet and mobile remove the clip-path and use safe rounded image tiles, preserving readable labels and no page-level horizontal overflow.
+- Real Estate is shifted right, and the other sector images use tuned object positions so important subjects stay visible.
+- The bright white/off-white visual system, exact sector images, exact gold icons, and no-box rule remain preserved.
+
+## 2026-06-29
+
 ### Bright Homepage Layout Proportions
 
 - Fixed the bright homepage sections so the layout matches the approved sample more closely instead of using giant typography.

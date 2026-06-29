@@ -17,6 +17,47 @@
 
 ## 2026-06-29
 
+- Replaced the One Group transform-skew sector collage with clip-path slanted panels.
+- Fixed black gaps/bars behind sector images by removing collage/image skew transforms and using off-white card backgrounds.
+- Widened and rebalanced the One Group sector collage so all six panels fit on desktop without horizontal overflow.
+- Adjusted per-sector `object-position` values for Real Estate, Food & Hospitality, Import / Export, Defense, E-commerce & Technology, and Entertainment.
+- Preserved exact user-provided homepage sector images, exact transparent gold growth icons, the approved bright homepage design, top hero video, navigation, CTA links, SEO metadata, and JSON-LD.
+- Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
+
+## Files Changed
+
+- `src/styles.css`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath src\styles.css | Select-Object -Skip ...`
+- `npx.cmd prettier --write src/styles.css`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+- Browser/IAB checks at `http://127.0.0.1:5173/`
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Browser/IAB confirmed no black image gaps in the desktop One Group sector collage.
+- Browser/IAB confirmed desktop uses clip-path slanted cards and no image skew transforms.
+- Browser/IAB confirmed all six desktop panels and labels are visible within the viewport.
+- Browser/IAB confirmed Real Estate and other sector images use the requested object-position offsets.
+- Browser/IAB confirmed no horizontal overflow at 320px, 390px, 430px, 768px, 1024px, 1366px, and 1440px desktop.
+- Browser/IAB confirmed no broken image paths, no broken videos, no console warnings/errors, and the top hero remains first.
+- GitHub Pages relative asset paths are preserved.
+- Git commit hash: reported in final handoff after commit/push because the hash is only known after this documentation is committed.
+
+## 2026-06-29
+
 - Fixed bright homepage section typography sizing so One Group, Investing, Enduring Value, and Contact headlines are controlled and no longer render as oversized full-screen titles.
 - Restored approved One Group sample proportions with a readable left text column, visible paragraph, visible `Explore Our Businesses` CTA, and a wider six-panel slanted sector collage.
 - Reduced slanted sector image zoom from the previous heavy crop and lowered the collage height to show more of the actual photos.
