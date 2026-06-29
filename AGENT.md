@@ -23,12 +23,14 @@
 - Rebuilt `Investing in the Future of Regional Expansion` and `A Holding Company Built for Enduring Value` with curved image masks, restrained gold arcs, and reused poster assets.
 - Rebuilt `Let us build the next chapter.` with a clean white contact CTA, circular mail icon, thin gold divider, and clickable `mailto:info@mstarholding.com` email.
 - Added responsive desktop/tablet/mobile behavior for the One Group, Investing, Enduring Value, and Contact CTA sections, including clean mobile wrapping for `E-commerce & Technology`.
+- Guarded the Business-page company media helper so the redesigned homepage does not call it with a missing Business sectors root.
 - Added token-saving command output rules.
 - Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
 
 ## Files Changed
 
 - `index.html`
+- `src/main.js`
 - `src/styles.css`
 - `AGENT.md`
 - `DESIGNER.md`

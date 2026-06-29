@@ -401,7 +401,7 @@ const renderCompanyBlock = (company) => `
 `;
 
 const playCompanyMediaVideos = (root = document) => {
-  if (prefersReducedMotion) {
+  if (!root || prefersReducedMotion) {
     return;
   }
 
