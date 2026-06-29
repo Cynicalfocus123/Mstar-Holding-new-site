@@ -1,5 +1,73 @@
 # Agent Changelog
 
+## Token Saving / Command Output Rules
+
+- Default all terminal commands to capped output.
+- Use this pattern for long commands: `COMMAND 2>&1 | head -c 4000`.
+- For PowerShell, use `COMMAND 2>&1 | Select-Object -First 120` or write output to a temp file and inspect only the relevant lines.
+- Do not paste massive file dumps, build logs, package-lock content, minified bundles, or full binary/media listings into chat.
+- Prefer `rg`, targeted `Select-String`, `Get-Content -TotalCount`, `Get-Content -Tail`, and small line windows.
+- When reading files, inspect only the relevant portions first.
+- Summarize findings instead of dumping full logs.
+- If a command fails, show only the useful error lines and the command that failed.
+- Keep `AGENT.md` changelog concise.
+- Update `DESIGNER.md` with design intent and responsive behavior, not huge repeated implementation logs.
+- Do not launch the Serena dashboard unless explicitly required.
+- Do not repeatedly ask which Python app/interpreter to use; use the existing project configuration unless genuinely blocked.
+
+## 2026-06-29
+
+- Redesigned the homepage sections after the top hero into a bright white/off-white institutional layout.
+- Preserved the existing dark top hero video, navigation, SEO metadata, JSON-LD, CTA destinations, and footer.
+- Rebuilt `One Group. Multiple Sectors. Built for Growth.` with open editorial copy, an `Explore Our Businesses` CTA, and six responsive sector image panels using existing poster assets.
+- Rebuilt `Investing in the Future of Regional Expansion` and `A Holding Company Built for Enduring Value` with curved image masks, restrained gold arcs, and reused poster assets.
+- Rebuilt `Let us build the next chapter.` with a clean white contact CTA, circular mail icon, thin gold divider, and clickable `mailto:info@mstarholding.com` email.
+- Added responsive desktop/tablet/mobile behavior for the One Group, Investing, Enduring Value, and Contact CTA sections, including clean mobile wrapping for `E-commerce & Technology`.
+- Added token-saving command output rules.
+- Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
+
+## Files Changed
+
+- `index.html`
+- `src/styles.css`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath AGENT.md`
+- `Get-Content -LiteralPath DESIGNER.md`
+- `Test-Path -LiteralPath WEIGHT.md`
+- `git status --short --branch`
+- `rg --files public src . | Select-Object -First 200`
+- `rg -n "hero|operations|growth|intro|contact|Explore|One Group|Investing|Enduring|next chapter|json|schema" index.html src\main.js src\styles.css`
+- `Get-Content -LiteralPath index.html -TotalCount 240`
+- `Get-Content -LiteralPath src\styles.css -TotalCount 260`
+- `Get-Content -LiteralPath src\styles.css | Select-Object -Skip 260 -First 340`
+- `Get-Content -LiteralPath src\styles.css | Select-Object -Skip 800 -First 470`
+- `npx.cmd prettier --write index.html src/styles.css`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+- Browser/IAB rendered checks at `http://127.0.0.1:5173/`
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Browser/IAB confirmed the dark hero remains first and the four redesigned white homepage sections render after it.
+- Browser/IAB confirmed no console warnings/errors and no broken images.
+- Browser/IAB confirmed no page-level horizontal overflow at 320px, 390px, 430px, 768px, 1024px, 1366px, and 1440px.
+- Browser/IAB confirmed the `Explore Our Businesses` CTA in the One Group section navigates to `/business/`.
+- Browser/IAB confirmed the contact email uses `mailto:info@mstarholding.com`.
+- Browser/IAB confirmed `E-commerce & Technology` stays readable without broken `E-` wrapping on mobile.
+- Browser/IAB screenshots were inspected for desktop One Group, desktop Investing, mobile One Group, and mobile Contact.
+- Git commit hash: reported in final handoff after commit/push because the hash is only known after this documentation is committed.
+
 ## 2026-06-22
 
 - Replaced the Hizoz.com Business page video with the newly uploaded Hizoz video.

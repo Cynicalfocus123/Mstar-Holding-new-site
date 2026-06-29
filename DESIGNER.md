@@ -1,5 +1,40 @@
 # Designer Notes
 
+## 2026-06-29
+
+### Bright Homepage Sections After Dark Hero
+
+- Approved bright homepage direction implemented after the existing dark hero video.
+- Preserved the top hero video section and used the new white/off-white system only for the homepage sections that follow it.
+- The visual system is bright, premium, corporate, and institutional: white/off-white backgrounds, black/charcoal headings, muted gray body copy, restrained Mstar gold accents, and generous spacing.
+- The no-box design rule remains active. White sections may use image masks, thin dividers, gold line accents, soft arcs, CTA outlines, and clean media frames, but not heavy panels, dashboard boxes, or cheesy cards.
+
+### One Group Section
+
+- `One Group. Multiple Sectors. Built for Growth.` now uses a clean white editorial layout with a gold mini-line, large black headline, outline CTA, and responsive sector visuals.
+- Desktop uses six angled vertical sector image panels for Real Estate, Food & Hospitality, Import / Export, Defense, E-commerce & Technology, and Entertainment.
+- Tablet changes the sector visuals to a safer 3x2 grid.
+- Mobile uses horizontally scrollable sector tiles with safe gutters and hidden native scrollbars.
+- `E-commerce & Technology` is protected from broken `E-` wrapping.
+
+### Investing And Enduring Value Sections
+
+- `Investing in the Future of Regional Expansion` uses a two-column white layout with a curved city/infrastructure media mask and restrained gold arc treatment.
+- The investment theme row remains minimal, using thin gold circular line icons and the existing five themes: Infrastructure, Investment, Innovation, Asia growth opportunities, and Strategic partnerships.
+- `A Holding Company Built for Enduring Value` uses the same white split-media language with the approved paragraph and a curved image mask.
+- Existing poster assets are reused; no new heavy media assets were added.
+
+### Contact CTA
+
+- `Let us build the next chapter.` now uses white/off-white spacing, a gold mini-line, circular mail icon, thin gold divider, and clear clickable email link.
+- Email remains `info@mstarholding.com` with `mailto:info@mstarholding.com`.
+
+### Responsive Targets
+
+- Desktop at 1440px and up is spacious with large editorial typography and wide media treatments.
+- Tablet target 1024 x 1366 keeps generous padding and switches unsafe wide layouts to one-column or 3x2 visual grids.
+- Mobile target 430 x 932 stacks sections vertically, keeps text first, places media below copy where applicable, uses safe gutters around 24px, and avoids horizontal page overflow.
+
 ## 2026-06-22
 
 ### Hizoz And ABS Fulfillment Videos
