@@ -17,6 +17,49 @@
 
 ## 2026-06-29
 
+- Fixed bright homepage section typography sizing so One Group, Investing, Enduring Value, and Contact headlines are controlled and no longer render as oversized full-screen titles.
+- Restored approved One Group sample proportions with a readable left text column, visible paragraph, visible `Explore Our Businesses` CTA, and a wider six-panel slanted sector collage.
+- Reduced slanted sector image zoom from the previous heavy crop and lowered the collage height to show more of the actual photos.
+- Fixed tablet sector-grid labels so all six labels stay fully inside their image tiles.
+- Preserved the existing top hero video, exact homepage sector images, exact transparent gold growth icons, navigation, CTA destinations, SEO metadata, JSON-LD, and bright white/off-white visual system.
+- Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
+
+## Files Changed
+
+- `index.html`
+- `src/styles.css`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath src\styles.css | Select-Object -Skip ...`
+- `Get-Content -LiteralPath index.html | Select-Object -Skip ...`
+- `Test-Path -LiteralPath WEIGHT.md`
+- `npx.cmd prettier --write index.html src/styles.css`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+- Browser/IAB checks at `http://127.0.0.1:5173/`
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Browser/IAB confirmed no horizontal overflow at 320px, 390px, 430px, 768px, 1024px, 1366px, and 1440px desktop.
+- Browser/IAB confirmed One Group, Investing, Enduring Value, and Contact headlines are not clipped.
+- Browser/IAB confirmed the One Group `Explore Our Businesses` CTA is visible.
+- Browser/IAB confirmed slanted desktop sector images use reduced zoom and all six sector labels are readable.
+- Browser/IAB confirmed tablet sector labels stay fully inside their tiles after the label anchor fix.
+- Browser/IAB confirmed no broken images, no broken videos, no console warnings/errors, and the top hero remains first.
+- Git commit hash: reported in final handoff after commit/push because the hash is only known after this documentation is committed.
+
+## 2026-06-29
+
 - Added exact user-provided homepage sector images to the `One Group. Multiple Sectors. Built for Growth.` slanted image grid.
 - Added exact user-provided gold icon set to the `Investing in the Future of Regional Expansion` theme row.
 - Processed the uploaded light bulb and other icon outputs into transparent 512px PNG files with gold line art and no white, black, or checkerboard backgrounds.

@@ -2,6 +2,18 @@
 
 ## 2026-06-29
 
+### Bright Homepage Layout Proportions
+
+- Fixed the bright homepage sections so the layout matches the approved sample more closely instead of using giant typography.
+- One Group now uses a controlled editorial headline, existing Mstar body copy, visible `Explore Our Businesses` CTA, and a right-side six-panel slanted sector collage.
+- The One Group collage uses reduced image zoom and a shorter controlled height so more of each supplied sector photo is visible.
+- Desktop keeps the slanted six-panel treatment; tablet uses a clean 3x2 grid with labels anchored inside each tile; mobile uses horizontal scroll sector tiles.
+- Investing, Enduring Value, and Contact headline sizing is now section-specific and controlled so no title clips or becomes a full-screen typographic block.
+- Contact keeps the email block beside the text on desktop and below the text on mobile.
+- The no-box rule, bright white/off-white background, restrained gold accents, exact sector assets, and exact transparent gold icons remain preserved.
+
+## 2026-06-29
+
 ### Homepage Sector Images And Growth Icons
 
 - The `One Group. Multiple Sectors. Built for Growth.` section now uses the exact six user-provided images in the slanted sector collage.
