@@ -388,6 +388,7 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
           src="${escapeHtml(withPathPrefix(article.image, assetPrefix))}"
           alt=""
           loading="lazy"
+          decoding="async"
         />
       </span>
       <span class="${bodyClass}">
@@ -527,16 +528,16 @@ const renderCompanyMedia = (company) => {
         muted
         loop
         playsinline
-        preload="metadata"
+        preload="none"
         poster="${escapeHtml(poster)}"
+        data-src="${escapeHtml(company.mediaSrc)}"
         aria-label="${escapeHtml(label)}"
       >
-        <source src="${escapeHtml(company.mediaSrc)}" type="video/mp4" />
       </video>
     `;
   }
 
-  return `<img src="${escapeHtml(company.mediaSrc)}" alt="${escapeHtml(label)}" loading="lazy" />`;
+  return `<img src="${escapeHtml(company.mediaSrc)}" alt="${escapeHtml(label)}" loading="lazy" decoding="async" />`;
 };
 
 const renderCompanyLogo = (company) => {
@@ -550,6 +551,7 @@ const renderCompanyLogo = (company) => {
       src="${escapeHtml(company.logo)}"
       alt="${escapeHtml(company.logoAlt || `${company.name} logo`)}"
       loading="lazy"
+      decoding="async"
     />
   `;
 };
@@ -573,26 +575,70 @@ const renderCompanyBlock = (company) => `
   </article>
 `;
 
-const playCompanyMediaVideos = (root = document) => {
-  if (!root || prefersReducedMotion) {
+const loadCompanyMediaVideo = (video) => {
+  if (!(video instanceof HTMLVideoElement) || video.dataset.loaded === "true") {
     return;
   }
 
-  root.querySelectorAll(".company-media-video").forEach((video) => {
-    if (video instanceof HTMLVideoElement) {
-      const playVideo = () => {
-        if (!video.currentSrc) {
-          video.load();
+  const src = video.dataset.src;
+
+  if (!src) {
+    return;
+  }
+
+  const source = document.createElement("source");
+  source.src = src;
+  source.type = "video/mp4";
+  video.append(source);
+  video.dataset.loaded = "true";
+  video.load();
+};
+
+const playCompanyMediaVideo = (video) => {
+  if (!(video instanceof HTMLVideoElement) || prefersReducedMotion) {
+    return;
+  }
+
+  loadCompanyMediaVideo(video);
+
+  const playVideo = () => {
+    void video.play().catch(() => {});
+  };
+
+  playVideo();
+  requestAnimationFrame(playVideo);
+  window.setTimeout(playVideo, 250);
+};
+
+const lazyLoadCompanyMediaVideos = (root = document) => {
+  if (!root) {
+    return;
+  }
+
+  const videos = Array.from(root.querySelectorAll(".company-media-video"));
+
+  if (!videos.length) {
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach(playCompanyMediaVideo);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          playCompanyMediaVideo(entry.target);
+          observer.unobserve(entry.target);
         }
+      });
+    },
+    { rootMargin: "450px 0px", threshold: 0.01 },
+  );
 
-        void video.play().catch(() => {});
-      };
-
-      playVideo();
-      requestAnimationFrame(playVideo);
-      window.setTimeout(playVideo, 250);
-    }
-  });
+  videos.forEach((video) => observer.observe(video));
 };
 
 const renderBusinessSectors = () => {
@@ -617,7 +663,12 @@ const renderBusinessSectors = () => {
           aria-label="${escapeHtml(sector.name)}"
         >
           <div class="sector-bg" aria-hidden="true">
-            <img src="${escapeHtml(sector.poster)}" alt="" loading="lazy" />
+            <img
+              src="${escapeHtml(sector.poster)}"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="business-sector-layout business-sector-grid">
             <div class="sector-copy sector-heading business-sector-sticky">
@@ -641,7 +692,7 @@ const renderBusinessSectors = () => {
 renderNewsArticles();
 renderNewsDetail();
 renderBusinessSectors();
-playCompanyMediaVideos(businessSectorsRoot);
+lazyLoadCompanyMediaVideos(businessSectorsRoot);
 
 if (prefersReducedMotion) {
   document.querySelectorAll("video").forEach((video) => {

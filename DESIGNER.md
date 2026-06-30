@@ -2,6 +2,19 @@
 
 ## 2026-06-30
 
+### Live Deployment Weight Pass
+
+- Added deployment-weight improvements without changing approved imagery, video choices, logos, icons, article media, article order, card content, layout, crop intent, or visual style.
+- Homepage now has live `mstarholding.com` canonical, Open Graph, Twitter, and JSON-LD metadata.
+- Non-hero lazy images now include async decoding hints while hero posters remain eager.
+- Business company videos keep their exact same media paths and visual placement, but below-fold MP4 sources lazy-load near the viewport before autoplaying muted, looping, and playsinline.
+- Apache `.htaccess` compression and cache rules support lighter live delivery without changing the rendered design.
+- Homepage and News page article cards still open original external URLs in a new tab and do not route to internal detail pages.
+- No images, videos, logos, icons, article media, design sections, or approved layouts were removed.
+- No deployment ZIP was created.
+
+## 2026-06-30
+
 ### External News Card Link Correction
 
 - Homepage and News page article cards now open the original source article URLs in a new browser tab when a real URL is available.

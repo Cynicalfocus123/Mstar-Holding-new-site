@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "lint": "prettier --check .",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "weight:audit": "node scripts/asset-audit.mjs"
   },
   "devDependencies": {
     "prettier": "^3.3.3",

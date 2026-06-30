@@ -17,6 +17,73 @@
 
 ## 2026-06-30
 
+- Added live-deployment weight controls without removing, renaming, replacing, or visually changing approved images, videos, logos, icons, article media, layouts, or article card behavior.
+- Created `WEIGHT.md` to track deployment-weight rules, audit notes, safe optimizations, and no-ZIP status.
+- Added `public/.htaccess`; Vite copies it to `dist/.htaccess` with Apache gzip/deflate rules for HTML, CSS, JS, SVG, JSON, XML, and text, plus long cache headers for images, videos, fonts, CSS, and JS.
+- Added `scripts/asset-audit.mjs` and `npm run weight:audit` to scan `public/` and `dist/`, report total size, top 40 largest files, and group totals by extension.
+- Added homepage canonical, Open Graph, Twitter, and JSON-LD metadata using `https://mstarholding.com/`.
+- Added `decoding="async"` to non-hero lazy images while keeping hero posters eager and hero videos unchanged.
+- Changed below-fold Business company videos to lazy-load with `IntersectionObserver`, preserving exact video paths through `data-src`, `preload="none"`, and autoplay/muted/loop/playsinline behavior once videos are near the viewport.
+- Confirmed ABS Fulfillment remains at `../videos/business-abs-fulfillment.mp4`.
+- Confirmed homepage and News page article cards still open external original URLs in a new tab with `target="_blank"` and `rel="noopener noreferrer"` when a URL exists, and no cards were changed to internal detail links.
+- Confirmed no images, videos, logos, icons, or article media were removed.
+- Confirmed no deployment ZIP was created.
+
+## Files Changed
+
+- `index.html`
+- `src/main.js`
+- `package.json`
+- `public/.htaccess`
+- `scripts/asset-audit.mjs`
+- `AGENT.md`
+- `DESIGNER.md`
+- `WEIGHT.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\4a3c05ae-f324-4aea-97a3-6dcabb1a9e4a\pasted-text.txt`
+- `Get-Content -LiteralPath AGENT.md -TotalCount 220`
+- `Get-Content -LiteralPath DESIGNER.md -TotalCount 220`
+- `Test-Path -LiteralPath WEIGHT.md`
+- `git status --short --branch`
+- `rg -n "<img|<video|renderCompanyMedia|company-media-video|canonical|og:url|og:image|twitter:image|schema.org|github|github.io|mstarholding.com" ...`
+- `npx.cmd prettier --write index.html business/index.html news/index.html news/*/index.html src/main.js package.json scripts/asset-audit.mjs`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+- `npm.cmd run weight:audit > "$env:TEMP\mstar-weight-audit.txt" 2>&1; Get-Content ... | Select-Object -First 90`
+- Static checks for `dist/.htaccess`, Apache compression/cache rules, `IntersectionObserver`, company video `data-src`, external article card attributes, GitHub URL absence, and lazy-image decoding hints.
+
+## Build, Lint, Test, And Audit Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+- Passed: `npm.cmd run weight:audit`
+
+## Weight Audit Notes
+
+- `public/`: 253 MB across 66 files.
+- `dist/`: 253 MB across 77 files.
+- Largest group: MP4 video assets, 226 MB across 20 files.
+- Next largest group: PNG assets, 27 MB across 32 files.
+- Top largest files remain approved media, led by `business-mstar-property.mp4` at 36 MB and `mstar-holding-company-intro.mp4` at 23 MB.
+- Safe live-weight wins in this patch are Apache compression/cache rules, dist-only deployment guidance, async decoding for lazy images, and lazy loading of below-fold Business company MP4s.
+- No approved assets were deleted, compressed, renamed, or replaced.
+
+## Verification Notes
+
+- Static checks confirmed `public/.htaccess` is copied to `dist/.htaccess`.
+- Static checks confirmed metadata uses `https://mstarholding.com/` and no GitHub Pages URLs appear in public/build metadata, navigation, or CTAs.
+- Static checks confirmed homepage Business links, homepage News links, Business/News back-home nav links, and the News CTA remain relative and Vite/GitHub Pages compatible.
+- Static checks confirmed article cards retain external source behavior and are not routed to internal detail pages.
+- Static checks confirmed the Business company video paths remain the same and load only near the viewport through `IntersectionObserver`.
+- No live-server, localhost preview, or local dev server was launched for this patch.
+- No deployment ZIP was created.
+
+## 2026-06-30
+
 - Corrected News and Media article card behavior after the previous detail-page linking instruction was reversed.
 - Homepage and News page article cards now open each article's original external `url` in a new tab with `target="_blank"` and `rel="noopener noreferrer"` when a real URL is available.
 - Article cards with no external URL keep the same full visual card content but render as non-clickable `<article>` elements instead of linking to an internal detail page or `news/`.
