@@ -17,6 +17,23 @@
 
 ## 2026-06-30
 
+- Rebuilt the clean Hostinger live deployment ZIP from scratch as `mstar-holding-clean-live-deploy.zip`.
+- Removed old/bad ZIP files and recreated the deploy staging folder from scratch.
+- Removed root fallback favicon files so no favicon, logo, social preview, or brand image files are loose in the ZIP root.
+- All brand assets are organized only under `assets/brand/`: `mstar-share.png`, `favicon.png`, `favicon.ico`, and `apple-touch-icon.png`.
+- Footer tagline remains fixed everywhere as `Putting Big Ideas into Action`.
+- Non-home header top state remains fixed with the existing readable semi-transparent scrolled treatment, while homepage header behavior remains unchanged.
+- News cards continue to open real external article URLs, and the `All News and Activities` CTA continues to point to `news/`.
+- ZIP contents were verified with `tar -tf mstar-holding-clean-live-deploy.zip | Select-Object -First 200`; no wrapper folder, root favicon files, loose brand images, old ZIP files, `.git`, `node_modules`, source folders, or development files are included.
+- Commands run: `Get-Content -LiteralPath package.json`, old ZIP/staging cleanup, root favicon cleanup, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run weight:audit`, deploy-output checks, ZIP listing checks, `git status --short`, `git commit -m "Create clean live deploy package"`, and `git push origin main`.
+- Build status: passed.
+- Lint status: passed.
+- Test status: passed.
+- Weight audit status: passed.
+- Commit hash: reported in final handoff after commit and push.
+
+## 2026-06-30
+
 - Created the clean full Hostinger live deployment ZIP `mstar-holding-clean-live-deploy.zip` from a fresh build output and clean staging folder.
 - Fixed non-home header top-state readability so Business, News, and article detail pages start with the existing readable semi-transparent scrolled header treatment.
 - Preserved homepage header behavior so the homepage still starts transparent over the hero and changes only after the existing scroll threshold.

@@ -11,6 +11,14 @@
 - Do not create a deployment ZIP unless explicitly requested.
 - Use `npm run weight:audit` before later packaging or upload decisions.
 
+## 2026-06-30 Corrected Brand-Only Root Clean ZIP
+
+- Recreated `mstar-holding-clean-live-deploy.zip` after deleting old ZIP files and the previous temporary deploy folder.
+- Clean ZIP excludes development files, old backups, loose duplicate image files, `node_modules`, `.git`, source folders, package files, and old ZIPs.
+- No favicon, logo, social preview, or brand image files are loose in the ZIP root.
+- All brand assets are inside `assets/brand/`.
+- No unnecessary heavy media was added.
+
 ## 2026-06-30 Clean Full Hostinger Deploy ZIP
 
 - Created `mstar-holding-clean-live-deploy.zip` from a clean staging folder populated only from the final built live output.

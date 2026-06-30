@@ -2,6 +2,16 @@
 
 ## 2026-06-30
 
+### Clean Brand Asset ZIP Root
+
+- Brand assets are organized only in `assets/brand/`.
+- No favicon, logo, social preview, or brand image file should appear loose in the deployment ZIP root.
+- Footer tagline is `Putting Big Ideas into Action`.
+- Non-home pages remain readable from the top with the semi-transparent scrolled header treatment.
+- Homepage header behavior is unchanged.
+
+## 2026-06-30
+
 ### Clean Full Hostinger Deployment ZIP
 
 - Non-home pages use the readable semi-transparent header from the initial top state, matching the existing scrolled header treatment.
