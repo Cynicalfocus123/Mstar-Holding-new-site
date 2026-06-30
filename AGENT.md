@@ -1359,3 +1359,34 @@
 - Confirmed built output contains the organized brand assets and root fallback favicon files.
 - Confirmed the corrected ZIP contains no nested wrapper folder.
 - Commit hash: reported in final handoff after commit/push.
+
+## 2026-06-30 Verified Brand ZIP Structure Fix
+
+- Fixed the live ZIP structure after user review.
+- Removed the old `public/og/` social preview output so `mstar-share.png` is not duplicated in an old `og/` path.
+- Main brand assets remain inside `public/assets/brand/`.
+- Root `favicon.png`, `favicon.ico`, and `apple-touch-icon.png` remain fallback copies only for browser compatibility.
+- HTML metadata continues to point to `https://mstarholding.com/assets/brand/mstar-share.png`.
+- Favicon tags continue to point to `/assets/brand/favicon.png`, `/assets/brand/favicon.ico`, and `/assets/brand/apple-touch-icon.png`.
+- Rebuilt `mstar-brand-assets-social-preview-live-update.zip` from a clean temporary live-update folder.
+- Verified the ZIP contents with `tar -tf mstar-brand-assets-social-preview-live-update.zip | Select-Object -First 120`.
+- Verified the ZIP contains `assets/brand/mstar-share.png`, all three organized favicon/touch files, the three root fallback favicon files, and the updated built HTML files.
+- Verified the ZIP does not contain an `og/` folder, a loose root `mstar-share.png`, `.git/`, `node_modules/`, or a wrapper folder.
+
+## 2026-06-30 Verified Brand ZIP Commands
+
+- Inspected `package.json`.
+- Removed old `public/og/`.
+- `cmd /c npm.cmd run build`
+- `cmd /c npm.cmd run lint`
+- `cmd /c npm.cmd test`
+- Recreated the clean live-update folder and ZIP.
+- `tar -tf mstar-brand-assets-social-preview-live-update.zip | Select-Object -First 120`
+
+## 2026-06-30 Verified Brand ZIP Status
+
+- Passed: build, lint, and test.
+- ZIP filename: `mstar-brand-assets-social-preview-live-update.zip`.
+- ZIP contents are public_html-ready and intentionally include root favicon fallback files only.
+- Main brand assets are inside `assets/brand/`.
+- Commit hash: reported in final handoff after commit/push.

@@ -652,3 +652,10 @@
 - Browser favicon, shortcut icon, and Apple touch icon use the Mstar logo from the organized brand asset folder.
 - Social previews must continue to show the Mstar logo, not AI, hero, Business, or News images.
 - The corrected live ZIP structure is public_html-ready and keeps brand assets in `assets/brand/`.
+
+### 2026-06-30 Verified Brand ZIP Structure
+
+- The live ZIP was rebuilt so the main share/fav assets are clearly inside `assets/brand/`.
+- Root favicon files are present only as browser fallback copies.
+- No loose root `mstar-share.png` or old `og/` share folder is included.
+- HTML metadata points to `assets/brand` paths while preserving the official Mstar logo share preview.

@@ -294,3 +294,10 @@
 - Avoided adding duplicate social preview variants; the organized preview image is `assets/brand/mstar-share.png`.
 - Updated metadata so Open Graph and Twitter/X image URLs point to `https://mstarholding.com/assets/brand/mstar-share.png`.
 - Corrected live ZIP contains only the organized brand assets, root favicon fallbacks, and updated built HTML files needed for this change.
+
+## 2026-06-30 Verified Brand ZIP Structure
+
+- Removed the old `public/og/` social preview output to avoid duplicate loose preview locations.
+- Rebuilt the live ZIP from a clean temporary folder.
+- ZIP contains only required live upload files: organized `assets/brand/` assets, root favicon fallback files, and updated built HTML.
+- No unused old `og/` folder or loose root `mstar-share.png` is included.
