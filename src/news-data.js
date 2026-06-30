@@ -36,13 +36,13 @@ export const newsArticles = [
     title: "Pasit Viwatkurkul: Shaping the Future of Warfare Entrepreneurship",
     date: "April 23, 2024",
     dateSort: "2024-04-23",
-    source: "Feature Article",
+    source: "CEOWORLD Magazine",
     excerpt:
       "Pasit Viwatkurkul is highlighted for his vision in defense entrepreneurship, focusing on logistics, development systems, strategic partnerships, and support solutions for governments navigating a rapidly evolving global defense landscape.",
     image:
       "media/news/pasit-viwatkurkul-future-of-warfare-entrepreneurship.png",
     slug: "pasit-viwatkurkul-future-of-warfare-entrepreneurship",
-    url: "",
+    url: "https://ceoworld.biz/2024/04/23/pasit-viwatkurkul-shaping-the-future-of-warfare-entrepreneurship/",
     body: [
       {
         heading: "A Broader Security Landscape",
