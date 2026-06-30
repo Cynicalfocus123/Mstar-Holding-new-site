@@ -1399,3 +1399,55 @@
 - HTML metadata and favicon tags still point to `/assets/brand/` paths.
 - Created a new full live-site ZIP so the top level contains site folders and live root files only, without root favicon files.
 - Verified the new ZIP contents before handoff.
+
+## 2026-06-30 Non-Home Header Top-State Fix
+
+- Fixed non-home header top-state readability without redesigning the header.
+- Business, News, and all article detail pages now reuse the existing scrolled/semi-transparent header style from initial page load.
+- Homepage header behavior is preserved: it still starts in the original transparent hero state and gains the scrolled style only after the existing scroll threshold.
+- Grammar-checked and updated the footer tagline everywhere from `Building long-term value across industries.` to `Putting Big Ideas into Action`.
+- No footer layout, page layouts, business/news content, social preview assets, favicon assets, media files, or unrelated CSS were changed.
+- Created the small Hostinger live-update ZIP `mstar-header-inner-pages-live-update.zip` for this header and footer text update only.
+
+## Files Changed
+
+- `index.html`
+- `business/index.html`
+- `news/index.html`
+- `news/*/index.html`
+- `src/main.js`
+- `AGENT.md`
+- `DESIGNER.md`
+- `WEIGHT.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath package.json`
+- `rg` and `Select-String` inspections for header classes, body page classes, scripts, built asset references, and static page inventory.
+- `cmd /c npx.cmd prettier --write src/main.js`
+- `cmd /c npm.cmd run build`
+- `cmd /c npm.cmd run lint`
+- `cmd /c npm.cmd test`
+- Static built-output checks for inner-page body classes, homepage body state, shared built JS reference, header logic, footer tagline replacement, and old tagline absence.
+- Created and verified `mstar-header-inner-pages-live-update.zip` from a clean temporary live-update folder.
+- `git status --short`
+- Path-scoped `git add` for this task's modified source/docs files and `mstar-header-inner-pages-live-update.zip`, leaving the pre-existing unrelated root ZIP untracked.
+- `git commit -m "Fix non-home header top state"`
+- `git push origin main`
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
+## Verification Notes
+
+- Confirmed the built JS keeps `is-scrolled` enabled for `business-page` and `news-page` bodies from initial load.
+- Confirmed the homepage built body remains unclassified and still uses the original `window.scrollY > 24` threshold.
+- Confirmed Business page, News page, and all six article detail pages reference the updated built JS asset.
+- Confirmed all nine built HTML pages contain `Putting Big Ideas into Action` in the footer and no built page contains the old `Building long-term value across industries.` tagline.
+- Confirmed no about, contact, or global-presence static page currently exists in the project.
+- Confirmed mobile/tablet header and menu use the same existing `is-scrolled` and nav-open styles.
+- Confirmed no localhost preview, live-server, or local dev server was launched.
+- Commit hash: reported in final handoff after commit/push.

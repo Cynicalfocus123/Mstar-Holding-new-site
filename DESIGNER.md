@@ -665,3 +665,12 @@
 - The deployment ZIP no longer exposes favicon files at the ZIP root.
 - Favicon, touch icon, and social preview assets remain organized under `assets/brand/`.
 - HTML still points to the Mstar logo assets in `assets/brand/`.
+
+### 2026-06-30 Non-Home Header Top-State
+
+- Non-home pages now show the readable semi-transparent header from the very top of the page.
+- Business, News, and article detail pages reuse the same visual treatment as the existing scrolled header state: dark glass background, readable light navigation, visible brand text, and the same smooth premium behavior.
+- Homepage keeps its original hero/header behavior, including the transparent top state over the hero video.
+- Mobile and tablet headers keep the same readable top-state treatment on non-home pages, and the existing mobile menu icon remains visible.
+- Footer tagline text now reads `Putting Big Ideas into Action` everywhere, replacing `Building long-term value across industries.` without changing footer layout or styling.
+- No page layout, business/news content, social preview, favicon, or media design was changed.

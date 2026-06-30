@@ -4,6 +4,9 @@ import { getArticleBySlug, sortedNewsArticles } from "./news-data.js";
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const header = document.querySelector("[data-header]");
+const isInnerPage =
+  document.body.classList.contains("business-page") ||
+  document.body.classList.contains("news-page");
 
 const setNavOpen = (isOpen) => {
   nav?.classList.toggle("is-open", isOpen);
@@ -27,7 +30,7 @@ nav?.addEventListener("click", (event) => {
 });
 
 const updateHeader = () => {
-  header?.classList.toggle("is-scrolled", window.scrollY > 24);
+  header?.classList.toggle("is-scrolled", isInnerPage || window.scrollY > 24);
 };
 
 updateHeader();

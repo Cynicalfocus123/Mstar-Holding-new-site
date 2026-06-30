@@ -307,3 +307,10 @@
 - Removed root favicon fallback files from `public/` so they do not appear at the top level of the full live ZIP.
 - Kept only the organized brand assets under `assets/brand/`.
 - No duplicate root favicon assets are included in the new full live ZIP.
+
+## 2026-06-30 Non-Home Header Top-State Fix
+
+- No asset changes were made for this header and footer text fix.
+- The implementation is a JS-only header state update in `src/main.js` plus a static footer tagline text update in the HTML source pages.
+- The existing built CSS asset is reused; no media, logo, favicon, social preview, image, or video files were added, removed, renamed, recompressed, or duplicated.
+- The small Hostinger update ZIP is limited to the updated built JS asset and the built HTML files that reference it and contain the updated footer tagline.
