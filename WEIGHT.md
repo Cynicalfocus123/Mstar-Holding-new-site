@@ -176,3 +176,64 @@
 - ABS Fulfillment remains on `../videos/business-abs-fulfillment.mp4`.
 - No approved media was removed.
 - No deployment ZIP was created.
+
+## 2026-06-30 Aggressive Media Optimization Pass
+
+- Goal: reduce the already-optimized live deployment below 80 MB while preserving approved media, page structure, metadata, crops, and article-card behavior.
+- Final `dist/`: 30.33 MB across 77 files.
+- Final `public/`: 30.22 MB across 66 files.
+- Final MP4 total: 24.81 MB across 20 files.
+- Final PNG total: 3.58 MB across 17 files.
+- Final WebP total: 1.82 MB across 15 files.
+- Backups were created outside the repo before replacement.
+
+### MP4 Results
+
+| File                                          |   Before |   Final |    Saved |
+| --------------------------------------------- | -------: | ------: | -------: |
+| `business-mstar-property.mp4`                 | 17.74 MB | 3.70 MB | 14.04 MB |
+| `mstar-holding-company-intro.mp4`             | 12.39 MB | 7.65 MB |  4.74 MB |
+| `business-page-header-mobile.mp4`             |  5.99 MB | 1.78 MB |  4.21 MB |
+| `business-american-buying-service.mp4`        |  5.09 MB | 1.15 MB |  3.94 MB |
+| `business-page-header-desktop.mp4`            |  4.99 MB | 3.04 MB |  1.95 MB |
+| `business-senior-home.mp4`                    |  4.06 MB | 0.92 MB |  3.14 MB |
+| `business-buyhomeforless.mp4`                 |  3.70 MB | 0.79 MB |  2.91 MB |
+| `business-boogoo.mp4`                         |  3.50 MB | 0.72 MB |  2.78 MB |
+| `business-mstar-defense.mp4`                  |  3.40 MB | 0.68 MB |  2.72 MB |
+| `business-mstar-airsoft.mp4`                  |  3.31 MB | 0.71 MB |  2.60 MB |
+| `business-hospitality-senior-home-care.mp4`   |  2.80 MB | 0.62 MB |  2.18 MB |
+| `business-senior-home-care.mp4`               |  2.80 MB | 0.62 MB |  2.18 MB |
+| `business-foodonlines.mp4`                    |  2.63 MB | 0.58 MB |  2.05 MB |
+| `business-foodonlines-2.mp4`                  |  2.50 MB | 0.55 MB |  1.95 MB |
+| `business-ecommerce-foodonlines.mp4`          |  2.30 MB | 0.42 MB |  1.88 MB |
+| `business-one-taste.mp4`                      |  1.13 MB | 0.22 MB |  0.91 MB |
+| `business-hizoz.mp4`                          |  0.88 MB | 0.17 MB |  0.71 MB |
+| `business-seniorhome-private-nursing-hut.mp4` |  0.84 MB | 0.21 MB |  0.63 MB |
+| `business-mstar-technology.mp4`               |  0.81 MB | 0.19 MB |  0.62 MB |
+| `business-abs-fulfillment.mp4`                |  0.49 MB | 0.10 MB |  0.39 MB |
+
+### WebP Conversion
+
+- Converted 15 photo-style PNG files to WebP and updated references.
+- Converted root posters: `hero-poster.webp`, `operations-poster.webp`, `growth-poster.webp`.
+- Converted homepage sector images to `media/homepage/*.webp`.
+- Converted all six news article images to `media/news/*.webp`.
+- Logo and icon PNGs remain PNG.
+
+### Commands Run
+
+- `cmd /c npm.cmd run build`
+- `cmd /c npm.cmd run lint`
+- `cmd /c npm.cmd test`
+- `cmd /c npm.cmd run weight:audit`
+- `ffprobe` check for all `dist/videos/*.mp4`
+- Static checks for footer copyright, converted WebP assets, `.htaccess`, GitHub URL absence, and article external-link rendering.
+
+### Verification
+
+- Passed: build, lint, test, and weight audit.
+- All 20 MP4 files exist in `dist/videos` and are ffprobe-readable.
+- All 15 converted WebP assets exist in `dist/media`.
+- All 9 built HTML pages contain `Â© 2026 Mstar Holding Inc.`.
+- The April 23, 2024 CEOWORLD article remains external and uses `target="_blank"` with `rel="noopener noreferrer"`.
+- No deployment ZIP was created.

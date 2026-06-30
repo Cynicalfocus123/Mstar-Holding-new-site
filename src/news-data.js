@@ -8,7 +8,7 @@ export const newsArticles = [
     source: "The Frontier Report",
     excerpt:
       "Mstar Defense is reported to have secured a major defense contract covering armored vehicles, military communication systems, advanced R&D weapons, anti-drone weaponry, and ammunition while expanding across Asia and Africa.",
-    image: "media/news/mstar-defense-major-contract-asia-africa-ipo.png",
+    image: "media/news/mstar-defense-major-contract-asia-africa-ipo.webp",
     slug: "mstar-defense-major-contract-asia-africa-ipo",
     url: "https://thefrontierreport.com/thailand-defense-giant-mstar-defense-lands-major-contract-expands-across-asia-and-africa-ahead-of-2-9b-ipo/",
     body: [
@@ -40,7 +40,7 @@ export const newsArticles = [
     excerpt:
       "Pasit Viwatkurkul is highlighted for his vision in defense entrepreneurship, focusing on logistics, development systems, strategic partnerships, and support solutions for governments navigating a rapidly evolving global defense landscape.",
     image:
-      "media/news/pasit-viwatkurkul-future-of-warfare-entrepreneurship.png",
+      "media/news/pasit-viwatkurkul-future-of-warfare-entrepreneurship.webp",
     slug: "pasit-viwatkurkul-future-of-warfare-entrepreneurship",
     url: "https://ceoworld.biz/2024/04/23/pasit-viwatkurkul-shaping-the-future-of-warfare-entrepreneurship/",
     body: [
@@ -72,7 +72,7 @@ export const newsArticles = [
     source: "Prestige Thailand",
     excerpt:
       'A profile on Pasit "Joe" Viwatkurkul, his entrepreneurial journey, Obaki, and his role in building technology ventures under the Mstar Holding ecosystem.',
-    image: "media/news/pasit-joe-viwatkurkul-profile.png",
+    image: "media/news/pasit-joe-viwatkurkul-profile.webp",
     slug: "leap-of-faith-pasit-joe-viwatkurkul",
     url: "https://www.prestigeonline.com/th/people/leap-of-faith-inside-the-pioneering-mind-of-pasit-joe-viwatkurkul/",
     body: [
@@ -104,7 +104,7 @@ export const newsArticles = [
     source: "CEOWORLD Magazine",
     excerpt:
       "Jakapun Viwatkurkul discusses Mstar Holding's multi-sector growth, expansion strategy, and approach to investing across technology, food, real estate, eCommerce, and regional markets.",
-    image: "media/news/jakapun-viwatkurkul-ceo-spotlight.png",
+    image: "media/news/jakapun-viwatkurkul-ceo-spotlight.webp",
     slug: "ceo-spotlight-jakapun-viwatkurkul",
     url: "https://ceoworld.biz/2022/03/01/ceo-spotlight-jakapun-viwatkurkul-ceo-and-president-of-mstar-holding/",
     body: [
@@ -136,7 +136,7 @@ export const newsArticles = [
     source: "Gulf News",
     excerpt:
       "Mstar Holding outlines expansion plans connecting Thailand and the UAE, with focus areas including food, eCommerce, tourism, technology, import/export, and regional job creation.",
-    image: "media/news/mstar-holding-uae-thailand-expansion.png",
+    image: "media/news/mstar-holding-uae-thailand-expansion.webp",
     slug: "mstar-holding-expansion-uae-thailand",
     url: "https://gulfnews.com/business/corporate-news/mstar-holdings-expansion-will-drive-growth-both-in-uae-and-thailand-1.1643211933684",
     body: [
@@ -167,7 +167,7 @@ export const newsArticles = [
     source: "Forbes India",
     excerpt:
       "Mstar Technology discusses digital tools designed to support farmers, workers, and communities affected by COVID-19 through job creation, direct buyer connections, and technology access.",
-    image: "media/news/mstar-economic-recovery-covid-19.png",
+    image: "media/news/mstar-economic-recovery-covid-19.webp",
     slug: "mstar-economic-recovery-covid-19",
     url: "https://www.forbesindia.com/article/brand-connect/mstar-aims-to-help-economic-recovery-from-covid-19/61705/1",
     body: [

@@ -899,6 +899,14 @@ h2 {
   overflow-wrap: anywhere;
 }
 
+.site-footer .footer-copyright {
+  flex-basis: 100%;
+  color: rgba(246, 243, 236, 0.62);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-align: right;
+}
+
 @media (min-width: 1101px) {
   .business-sector-layout {
     grid-template-columns: minmax(220px, 22vw) minmax(0, 1fr);

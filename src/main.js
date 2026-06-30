@@ -107,7 +107,7 @@ const businessSectors = [
     headline: "Building Enduring Value",
     description:
       "Strategic real estate development focused on long-term value, premium locations, and scalable regional growth.",
-    poster: "../media/hero-poster.png",
+    poster: "../media/hero-poster.webp",
     companies: [
       {
         name: "Mstar Property",
@@ -115,7 +115,7 @@ const businessSectors = [
           "We develop affordable family homes to large-scale luxury mansion communities, creating quality residential projects designed for modern living, long-term value, and premium locations.",
         mediaType: "video",
         mediaSrc: "../videos/business-mstar-property.mp4",
-        poster: "../media/hero-poster.png",
+        poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/mstar-property-logo.png",
@@ -127,7 +127,7 @@ const businessSectors = [
           "We offer a wide range of land, homes, and condos, from affordable properties to high-end real estate for sale, rent, and development opportunities.",
         mediaType: "video",
         mediaSrc: "../videos/business-buyhomeforless.mp4",
-        poster: "../media/operations-poster.png",
+        poster: "../media/operations-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/buyhomeforless-logo.png",
@@ -139,7 +139,7 @@ const businessSectors = [
           "Asia and Thailand's leading senior care home developer, creating comfortable, affordable communities with spacious open-floor-plan designs tailored to the unique needs of seniors.",
         mediaType: "video",
         mediaSrc: "../videos/business-senior-home.mp4",
-        poster: "../media/growth-poster.png",
+        poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/seniorcaring-logo.png",
@@ -153,14 +153,14 @@ const businessSectors = [
     headline: "Elevating Experiences Every Day",
     description:
       "Food and hospitality ventures designed around consumer demand, operational quality, and market expansion.",
-    poster: "../media/operations-poster.png",
+    poster: "../media/operations-poster.webp",
     companies: [
       {
         name: "Foodonlines.com",
         description: "We bring groceries to your door for less.",
         mediaType: "video",
         mediaSrc: "../videos/business-foodonlines-2.mp4",
-        poster: "../media/operations-poster.png",
+        poster: "../media/operations-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/foodonlines-logo.png",
@@ -172,7 +172,7 @@ const businessSectors = [
           "One Taste provides ready-to-eat MRE meal solutions designed for military troops, emergency response, disaster relief, and remote operations where fast, reliable nutrition is essential.",
         mediaType: "video",
         mediaSrc: "../videos/business-one-taste.mp4",
-        poster: "../media/hero-poster.png",
+        poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/one-taste-logo.png",
@@ -184,7 +184,7 @@ const businessSectors = [
           "Hospitality-adjacent support designed around comfort, accessibility, and quality daily living.",
         mediaType: "video",
         mediaSrc: "../videos/business-hospitality-senior-home-care.mp4",
-        poster: "../media/growth-poster.png",
+        poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/seniorcaring-logo.png",
@@ -198,7 +198,7 @@ const businessSectors = [
     headline: "Connecting Markets, Creating Opportunities",
     description:
       "Cross-border trade and supply operations supporting regional commerce, distribution, and international partnerships.",
-    poster: "../media/growth-poster.png",
+    poster: "../media/growth-poster.webp",
     companies: [
       {
         name: "American Buying Service",
@@ -206,7 +206,7 @@ const businessSectors = [
           "Buying and sourcing support for cross-border commerce, distribution needs, and international partnerships.",
         mediaType: "video",
         mediaSrc: "../videos/business-american-buying-service.mp4",
-        poster: "../media/growth-poster.png",
+        poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/american-buying-service-logo.png",
@@ -218,7 +218,7 @@ const businessSectors = [
           "Fulfillment operations supporting trade flows, practical logistics, and scalable distribution activity.",
         mediaType: "video",
         mediaSrc: "../videos/business-abs-fulfillment.mp4",
-        poster: "../media/operations-poster.png",
+        poster: "../media/operations-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/abs-fulfillment-logo.png",
@@ -232,7 +232,7 @@ const businessSectors = [
     headline: "Supporting Strategic Industry Growth",
     description:
       "Defense-focused operations supporting manufacturing, technology development, and strategic industry partnerships.",
-    poster: "../media/hero-poster.png",
+    poster: "../media/hero-poster.webp",
     companies: [
       {
         name: "Mstar Defense",
@@ -240,7 +240,7 @@ const businessSectors = [
           "Defense-focused operations supporting strategic industry partnerships, manufacturing, and technology development.",
         mediaType: "video",
         mediaSrc: "../videos/business-mstar-defense.mp4",
-        poster: "../media/hero-poster.png",
+        poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/mstar-defense-logo.png",
@@ -254,7 +254,7 @@ const businessSectors = [
     headline: "Building Digital Platforms for Growth",
     description:
       "Digital commerce and technology initiatives built to support scalable platforms, modern operations, and future-ready growth.",
-    poster: "../media/operations-poster.png",
+    poster: "../media/operations-poster.webp",
     companies: [
       {
         name: "Foodonlines.com",
@@ -262,7 +262,7 @@ const businessSectors = [
           "Digital food commerce designed to support modern customer access, practical ordering, and market reach.",
         mediaType: "video",
         mediaSrc: "../videos/business-ecommerce-foodonlines.mp4",
-        poster: "../media/operations-poster.png",
+        poster: "../media/operations-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/foodonlines-logo.png",
@@ -274,7 +274,7 @@ const businessSectors = [
           "A digital platform initiative built around scalable technology, modern operations, and growth potential.",
         mediaType: "video",
         mediaSrc: "../videos/business-hizoz.mp4",
-        poster: "../media/growth-poster.png",
+        poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/hizoz-logo.png",
@@ -286,7 +286,7 @@ const businessSectors = [
           "Technology operations supporting platform development, digital infrastructure, and future-ready growth.",
         mediaType: "video",
         mediaSrc: "../videos/business-mstar-technology.mp4",
-        poster: "../media/hero-poster.png",
+        poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/mstar-technology-logo.png",
@@ -300,7 +300,7 @@ const businessSectors = [
     headline: "Creating Destination Experiences",
     description:
       "Entertainment ventures focused on destination experiences, media opportunities, events, and lifestyle-driven growth.",
-    poster: "../media/growth-poster.png",
+    poster: "../media/growth-poster.webp",
     companies: [
       {
         name: "Boogoo Music Festival",
@@ -308,7 +308,7 @@ const businessSectors = [
           "Event-focused entertainment shaped around destination experiences, audiences, and lifestyle-driven growth.",
         mediaType: "video",
         mediaSrc: "../videos/business-boogoo.mp4",
-        poster: "../media/growth-poster.png",
+        poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/boogoo-logo.png",
@@ -320,7 +320,7 @@ const businessSectors = [
           "Entertainment operations focused on active destination experiences, events, and audience engagement.",
         mediaType: "video",
         mediaSrc: "../videos/business-mstar-airsoft.mp4",
-        poster: "../media/hero-poster.png",
+        poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/mstar-airsoft-logo.png",

@@ -1206,3 +1206,38 @@
 - Replace poster-only placeholders with final HTML5 video sources when brand media is available.
 - Expand secondary pages or routed sections after homepage review.
 - Add final company contact details and real newsroom content.
+
+## 2026-06-30 Aggressive Deployment Weight Pass
+
+- Read `AGENT.md`, `DESIGNER.md`, and `WEIGHT.md` before edits.
+- Preserved approved page structure, article metadata, card arrows, media crops, and existing article-card external-link behavior.
+- Added the exact user-supplied footer copyright line `Â© 2026 Mstar Holding Inc.` to the homepage, Business page, News page, and all six article detail pages.
+- Aggressively re-encoded the 20 approved MP4 files in `public/videos/` with the same filenames and public paths.
+- Converted 15 photo-style PNG assets to WebP and updated all site references to the new `.webp` paths.
+- Kept remaining logo/icon PNG assets as PNG to preserve transparency and brand rendering.
+- Stored backups outside the repo:
+  - `D:\mstar holding new site\media-optimization-third-backup-20260630-151236`
+  - `D:\mstar holding new site\webp-conversion-backup-20260630-151650`
+
+## 2026-06-30 Final Weight Results
+
+- Final `public/`: 30.22 MB across 66 files.
+- Final `dist/`: 30.33 MB across 77 files.
+- Final MP4 total: 24.81 MB across 20 files, reduced from 81.36 MB before this pass.
+- Final PNG total: 3.58 MB across 17 files.
+- Final WebP total: 1.82 MB across 15 files.
+- `dist/.htaccess` exists.
+- No deployment ZIP was created.
+
+## 2026-06-30 Verification
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Passed: `cmd /c npm.cmd run weight:audit`.
+- All 20 `dist/videos/*.mp4` files passed `ffprobe`.
+- Visual spot-check used a representative video contact sheet from the compressed hero, business header, mobile header, property, and American Buying Service videos.
+- Confirmed all 15 converted WebP assets exist in `dist/media`.
+- Confirmed all 9 built HTML pages contain the exact footer copyright line.
+- Confirmed the April 23, 2024 CEOWORLD article keeps its external URL in central article data and card rendering uses `target="_blank"` with `rel="noopener noreferrer"`.
+- Confirmed no GitHub URLs were found in built/source site URLs.

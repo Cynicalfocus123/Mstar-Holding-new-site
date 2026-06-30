@@ -615,3 +615,11 @@
 - Text remains directly on media or page backgrounds.
 - Section gradients are full-section readability treatments, not content containers.
 - CTA styling uses text, line accents, and spacing rather than button boxes.
+
+### 2026-06-30 Weight Pass Design Notes
+
+- Added the exact footer copyright line `Â© 2026 Mstar Holding Inc.` as small, subdued footer text without changing the existing footer hierarchy.
+- Converted photo-style homepage posters, sector imagery, and news imagery to WebP while preserving visual placement, crop behavior, article card layout, category labels, titles, excerpts, sources, dates, and arrows.
+- Re-encoded approved MP4 media in place with the same filenames so page design, video placement, autoplay behavior, and lazy-loading behavior remain unchanged.
+- Kept transparent logo and icon assets as PNG to avoid visible brand or edge artifacts.
+- Representative compressed video frames were spot-checked for recognizable content and acceptable visual clarity.
