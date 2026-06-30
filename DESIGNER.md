@@ -659,3 +659,9 @@
 - Root favicon files are present only as browser fallback copies.
 - No loose root `mstar-share.png` or old `og/` share folder is included.
 - HTML metadata points to `assets/brand` paths while preserving the official Mstar logo share preview.
+
+### 2026-06-30 Full ZIP Without Root Favicons
+
+- The deployment ZIP no longer exposes favicon files at the ZIP root.
+- Favicon, touch icon, and social preview assets remain organized under `assets/brand/`.
+- HTML still points to the Mstar logo assets in `assets/brand/`.

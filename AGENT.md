@@ -1390,3 +1390,12 @@
 - ZIP contents are public_html-ready and intentionally include root favicon fallback files only.
 - Main brand assets are inside `assets/brand/`.
 - Commit hash: reported in final handoff after commit/push.
+
+## 2026-06-30 Full ZIP Without Root Favicons
+
+- User clarified the ZIP root must not show `favicon.png`, `favicon.ico`, or `apple-touch-icon.png`.
+- Removed root favicon fallback files from `public/`.
+- Kept favicon, touch icon, and share image assets only under `public/assets/brand/`.
+- HTML metadata and favicon tags still point to `/assets/brand/` paths.
+- Created a new full live-site ZIP so the top level contains site folders and live root files only, without root favicon files.
+- Verified the new ZIP contents before handoff.

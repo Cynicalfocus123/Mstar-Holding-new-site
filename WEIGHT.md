@@ -301,3 +301,9 @@
 - Rebuilt the live ZIP from a clean temporary folder.
 - ZIP contains only required live upload files: organized `assets/brand/` assets, root favicon fallback files, and updated built HTML.
 - No unused old `og/` folder or loose root `mstar-share.png` is included.
+
+## 2026-06-30 Full ZIP Without Root Favicons
+
+- Removed root favicon fallback files from `public/` so they do not appear at the top level of the full live ZIP.
+- Kept only the organized brand assets under `assets/brand/`.
+- No duplicate root favicon assets are included in the new full live ZIP.
