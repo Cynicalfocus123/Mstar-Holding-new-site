@@ -637,3 +637,9 @@
 - Browser favicon, shortcut icon, and Apple touch icon now use the Mstar logo for brand-consistent tab and saved-icon display.
 - Page layouts, CSS, media placement, article cards, and visual design were not changed.
 - The live upload ZIP only includes the latest social preview/favicon assets and updated built HTML needed for this change.
+
+### 2026-06-30 Homepage Real Estate Image Position
+
+- Shifted only the homepage Real Estate sector image focal point left inside the existing slanted collage box to reveal more of the luxury house.
+- No layout, box dimensions, skew, spacing, responsiveness, HTML structure, copy, or other sector images were changed.
+- The latest live-site ZIP was refreshed to include this newest homepage visual adjustment along with the existing social preview/favicon update files.

@@ -1274,9 +1274,9 @@
 - Added favicon, shortcut icon, and apple-touch-icon tags to the homepage, Business page, News page, and all six article detail pages.
 - Preserved page layout, CSS, homepage media, Business media, News card behavior, and production `mstarholding.com` metadata URLs.
 - Created `mstar-social-preview-favicon-live-update.zip` for this latest live update only.
-- ZIP contents: `og/mstar-share.png`, `favicon.png`, `favicon.ico`, `apple-touch-icon.png`, `index.html`, `business/index.html`, `news/index.html`, and all six built article detail `index.html` files.
-- ZIP size: 352.3 KB.
-- The ZIP contains 13 entries and no source folders, `.git`, `node_modules`, package files, project notes, source maps, backups, screenshots, or temp files.
+- ZIP contents: `og/mstar-share.png`, `favicon.png`, `favicon.ico`, `apple-touch-icon.png`, `index.html`, `business/index.html`, `news/index.html`, all six built article detail `index.html` files, and the current built `assets/` CSS/JS files.
+- ZIP size after the Real Estate image-position refresh: 368.5 KB.
+- The ZIP contains 15 entries and no source folders, `.git`, `node_modules`, package files, project notes, source maps, backups, screenshots, or temp files.
 
 ## 2026-06-30 Social Preview Commands
 
@@ -1302,3 +1302,19 @@
 - After deployment, purge Cloudflare cache: Cloudflare -> Caching -> Purge Everything.
 - Social apps may cache previews; after deployment and purge, refresh preview cache with Facebook Sharing Debugger, LinkedIn Post Inspector, and X/Twitter Card Validator if needed.
 - Commit hash: reported in final handoff after commit/push.
+
+## 2026-06-30 Homepage Real Estate Image Position
+
+- Adjusted only the homepage Real Estate sector image positioning.
+- Changed the Real Estate sector image `object-position` so the image focal point moves left inside the existing slanted box and reveals more of the luxury house.
+- Did not change homepage HTML structure, copy, box sizing, section sizing, transforms, skew angles, spacing, gaps, borders, responsiveness, or other sector images.
+- Existing social preview and favicon changes remain intact.
+- Updated the latest live-site ZIP to include this newest compiled homepage CSS/HTML change, the current built `assets/` files, and the existing social preview/favicon update files.
+
+## 2026-06-30 Real Estate Image Checks
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Confirmed only the Real Estate sector image positioning rule changed in CSS.
+- Confirmed the small Hostinger live ZIP remains direct-extract ready for `public_html`.

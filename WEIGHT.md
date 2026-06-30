@@ -277,6 +277,12 @@
 - Kept favicon/touch assets small enough for live use.
 - Avoided unused duplicate social preview images; all Open Graph and Twitter/X image metadata points to `https://mstarholding.com/og/mstar-share.png`.
 - The small Hostinger live ZIP for this update is `mstar-social-preview-favicon-live-update.zip`.
-- ZIP size: 352.3 KB.
-- ZIP contents are limited to the four new live assets and the 9 built HTML files whose metadata changed.
+- ZIP size after the Real Estate image-position refresh: 368.5 KB.
+- ZIP contents are limited to the four new live assets, the 9 built HTML files whose metadata changed, and the current built CSS/JS assets needed by those HTML files.
 - No source folders, package files, project notes, node modules, backups, source maps, or unused assets are included in the small live ZIP.
+
+## 2026-06-30 Homepage Real Estate Image Position Update
+
+- Adjusted only the Real Estate sector image positioning in homepage CSS.
+- No media files were added, removed, recompressed, or duplicated.
+- The latest small live ZIP was refreshed to include the compiled CSS/JS assets and HTML references needed for this newest homepage-only change.
