@@ -629,3 +629,11 @@
 - Footer copyright source now uses `&copy; 2026 Mstar Holding Inc.` on every page to avoid mojibake while preserving the same footer placement and subdued visual treatment.
 - Hostinger ZIP packaging was created from built `dist` files only, so the live upload preserves the current optimized design without source or development files.
 - The ZIP root matches `public_html` extraction expectations with no extra enclosing folder.
+
+### 2026-06-30 Social Preview And Favicon
+
+- The official Mstar logo is now the global share preview image instead of a hero, Business, News, or AI-generated image.
+- Social previews use a 1200 x 630 white-background composition with the Mstar logo centered and uncropped.
+- Browser favicon, shortcut icon, and Apple touch icon now use the Mstar logo for brand-consistent tab and saved-icon display.
+- Page layouts, CSS, media placement, article cards, and visual design were not changed.
+- The live upload ZIP only includes the latest social preview/favicon assets and updated built HTML needed for this change.

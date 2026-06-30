@@ -1263,3 +1263,42 @@
 - Confirmed all required `dist` files and article detail pages exist.
 - Confirmed built HTML contains `&copy; 2026 Mstar Holding Inc.` on all 9 pages.
 - Confirmed no `/src/main.js`, source-only paths, localhost URLs, GitHub Pages URLs, or GitHub repository URLs appear in `dist`.
+
+## 2026-06-30 Social Preview And Favicon Update
+
+- Added the official Mstar logo as the global social share preview image.
+- Generated `public/og/mstar-share.png` at 1200 x 630 on a clean white background.
+- Added `public/favicon.png`, `public/favicon.ico`, and `public/apple-touch-icon.png` from the official Mstar logo.
+- Replaced the old hero/business/news image Open Graph and Twitter/X preview image references with `https://mstarholding.com/og/mstar-share.png`.
+- Added Open Graph secure URL, image type, width, and height metadata.
+- Added favicon, shortcut icon, and apple-touch-icon tags to the homepage, Business page, News page, and all six article detail pages.
+- Preserved page layout, CSS, homepage media, Business media, News card behavior, and production `mstarholding.com` metadata URLs.
+- Created `mstar-social-preview-favicon-live-update.zip` for this latest live update only.
+- ZIP contents: `og/mstar-share.png`, `favicon.png`, `favicon.ico`, `apple-touch-icon.png`, `index.html`, `business/index.html`, `news/index.html`, and all six built article detail `index.html` files.
+- ZIP size: 352.3 KB.
+- The ZIP contains 13 entries and no source folders, `.git`, `node_modules`, package files, project notes, source maps, backups, screenshots, or temp files.
+
+## 2026-06-30 Social Preview Commands
+
+- Inspected `package.json`.
+- Generated social preview and favicon assets with the bundled Python/Pillow runtime.
+- `cmd /c npx.cmd prettier --write index.html business/index.html news/index.html news/*/index.html`
+- `cmd /c npm.cmd run build`
+- `cmd /c npm.cmd run lint`
+- `cmd /c npm.cmd test`
+- `cmd /c npm.cmd run weight:audit`
+- Created the small Hostinger update ZIP from the built `dist` assets and HTML files.
+- Verified ZIP root entries and checked for excluded source/development files.
+
+## 2026-06-30 Social Preview Verification
+
+- Passed: build, lint, test, and weight audit.
+- Confirmed `public/og/mstar-share.png` exists.
+- Confirmed `public/favicon.png`, `public/favicon.ico`, and `public/apple-touch-icon.png` exist.
+- Confirmed built HTML on all 9 pages uses `https://mstarholding.com/og/mstar-share.png` for Open Graph and Twitter/X image metadata.
+- Confirmed built HTML includes favicon, shortcut icon, and apple-touch-icon tags on all 9 pages.
+- Confirmed no localhost, live-server, GitHub Pages, source-only, or uploaded-asset-folder paths appear in `dist`.
+- Confirmed the small live ZIP preserves direct `public_html` extraction paths with no nested wrapper folder.
+- After deployment, purge Cloudflare cache: Cloudflare -> Caching -> Purge Everything.
+- Social apps may cache previews; after deployment and purge, refresh preview cache with Facebook Sharing Debugger, LinkedIn Post Inspector, and X/Twitter Card Validator if needed.
+- Commit hash: reported in final handoff after commit/push.

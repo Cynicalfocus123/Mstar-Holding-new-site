@@ -268,3 +268,15 @@
 - Confirmed no source-only or GitHub URLs appear in `dist`.
 - Confirmed all checked built image, video, CSS, and JS references exist.
 - Confirmed `.htaccess` is included at the ZIP root.
+
+## 2026-06-30 Social Preview And Favicon Assets
+
+- Added the official Mstar logo social preview image at `public/og/mstar-share.png`.
+- Added favicon assets at `public/favicon.png`, `public/favicon.ico`, and `public/apple-touch-icon.png`.
+- Kept the social preview image web-friendly at 1200 x 630 and about 141 KB.
+- Kept favicon/touch assets small enough for live use.
+- Avoided unused duplicate social preview images; all Open Graph and Twitter/X image metadata points to `https://mstarholding.com/og/mstar-share.png`.
+- The small Hostinger live ZIP for this update is `mstar-social-preview-favicon-live-update.zip`.
+- ZIP size: 352.3 KB.
+- ZIP contents are limited to the four new live assets and the 9 built HTML files whose metadata changed.
+- No source folders, package files, project notes, node modules, backups, source maps, or unused assets are included in the small live ZIP.
