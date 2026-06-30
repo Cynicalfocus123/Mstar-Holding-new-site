@@ -2,6 +2,16 @@
 
 ## 2026-06-30
 
+### Full Live ZIP With Forward-Slash Paths
+
+- Deployment ZIP is clean and public_html-ready.
+- The full deployment package includes the latest finished site design and behavior changes.
+- Brand assets remain organized in `assets/brand/`.
+- No favicon, logo, social preview, or brand image files are loose in the deployment ZIP root.
+- ZIP archive entries use forward-slash folder paths for Hostinger/Linux extraction.
+
+## 2026-06-30
+
 ### Clean Brand Asset ZIP Root
 
 - Brand assets are organized only in `assets/brand/`.

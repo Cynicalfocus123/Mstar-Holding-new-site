@@ -17,6 +17,23 @@
 
 ## 2026-06-30
 
+- Created brand-new full Hostinger live-site deployment ZIP `mstar-holding-full-live-site-clean.zip`.
+- Deleted previous ZIP artifacts and temporary deploy folders before staging the new package.
+- Built the latest finished site and copied only final static live files from `dist/` into a clean deploy staging folder.
+- Fixed the ZIP path problem by creating the archive with Python `zipfile` and `Path.relative_to(root).as_posix()` for every archive entry.
+- Verified `ZIP_OK`: no backslash paths, no wrapper folder, no loose root favicon/logo/social image files, no old ZIP files, no `.git`, no `node_modules`, and no source/development files.
+- Verified brand assets are inside `assets/brand/`: `mstar-share.png`, `favicon.png`, `favicon.ico`, and `apple-touch-icon.png`.
+- Verified latest built site changes are included: footer tagline is `Putting Big Ideas into Action`, old footer text is gone, non-home header top state uses the readable scrolled treatment, homepage header behavior is preserved, News cards open external article URLs, and social preview metadata points to `https://mstarholding.com/assets/brand/mstar-share.png`.
+- ZIP local path: `D:\mstar holding new site\Mstar-Holding-new-site\mstar-holding-full-live-site-clean.zip`.
+- Commands run: `Get-Content -LiteralPath AGENT.md`, `Get-Content -LiteralPath DESIGNER.md`, `Get-Content -LiteralPath WEIGHT.md`, `Get-Content -LiteralPath package.json`, previous ZIP/staging cleanup, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run weight:audit`, deploy-output checks, Python `zipfile` creation, Python ZIP verification, `git status --short`, `git commit -m "Create clean full live deployment zip"`, and `git push origin main`.
+- Build status: passed.
+- Lint status: passed.
+- Test status: passed.
+- Weight audit status: passed.
+- Commit hash: reported in final handoff after commit and push.
+
+## 2026-06-30
+
 - Rebuilt the clean Hostinger live deployment ZIP from scratch as `mstar-holding-clean-live-deploy.zip`.
 - Removed old/bad ZIP files and recreated the deploy staging folder from scratch.
 - Removed root fallback favicon files so no favicon, logo, social preview, or brand image files are loose in the ZIP root.

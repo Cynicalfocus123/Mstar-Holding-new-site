@@ -11,6 +11,14 @@
 - Do not create a deployment ZIP unless explicitly requested.
 - Use `npm run weight:audit` before later packaging or upload decisions.
 
+## 2026-06-30 Full Live ZIP Forward-Slash Packaging
+
+- Created `mstar-holding-full-live-site-clean.zip` as a full live-site Hostinger package from a clean `dist/` staging folder.
+- Full live ZIP excludes development files, `node_modules`, `.git`, old backups, previous ZIP files, temporary deploy folders, and unused source-only files.
+- ZIP uses forward-slash paths for Hostinger/Linux extraction, verified with Python `ZipFile.namelist()`.
+- No loose duplicate brand image files are included at the ZIP root; brand assets remain inside `assets/brand/`.
+- No unnecessary heavy media was added.
+
 ## 2026-06-30 Corrected Brand-Only Root Clean ZIP
 
 - Recreated `mstar-holding-clean-live-deploy.zip` after deleting old ZIP files and the previous temporary deploy folder.
