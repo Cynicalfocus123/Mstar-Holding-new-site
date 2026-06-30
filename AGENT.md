@@ -17,6 +17,23 @@
 
 ## 2026-06-30
 
+- Created the clean full Hostinger live deployment ZIP `mstar-holding-clean-live-deploy.zip` from a fresh build output and clean staging folder.
+- Fixed non-home header top-state readability so Business, News, and article detail pages start with the existing readable semi-transparent scrolled header treatment.
+- Preserved homepage header behavior so the homepage still starts transparent over the hero and changes only after the existing scroll threshold.
+- Footer tagline is `Putting Big Ideas into Action` everywhere in source and built HTML.
+- Restored root fallback favicon files while keeping organized brand metadata and favicon tags pointed to `assets/brand/`.
+- Updated the Vite build base to `/` for the Hostinger root deployment so built asset and favicon references resolve from `public_html`.
+- Verified the ZIP is public_html-ready with no wrapper folder and normal archive entries such as `index.html`, `business/index.html`, `news/index.html`, article folders, `assets/`, `media/`, `videos/`, `.htaccess`, and root favicon fallbacks.
+- Verified the ZIP and deploy staging exclude development files, `.git`, `node_modules`, source folders, old backup folders, old ZIP files, package files, and temporary deploy folders.
+- Commands run: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run weight:audit`, deploy-output text checks, Hostinger root-path checks, ZIP listing and structure checks, `git status --short`, `git commit -m "Fix header footer and clean live deploy package"`, and `git push origin main`.
+- Build status: passed.
+- Lint status: passed.
+- Test status: passed.
+- Weight audit status: passed.
+- Commit hash: reported in final handoff after commit and push.
+
+## 2026-06-30
+
 - Optimized/compressed approved media after explicit approval to reduce live deployment size while preserving filenames, paths, visible assets, layout, metadata behavior, and article card behavior.
 - Re-encoded all 20 MP4 files in `public/videos/` as H.264 MP4 with `-movflags +faststart`, `pix_fmt yuv420p`, no audio, and the same filenames/paths.
 - Used CRF 28 for all MP4s first; then used CRF 30 only for larger below-fold/company videos where additional savings were needed and paths/visual placement remained unchanged.
@@ -1405,7 +1422,7 @@
 - Fixed non-home header top-state readability without redesigning the header.
 - Business, News, and all article detail pages now reuse the existing scrolled/semi-transparent header style from initial page load.
 - Homepage header behavior is preserved: it still starts in the original transparent hero state and gains the scrolled style only after the existing scroll threshold.
-- Grammar-checked and updated the footer tagline everywhere from `Building long-term value across industries.` to `Putting Big Ideas into Action`.
+- Grammar-checked and updated the footer tagline everywhere from the retired long-term-value tagline to `Putting Big Ideas into Action`.
 - No footer layout, page layouts, business/news content, social preview assets, favicon assets, media files, or unrelated CSS were changed.
 - Created the small Hostinger live-update ZIP `mstar-header-inner-pages-live-update.zip` for this header and footer text update only.
 
@@ -1446,7 +1463,7 @@
 - Confirmed the built JS keeps `is-scrolled` enabled for `business-page` and `news-page` bodies from initial load.
 - Confirmed the homepage built body remains unclassified and still uses the original `window.scrollY > 24` threshold.
 - Confirmed Business page, News page, and all six article detail pages reference the updated built JS asset.
-- Confirmed all nine built HTML pages contain `Putting Big Ideas into Action` in the footer and no built page contains the old `Building long-term value across industries.` tagline.
+- Confirmed all nine built HTML pages contain `Putting Big Ideas into Action` in the footer and no built page contains the retired footer tagline.
 - Confirmed no about, contact, or global-presence static page currently exists in the project.
 - Confirmed mobile/tablet header and menu use the same existing `is-scrolled` and nav-open styles.
 - Confirmed no localhost preview, live-server, or local dev server was launched.

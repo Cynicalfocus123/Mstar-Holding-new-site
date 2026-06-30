@@ -2,6 +2,17 @@
 
 ## 2026-06-30
 
+### Clean Full Hostinger Deployment ZIP
+
+- Non-home pages use the readable semi-transparent header from the initial top state, matching the existing scrolled header treatment.
+- Homepage header behavior is unchanged and keeps the transparent top state over the hero.
+- Footer brand tagline is now `Putting Big Ideas into Action` everywhere.
+- The clean live deployment ZIP uses a direct `public_html` structure with root HTML files, normal folders, organized brand assets, root fallback favicon files, `.htaccess`, media, and videos.
+- Built asset and favicon references are root-based for the live Hostinger domain.
+- No page layout, business/news content, social preview image, favicon design, or media design was changed for this packaging pass.
+
+## 2026-06-30
+
 ### Media Compression Pass
 
 - Compressed approved video and image assets to make the live `dist/` upload much smaller without changing filenames, paths, layout, crop intent, article order, card behavior, metadata behavior, or page structure.
@@ -672,5 +683,5 @@
 - Business, News, and article detail pages reuse the same visual treatment as the existing scrolled header state: dark glass background, readable light navigation, visible brand text, and the same smooth premium behavior.
 - Homepage keeps its original hero/header behavior, including the transparent top state over the hero video.
 - Mobile and tablet headers keep the same readable top-state treatment on non-home pages, and the existing mobile menu icon remains visible.
-- Footer tagline text now reads `Putting Big Ideas into Action` everywhere, replacing `Building long-term value across industries.` without changing footer layout or styling.
+- Footer tagline text now reads `Putting Big Ideas into Action` everywhere, replacing the retired footer tagline without changing footer layout or styling.
 - No page layout, business/news content, social preview, favicon, or media design was changed.

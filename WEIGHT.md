@@ -11,6 +11,15 @@
 - Do not create a deployment ZIP unless explicitly requested.
 - Use `npm run weight:audit` before later packaging or upload decisions.
 
+## 2026-06-30 Clean Full Hostinger Deploy ZIP
+
+- Created `mstar-holding-clean-live-deploy.zip` from a clean staging folder populated only from the final built live output.
+- The ZIP is direct-extract ready for Hostinger `public_html` and does not contain a wrapper folder.
+- The clean deploy ZIP excludes development files, old backups, `node_modules`, `.git`, previous ZIP files, package files, source folders, screenshots, temporary deploy folders, and unused source-only assets.
+- No unnecessary heavy media was added.
+- Included only static live-site files: built HTML, built assets, organized brand assets, root favicon fallbacks, `.htaccess`, used media, and used videos.
+- Verified archive entries use normal forward-slash folder paths for pages such as `business/index.html` and `news/.../index.html`.
+
 ## 2026-06-30 Approved Media Compression Pass
 
 - Explicit approval was given to optimize/compress approved media for smaller deployment size.
