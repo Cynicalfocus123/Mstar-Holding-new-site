@@ -17,6 +17,79 @@
 
 ## 2026-06-30
 
+- Optimized/compressed approved media after explicit approval to reduce live deployment size while preserving filenames, paths, visible assets, layout, metadata behavior, and article card behavior.
+- Re-encoded all 20 MP4 files in `public/videos/` as H.264 MP4 with `-movflags +faststart`, `pix_fmt yuv420p`, no audio, and the same filenames/paths.
+- Used CRF 28 for all MP4s first; then used CRF 30 only for larger below-fold/company videos where additional savings were needed and paths/visual placement remained unchanged.
+- Kept homepage and Business hero/header videos working and preserved the existing lazy-loading behavior for Business company videos.
+- Losslessly recompressed PNG files in `public/media/` where the optimized output was smaller, preserving image dimensions, transparency, filenames, and paths.
+- Kept backups and temporary encode outputs outside the repo and outside Vite build output.
+- Final `public/` size: 107.43 MB, down from 253 MB.
+- Final `dist/` size: 107.53 MB, down from 253 MB.
+- Final MP4 total: 81.36 MB, down from 226 MB.
+- Confirmed all 20 MP4s exist in `dist/videos` and are ffprobe-readable.
+- Confirmed all 45 `public/media` files exist in `dist/media`.
+- Confirmed `dist/.htaccess` exists.
+- Confirmed no GitHub Pages URLs appear in public/build metadata, navigation, schema, or CTAs.
+- Confirmed homepage and News page article cards preserve external original-URL behavior.
+- Confirmed no approved media was removed and no deployment ZIP was created.
+
+## Files Changed
+
+- `public/videos/*.mp4`
+- `public/media/*.png`
+- `public/media/homepage/*.png`
+- `public/media/logos/buyhomeforless-logo.png`
+- `public/media/news/mstar-defense-major-contract-asia-africa-ipo.png`
+- `AGENT.md`
+- `DESIGNER.md`
+- `WEIGHT.md`
+
+## Commands Run
+
+- `npm.cmd run weight:audit 2>&1 | Select-Object -First 120`
+- Temporary ffmpeg/ffprobe setup outside the repository
+- `ffprobe` inspection for all `public/videos/*.mp4`
+- H.264 ffmpeg encode pass at CRF 28 for all `public/videos/*.mp4`
+- H.264 ffmpeg encode pass at CRF 30 for larger below-fold/company MP4s
+- Bundled Python/Pillow lossless PNG recompression for `public/media/**/*.png`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+- `npm.cmd run weight:audit > "$env:TEMP\mstar-weight-audit-after.txt" 2>&1; Get-Content "$env:TEMP\mstar-weight-audit-after.txt" | Select-Object -First 120`
+- Static checks for MP4 probeability, `dist/media` parity, `dist/.htaccess`, GitHub URL absence, article card external-link behavior, Business video lazy-loading markers, and no ZIP files.
+
+## Build, Lint, Test, And Audit Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+- Passed: `npm.cmd run weight:audit`
+
+## Weight Audit Notes
+
+- Before: `public/` 253 MB; `dist/` 253 MB; MP4 total 226 MB; PNG total 27 MB.
+- After: `public/` 107 MB; `dist/` 108 MB in audit output.
+- Exact measured after totals: `public/` 107.43 MB, `dist/` 107.53 MB, MP4 total 81.36 MB.
+- Top remaining file: `videos/business-mstar-property.mp4` at 18 MB, reduced from 35.97 MB.
+- Homepage hero video `videos/mstar-holding-company-intro.mp4` is 12.39 MB, reduced from 22.8 MB.
+- PNGs were reduced losslessly where possible, with total PNG group now 26 MB.
+
+## Verification Notes
+
+- All approved media files remain present; none were removed.
+- All video filenames and paths stayed the same, including `../videos/business-abs-fulfillment.mp4`.
+- `dist/videos` contains all 20 MP4 files and each is ffprobe-readable.
+- `dist/media` contains all 45 media files from `public/media`.
+- Business company videos still use lazy-loading via `IntersectionObserver`, `data-src`, and `preload="none"`.
+- Homepage and News page article cards still open original external article URLs in new tabs when URLs exist.
+- Current article data has external URLs for all six articles; the renderer still keeps future URL-less cards non-clickable.
+- No GitHub Pages URLs were found in public/build metadata, navigation, schema, or CTAs.
+- `dist/.htaccess` exists.
+- No live-server, localhost preview, or local dev server was launched for this patch.
+- No deployment ZIP was created.
+
+## 2026-06-30
+
 - Added live-deployment weight controls without removing, renaming, replacing, or visually changing approved images, videos, logos, icons, article media, layouts, or article card behavior.
 - Created `WEIGHT.md` to track deployment-weight rules, audit notes, safe optimizations, and no-ZIP status.
 - Added `public/.htaccess`; Vite copies it to `dist/.htaccess` with Apache gzip/deflate rules for HTML, CSS, JS, SVG, JSON, XML, and text, plus long cache headers for images, videos, fonts, CSS, and JS.

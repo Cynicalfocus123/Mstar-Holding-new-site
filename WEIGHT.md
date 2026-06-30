@@ -11,6 +11,105 @@
 - Do not create a deployment ZIP unless explicitly requested.
 - Use `npm run weight:audit` before later packaging or upload decisions.
 
+## 2026-06-30 Approved Media Compression Pass
+
+- Explicit approval was given to optimize/compress approved media for smaller deployment size.
+- No public asset paths, filenames, layout, crop intent, article order, card behavior, metadata behavior, or page structure were changed.
+- Original media backups were kept outside the repo and outside Vite build output.
+- No backup originals were placed in `public/`, `dist/`, or Git.
+- No approved image, video, logo, icon, or article media was removed.
+- No deployment ZIP was created.
+
+### Final Size Summary
+
+- `public/`: 253 MB before, 107.43 MB after.
+- `dist/`: 253 MB before, 107.53 MB after.
+- MP4 total: 226 MB before, 81.36 MB after.
+- PNG total: 27 MB before, 26 MB after.
+- Final Hostinger upload target is `dist/`, now 107.53 MB.
+
+### Video Optimization
+
+- Re-encoded all `public/videos/*.mp4` files to H.264 MP4 with `-movflags +faststart` and `pix_fmt yuv420p`.
+- Removed audio from autoplay-muted videos because no site video exposes controls or uses audio.
+- Kept the same filenames and paths.
+- Used CRF 28 for all videos first.
+- Used CRF 30 only for larger below-fold/company videos after the CRF 28 pass, keeping hero/header videos at CRF 28.
+- All final MP4 files are ffprobe-readable.
+
+| File                                          | Original |    Final |    Saved |
+| --------------------------------------------- | -------: | -------: | -------: |
+| `business-mstar-property.mp4`                 | 35.97 MB | 17.74 MB | 18.23 MB |
+| `mstar-holding-company-intro.mp4`             | 22.80 MB | 12.39 MB | 10.42 MB |
+| `business-senior-home.mp4`                    | 15.88 MB |  4.06 MB | 11.81 MB |
+| `business-foodonlines.mp4`                    | 14.63 MB |  2.63 MB | 11.99 MB |
+| `business-buyhomeforless.mp4`                 | 14.47 MB |  3.70 MB | 10.77 MB |
+| `business-page-header-desktop.mp4`            | 14.06 MB |  4.99 MB |  9.07 MB |
+| `business-page-header-mobile.mp4`             | 13.72 MB |  5.99 MB |  7.73 MB |
+| `business-seniorhome-private-nursing-hut.mp4` | 11.72 MB |  0.84 MB | 10.88 MB |
+| `business-senior-home-care.mp4`               | 10.64 MB |  2.80 MB |  7.84 MB |
+| `business-hospitality-senior-home-care.mp4`   | 10.64 MB |  2.80 MB |  7.84 MB |
+| `business-boogoo.mp4`                         |  9.84 MB |  3.50 MB |  6.34 MB |
+| `business-american-buying-service.mp4`        |  9.71 MB |  5.09 MB |  4.61 MB |
+| `business-mstar-defense.mp4`                  |  9.59 MB |  3.40 MB |  6.19 MB |
+| `business-ecommerce-foodonlines.mp4`          |  8.12 MB |  2.30 MB |  5.82 MB |
+| `business-foodonlines-2.mp4`                  |  7.35 MB |  2.50 MB |  4.85 MB |
+| `business-mstar-airsoft.mp4`                  |  5.79 MB |  3.31 MB |  2.48 MB |
+| `business-mstar-technology.mp4`               |  4.00 MB |  0.81 MB |  3.19 MB |
+| `business-one-taste.mp4`                      |  2.76 MB |  1.13 MB |  1.63 MB |
+| `business-hizoz.mp4`                          |  2.74 MB |  0.88 MB |  1.86 MB |
+| `business-abs-fulfillment.mp4`                |  1.39 MB |  0.49 MB |  0.90 MB |
+
+### PNG Optimization
+
+- Used lossless PNG recompression with Pillow where output was smaller.
+- Preserved transparency and dimensions.
+- Kept the same filenames and paths.
+
+| File                                                    | Original |    Final |    Saved |
+| ------------------------------------------------------- | -------: | -------: | -------: |
+| `homepage/sector-defense.png`                           | 2.421 MB | 2.290 MB | 0.131 MB |
+| `hero-poster.png`                                       | 1.843 MB | 1.745 MB | 0.098 MB |
+| `homepage/sector-import-export.png`                     | 2.229 MB | 2.159 MB | 0.070 MB |
+| `operations-poster.png`                                 | 2.044 MB | 1.976 MB | 0.068 MB |
+| `homepage/sector-real-estate.png`                       | 2.405 MB | 2.339 MB | 0.066 MB |
+| `growth-poster.png`                                     | 1.979 MB | 1.914 MB | 0.064 MB |
+| `homepage/sector-food-hospitality.png`                  | 2.309 MB | 2.255 MB | 0.055 MB |
+| `homepage/sector-ecommerce-technology.png`              | 2.622 MB | 2.578 MB | 0.045 MB |
+| `homepage/sector-entertainment.png`                     | 2.841 MB | 2.808 MB | 0.033 MB |
+| `logos/buyhomeforless-logo.png`                         | 0.138 MB | 0.114 MB | 0.023 MB |
+| `news/mstar-defense-major-contract-asia-africa-ipo.png` | 0.608 MB | 0.606 MB | 0.002 MB |
+
+### Commands Run
+
+- `npm.cmd run weight:audit 2>&1 | Select-Object -First 120`
+- Temporary ffmpeg/ffprobe setup outside the repo.
+- `ffprobe` inspection for all `public/videos/*.mp4`.
+- H.264 CRF 28 encode pass for all `public/videos/*.mp4`.
+- H.264 CRF 30 encode pass for larger below-fold/company MP4s.
+- Bundled Python/Pillow lossless PNG recompression for `public/media/**/*.png`.
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint`
+- `npm.cmd test`
+- `npm.cmd run weight:audit` with final output written to `$env:TEMP\mstar-weight-audit-after.txt`.
+
+### Verification
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `npm.cmd run lint`.
+- Passed: `npm.cmd test`.
+- Passed: `npm.cmd run weight:audit`.
+- All 20 MP4 files exist in `dist/videos` and are ffprobe-readable.
+- All 45 files from `public/media` exist in `dist/media`.
+- `dist/.htaccess` exists.
+- Homepage hero video remains at `videos/mstar-holding-company-intro.mp4`.
+- Business company videos still lazy-load through `IntersectionObserver`, `data-src`, and `preload="none"`.
+- Homepage and News page article cards preserve external-source behavior with `target="_blank"` and `rel="noopener noreferrer"`.
+- Current article data has external URLs for all six articles; the renderer still keeps future URL-less article cards non-clickable.
+- No GitHub Pages URLs were found in public/build metadata, navigation, schema, or CTAs.
+- No approved media was removed.
+- No deployment ZIP was created.
+
 ## 2026-06-30 Live Deployment Weight Pass
 
 - Added `public/.htaccess` so Vite copies Apache delivery rules to `dist/.htaccess`.

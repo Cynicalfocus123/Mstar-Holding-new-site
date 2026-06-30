@@ -2,6 +2,19 @@
 
 ## 2026-06-30
 
+### Media Compression Pass
+
+- Compressed approved video and image assets to make the live `dist/` upload much smaller without changing filenames, paths, layout, crop intent, article order, card behavior, metadata behavior, or page structure.
+- `dist/` is now 107.53 MB, down from about 253 MB.
+- MP4s now total 81.36 MB, down from about 226 MB.
+- Hero/header videos remain in place and company videos keep the same visual slots, lazy-loading behavior, autoplay, muted, loop, and playsinline behavior.
+- PNGs were recompressed losslessly where smaller output was possible; transparent logos/icons remain transparent and were not flattened.
+- Homepage and News page article cards still open original external URLs in a new tab.
+- No approved image, video, logo, icon, article media, visible design section, or layout was removed.
+- No deployment ZIP was created.
+
+## 2026-06-30
+
 ### Live Deployment Weight Pass
 
 - Added deployment-weight improvements without changing approved imagery, video choices, logos, icons, article media, article order, card content, layout, crop intent, or visual style.
