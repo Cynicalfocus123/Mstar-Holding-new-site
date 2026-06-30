@@ -2,6 +2,18 @@
 
 ## 2026-06-30
 
+### External News Card Link Correction
+
+- Homepage and News page article cards now open the original source article URLs in a new browser tab when a real URL is available.
+- The full article card remains the clickable target; image, category, title, excerpt, source, date, and arrow visuals stay inside the card exactly as designed.
+- Articles without an external URL keep the same visual card treatment but do not navigate to internal detail pages or `news/`.
+- The homepage `All News and Activities` CTA remains the internal link to `news/`.
+- Existing detail pages are not used by homepage or News page card clicks.
+- News sorting remains newest first by `dateSort`.
+- The approved sticky-left homepage News section, 4/2/1 News page grid, and white/off-white Mstar gold design remain preserved.
+
+## 2026-06-30
+
 ### 2026 Defense Article And ABS Video Update
 
 - News cards now include the January 26, 2026 The Frontier Report defense article as the newest story.

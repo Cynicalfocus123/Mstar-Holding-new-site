@@ -17,6 +17,51 @@
 
 ## 2026-06-30
 
+- Corrected News and Media article card behavior after the previous detail-page linking instruction was reversed.
+- Homepage and News page article cards now open each article's original external `url` in a new tab with `target="_blank"` and `rel="noopener noreferrer"` when a real URL is available.
+- Article cards with no external URL keep the same full visual card content but render as non-clickable `<article>` elements instead of linking to an internal detail page or `news/`.
+- Confirmed article boxes still keep the image, category, title, excerpt, source label, date, and arrow visual inside the card.
+- Confirmed the `All News and Activities` CTA remains the only homepage News internal link to `news/`.
+- Confirmed existing detail pages are not used by homepage or News page article cards.
+- Confirmed central article sorting newest first by `dateSort` is preserved.
+- Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
+
+## Files Changed
+
+- `index.html`
+- `news/index.html`
+- `src/main.js`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\bdb0e0af-126e-406b-9377-ce760f8ad354\pasted-text.txt`
+- `git status --short --branch`
+- `Select-String -Path src\main.js,index.html,news\index.html -Pattern ...`
+- `npx.cmd prettier --write index.html news/index.html src/main.js AGENT.md DESIGNER.md`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+- Static checks with `Select-String` and Node for external card links, URL-less disabled article rendering, CTA behavior, and newest-first sort order.
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Static checks confirmed homepage and News page cards use `article.url` with `target="_blank"` and `rel="noopener noreferrer"` instead of internal slug/detail paths.
+- Static checks confirmed the URL-less April 23, 2024 defense article renders as a non-clickable card.
+- Static checks confirmed all card content remains rendered inside the card.
+- Static checks confirmed the homepage CTA remains linked to `news/`.
+- Static checks confirmed article sorting remains newest first.
+- No live-server, localhost preview, or local dev server was launched for this patch.
+
+## 2026-06-30
+
 - Added The Frontier Report January 26, 2026 defense article as the newest entry in the central `src/news-data.js` source.
 - Confirmed homepage News cards, News page cards, and article detail pages use the shared central article data and `sortedNewsArticles` latest-first `dateSort` ordering.
 - Confirmed article cards link to internal detail pages, while `All News and Activities` remains linked to `news/`.

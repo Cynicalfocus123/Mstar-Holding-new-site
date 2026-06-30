@@ -356,7 +356,6 @@ const withPathPrefix = (path, prefix = "") => {
 
 const renderNewsArticleCard = (article, variant, options = {}) => {
   const assetPrefix = options.assetPrefix || "";
-  const detailPrefix = options.detailPrefix || "";
   const cardClass = variant === "home" ? "home-news-card" : "news-article-card";
   const mediaClass =
     variant === "home" ? "home-news-card-media" : "news-article-media";
@@ -376,7 +375,6 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
     variant === "home" ? "home-news-card-meta" : "news-article-meta";
   const arrowClass =
     variant === "home" ? "home-news-card-arrow" : "news-article-arrow";
-  const resolvedUrl = withPathPrefix(`${article.slug}/`, detailPrefix);
   const placeholderLabel =
     variant === "news" && article.isPlaceholder
       ? '<span class="news-placeholder-label">Placeholder article</span>'
@@ -384,9 +382,7 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
   const sourceLabel = article.source
     ? `<span class="${sourceClass}">${escapeHtml(article.source)}</span>`
     : "";
-
-  return `
-    <a class="${cardClass}" href="${escapeHtml(resolvedUrl)}">
+  const cardContent = `
       <span class="${mediaClass}">
         <img
           src="${escapeHtml(withPathPrefix(article.image, assetPrefix))}"
@@ -405,6 +401,20 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
           <span class="${arrowClass}" aria-hidden="true"></span>
         </span>
       </span>
+  `;
+
+  if (!article.url) {
+    return `<article class="${cardClass}">${cardContent}</article>`;
+  }
+
+  return `
+    <a
+      class="${cardClass}"
+      href="${escapeHtml(article.url)}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ${cardContent}
     </a>
   `;
 };
@@ -416,7 +426,6 @@ const renderNewsArticles = () => {
       .map((article) =>
         renderNewsArticleCard(article, "home", {
           assetPrefix: homeNewsRoot.dataset.newsAssetPrefix || "",
-          detailPrefix: homeNewsRoot.dataset.newsDetailPrefix || "",
         }),
       )
       .join("");
@@ -427,7 +436,6 @@ const renderNewsArticles = () => {
       .map((article) =>
         renderNewsArticleCard(article, "news", {
           assetPrefix: newsGridRoot.dataset.newsAssetPrefix || "",
-          detailPrefix: newsGridRoot.dataset.newsDetailPrefix || "",
         }),
       )
       .join("");
