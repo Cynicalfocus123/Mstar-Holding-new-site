@@ -2,6 +2,15 @@
 
 ## 2026-06-30
 
+### Business Contact Live-Update ZIP
+
+- Small Business page live-update ZIP created for the latest contact section change only.
+- ZIP contains only the Business page and required built assets inside `business/` and `assets/`.
+- ZIP uses forward-slash paths, has no wrapper folder, and has no loose files outside correct folders.
+- No homepage files, favicon/social images, media, videos, or unrelated design assets are included.
+
+## 2026-06-30
+
 ### Business Bright Contact Section
 
 - Business page contact section now matches the homepage contact visual style.
