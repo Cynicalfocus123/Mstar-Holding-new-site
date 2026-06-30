@@ -286,3 +286,11 @@
 - Adjusted only the Real Estate sector image positioning in homepage CSS.
 - No media files were added, removed, recompressed, or duplicated.
 - The latest small live ZIP was refreshed to include the compiled CSS/JS assets and HTML references needed for this newest homepage-only change.
+
+## 2026-06-30 Organized Brand Social Assets
+
+- Centralized brand social preview and favicon assets under `public/assets/brand/`.
+- Kept root favicon files as fallback copies for browser compatibility.
+- Avoided adding duplicate social preview variants; the organized preview image is `assets/brand/mstar-share.png`.
+- Updated metadata so Open Graph and Twitter/X image URLs point to `https://mstarholding.com/assets/brand/mstar-share.png`.
+- Corrected live ZIP contains only the organized brand assets, root favicon fallbacks, and updated built HTML files needed for this change.

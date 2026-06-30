@@ -1318,3 +1318,44 @@
 - Passed: `cmd /c npm.cmd test`.
 - Confirmed only the Real Estate sector image positioning rule changed in CSS.
 - Confirmed the small Hostinger live ZIP remains direct-extract ready for `public_html`.
+
+## 2026-06-30 Organized Brand Social Assets
+
+- Moved the official Mstar social preview and favicon assets into `public/assets/brand/`.
+- Added organized live assets:
+  - `public/assets/brand/mstar-share.png`
+  - `public/assets/brand/favicon.png`
+  - `public/assets/brand/favicon.ico`
+  - `public/assets/brand/apple-touch-icon.png`
+- Kept root fallback favicon copies:
+  - `public/favicon.png`
+  - `public/favicon.ico`
+  - `public/apple-touch-icon.png`
+- Updated homepage, Business page, News page, and all six article detail pages to use `https://mstarholding.com/assets/brand/mstar-share.png` for Open Graph and Twitter/X image metadata.
+- Updated favicon tags to use `/assets/brand/favicon.png`, `/assets/brand/favicon.ico`, and `/assets/brand/apple-touch-icon.png`.
+- Confirmed no built HTML references the old `/og/mstar-share.png` path.
+- Confirmed no old hero, Business, or News image remains as an Open Graph or Twitter/X image.
+- Created corrected Hostinger ZIP: `mstar-brand-assets-social-preview-live-update.zip`.
+- ZIP contents include `assets/brand/` brand assets, root fallback favicon files, and the updated built HTML files.
+- ZIP is public_html-ready with no wrapper folder and no source/development files.
+
+## 2026-06-30 Organized Brand Asset Commands
+
+- Inspected `package.json`.
+- Copied existing official Mstar share/favicon outputs into `public/assets/brand/`.
+- Updated all source HTML head metadata paths.
+- `cmd /c npx.cmd prettier --write index.html business/index.html news/index.html news/*/index.html`
+- `cmd /c npm.cmd run build`
+- `cmd /c npm.cmd run lint`
+- `cmd /c npm.cmd test`
+- Static verification for built metadata paths, root fallback favicon files, and excluded old `/og/mstar-share.png` references.
+
+## 2026-06-30 Organized Brand Asset Verification
+
+- Passed: build, lint, and test.
+- Confirmed `public/assets/brand/mstar-share.png` exists.
+- Confirmed `public/assets/brand/favicon.png`, `public/assets/brand/favicon.ico`, and `public/assets/brand/apple-touch-icon.png` exist.
+- Confirmed root fallback `public/favicon.png`, `public/favicon.ico`, and `public/apple-touch-icon.png` exist.
+- Confirmed built output contains the organized brand assets and root fallback favicon files.
+- Confirmed the corrected ZIP contains no nested wrapper folder.
+- Commit hash: reported in final handoff after commit/push.

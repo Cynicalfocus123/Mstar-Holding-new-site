@@ -643,3 +643,12 @@
 - Shifted only the homepage Real Estate sector image focal point left inside the existing slanted collage box to reveal more of the luxury house.
 - No layout, box dimensions, skew, spacing, responsiveness, HTML structure, copy, or other sector images were changed.
 - The latest live-site ZIP was refreshed to include this newest homepage visual adjustment along with the existing social preview/favicon update files.
+
+### 2026-06-30 Organized Brand Assets
+
+- The official Mstar logo remains the global share preview image.
+- Brand social preview and favicon assets are now organized under `assets/brand/`.
+- Root favicon files remain only as browser fallback copies.
+- Browser favicon, shortcut icon, and Apple touch icon use the Mstar logo from the organized brand asset folder.
+- Social previews must continue to show the Mstar logo, not AI, hero, Business, or News images.
+- The corrected live ZIP structure is public_html-ready and keeps brand assets in `assets/brand/`.
