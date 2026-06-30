@@ -1,4 +1,5 @@
 import "./styles.css";
+import { getArticleBySlug, sortedNewsArticles } from "./news-data.js";
 
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
@@ -95,64 +96,7 @@ window.addEventListener("pageshow", scheduleBusinessHeroVideoUpdate);
 const businessSectorsRoot = document.querySelector("[data-business-sectors]");
 const homeNewsRoot = document.querySelector("[data-home-news-list]");
 const newsGridRoot = document.querySelector("[data-news-grid]");
-
-const newsArticles = [
-  {
-    category: "Founder Profile",
-    title:
-      'Leap of Faith: Inside the Pioneering Mind of Pasit "Joe" Viwatkurkul',
-    date: "November 23, 2022",
-    dateSort: "2022-11-23",
-    source: "Prestige Thailand",
-    excerpt:
-      'A profile on Pasit "Joe" Viwatkurkul, his entrepreneurial journey, Obaki, and his role in building technology ventures under the Mstar Holding ecosystem.',
-    image: "media/news/pasit-joe-viwatkurkul-profile.png",
-    url: "https://www.prestigeonline.com/th/people/leap-of-faith-inside-the-pioneering-mind-of-pasit-joe-viwatkurkul/",
-    isPlaceholder: false,
-  },
-  {
-    category: "Leadership",
-    title:
-      "CEO Spotlight: Jakapun Viwatkurkul, CEO and President of Mstar Holding",
-    date: "March 1, 2022",
-    dateSort: "2022-03-01",
-    source: "CEOWORLD Magazine",
-    excerpt:
-      "Jakapun Viwatkurkul discusses Mstar Holding's multi-sector growth, expansion strategy, and approach to investing across technology, food, real estate, eCommerce, and regional markets.",
-    image: "media/news/jakapun-viwatkurkul-ceo-spotlight.png",
-    url: "https://ceoworld.biz/2022/03/01/ceo-spotlight-jakapun-viwatkurkul-ceo-and-president-of-mstar-holding/",
-    isPlaceholder: false,
-  },
-  {
-    category: "Expansion",
-    title:
-      "Mstar Holding's expansion will drive growth both in UAE and Thailand",
-    date: "January 27, 2022",
-    dateSort: "2022-01-27",
-    source: "Gulf News",
-    excerpt:
-      "Mstar Holding outlines expansion plans connecting Thailand and the UAE, with focus areas including food, eCommerce, tourism, technology, import/export, and regional job creation.",
-    image: "media/news/mstar-holding-uae-thailand-expansion.png",
-    url: "https://gulfnews.com/business/corporate-news/mstar-holdings-expansion-will-drive-growth-both-in-uae-and-thailand-1.1643211933684",
-    isPlaceholder: false,
-  },
-  {
-    category: "Technology",
-    title: "Mstar aims to help economic recovery from COVID-19",
-    date: "August 17, 2020",
-    dateSort: "2020-08-17",
-    source: "Forbes India",
-    excerpt:
-      "Mstar Technology discusses digital tools designed to support farmers, workers, and communities affected by COVID-19 through job creation, direct buyer connections, and technology access.",
-    image: "media/news/mstar-economic-recovery-covid-19.png",
-    url: "https://www.forbesindia.com/article/brand-connect/mstar-aims-to-help-economic-recovery-from-covid-19/61705/1",
-    isPlaceholder: false,
-  },
-];
-
-const sortedNewsArticles = [...newsArticles].sort(
-  (a, b) => new Date(b.dateSort) - new Date(a.dateSort),
-);
+const newsDetailRoot = document.querySelector("[data-news-detail]");
 
 // Company entries can optionally include `logo` and `logoAlt` when final logo
 // assets are added under public/media/logos.
@@ -412,7 +356,7 @@ const withPathPrefix = (path, prefix = "") => {
 
 const renderNewsArticleCard = (article, variant, options = {}) => {
   const assetPrefix = options.assetPrefix || "";
-  const urlPrefix = options.urlPrefix || "";
+  const detailPrefix = options.detailPrefix || "";
   const cardClass = variant === "home" ? "home-news-card" : "news-article-card";
   const mediaClass =
     variant === "home" ? "home-news-card-media" : "news-article-media";
@@ -432,11 +376,7 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
     variant === "home" ? "home-news-card-meta" : "news-article-meta";
   const arrowClass =
     variant === "home" ? "home-news-card-arrow" : "news-article-arrow";
-  const resolvedUrl = withPathPrefix(article.url, urlPrefix);
-  const isExternalLink = /^https?:\/\//i.test(resolvedUrl);
-  const linkAttributes = isExternalLink
-    ? ' target="_blank" rel="noopener noreferrer"'
-    : "";
+  const resolvedUrl = withPathPrefix(`${article.slug}/`, detailPrefix);
   const placeholderLabel =
     variant === "news" && article.isPlaceholder
       ? '<span class="news-placeholder-label">Placeholder article</span>'
@@ -446,7 +386,7 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
     : "";
 
   return `
-    <a class="${cardClass}" href="${escapeHtml(resolvedUrl)}"${linkAttributes}>
+    <a class="${cardClass}" href="${escapeHtml(resolvedUrl)}">
       <span class="${mediaClass}">
         <img
           src="${escapeHtml(withPathPrefix(article.image, assetPrefix))}"
@@ -476,7 +416,7 @@ const renderNewsArticles = () => {
       .map((article) =>
         renderNewsArticleCard(article, "home", {
           assetPrefix: homeNewsRoot.dataset.newsAssetPrefix || "",
-          urlPrefix: homeNewsRoot.dataset.newsUrlPrefix || "",
+          detailPrefix: homeNewsRoot.dataset.newsDetailPrefix || "",
         }),
       )
       .join("");
@@ -487,11 +427,84 @@ const renderNewsArticles = () => {
       .map((article) =>
         renderNewsArticleCard(article, "news", {
           assetPrefix: newsGridRoot.dataset.newsAssetPrefix || "",
-          urlPrefix: newsGridRoot.dataset.newsUrlPrefix || "",
+          detailPrefix: newsGridRoot.dataset.newsDetailPrefix || "",
         }),
       )
       .join("");
   }
+};
+
+const renderNewsDetail = () => {
+  if (!newsDetailRoot) {
+    return;
+  }
+
+  const article = getArticleBySlug(newsDetailRoot.dataset.newsDetail || "");
+  const assetPrefix = newsDetailRoot.dataset.newsAssetPrefix || "";
+  const newsHref = newsDetailRoot.dataset.newsIndexHref || "../";
+
+  if (!article) {
+    newsDetailRoot.innerHTML = `
+      <section class="news-detail-page">
+        <a class="news-detail-back" href="${escapeHtml(newsHref)}">Back to News and Media</a>
+        <h1 class="news-detail-title">Article not found</h1>
+      </section>
+    `;
+    return;
+  }
+
+  const originalLink = article.url
+    ? `
+      <a
+        class="news-detail-original"
+        href="${escapeHtml(article.url)}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>Read original article</span>
+        <span class="cta-arrow" aria-hidden="true"></span>
+      </a>
+    `
+    : "";
+
+  const bodySections = article.body
+    .map(
+      (section) => `
+        <section class="news-detail-body-section">
+          <h2>${escapeHtml(section.heading)}</h2>
+          <p>${escapeHtml(section.text)}</p>
+        </section>
+      `,
+    )
+    .join("");
+
+  newsDetailRoot.innerHTML = `
+    <article class="news-detail-page">
+      <a class="news-detail-back" href="${escapeHtml(newsHref)}">Back to News and Media</a>
+      <header class="news-detail-hero">
+        <div class="news-detail-copy">
+          <span class="news-detail-category">${escapeHtml(article.category)}</span>
+          <h1 class="news-detail-title">${escapeHtml(article.title)}</h1>
+          <p class="news-detail-excerpt">${escapeHtml(article.excerpt)}</p>
+          <div class="news-detail-meta">
+            <span>${escapeHtml(article.source)}</span>
+            <span>${escapeHtml(article.date)}</span>
+          </div>
+          ${originalLink}
+        </div>
+        <figure class="news-detail-media">
+          <img
+            src="${escapeHtml(withPathPrefix(article.image, assetPrefix))}"
+            alt="${escapeHtml(article.title)}"
+            loading="eager"
+          />
+        </figure>
+      </header>
+      <div class="news-detail-body">
+        ${bodySections}
+      </div>
+    </article>
+  `;
 };
 
 const renderCompanyMedia = (company) => {
@@ -618,6 +631,7 @@ const renderBusinessSectors = () => {
 };
 
 renderNewsArticles();
+renderNewsDetail();
 renderBusinessSectors();
 playCompanyMediaVideos(businessSectorsRoot);
 

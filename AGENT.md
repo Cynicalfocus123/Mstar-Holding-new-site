@@ -17,6 +17,74 @@
 
 ## 2026-06-30
 
+- Finished the News and Media system with one central `src/news-data.js` article source shared by the homepage cards, News page grid, and article detail page renderer.
+- Replaced all placeholder news articles with real article data and added the April 23, 2024 defense entrepreneurship article.
+- Added/confirmed ISO `dateSort` values and latest-first sorting through `sortedNewsArticles`.
+- Added `slug`, `source`, external `url`, summarized `body`, and `isPlaceholder: false` fields to every article object.
+- Updated homepage and News page cards to link to internal detail pages while preserving external original-source links on detail pages.
+- Added five article detail pages under `news/*/index.html`, each with unique metadata and shared rendered article content.
+- Copied only the five required article images from `site content pic and video\news article` into `public/media/news/` using clean lowercase kebab-case filenames.
+- Replaced the previous generated news images with the correct supplied article images, including the defense/radar image, Pasit close-up, Jakapun portrait, father-and-son image, and studio leadership image.
+- Added all detail pages to the Vite multi-page build input.
+- Preserved the approved homepage News sticky-left layout, News page 4/2/1 grid, top hero video, One Group section, Investing section, footer, and white/off-white Mstar gold visual system.
+- Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
+
+## Files Changed
+
+- `index.html`
+- `news/index.html`
+- `news/*/index.html`
+- `src/main.js`
+- `src/news-data.js`
+- `src/styles.css`
+- `vite.config.js`
+- `public/media/news/*.png`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\66072236-223c-4de3-90b3-386d52068c51\pasted-text.txt`
+- `Get-Content -LiteralPath AGENT.md -TotalCount 140`
+- `Get-Content -LiteralPath DESIGNER.md -TotalCount 120`
+- `git status --short --branch`
+- `Test-Path -LiteralPath WEIGHT.md`
+- `Get-ChildItem -LiteralPath "site content pic and video\news article" -File`
+- Local Python/Pillow contact sheet inspection for the supplied news article images
+- Local Python/Pillow conversion/optimization into `public/media/news/`
+- `Get-Content -LiteralPath src\main.js | Select-Object -First ...`
+- `Get-Content -LiteralPath src\styles.css | Select-Object -Skip ... -First ...`
+- `Get-Content -LiteralPath news\index.html | Select-Object -First 180`
+- `npx.cmd prettier --write index.html news/index.html news/*/index.html src/main.js src/news-data.js src/styles.css vite.config.js`
+- `rg -n "pasit-viwatkurkul-future|leap-of-faith|ceo-spotlight|mstar-holding-expansion|mstar-economic-recovery|sortedNewsArticles|data-news-detail" ...`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+- Static built-output checks for `dist/news/*/index.html`, article slugs, dates, detail render hooks, and `dist/media/news`
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Static checks confirmed `dist/news/index.html` plus all five article detail pages are emitted.
+- Static checks confirmed homepage and News page cards use internal slug paths derived from the central article data.
+- Static checks confirmed article data is sorted newest first by `dateSort`, from April 23, 2024 to August 17, 2020.
+- Static checks confirmed each detail page uses the matching `data-news-detail` slug and renders from `src/news-data.js`.
+- Static checks confirmed each detail page uses the same image/date/article data as the listing cards.
+- Static checks confirmed the external original-source CTA is rendered only where an article has a source URL.
+- Static checks confirmed the five optimized news image paths exist in both `public/media/news` and `dist/media/news`.
+- CSS inspection confirmed the News page grid remains 4 columns on desktop, 2 on tablet, and 1 on mobile.
+- CSS inspection confirmed article detail pages use a responsive editorial hero and stacked mobile layout with no intentional horizontal overflow.
+- No live-server, localhost preview, or local dev server was launched for this patch.
+- GitHub Pages relative paths are preserved.
+- Git commit hash: reported in final handoff after commit/push because the hash is only known after this documentation is committed.
+
+## 2026-06-30
+
 - Replaced placeholder homepage and News page article data with the real Mstar Holding media coverage articles supplied in the task.
 - Added `source` labels for Prestige Thailand, CEOWORLD Magazine, Gulf News, and Forbes India.
 - Preserved article `date` and ISO `dateSort` values and confirmed latest-first sorting through `sortedNewsArticles`.

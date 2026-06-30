@@ -2,6 +2,20 @@
 
 ## 2026-06-30
 
+### Finished News And Media System
+
+- News cards now use the complete real article set, including the April 23, 2024 defense entrepreneurship article.
+- Homepage News continues to show the latest articles first from the shared sorted data source.
+- News page shows all articles latest to earliest by ISO `dateSort`.
+- Article cards now link to internal article detail pages instead of directly leaving the site.
+- Detail pages keep the original source link available as a refined `Read original article` CTA when a source URL exists.
+- All article images are sourced from the supplied `news article` folder and stay consistent across homepage cards, News page cards, and detail pages.
+- The image mapping is defense/radar image for the defense article, Pasit close-up for the Prestige profile, Jakapun portrait for the CEO spotlight, father-and-son image for Gulf News expansion, and studio leadership image for COVID-19 recovery.
+- Article detail pages use a responsive editorial layout: large title/meta/text on one side, article image on the other at desktop, then stacked cleanly on tablet and mobile.
+- The approved white/off-white Mstar gold visual system, rounded cards, sticky-left homepage News behavior, and 4/2/1 News page grid remain preserved.
+
+## 2026-06-30
+
 ### Real News Article Content
 
 - News cards now use real Mstar Holding media coverage content instead of placeholder articles.
