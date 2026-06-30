@@ -17,6 +17,22 @@
 
 ## 2026-06-30
 
+- Fixed GitHub Pages CSS/JS loading by adding a GitHub Pages-specific build base while preserving the Hostinger root build path.
+- Cause found: GitHub Pages was building with the root `/` Vite base, so generated CSS/JS links pointed to `/assets/...` instead of `/Mstar-Holding-new-site/assets/...`.
+- Added/confirmed separate build paths: `npm run build:github` uses `/Mstar-Holding-new-site/`, and `npm run build:hostinger` uses `/`.
+- Updated the GitHub Pages workflow to run `npm run build:github`, so Pages CSS/JS now resolve under `/Mstar-Holding-new-site/assets/...`.
+- Verified the GitHub build contains `/Mstar-Holding-new-site/assets/` links and does not rely on root `/assets/` CSS/JS paths.
+- Verified the Hostinger/root build command still contains root `/assets/` links and does not contain `/Mstar-Holding-new-site/assets/`.
+- No new ZIP was created for this GitHub Pages fix.
+- Confirmed latest site fixes remain in the built output: footer tagline is `Putting Big Ideas into Action`, old footer text is gone, non-home header top state is readable, homepage header behavior is preserved, Business bright contact section is present, News cards open external article URLs, and brand assets stay inside `assets/brand/`.
+- Commands run: `Get-Content -LiteralPath package.json`, workflow/config inspections, old ZIP cleanup and restoration after the request changed to no-ZIP, `cmd /c npm.cmd run build:github`, GitHub build path checks, `cmd /c npm.cmd run build:hostinger`, Hostinger/root build path checks, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `git status --short`, `git commit -m "Fix GitHub Pages deployment build"`, and `git push origin main`.
+- Build status: passed for both GitHub Pages and Hostinger.
+- Lint status: passed.
+- Test status: passed.
+- Commit hash: reported in final handoff after commit and push.
+
+## 2026-06-30
+
 - Created the small Hostinger live-update ZIP `mstar-business-contact-section-live-update.zip` for only the latest Business page contact section change.
 - ZIP contains only the files needed for the Business contact update: `business/index.html`, `assets/main-BXu--ZQl.css`, and `assets/main-DNmSqnoi.js`.
 - ZIP was created with Python `zipfile` and forward-slash archive paths.

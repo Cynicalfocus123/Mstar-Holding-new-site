@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
+    "build:github": "vite build --base=/Mstar-Holding-new-site/",
+    "build:hostinger": "vite build --base=/",
     "preview": "vite preview --host 127.0.0.1",
     "lint": "prettier --check .",
     "test": "npm run lint",

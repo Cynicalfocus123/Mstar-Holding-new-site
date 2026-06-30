@@ -2,6 +2,16 @@
 
 ## 2026-06-30
 
+### Deployment Base Path Fix
+
+- No design changes were made.
+- This was a build/deployment path fix so GitHub Pages and Hostinger can both load the same latest site design correctly.
+- GitHub Pages now uses the `/Mstar-Holding-new-site/` deployment base.
+- Hostinger now uses the `/` deployment base.
+- No new ZIP was created for this GitHub Pages styling fix.
+
+## 2026-06-30
+
 ### Business Contact Live-Update ZIP
 
 - Small Business page live-update ZIP created for the latest contact section change only.

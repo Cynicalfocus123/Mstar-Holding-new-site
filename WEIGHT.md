@@ -11,6 +11,13 @@
 - Do not create a deployment ZIP unless explicitly requested.
 - Use `npm run weight:audit` before later packaging or upload decisions.
 
+## 2026-06-30 GitHub Pages And Hostinger Build Split
+
+- No new deployment ZIP was created for the GitHub Pages styling fix.
+- GitHub Pages build uses `/Mstar-Holding-new-site/` and is not reused for Hostinger upload.
+- Hostinger/root build remains available with `/` for future live ZIP creation.
+- The existing deployment-weight rules still apply to future ZIPs: exclude development files, old backups, `.git`, `node_modules`, previous ZIPs, temporary deploy folders, and unused source-only files.
+
 ## 2026-06-30 Business Contact Section Update
 
 - No new heavy assets were added.
