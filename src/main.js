@@ -98,48 +98,55 @@ const newsGridRoot = document.querySelector("[data-news-grid]");
 
 const newsArticles = [
   {
-    category: "Company News",
-    title: "Mstar Holding continues multi-sector portfolio development",
-    date: "June 2026",
-    dateSort: "2026-06-01",
+    category: "Founder Profile",
+    title:
+      'Leap of Faith: Inside the Pioneering Mind of Pasit "Joe" Viwatkurkul',
+    date: "November 23, 2022",
+    dateSort: "2022-11-23",
+    source: "Prestige Thailand",
     excerpt:
-      "Updates from Mstar Holding as the group continues developing businesses across real assets, trade, hospitality, technology, and strategic sectors.",
-    image: "media/homepage/sector-real-estate.png",
-    url: "news/",
-    isPlaceholder: true,
+      'A profile on Pasit "Joe" Viwatkurkul, his entrepreneurial journey, Obaki, and his role in building technology ventures under the Mstar Holding ecosystem.',
+    image: "media/news/pasit-joe-viwatkurkul-profile.png",
+    url: "https://www.prestigeonline.com/th/people/leap-of-faith-inside-the-pioneering-mind-of-pasit-joe-viwatkurkul/",
+    isPlaceholder: false,
   },
   {
-    category: "Portfolio",
-    title: "Building stronger links across regional business sectors",
-    date: "June 2026",
-    dateSort: "2026-06-01",
+    category: "Leadership",
+    title:
+      "CEO Spotlight: Jakapun Viwatkurkul, CEO and President of Mstar Holding",
+    date: "March 1, 2022",
+    dateSort: "2022-03-01",
+    source: "CEOWORLD Magazine",
     excerpt:
-      "A look at how Mstar Holding connects operating companies, partnerships, and long-term growth opportunities across Asia.",
-    image: "media/homepage/sector-import-export.png",
-    url: "news/",
-    isPlaceholder: true,
+      "Jakapun Viwatkurkul discusses Mstar Holding's multi-sector growth, expansion strategy, and approach to investing across technology, food, real estate, eCommerce, and regional markets.",
+    image: "media/news/jakapun-viwatkurkul-ceo-spotlight.png",
+    url: "https://ceoworld.biz/2022/03/01/ceo-spotlight-jakapun-viwatkurkul-ceo-and-president-of-mstar-holding/",
+    isPlaceholder: false,
   },
   {
     category: "Expansion",
-    title: "Regional growth remains a core focus for Mstar Holding",
-    date: "May 2026",
-    dateSort: "2026-05-01",
+    title:
+      "Mstar Holding's expansion will drive growth both in UAE and Thailand",
+    date: "January 27, 2022",
+    dateSort: "2022-01-27",
+    source: "Gulf News",
     excerpt:
-      "Mstar Holding continues to evaluate opportunities across infrastructure, partnerships, and resilient market sectors.",
-    image: "media/homepage/sector-defense.png",
-    url: "news/",
-    isPlaceholder: true,
+      "Mstar Holding outlines expansion plans connecting Thailand and the UAE, with focus areas including food, eCommerce, tourism, technology, import/export, and regional job creation.",
+    image: "media/news/mstar-holding-uae-thailand-expansion.png",
+    url: "https://gulfnews.com/business/corporate-news/mstar-holdings-expansion-will-drive-growth-both-in-uae-and-thailand-1.1643211933684",
+    isPlaceholder: false,
   },
   {
-    category: "Innovation",
-    title: "Technology and operations support the group's next chapter",
-    date: "May 2026",
-    dateSort: "2026-05-01",
+    category: "Technology",
+    title: "Mstar aims to help economic recovery from COVID-19",
+    date: "August 17, 2020",
+    dateSort: "2020-08-17",
+    source: "Forbes India",
     excerpt:
-      "The group continues building digital, operational, and strategic capabilities across its portfolio.",
-    image: "media/homepage/sector-ecommerce-technology.png",
-    url: "news/",
-    isPlaceholder: true,
+      "Mstar Technology discusses digital tools designed to support farmers, workers, and communities affected by COVID-19 through job creation, direct buyer connections, and technology access.",
+    image: "media/news/mstar-economic-recovery-covid-19.png",
+    url: "https://www.forbesindia.com/article/brand-connect/mstar-aims-to-help-economic-recovery-from-covid-19/61705/1",
+    isPlaceholder: false,
   },
 ];
 
@@ -419,17 +426,27 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
     variant === "home" ? "home-news-card-excerpt" : "news-article-excerpt";
   const dateClass =
     variant === "home" ? "home-news-card-date" : "news-article-date";
+  const sourceClass =
+    variant === "home" ? "home-news-card-source" : "news-article-source";
   const metaClass =
     variant === "home" ? "home-news-card-meta" : "news-article-meta";
   const arrowClass =
     variant === "home" ? "home-news-card-arrow" : "news-article-arrow";
+  const resolvedUrl = withPathPrefix(article.url, urlPrefix);
+  const isExternalLink = /^https?:\/\//i.test(resolvedUrl);
+  const linkAttributes = isExternalLink
+    ? ' target="_blank" rel="noopener noreferrer"'
+    : "";
   const placeholderLabel =
     variant === "news" && article.isPlaceholder
       ? '<span class="news-placeholder-label">Placeholder article</span>'
       : "";
+  const sourceLabel = article.source
+    ? `<span class="${sourceClass}">${escapeHtml(article.source)}</span>`
+    : "";
 
   return `
-    <a class="${cardClass}" href="${escapeHtml(withPathPrefix(article.url, urlPrefix))}">
+    <a class="${cardClass}" href="${escapeHtml(resolvedUrl)}"${linkAttributes}>
       <span class="${mediaClass}">
         <img
           src="${escapeHtml(withPathPrefix(article.image, assetPrefix))}"
@@ -442,6 +459,7 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
         <span class="${titleClass}">${escapeHtml(article.title)}</span>
         <span class="${excerptClass}">${escapeHtml(article.excerpt)}</span>
         <span class="${metaClass}">
+          ${sourceLabel}
           <span class="${dateClass}">${escapeHtml(article.date)}</span>
           ${placeholderLabel}
           <span class="${arrowClass}" aria-hidden="true"></span>

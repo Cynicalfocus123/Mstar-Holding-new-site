@@ -15,6 +15,65 @@
 - Do not launch the Serena dashboard unless explicitly required.
 - Do not repeatedly ask which Python app/interpreter to use; use the existing project configuration unless genuinely blocked.
 
+## 2026-06-30
+
+- Replaced placeholder homepage and News page article data with the real Mstar Holding media coverage articles supplied in the task.
+- Added `source` labels for Prestige Thailand, CEOWORLD Magazine, Gulf News, and Forbes India.
+- Preserved article `date` and ISO `dateSort` values and confirmed latest-first sorting through `sortedNewsArticles`.
+- Updated article cards to link to the correct external article URLs with `target="_blank"` and `rel="noopener noreferrer"`.
+- Added four used article images under `public/media/news/` with the requested filenames.
+- Used the locally exposed leadership/profile images from `site content pic and video\leadership boar` because no image files were exposed in the task-specific attachment folder or attachment manifest.
+- Updated News page metadata description and safe ItemList structured data for the real media coverage links.
+- Preserved the approved sticky-left homepage News layout, News page 4/2/1 grid, Mstar gold accents, bright/off-white visual system, top hero, One Group section, Investing section, and footer.
+- Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
+
+## Files Changed
+
+- `src/main.js`
+- `src/styles.css`
+- `news/index.html`
+- `public/media/news/*.png`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\9fc74a36-1b72-41ec-bb5f-df995156da71\pasted-text.txt`
+- `git status --short --branch`
+- `Test-Path -LiteralPath WEIGHT.md`
+- `Get-ChildItem -LiteralPath C:\Users\Joe\.codex\attachments\9fc74a36-1b72-41ec-bb5f-df995156da71 -File`
+- `Get-ChildItem -LiteralPath "site content pic and video" -File`
+- `Get-ChildItem -LiteralPath C:\Users\Joe\.codex\attachments -Recurse -File -Include *.png,*.jpg,*.jpeg,*.webp`
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\pasted-text-attachments.json -TotalCount 80`
+- Local Python/Pillow image inspection and `public/media/news/` image generation from supplied leadership assets
+- `Get-Content -LiteralPath src\main.js | Select-Object -Skip ... -First ...`
+- `Get-Content -LiteralPath news\index.html | Select-Object -First 150`
+- `rg -n "Prestige Thailand|CEOWORLD|Gulf News|Forbes India|dateSort|target=|noopener|media/news" ...`
+- `npx.cmd prettier --write src/main.js src/styles.css news/index.html`
+- `npx.cmd prettier --write AGENT.md DESIGNER.md`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Static checks confirmed the homepage News section and News page now render the real article data from the shared `newsArticles` array.
+- Static checks confirmed homepage rendering uses the latest 4 articles from `sortedNewsArticles`.
+- Static checks confirmed News page ordering is controlled by `dateSort`, newest first and earliest last.
+- Static checks confirmed cards use the correct external article URLs and external link attributes.
+- Static checks confirmed CTA links still point to `news/`.
+- Static checks confirmed the four article image paths exist in `public/media/news/`.
+- CSS inspection confirmed the News page grid remains 4 columns on desktop, 2 on tablet, and 1 on mobile.
+- No live-server, localhost preview, or local dev server was launched for this patch.
+- GitHub Pages relative paths are preserved.
+- Git commit hash: reported in final handoff after commit/push because the hash is only known after this documentation is committed.
+
 ## 2026-06-29
 
 - Replaced the homepage `A Holding Company Built for Enduring Value` section with the approved sticky `News and Media` section.

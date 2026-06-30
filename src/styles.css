@@ -1918,8 +1918,15 @@ h2 {
 }
 
 .home-news-card-date,
-.news-article-date {
+.news-article-date,
+.home-news-card-source,
+.news-article-source {
   min-width: 0;
+}
+
+.home-news-card-source,
+.news-article-source {
+  color: var(--mstar-gold);
 }
 
 .home-news-card-arrow,

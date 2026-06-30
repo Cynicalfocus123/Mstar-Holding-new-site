@@ -1,5 +1,17 @@
 # Designer Notes
 
+## 2026-06-30
+
+### Real News Article Content
+
+- News cards now use real Mstar Holding media coverage content instead of placeholder articles.
+- Homepage continues to show the latest 4 articles from the shared sorted article data.
+- News page continues to display articles latest to earliest by ISO `dateSort`.
+- Article cards now include quiet source labels for Prestige Thailand, CEOWORLD Magazine, Gulf News, and Forbes India.
+- Cards link out to the original article sources, keeping the website copy limited to short summaries, titles, dates, source names, and imagery.
+- The article image set uses editorial/profile-style leadership imagery from the locally supplied `leadership boar` image folder because the task-specific attachment folder did not expose separate image files.
+- The white/off-white Mstar gold visual system, rounded premium cards, sticky-left homepage behavior, and 4/2/1 News page grid remain preserved.
+
 ## 2026-06-29
 
 ### Approved News And Media Homepage Section
