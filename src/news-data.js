@@ -1,6 +1,38 @@
 export const newsArticles = [
   {
     category: "Defense",
+    title:
+      "Thailand Defense Giant Mstar Defense Lands Major Contract, Expands Across Asia and Africa Ahead of $2.9B IPO",
+    date: "January 26, 2026",
+    dateSort: "2026-01-26",
+    source: "The Frontier Report",
+    excerpt:
+      "Mstar Defense is reported to have secured a major defense contract covering armored vehicles, military communication systems, advanced R&D weapons, anti-drone weaponry, and ammunition while expanding across Asia and Africa.",
+    image: "media/news/mstar-defense-major-contract-asia-africa-ipo.png",
+    slug: "mstar-defense-major-contract-asia-africa-ipo",
+    url: "https://thefrontierreport.com/thailand-defense-giant-mstar-defense-lands-major-contract-expands-across-asia-and-africa-ahead-of-2-9b-ipo/",
+    body: [
+      {
+        heading: "Strengthening Thailand's Defense Industry",
+        text: "The article reports that Mstar Defense, under Mstar Asia Co. Ltd, is expanding its role in Thailand's defense manufacturing sector through advanced manufacturing, research and development, and vertically integrated production capabilities.",
+      },
+      {
+        heading: "Strategic Expansion Across Asia and Africa",
+        text: "The report highlights the company's regional expansion across Asia and Africa, positioning Mstar Defense closer to key defense markets and long-term government and institutional partners.",
+      },
+      {
+        heading: "Building Momentum Ahead of IPO",
+        text: "The article describes how contract wins, regional market access, diversified product lines, and vertical integration support the company's positioning ahead of a planned $2.9 billion IPO.",
+      },
+      {
+        heading: "Regional Security and Long-Term Vision",
+        text: "The report also notes Mstar Defense's ongoing international order fulfillment across the Middle East and Europe, emphasizing delivery capability, operational discipline, and long-term defense partnerships.",
+      },
+    ],
+    isPlaceholder: false,
+  },
+  {
+    category: "Defense",
     title: "Pasit Viwatkurkul: Shaping the Future of Warfare Entrepreneurship",
     date: "April 23, 2024",
     dateSort: "2024-04-23",

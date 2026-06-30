@@ -17,6 +17,63 @@
 
 ## 2026-06-30
 
+- Added The Frontier Report January 26, 2026 defense article as the newest entry in the central `src/news-data.js` source.
+- Confirmed homepage News cards, News page cards, and article detail pages use the shared central article data and `sortedNewsArticles` latest-first `dateSort` ordering.
+- Confirmed article cards link to internal detail pages, while `All News and Activities` remains linked to `news/`.
+- Added the `news/mstar-defense-major-contract-asia-africa-ipo/` detail page with the matching category, title, date, source, image, summarized body sections, and `Read original article` CTA.
+- Copied only the used 2026 defense article image into `public/media/news/mstar-defense-major-contract-asia-africa-ipo.png`.
+- Replaced the ABS Fulfillment Business page video by overwriting `public/videos/business-abs-fulfillment.mp4` with the uploaded `abs ful test 3.mp4` source; Business page layout, CSS, text, logo, CTA, and other videos were not changed.
+- Confirmed `WEIGHT.md` does not exist, so no asset/performance file was updated.
+
+## Files Changed
+
+- `src/news-data.js`
+- `news/index.html`
+- `news/mstar-defense-major-contract-asia-africa-ipo/index.html`
+- `vite.config.js`
+- `public/media/news/mstar-defense-major-contract-asia-africa-ipo.png`
+- `public/videos/business-abs-fulfillment.mp4`
+- `AGENT.md`
+- `DESIGNER.md`
+
+## Commands Run
+
+- `Get-Content -LiteralPath C:\Users\Joe\.codex\attachments\d4184df1-6949-403b-ac37-4dd2b5f593db\pasted-text.txt`
+- `Get-Content -LiteralPath AGENT.md`
+- `Get-Content -LiteralPath DESIGNER.md`
+- `git status --short --branch`
+- `Test-Path -LiteralPath WEIGHT.md`
+- `rg -n "newsArticles|sortedNewsArticles|data-news|business-abs|ABS Fulfillment|abs" src index.html news business vite.config.js package.json`
+- `Get-ChildItem -LiteralPath "site content pic and video\news article" -File`
+- `Get-ChildItem -LiteralPath "D:\mstar holding new site\business page" -File`
+- Bundled Python/Pillow image contact sheet inspection for the supplied `news article` folder
+- `Copy-Item` for the used 2026 article image and ABS Fulfillment video replacement
+- `npx.cmd prettier --write src/news-data.js news/index.html news/mstar-defense-major-contract-asia-africa-ipo/index.html vite.config.js AGENT.md DESIGNER.md`
+- `cmd /c npm.cmd run build`
+- `npm.cmd run lint 2>&1 | Select-Object -First 120`
+- `npm.cmd test 2>&1 | Select-Object -First 120`
+- Static checks with `rg` for article order, route output, internal card links, images, dates, and ABS video source
+
+## Build, Lint, And Test Status
+
+- Passed: `cmd /c npm.cmd run build`
+- Passed: `npm.cmd run lint`
+- Passed: `npm.cmd test`
+
+## Verification Notes
+
+- Static checks confirmed the shared sorted article data order is January 26, 2026; April 23, 2024; November 23, 2022; March 1, 2022; January 27, 2022; and August 17, 2020.
+- Static checks confirmed the homepage and News page render from `sortedNewsArticles`, so the 2026 article appears first wherever the article data is displayed.
+- Static checks confirmed all six article detail pages are emitted by the Vite build.
+- Static checks confirmed article cards use internal slug links and detail pages render external source CTAs from article `url` values.
+- Static checks confirmed the new article image exists in `public/media/news` and `dist/media/news`.
+- Static checks confirmed the ABS Fulfillment media path remains `../videos/business-abs-fulfillment.mp4` while the file has been replaced in `public/videos` and `dist/videos`.
+- No live-server, localhost preview, or local dev server was launched for this patch.
+- GitHub Pages relative paths are preserved.
+- Git commit hash: reported in final handoff after commit/push because the hash is only known after this documentation is committed.
+
+## 2026-06-30
+
 - Finished the News and Media system with one central `src/news-data.js` article source shared by the homepage cards, News page grid, and article detail page renderer.
 - Replaced all placeholder news articles with real article data and added the April 23, 2024 defense entrepreneurship article.
 - Added/confirmed ISO `dateSort` values and latest-first sorting through `sortedNewsArticles`.

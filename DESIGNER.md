@@ -2,6 +2,19 @@
 
 ## 2026-06-30
 
+### 2026 Defense Article And ABS Video Update
+
+- News cards now include the January 26, 2026 The Frontier Report defense article as the newest story.
+- Homepage News cards and News page cards continue linking to article detail pages, while the homepage `All News and Activities` CTA continues linking to `news/`.
+- The News page continues to use the approved 4/2/1 responsive article grid.
+- Detail pages use the same image, date, source, excerpt, and summarized body content as the shared article data.
+- The new defense article uses the supplied Mstar Defense image at `public/media/news/mstar-defense-major-contract-asia-africa-ipo.png`.
+- The white/off-white Mstar gold News design remains preserved.
+- The ABS Fulfillment Business page video was replaced in place without Business page design, layout, CSS, text, logo, CTA, or other video changes.
+- The Business page layout remains preserved.
+
+## 2026-06-30
+
 ### Finished News And Media System
 
 - News cards now use the complete real article set, including the April 23, 2024 defense entrepreneurship article.

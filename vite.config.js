@@ -9,6 +9,10 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         business: resolve(__dirname, "business/index.html"),
         news: resolve(__dirname, "news/index.html"),
+        newsDefenseContract: resolve(
+          __dirname,
+          "news/mstar-defense-major-contract-asia-africa-ipo/index.html",
+        ),
         newsDefense: resolve(
           __dirname,
           "news/pasit-viwatkurkul-future-of-warfare-entrepreneurship/index.html",
