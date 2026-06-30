@@ -623,3 +623,9 @@
 - Re-encoded approved MP4 media in place with the same filenames so page design, video placement, autoplay behavior, and lazy-loading behavior remain unchanged.
 - Kept transparent logo and icon assets as PNG to avoid visible brand or edge artifacts.
 - Representative compressed video frames were spot-checked for recognizable content and acceptable visual clarity.
+
+### 2026-06-30 Hostinger ZIP Notes
+
+- Footer copyright source now uses `&copy; 2026 Mstar Holding Inc.` on every page to avoid mojibake while preserving the same footer placement and subdued visual treatment.
+- Hostinger ZIP packaging was created from built `dist` files only, so the live upload preserves the current optimized design without source or development files.
+- The ZIP root matches `public_html` extraction expectations with no extra enclosing folder.

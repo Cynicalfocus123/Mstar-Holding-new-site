@@ -237,3 +237,34 @@
 - All 9 built HTML pages contain `Â© 2026 Mstar Holding Inc.`.
 - The April 23, 2024 CEOWORLD article remains external and uses `target="_blank"` with `rel="noopener noreferrer"`.
 - No deployment ZIP was created.
+
+## 2026-06-30 Hostinger Deployment ZIP
+
+- Created `Mstar-Holding-Live-Hostinger-2026-06-30.zip` for direct extraction inside Hostinger `public_html`.
+- ZIP size: 29.98 MB.
+- Source folder: `dist/`.
+- ZIP root entries: `index.html`, `.htaccess`, `assets/`, `media/`, `videos/`, `business/`, and `news/`.
+- The ZIP does not contain an enclosing `dist/`, `mstar-live/`, or repository folder.
+- The ZIP does not contain `.git/`, `node_modules/`, `src/`, `public/`, `site content pic and video/`, package files, Vite config, project notes, source maps, backups, screenshots, or temp files.
+- ZIP contents include 77 entries: 9 HTML files, 20 MP4 files, 15 WebP files, and 17 PNG files.
+- Built `dist/` remains 30.33 MB before ZIP.
+- Footer source now uses `&copy; 2026 Mstar Holding Inc.` on all 9 HTML pages.
+- `dist/.htaccess` remains Apache/Hostinger compatible compression and cache rules only, with no GitHub Pages redirect.
+- Static asset verification checked 35 built local references with zero missing assets.
+
+### Commands Run
+
+- `cmd /c npm.cmd run build`
+- `cmd /c npm.cmd run lint`
+- `cmd /c npm.cmd test`
+- `cmd /c npm.cmd run weight:audit`
+- ZIP creation from the `dist/` contents using `System.IO.Compression.ZipArchive`.
+- ZIP root, required-entry, bad-entry, and media-count checks.
+
+### Verification
+
+- Passed: build, lint, test, and weight audit.
+- Confirmed all required `dist` folders and article detail pages exist.
+- Confirmed no source-only or GitHub URLs appear in `dist`.
+- Confirmed all checked built image, video, CSS, and JS references exist.
+- Confirmed `.htaccess` is included at the ZIP root.

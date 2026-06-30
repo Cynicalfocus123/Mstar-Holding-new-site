@@ -1241,3 +1241,25 @@
 - Confirmed all 9 built HTML pages contain the exact footer copyright line.
 - Confirmed the April 23, 2024 CEOWORLD article keeps its external URL in central article data and card rendering uses `target="_blank"` with `rel="noopener noreferrer"`.
 - Confirmed no GitHub URLs were found in built/source site URLs.
+
+## 2026-06-30 Hostinger ZIP Packaging
+
+- Replaced the footer copyright source text on the homepage, Business page, News page, and all six article detail pages with `&copy; 2026 Mstar Holding Inc.`.
+- Built the site cleanly before packaging.
+- Created `Mstar-Holding-Live-Hostinger-2026-06-30.zip` from the contents of `dist/`, not from the repository root.
+- ZIP size: 29.98 MB.
+- ZIP entries are rooted directly for Hostinger `public_html`: `index.html`, `.htaccess`, `assets/`, `media/`, `videos/`, `business/`, and `news/`.
+- Verified the ZIP does not contain `dist/`, source folders, `node_modules/`, `.git/`, package files, project notes, source maps, backups, or development-only files.
+- Verified the ZIP contains 77 entries, including 9 HTML files, 20 MP4 files, 15 WebP files, and 17 PNG files.
+- Verified `dist/.htaccess` is Apache/Hostinger-oriented compression and cache configuration only, with no GitHub Pages redirect.
+- Verified built local asset references resolve inside `dist`.
+
+## 2026-06-30 Hostinger ZIP Checks
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Passed: `cmd /c npm.cmd run weight:audit`.
+- Confirmed all required `dist` files and article detail pages exist.
+- Confirmed built HTML contains `&copy; 2026 Mstar Holding Inc.` on all 9 pages.
+- Confirmed no `/src/main.js`, source-only paths, localhost URLs, GitHub Pages URLs, or GitHub repository URLs appear in `dist`.
