@@ -17,6 +17,20 @@
 
 ## 2026-06-30
 
+- Replaced the Business page dark CTA/contact section with the homepage-style bright contact section.
+- Business page contact now uses the white/off-white homepage contact visual language with the Mstar gold line, large editorial heading, gold circular email icon, divider, and underlined email link.
+- Homepage markup and homepage contact section were not changed.
+- Removed the old Business CTA copy `Partner with a Multi-Sector Holding Company` and its dark `.business-cta` CSS hooks.
+- Files changed: `business/index.html`, `src/styles.css`, `AGENT.md`, `DESIGNER.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted `rg` inspections, scoped source diffs, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, static verification for old/new Business contact text, `git status --short`, `git commit -m "Update business contact section"`, and `git push origin main`.
+- Build status: passed.
+- Lint status: passed.
+- Test status: passed.
+- Verification notes: Business page old dark CTA text is gone, Business page heading is `Let us build the next chapter.`, Business email is `info@mstarholding.com`, email link is `mailto:info@mstarholding.com`, and homepage contact markup remains unchanged.
+- Commit hash: reported in final handoff after commit and push.
+
+## 2026-06-30
+
 - Created brand-new full Hostinger live-site deployment ZIP `mstar-holding-full-live-site-clean.zip`.
 - Deleted previous ZIP artifacts and temporary deploy folders before staging the new package.
 - Built the latest finished site and copied only final static live files from `dist/` into a clean deploy staging folder.

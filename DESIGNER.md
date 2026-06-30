@@ -2,6 +2,15 @@
 
 ## 2026-06-30
 
+### Business Bright Contact Section
+
+- Business page contact section now matches the homepage contact visual style.
+- The section uses a white/off-white background, restrained Mstar gold accents, gold email icon, thin divider, underlined email address, and a large black editorial heading.
+- Homepage contact section remains unchanged.
+- No Business page hero, videos, portfolio sections, header, footer, or news content was changed.
+
+## 2026-06-30
+
 ### Full Live ZIP With Forward-Slash Paths
 
 - Deployment ZIP is clean and public_html-ready.

@@ -11,6 +11,12 @@
 - Do not create a deployment ZIP unless explicitly requested.
 - Use `npm run weight:audit` before later packaging or upload decisions.
 
+## 2026-06-30 Business Contact Section Update
+
+- No new heavy assets were added.
+- Update is HTML/CSS-only and reuses the existing homepage contact visual system.
+- No images, videos, logos, icons, or media files were added or changed.
+
 ## 2026-06-30 Full Live ZIP Forward-Slash Packaging
 
 - Created `mstar-holding-full-live-site-clean.zip` as a full live-site Hostinger package from a clean `dist/` staging folder.

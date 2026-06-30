@@ -644,8 +644,7 @@ h2 {
   text-transform: uppercase;
 }
 
-.sector-copy h2,
-.business-cta h2 {
+.sector-copy h2 {
   width: min(820px, 100%);
   font-size: clamp(2.45rem, 5.3vw, 6.1rem);
   line-height: 1.03;
@@ -801,26 +800,6 @@ h2 {
 .outline-cta:hover .cta-arrow,
 .outline-cta:focus-visible .cta-arrow {
   transform: translateX(5px);
-}
-
-.business-cta {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: clamp(32px, 8vw, 120px);
-  min-height: 72vh;
-  padding: clamp(92px, 12vw, 150px) var(--gutter);
-  background:
-    linear-gradient(180deg, rgba(5, 5, 5, 0), rgba(5, 5, 5, 0.86)),
-    linear-gradient(90deg, #0c1011, #050505);
-}
-
-.business-cta > div {
-  min-width: 0;
-}
-
-.business-cta .outline-cta {
-  flex: 0 0 auto;
 }
 
 .section-anchor {
@@ -1008,7 +987,6 @@ h2 {
   }
 
   .contact-section,
-  .business-cta,
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
@@ -1169,8 +1147,7 @@ h2 {
   }
 
   .intro-section,
-  .contact-section,
-  .business-cta {
+  .contact-section {
     min-height: 68vh;
     padding-top: 92px;
     padding-bottom: 92px;
@@ -1196,8 +1173,7 @@ h2 {
     padding-top: 34px;
   }
 
-  .sector-copy h2,
-  .business-cta h2 {
+  .sector-copy h2 {
     font-size: clamp(2.05rem, 10vw, 3.7rem);
     line-height: 1.08;
   }
@@ -1214,7 +1190,6 @@ h2 {
   }
 
   .sector-copy p,
-  .business-cta p,
   .company-copy p {
     font-size: clamp(0.98rem, 4.2vw, 1.05rem);
     line-height: 1.58;
@@ -1222,10 +1197,6 @@ h2 {
 
   .business-company-title {
     font-size: clamp(1.45rem, 6.2vw, 2.25rem);
-  }
-
-  .business-cta .outline-cta {
-    flex: 0 1 auto;
   }
 }
 
