@@ -1,5 +1,13 @@
 # Project Changelog
 
+## 2026-07-01 About Stats Counter Trigger Refinement
+
+- Fixed the About global presence stat counters so they use their own IntersectionObserver on the stats wrapper.
+- Counters now start only when the stats area is reached, not when the global presence section or map first enters the viewport.
+- The counters run once, disconnect after activation, and keep reduced-motion users on final values without animated counting.
+- Updated the Clients stat to `2500+` while keeping Countries at `20+`.
+- Kept the change scoped to About stats markup, shared JS counter trigger logic, documentation, and regenerated build output.
+
 ## 2026-07-01 About Global Presence Animation Refinement
 
 - Tuned the About global presence section so its map animation and stat counters start only when the section enters the viewport.

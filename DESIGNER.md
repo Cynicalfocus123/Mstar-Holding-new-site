@@ -1,5 +1,15 @@
 # Designer Notes
 
+## 2026-07-01 About Stats Counter Trigger Refinement
+
+- Refined only the About global presence stats counter trigger.
+- The map design and map animation remain unchanged.
+- Number counting now waits for the stats row itself instead of starting when the section or map enters the viewport.
+- A dedicated stats-wrapper IntersectionObserver uses a stricter middle-viewport trigger so the numbers begin only when they are clearly visible to the user on desktop, tablet, and mobile.
+- Counters run once and do not replay after scrolling away and back.
+- The final displayed stats are `20+ Countries` and `2500+ Clients`.
+- Reduced-motion users see the final values without animated counting when the stats area is reached.
+
 ## 2026-07-01 About Global Presence Animation Refinement
 
 - Refined only the About `Growing Our Global Presence` section animation behavior and highlight readability.

@@ -1,5 +1,23 @@
 # Agent Changelog
 
+## 2026-07-01 About Stats Counter Trigger Refinement
+
+- Fixed only the About page `Growing Our Global Presence` stats counter trigger.
+- Preserved the approved map design, map animation timing, President Message section, homepage, Business page, News page, header, footer, and unrelated sections.
+- Added `data-global-presence-stats` to the stats wrapper and moved counter activation into its own IntersectionObserver targeting that wrapper only.
+- The map/global section observer now only reveals the map; it no longer starts the counters when the section or map enters the viewport.
+- The stats observer uses `threshold: 0.6` and `rootMargin: -10% 0px -20% 0px` so counters start only when the number area is clearly reached around the middle viewport area.
+- Counters run once, disconnect after activation, and do not replay on scroll.
+- Updated the Clients stat to `2500+` with a 2400ms ease-out `requestAnimationFrame` count; Countries remains `20+` with a 1600ms count.
+- Reduced-motion behavior shows the final counter values when the stats wrapper reaches the trigger point, without animated counting.
+- Mobile/tablet behavior uses the same responsive stats wrapper observer, so the trigger follows the visible number area across viewport sizes.
+- Files changed: `about/index.html`, `src/main.js`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source inspections, `cmd /c npx.cmd prettier --write about/index.html src/main.js`, `cmd /c npx.cmd prettier --write AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `git status --short`, `git add .`, `git commit -m "Refine About stats counter trigger"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Verification notes: no live-server, localhost preview, or local dev server was launched; static source and production build output confirmed the separate stats observer and final values.
+
 ## 2026-07-01 About Global Presence Animation Refinement
 
 - Refined only the About page `Growing Our Global Presence` section animation timing, counter behavior, and highlight visibility.

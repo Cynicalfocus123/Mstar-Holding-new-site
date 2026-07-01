@@ -127,6 +127,9 @@ if (aboutPresidentSection && aboutMessageCard && aboutPortraitCard) {
 const globalPresenceSection = document.querySelector("[data-global-presence]");
 const globalMapBase = document.querySelector("[data-global-map-base]");
 const globalMapMarkets = document.querySelector("[data-global-map-markets]");
+const globalPresenceStats = document.querySelector(
+  "[data-global-presence-stats]",
+);
 const presenceCounters = document.querySelectorAll("[data-presence-counter]");
 
 const svgNamespace = "http://www.w3.org/2000/svg";
@@ -212,21 +215,28 @@ const animatePresenceCounters = () => {
   });
 };
 
+let presenceCountersStarted = false;
+
+const startPresenceCounters = () => {
+  if (presenceCountersStarted) {
+    return;
+  }
+
+  presenceCountersStarted = true;
+
+  if (prefersReducedMotion) {
+    setPresenceCountersToFinal();
+  } else {
+    animatePresenceCounters();
+  }
+};
+
 if (globalPresenceSection && globalMapBase && globalMapMarkets) {
   buildGlobalPresenceMap();
 
   const revealGlobalPresence = () => {
     globalPresenceSection.classList.add("is-visible");
-    if (prefersReducedMotion) {
-      setPresenceCountersToFinal();
-    } else {
-      animatePresenceCounters();
-    }
   };
-
-  if (!prefersReducedMotion) {
-    resetPresenceCounters();
-  }
 
   if (!("IntersectionObserver" in window)) {
     revealGlobalPresence();
@@ -244,6 +254,30 @@ if (globalPresenceSection && globalMapBase && globalMapMarkets) {
     );
 
     globalPresenceObserver.observe(globalPresenceSection);
+  }
+}
+
+if (presenceCounters.length) {
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    resetPresenceCounters();
+  }
+
+  if (!globalPresenceStats || !("IntersectionObserver" in window)) {
+    setPresenceCountersToFinal();
+  } else {
+    const globalPresenceStatsObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) {
+          return;
+        }
+
+        startPresenceCounters();
+        observer.disconnect();
+      },
+      { rootMargin: "-10% 0px -20% 0px", threshold: 0.6 },
+    );
+
+    globalPresenceStatsObserver.observe(globalPresenceStats);
   }
 }
 
