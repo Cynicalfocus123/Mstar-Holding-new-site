@@ -1,5 +1,17 @@
 # Designer Notes
 
+## 2026-07-01 About Global Presence Map
+
+- Added a premium white/off-white About section immediately after the President Message.
+- The section uses a large editorial heading, restrained body copy, Mstar gold accent line, and a centered dotted world map.
+- The map uses dark navy/charcoal dots for the world base and Mstar gold dots for active Mstar Holding markets.
+- Highlighted markets animate progressively on scroll to evoke the Bechtel-style populated map behavior while staying lightweight.
+- Desktop balances text and map side by side with generous spacing and a large readable map.
+- Tablet stacks the text and map with a controlled max width.
+- Mobile stacks text above the map, keeps the SVG within the viewport width, and avoids clipping or horizontal overflow.
+- Motion is limited to opacity and scale on SVG dots and respects `prefers-reduced-motion`.
+- No homepage, Business, News, header, footer, President Message content, or unrelated visual assets were changed.
+
 ## 2026-07-01 About President Message Refinement
 
 - Updated only the About page President Message section.

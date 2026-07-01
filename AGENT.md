@@ -1,5 +1,20 @@
 # Agent Changelog
 
+## 2026-07-01 About Global Presence Map
+
+- Added the next About page section below the President Message section: `Growing Our Global Presence`.
+- Preserved the President Message content/layout except for normal downstream page spacing.
+- Added a lightweight generated SVG dotted world map with dark/navy base dots and Mstar gold market dots.
+- Gold market dots highlight Sudan, Nigeria, Saudi Arabia, Ukraine, United Kingdom, China, Malaysia, Taiwan, Indonesia, Latvia, Estonia, Germany, France, Thailand, United States, UAE, Croatia, Belgium, Iraq, Vietnam, India, Hong Kong, Mexico, and Mali.
+- Added a one-shot IntersectionObserver animation so gold dots progressively populate on scroll.
+- Added a reduced-motion fallback that shows the highlighted markets without animation.
+- Kept the implementation local and lightweight: no external map libraries, no remote assets, and no heavy dependencies.
+- Homepage, Business page, News pages, header, footer, and unrelated assets were not intentionally changed.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Deployment ZIP refreshed from the latest `dist/` output as `mstar-about-page-live-deploy-2026-07-01.zip`.
+
 ## 2026-07-01 About President Message Refinement
 
 - Refined only the About page President Message section.

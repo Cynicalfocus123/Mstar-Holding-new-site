@@ -1,5 +1,13 @@
 # Project Changelog
 
+## 2026-07-01 About Global Presence Map
+
+- Added the `Growing Our Global Presence` section below the About page President Message.
+- Implemented a responsive generated SVG dotted world map with dark base dots and animated Mstar gold market highlights.
+- Added one-shot IntersectionObserver activation and a reduced-motion fallback.
+- Kept the change scoped to the About page, shared CSS, shared JS, and project notes.
+- Refreshed the production deployment ZIP from the final `dist/` output.
+
 ## 2026-07-01 About President Message Refinement
 
 - Replaced the About page President message body with the full personal message.

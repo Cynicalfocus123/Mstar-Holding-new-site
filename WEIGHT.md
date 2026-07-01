@@ -1,5 +1,12 @@
 # Weight And Deployment Notes
 
+## 2026-07-01 About Global Presence Map
+
+- Added the About global presence map without new image, video, font, or remote assets.
+- The dotted map is generated from lightweight inline JavaScript into the existing About page SVG.
+- No external map libraries or heavy dependencies were added.
+- Refreshed the deployment ZIP from the latest `dist/` build output only.
+
 ## 2026-07-01 About President Message Refinement
 
 - Replaced the smaller generated About portrait PNG with the higher-quality original WebP portrait.

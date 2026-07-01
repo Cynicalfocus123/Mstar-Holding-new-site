@@ -123,6 +123,150 @@ if (aboutPresidentSection && aboutMessageCard && aboutPortraitCard) {
   }
 }
 
+const globalPresenceSection = document.querySelector("[data-global-presence]");
+const globalMapBase = document.querySelector("[data-global-map-base]");
+const globalMapMarkets = document.querySelector("[data-global-map-markets]");
+
+const svgNamespace = "http://www.w3.org/2000/svg";
+
+const mapProject = (latitude, longitude) => ({
+  x: ((longitude + 180) / 360) * 1000,
+  y: ((90 - latitude) / 180) * 520,
+});
+
+const ellipseContainsPoint = ({ x, y }, shape) => {
+  const angle = shape.angle || 0;
+  const cos = Math.cos(angle);
+  const sin = Math.sin(angle);
+  const dx = x - shape.cx;
+  const dy = y - shape.cy;
+  const rotatedX = dx * cos + dy * sin;
+  const rotatedY = -dx * sin + dy * cos;
+
+  return (
+    (rotatedX * rotatedX) / (shape.rx * shape.rx) +
+      (rotatedY * rotatedY) / (shape.ry * shape.ry) <=
+    1
+  );
+};
+
+const addMapDot = (group, { x, y, r = 2.6, delay }) => {
+  const dot = document.createElementNS(svgNamespace, "circle");
+
+  dot.setAttribute("cx", x.toFixed(1));
+  dot.setAttribute("cy", y.toFixed(1));
+  dot.setAttribute("r", String(r));
+  dot.setAttribute("aria-hidden", "true");
+
+  if (delay !== undefined) {
+    dot.style.setProperty("--map-delay", `${delay}ms`);
+  }
+
+  group.append(dot);
+};
+
+const buildGlobalPresenceMap = () => {
+  if (!globalMapBase || !globalMapMarkets) {
+    return;
+  }
+
+  const worldShapes = [
+    { cx: 214, cy: 150, rx: 128, ry: 82, angle: -0.18 },
+    { cx: 276, cy: 236, rx: 84, ry: 32, angle: 0.24 },
+    { cx: 326, cy: 343, rx: 58, ry: 116, angle: -0.18 },
+    { cx: 376, cy: 78, rx: 58, ry: 34, angle: -0.08 },
+    { cx: 504, cy: 166, rx: 72, ry: 44, angle: -0.1 },
+    { cx: 526, cy: 278, rx: 78, ry: 116, angle: -0.12 },
+    { cx: 588, cy: 226, rx: 76, ry: 42, angle: 0.05 },
+    { cx: 688, cy: 190, rx: 172, ry: 88, angle: 0.02 },
+    { cx: 728, cy: 282, rx: 84, ry: 44, angle: 0.3 },
+    { cx: 810, cy: 372, rx: 82, ry: 44, angle: 0.1 },
+  ];
+
+  for (let y = 42; y <= 448; y += 16) {
+    for (let x = 58; x <= 930; x += 16) {
+      const jitterX = ((x * 17 + y * 7) % 9) - 4;
+      const jitterY = ((x * 11 + y * 13) % 9) - 4;
+      const point = { x: x + jitterX, y: y + jitterY };
+
+      if (worldShapes.some((shape) => ellipseContainsPoint(point, shape))) {
+        addMapDot(globalMapBase, point);
+      }
+    }
+  }
+
+  const marketCoordinates = [
+    { name: "Sudan", latitude: 15.5, longitude: 32.5 },
+    { name: "Nigeria", latitude: 9.1, longitude: 8.7 },
+    { name: "Saudi Arabia", latitude: 23.9, longitude: 45.1 },
+    { name: "Ukraine", latitude: 49, longitude: 31 },
+    { name: "United Kingdom", latitude: 55, longitude: -3 },
+    { name: "China", latitude: 35.9, longitude: 104.2 },
+    { name: "Malaysia", latitude: 4.2, longitude: 102 },
+    { name: "Taiwan", latitude: 23.7, longitude: 121 },
+    { name: "Indonesia", latitude: -2.4, longitude: 118 },
+    { name: "Latvia", latitude: 56.9, longitude: 24.6 },
+    { name: "Estonia", latitude: 58.6, longitude: 25 },
+    { name: "Germany", latitude: 51.2, longitude: 10.4 },
+    { name: "France", latitude: 46.2, longitude: 2.2 },
+    { name: "Thailand", latitude: 15.9, longitude: 101 },
+    { name: "United States", latitude: 39.8, longitude: -98.6 },
+    { name: "UAE", latitude: 24.3, longitude: 54.4 },
+    { name: "Croatia", latitude: 45.1, longitude: 15.2 },
+    { name: "Belgium", latitude: 50.5, longitude: 4.5 },
+    { name: "Iraq", latitude: 33.2, longitude: 43.7 },
+    { name: "Vietnam", latitude: 14.1, longitude: 108.3 },
+    { name: "India", latitude: 20.6, longitude: 78.9 },
+    { name: "Hong Kong", latitude: 22.3, longitude: 114.2 },
+    { name: "Mexico", latitude: 23.6, longitude: -102.5 },
+    { name: "Mali", latitude: 17.6, longitude: -3.9 },
+  ];
+  const clusterOffsets = [
+    [0, 0],
+    [-5, -3],
+    [5, -3],
+    [-5, 4],
+    [5, 4],
+    [0, -7],
+    [0, 7],
+  ];
+
+  marketCoordinates.forEach((market, marketIndex) => {
+    const projectedMarket = mapProject(market.latitude, market.longitude);
+
+    clusterOffsets.forEach(([offsetX, offsetY], offsetIndex) => {
+      addMapDot(globalMapMarkets, {
+        x: projectedMarket.x + offsetX,
+        y: projectedMarket.y + offsetY,
+        r: offsetIndex === 0 ? 3.4 : 2.8,
+        delay: marketIndex * 62 + offsetIndex * 18,
+      });
+    });
+  });
+};
+
+if (globalPresenceSection && globalMapBase && globalMapMarkets) {
+  buildGlobalPresenceMap();
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    globalPresenceSection.classList.add("is-visible");
+  } else {
+    const globalPresenceObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) {
+          return;
+        }
+
+        globalPresenceSection.classList.add("is-visible");
+        observer.disconnect();
+      },
+      { threshold: 0.28 },
+    );
+
+    globalPresenceObserver.observe(globalPresenceSection);
+  }
+}
+
 const businessSectorsRoot = document.querySelector("[data-business-sectors]");
 const homeNewsRoot = document.querySelector("[data-home-news-list]");
 const newsGridRoot = document.querySelector("[data-news-grid]");
