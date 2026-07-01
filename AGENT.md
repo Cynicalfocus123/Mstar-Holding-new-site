@@ -1,5 +1,22 @@
 # Agent Changelog
 
+## 2026-07-01 About Global Map Silhouette And Scroll Fix
+
+- Fixed only the About page `Growing Our Global Presence` map section.
+- Preserved the President Message section, homepage, Business page, News page, header, footer, and unrelated sections.
+- Improved the generated dotted world map silhouette with more detailed landmass polygons for North America, South America, Greenland, Europe, Africa, Middle East, Asia, India, Southeast Asia, Japan, Indonesia, and Australia.
+- Replaced broad rectangular gold highlight boxes with compact longitude/latitude ellipse clusters so operating markets read as country/region clusters rather than oversized blocks.
+- Continued highlighting all requested countries/regions in Mstar gold: Sudan, Nigeria, Saudi Arabia, Ukraine, United Kingdom, China, Malaysia, Taiwan, Indonesia, Latvia, Estonia, Germany, France, Thailand, United States, UAE, Croatia, Belgium, Iraq, Vietnam, India, Hong Kong, Mexico, and Mali.
+- Kept only the `20+ Countries` and `1000+ Clients` stats; no country-name list, tooltip box, or floating map label was added.
+- Fixed map animation timing so the section waits for IntersectionObserver entry before adding `is-visible`; it does not animate from the top-of-page load unless the map is already in the viewport.
+- Animation uses threshold `0.28`, runs once, disconnects after activation, reveals the base map in 340ms, then populates gold dots with fast clustered staggered fade/scale timing.
+- Reduced-motion users see the final map state without motion.
+- Files changed: `src/main.js`, `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, `WEIGHT.md`, and refreshed deployment ZIP.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source inspections, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, ZIP refresh/verification, `git status --short`, `git add .`, `git commit -m "Refine About global presence map"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-01 About President Card Overlap Adjustment
 
 - Refined only the About page President Message section layout.

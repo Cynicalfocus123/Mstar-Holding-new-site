@@ -1,5 +1,13 @@
 # Project Changelog
 
+## 2026-07-01 About Global Map Silhouette And Scroll Fix
+
+- Improved the About global presence dotted world map silhouette with more detailed generated landmass polygons.
+- Replaced rectangular market highlights with compact Mstar gold ellipse clusters for all requested operating countries/regions.
+- Kept the map section content to the eyebrow, heading, body copy, map, and `20+ Countries` / `1000+ Clients` stats.
+- Fixed scroll-triggered animation behavior so it waits for the section to enter the viewport, runs once, disconnects, and respects reduced motion.
+- Kept the change scoped to the About map section logic/styles, documentation, and refreshed deployment ZIP.
+
 ## 2026-07-01 About President Card Overlap Adjustment
 
 - Reduced the About President portrait card overlap so it no longer covers body text.

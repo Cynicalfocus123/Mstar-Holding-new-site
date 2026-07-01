@@ -1,5 +1,16 @@
 # Designer Notes
 
+## 2026-07-01 About Global Map Silhouette And Scroll Fix
+
+- Refined only the About global presence map section.
+- The map now uses a more recognizable dotted world silhouette with separated, more natural continent forms: North America, South America, Greenland, Europe, Africa, Middle East, Asia, India, Southeast Asia, Japan, Indonesia, and Australia.
+- Gold highlights are compact operating-region clusters rather than rectangular country blocks.
+- All requested operating countries/regions remain highlighted in the correct general regions: Sudan, Nigeria, Saudi Arabia, Ukraine, United Kingdom, China, Malaysia, Taiwan, Indonesia, Latvia, Estonia, Germany, France, Thailand, United States, UAE, Croatia, Belgium, Iraq, Vietnam, India, Hong Kong, Mexico, and Mali.
+- The visible content remains the requested eyebrow, heading, body, large centered map, and `20+ Countries` / `1000+ Clients` stats only.
+- No country list, floating tooltip, or map label is shown.
+- The animation now waits until the map section enters the viewport, then base dots appear quickly and gold dots populate with fast clustered staggered opacity/scale.
+- Desktop keeps the map large and centered; tablet and mobile scale the SVG within the viewport with no intended clipping or horizontal overflow.
+
 ## 2026-07-01 About President Card Overlap Adjustment
 
 - Refined only the About page President Message section layout.

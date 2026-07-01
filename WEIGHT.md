@@ -1,5 +1,12 @@
 # Weight And Deployment Notes
 
+## 2026-07-01 About Global Map Silhouette And Scroll Fix
+
+- Refined the map using JavaScript geometry and SVG dots only; no new media assets were added.
+- No remote assets, external map libraries, canvas renderer, third-party animation library, font, image, or video dependency was introduced.
+- Compact ellipse highlight regions replace broad rectangular regions without increasing asset weight.
+- Refreshed the deployment ZIP from the latest `dist/` build output only.
+
 ## 2026-07-01 About President Card Overlap Adjustment
 
 - No asset changes were made.
