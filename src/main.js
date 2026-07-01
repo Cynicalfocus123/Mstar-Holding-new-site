@@ -127,6 +127,7 @@ if (aboutPresidentSection && aboutMessageCard && aboutPortraitCard) {
 const globalPresenceSection = document.querySelector("[data-global-presence]");
 const globalMapBase = document.querySelector("[data-global-map-base]");
 const globalMapMarkets = document.querySelector("[data-global-map-markets]");
+const presenceCounters = document.querySelectorAll("[data-presence-counter]");
 
 const svgNamespace = "http://www.w3.org/2000/svg";
 
@@ -145,12 +146,12 @@ const buildGlobalPresenceMap = () => {
     globalMapBase.append(path);
   });
 
-  marketCountryPaths.forEach((market) => {
+  marketCountryPaths.forEach((market, index) => {
     const group = document.createElementNS(svgNamespace, "g");
 
     group.setAttribute("class", `map-market-shape market-${market.id}`);
     group.setAttribute("aria-label", market.label);
-    group.style.setProperty("--map-delay", `${market.delay}ms`);
+    group.style.setProperty("--map-delay", `${index * 80}ms`);
 
     if (market.marker) {
       const marker = document.createElementNS(svgNamespace, "circle");
@@ -170,11 +171,65 @@ const buildGlobalPresenceMap = () => {
   });
 };
 
+const setPresenceCountersToFinal = () => {
+  presenceCounters.forEach((counter) => {
+    counter.textContent = `${counter.dataset.counterTarget}+`;
+  });
+};
+
+const resetPresenceCounters = () => {
+  presenceCounters.forEach((counter) => {
+    counter.textContent = "0+";
+  });
+};
+
+const animatePresenceCounters = () => {
+  presenceCounters.forEach((counter) => {
+    const target = Number(counter.dataset.counterTarget);
+    const duration = Number(counter.dataset.counterDuration);
+
+    if (!Number.isFinite(target) || !Number.isFinite(duration)) {
+      return;
+    }
+
+    const startedAt = performance.now();
+    const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
+
+    const updateCounter = (timestamp) => {
+      const progress = Math.min((timestamp - startedAt) / duration, 1);
+      const value = Math.round(target * easeOutCubic(progress));
+
+      counter.textContent = `${value}+`;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = `${target}+`;
+      }
+    };
+
+    requestAnimationFrame(updateCounter);
+  });
+};
+
 if (globalPresenceSection && globalMapBase && globalMapMarkets) {
   buildGlobalPresenceMap();
 
-  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  const revealGlobalPresence = () => {
     globalPresenceSection.classList.add("is-visible");
+    if (prefersReducedMotion) {
+      setPresenceCountersToFinal();
+    } else {
+      animatePresenceCounters();
+    }
+  };
+
+  if (!prefersReducedMotion) {
+    resetPresenceCounters();
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    revealGlobalPresence();
   } else {
     const globalPresenceObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -182,7 +237,7 @@ if (globalPresenceSection && globalMapBase && globalMapMarkets) {
           return;
         }
 
-        globalPresenceSection.classList.add("is-visible");
+        revealGlobalPresence();
         observer.disconnect();
       },
       { rootMargin: "0px 0px -10% 0px", threshold: 0.25 },

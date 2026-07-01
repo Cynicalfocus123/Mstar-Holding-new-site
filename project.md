@@ -1,5 +1,13 @@
 # Project Changelog
 
+## 2026-07-01 About Global Presence Animation Refinement
+
+- Tuned the About global presence section so its map animation and stat counters start only when the section enters the viewport.
+- Kept the existing map design and geometry while slowing the base reveal and gold market stagger for a more premium pace.
+- Added one-shot `requestAnimationFrame` counters for `20+ Countries` and `1000+ Clients`, with reduced-motion fallback to final values.
+- Increased contrast between softer charcoal/navy base dots and stronger Mstar gold highlighted markets.
+- Kept the change scoped to About global presence markup, shared JS/CSS, documentation, and the regenerated production build.
+
 ## 2026-07-01 About Global Presence SVG Map Redesign
 
 - Replaced the About global presence fake dotted map with accurate local SVG country paths generated from Natural Earth 1:110m admin-0 geometry.

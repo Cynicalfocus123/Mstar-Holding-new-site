@@ -1,5 +1,21 @@
 # Agent Changelog
 
+## 2026-07-01 About Global Presence Animation Refinement
+
+- Refined only the About page `Growing Our Global Presence` section animation timing, counter behavior, and highlight visibility.
+- Preserved the current SVG map geometry/design, President Message section, homepage, Business page, News page, header, footer, and unrelated sections.
+- Kept the global presence IntersectionObserver on the section with `threshold: 0.25` and `rootMargin: 0px 0px -10% 0px`; the reveal runs once and disconnects after triggering.
+- Slowed the base map reveal to 620ms and slowed gold market groups to 760ms opacity / 820ms transform with 80ms staggered group delays, using only opacity and transform.
+- Added scroll-triggered `requestAnimationFrame` counters for `20+ Countries` and `1000+ Clients`; counters reset to `0+` before the section is reached, run once on section reveal, ease out smoothly, and finish at the exact final values.
+- Improved highlight contrast by softening the base map dots to lower-weight charcoal/navy and strengthening the active market dots with richer Mstar gold plus a restrained gold shadow.
+- Reduced-motion behavior shows the final visible map and final counter values when the same section observer triggers, without animated counting.
+- Files changed: `about/index.html`, `src/main.js`, `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted `rg` / `Get-Content` inspections, `cmd /c npx.cmd prettier --write about/index.html src/main.js src/styles.css AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `git status --short`, `git add .`, `git commit -m "Refine About global presence animations"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Verification notes: no live-server, localhost preview, or local dev server was launched; static source and production build output were used for verification.
+
 ## 2026-07-01 About Global Presence SVG Map Redesign
 
 - Completely rebuilt only the About page `Growing Our Global Presence` map section.

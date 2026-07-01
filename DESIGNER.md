@@ -1,5 +1,16 @@
 # Designer Notes
 
+## 2026-07-01 About Global Presence Animation Refinement
+
+- Refined only the About `Growing Our Global Presence` section animation behavior and highlight readability.
+- The approved SVG map design and operating-market geometry remain unchanged.
+- The map reveal now waits until the section enters the viewport, runs once, and does not replay on scroll.
+- Base dots fade/scale in more slowly at 620ms for a calmer premium reveal.
+- Gold operating-market groups populate with a slower staggered fade/scale treatment: 760ms opacity, 820ms transform, and 80ms between groups.
+- Base map dots are softer charcoal/navy with lower visual weight, while active markets use brighter, richer Mstar gold and a subtle restrained glow so highlighted regions read clearly on desktop, tablet, and mobile.
+- The `20+ Countries` and `1000+ Clients` stats now count up only when the section is reached, use smooth ease-out pacing, run once, and keep the plus sign visible.
+- Reduced-motion users see the final highlighted map and final stat values without counting animation once the section is reached.
+
 ## 2026-07-01 About Global Presence SVG Map Redesign
 
 - Rebuilt the About global presence map as an accurate SVG country-path map instead of a hand-guessed dot cloud.
