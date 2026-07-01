@@ -2097,6 +2097,7 @@ h2 {
   position: relative;
   z-index: 2;
   width: min(100%, 390px);
+  aspect-ratio: 2 / 3;
   margin-top: clamp(52px, 7vw, 96px);
   margin-left: -28%;
   padding: clamp(10px, 1.3vw, 16px) clamp(10px, 1.3vw, 16px) 0;
@@ -2108,9 +2109,9 @@ h2 {
 .president-portrait-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 3;
+  height: 100%;
   border-radius: 18px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center bottom;
 }
 
@@ -2578,6 +2579,11 @@ h2 {
 }
 
 @media (max-width: 900px) {
+  .president-message-card,
+  .president-portrait-card {
+    transform: translateY(28px);
+  }
+
   .about-president {
     min-height: auto;
   }
@@ -2588,8 +2594,7 @@ h2 {
     justify-items: center;
   }
 
-  .president-message-card,
-  .president-portrait-card {
+  .president-message-card {
     width: min(100%, 760px);
   }
 
@@ -2598,6 +2603,7 @@ h2 {
   }
 
   .president-portrait-card {
+    width: min(100%, 390px);
     margin: 0;
   }
 

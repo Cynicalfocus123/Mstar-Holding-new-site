@@ -1,5 +1,12 @@
 # Weight And Deployment Notes
 
+## 2026-07-01 About President Portrait Layout Refinement
+
+- No additional media variants were added.
+- The About portrait remains a single WebP copied from the highest-quality available source in the requested leadership folder.
+- The old generated PNG remains removed, so the live build does not carry duplicate About portrait assets.
+- Refreshed the deployment ZIP from the latest `dist/` build output only.
+
 ## 2026-07-01 About Global Presence Map
 
 - Added the About global presence map without new image, video, font, or remote assets.

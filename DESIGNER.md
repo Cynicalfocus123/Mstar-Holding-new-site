@@ -1,5 +1,15 @@
 # Designer Notes
 
+## 2026-07-01 About President Portrait Layout Refinement
+
+- Refined only the President portrait behavior inside the About page President Message section.
+- The portrait card is restored to the approved compact executive-card size rather than stretching across tablet/mobile widths.
+- The card keeps its 2:3 portrait proportion, white background, rounded corners, soft shadow, and front z-index above the message card.
+- The high-quality Jakapun portrait source in `site content pic and video/leadership boar/jack white background.webp` is used for the live About portrait asset because the requested `(4)` variant was not present in the folder.
+- The portrait image uses contain fitting and bottom anchoring so the body feels grounded at the bottom edge of the card without zooming the face or distorting the body.
+- Desktop/tablet retain the approved overlap and cards-meet animation; mobile stacks the cards and uses a subtler fade-up motion.
+- No heading, message text, message card size, header/footer, homepage, Business page, or News page design was changed.
+
 ## 2026-07-01 About Global Presence Map
 
 - Added a premium white/off-white About section immediately after the President Message.

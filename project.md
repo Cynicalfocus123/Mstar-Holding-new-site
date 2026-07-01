@@ -1,5 +1,13 @@
 # Project Changelog
 
+## 2026-07-01 About President Portrait Layout Refinement
+
+- Restored the President portrait card to the approved compact size.
+- Kept the high-quality Jakapun portrait source from the requested leadership image folder.
+- Changed only image fitting/positioning so the portrait is bottom-aligned, less zoomed, and undistorted.
+- Preserved the overlapping card composition and the cards-meet animation, with subtle fade-up behavior on mobile.
+- Refreshed the production deployment ZIP from the final build output.
+
 ## 2026-07-01 About Global Presence Map
 
 - Added the `Growing Our Global Presence` section below the About page President Message.

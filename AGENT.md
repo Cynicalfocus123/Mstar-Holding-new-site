@@ -1,5 +1,21 @@
 # Agent Changelog
 
+## 2026-07-01 About President Portrait Layout Refinement
+
+- Refined only the About page President Message section.
+- Restored the portrait card to the previously approved size behavior: max 390px wide on desktop/tablet, 2:3 card ratio, and no full-width tablet/mobile enlargement.
+- Confirmed the requested `jack white background(4).webp` file name was not present; the available high-quality source in the requested folder is `D:\mstar holding new site\Mstar-Holding-new-site\site content pic and video\leadership boar\jack white background.webp`.
+- Kept the public About portrait as a direct copy from that high-quality source at `public/media/about/jakapun-viwatkurkul-president.webp`.
+- Adjusted only image fitting: `object-fit: contain`, `object-position: center bottom`, stable card aspect ratio, and no bottom inset so the visible body aligns with the bottom of the card without distortion or face zoom.
+- Preserved two independent cards, message-card background extension behind the portrait card, portrait z-index above the message card, desktop/tablet overlap, and mobile stacking.
+- Preserved the IntersectionObserver one-shot animation and timing. Desktop/tablet cards still slide toward each other from `translateX(-60px)` and `translateX(60px)`; mobile now uses a subtle fade-up transform while animating only opacity and transform.
+- The full President message text remains unchanged and no CTA or `Learn More` button was added.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Deployment ZIP refreshed from the latest `dist/` output as `mstar-about-page-live-deploy-2026-07-01.zip`.
+- Commit hash: reported in final handoff after commit/push.
+
 ## 2026-07-01 About Global Presence Map
 
 - Added the next About page section below the President Message section: `Growing Our Global Presence`.
