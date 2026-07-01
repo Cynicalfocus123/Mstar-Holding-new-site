@@ -5,6 +5,7 @@ const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const header = document.querySelector("[data-header]");
 const isInnerPage =
+  document.body.classList.contains("about-page") ||
   document.body.classList.contains("business-page") ||
   document.body.classList.contains("news-page");
 
@@ -95,6 +96,32 @@ scheduleBusinessHeroVideoUpdate();
 window.addEventListener("resize", updateBusinessHeroVideo);
 window.addEventListener("orientationchange", updateBusinessHeroVideo);
 window.addEventListener("pageshow", scheduleBusinessHeroVideoUpdate);
+
+const aboutPresidentSection = document.querySelector("[data-about-president]");
+const aboutMessageCard = document.querySelector("[data-about-message-card]");
+const aboutPortraitCard = document.querySelector("[data-about-portrait-card]");
+
+if (aboutPresidentSection && aboutMessageCard && aboutPortraitCard) {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    aboutMessageCard.classList.add("is-visible");
+    aboutPortraitCard.classList.add("is-visible");
+  } else {
+    const aboutObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) {
+          return;
+        }
+
+        aboutMessageCard.classList.add("is-visible");
+        aboutPortraitCard.classList.add("is-visible");
+        observer.disconnect();
+      },
+      { threshold: 0.25 },
+    );
+
+    aboutObserver.observe(aboutPresidentSection);
+  }
+}
 
 const businessSectorsRoot = document.querySelector("[data-business-sectors]");
 const homeNewsRoot = document.querySelector("[data-home-news-list]");

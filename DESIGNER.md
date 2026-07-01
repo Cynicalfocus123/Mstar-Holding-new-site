@@ -1,5 +1,45 @@
 # Designer Notes
 
+## 2026-07-01 Premium About Page
+
+### About Page Design Specification
+
+- New About page direction is white, minimal, premium, corporate, and consistent with the homepage bright section system.
+- The first section is a President message, not a marketing hero, and uses generous whitespace, restrained Mstar gold accents, charcoal typography, soft border treatment, and the existing premium shadow language.
+- The page keeps the existing global header and footer so it feels native to the current Mstar site.
+
+### CEO Message Layout
+
+- Desktop uses two completely independent cards.
+- Left card: wide white President message card, rounded 24px corners, subtle border, premium soft shadow, large internal spacing, and no fixed height.
+- Right card: portrait-only card with the supplied Jakapun Viwatkurkul image, white background, rounded corners, and matching premium shadow.
+- The portrait card overlaps the message card's right edge and sits above it through z-index.
+- The message card visually continues behind the portrait card with a background extension, while text remains protected inside the readable content width.
+
+### Responsive Behavior
+
+- Desktop overlap is approximately 25-30%.
+- Tablet keeps the same composition with a reduced overlap.
+- Mobile removes overlap completely and stacks cards vertically: message first, portrait second, centered.
+- Text scales with existing `clamp()` typography and safe gutters; no viewport-width font scaling was introduced.
+
+### Animation Rules
+
+- The About page reveal uses IntersectionObserver with threshold `0.25`.
+- The observer runs once and disconnects after the section becomes visible.
+- Message initial state: `opacity: 0` and `transform: translateX(-60px)`.
+- Portrait initial state: `opacity: 0` and `transform: translateX(60px)`.
+- Visible state: `opacity: 1` and `transform: translateX(0)`.
+- Portrait delay is 150ms; duration is 700ms; easing is `cubic-bezier(0.22, 1, 0.36, 1)`.
+- Motion is limited to opacity and transform and respects `prefers-reduced-motion`.
+
+### Typography And Spacing
+
+- Heading hierarchy uses one page-level H1: `Message from the President`.
+- Body copy uses the existing muted bright-section color and comfortable executive-message line height.
+- Signature is separated by a quiet gold-tinted divider and uses a clear three-line hierarchy: name, title, company.
+- No CTA button or `Learn More` action appears in the President message section.
+
 ## 2026-06-30
 
 ### Deployment Base Path Fix

@@ -1,5 +1,55 @@
 # Agent Changelog
 
+## 2026-07-01 Premium About Page
+
+- Added a brand-new static About page at `about/index.html`.
+- Implemented the first section as a premium President message composition with two independent cards: a wide white message card and a standalone portrait card.
+- Used the supplied Jakapun Viwatkurkul portrait source from the local Word document media, cropped it into `public/media/about/jakapun-viwatkurkul-president.png`, and lazy-loaded it on the About page.
+- Reused the existing Mstar bright visual system, CSS variables, typography scale, soft shadow token, header/footer, brand metadata, and build configuration.
+- Added `about/index.html` to `vite.config.js` so the production build emits `dist/about/index.html`.
+- Updated shared navigation links on the homepage, Business page, News page, and article pages so About opens the new `about/` page.
+- Added a root `/about` to `/about/` redirect alongside the existing static redirects.
+- Added About page header support to `src/main.js` so the non-home readable top-state header applies from initial load.
+- Added the About page IntersectionObserver animation in `src/main.js` with threshold `0.25`, one-shot disconnect, message-card `translateX(-60px)`, portrait-card `translateX(60px)`, 150ms portrait delay, 700ms duration, and `cubic-bezier(0.22, 1, 0.36, 1)` timing.
+- Animation updates only `opacity` and `transform`, includes a reduced-motion fallback, and does not animate layout properties.
+- Mobile removes the overlap and stacks message first, portrait second, centered.
+- No "Learn More" or other CTA button was added to the President message section.
+
+## Files Modified
+
+- `about/index.html`
+- `index.html`
+- `business/index.html`
+- `news/index.html`
+- `news/*/index.html`
+- `src/main.js`
+- `src/styles.css`
+- `vite.config.js`
+- `public/media/about/jakapun-viwatkurkul-president.png`
+- `AGENT.md`
+- `DESIGNER.md`
+- `WEIGHT.md`
+- `project.md`
+- `mstar-about-page-live-deploy-2026-07-01.zip`
+
+## Build Status
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Lint and test scripts both exist; `test` runs the existing lint check.
+
+## Verification Notes
+
+- Confirmed `dist/about/index.html` is emitted by the production build.
+- Confirmed built About page references the compiled CSS/JS bundle and the portrait asset under `media/about/`.
+- Confirmed the About section contains `Message from the President`, the required signature, and no `Learn More` text.
+- Confirmed static nav links point to `about/` from homepage, Business, News, and article pages.
+- Confirmed no localhost preview, live-server, or local dev server was launched.
+- Browser/IAB rendered verification was attempted through the in-app browser with a `file://`-compatible path, but the browser connection timed out twice. Static build-output verification was used instead to respect the no-localhost/no-preview-server constraint.
+- Production ZIP was generated only from the latest `dist/` output and verified for clean direct-upload structure.
+- Commit hash: reported in final handoff after commit/push.
+
 ## Token Saving / Command Output Rules
 
 - Default all terminal commands to capped output.

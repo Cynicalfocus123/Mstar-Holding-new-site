@@ -1,5 +1,13 @@
 # Weight And Deployment Notes
 
+## 2026-07-01 About Page
+
+- Added one optimized PNG portrait asset at `public/media/about/jakapun-viwatkurkul-president.png`.
+- No new video assets were added.
+- Production build continues to copy only final static assets into `dist/`.
+- New full deployment ZIP is generated from `dist/` only as `mstar-about-page-live-deploy-2026-07-01.zip`.
+- ZIP verification checks confirm no source folders, `.git`, `node_modules`, package files, old ZIP files inside the archive, wrapper folder, or misplaced loose brand/favicon image files.
+
 ## Permanent Deployment Rules
 
 - Deploy live uploads from `dist/` only, not from the full source repository.

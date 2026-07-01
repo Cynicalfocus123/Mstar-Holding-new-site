@@ -7,6 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
+        about: resolve(__dirname, "about/index.html"),
         business: resolve(__dirname, "business/index.html"),
         news: resolve(__dirname, "news/index.html"),
         newsDefenseContract: resolve(
