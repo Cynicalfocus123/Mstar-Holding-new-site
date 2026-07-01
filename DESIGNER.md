@@ -1,5 +1,15 @@
 # Designer Notes
 
+## 2026-07-01 About President Message Refinement
+
+- Updated only the About page President Message section.
+- The President message now uses the full personal message supplied for Jakapun Viwatkurkul.
+- The portrait card keeps the same overlapping composition above the message card.
+- The portrait image now uses the higher-quality original white-background Jakapun portrait instead of the softer cropped derivative.
+- Image fitting is bottom-anchored so the body aligns visually with the bottom of the portrait card, while preserving face clarity and avoiding distortion.
+- No card redesign, new CTA, header/footer change, homepage change, Business page change, or News page change was made.
+- Existing desktop/tablet overlap and mobile stacking behavior remain the intended design.
+
 ## 2026-07-01 Premium About Page
 
 ### About Page Design Specification

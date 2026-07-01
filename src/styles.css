@@ -2093,7 +2093,7 @@ h2 {
   width: min(100%, 390px);
   margin-top: clamp(52px, 7vw, 96px);
   margin-left: -28%;
-  padding: clamp(10px, 1.3vw, 16px);
+  padding: clamp(10px, 1.3vw, 16px) clamp(10px, 1.3vw, 16px) 0;
   overflow: hidden;
   transform: translateX(60px);
   transition-delay: 150ms;
@@ -2105,7 +2105,7 @@ h2 {
   aspect-ratio: 2 / 3;
   border-radius: 18px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center bottom;
 }
 
 .news-grid-wrap {

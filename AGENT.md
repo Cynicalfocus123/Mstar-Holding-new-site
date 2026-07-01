@@ -1,5 +1,21 @@
 # Agent Changelog
 
+## 2026-07-01 About President Message Refinement
+
+- Refined only the About page President Message section.
+- Replaced the incomplete company-story body copy with the full personal President message supplied in the task.
+- Replaced the previous derived/cropped About portrait PNG with the higher-quality original Jakapun Viwatkurkul portrait source from `site content pic and video/leadership boar/jack white background.webp`.
+- Added the high-quality live portrait asset at `public/media/about/jakapun-viwatkurkul-president.webp`.
+- Removed the old low-quality generated `public/media/about/jakapun-viwatkurkul-president.png` asset.
+- Updated the portrait image fitting only: bottom-anchored object positioning and no bottom inset inside the portrait card, so the body visually aligns with the card bottom without distorting the image.
+- Preserved the existing President section card layout, overlap behavior, header/footer, homepage, Business page, News pages, and animation logic.
+- No `Learn More` button or CTA was added.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Deployment ZIP refreshed from the latest `dist/` output as `mstar-about-page-live-deploy-2026-07-01.zip`.
+- Commit hash: reported in final handoff after commit/push.
+
 ## 2026-07-01 Premium About Page
 
 - Added a brand-new static About page at `about/index.html`.

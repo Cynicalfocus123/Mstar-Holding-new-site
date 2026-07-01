@@ -1,5 +1,12 @@
 # Weight And Deployment Notes
 
+## 2026-07-01 About President Message Refinement
+
+- Replaced the smaller generated About portrait PNG with the higher-quality original WebP portrait.
+- Removed the unused generated PNG to avoid carrying duplicate About portrait media.
+- No new video assets were added.
+- Refreshed the deployment ZIP from the latest `dist/` build output only.
+
 ## 2026-07-01 About Page
 
 - Added one optimized PNG portrait asset at `public/media/about/jakapun-viwatkurkul-president.png`.
