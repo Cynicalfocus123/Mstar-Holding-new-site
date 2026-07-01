@@ -1,5 +1,14 @@
 # Project Changelog
 
+## 2026-07-01 About Global Presence SVG Map Redesign
+
+- Replaced the About global presence fake dotted map with accurate local SVG country paths generated from Natural Earth 1:110m admin-0 geometry.
+- Added base dark dotted world layer and separate Mstar gold dotted overlays for all requested operating markets.
+- Updated the section copy to the requested wording and kept only `20+ Countries` / `1000+ Clients` stats.
+- Removed the old procedural landmass/dot generator and changed the animation to scroll-triggered country/region group reveals.
+- Preserved reduced-motion support and responsive scaling, with no remote runtime assets or external map libraries.
+- Refreshed the production deployment ZIP from the final `dist/` output.
+
 ## 2026-07-01 About Global Map Silhouette And Scroll Fix
 
 - Improved the About global presence dotted world map silhouette with more detailed generated landmass polygons.

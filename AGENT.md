@@ -1,5 +1,23 @@
 # Agent Changelog
 
+## 2026-07-01 About Global Presence SVG Map Redesign
+
+- Completely rebuilt only the About page `Growing Our Global Presence` map section.
+- Preserved the President Message section, homepage, Business page, News page, header, footer, social/fav assets, deployment base paths, and unrelated sections.
+- Replaced the broken generated-dot map with accurate Natural Earth 1:110m admin-0 country SVG path geometry rendered locally through `src/world-map-data.js`.
+- Added SVG dot patterns so the base world layer reads as a proper dotted/pixel world silhouette instead of random blobs.
+- Added separate Mstar gold market overlays for every requested operating market: United States, Mexico, United Kingdom, France, Germany, Belgium, Croatia, Ukraine, Latvia, Estonia, Saudi Arabia, UAE, Iraq, Sudan, Nigeria, Mali, India, China, Hong Kong, Taiwan, Thailand, Vietnam, Malaysia, and Indonesia.
+- Kept Hong Kong as a precise small gold marker because it is not a separate country polygon in the Natural Earth 110m admin-0 source.
+- Removed old fake-map landmass polygons, random gold block logic, tooltip/title text, floating labels, and country-list behavior.
+- Updated the section body copy to the requested wording and kept only the `20+ Countries` and `1000+ Clients` stats below the map.
+- Fixed the scroll-triggered animation to use IntersectionObserver with `threshold: 0.25` and `rootMargin: 0px 0px -10% 0px`; it runs once and disconnects after activation.
+- Animation now fades the base map quickly and staggers each gold country/region group with transform/opacity only; reduced-motion users see the final highlighted map immediately.
+- Files changed: `about/index.html`, `src/main.js`, `src/styles.css`, `src/world-map-data.js`, `AGENT.md`, `DESIGNER.md`, `project.md`, `WEIGHT.md`, and refreshed deployment ZIP.
+- Commands run: `Get-Content -LiteralPath package.json`, repo asset/source inspections, Natural Earth temp GeoJSON generation step, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, ZIP refresh/verification, `git status --short`, `git add .`, `git commit -m "Redesign About global presence map"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-01 About Global Map Silhouette And Scroll Fix
 
 - Fixed only the About page `Growing Our Global Presence` map section.

@@ -1,5 +1,16 @@
 # Designer Notes
 
+## 2026-07-01 About Global Presence SVG Map Redesign
+
+- Rebuilt the About global presence map as an accurate SVG country-path map instead of a hand-guessed dot cloud.
+- The base map uses Natural Earth country geometry with a dark navy/charcoal SVG dot pattern so the continents immediately read as a real world map.
+- The highlighted markets are separate Mstar gold SVG overlays using the same dotted visual language, with Hong Kong represented by a small precise marker.
+- All requested markets are highlighted: United States, Mexico, United Kingdom, France, Germany, Belgium, Croatia, Ukraine, Latvia, Estonia, Saudi Arabia, UAE, Iraq, Sudan, Nigeria, Mali, India, China, Hong Kong, Taiwan, Thailand, Vietnam, Malaysia, and Indonesia.
+- The section keeps a white/off-white premium corporate composition with centered eyebrow, editorial heading, body copy, large centered map, and only the two stats below the map.
+- No tooltip box, country list, floating label, or oversized rectangular highlight remains.
+- Animation waits until the map section enters the viewport, then fades the base map and quickly populates gold market groups with staggered scale/opacity.
+- Desktop spans most of the content width; tablet and mobile scale the same SVG proportionally without intended clipping or horizontal overflow.
+
 ## 2026-07-01 About Global Map Silhouette And Scroll Fix
 
 - Refined only the About global presence map section.

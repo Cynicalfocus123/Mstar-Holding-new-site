@@ -1,5 +1,12 @@
 # Weight And Deployment Notes
 
+## 2026-07-01 About Global Presence SVG Map Redesign
+
+- Added one local generated source module, `src/world-map-data.js`, containing optimized SVG path data from Natural Earth 1:110m country geometry.
+- No image, video, font, remote runtime asset, external map library, canvas renderer, or third-party animation library was added.
+- The map renders as inline SVG paths with reusable dot patterns, keeping runtime behavior local and scalable.
+- Refreshed the deployment ZIP from the latest `dist/` build output only.
+
 ## 2026-07-01 About Global Map Silhouette And Scroll Fix
 
 - Refined the map using JavaScript geometry and SVG dots only; no new media assets were added.

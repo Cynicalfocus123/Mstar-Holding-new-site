@@ -1,5 +1,6 @@
 import "./styles.css";
 import { getArticleBySlug, sortedNewsArticles } from "./news-data.js";
+import { baseWorldPaths, marketCountryPaths } from "./world-map-data.js";
 
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
@@ -129,292 +130,44 @@ const globalMapMarkets = document.querySelector("[data-global-map-markets]");
 
 const svgNamespace = "http://www.w3.org/2000/svg";
 
-const mapProject = (latitude, longitude) => ({
-  x: ((longitude + 180) / 360) * 1000,
-  y: ((90 - latitude) / 180) * 520,
-});
-
-const polygonContainsCoordinate = ([longitude, latitude], polygon) => {
-  let isInside = false;
-
-  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-    const [xi, yi] = polygon[i];
-    const [xj, yj] = polygon[j];
-    const crossesLatitude = yi > latitude !== yj > latitude;
-    const projectedLongitude =
-      ((xj - xi) * (latitude - yi)) / (yj - yi || 1) + xi;
-
-    if (crossesLatitude && longitude < projectedLongitude) {
-      isInside = !isInside;
-    }
-  }
-
-  return isInside;
-};
-
-const regionContainsCoordinate = ([longitude, latitude], region) => {
-  if (region.center) {
-    const [centerLongitude, centerLatitude] = region.center;
-    const [radiusLongitude, radiusLatitude] = region.radius;
-    const normalizedLongitude = (longitude - centerLongitude) / radiusLongitude;
-    const normalizedLatitude = (latitude - centerLatitude) / radiusLatitude;
-
-    return normalizedLongitude ** 2 + normalizedLatitude ** 2 <= 1;
-  }
-
-  return polygonContainsCoordinate([longitude, latitude], region.polygon);
-};
-
-const addMapDot = (group, { x, y, r = 2.35, delay }) => {
-  const dot = document.createElementNS(svgNamespace, "circle");
-
-  dot.setAttribute("cx", x.toFixed(1));
-  dot.setAttribute("cy", y.toFixed(1));
-  dot.setAttribute("r", String(r));
-  dot.setAttribute("aria-hidden", "true");
-
-  if (delay !== undefined) {
-    dot.style.setProperty("--map-delay", `${delay}ms`);
-  }
-
-  group.append(dot);
-};
-
 const buildGlobalPresenceMap = () => {
   if (!globalMapBase || !globalMapMarkets) {
     return;
   }
 
-  const landMasses = [
-    [
-      [-168, 71],
-      [-150, 72],
-      [-136, 69],
-      [-124, 66],
-      [-114, 69],
-      [-104, 63],
-      [-92, 61],
-      [-82, 55],
-      [-64, 54],
-      [-52, 48],
-      [-58, 42],
-      [-72, 45],
-      [-80, 38],
-      [-76, 30],
-      [-88, 24],
-      [-99, 18],
-      [-110, 22],
-      [-122, 32],
-      [-124, 42],
-      [-132, 50],
-      [-146, 57],
-      [-160, 61],
-      [-170, 66],
-    ],
-    [
-      [-126, 54],
-      [-112, 58],
-      [-100, 56],
-      [-94, 50],
-      [-104, 45],
-      [-118, 47],
-    ],
-    [
-      [-118, 32],
-      [-104, 31],
-      [-92, 26],
-      [-84, 20],
-      [-76, 10],
-      [-82, 8],
-      [-92, 16],
-      [-104, 19],
-      [-114, 24],
-    ],
-    [
-      [-81, 11],
-      [-70, 12],
-      [-58, 7],
-      [-48, -6],
-      [-38, -18],
-      [-45, -32],
-      [-54, -45],
-      [-66, -55],
-      [-74, -44],
-      [-70, -28],
-      [-78, -14],
-      [-82, 0],
-    ],
-    [
-      [-54, 82],
-      [-36, 82],
-      [-20, 76],
-      [-28, 66],
-      [-44, 60],
-      [-58, 64],
-      [-64, 74],
-    ],
-    [
-      [-11, 60],
-      [0, 65],
-      [15, 66],
-      [30, 62],
-      [42, 54],
-      [34, 46],
-      [18, 41],
-      [4, 43],
-      [-8, 49],
-      [-16, 56],
-    ],
-    [
-      [-17, 36],
-      [-4, 36],
-      [12, 33],
-      [28, 31],
-      [40, 20],
-      [50, 8],
-      [46, -8],
-      [38, -22],
-      [30, -34],
-      [18, -36],
-      [8, -29],
-      [-2, -12],
-      [-10, 5],
-      [-16, 20],
-    ],
-    [
-      [34, 34],
-      [48, 34],
-      [58, 30],
-      [58, 18],
-      [50, 14],
-      [42, 20],
-      [36, 28],
-    ],
-    [
-      [42, 56],
-      [60, 62],
-      [86, 70],
-      [116, 70],
-      [142, 60],
-      [166, 52],
-      [174, 44],
-      [154, 32],
-      [136, 24],
-      [122, 14],
-      [112, 4],
-      [98, 6],
-      [90, 18],
-      [76, 18],
-      [66, 26],
-      [54, 36],
-      [44, 44],
-    ],
-    [
-      [68, 28],
-      [82, 28],
-      [91, 22],
-      [88, 8],
-      [78, 6],
-      [72, 15],
-    ],
-    [
-      [96, 22],
-      [110, 20],
-      [122, 14],
-      [116, 2],
-      [108, -8],
-      [98, 0],
-    ],
-    [
-      [118, 8],
-      [132, 6],
-      [148, 1],
-      [150, -8],
-      [134, -12],
-      [116, -8],
-      [104, -3],
-    ],
-    [
-      [138, 46],
-      [146, 44],
-      [146, 34],
-      [136, 32],
-      [132, 38],
-    ],
-    [
-      [112, -12],
-      [132, -10],
-      [154, -18],
-      [154, -38],
-      [138, -44],
-      [118, -38],
-      [106, -28],
-    ],
-  ];
+  baseWorldPaths.forEach(({ id, d }) => {
+    const path = document.createElementNS(svgNamespace, "path");
 
-  const marketRegions = [
-    { name: "Sudan", center: [30.2, 15.6], radius: [6.5, 5] },
-    { name: "Nigeria", center: [8.7, 9.1], radius: [5.2, 4.4] },
-    { name: "Saudi Arabia", center: [45.1, 23.9], radius: [9.4, 6.8] },
-    { name: "Ukraine", center: [31, 49], radius: [7.8, 3.6] },
-    { name: "United Kingdom", center: [-3.4, 55], radius: [4.8, 4.8] },
-    { name: "China", center: [104.2, 35.9], radius: [17, 9.6] },
-    { name: "Malaysia", center: [102, 4.2], radius: [5.8, 3.2] },
-    { name: "Taiwan", center: [121, 23.7], radius: [3.2, 3.2] },
-    { name: "Indonesia", center: [118, -2.4], radius: [17, 5.8] },
-    { name: "Latvia", center: [24.6, 56.9], radius: [3.2, 2.4] },
-    { name: "Estonia", center: [25, 58.6], radius: [3.2, 2.4] },
-    { name: "Germany", center: [10.4, 51.2], radius: [4.8, 3.6] },
-    { name: "France", center: [2.2, 46.2], radius: [6, 4.8] },
-    { name: "Thailand", center: [101, 15.9], radius: [4.2, 5.8] },
-    { name: "United States", center: [-98.6, 39.8], radius: [21, 9.8] },
-    { name: "UAE", center: [54.4, 24.3], radius: [3.6, 2.8] },
-    { name: "Croatia", center: [15.2, 45.1], radius: [3.4, 2.6] },
-    { name: "Belgium", center: [4.5, 50.5], radius: [3, 2.4] },
-    { name: "Iraq", center: [43.7, 33.2], radius: [5.2, 4] },
-    { name: "Vietnam", center: [108.3, 14.1], radius: [3.8, 6] },
-    { name: "India", center: [78.9, 20.6], radius: [9.8, 8.6] },
-    { name: "Hong Kong", center: [114.2, 22.3], radius: [2.8, 2.4] },
-    { name: "Mexico", center: [-102.5, 23.6], radius: [10, 5.8] },
-    { name: "Mali", center: [-3.9, 17.6], radius: [7, 5.6] },
-  ];
-  const marketDotCounts = new Array(marketRegions.length).fill(0);
+    path.setAttribute("class", "map-country-shape");
+    path.setAttribute("data-country", id);
+    path.setAttribute("d", d);
+    path.setAttribute("aria-hidden", "true");
+    globalMapBase.append(path);
+  });
 
-  for (let latitude = 74; latitude >= -46; latitude -= 2.6) {
-    for (let longitude = -170; longitude <= 174; longitude += 2.6) {
-      const coordinate = [longitude, latitude];
-      const isLand = landMasses.some((polygon) =>
-        polygonContainsCoordinate(coordinate, polygon),
-      );
+  marketCountryPaths.forEach((market) => {
+    const group = document.createElementNS(svgNamespace, "g");
 
-      if (!isLand) {
-        continue;
-      }
+    group.setAttribute("class", `map-market-shape market-${market.id}`);
+    group.setAttribute("aria-label", market.label);
+    group.style.setProperty("--map-delay", `${market.delay}ms`);
 
-      const projectedPoint = mapProject(latitude, longitude);
-      const point = {
-        x: projectedPoint.x,
-        y: projectedPoint.y,
-      };
+    if (market.marker) {
+      const marker = document.createElementNS(svgNamespace, "circle");
 
-      addMapDot(globalMapBase, point);
+      marker.setAttribute("cx", String(market.marker.x));
+      marker.setAttribute("cy", String(market.marker.y));
+      marker.setAttribute("r", String(market.marker.r));
+      group.append(marker);
+    } else {
+      const path = document.createElementNS(svgNamespace, "path");
 
-      const marketRegionIndex = marketRegions.findIndex((region) =>
-        regionContainsCoordinate(coordinate, region),
-      );
-
-      if (marketRegionIndex !== -1) {
-        const regionDotIndex = marketDotCounts[marketRegionIndex];
-
-        addMapDot(globalMapMarkets, {
-          ...point,
-          r: 2.65,
-          delay: 220 + marketRegionIndex * 34 + regionDotIndex * 8,
-        });
-        marketDotCounts[marketRegionIndex] += 1;
-      }
+      path.setAttribute("d", market.d);
+      group.append(path);
     }
-  }
+
+    globalMapMarkets.append(group);
+  });
 };
 
 if (globalPresenceSection && globalMapBase && globalMapMarkets) {
@@ -432,7 +185,7 @@ if (globalPresenceSection && globalMapBase && globalMapMarkets) {
         globalPresenceSection.classList.add("is-visible");
         observer.disconnect();
       },
-      { threshold: 0.28 },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.25 },
     );
 
     globalPresenceObserver.observe(globalPresenceSection);
