@@ -1,5 +1,28 @@
 # Designer Notes
 
+## 2026-07-01 About President Card Overlap Adjustment
+
+- Refined only the About page President Message section layout.
+- The portrait card keeps the same approved size, source image, image fitting, and front z-index.
+- The final overlap is reduced so the portrait still visually sits above the message card but uses more of the available right-side whitespace.
+- Desktop overlap is now lighter and closer to the 15-20% target.
+- Tablet overlap is reduced further to protect body-copy readability.
+- Mobile remains stacked with no overlap.
+- The existing fade/slide cards-meet animation remains unchanged.
+
+## 2026-07-01 About Global Presence Map Refinement
+
+- Rebuilt the global presence section as a centered premium corporate composition instead of a text/map split.
+- Added the requested uppercase eyebrow, large editorial heading, concise centered body copy, large dotted world map, and centered stats below the map.
+- The new map shape is generated from simplified geographic landmass polygons, making the dotted silhouette recognizable as North America, South America, Europe, Africa, the Middle East, Asia, Southeast Asia, and Australia.
+- Default dots use dark navy/charcoal; operating-market dots use Mstar gold.
+- Highlighted markets are Sudan, Nigeria, Saudi Arabia, Ukraine, United Kingdom, China, Malaysia, Taiwan, Indonesia, Latvia, Estonia, Germany, France, Thailand, United States, UAE, Croatia, Belgium, Iraq, Vietnam, India, Hong Kong, Mexico, and Mali.
+- Animation follows the Bechtel-style behavior: dark world dots resolve first, then gold operating dots populate progressively with staggered opacity/scale.
+- Desktop uses centered text above a large map and balanced stats underneath.
+- Tablet scales the map down with the same centered composition.
+- Mobile keeps the map within viewport width, prevents horizontal overflow/clipping, and keeps the two stats compact and readable.
+- No country-name list, map tooltip box, remote map asset, external map library, or unrelated page changes were introduced.
+
 ## 2026-07-01 About President Portrait Layout Refinement
 
 - Refined only the President portrait behavior inside the About page President Message section.

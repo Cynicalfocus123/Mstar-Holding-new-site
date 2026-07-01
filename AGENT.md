@@ -1,5 +1,35 @@
 # Agent Changelog
 
+## 2026-07-01 About President Card Overlap Adjustment
+
+- Refined only the About page President Message section layout.
+- Reduced the portrait card overlap so the portrait remains in front but no longer reaches as far over the message text.
+- Desktop final portrait offset changed from `margin-left: -28%` to `margin-left: -16%`.
+- Tablet final portrait offset changed from `margin-left: -22%` to `margin-left: -10%`.
+- Preserved portrait card size, portrait image source, portrait image fitting, message text, z-index layering, mobile stacking, and existing animation behavior.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Deployment ZIP refreshed from the latest `dist/` output as `mstar-about-page-live-deploy-2026-07-01.zip`.
+- Commit hash: reported in final handoff after commit/push.
+
+## 2026-07-01 About Global Presence Map Refinement
+
+- Rebuilt only the About page `Growing Our Global Presence` section.
+- Preserved the President Message section, homepage, Business page, News page, header, footer, and unrelated assets.
+- Added the requested `OUR GLOBAL PRESENCE` eyebrow and centered `20+ Countries` / `1000+ Clients` stats below the map.
+- Removed the SVG title/description tooltip text and did not add a visible country-name list.
+- Replaced the previous ellipse-based dot cloud with a generated SVG dotted map based on simplified longitude/latitude landmass polygons for recognizable North America, South America, Europe, Africa, Middle East, Asia, Southeast Asia, and Australia shapes.
+- Highlighted operating countries/regions in Mstar gold: Sudan, Nigeria, Saudi Arabia, Ukraine, United Kingdom, China, Malaysia, Taiwan, Indonesia, Latvia, Estonia, Germany, France, Thailand, United States, UAE, Croatia, Belgium, Iraq, Vietnam, India, Hong Kong, Mexico, and Mali.
+- Gold operating-market dots populate progressively on scroll with a staggered fade/scale animation, using IntersectionObserver threshold `0.28`, running once, and disconnecting after activation.
+- Dark navy world-map dots appear first; reduced-motion users see the map and highlighted markets without animation.
+- Kept the implementation lightweight: inline SVG groups, local JavaScript generation, CSS variables/design tokens, no remote assets, no external map libraries, and no third-party animation libraries.
+- Files changed: `about/index.html`, `src/main.js`, `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, `WEIGHT.md`, and the refreshed deployment ZIP.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source inspections, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, deployment ZIP refresh/verification, `git status --short`, `git add .`, `git commit -m "Refine global presence map animation"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-01 About President Portrait Layout Refinement
 
 - Refined only the About page President Message section.

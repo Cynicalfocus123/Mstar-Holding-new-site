@@ -1,5 +1,19 @@
 # Project Changelog
 
+## 2026-07-01 About President Card Overlap Adjustment
+
+- Reduced the About President portrait card overlap so it no longer covers body text.
+- Kept the portrait card size, image source, image fitting, message text, and animation behavior unchanged.
+- Refreshed the production deployment ZIP from the final build output.
+
+## 2026-07-01 About Global Presence Map Refinement
+
+- Rebuilt the About page global presence section with centered copy, a recognizable dotted world map, and `20+ Countries` / `1000+ Clients` stats.
+- Replaced the previous ellipse-based map with a lightweight SVG dot generator using simplified landmass polygons and Mstar gold operating-market regions.
+- Preserved the requested operating countries/regions and removed any country-name list or map tooltip text.
+- Kept the scroll-triggered IntersectionObserver animation: dark dots appear first, gold dots populate progressively, animation runs once, and reduced-motion is respected.
+- Kept the change scoped to the About global presence section, shared CSS/JS, documentation, and deployment ZIP.
+
 ## 2026-07-01 About President Portrait Layout Refinement
 
 - Restored the President portrait card to the approved compact size.

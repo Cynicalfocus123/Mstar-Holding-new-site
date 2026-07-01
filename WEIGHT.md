@@ -1,5 +1,18 @@
 # Weight And Deployment Notes
 
+## 2026-07-01 About President Card Overlap Adjustment
+
+- No asset changes were made.
+- This refinement is CSS layout-only plus documentation and refreshed deployment ZIP.
+- Refreshed the deployment ZIP from the latest `dist/` build output only.
+
+## 2026-07-01 About Global Presence Map Refinement
+
+- Rebuilt the map with generated SVG dots and simplified JavaScript geometry only.
+- No new image, video, font, remote asset, dependency, map library, canvas renderer, or animation library was added.
+- The section uses inline SVG groups populated at runtime for reasonable DOM size and crisp scaling.
+- Refreshed the deployment ZIP from the latest `dist/` build output only.
+
 ## 2026-07-01 About President Portrait Layout Refinement
 
 - No additional media variants were added.

@@ -134,20 +134,37 @@ const mapProject = (latitude, longitude) => ({
   y: ((90 - latitude) / 180) * 520,
 });
 
-const ellipseContainsPoint = ({ x, y }, shape) => {
-  const angle = shape.angle || 0;
-  const cos = Math.cos(angle);
-  const sin = Math.sin(angle);
-  const dx = x - shape.cx;
-  const dy = y - shape.cy;
-  const rotatedX = dx * cos + dy * sin;
-  const rotatedY = -dx * sin + dy * cos;
+const polygonContainsCoordinate = ([longitude, latitude], polygon) => {
+  let isInside = false;
 
-  return (
-    (rotatedX * rotatedX) / (shape.rx * shape.rx) +
-      (rotatedY * rotatedY) / (shape.ry * shape.ry) <=
-    1
-  );
+  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+    const [xi, yi] = polygon[i];
+    const [xj, yj] = polygon[j];
+    const crossesLatitude = yi > latitude !== yj > latitude;
+    const projectedLongitude =
+      ((xj - xi) * (latitude - yi)) / (yj - yi || 1) + xi;
+
+    if (crossesLatitude && longitude < projectedLongitude) {
+      isInside = !isInside;
+    }
+  }
+
+  return isInside;
+};
+
+const regionContainsCoordinate = ([longitude, latitude], region) => {
+  if (region.box) {
+    const [west, south, east, north] = region.box;
+
+    return (
+      longitude >= west &&
+      longitude <= east &&
+      latitude >= south &&
+      latitude <= north
+    );
+  }
+
+  return polygonContainsCoordinate([longitude, latitude], region.polygon);
 };
 
 const addMapDot = (group, { x, y, r = 2.6, delay }) => {
@@ -170,79 +187,171 @@ const buildGlobalPresenceMap = () => {
     return;
   }
 
-  const worldShapes = [
-    { cx: 214, cy: 150, rx: 128, ry: 82, angle: -0.18 },
-    { cx: 276, cy: 236, rx: 84, ry: 32, angle: 0.24 },
-    { cx: 326, cy: 343, rx: 58, ry: 116, angle: -0.18 },
-    { cx: 376, cy: 78, rx: 58, ry: 34, angle: -0.08 },
-    { cx: 504, cy: 166, rx: 72, ry: 44, angle: -0.1 },
-    { cx: 526, cy: 278, rx: 78, ry: 116, angle: -0.12 },
-    { cx: 588, cy: 226, rx: 76, ry: 42, angle: 0.05 },
-    { cx: 688, cy: 190, rx: 172, ry: 88, angle: 0.02 },
-    { cx: 728, cy: 282, rx: 84, ry: 44, angle: 0.3 },
-    { cx: 810, cy: 372, rx: 82, ry: 44, angle: 0.1 },
+  const landMasses = [
+    [
+      [-168, 72],
+      [-138, 70],
+      [-104, 60],
+      [-64, 55],
+      [-54, 46],
+      [-78, 26],
+      [-96, 15],
+      [-118, 20],
+      [-126, 32],
+      [-150, 58],
+    ],
+    [
+      [-122, 32],
+      [-86, 28],
+      [-76, 8],
+      [-82, 7],
+      [-98, 16],
+    ],
+    [
+      [-82, 12],
+      [-62, 9],
+      [-42, -18],
+      [-54, -54],
+      [-72, -48],
+      [-80, -16],
+    ],
+    [
+      [-52, 83],
+      [-18, 78],
+      [-24, 62],
+      [-48, 60],
+      [-62, 70],
+    ],
+    [
+      [-12, 58],
+      [8, 70],
+      [34, 66],
+      [48, 50],
+      [36, 38],
+      [12, 35],
+      [-10, 43],
+      [-24, 52],
+    ],
+    [
+      [-18, 34],
+      [32, 36],
+      [50, 18],
+      [42, -12],
+      [30, -34],
+      [14, -35],
+      [-8, -8],
+      [-16, 15],
+    ],
+    [
+      [34, 34],
+      [62, 36],
+      [84, 24],
+      [78, 8],
+      [54, 14],
+      [38, 24],
+    ],
+    [
+      [42, 62],
+      [88, 72],
+      [136, 60],
+      [166, 50],
+      [154, 34],
+      [126, 20],
+      [106, 4],
+      [76, 8],
+      [66, 24],
+      [46, 38],
+    ],
+    [
+      [70, 28],
+      [92, 30],
+      [92, 8],
+      [78, 6],
+    ],
+    [
+      [95, 20],
+      [116, 24],
+      [122, 8],
+      [108, -8],
+      [96, 0],
+    ],
+    [
+      [118, 8],
+      [146, 4],
+      [152, -8],
+      [130, -12],
+      [108, -6],
+    ],
+    [
+      [112, -12],
+      [154, -10],
+      [154, -44],
+      [116, -44],
+      [104, -28],
+    ],
   ];
 
-  for (let y = 42; y <= 448; y += 16) {
-    for (let x = 58; x <= 930; x += 16) {
-      const jitterX = ((x * 17 + y * 7) % 9) - 4;
-      const jitterY = ((x * 11 + y * 13) % 9) - 4;
-      const point = { x: x + jitterX, y: y + jitterY };
+  const marketRegions = [
+    { name: "Sudan", box: [22, 8, 39, 22] },
+    { name: "Nigeria", box: [3, 4, 15, 14] },
+    { name: "Saudi Arabia", box: [35, 16, 56, 32] },
+    { name: "Ukraine", box: [22, 44, 41, 53] },
+    { name: "United Kingdom", box: [-9, 50, 2, 59] },
+    { name: "China", box: [78, 21, 123, 50] },
+    { name: "Malaysia", box: [99, 0, 120, 8] },
+    { name: "Taiwan", box: [118, 21, 123, 26] },
+    { name: "Indonesia", box: [95, -11, 142, 6] },
+    { name: "Latvia", box: [20, 55, 29, 59] },
+    { name: "Estonia", box: [21, 57, 29, 60] },
+    { name: "Germany", box: [5, 47, 16, 55] },
+    { name: "France", box: [-5, 42, 9, 51] },
+    { name: "Thailand", box: [97, 5, 106, 21] },
+    { name: "United States", box: [-126, 25, -66, 49] },
+    { name: "UAE", box: [51, 22, 57, 27] },
+    { name: "Croatia", box: [13, 42, 19, 47] },
+    { name: "Belgium", box: [2, 49, 7, 52] },
+    { name: "Iraq", box: [38, 29, 49, 38] },
+    { name: "Vietnam", box: [102, 8, 110, 23] },
+    { name: "India", box: [68, 7, 90, 29] },
+    { name: "Hong Kong", box: [112, 21, 116, 24] },
+    { name: "Mexico", box: [-118, 14, -86, 32] },
+    { name: "Mali", box: [-13, 10, 5, 25] },
+  ];
+  let marketDotIndex = 0;
 
-      if (worldShapes.some((shape) => ellipseContainsPoint(point, shape))) {
-        addMapDot(globalMapBase, point);
+  for (let latitude = 74; latitude >= -46; latitude -= 3) {
+    for (let longitude = -170; longitude <= 170; longitude += 3) {
+      const coordinate = [longitude, latitude];
+      const isLand = landMasses.some((polygon) =>
+        polygonContainsCoordinate(coordinate, polygon),
+      );
+
+      if (!isLand) {
+        continue;
+      }
+
+      const projectedPoint = mapProject(latitude, longitude);
+      const point = {
+        x: projectedPoint.x,
+        y: projectedPoint.y,
+      };
+
+      addMapDot(globalMapBase, point);
+
+      if (
+        marketRegions.some((region) =>
+          regionContainsCoordinate(coordinate, region),
+        )
+      ) {
+        addMapDot(globalMapMarkets, {
+          ...point,
+          r: 2.9,
+          delay: 180 + marketDotIndex * 18,
+        });
+        marketDotIndex += 1;
       }
     }
   }
-
-  const marketCoordinates = [
-    { name: "Sudan", latitude: 15.5, longitude: 32.5 },
-    { name: "Nigeria", latitude: 9.1, longitude: 8.7 },
-    { name: "Saudi Arabia", latitude: 23.9, longitude: 45.1 },
-    { name: "Ukraine", latitude: 49, longitude: 31 },
-    { name: "United Kingdom", latitude: 55, longitude: -3 },
-    { name: "China", latitude: 35.9, longitude: 104.2 },
-    { name: "Malaysia", latitude: 4.2, longitude: 102 },
-    { name: "Taiwan", latitude: 23.7, longitude: 121 },
-    { name: "Indonesia", latitude: -2.4, longitude: 118 },
-    { name: "Latvia", latitude: 56.9, longitude: 24.6 },
-    { name: "Estonia", latitude: 58.6, longitude: 25 },
-    { name: "Germany", latitude: 51.2, longitude: 10.4 },
-    { name: "France", latitude: 46.2, longitude: 2.2 },
-    { name: "Thailand", latitude: 15.9, longitude: 101 },
-    { name: "United States", latitude: 39.8, longitude: -98.6 },
-    { name: "UAE", latitude: 24.3, longitude: 54.4 },
-    { name: "Croatia", latitude: 45.1, longitude: 15.2 },
-    { name: "Belgium", latitude: 50.5, longitude: 4.5 },
-    { name: "Iraq", latitude: 33.2, longitude: 43.7 },
-    { name: "Vietnam", latitude: 14.1, longitude: 108.3 },
-    { name: "India", latitude: 20.6, longitude: 78.9 },
-    { name: "Hong Kong", latitude: 22.3, longitude: 114.2 },
-    { name: "Mexico", latitude: 23.6, longitude: -102.5 },
-    { name: "Mali", latitude: 17.6, longitude: -3.9 },
-  ];
-  const clusterOffsets = [
-    [0, 0],
-    [-5, -3],
-    [5, -3],
-    [-5, 4],
-    [5, 4],
-    [0, -7],
-    [0, 7],
-  ];
-
-  marketCoordinates.forEach((market, marketIndex) => {
-    const projectedMarket = mapProject(market.latitude, market.longitude);
-
-    clusterOffsets.forEach(([offsetX, offsetY], offsetIndex) => {
-      addMapDot(globalMapMarkets, {
-        x: projectedMarket.x + offsetX,
-        y: projectedMarket.y + offsetY,
-        r: offsetIndex === 0 ? 3.4 : 2.8,
-        delay: marketIndex * 62 + offsetIndex * 18,
-      });
-    });
-  });
 };
 
 if (globalPresenceSection && globalMapBase && globalMapMarkets) {
