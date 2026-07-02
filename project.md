@@ -1,5 +1,16 @@
 # Project Changelog
 
+## 2026-07-02 About Collage Spacing And Metrics Card Style
+
+- Moved the third About collage Mstar logo box closer to the top two image boxes, centered beneath the gap between them.
+- Removed the oversized circle / curved background shape behind the About collage frames.
+- Changed the Employees metrics card from black/dark to the same white/light premium theme as the other metric cards.
+- Kept metric values, icon placement, and counter animation logic intact.
+- Kept the change scoped to About page CSS, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Placement And Metrics Icon Refinement
 
 - Moved the About collage Mstar logo box to the bottom middle between the two upper image frames.

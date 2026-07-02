@@ -1,5 +1,19 @@
 # Agent Changelog
 
+## 2026-07-02 About Collage Spacing And Metrics Card Style
+
+- Refined only the requested About page collage and metrics areas.
+- Moved the third About collage Mstar logo box upward so it sits tucked closer beneath the gap between the Wall Street image and the vertical windmill image.
+- Removed the oversized curved/circle background shape behind the three About collage boxes.
+- Kept the Mstar logo contained, centered, fully visible, rounded, subtly bordered, and softly shadowed.
+- Changed the Employees metrics card from the dark feature-card treatment to the same white/light premium card style as the other number cards while keeping its top-right icon and wider card span.
+- Preserved the President Message section, Global Presence map section, About page text content, homepage, Business page, News page, header, footer, social/fav assets, deployment base paths, counter logic, and unrelated CSS/JS/assets.
+- Files changed: `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source/status inspections, `cmd /c npx.cmd prettier --write src/styles.css AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add .`, unstaged unrelated pre-existing ZIP deletions, `git commit -m "Refine About collage spacing and metrics card style"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Placement And Metrics Icon Refinement
 
 - Refined the two requested About page areas in one pass.

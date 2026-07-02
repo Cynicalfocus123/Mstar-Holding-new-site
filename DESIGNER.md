@@ -1,5 +1,14 @@
 # Designer Notes
 
+## 2026-07-02 About Collage Spacing And Metrics Card Style
+
+- The About collage now reads cleaner and more intentional: the large organic background circle behind the image frames has been removed.
+- The Mstar logo frame is lifted closer to the two upper image frames and remains centered below the space between the Wall Street and windmill cards.
+- The logo keeps the same contained fitting, internal padding, rounded corporate frame, subtle border, and soft shadow so the mark and tagline stay legible.
+- The Employees metric card now matches the white/light card language used by the other metrics instead of using a dark feature-card treatment.
+- The Employees card keeps its larger dashboard span, top-right icon, rounded corners, and premium number hierarchy.
+- No President Message, Global Presence map, About copy, header, footer, homepage, Business page, or News page design was changed.
+
 ## 2026-07-02 About Collage Placement And Metrics Icon Refinement
 
 - Repositioned the About collage logo card as a balanced lower-middle third card between the main Wall Street frame and the windmill frame.
