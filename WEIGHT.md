@@ -1,5 +1,23 @@
 # Weight And Deployment Notes
 
+## 2026-07-02 About Tightening And Growth Theme Scroll Hint
+
+- No media, video, image source, icon source, font, dependency, deployment ZIP, or deployment base-path change was added.
+- The change is limited to About page spacing/alignment CSS, homepage growth-theme scroll hint markup/CSS, shared lightweight scroll-hint JavaScript, and documentation.
+- Further tightened desktop About section rhythm and aligned Built Across Industries heading/body text.
+- Added the mobile/tablet right-scroll hint for the homepage Infrastructure / Investment / Innovation / Asia Growth Opportunities / Strategic Partnerships row.
+- Rebuilt production output with regular Vite build for verification only; no Hostinger ZIP was created in this pass.
+- New verification build bundle files: `assets/main-CVgXB58C.js` and `assets/main-DTRsy_DO.css`.
+
+### Verification
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Confirmed built homepage output includes the growth-theme scroll hint markup/state hook.
+- Confirmed built CSS/JS include the growth-theme scroll hint styles and shared scroll-state helper.
+- Confirmed About spacing changes remain scoped to About selectors and do not change image paths, map content, counter values, or page text.
+
 ## 2026-07-02 About Desktop Spacing And Section Alignment
 
 - No media, video, image source, font, dependency, deployment ZIP, or deployment base-path change was added.

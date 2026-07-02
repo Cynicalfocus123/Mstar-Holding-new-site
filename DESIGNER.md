@@ -1,5 +1,16 @@
 # Designer Notes
 
+## 2026-07-02 About Tightening And Growth Theme Scroll Hint
+
+- Tightened the desktop About page further so President Message, About Mstar Holding, Global Presence, and Built Across Industries read as a more connected page sequence.
+- The President Message card has less internal empty space through tighter padding, paragraph rhythm, signature spacing, and portrait offset, while retaining the premium white overlapping-card design.
+- About Mstar Holding has a tighter desktop section rhythm and a closer collage/text relationship without changing the collage assets, crops, or copy.
+- Global Presence and Built Across Industries now sit closer together, with less blank space after the 20+ Countries / 2500+ Clients stats.
+- Built Across Industries heading and paragraph now share the same left edge/content width so the heading block feels intentionally aligned.
+- The homepage growth-theme card row now has the intended mobile/tablet right-scroll hint arrow for the Infrastructure / Investment / Innovation / Asia Growth Opportunities / Strategic Partnerships row.
+- The arrow uses the existing gold-on-dark premium cue language, sits near the row's right edge, avoids the main card copy, and fades when there is no more content to the right.
+- Business page, News page, header, footer, page content, image sources, icons, map design, counters, and unrelated sections were not changed.
+
 ## 2026-07-02 About Desktop Spacing And Alignment
 
 - Tightened the desktop About page so President Message, About Mstar Holding, Global Presence, and Built Across Industries feel more connected and less stretched.

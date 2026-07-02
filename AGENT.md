@@ -1,5 +1,21 @@
 # Agent Changelog
 
+## 2026-07-02 About Tightening And Growth Theme Scroll Hint
+
+- Fixed the two requested areas in one pass: About page desktop spacing/alignment and the homepage growth-theme horizontal scroll hint.
+- Tightened the President Message main card height further on desktop by reducing section padding, message-card padding, copy line-height, paragraph spacing, signature spacing, and portrait top offset while preserving the card style, text, portrait source, and animation behavior.
+- Reduced gaps between President Message and About Mstar Holding, About Mstar Holding and Global Presence, and Global Presence stats and Built Across Industries with targeted About section padding/margin changes.
+- Tightened About Mstar Holding desktop rhythm by reducing section padding, column gap, copy line-height, heading/subheading spacing, paragraph spacing, and desktop collage wrapper offset without changing collage image sources, crops, or content.
+- Aligned Built Across Industries heading with the paragraph below by constraining the heading to the same 720px content width, removing default margins, and keeping the heading block left-aligned.
+- Refined the homepage mobile/tablet scroll hint for the specific growth-theme card row containing Infrastructure, Investment, Innovation, Asia Growth Opportunities, and Strategic Partnerships.
+- Wrapped the growth-theme row in a scoped overlay frame, added a Mstar-style right-scroll arrow, made the row horizontally scrollable on tablet/mobile, and reused the lightweight scroll-state helper so the arrow shows only while more content remains to the right.
+- Preserved homepage card text/icons/images, About content, President portrait image source, About collage image sources, Global Presence map design, counters/values, Built Across Industries content, Business page, News page, header, footer, deployment base paths, and unrelated sections.
+- Files changed: `index.html`, `src/main.js`, `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: attachment read, `git status --short --branch`, `Get-Content -LiteralPath package.json`, targeted `rg`/`Get-Content` inspections, `cmd /c npx.cmd prettier --write index.html src/main.js src/styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built/source static verification, documentation update, `cmd /c npx.cmd prettier --write AGENT.md DESIGNER.md project.md WEIGHT.md`, final `git status --short`, `git add .`, `git commit -m "Tighten About spacing and refine mobile scroll hint"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Desktop Spacing And Section Alignment
 
 - Refined only About page desktop spacing, section heights, and section-to-section alignment.

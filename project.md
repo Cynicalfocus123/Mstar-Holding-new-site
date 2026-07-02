@@ -1,5 +1,19 @@
 # Project Changelog
 
+## 2026-07-02 About Spacing And Mobile Scroll Hint Refinement
+
+- Tightened the About page desktop spacing further and refined the homepage growth-theme mobile/tablet scroll hint in one scoped pass.
+- Reduced President Message card height and surrounding whitespace by trimming section padding, card padding, message copy line-height/paragraph spacing, signature spacing, and portrait top offset.
+- Reduced the gaps between President Message and About Mstar Holding, About Mstar Holding and Global Presence, and Global Presence stats and Built Across Industries.
+- Tightened About Mstar Holding desktop spacing without changing text, collage image sources, image crops, or section structure.
+- Aligned Built Across Industries heading with the paragraph below by matching the heading width to the paragraph width and keeping the metrics heading block left-aligned.
+- Added the right-scroll hint arrow to the homepage growth-theme row for Infrastructure, Investment, Innovation, Asia Growth Opportunities, and Strategic Partnerships.
+- Made the growth-theme row horizontally scrollable on tablet/mobile and connected it to the lightweight scroll hint helper so the arrow hides at the end of the row.
+- Preserved tablet/mobile responsive behavior, About content, President portrait image source, About collage image sources, Global Presence map/counters, Built Across Industries content, homepage card text/icons/images, Business page, News page, header, footer, deployment base paths, and unrelated sections.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Desktop Spacing And Section Alignment
 
 - Tightened the About page desktop spacing and section-to-section rhythm only.

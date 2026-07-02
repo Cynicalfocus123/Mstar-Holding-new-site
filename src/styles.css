@@ -1709,14 +1709,21 @@ h2 {
   pointer-events: none;
 }
 
+.home-theme-row-frame {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1440px);
+  margin: clamp(48px, 6vw, 80px) auto 0;
+}
+
 .home-theme-row {
   position: relative;
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(5, minmax(120px, 1fr));
-  width: min(100%, 1440px);
+  width: 100%;
   padding: 0;
-  margin: clamp(48px, 6vw, 80px) auto 0;
+  margin: 0;
   list-style: none;
   border-top: 1px solid var(--mstar-line);
   scrollbar-width: none;
@@ -1762,6 +1769,42 @@ h2 {
   color: var(--mstar-muted);
   font-size: 0.86rem;
   line-height: 1.45;
+}
+
+.home-theme-scroll-hint {
+  position: absolute;
+  top: clamp(42px, 5vw, 58px);
+  right: clamp(8px, 1.1vw, 16px);
+  z-index: 3;
+  display: grid;
+  width: clamp(38px, 4.2vw, 48px);
+  height: clamp(38px, 4.2vw, 48px);
+  place-items: center;
+  color: var(--mstar-gold);
+  pointer-events: none;
+  background: rgba(18, 18, 17, 0.72);
+  border: 1px solid rgba(184, 135, 45, 0.5);
+  border-radius: 999px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+  opacity: 0;
+  transform: translateX(10px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.home-theme-scroll-hint span {
+  width: 11px;
+  height: 11px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: translateX(-2px) rotate(45deg);
+  animation: home-sector-scroll-nudge 1500ms ease-in-out infinite;
+}
+
+.home-theme-row-frame.has-scroll.can-scroll .home-theme-scroll-hint {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .home-value-section .home-split-media {
@@ -2083,8 +2126,8 @@ h2 {
 
 .about-president {
   min-height: auto;
-  padding: calc(var(--header-height) + clamp(42px, 5.5vw, 76px)) var(--gutter)
-    clamp(46px, 5.8vw, 84px);
+  padding: calc(var(--header-height) + clamp(34px, 4.6vw, 64px)) var(--gutter)
+    clamp(30px, 4vw, 58px);
 }
 
 .about-president-inner {
@@ -2113,7 +2156,7 @@ h2 {
   position: relative;
   z-index: 1;
   min-width: 0;
-  padding: clamp(30px, 4vw, 58px);
+  padding: clamp(28px, 3.4vw, 48px);
   transform: translateX(-60px);
 }
 
@@ -2148,10 +2191,10 @@ h2 {
 
 .president-message-copy {
   max-width: 800px;
-  margin-top: clamp(22px, 2.4vw, 34px);
+  margin-top: clamp(20px, 2vw, 28px);
   color: var(--mstar-muted);
   font-size: clamp(1rem, 1.08vw, 1.13rem);
-  line-height: 1.7;
+  line-height: 1.62;
 }
 
 .president-message-copy p {
@@ -2159,14 +2202,14 @@ h2 {
 }
 
 .president-message-copy p + p {
-  margin-top: 0.95em;
+  margin-top: 0.78em;
 }
 
 .president-signature {
   display: grid;
   gap: 5px;
-  margin-top: clamp(24px, 3vw, 42px);
-  padding-top: clamp(18px, 2vw, 26px);
+  margin-top: clamp(20px, 2.4vw, 32px);
+  padding-top: clamp(16px, 1.8vw, 22px);
   border-top: 1px solid rgba(184, 135, 45, 0.26);
   color: var(--mstar-ink);
 }
@@ -2187,7 +2230,7 @@ h2 {
   z-index: 2;
   width: min(100%, 390px);
   aspect-ratio: 2 / 3;
-  margin-top: clamp(38px, 5vw, 70px);
+  margin-top: clamp(30px, 4vw, 54px);
   margin-left: -16%;
   padding: clamp(10px, 1.3vw, 16px) clamp(10px, 1.3vw, 16px) 0;
   overflow: hidden;
@@ -2207,7 +2250,7 @@ h2 {
 .about-company {
   position: relative;
   overflow: hidden;
-  padding: clamp(54px, 6.2vw, 92px) var(--gutter) clamp(58px, 6.8vw, 98px);
+  padding: clamp(38px, 4.8vw, 68px) var(--gutter) clamp(42px, 5vw, 72px);
   background:
     linear-gradient(
       180deg,
@@ -2250,7 +2293,7 @@ h2 {
   position: relative;
   display: grid;
   grid-template-columns: minmax(280px, 0.43fr) minmax(0, 0.57fr);
-  gap: clamp(42px, 5.6vw, 86px);
+  gap: clamp(34px, 4.4vw, 68px);
   align-items: center;
   width: min(100%, 1360px);
   margin: 0 auto;
@@ -2332,12 +2375,12 @@ h2 {
   min-width: 0;
   color: var(--mstar-muted);
   font-size: clamp(1rem, 1.08vw, 1.13rem);
-  line-height: 1.78;
+  line-height: 1.68;
 }
 
 .about-company-copy h1 {
   max-width: 760px;
-  margin: clamp(16px, 1.7vw, 24px) 0 clamp(22px, 2.4vw, 34px);
+  margin: clamp(14px, 1.4vw, 20px) 0 clamp(18px, 2vw, 28px);
   color: var(--mstar-ink);
   font-size: clamp(3rem, 5.4vw, 6.2rem);
   font-weight: 400;
@@ -2347,7 +2390,7 @@ h2 {
 }
 
 .about-company-copy h2 {
-  margin: clamp(28px, 3.2vw, 42px) 0 0;
+  margin: clamp(22px, 2.6vw, 34px) 0 0;
   color: var(--mstar-ink);
   font-size: clamp(1.55rem, 2.2vw, 2.35rem);
   font-weight: 650;
@@ -2362,7 +2405,7 @@ h2 {
 
 .about-company-copy p + p,
 .about-company-copy h2 + p {
-  margin-top: 1.08em;
+  margin-top: 0.9em;
 }
 
 @media (min-width: 641px) {
@@ -2372,14 +2415,14 @@ h2 {
 
   .about-company-media {
     align-items: flex-start;
-    padding-top: clamp(8px, 1.2vw, 16px);
+    padding-top: clamp(2px, 0.8vw, 10px);
   }
 }
 
 .about-global-presence {
   position: relative;
   overflow: hidden;
-  padding: clamp(52px, 6vw, 88px) var(--gutter) clamp(52px, 6.2vw, 94px);
+  padding: clamp(38px, 4.6vw, 66px) var(--gutter) clamp(34px, 4.2vw, 62px);
   background:
     linear-gradient(
       180deg,
@@ -2463,7 +2506,7 @@ h2 {
 
 .global-presence-map {
   width: min(100%, 1180px);
-  margin: clamp(34px, 4.2vw, 62px) auto 0;
+  margin: clamp(28px, 3.4vw, 50px) auto 0;
 }
 
 .global-presence-svg {
@@ -2531,8 +2574,8 @@ h2 {
   justify-content: center;
   gap: clamp(28px, 8vw, 116px);
   width: min(100%, 640px);
-  margin: clamp(24px, 3.2vw, 42px) auto 0;
-  padding-top: clamp(20px, 2.4vw, 28px);
+  margin: clamp(18px, 2.5vw, 32px) auto 0;
+  padding-top: clamp(16px, 2vw, 22px);
   border-top: 1px solid rgba(17, 19, 20, 0.12);
 }
 
@@ -2563,7 +2606,7 @@ h2 {
 .about-metrics {
   position: relative;
   overflow: hidden;
-  padding: clamp(54px, 6.4vw, 94px) var(--gutter) clamp(72px, 8vw, 118px);
+  padding: clamp(28px, 3.6vw, 52px) var(--gutter) clamp(64px, 7vw, 104px);
   background:
     radial-gradient(
       circle at 12% 16%,
@@ -2581,12 +2624,13 @@ h2 {
 
 .about-metrics-heading {
   display: grid;
-  gap: clamp(18px, 2.2vw, 28px);
+  gap: clamp(16px, 1.8vw, 24px);
   max-width: 880px;
+  justify-items: start;
 }
 
 .about-metrics-heading h2 {
-  max-width: 820px;
+  width: min(100%, 720px);
   margin: 0;
   color: var(--mstar-ink);
   font-size: clamp(3rem, 5.8vw, 6.6rem);
@@ -3124,13 +3168,27 @@ h2 {
     grid-auto-rows: minmax(148px, auto);
   }
 
+  .home-theme-row-frame {
+    width: 100%;
+    overflow: hidden;
+  }
+
   .home-theme-row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    row-gap: 28px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(210px, 1fr));
+    width: max-content;
+    min-width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .home-theme-item:nth-child(4) {
-    border-left: none;
+    border-left: 1px solid var(--mstar-line);
+  }
+
+  .home-theme-item {
+    scroll-snap-align: start;
   }
 
   .home-news-card {
@@ -3447,13 +3505,17 @@ h2 {
     border-top-left-radius: 42% 34%;
   }
 
+  .home-theme-row-frame {
+    width: auto;
+    margin-inline: -24px;
+    padding-inline: 24px;
+    overflow: hidden;
+  }
+
   .home-theme-row {
     grid-template-columns: repeat(5, minmax(128px, 1fr));
     max-width: none;
-    margin-inline: -24px;
-    padding-inline: 24px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    padding-inline: 0;
   }
 
   .home-theme-item:nth-child(4) {

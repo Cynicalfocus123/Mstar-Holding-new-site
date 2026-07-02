@@ -42,31 +42,34 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
 
-const homeSectorScroll = document.querySelector("[data-home-sector-scroll]");
-const homeSectorScrollFrame = homeSectorScroll?.closest(
-  ".home-sector-collage-frame",
-);
+const setupHorizontalScrollHint = (selector, frameSelector) => {
+  const scrollElement = document.querySelector(selector);
+  const frame = scrollElement?.closest(frameSelector);
 
-const updateHomeSectorScrollHint = () => {
-  if (!(homeSectorScroll instanceof HTMLElement) || !homeSectorScrollFrame) {
+  if (!(scrollElement instanceof HTMLElement) || !frame) {
     return;
   }
 
-  const maxScrollLeft =
-    homeSectorScroll.scrollWidth - homeSectorScroll.clientWidth;
-  const hasScroll = maxScrollLeft > 2;
-  const canScroll = homeSectorScroll.scrollLeft < maxScrollLeft - 2;
+  const updateHint = () => {
+    const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
+    const hasScroll = maxScrollLeft > 2;
+    const canScroll = scrollElement.scrollLeft < maxScrollLeft - 2;
 
-  homeSectorScrollFrame.classList.toggle("has-scroll", hasScroll);
-  homeSectorScrollFrame.classList.toggle("can-scroll", hasScroll && canScroll);
+    frame.classList.toggle("has-scroll", hasScroll);
+    frame.classList.toggle("can-scroll", hasScroll && canScroll);
+  };
+
+  updateHint();
+  scrollElement.addEventListener("scroll", updateHint, { passive: true });
+  window.addEventListener("resize", updateHint);
+  window.addEventListener("pageshow", updateHint);
 };
 
-updateHomeSectorScrollHint();
-homeSectorScroll?.addEventListener("scroll", updateHomeSectorScrollHint, {
-  passive: true,
-});
-window.addEventListener("resize", updateHomeSectorScrollHint);
-window.addEventListener("pageshow", updateHomeSectorScrollHint);
+setupHorizontalScrollHint(
+  "[data-home-sector-scroll]",
+  ".home-sector-collage-frame",
+);
+setupHorizontalScrollHint("[data-home-theme-scroll]", ".home-theme-row-frame");
 
 const isPhonePortraitViewport = () => {
   const viewportShortSide = Math.min(window.innerWidth, window.innerHeight);
