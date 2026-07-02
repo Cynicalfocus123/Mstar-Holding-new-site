@@ -1,5 +1,15 @@
 # Designer Notes
 
+## 2026-07-02 About Collage Logo And Metrics Section
+
+- Replaced the last `About Mstar Holding` collage placeholder with the existing Mstar logo image while preserving the rounded image-frame styling.
+- The logo uses contain fitting, centered positioning, and internal padding so the mark and `Putting Big Ideas Into Action` tagline remain legible inside the small collage box.
+- Added a bottom About metrics section inspired by a dashboard/stat-card layout, restyled into the current Mstar bright corporate language rather than the green reference theme.
+- The metrics composition uses off-white surfaces, one dark charcoal feature card, restrained Mstar gold accents, subtle borders, soft shadows, mixed card spans, and integrated image cards.
+- Desktop presents a dynamic four-column grid; tablet shifts to three/two columns; mobile stacks cards cleanly with strong numeric hierarchy and no intended horizontal overflow.
+- Counter animation is designed to begin only when the user reaches the metrics section, so the numbers feel tied to the section rather than page load.
+- Header, footer, President Message, About copy, Global Presence map design, and unrelated pages were not redesigned.
+
 ## 2026-07-02 About Mobile Layout And Collage Frame Fix
 
 - Refined only the About page image collage and mobile top-section visibility behavior.

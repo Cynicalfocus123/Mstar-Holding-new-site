@@ -1,5 +1,16 @@
 # Project Changelog
 
+## 2026-07-02 About Collage Logo And Metrics Section
+
+- Replaced the final About collage placeholder label with the existing Mstar brand share image.
+- Added a new bottom About metrics / achievements section after Global Presence.
+- Implemented responsive mixed-size metric and image cards styled to match the current Mstar off-white, charcoal, and gold design system.
+- Added scroll-triggered requestAnimationFrame counters that run once only when the metrics section is meaningfully reached.
+- Kept the change scoped to About page markup, shared About CSS/JS, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Mobile Layout And Collage Frame Fix
 
 - Changed the About page windmill collage frame from a circle to a vertical rounded rectangle.

@@ -305,6 +305,109 @@ if (presenceCounters.length) {
   }
 }
 
+const aboutMetricsSection = document.querySelector("[data-about-metrics]");
+const aboutMetricCounters = document.querySelectorAll(
+  "[data-about-metric-counter]",
+);
+const metricNumberFormatter = new Intl.NumberFormat("en-US");
+
+const formatAboutMetricValue = (value, suffix = "") =>
+  `${metricNumberFormatter.format(value)}${suffix}`;
+
+const setAboutMetricCountersToFinal = () => {
+  aboutMetricCounters.forEach((counter) => {
+    const target = Number(counter.dataset.counterTarget);
+
+    if (!Number.isFinite(target)) {
+      return;
+    }
+
+    counter.textContent = formatAboutMetricValue(
+      target,
+      counter.dataset.counterSuffix || "",
+    );
+  });
+};
+
+const resetAboutMetricCounters = () => {
+  aboutMetricCounters.forEach((counter) => {
+    counter.textContent = formatAboutMetricValue(
+      0,
+      counter.dataset.counterSuffix || "",
+    );
+  });
+};
+
+const animateAboutMetricCounters = () => {
+  aboutMetricCounters.forEach((counter) => {
+    const target = Number(counter.dataset.counterTarget);
+    const duration = Number(counter.dataset.counterDuration);
+    const suffix = counter.dataset.counterSuffix || "";
+
+    if (!Number.isFinite(target) || !Number.isFinite(duration)) {
+      return;
+    }
+
+    const startedAt = performance.now();
+    const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
+
+    const updateCounter = (timestamp) => {
+      const progress = Math.min((timestamp - startedAt) / duration, 1);
+      const value = Math.round(target * easeOutCubic(progress));
+
+      counter.textContent = formatAboutMetricValue(value, suffix);
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = formatAboutMetricValue(target, suffix);
+      }
+    };
+
+    requestAnimationFrame(updateCounter);
+  });
+};
+
+let aboutMetricCountersStarted = false;
+
+const startAboutMetricCounters = () => {
+  if (aboutMetricCountersStarted) {
+    return;
+  }
+
+  aboutMetricCountersStarted = true;
+
+  if (prefersReducedMotion) {
+    setAboutMetricCountersToFinal();
+  } else {
+    animateAboutMetricCounters();
+  }
+};
+
+if (aboutMetricCounters.length) {
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    resetAboutMetricCounters();
+  }
+
+  if (!aboutMetricsSection || !("IntersectionObserver" in window)) {
+    setAboutMetricCountersToFinal();
+  } else {
+    const aboutMetricObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) {
+          return;
+        }
+
+        startAboutMetricCounters();
+        observer.disconnect();
+      },
+      { rootMargin: "-8% 0px -18% 0px", threshold: 0.45 },
+    );
+
+    aboutMetricObserver.observe(aboutMetricsSection);
+  }
+}
+
 const businessSectorsRoot = document.querySelector("[data-business-sectors]");
 const homeNewsRoot = document.querySelector("[data-home-news-list]");
 const newsGridRoot = document.querySelector("[data-news-grid]");

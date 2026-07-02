@@ -1,5 +1,23 @@
 # Agent Changelog
 
+## 2026-07-02 About Collage Logo And Metrics Section
+
+- Made two scoped About page updates in one pass.
+- Replaced the last `About Mstar Holding` collage placeholder text with the existing high-quality Mstar brand image at `public/assets/brand/mstar-share.png`.
+- Kept the existing third collage box styling and rounded shape, with contained centered image fitting and padding so the Mstar logo and `Putting Big Ideas Into Action` tagline are not cropped, stretched, or zoomed.
+- Added a new bottom About metrics / achievements section after `Growing Our Global Presence` and before the footer.
+- Styled the metrics section as a premium Mstar-themed dashboard grid with off-white backgrounds, charcoal feature card, Mstar gold accents, subtle borders, soft shadows, mixed card sizes, and integrated image cards.
+- Added required metrics with grammar-checked labels and display values: `Employees` `3,500`, `R&D` `120+`, `Real Estate Projects` `150+`, `Real Estate Development` `30 years`, `Logistics` `25+ years`, `Defense` `7 years`, `Hospitality` `2,000+ clients`, and `Food` `50,000+ customers`.
+- Added scroll-triggered `requestAnimationFrame` counters scoped to `[data-about-metrics]`; counters reset to zero only when IntersectionObserver animation is available, trigger once at `threshold: 0.45`, disconnect after running, and respect reduced-motion users by showing final values.
+- Responsive behavior: desktop uses a mixed four-column dashboard grid, tablet reduces to three/two columns, and mobile stacks all cards with readable typography, comfortable spacing, proper image scaling, and no intended horizontal overflow.
+- Preserved homepage, Business page, News page, header, footer, deployment base paths, social/fav assets, President Message text, About Mstar Holding text, and Global Presence map behavior.
+- Files changed: `about/index.html`, `src/styles.css`, `src/main.js`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted logo/source inspections, `rg` verification, `cmd /c npx.cmd prettier --write about/index.html src/styles.css src/main.js AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add`, `git commit -m "Add About metrics section and update collage logo box"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Verification notes: no live-server, localhost preview, or local dev server was launched; static source and production build output confirmed the logo box, metrics section markup, responsive CSS, and scroll-triggered counter code.
+
 ## 2026-07-02 About Mobile Layout And Collage Frame Fix
 
 - Fixed two scoped About page issues in one pass.
