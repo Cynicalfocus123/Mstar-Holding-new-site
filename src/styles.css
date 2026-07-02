@@ -3174,12 +3174,15 @@ h2 {
   }
 
   .home-theme-row {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(210px, 1fr));
-    width: max-content;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
     min-width: 100%;
     overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
+    touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -3188,6 +3191,7 @@ h2 {
   }
 
   .home-theme-item {
+    flex: 0 0 clamp(210px, 34vw, 260px);
     scroll-snap-align: start;
   }
 
@@ -3513,7 +3517,8 @@ h2 {
   }
 
   .home-theme-row {
-    grid-template-columns: repeat(5, minmax(128px, 1fr));
+    grid-template-columns: none;
+    min-width: 0;
     max-width: none;
     padding-inline: 0;
   }
@@ -3523,6 +3528,7 @@ h2 {
   }
 
   .home-theme-item {
+    flex-basis: clamp(148px, 58vw, 220px);
     scroll-snap-align: start;
   }
 

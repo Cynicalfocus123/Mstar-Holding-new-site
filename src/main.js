@@ -60,8 +60,10 @@ const setupHorizontalScrollHint = (selector, frameSelector) => {
   };
 
   updateHint();
+  requestAnimationFrame(updateHint);
   scrollElement.addEventListener("scroll", updateHint, { passive: true });
   window.addEventListener("resize", updateHint);
+  window.addEventListener("orientationchange", updateHint);
   window.addEventListener("pageshow", updateHint);
 };
 

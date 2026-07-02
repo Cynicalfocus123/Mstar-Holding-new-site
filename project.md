@@ -1,5 +1,13 @@
 # Project Changelog
 
+## 2026-07-02 Homepage Growth Card Row Scroll Fix
+
+- Fixed the homepage mobile/tablet horizontal scrolling issue for the specific growth-theme row containing Infrastructure, Investment, Innovation, Asia Growth Opportunities, and Strategic Partnerships.
+- Changed only the mobile/tablet row behavior so cards stay in one horizontal strip with touch/swipe scrolling and no full-page horizontal overflow.
+- Preserved card text, icons, design, desktop behavior, homepage hero, sector collage, News section, About page, Business page, News page, header, footer, metrics, maps, and deployment base paths.
+- Refined the existing right-scroll hint logic so it recalculates after layout and on orientation changes.
+- Rebuilt production/Hostinger output and created `mstar-homepage-card-row-scroll-fix.zip` as a small latest-change deploy package with updated route HTML and new hashed assets only.
+
 ## 2026-07-02 About Spacing And Mobile Scroll Hint Refinement
 
 - Tightened the About page desktop spacing further and refined the homepage growth-theme mobile/tablet scroll hint in one scoped pass.

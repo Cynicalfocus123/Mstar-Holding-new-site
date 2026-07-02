@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-07-02 Homepage Growth Card Row Scroll Fix
+
+- Fixed the mobile/tablet horizontal swipe behavior for the homepage growth-theme row only: Infrastructure, Investment, Innovation, Asia Growth Opportunities, and Strategic Partnerships.
+- Kept the same card design, icons, text, sizing language, row styling, and right-arrow hint visual; the row now remains one horizontal scrollable strip instead of being locked wider than the screen.
+- The scroll hint remains subtle and scoped to this row, appearing only when additional content is available to the right.
+- Desktop navigation/layout, homepage hero, sector collage, News section, About page, Business page, News page, header, footer, and unrelated visual systems were not changed.
+
 ## 2026-07-02 About Tightening And Growth Theme Scroll Hint
 
 - Tightened the desktop About page further so President Message, About Mstar Holding, Global Presence, and Built Across Industries read as a more connected page sequence.

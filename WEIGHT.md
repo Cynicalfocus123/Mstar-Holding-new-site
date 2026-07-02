@@ -1,5 +1,27 @@
 # Weight And Deployment Notes
 
+## 2026-07-02 Homepage Growth Card Row Scroll Fix ZIP
+
+- Created small deploy ZIP `mstar-homepage-card-row-scroll-fix.zip` for the homepage mobile/tablet growth card-row scroll fix.
+- ZIP source: selected files from current `dist/` build only.
+- ZIP size: 98,392 bytes.
+- ZIP entries: 12.
+- Included updated route HTML files that reference the new hashes: root `index.html`, `about/index.html`, `business/index.html`, `news/index.html`, and all six News article detail pages.
+- Included new built assets: `assets/main-B-eN-78P.js` and `assets/main-aQXvLJu1.css`.
+- Excluded media, videos, source folders, docs, backups, old ZIP files, `node_modules/`, and unrelated development files.
+- ZIP verification: 0 missing required files, 0 excluded files, 0 bad loose root files, no wrapper folder, and no Windows backslash paths.
+- Final upload instruction: upload `mstar-homepage-card-row-scroll-fix.zip` into Hostinger `public_html`, extract it directly there, and overwrite the matching files. Do not extract into a nested folder.
+
+### Verification
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run build:hostinger`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Confirmed production CSS includes `touch-action: pan-x` for the homepage growth-theme row.
+- Confirmed production JS includes `requestAnimationFrame` and `orientationchange` hint recalculation.
+- Confirmed built HTML references `assets/main-B-eN-78P.js` and `assets/main-aQXvLJu1.css`.
+
 ## 2026-07-02 About Tightening And Growth Theme Scroll Hint
 
 - No media, video, image source, icon source, font, dependency, deployment ZIP, or deployment base-path change was added.

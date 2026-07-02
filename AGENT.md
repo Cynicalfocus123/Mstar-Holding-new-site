@@ -1,5 +1,21 @@
 # Agent Changelog
 
+## 2026-07-02 Homepage Growth Card Row Scroll Fix
+
+- Fixed only the homepage mobile/tablet horizontal scrolling issue for the growth-theme card row containing Infrastructure, Investment, Innovation, Asia Growth Opportunities, and Strategic Partnerships.
+- Changed that row on mobile/tablet from a max-content grid into the actual horizontal scroll container using nowrap flex behavior, `overflow-x: auto`, hidden vertical overflow, `overscroll-behavior-x: contain`, `touch-action: pan-x`, scroll snapping, and `-webkit-overflow-scrolling: touch`.
+- Added mobile/tablet flex-basis rules so cards stay in one horizontal row and scroll instead of compressing into the viewport.
+- Kept card text, icons, card design, desktop behavior, homepage hero, homepage sector collage, homepage News section, About page, Business page, News page, header, footer, metrics, maps, and deployment base paths unchanged.
+- Refined the existing right-scroll hint logic by recalculating after layout with `requestAnimationFrame` and on `orientationchange`, while keeping it scoped to the growth-theme row.
+- Built production and Hostinger output; current deploy assets are `assets/main-B-eN-78P.js` and `assets/main-aQXvLJu1.css`.
+- Created small deploy ZIP `mstar-homepage-card-row-scroll-fix.zip` with 12 entries: updated route HTML files plus the two new hashed assets only.
+- ZIP verification: 98,392 bytes, no wrapper folder, no Windows backslash paths, no bad loose root files, no source/development files, no media duplicates, and assets remain under `assets/`.
+- Files changed: `src/styles.css`, `src/main.js`, `AGENT.md`, `DESIGNER.md`, `project.md`, `WEIGHT.md`, and added `mstar-homepage-card-row-scroll-fix.zip`.
+- Commands run: attachment read, `Get-Content -Raw package.json`, `git status --short --branch`, targeted `rg`/source inspections, `cmd /c npx.cmd prettier --write src/main.js src/styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run build:hostinger`, production bundle inspections, small ZIP creation/audit, documentation update, `git status --short`, `git add .`, `git commit -m "Fix homepage mobile card row scrolling"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build` and `cmd /c npm.cmd run build:hostinger`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 Clean Latest Changes Deploy ZIP
 
 - Created a clean deployment ZIP for the latest built site output.
