@@ -1,5 +1,19 @@
 # Agent Changelog
 
+## 2026-07-02 About Stat Card Icon Refinement
+
+- Refined only the bottom About page metrics/stat card icon styling and assets.
+- Regenerated the eight About metric icon PNGs under `public/media/about/icons/` from the provided local source icon folder as clean transparent 512px canvases with a single solid Mstar gold line color.
+- Removed partial-alpha icon pixels so the exported icons have no yellow smear, glow, halo, bloom, or fuzzy transparent edge effects.
+- Standardized the shared `.about-metric-icon` CSS for consistent top-right placement, one responsive size scale, normal opacity, and no icon filter/drop-shadow.
+- Kept icons transparent with no background plates and preserved correct proportions through `object-fit: contain`.
+- Preserved metric text, values, card order, counter animation logic, President Message, Global Presence, About text content, homepage, Business page, News pages, header, footer, and unrelated layout.
+- Files changed: `src/styles.css`, `public/media/about/icons/*.png`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source/status inspections, regenerated local metric icons with bundled Python/Pillow, verified icon alpha channels and absence of partial-alpha pixels, `rg` checks for metric icon glow/filter rules, `cmd /c npx.cmd prettier --write src/styles.css AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add .`, unstaged unrelated pre-existing ZIP deletions, `git commit -m "Refine About stat card icons"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Logo Card Fit
 
 - Fixed only the third `About Mstar Holding` collage logo box.

@@ -1,5 +1,16 @@
 # Project Changelog
 
+## 2026-07-02 About Stat Card Icon Refinement
+
+- Cleaned all eight About metrics/stat card icons by regenerating transparent solid-gold PNG copies from the local source icon folder.
+- Removed icon glow/smear effects, including partial-alpha halo pixels and the metric feature-card icon drop-shadow CSS.
+- Standardized metric icon sizing and top-right placement with the shared `.about-metric-icon` rule.
+- Kept responsive icon behavior consistent on desktop, tablet, and mobile without changing metric text, values, card order, or counter logic.
+- Kept the change scoped to About metric icon assets, About metric icon CSS, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Logo Card Fit
 
 - Adjusted only the third About collage logo card to a taller aspect ratio so the full Mstar logo fits without top or bottom clipping.

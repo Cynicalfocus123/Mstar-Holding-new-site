@@ -2561,25 +2561,20 @@ h2 {
 
 .about-metric-icon {
   position: absolute;
-  top: clamp(18px, 2vw, 26px);
-  right: clamp(18px, 2vw, 26px);
+  top: clamp(20px, 2vw, 28px);
+  right: clamp(20px, 2vw, 28px);
   z-index: 0;
-  width: clamp(42px, 4.1vw, 62px);
-  height: clamp(42px, 4.1vw, 62px);
+  width: clamp(44px, 3.4vw, 54px);
+  height: clamp(44px, 3.4vw, 54px);
   object-fit: contain;
   object-position: center center;
-  opacity: 0.78;
+  opacity: 1;
   pointer-events: none;
 }
 
 .about-metric-card-feature {
   grid-column: span 2;
   min-height: 178px;
-}
-
-.about-metric-card-feature .about-metric-icon {
-  opacity: 0.78;
-  filter: drop-shadow(0 8px 18px rgba(184, 135, 45, 0.18));
 }
 
 .about-metric-card-wide {
@@ -3214,8 +3209,8 @@ h2 {
   }
 
   .about-metric-icon {
-    width: 46px;
-    height: 46px;
+    width: 42px;
+    height: 42px;
   }
 
   .home-bright-section {

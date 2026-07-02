@@ -1,5 +1,13 @@
 # Designer Notes
 
+## 2026-07-02 About Stat Card Icon Refinement
+
+- Cleaned the About metrics icons so they render as crisp transparent gold line art without yellow glow, smear, halo, blur, or shadow effects.
+- Standardized all metric card icons to the same transparent canvas, same visual color, same shared responsive size, and same top-right card placement.
+- Removed the special Employees/feature-card icon drop shadow so no metric icon receives a glow treatment.
+- Desktop icons are smaller and more consistently inset to avoid crowding the card label or number; mobile uses a shared reduced size.
+- No metric copy, number values, card order, card layout, counter behavior, or unrelated About/site sections were redesigned.
+
 ## 2026-07-02 About Collage Logo Card Fit
 
 - The third About collage logo card now uses a taller, logo-friendly card ratio so the full Mstar logo can sit inside the frame without being cut off.
