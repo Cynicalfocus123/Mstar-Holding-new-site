@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-07-02 Latest Hostinger Live Package
+
+- No design behavior, layout, copy, CSS, JavaScript, media, image crop, or animation was changed during this packaging pass.
+- The fresh `dist/` build packaged in `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip` keeps the latest About page state: President Message, About Mstar Holding, Growing Our Global Presence, and Built Across Industries.
+- The packaged About page includes the latest collage spacing, full Mstar logo card fit, white Employees metric card, transparent gold metric icons, and removal of the metric card icon glow source.
+- The ZIP is a deployment artifact only and is intended for direct extraction into Hostinger `public_html`.
+
 ## 2026-07-02 About Stat Icon Glow Removal
 
 - Removed the actual remaining glow source from the About metric cards: the top-right gold radial highlight built into each card background.

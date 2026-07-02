@@ -1,5 +1,16 @@
 # Project Changelog
 
+## 2026-07-02 Latest Hostinger Live Package
+
+- Completed the fresh Hostinger live ZIP packaging pass for the latest About page and site build.
+- Created and verified `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip` from `dist/` only.
+- Confirmed the ZIP is direct-extract ready for Hostinger `public_html`, with no nested wrapper folder and no source/development files.
+- Confirmed the packaged build includes the latest About collage, logo card fit, white Employees metric card, transparent metric icons, and clean removal of the metric icon glow source.
+- Replaced older tracked deployment ZIP packages with the new latest ZIP.
+- No page source, copy, layout, styling, JavaScript behavior, media, metadata, or visual design was changed during this packaging/documentation pass.
+- Final upload instruction: upload the ZIP into Hostinger `public_html`, extract directly there, and overwrite old live files.
+- Latest ZIP size: 45,799,192 bytes, about 43.68 MB.
+
 ## 2026-07-02 About Stat Icon Glow Removal
 
 - Removed the About metric card top-right gold radial background highlight that was creating the visible yellow glow/smear behind icons.

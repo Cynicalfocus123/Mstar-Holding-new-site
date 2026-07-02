@@ -1,5 +1,20 @@
 # Agent Changelog
 
+## 2026-07-02 Latest Hostinger Live Package
+
+- Completed the Hostinger packaging pass that was previously stopped before documentation, final ZIP audit, commit, and push.
+- Kept this pass to packaging/deployment preparation only; no source page layout, copy, CSS, JavaScript, media, or visual behavior was changed.
+- Confirmed remote remains `https://github.com/Cynicalfocus123/Mstar-Holding-new-site.git`, branch `main`, tracking `origin/main`.
+- Confirmed the latest pre-package commit was `b5ef828 Remove About stat icon glow`.
+- Used the existing Hostinger/root production build output in `dist/` and the fresh ZIP `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip`.
+- Verified the ZIP is rooted directly for Hostinger `public_html` extraction, with entries such as `.htaccess`, `index.html`, `about/index.html`, `assets/`, `media/`, `business/`, `news/`, and `videos/`.
+- Verified the ZIP does not contain a wrapper folder such as `dist/`, the repository folder, `.git/`, `node_modules/`, `src/`, `public/`, source maps, package files, project notes, or development-only folders.
+- Replaced older tracked deployment ZIP artifacts by removing `mstar-about-page-live-deploy-2026-07-01.zip`, `mstar-business-contact-section-live-update.zip`, and `mstar-holding-full-live-site-clean.zip` from the working tree.
+- Final upload target remains Hostinger `public_html`; upload the ZIP into `public_html`, extract directly there, and overwrite old live files without creating a nested folder.
+- Files changed: `AGENT.md`, `DESIGNER.md`, `WEIGHT.md`, `project.md`, removed older tracked ZIP packages, and added `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip`.
+- Commands run: instruction/doc reads, `git remote -v`, `git log --oneline -8`, `git ls-files *.zip`, `tar -tf Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip`, ZIP size inspection, `cmd /c npm.cmd run weight:audit`, Python ZIP audit, built local asset-reference scan, `rg` checks for disallowed built references, documentation update, formatting/checks, `git status --short`, `git add`, `git commit`, and `git push origin main`.
+- Prior checks from the packaging pass: passed `cmd /c npm.cmd run build:hostinger`, passed `cmd /c npm.cmd run lint`, passed `cmd /c npm.cmd test`, and passed `cmd /c npm.cmd run weight:audit`.
+
 ## 2026-07-02 About Stat Icon Glow Removal
 
 - Fixed only the bottom About page metrics/stat card icon glow issue.

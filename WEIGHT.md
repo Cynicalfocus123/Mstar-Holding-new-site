@@ -1,5 +1,36 @@
 # Weight And Deployment Notes
 
+## 2026-07-02 Latest Hostinger Deployment ZIP
+
+- Created and verified `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip` as the latest full live-site Hostinger package.
+- ZIP source: `dist/` contents only.
+- ZIP size: 45,799,192 bytes, about 43.68 MB.
+- ZIP root is direct-extract ready for Hostinger `public_html`, with no enclosing `dist/`, repository, or staging wrapper folder.
+- ZIP root entries include `.htaccess`, `index.html`, `about/index.html`, `assets/`, `media/`, `business/`, `news/`, and `videos/`.
+- Required files verified present in the ZIP/build output: `index.html`, `about/index.html`, `.htaccess`, `assets/`, `media/about/mstar-holding-logo.png`, `media/about/jakapun-wallstreet.jpg`, `media/about/jack-windmill.jpg`, and the eight About metric icon PNG files.
+- The ZIP excludes `.git/`, `node_modules/`, `src/`, `public/`, `site content pic and video/`, package files, Vite config, project notes, source maps, backups, screenshots, temporary deploy folders, and previous deployment ZIP files.
+- Removed older tracked deployment ZIP artifacts from the repository working tree: `mstar-about-page-live-deploy-2026-07-01.zip`, `mstar-business-contact-section-live-update.zip`, and `mstar-holding-full-live-site-clean.zip`.
+- Final upload instruction: upload `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip` into Hostinger `public_html`, extract it directly there, and overwrite the old live files. Do not extract into a nested folder.
+
+### Latest Size Audit
+
+- `public/`: 44 MB across 82 files.
+- `dist/`: 44 MB across 94 files.
+- MP4 total: 25 MB across 20 files.
+- PNG total: 4.7 MB across 29 files.
+- JPG/JPEG total: 10 MB across 2 files.
+- WebP total: 4.4 MB across 16 files.
+- Largest files in `dist/`: `videos/mstar-holding-company-intro.mp4` 7.7 MB, `media/about/jack-windmill.jpg` 6.9 MB, `videos/business-mstar-property.mp4` 3.7 MB, `media/about/jakapun-wallstreet.jpg` 3.1 MB, and `videos/business-page-header-desktop.mp4` 3.0 MB.
+
+### Latest ZIP Checks
+
+- Passed earlier packaging checks: `cmd /c npm.cmd run build:hostinger`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run weight:audit`.
+- Passed follow-up `cmd /c npm.cmd run weight:audit` before documentation and commit.
+- Confirmed the ZIP has 94 entries, zero backslash-stored paths, zero missing required files, and zero excluded source/development entries.
+- Confirmed the ZIP listing starts directly with live files/folders, including `.htaccess`, `index.html`, `about/index.html`, `assets/`, `media/`, `business/`, `news/`, and `videos/`.
+- Confirmed built local asset-reference validation checked 157 references with 0 missing references.
+- Confirmed no `/Mstar-Holding-new-site/`, GitHub Pages, GitHub repository, localhost, or source-folder references were found in `dist`.
+
 ## 2026-07-02 About Stat Icon Glow Removal
 
 - No new media, image, video, font, third-party library, runtime dependency, remote asset, social/fav asset, or deployment base-path change was added.
