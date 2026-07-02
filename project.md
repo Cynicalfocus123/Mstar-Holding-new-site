@@ -1,5 +1,19 @@
 # Project Changelog
 
+## 2026-07-02 About Desktop Spacing And Section Alignment
+
+- Tightened the About page desktop spacing and section-to-section rhythm only.
+- Reduced President Message section height by removing the full-viewport minimum height and trimming section/card padding, copy spacing, signature spacing, and portrait top offset.
+- Reduced the gap between President Message and About Mstar Holding.
+- Tightened About Mstar Holding section height with reduced section padding, column gap, heading margins, and desktop collage wrapper offset.
+- Reduced the gap before Global Presence without changing the map design, animation, or counters.
+- Reduced the gap between Global Presence stats and Built Across Industries by tightening section padding and map/stat spacing.
+- Corrected Built Across Industries heading/body alignment by removing default heading/paragraph margins inside the metrics heading block.
+- Preserved tablet/mobile responsive behavior, About content, image sources/crops, Global Presence map, metric content, homepage, Business page, News page, header, footer, and unrelated sections.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 Homepage Scroll Hint And Sector Label Refinement
 
 - Added a homepage-only right-side scroll hint arrow overlay to the existing sector card row.

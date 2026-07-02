@@ -1,5 +1,21 @@
 # Weight And Deployment Notes
 
+## 2026-07-02 About Desktop Spacing And Section Alignment
+
+- No media, video, image source, font, dependency, deployment ZIP, or deployment base-path change was added.
+- The change is limited to About page spacing/alignment CSS plus documentation.
+- Tightened desktop President Message, About Mstar Holding, Global Presence, and Built Across Industries spacing.
+- Corrected Built Across Industries heading/body alignment without changing content or metric card design.
+- Rebuilt production output with regular Vite build for verification only; no Hostinger ZIP was created in this pass.
+- New verification build bundle files: `assets/main-COQy6FrI.js` and `assets/main-CKrAfO47.css`.
+
+### Verification
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Confirmed the source changes are CSS-scoped to About page selectors and do not change image paths or content.
+
 ## 2026-07-02 Homepage Scroll Hint And Sector Label Refinement
 
 - No media, video, image source, font, dependency, deployment ZIP, or deployment base-path change was added.

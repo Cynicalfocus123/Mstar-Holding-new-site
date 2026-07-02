@@ -1,5 +1,14 @@
 # Designer Notes
 
+## 2026-07-02 About Desktop Spacing And Alignment
+
+- Tightened the desktop About page so President Message, About Mstar Holding, Global Presence, and Built Across Industries feel more connected and less stretched.
+- The President Message section no longer holds a full-viewport height on desktop; card padding, paragraph rhythm, signature spacing, and portrait offset are more compact while keeping the approved overlapping card style.
+- The About Mstar Holding section uses reduced vertical padding and a smaller desktop column gap so the collage and text read as one connected composition.
+- Global Presence starts closer to the About section, and Built Across Industries starts closer to the Global Presence stats without changing the map, counters, or metric cards.
+- Built Across Industries heading/body alignment now relies on clean zero-margin heading text and the section's grid gap, so the heading and paragraph left edges feel intentional.
+- Mobile/tablet responsive behavior remains governed by existing breakpoints; no image source, crop, content, header, footer, homepage, Business page, or News page design was changed.
+
 ## 2026-07-02 Homepage Scroll Hint And Sector Labels
 
 - Added a clean right-side scroll hint arrow to the homepage sector card row so mobile/tablet users can immediately tell the row continues horizontally.

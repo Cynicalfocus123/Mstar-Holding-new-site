@@ -1,5 +1,21 @@
 # Agent Changelog
 
+## 2026-07-02 About Desktop Spacing And Section Alignment
+
+- Refined only About page desktop spacing, section heights, and section-to-section alignment.
+- Tightened the President Message section by removing the desktop full-viewport minimum height, reducing section padding, trimming message-card padding, reducing paragraph rhythm, and bringing the portrait card slightly closer while preserving the overlapping card style and animation behavior.
+- Reduced the gap between the President Message section and About Mstar Holding by tightening President bottom padding and About section top padding.
+- Tightened the About Mstar Holding section height by reducing section padding, grid gap, heading margins, subheading spacing, and desktop collage wrapper top padding.
+- Reduced the blank space before Global Presence by lowering the Global Presence section top padding while preserving the map design, map animation, and counters.
+- Reduced the gap between Global Presence and Built Across Industries by tightening Global Presence bottom padding, map/stat spacing, and Built Across Industries top padding.
+- Corrected Built Across Industries heading/body alignment by removing default margins from the metrics heading and paragraph and using the existing grid gap for consistent alignment.
+- Preserved About page text, President portrait image source, About collage image sources, Global Presence map design, metric content, tablet/mobile stacking behavior, homepage, Business page, News page, header, footer, and unrelated sections.
+- Files changed: `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: attachment read, `git status --short --branch`, `Get-Content -LiteralPath package.json`, targeted `rg`/`Get-Content` inspections, `cmd /c npx.cmd prettier --write src/styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, documentation update, `cmd /c npx.cmd prettier --write AGENT.md DESIGNER.md project.md WEIGHT.md`, final `git status --short`, `git add .`, `git commit -m "Tighten About page desktop spacing and section alignment"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 Homepage Scroll Hint And Sector Label Refinement
 
 - Made the two requested homepage-only updates in one pass.
