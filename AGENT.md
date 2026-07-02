@@ -1,5 +1,23 @@
 # Agent Changelog
 
+## 2026-07-02 About Mobile Layout And Collage Frame Fix
+
+- Fixed two scoped About page issues in one pass.
+- Refined only the `About Mstar Holding` image collage by changing the windmill frame from a circular image to a portrait-oriented rounded rectangle.
+- Preserved the main Wall Street/New York collage image, third future-image placeholder, overall collage concept, and all About section text.
+- Kept windmill image fitting at `object-fit: contain` and `object-position: center center` so the vertical windmill photo is not aggressively zoomed, distorted, or cropped into a circle.
+- Fixed the About page mobile top visibility issue by making the President Message reveal observer target the full President section with a more forgiving threshold/root margin.
+- Added a phone-width CSS fallback that keeps the President Message card and portrait card visible, stacked, and untransformed even if IntersectionObserver is delayed or unavailable.
+- Reduced the phone top padding under the fixed header so the first About page content appears promptly instead of leaving a large blank off-white area.
+- Desktop/tablet President Message animation remains the premium fade/slide treatment; reduced-motion behavior remains supported.
+- Responsive behavior: mobile stacks message card first and portrait card second, no overlap; About Mstar Holding and Global Presence remain below in order; no intended horizontal overflow.
+- Files changed: `about/index.html`, `src/styles.css`, `src/main.js`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted About source inspections, `rg` stale-class verification, `cmd /c npx.cmd prettier --write about/index.html src/styles.css src/main.js AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add`, `git commit -m "Fix About mobile layout and collage image frame"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Verification notes: no live-server, localhost preview, or local dev server was launched; static source and production build output confirmed the portrait windmill frame, mobile President Message visibility rules, and About section ordering.
+
 ## 2026-07-02 About Mstar Holding Image Collage
 
 - Refined only the About page `About Mstar Holding` section image area.

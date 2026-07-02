@@ -2237,12 +2237,12 @@ h2 {
   border-radius: 24% 10% 27% 11% / 16% 22% 18% 28%;
 }
 
-.about-company-image-round {
-  top: 2%;
+.about-company-image-portrait {
+  top: 0;
   right: 0;
-  width: 32%;
-  aspect-ratio: 1;
-  border-radius: 50%;
+  width: 34%;
+  aspect-ratio: 0.58;
+  border-radius: 28px;
   box-shadow: 0 18px 48px rgba(14, 24, 34, 0.16);
 }
 
@@ -2946,7 +2946,14 @@ h2 {
 
 @media (max-width: 640px) {
   .about-president {
-    padding: calc(var(--header-height) + 42px) var(--gutter) 72px;
+    padding: calc(var(--header-height) + 24px) var(--gutter) 72px;
+  }
+
+  .president-message-card,
+  .president-portrait-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .president-message-card {

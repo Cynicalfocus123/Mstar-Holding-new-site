@@ -1,5 +1,15 @@
 # Designer Notes
 
+## 2026-07-02 About Mobile Layout And Collage Frame Fix
+
+- Refined only the About page image collage and mobile top-section visibility behavior.
+- The windmill image no longer uses a circular frame; it now sits in a portrait-oriented rounded rectangle that respects the source image's vertical composition.
+- The windmill frame keeps a clean neutral backing, subtle border, rounded corporate corners, soft shadow, and contained centered image fitting.
+- The main Wall Street/New York image and future-image placeholder remain in the same collage system.
+- Mobile About page top content is protected from animation-related invisibility: the President Message card and portrait card are visible by default at phone widths, stack vertically, and do not overlap.
+- The phone top spacing below the header is tighter so users see the President Message content rather than a large off-white blank area.
+- Desktop and tablet retain the existing premium fade/slide animation for the President Message section.
+
 ## 2026-07-02 About Mstar Holding Image Collage
 
 - Refined only the `About Mstar Holding` section media area.

@@ -1,5 +1,16 @@
 # Project Changelog
 
+## 2026-07-02 About Mobile Layout And Collage Frame Fix
+
+- Changed the About page windmill collage frame from a circle to a vertical rounded rectangle.
+- Kept contained, centered image fitting so the vertical windmill image remains visible without distortion or aggressive cropping.
+- Fixed the About page mobile top blank area by making the President Message reveal observer more reliable and adding a phone-width visible fallback.
+- Mobile President Message cards now appear promptly below the header, stacked as message card then portrait card, with no intended overlap or horizontal overflow.
+- Kept the change scoped to About page markup, shared About CSS/JS, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Mstar Holding Image Collage
 
 - Replaced the About page `About Mstar Holding` left-side abstract placeholder with a responsive three-part collage.

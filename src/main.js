@@ -104,6 +104,9 @@ const aboutPortraitCard = document.querySelector("[data-about-portrait-card]");
 const aboutCompanySection = document.querySelector("[data-about-company]");
 
 if (aboutPresidentSection && aboutMessageCard && aboutPortraitCard) {
+  const aboutPresidentObserverTarget =
+    aboutPresidentSection.closest(".about-president") || aboutPresidentSection;
+
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     aboutMessageCard.classList.add("is-visible");
     aboutPortraitCard.classList.add("is-visible");
@@ -118,10 +121,10 @@ if (aboutPresidentSection && aboutMessageCard && aboutPortraitCard) {
         aboutPortraitCard.classList.add("is-visible");
         observer.disconnect();
       },
-      { threshold: 0.25 },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.05 },
     );
 
-    aboutObserver.observe(aboutPresidentSection);
+    aboutObserver.observe(aboutPresidentObserverTarget);
   }
 }
 
