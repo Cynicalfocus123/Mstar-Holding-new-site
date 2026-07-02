@@ -1,5 +1,20 @@
 # Project Changelog
 
+## 2026-07-02 Optimized Full Hostinger Live Package
+
+- Created `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` from the current Git `main` branch and `dist/` contents only.
+- Confirmed `main` matched `origin/main` before optimization.
+- Converted the two large About collage JPG files to high-quality WebP files and updated About page references.
+- Removed the now-unused old About JPG files from `public/media/about/`.
+- Losslessly optimized the About Mstar logo PNG.
+- Added the requested Hostinger-safe `.htaccess` static routing block while preserving compression/cache rules.
+- Rebuilt with Hostinger root `/` base and verified the latest About page, Business page, News page, article pages, assets, media, videos, and `.htaccess` in `dist/`.
+- Verified built local references resolve inside `dist/` and found no GitHub Pages, GitHub repository, localhost, or source-folder references.
+- Replaced the previous tracked `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip` package with the optimized full ZIP.
+- Previous ZIP size: 45,799,192 bytes, about 43.68 MB.
+- New optimized ZIP size: 36,349,401 bytes, about 34.67 MB.
+- Final upload instruction: upload `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` into Hostinger `public_html`, extract it directly there, and overwrite the old live files.
+
 ## 2026-07-02 Latest Hostinger Live Package
 
 - Completed the fresh Hostinger live ZIP packaging pass for the latest About page and site build.

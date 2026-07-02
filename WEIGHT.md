@@ -1,5 +1,71 @@
 # Weight And Deployment Notes
 
+## 2026-07-02 Optimized Full Hostinger Deployment ZIP
+
+- Created `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` as the new optimized full live-site Hostinger package.
+- Previous ZIP: `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip`.
+- Previous ZIP size: 45,799,192 bytes, about 43.68 MB.
+- New optimized ZIP size: 36,349,401 bytes, about 34.67 MB.
+- Previous `dist/` size: 44 MB across 94 files.
+- New optimized `dist/` size: 35 MB across 94 files.
+- New optimized `public/` size: 35 MB across 82 files.
+- MP4 total: 25 MB across 20 files.
+- PNG total: 4.6 MB across 29 files.
+- JPG/JPEG total: 0 B across 0 files.
+- WebP total: 5.4 MB across 18 files.
+- ZIP source: `dist/` contents only.
+- ZIP entries: 94.
+- ZIP path check: 0 backslash-stored paths.
+- ZIP required-file check: 0 missing required files.
+- ZIP excluded-file check: 0 excluded source/development entries.
+- Built reference validation: 239 local references checked, 0 missing/outside references, and 0 GitHub Pages/GitHub repository/localhost/source-folder references.
+- Final upload instruction: upload `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` into Hostinger `public_html`, extract it directly there, and overwrite the old live files. Do not extract into a nested folder.
+
+### Optimization Steps
+
+- Converted `public/media/about/jack-windmill.jpg` to `public/media/about/jack-windmill.webp` at the same 2988 x 5312 dimensions.
+- Converted `public/media/about/jakapun-wallstreet.jpg` to `public/media/about/jakapun-wallstreet.webp` at the same 3264 x 2448 dimensions.
+- Updated About page source references to the optimized WebP paths and removed the unused old JPGs from `public/media/about/`.
+- Losslessly optimized `public/media/about/mstar-holding-logo.png` from 827,665 bytes to 722,791 bytes.
+- Kept transparent icons as PNG and confirmed the eight About metric icons preserve real alpha transparency with zero partial-alpha halo pixels.
+- Left approved MP4 videos unchanged because `ffmpeg` and `ffprobe` were not available on PATH during this pass.
+- Added Hostinger-safe `.htaccess` `DirectoryIndex` and extensionless page redirects while preserving compression/cache rules and asset pass-through.
+
+### Largest Files After Optimization
+
+1. `videos/mstar-holding-company-intro.mp4` 7.7 MB.
+2. `videos/business-mstar-property.mp4` 3.7 MB.
+3. `videos/business-page-header-desktop.mp4` 3.0 MB.
+4. `media/about/jakapun-viwatkurkul-president.webp` 2.5 MB.
+5. `videos/business-page-header-mobile.mp4` 1.8 MB.
+6. `videos/business-american-buying-service.mp4` 1.1 MB.
+7. `videos/business-senior-home.mp4` 941 KB.
+8. `media/logos/american-buying-service-logo.png` 845 KB.
+9. `videos/business-buyhomeforless.mp4` 808 KB.
+10. `media/logos/mstar-property-logo.png` 792 KB.
+11. `videos/business-boogoo.mp4` 738 KB.
+12. `videos/business-mstar-airsoft.mp4` 728 KB.
+13. `media/about/mstar-holding-logo.png` 706 KB.
+14. `videos/business-mstar-defense.mp4` 693 KB.
+15. `media/about/jack-windmill.webp` 646 KB.
+16. `videos/business-hospitality-senior-home-care.mp4` 637 KB.
+17. `videos/business-senior-home-care.mp4` 637 KB.
+18. `videos/business-foodonlines.mp4` 595 KB.
+19. `videos/business-foodonlines-2.mp4` 561 KB.
+20. `media/about/jakapun-wallstreet.webp` 455 KB.
+
+### Verification
+
+- Passed: `cmd /c npm.cmd run build:hostinger`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Passed: `cmd /c npm.cmd run weight:audit`.
+- Confirmed `dist/index.html`, `dist/about/index.html`, `dist/business/index.html`, `dist/news/index.html`, `dist/.htaccess`, `dist/assets/`, `dist/media/`, and `dist/videos/` exist.
+- Confirmed all six News article detail pages exist under `dist/news/`.
+- Confirmed `dist/about/index.html` includes `Message from the President`, `About Mstar Holding`, `Growing Our Global Presence`, `Built Across Industries`, `Employees`, `R&D`, `Real Estate Projects`, `Real Estate Development`, `Logistics`, `Defense`, `Hospitality`, and `Food`.
+- Confirmed `dist/about/index.html` references `jakapun-wallstreet.webp` and `jack-windmill.webp`.
+- Confirmed `dist/.htaccess` includes `DirectoryIndex index.html`, extensionless `/about`, `/business`, and `/news` redirects, and file/directory pass-through before existing compression/cache rules.
+
 ## 2026-07-02 Latest Hostinger Deployment ZIP
 
 - Created and verified `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip` as the latest full live-site Hostinger package.

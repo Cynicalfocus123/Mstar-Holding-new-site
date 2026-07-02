@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-07-02 Optimized Full Hostinger Package
+
+- No design behavior changed; this was a deployment-weight and Hostinger packaging optimization only.
+- The About collage still uses the same two approved corporate photos, layout, sizing, contained fitting, crop intent, and responsive behavior; only the file format changed from JPG to high-quality WebP.
+- The About logo PNG was optimized losslessly with no intended visual change.
+- The `.htaccess` update affects Hostinger static routing only and does not change page design or interaction behavior.
+
 ## 2026-07-02 Latest Hostinger Live Package
 
 - No design behavior, layout, copy, CSS, JavaScript, media, image crop, or animation was changed during this packaging pass.

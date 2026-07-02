@@ -1,5 +1,27 @@
 # Agent Changelog
 
+## 2026-07-02 Optimized Full Hostinger Package
+
+- Created a new optimized full Hostinger deployment ZIP from current `main` after confirming `HEAD` matched `origin/main` at `04bfb22 Package latest Hostinger live zip`.
+- Built for Hostinger with root `/` base using `cmd /c npm.cmd run build:hostinger`; did not use the GitHub Pages build.
+- Converted the two large About collage JPG assets to high-quality same-dimension WebP files:
+  - `public/media/about/jack-windmill.jpg` 7,260,491 bytes became `public/media/about/jack-windmill.webp` 661,618 bytes.
+  - `public/media/about/jakapun-wallstreet.jpg` 3,286,881 bytes became `public/media/about/jakapun-wallstreet.webp` 466,194 bytes.
+- Updated `about/index.html` to reference the optimized WebP files and removed the unused old JPG files from `public/media/about/`.
+- Losslessly optimized `public/media/about/mstar-holding-logo.png` from 827,665 bytes to 722,791 bytes while preserving PNG transparency.
+- Left approved videos unchanged because `ffmpeg` and `ffprobe` were not available on PATH during this pass; autoplay/lazy-load behavior and filenames remain unchanged.
+- Added the requested Hostinger-safe static `.htaccess` routing block with `DirectoryIndex index.html`, `/about`, `/business`, and `/news` trailing-slash redirects, and file/directory pass-through before existing compression/cache rules.
+- Verified the eight About metric icons still have real alpha transparency, transparent pixels, and zero partial-alpha halo pixels.
+- Verified built pages and article detail pages exist under `dist/`, verified latest About text/sections and optimized About assets, and verified built asset hashes remain `/assets/main-CmlMijk8.js` and `/assets/main-BY3jYTCw.css`.
+- Ran built reference validation across HTML/CSS/JS: 239 local references checked, 0 missing/outside references, and 0 GitHub Pages/GitHub repository/localhost/source-folder references.
+- Created `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` from `dist/` contents only with forward-slash paths, 94 entries, 0 missing required files, 0 excluded source/development entries, and no wrapper folder.
+- Removed the superseded tracked `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip` deployment artifact and replaced it with the optimized full ZIP.
+- Files changed: `about/index.html`, `public/.htaccess`, `public/media/about/jack-windmill.webp`, `public/media/about/jakapun-wallstreet.webp`, `public/media/about/mstar-holding-logo.png`, removed the two old About JPGs, `AGENT.md`, `DESIGNER.md`, `WEIGHT.md`, `project.md`, removed `Mstar-Holding-Live-Hostinger-2026-07-02-Latest.zip`, and added `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip`.
+- Build status: passed `cmd /c npm.cmd run build:hostinger`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Weight audit status: passed `cmd /c npm.cmd run weight:audit`.
+
 ## 2026-07-02 Latest Hostinger Live Package
 
 - Completed the Hostinger packaging pass that was previously stopped before documentation, final ZIP audit, commit, and push.
