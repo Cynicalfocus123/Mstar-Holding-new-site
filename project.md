@@ -1,5 +1,18 @@
 # Project Changelog
 
+## 2026-07-02 About Collage Placement And Metrics Icon Refinement
+
+- Moved the About collage Mstar logo box to the bottom middle between the two upper image frames.
+- Kept the logo image fully visible with `object-fit: contain`, centered positioning, added internal padding, rounded corners, subtle border, and soft shadow.
+- Compacted the `Built Across Industries` metrics section by replacing oversized image/logo tiles with premium stat cards sized around the number and label content.
+- Added required metric icons from the provided icons folder and created optimized transparent public copies at `public/media/about/icons/`.
+- Verified the optimized icon files have real alpha transparency, including checkerboard-backed source icons.
+- Adjusted the About metrics counters to run once only when `[data-about-metrics]` reaches the viewport using `threshold: 0.45` and `rootMargin: "0px 0px -15% 0px"`.
+- Kept the change scoped to About page markup, shared About CSS/JS, local About icon assets, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Exact Logo Asset Correction
 
 - Copied the exact user-provided Mstar logo into `public/media/about/mstar-holding-logo.png`.

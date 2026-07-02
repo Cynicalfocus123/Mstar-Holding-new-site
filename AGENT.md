@@ -1,5 +1,22 @@
 # Agent Changelog
 
+## 2026-07-02 About Collage Placement And Metrics Icon Refinement
+
+- Refined the two requested About page areas in one pass.
+- Moved the `About Mstar Holding` collage logo box to the bottom middle between the Wall Street image and windmill image, with contained centered fitting and extra internal padding so the Mstar logo and `Putting Big Ideas Into Action` tagline are fully visible.
+- Compacted the bottom `Built Across Industries` metrics / achievements section by replacing oversized image/logo cards with tighter premium stat cards, reducing empty vertical space while keeping the Mstar off-white, charcoal, and gold theme.
+- Added top-right metric icons for Employees, R&D, Real Estate Projects, Real Estate Development, Logistics, Defense, Hospitality, and Food.
+- Created optimized transparent About metric icon copies under `public/media/about/icons/` from the supplied icon folder; checkerboard-backed source icons were converted to real alpha transparency and verified for transparent pixels.
+- Fixed the About metrics counter trigger to use the dedicated `[data-about-metrics]` wrapper with `threshold: 0.45`, `rootMargin: "0px 0px -15% 0px"`, one-shot activation, `requestAnimationFrame` ease-out counting, and reduced-motion final-value behavior.
+- Preserved the President Message section, About Mstar Holding text, Global Presence map section, homepage, Business page, News page, header, footer, social/fav assets, deployment base paths, and unrelated CSS/JS/assets.
+- Responsive behavior: desktop uses a polished compact four-column dashboard grid with selected wide cards; tablet uses a two-column grid; mobile stacks compact readable cards with icons, no intended clipping, and no intended horizontal overflow.
+- Files changed: `about/index.html`, `src/styles.css`, `src/main.js`, `public/media/about/icons/*.png`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: read task and repo guidance, inspected `package.json`, targeted source and asset inspections, optimized local icon PNGs with bundled Python/Pillow, verified icon alpha channels, `rg` source checks, `cmd /c npx.cmd prettier --write about/index.html src/styles.css src/main.js AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add`, `git commit -m "Refine About collage and metrics section"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Verification notes: no live-server, localhost preview, or local dev server was launched; static source and production build output confirmed the collage logo placement/fitting, compact metric cards, icon paths/transparency, responsive CSS, and dedicated scroll-triggered metric counters.
+
 ## 2026-07-02 About Exact Logo Asset Correction
 
 - Continued the prior About collage/metrics task by replacing the temporary brand share image reference with the exact user-provided logo file.

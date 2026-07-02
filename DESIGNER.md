@@ -1,5 +1,15 @@
 # Designer Notes
 
+## 2026-07-02 About Collage Placement And Metrics Icon Refinement
+
+- Repositioned the About collage logo card as a balanced lower-middle third card between the main Wall Street frame and the windmill frame.
+- The Mstar logo card keeps the premium rounded frame, subtle border, soft shadow, centered contain fitting, and additional breathing room so the full logo/tagline remains legible.
+- Reworked `Built Across Industries` into a more compact dashboard-style metric section with less empty card space and clearer number hierarchy.
+- Each metric card now carries a restrained gold top-right icon; source checkerboard backgrounds were removed for the About metric icon copies so the icons sit naturally on the card surface.
+- Desktop uses a four-column stat dashboard with a dark Employees feature card and wider Hospitality/Food cards; tablet becomes two columns; mobile stacks compact cards without oversized blank areas.
+- Counter motion remains tied to the metrics section itself, not the page load or Global Presence map, and respects reduced-motion preferences.
+- President Message, About copy, Global Presence map, header, footer, homepage, Business page, News page, social/fav assets, and base path behavior were not redesigned.
+
 ## 2026-07-02 About Exact Logo Asset Correction
 
 - Updated the About collage logo box and metrics logo card to use the exact user-provided square Mstar logo asset.

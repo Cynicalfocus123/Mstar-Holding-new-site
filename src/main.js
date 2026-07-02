@@ -401,7 +401,7 @@ if (aboutMetricCounters.length) {
         startAboutMetricCounters();
         observer.disconnect();
       },
-      { rootMargin: "-8% 0px -18% 0px", threshold: 0.45 },
+      { rootMargin: "0px 0px -15% 0px", threshold: 0.45 },
     );
 
     aboutMetricObserver.observe(aboutMetricsSection);
