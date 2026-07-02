@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-07-02 About Collage Logo Card Fit
+
+- The third About collage logo card now uses a taller, logo-friendly card ratio so the full Mstar logo can sit inside the frame without being cut off.
+- The logo remains centered and proportionally contained, with balanced padding and the same premium white rounded-rectangle card styling.
+- The card keeps its current placement tucked beneath the two upper collage frames, and the first and second image boxes remain unchanged.
+- No About copy, President Message, Global Presence map, metrics section behavior, header, footer, homepage, Business page, or News page design was changed.
+
 ## 2026-07-02 About Collage Logo Fit
 
 - Tightened only the internal padding inside the third About collage logo frame so the Mstar logo fills the white rounded box more confidently.

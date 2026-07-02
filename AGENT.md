@@ -1,5 +1,17 @@
 # Agent Changelog
 
+## 2026-07-02 About Collage Logo Card Fit
+
+- Fixed only the third `About Mstar Holding` collage logo box.
+- Adjusted the logo card from a wide/short aspect ratio to a taller logo-friendly aspect ratio so the full Mstar logo can fit without top/bottom clipping.
+- Slightly balanced the internal padding while preserving centered `object-fit: contain` image behavior, correct logo proportions, rounded rectangle styling, white/light card surface, subtle border, and soft shadow.
+- Preserved the logo card's current intended position under the two upper collage boxes, the first collage image box, the second collage image box, About page text, homepage, Business page, News page, header, footer, and unrelated sections/assets.
+- Files changed: `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source/status inspections, `cmd /c npx.cmd prettier --write src/styles.css AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add .`, unstaged unrelated pre-existing ZIP deletions, `git commit -m "Fix About collage logo card fit"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Logo Fit
 
 - Refined only the third `About Mstar Holding` collage logo box.

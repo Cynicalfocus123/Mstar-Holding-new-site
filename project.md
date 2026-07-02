@@ -1,5 +1,15 @@
 # Project Changelog
 
+## 2026-07-02 About Collage Logo Card Fit
+
+- Adjusted only the third About collage logo card to a taller aspect ratio so the full Mstar logo fits without top or bottom clipping.
+- Kept the logo centered with contained fitting and balanced padding.
+- Kept the logo card position, image source, rounded rectangle style, border, and shadow, and did not change the first or second collage image boxes.
+- Kept the change scoped to About page CSS, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Logo Fit
 
 - Reduced internal padding inside the third About collage logo box so the Mstar logo appears larger and better fitted.
