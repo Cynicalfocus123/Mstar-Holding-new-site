@@ -1,5 +1,13 @@
 # Project Changelog
 
+## 2026-07-02 About Mstar Holding Section
+
+- Added a new `About Mstar Holding` section between the About page President Message and Global Presence sections.
+- Implemented a premium two-column layout with a reusable shaped image placeholder on the left and the provided company history / innovation text on the right.
+- Added one-shot fade-up scroll animation with reduced-motion fallback.
+- Added responsive tablet and mobile behavior, stacking the placeholder first on small screens.
+- Kept the change scoped to About page markup, shared CSS/JS, documentation, and regenerated build output.
+
 ## 2026-07-01 About Stats Counter Trigger Refinement
 
 - Fixed the About global presence stat counters so they use their own IntersectionObserver on the stats wrapper.

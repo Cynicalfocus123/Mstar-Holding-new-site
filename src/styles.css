@@ -2120,6 +2120,143 @@ h2 {
   object-position: center bottom;
 }
 
+.about-company {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(82px, 9vw, 138px) var(--gutter);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(248, 246, 241, 0.96),
+      rgba(255, 255, 255, 0.92)
+    ),
+    var(--mstar-soft-white);
+  opacity: 0;
+  transform: translateY(48px);
+  will-change: opacity, transform;
+  transition:
+    opacity 820ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 820ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-company::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    radial-gradient(
+      circle at 16% 22%,
+      rgba(184, 135, 45, 0.11),
+      transparent 26rem
+    ),
+    radial-gradient(
+      circle at 88% 78%,
+      rgba(14, 24, 34, 0.06),
+      transparent 30rem
+    );
+  pointer-events: none;
+}
+
+.about-company.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-company-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.43fr) minmax(0, 0.57fr);
+  gap: clamp(48px, 7vw, 118px);
+  align-items: center;
+  width: min(100%, 1360px);
+  margin: 0 auto;
+}
+
+.about-company-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  margin: 0;
+}
+
+.about-company-placeholder {
+  position: relative;
+  width: min(100%, 520px);
+  aspect-ratio: 0.86;
+  overflow: hidden;
+  border: 1px solid rgba(17, 19, 20, 0.1);
+  border-radius: 34% 66% 30% 70% / 46% 32% 68% 54%;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(238, 234, 224, 0.92)
+    ),
+    var(--mstar-white);
+  box-shadow: var(--mstar-shadow-soft);
+}
+
+.about-company-placeholder::before,
+.about-company-placeholder::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.about-company-placeholder::before {
+  inset: 12%;
+  border: 1px solid rgba(184, 135, 45, 0.2);
+  border-radius: 62% 38% 58% 42% / 40% 62% 38% 60%;
+}
+
+.about-company-placeholder::after {
+  right: 12%;
+  bottom: 12%;
+  width: 42%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(184, 135, 45, 0.08);
+  filter: blur(1px);
+}
+
+.about-company-copy {
+  min-width: 0;
+  color: var(--mstar-muted);
+  font-size: clamp(1rem, 1.08vw, 1.13rem);
+  line-height: 1.78;
+}
+
+.about-company-copy h1 {
+  max-width: 760px;
+  margin: clamp(18px, 2vw, 28px) 0 clamp(28px, 3.2vw, 46px);
+  color: var(--mstar-ink);
+  font-size: clamp(3rem, 5.4vw, 6.2rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.about-company-copy h2 {
+  margin: clamp(34px, 4vw, 54px) 0 0;
+  color: var(--mstar-ink);
+  font-size: clamp(1.55rem, 2.2vw, 2.35rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.about-company-copy p {
+  max-width: 820px;
+  margin: 0;
+}
+
+.about-company-copy p + p,
+.about-company-copy h2 + p {
+  margin-top: 1.08em;
+}
+
 .about-global-presence {
   position: relative;
   overflow: hidden;
@@ -2594,6 +2731,16 @@ h2 {
     margin-left: -10%;
   }
 
+  .about-company-inner {
+    grid-template-columns: minmax(240px, 0.4fr) minmax(0, 0.6fr);
+    gap: clamp(34px, 5vw, 72px);
+    width: min(100%, 1080px);
+  }
+
+  .about-company-placeholder {
+    width: min(100%, 420px);
+  }
+
   .about-global-presence-inner {
     width: min(100%, 1040px);
   }
@@ -2711,6 +2858,24 @@ h2 {
     margin: 0;
   }
 
+  .about-company-inner {
+    grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr);
+    gap: clamp(28px, 4vw, 44px);
+  }
+
+  .about-company-placeholder {
+    width: min(100%, 340px);
+  }
+
+  .about-company-copy {
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .about-company-copy h1 {
+    font-size: clamp(2.5rem, 7vw, 4.4rem);
+  }
+
   .home-theme-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     row-gap: 28px;
@@ -2755,6 +2920,34 @@ h2 {
   .president-portrait-card {
     max-width: 360px;
     border-radius: 22px;
+  }
+
+  .about-company {
+    padding: 72px 20px;
+  }
+
+  .about-company-inner {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    width: 100%;
+  }
+
+  .about-company-media {
+    justify-content: center;
+  }
+
+  .about-company-placeholder {
+    width: min(100%, 330px);
+  }
+
+  .about-company-copy h1 {
+    max-width: 100%;
+    font-size: clamp(2.55rem, 11vw, 3.95rem);
+    letter-spacing: -0.04em;
+  }
+
+  .about-company-copy h2 {
+    font-size: clamp(1.42rem, 6vw, 1.85rem);
   }
 
   .about-global-presence {

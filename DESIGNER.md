@@ -1,5 +1,17 @@
 # Designer Notes
 
+## 2026-07-02 About Mstar Holding Section
+
+- Added a new premium `About Mstar Holding` content section between the President Message and Global Presence sections.
+- The section uses a white/off-white investor-grade corporate layout with generous spacing, a restrained Mstar gold line accent, and readable long-form body copy.
+- Desktop composition is two columns: a shaped neutral image placeholder on the left and the company history text on the right.
+- The placeholder is an organic rounded corporate frame prepared for a future image, with no stock image, AI image, icon, or real media inserted.
+- `Innovation is in our DNA` is styled as a strong internal subheading in the right text column.
+- The whole section fades up from `translateY(48px)` on scroll and animates only opacity/transform; reduced-motion users receive the final state immediately.
+- Tablet keeps a two-column layout where space allows with reduced gap and placeholder size.
+- Mobile stacks the placeholder first and text below, with safe type sizing and no intended horizontal overflow.
+- President Message, Global Presence map/counter design, header, footer, and unrelated pages remain unchanged.
+
 ## 2026-07-01 About Stats Counter Trigger Refinement
 
 - Refined only the About global presence stats counter trigger.

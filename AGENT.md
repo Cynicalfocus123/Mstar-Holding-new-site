@@ -1,5 +1,21 @@
 # Agent Changelog
 
+## 2026-07-02 About Mstar Holding Section
+
+- Added a new `About Mstar Holding` section directly between the President Message section and the `Growing Our Global Presence` section on the About page.
+- Preserved the President Message section, Global Presence map/counter section, homepage, Business page, News page, header, footer, unrelated assets, and deployment base paths.
+- Built the section as a premium white/off-white two-column layout: shaped image placeholder on the left and the provided company history / innovation text on the right.
+- Added a reusable organic/corporate image placeholder frame with neutral background, subtle border, soft shadow, and no real image asset.
+- Styled `Innovation is in our DNA` as the internal strong subheading inside the text column.
+- Added a one-shot IntersectionObserver fade-up reveal for the entire About Mstar Holding section using `threshold: 0.25`; reduced-motion users see the final state immediately.
+- Responsive behavior: desktop uses the requested two-column 40-45% / 55-60% balance; tablet keeps two columns with reduced gap and smaller placeholder; mobile stacks placeholder first and text below with safe text sizing and no intended horizontal overflow.
+- Files changed: `about/index.html`, `src/main.js`, `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source inspections, `cmd /c npx.cmd prettier --write about/index.html src/main.js src/styles.css`, `cmd /c npx.cmd prettier --write AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `git status --short`, `git add .`, `git commit -m "Add About Mstar Holding section"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Verification notes: no live-server, localhost preview, or local dev server was launched; static source and production build output confirmed the section order, H1 text, placeholder-only media area, observer hook, and unchanged surrounding sections.
+
 ## 2026-07-01 About Stats Counter Trigger Refinement
 
 - Fixed only the About page `Growing Our Global Presence` stats counter trigger.

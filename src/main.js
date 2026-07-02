@@ -101,6 +101,7 @@ window.addEventListener("pageshow", scheduleBusinessHeroVideoUpdate);
 const aboutPresidentSection = document.querySelector("[data-about-president]");
 const aboutMessageCard = document.querySelector("[data-about-message-card]");
 const aboutPortraitCard = document.querySelector("[data-about-portrait-card]");
+const aboutCompanySection = document.querySelector("[data-about-company]");
 
 if (aboutPresidentSection && aboutMessageCard && aboutPortraitCard) {
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
@@ -121,6 +122,26 @@ if (aboutPresidentSection && aboutMessageCard && aboutPortraitCard) {
     );
 
     aboutObserver.observe(aboutPresidentSection);
+  }
+}
+
+if (aboutCompanySection) {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    aboutCompanySection.classList.add("is-visible");
+  } else {
+    const aboutCompanyObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) {
+          return;
+        }
+
+        aboutCompanySection.classList.add("is-visible");
+        observer.disconnect();
+      },
+      { threshold: 0.25 },
+    );
+
+    aboutCompanyObserver.observe(aboutCompanySection);
   }
 }
 
