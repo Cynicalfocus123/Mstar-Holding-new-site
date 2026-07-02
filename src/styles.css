@@ -106,7 +106,14 @@ a {
 }
 
 body.nav-open .site-header::before {
-  opacity: 0.98;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 253, 248, 0.98),
+      rgba(248, 246, 241, 0.96)
+    ),
+    var(--mstar-soft-white);
+  opacity: 1;
 }
 
 .site-header.is-scrolled,
@@ -954,7 +961,14 @@ h2 {
     padding: 132px var(--gutter) 48px;
     max-width: 100%;
     min-height: 100svh;
-    background: transparent;
+    color: var(--mstar-ink);
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 253, 248, 0.98),
+        rgba(248, 246, 241, 0.96)
+      ),
+      var(--mstar-soft-white);
     backdrop-filter: blur(24px);
     font-size: clamp(1.55rem, 7vw, 2.6rem);
     opacity: 0;
@@ -973,8 +987,25 @@ h2 {
 
   .primary-nav a {
     max-width: 100%;
+    color: var(--mstar-ink);
     line-height: 1.12;
+    opacity: 1;
     overflow-wrap: normal;
+  }
+
+  .primary-nav a:hover,
+  .primary-nav a:focus-visible {
+    color: var(--mstar-gold);
+  }
+
+  .primary-nav a:focus-visible {
+    outline: 2px solid var(--mstar-gold);
+    outline-offset: 8px;
+  }
+
+  body.nav-open .brand,
+  body.nav-open .nav-toggle {
+    color: var(--mstar-ink);
   }
 
   .theme-list {

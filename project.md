@@ -1,5 +1,14 @@
 # Project Changelog
 
+## 2026-07-02 Mobile Menu Contrast Fix
+
+- Fixed the mobile/tablet hamburger menu overlay contrast.
+- Kept the Mstar off-white overlay style while making the open menu links dark charcoal and fully opaque.
+- Added visible gold hover/focus treatment for mobile/tablet menu links.
+- Kept desktop navigation unchanged and did not change unrelated pages, sections, content, metrics, maps, or deployment base paths.
+- Rebuilt production output and created the new direct-extract Hostinger ZIP `Mstar-Holding-Live-Hostinger-2026-07-02-Mobile-Menu-Fix.zip`.
+- Verified the ZIP has 94 entries, includes `assets/main-DUWOFW4m.js` and `assets/main-DzHvP890.css`, and contains no source/development files or wrapper folder.
+
 ## 2026-07-02 About Collage Alignment And Live Metric Counters
 
 - Moved the entire About Mstar Holding three-box collage group upward for tablet and desktop only so it aligns beside the About heading/text.

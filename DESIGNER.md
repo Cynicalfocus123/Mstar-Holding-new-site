@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-07-02 Mobile Menu Contrast Fix
+
+- Fixed the mobile/tablet hamburger menu readability issue by keeping the premium off-white overlay style and changing the open menu links to dark charcoal at full opacity.
+- Added clear Mstar gold hover/focus treatment for mobile/tablet menu links so keyboard focus remains visible.
+- Kept the hamburger/close icon visible against the off-white menu by using the same dark charcoal open-state color.
+- Desktop navigation, layout, page sections, footer, metrics, and content design were not changed.
+
 ## 2026-07-02 About Collage Alignment And Live Metric Counter Fix
 
 - Moved the entire About Mstar Holding collage group upward on desktop and tablet so it aligns more naturally beside the About heading/text instead of sitting low against the long copy column.

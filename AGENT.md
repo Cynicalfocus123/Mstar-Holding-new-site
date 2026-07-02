@@ -1,5 +1,23 @@
 # Agent Changelog
 
+## 2026-07-02 Mobile Menu Contrast Fix
+
+- Fixed only the mobile/tablet hamburger menu overlay contrast.
+- Changed the open mobile/tablet menu overlay from the previous dark/transparent treatment with inherited pale links to a premium Mstar off-white overlay with dark charcoal link text.
+- Forced mobile/tablet menu links to use `var(--mstar-ink)` at full opacity and added visible Mstar gold hover/focus states with a focus outline.
+- Kept desktop navigation unchanged; the new link contrast rules are inside the existing mobile/tablet media query.
+- Kept the hamburger/close icon visible by switching the open-state brand and toggle color to dark charcoal on the off-white overlay.
+- Preserved homepage layout, About sections, Business page, News page, header structure, footer, metrics section, Global Presence map, President Message, and deployment base paths.
+- Rebuilt production and Hostinger output; the current deploy build uses `assets/main-DUWOFW4m.js` and `assets/main-DzHvP890.css`.
+- Created the new direct-extract Hostinger ZIP `Mstar-Holding-Live-Hostinger-2026-07-02-Mobile-Menu-Fix.zip` from `dist/` only.
+- ZIP verification: 36,349,589 bytes, 94 entries, 0 missing required files, 0 excluded source/development entries, no wrapper folder, and forward-slash paths.
+- Files changed: `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, `WEIGHT.md`, removed `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip`, and added `Mstar-Holding-Live-Hostinger-2026-07-02-Mobile-Menu-Fix.zip`.
+- Commands run: `Get-Content -Raw package.json`, `git status --short --branch`, targeted `rg`/CSS inspections, `cmd /c npx.cmd prettier --write src/styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run build:hostinger`, production CSS/hash inspections, `cmd /c npm.cmd run weight:audit`, ZIP creation/audit, documentation update, `git status --short`, `git add .`, `git commit -m "Fix mobile menu contrast"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build` and `cmd /c npm.cmd run build:hostinger`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Weight audit status: passed `cmd /c npm.cmd run weight:audit`.
+
 ## 2026-07-02 About Collage Alignment And Live Metric Counter Fix
 
 - Fixed the two requested About page issues in one scoped pass.

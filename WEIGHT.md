@@ -1,5 +1,33 @@
 # Weight And Deployment Notes
 
+## 2026-07-02 Mobile Menu Contrast Deployment ZIP
+
+- Created `Mstar-Holding-Live-Hostinger-2026-07-02-Mobile-Menu-Fix.zip` as the latest full Hostinger deployment package including the mobile/tablet hamburger menu contrast fix.
+- Replaced the previous tracked `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` package.
+- ZIP source: `dist/` contents only.
+- ZIP size: 36,349,589 bytes, about 34.67 MB.
+- ZIP entries: 94.
+- ZIP required-file check: 0 missing required files.
+- ZIP excluded-file check: 0 excluded source/development entries.
+- ZIP root is direct-extract ready for Hostinger `public_html`, with entries such as `.htaccess`, `index.html`, `about/index.html`, `assets/`, `media/`, `business/`, `news/`, and `videos/`.
+- New production bundle files: `assets/main-DUWOFW4m.js` and `assets/main-DzHvP890.css`.
+- `public/`: 35 MB across 82 files.
+- `dist/`: 35 MB across 94 files.
+- MP4 total: 25 MB across 20 files.
+- PNG total: 4.6 MB across 29 files.
+- JPG/JPEG total: 0 B across 0 files.
+- WebP total: 5.4 MB across 18 files.
+- Final upload instruction: upload `Mstar-Holding-Live-Hostinger-2026-07-02-Mobile-Menu-Fix.zip` into Hostinger `public_html`, extract it directly there, and overwrite the old live files. Do not extract into a nested folder.
+
+### Verification
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run build:hostinger`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Passed: `cmd /c npm.cmd run weight:audit`.
+- Confirmed the built CSS includes the mobile/tablet open-menu overlay rule and the current HTML references the new built CSS/JS files.
+
 ## 2026-07-02 About Collage Alignment And Counter Deployment Refresh
 
 - No media, video, image, font, dependency, social/fav asset, or deployment base-path change was added.
