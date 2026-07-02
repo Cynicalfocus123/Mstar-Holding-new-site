@@ -2281,6 +2281,17 @@ h2 {
   margin-top: 1.08em;
 }
 
+@media (min-width: 641px) {
+  .about-company-inner {
+    align-items: start;
+  }
+
+  .about-company-media {
+    align-items: flex-start;
+    padding-top: clamp(18px, 2vw, 28px);
+  }
+}
+
 .about-global-presence {
   position: relative;
   overflow: hidden;

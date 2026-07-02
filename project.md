@@ -1,5 +1,15 @@
 # Project Changelog
 
+## 2026-07-02 About Collage Alignment And Live Metric Counters
+
+- Moved the entire About Mstar Holding three-box collage group upward for tablet and desktop only so it aligns beside the About heading/text.
+- Preserved mobile behavior and did not change collage internals, image sources, image sizes, crop/fitting, Mstar logo fit, About text, section order, or unrelated pages/sections.
+- Fixed the bottom About metrics counter trigger for live mobile/tablet by observing the metrics grid with mobile-safe IntersectionObserver settings and a refresh-near-section fallback.
+- Kept counters one-shot, `requestAnimationFrame` based, comma-formatted, suffix-preserving, and safe for reduced-motion users.
+- Rebuilt production output and refreshed the optimized full Hostinger deployment ZIP so it includes `assets/main-BsqR2vtj.js` and `assets/main-BUz7QNU7.css`.
+- Verified built About HTML includes the expected metric data attributes and latest About section text.
+- Verified the refreshed ZIP excludes old/stale bundle hashes and remains direct-extract ready for Hostinger `public_html`.
+
 ## 2026-07-02 Optimized Full Hostinger Live Package
 
 - Created `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` from the current Git `main` branch and `dist/` contents only.

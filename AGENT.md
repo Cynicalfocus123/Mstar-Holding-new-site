@@ -1,5 +1,23 @@
 # Agent Changelog
 
+## 2026-07-02 About Collage Alignment And Live Metric Counter Fix
+
+- Fixed the two requested About page issues in one scoped pass.
+- Moved the entire About Mstar Holding three-box collage group upward on tablet and desktop only by aligning the section grid to the top and adding wrapper-level media alignment/padding in a `min-width: 641px` media query.
+- Preserved the collage boxes, image sizes, image fitting, image sources, Mstar logo fit, rounded corners, shadows, mobile layout, About text, section order, President Message, Global Presence map, homepage, Business page, News page, header, and footer.
+- Fixed the bottom About metrics counter trigger for production/mobile/tablet by observing the metrics grid itself, lowering the observer threshold to `0.2`, using `rootMargin: "0px 0px -10% 0px"`, and adding a refresh-near-section viewport fallback with `getBoundingClientRect()`.
+- Kept the counters one-shot, `requestAnimationFrame` based, ease-out paced, comma-formatted, and suffix-preserving.
+- Preserved all metric text and final values: Employees `3,500`, R&D `120+`, Real Estate Projects `150+`, Real Estate Development `30 years`, Logistics `25+ years`, Defense `7 years`, Hospitality `2,000+ clients`, and Food `50,000+ customers`.
+- Rebuilt the Hostinger production output and refreshed `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` from `dist/` only so the deployment package includes the updated JS/CSS bundles.
+- Verified built About HTML includes the metric data attributes and latest About sections, and verified the production JS bundle contains the metrics-grid observer target, mobile-safe root margin, viewport fallback, and animation logic.
+- Verified the refreshed ZIP has 94 entries, 0 missing required files, 0 excluded source/development entries, no stale live asset hashes, and includes `assets/main-BsqR2vtj.js` and `assets/main-BUz7QNU7.css`.
+- Files changed: `src/styles.css`, `src/main.js`, `AGENT.md`, `DESIGNER.md`, `project.md`, `WEIGHT.md`, and refreshed `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip`.
+- Commands run: attachment read, `Get-Content -Raw package.json`, `git status --short --branch`, targeted `rg`/`Select-String` inspections, `cmd /c npx.cmd prettier --write src/main.js src/styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run build:hostinger`, production bundle inspections, `cmd /c npm.cmd run weight:audit`, ZIP creation/audit, documentation update, `git status --short`, `git add .`, `git commit -m "Fix About collage alignment and live metric counters"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build` and `cmd /c npm.cmd run build:hostinger`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Weight audit status: passed `cmd /c npm.cmd run weight:audit`.
+
 ## 2026-07-02 Optimized Full Hostinger Package
 
 - Created a new optimized full Hostinger deployment ZIP from current `main` after confirming `HEAD` matched `origin/main` at `04bfb22 Package latest Hostinger live zip`.

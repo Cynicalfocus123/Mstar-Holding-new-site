@@ -306,6 +306,8 @@ if (presenceCounters.length) {
 }
 
 const aboutMetricsSection = document.querySelector("[data-about-metrics]");
+const aboutMetricsObserverTarget =
+  document.querySelector(".about-metrics-grid") || aboutMetricsSection;
 const aboutMetricCounters = document.querySelectorAll(
   "[data-about-metric-counter]",
 );
@@ -389,9 +391,17 @@ if (aboutMetricCounters.length) {
     resetAboutMetricCounters();
   }
 
-  if (!aboutMetricsSection || !("IntersectionObserver" in window)) {
+  if (!aboutMetricsObserverTarget || !("IntersectionObserver" in window)) {
     setAboutMetricCountersToFinal();
   } else {
+    const isMetricTargetNearViewport = () => {
+      const rect = aboutMetricsObserverTarget.getBoundingClientRect();
+      const viewportHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      return rect.top < viewportHeight * 0.9 && rect.bottom > 0;
+    };
+
     const aboutMetricObserver = new IntersectionObserver(
       (entries, observer) => {
         if (!entries.some((entry) => entry.isIntersecting)) {
@@ -401,10 +411,17 @@ if (aboutMetricCounters.length) {
         startAboutMetricCounters();
         observer.disconnect();
       },
-      { rootMargin: "0px 0px -15% 0px", threshold: 0.45 },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.2 },
     );
 
-    aboutMetricObserver.observe(aboutMetricsSection);
+    aboutMetricObserver.observe(aboutMetricsObserverTarget);
+
+    requestAnimationFrame(() => {
+      if (isMetricTargetNearViewport()) {
+        startAboutMetricCounters();
+        aboutMetricObserver.disconnect();
+      }
+    });
   }
 }
 

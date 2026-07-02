@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-07-02 About Collage Alignment And Live Metric Counter Fix
+
+- Moved the entire About Mstar Holding collage group upward on desktop and tablet so it aligns more naturally beside the About heading/text instead of sitting low against the long copy column.
+- Used only wrapper-level grid/media alignment changes; the three collage boxes, image sizes, crop/fitting behavior, source files, Mstar logo fit, rounded corners, shadows, spacing language, and mobile layout were preserved.
+- The metric counter fix changes scroll-trigger behavior only; metric card design, icons, labels, values, grid layout, and visual styling were not changed.
+- No homepage, Business page, News page, header, footer, President Message, or Global Presence map design was changed.
+
 ## 2026-07-02 Optimized Full Hostinger Package
 
 - No design behavior changed; this was a deployment-weight and Hostinger packaging optimization only.

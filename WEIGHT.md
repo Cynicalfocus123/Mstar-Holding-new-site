@@ -1,5 +1,32 @@
 # Weight And Deployment Notes
 
+## 2026-07-02 About Collage Alignment And Counter Deployment Refresh
+
+- No media, video, image, font, dependency, social/fav asset, or deployment base-path change was added.
+- Refreshed `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` from `dist/` after the About collage alignment and metrics counter fix.
+- Refreshed ZIP size: 36,349,510 bytes, about 34.67 MB.
+- `public/`: 35 MB across 82 files.
+- `dist/`: 35 MB across 94 files.
+- MP4 total: 25 MB across 20 files.
+- PNG total: 4.6 MB across 29 files.
+- JPG/JPEG total: 0 B across 0 files.
+- WebP total: 5.4 MB across 18 files.
+- New production bundle files: `assets/main-BsqR2vtj.js` and `assets/main-BUz7QNU7.css`.
+- ZIP verification: 94 entries, 0 missing required files, 0 excluded source/development entries, no old `main-CmlMijk8.js`, no old `main-BY3jYTCw.css`, no stale live `main-CnkKb-uX.js`, and no stale live `main-D4DzLPMp.css`.
+- The ZIP remains direct-extract ready for Hostinger `public_html` and is still built from `dist/` only.
+- Final upload instruction: upload `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` into Hostinger `public_html`, extract it directly there, and overwrite the old live files. Do not extract into a nested folder.
+
+### Verification
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run build:hostinger`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Passed: `cmd /c npm.cmd run weight:audit`.
+- Confirmed `dist/about/index.html` includes the latest About sections and metric counter data attributes.
+- Confirmed the production JS bundle includes the About metrics grid observer target, mobile-safe `-10%` bottom root margin, `requestAnimationFrame` animation, and refresh-near-section viewport fallback.
+- Confirmed the production CSS bundle includes the desktop/tablet About collage wrapper alignment rule.
+
 ## 2026-07-02 Optimized Full Hostinger Deployment ZIP
 
 - Created `Mstar-Holding-Live-Hostinger-2026-07-02-Optimized-Full.zip` as the new optimized full live-site Hostinger package.
