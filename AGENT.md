@@ -1,5 +1,21 @@
 # Agent Changelog
 
+## 2026-07-02 Clean Latest Changes Deploy ZIP
+
+- Created a clean deployment ZIP for the latest built site output.
+- ZIP filename: `mstar-latest-changes-deploy.zip`.
+- Production output source folder: `dist/`.
+- Built production files with `cmd /c npm.cmd run build`; Vite output confirmed `dist/` with root `/` base from `vite.config.js`.
+- Verified built output includes root `index.html`, `about/index.html`, `business/index.html`, `news/index.html`, all News article detail pages, `.htaccess`, `assets/`, `media/`, and `videos/`.
+- Verified current built HTML references `assets/main-CVgXB58C.js` and `assets/main-DTRsy_DO.css`, and both files exist under `dist/assets/`.
+- Created the ZIP from the contents of `dist/` directly, not from the `dist/` folder itself.
+- Verified ZIP has 94 entries, no wrapper folder, no Windows backslash paths, no random loose root assets, no old ZIP files, no source/development files, no docs, no backups, no `node_modules/`, and no `src/`.
+- Verified ZIP root starts with `.htaccess`, `about/index.html`, `assets/`, `business/index.html`, `index.html`, `media/`, `news/`, and `videos/`.
+- Replaced the previous tracked deployment ZIP `Mstar-Holding-Live-Hostinger-2026-07-02-Mobile-Menu-Fix.zip` with `mstar-latest-changes-deploy.zip`.
+- Commands run: `git status --short`, `git log --oneline -5`, `Get-Content -Raw package.json`, `cmd /c npm.cmd run build`, built output listing, built asset/hash checks, disallowed reference checks, ZIP creation, ZIP audit, `tar -tf mstar-latest-changes-deploy.zip`, documentation update, `git add .`, `git commit -m "Create clean latest deployment zip"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Hostinger upload instruction: upload `mstar-latest-changes-deploy.zip` to `public_html`, extract it there, and confirm `index.html` and `assets/` land directly at the `public_html` root.
+
 ## 2026-07-02 About Tightening And Growth Theme Scroll Hint
 
 - Fixed the two requested areas in one pass: About page desktop spacing/alignment and the homepage growth-theme horizontal scroll hint.
