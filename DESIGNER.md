@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-07-02 About Collage Logo Fit
+
+- Tightened only the internal padding inside the third About collage logo frame so the Mstar logo fills the white rounded box more confidently.
+- The logo remains centered and uses contained fitting, preserving the mark, `Mstar`, and tagline without distortion.
+- The logo frame position, size, rounded rectangle shape, border, shadow, and the other two collage image frames were not changed.
+- No About copy, President Message, Global Presence map, metrics behavior, header, footer, homepage, Business page, or News page design was changed.
+
 ## 2026-07-02 About Collage Spacing And Metrics Card Style
 
 - The About collage now reads cleaner and more intentional: the large organic background circle behind the image frames has been removed.

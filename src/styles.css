@@ -2233,7 +2233,7 @@ h2 {
   bottom: 16%;
   width: 48%;
   aspect-ratio: 1.34;
-  padding: clamp(16px, 2.4vw, 28px);
+  padding: clamp(6px, 0.9vw, 12px);
   border-color: rgba(184, 135, 45, 0.22);
   border-radius: 22% 12% 18% 12% / 24% 20% 18% 22%;
   box-shadow: 0 20px 58px rgba(14, 24, 34, 0.12);

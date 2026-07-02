@@ -1,5 +1,15 @@
 # Project Changelog
 
+## 2026-07-02 About Collage Logo Fit
+
+- Reduced internal padding inside the third About collage logo box so the Mstar logo appears larger and better fitted.
+- Kept the logo box position, size, image source, rounded rectangle styling, border, and shadow unchanged.
+- Kept the other two collage image boxes, About page text, unrelated sections, and counter logic unchanged.
+- Kept the change scoped to About page CSS, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Spacing And Metrics Card Style
 
 - Moved the third About collage Mstar logo box closer to the top two image boxes, centered beneath the gap between them.

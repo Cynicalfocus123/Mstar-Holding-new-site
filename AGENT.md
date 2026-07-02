@@ -1,5 +1,17 @@
 # Agent Changelog
 
+## 2026-07-02 About Collage Logo Fit
+
+- Refined only the third `About Mstar Holding` collage logo box.
+- Reduced the Mstar logo box internal padding so the existing logo appears larger and fills more of the box while staying centered, contained, readable, and undistorted.
+- Preserved the logo box position, logo box size, rounded rectangle styling, white/light card surface, subtle border, soft shadow, and both upper collage image boxes.
+- Preserved About page text, President Message, Global Presence map, homepage, Business page, News page, header, footer, metrics section behavior, and unrelated CSS/JS/assets.
+- Files changed: `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source/status inspections, `cmd /c npx.cmd prettier --write src/styles.css AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add .`, unstaged unrelated pre-existing ZIP deletions, `git commit -m "Refine About collage logo fit"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Spacing And Metrics Card Style
 
 - Refined only the requested About page collage and metrics areas.
