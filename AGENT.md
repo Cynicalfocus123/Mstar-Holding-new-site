@@ -1,5 +1,23 @@
 # Agent Changelog
 
+## 2026-07-02 About Mstar Holding Image Collage
+
+- Refined only the About page `About Mstar Holding` section image area.
+- Preserved the President Message section, Global Presence map/counter section, homepage, Business page, News page, header, footer, About section text, deployment base paths, and unrelated assets.
+- Replaced the previous abstract shaped placeholder with a premium three-part corporate collage on the left side of the section.
+- The main collage frame uses `public/media/about/jakapun-wallstreet.jpg`, copied from `site content pic and video/jakapun wallstreet.jpg`.
+- The smaller circular frame uses `public/media/about/jack-windmill.jpg`, copied from `site content pic and video/jack  windmil.jpg`.
+- The third smaller rounded rectangle remains a styled placeholder for a future image and displays `Image coming soon`.
+- All live collage image rules use `object-fit: contain` and `object-position: center center` to avoid unwanted zooming, stretching, distortion, or harsh cropping of the people and windmill photo.
+- Responsive behavior: desktop keeps the collage in the left column and existing text on the right; tablet reduces collage sizing; mobile stacks the collage above the text with no intended horizontal overflow.
+- Existing About section fade-up IntersectionObserver behavior remains unchanged.
+- Files changed: `about/index.html`, `src/styles.css`, `public/media/about/jakapun-wallstreet.jpg`, `public/media/about/jack-windmill.jpg`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source and asset inspections, image copy commands, `cmd /c npx.cmd prettier --write about/index.html src/styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add`, `git commit -m "Refine About section image collage"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+- Verification notes: no live-server, localhost preview, or local dev server was launched; static source and production build output confirmed the collage markup, image paths, placeholder, and scoped image fitting rules.
+
 ## 2026-07-02 About Mstar Holding Section
 
 - Added a new `About Mstar Holding` section directly between the President Message section and the `Growing Our Global Presence` section on the About page.

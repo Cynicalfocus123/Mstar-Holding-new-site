@@ -1,5 +1,16 @@
 # Project Changelog
 
+## 2026-07-02 About Mstar Holding Image Collage
+
+- Replaced the About page `About Mstar Holding` left-side abstract placeholder with a responsive three-part collage.
+- Added local public About media copies for the Wall Street/New York main image and the windmill supporting image.
+- Kept the third frame as a styled future-image placeholder.
+- Used contained, centered image fitting to prevent unwanted zoom, distortion, and harsh cropping.
+- Kept the change scoped to About page markup, scoped shared CSS, local About media assets, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Mstar Holding Section
 
 - Added a new `About Mstar Holding` section between the About page President Message and Global Presence sections.

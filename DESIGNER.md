@@ -1,5 +1,16 @@
 # Designer Notes
 
+## 2026-07-02 About Mstar Holding Image Collage
+
+- Refined only the `About Mstar Holding` section media area.
+- Replaced the single abstract organic placeholder with a three-image collage system: a large Wall Street/New York main image, a smaller circular windmill image, and a smaller rounded placeholder for a future image.
+- The collage keeps the existing premium white/off-white corporate page language with organic rounded frames, neutral image backing, soft shadows, subtle borders, and restrained Mstar gold accents.
+- Desktop keeps the collage in the left column and the existing company history text on the right.
+- Tablet reduces the collage width and spacing while keeping the two-column relationship readable.
+- Mobile stacks the collage above the text and uses percentage-positioned frames inside a responsive aspect-ratio container to prevent intended horizontal overflow.
+- Both real images use contained fitting and centered positioning so the people, New York setting, and windmill composition remain visible instead of zoomed or distorted.
+- The existing section fade-up animation remains the only motion behavior.
+
 ## 2026-07-02 About Mstar Holding Section
 
 - Added a new premium `About Mstar Holding` content section between the President Message and Global Presence sections.
