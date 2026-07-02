@@ -1,5 +1,18 @@
 # Agent Changelog
 
+## 2026-07-02 About Stat Icon Glow Removal
+
+- Fixed only the bottom About page metrics/stat card icon glow issue.
+- Diagnosed the remaining yellow glow as the card-level top-right gold radial gradient on `.about-metric-card`, not the icon PNG files.
+- Removed the `radial-gradient(circle at 88% 18%, rgba(184, 135, 45, 0.1), transparent 8rem)` background from all About metric cards, leaving a clean white/light card background with the existing subtle card border and shadow.
+- Hardened the shared `.about-metric-icon` rule with transparent background, no box shadow, and no filter so icons render as clean transparent gold line art only.
+- Kept metric text, values, card order, counter animation logic, President Message, About Mstar Holding text/collage, Global Presence map, homepage, Business page, News pages, header, footer, and unrelated sections unchanged.
+- Files changed: `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: `Get-Content -LiteralPath package.json`, targeted source/status inspections, `rg` checks for metric card/icon glow sources, `cmd /c npx.cmd prettier --write src/styles.css AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add .`, unstaged unrelated pre-existing ZIP deletions, `git commit -m "Remove About stat icon glow"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Stat Card Icon Refinement
 
 - Refined only the bottom About page metrics/stat card icon styling and assets.

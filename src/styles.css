@@ -2527,13 +2527,7 @@ h2 {
   color: var(--mstar-ink);
   border: 1px solid rgba(17, 19, 20, 0.1);
   border-radius: 18px;
-  background:
-    radial-gradient(
-      circle at 88% 18%,
-      rgba(184, 135, 45, 0.1),
-      transparent 8rem
-    ),
-    rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 16px 42px rgba(14, 24, 34, 0.075);
 }
 
@@ -2569,6 +2563,9 @@ h2 {
   object-fit: contain;
   object-position: center center;
   opacity: 1;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
   pointer-events: none;
 }
 

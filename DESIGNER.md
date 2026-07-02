@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-07-02 About Stat Icon Glow Removal
+
+- Removed the actual remaining glow source from the About metric cards: the top-right gold radial highlight built into each card background.
+- Metric cards now keep a clean white/light premium surface with only the subtle card border and card shadow, so no yellow burst appears behind the icons.
+- The shared metric icon rule now explicitly prevents background, filter, and icon shadow effects while preserving consistent top-right placement and sizing.
+- Metric copy, values, card order, counter behavior, and unrelated About/site sections were not changed.
+
 ## 2026-07-02 About Stat Card Icon Refinement
 
 - Cleaned the About metrics icons so they render as crisp transparent gold line art without yellow glow, smear, halo, blur, or shadow effects.

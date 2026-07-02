@@ -1,5 +1,16 @@
 # Project Changelog
 
+## 2026-07-02 About Stat Icon Glow Removal
+
+- Removed the About metric card top-right gold radial background highlight that was creating the visible yellow glow/smear behind icons.
+- Kept the metric cards white/light with subtle border and shadow only.
+- Standardized the shared metric icon rule to force transparent background, no filter, and no icon box shadow.
+- Kept icon sizing and placement consistent, and left metric text, values, card order, and counter logic unchanged.
+- Kept the change scoped to About metric card/icon CSS, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Stat Card Icon Refinement
 
 - Cleaned all eight About metrics/stat card icons by regenerating transparent solid-gold PNG copies from the local source icon folder.
