@@ -1,5 +1,14 @@
 # Weight And Deployment Notes
 
+## 2026-07-02 About Exact Logo Asset Correction
+
+- Added one local About logo image copied from the provided source: `public/media/about/mstar-holding-logo.png`.
+- No new video, font, third-party library, runtime dependency, remote asset, social/fav asset, or deployment base-path change was added.
+- The change is limited to the About collage/metrics logo references, documentation, and regenerated production build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Logo And Metrics Section
 
 - No new image, video, font, third-party library, runtime dependency, remote asset, social/fav asset, or deployment base-path change was added.

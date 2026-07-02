@@ -1,5 +1,14 @@
 # Project Changelog
 
+## 2026-07-02 About Exact Logo Asset Correction
+
+- Copied the exact user-provided Mstar logo into `public/media/about/mstar-holding-logo.png`.
+- Updated the About collage logo box and About metrics logo card to use that exact logo asset.
+- Kept the change scoped to About page logo references, documentation, and regenerated build output.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Logo And Metrics Section
 
 - Replaced the final About collage placeholder label with the existing Mstar brand share image.

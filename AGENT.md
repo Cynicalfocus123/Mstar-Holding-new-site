@@ -1,5 +1,17 @@
 # Agent Changelog
 
+## 2026-07-02 About Exact Logo Asset Correction
+
+- Continued the prior About collage/metrics task by replacing the temporary brand share image reference with the exact user-provided logo file.
+- Copied `site content pic and video/mstar holdign new logo.png` to `public/media/about/mstar-holding-logo.png`.
+- Updated the final About collage logo box and the About metrics logo card to use `public/media/about/mstar-holding-logo.png`.
+- Preserved contain fitting, centered positioning, internal padding, rounded frame styling, metrics layout, counters, and all About text.
+- Files changed: `about/index.html`, `public/media/about/mstar-holding-logo.png`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: targeted source/status inspections, logo dimension inspection, logo copy command, `cmd /c npx.cmd prettier --write about/index.html AGENT.md DESIGNER.md project.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built-output verification, `git status --short`, `git add`, `git commit -m "Use provided About logo asset"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 About Collage Logo And Metrics Section
 
 - Made two scoped About page updates in one pass.

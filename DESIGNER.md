@@ -1,5 +1,11 @@
 # Designer Notes
 
+## 2026-07-02 About Exact Logo Asset Correction
+
+- Updated the About collage logo box and metrics logo card to use the exact user-provided square Mstar logo asset.
+- The logo remains centered and contained inside the existing rounded frames with padding, preserving legibility of the mark, name, and tagline.
+- No layout, counter behavior, section text, header, footer, or unrelated page styling was changed.
+
 ## 2026-07-02 About Collage Logo And Metrics Section
 
 - Replaced the last `About Mstar Holding` collage placeholder with the existing Mstar logo image while preserving the rounded image-frame styling.
