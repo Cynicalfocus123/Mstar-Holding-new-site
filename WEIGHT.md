@@ -1,5 +1,22 @@
 # Weight And Deployment Notes
 
+## 2026-07-02 Homepage Scroll Hint And Sector Label Refinement
+
+- No media, video, image source, font, dependency, deployment ZIP, or deployment base-path change was added.
+- The change is limited to homepage HTML/CSS/JS plus documentation.
+- Added a small homepage sector scroll hint overlay and lightweight scroll-state JavaScript.
+- Centered desktop slanted sector card labels without changing card/image dimensions, crop/fitting, or source files.
+- Rebuilt production output with regular Vite build for verification only; no Hostinger ZIP was created in this pass.
+- New verification build bundle files: `assets/main-B9BZ_vPE.js` and `assets/main-BBYStwF7.css`.
+
+### Verification
+
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Confirmed source and built homepage output include the scroll hint markup/state hooks.
+- Confirmed source CSS contains the desktop label safe-positioning rule and preserves existing tablet/mobile label overrides.
+
 ## 2026-07-02 Mobile Menu Contrast Deployment ZIP
 
 - Created `Mstar-Holding-Live-Hostinger-2026-07-02-Mobile-Menu-Fix.zip` as the latest full Hostinger deployment package including the mobile/tablet hamburger menu contrast fix.

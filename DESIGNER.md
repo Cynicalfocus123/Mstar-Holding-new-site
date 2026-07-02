@@ -1,5 +1,14 @@
 # Designer Notes
 
+## 2026-07-02 Homepage Scroll Hint And Sector Labels
+
+- Added a clean right-side scroll hint arrow to the homepage sector card row so mobile/tablet users can immediately tell the row continues horizontally.
+- The hint is intentionally subtle and premium: dark neutral circular overlay, restrained Mstar gold arrow, gentle nudge motion, and no interaction blocking.
+- The hint sits near the right edge of the sector row and hides when the row cannot scroll further, so it does not become permanent visual clutter.
+- Re-centered desktop slanted sector card labels inside the safe visible area of the angled card shapes.
+- The gold line above each sector label remains aligned with the text, and the multi-line `E-commerce & Technology` label remains readable and centered.
+- Preserved the existing card layout, slanted geometry, card sizes, gaps, image sources, image crop/fitting, mobile/tablet card treatment, section order, header, footer, and all non-home pages.
+
 ## 2026-07-02 Mobile Menu Contrast Fix
 
 - Fixed the mobile/tablet hamburger menu readability issue by keeping the premium off-white overlay style and changing the open menu links to dark charcoal at full opacity.

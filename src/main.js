@@ -42,6 +42,32 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
 
+const homeSectorScroll = document.querySelector("[data-home-sector-scroll]");
+const homeSectorScrollFrame = homeSectorScroll?.closest(
+  ".home-sector-collage-frame",
+);
+
+const updateHomeSectorScrollHint = () => {
+  if (!(homeSectorScroll instanceof HTMLElement) || !homeSectorScrollFrame) {
+    return;
+  }
+
+  const maxScrollLeft =
+    homeSectorScroll.scrollWidth - homeSectorScroll.clientWidth;
+  const hasScroll = maxScrollLeft > 2;
+  const canScroll = homeSectorScroll.scrollLeft < maxScrollLeft - 2;
+
+  homeSectorScrollFrame.classList.toggle("has-scroll", hasScroll);
+  homeSectorScrollFrame.classList.toggle("can-scroll", hasScroll && canScroll);
+};
+
+updateHomeSectorScrollHint();
+homeSectorScroll?.addEventListener("scroll", updateHomeSectorScrollHint, {
+  passive: true,
+});
+window.addEventListener("resize", updateHomeSectorScrollHint);
+window.addEventListener("pageshow", updateHomeSectorScrollHint);
+
 const isPhonePortraitViewport = () => {
   const viewportShortSide = Math.min(window.innerWidth, window.innerHeight);
   const viewportLongSide = Math.max(window.innerWidth, window.innerHeight);

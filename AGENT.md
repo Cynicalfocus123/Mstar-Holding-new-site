@@ -1,5 +1,20 @@
 # Agent Changelog
 
+## 2026-07-02 Homepage Scroll Hint And Sector Label Refinement
+
+- Made the two requested homepage-only updates in one pass.
+- Added a subtle right-side scroll hint arrow overlay for the homepage sector card row, scoped to the existing `.home-sector-collage` area.
+- The hint uses restrained Mstar gold/dark neutral styling, a gentle nudge animation, no layout shift, and `pointer-events: none` so it does not block card text or scrolling.
+- Added lightweight homepage-scoped JavaScript that detects whether the sector row has horizontal overflow and hides the hint when there is no more content to the right.
+- Centered the desktop slanted sector card labels more safely inside the visible card shapes by adjusting only the label position and safe width.
+- Preserved all six sector labels, gold label lines, card sizes, slanted card shapes, card layout, image sources, image crop/fitting, section order, About page, Business page, News page, header, footer, and unrelated homepage sections.
+- Responsive verification: source and built output confirm the scroll hint markup/state hooks are present on the homepage only, desktop label centering is in the base slanted-card rules, and existing tablet/mobile non-slanted label overrides remain in place.
+- Files changed: `index.html`, `src/main.js`, `src/styles.css`, `AGENT.md`, `DESIGNER.md`, `project.md`, and `WEIGHT.md`.
+- Commands run: attachment read, `Get-Content -LiteralPath package.json`, `git status --short --branch`, targeted `rg`/`Get-Content` inspections, `cmd /c npx.cmd prettier --write index.html src/main.js src/styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, built/source static verification, documentation update, `git status --short`, `git add .`, `git commit -m "Refine homepage scroll hint and sector labels"`, and `git push origin main`.
+- Build status: passed `cmd /c npm.cmd run build`.
+- Lint status: passed `cmd /c npm.cmd run lint`.
+- Test status: passed `cmd /c npm.cmd test`.
+
 ## 2026-07-02 Mobile Menu Contrast Fix
 
 - Fixed only the mobile/tablet hamburger menu overlay contrast.

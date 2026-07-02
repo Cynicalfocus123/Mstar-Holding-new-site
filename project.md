@@ -1,5 +1,16 @@
 # Project Changelog
 
+## 2026-07-02 Homepage Scroll Hint And Sector Label Refinement
+
+- Added a homepage-only right-side scroll hint arrow overlay to the existing sector card row.
+- The hint uses the current Mstar gold/dark neutral styling, a subtle nudge animation, and lightweight JavaScript that shows it only when more horizontal content remains.
+- Centered desktop slanted sector card labels more safely inside the visible angled card area without changing label text.
+- Preserved card/image layout, card sizes, slanted geometry, image sources, image crop/fitting, section order, About page, Business page, News page, header, footer, and unrelated homepage sections.
+- Responsive verification: built homepage output contains the scroll hint markup and source CSS keeps desktop slanted label centering separate from existing tablet/mobile non-slanted overrides.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+
 ## 2026-07-02 Mobile Menu Contrast Fix
 
 - Fixed the mobile/tablet hamburger menu overlay contrast.
