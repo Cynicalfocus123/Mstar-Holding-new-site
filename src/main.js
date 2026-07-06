@@ -5,10 +5,13 @@ import { baseWorldPaths, marketCountryPaths } from "./world-map-data.js";
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const header = document.querySelector("[data-header]");
+const navDropdowns = document.querySelectorAll("[data-nav-dropdown]");
+const revealItems = document.querySelectorAll("[data-reveal]");
 const isInnerPage =
   document.body.classList.contains("about-page") ||
   document.body.classList.contains("business-page") ||
-  document.body.classList.contains("news-page");
+  document.body.classList.contains("news-page") ||
+  document.body.classList.contains("governance-page");
 
 const setNavOpen = (isOpen) => {
   nav?.classList.toggle("is-open", isOpen);
@@ -21,6 +24,13 @@ const setNavOpen = (isOpen) => {
   document.body.classList.toggle("nav-open", isOpen);
 };
 
+const setDropdownOpen = (dropdown, isOpen) => {
+  dropdown.classList.toggle("is-open", isOpen);
+  dropdown
+    .querySelector("[data-nav-dropdown-trigger]")
+    ?.setAttribute("aria-expanded", String(isOpen));
+};
+
 navToggle?.addEventListener("click", () => {
   setNavOpen(!nav?.classList.contains("is-open"));
 });
@@ -28,6 +38,34 @@ navToggle?.addEventListener("click", () => {
 nav?.addEventListener("click", (event) => {
   if (event.target instanceof HTMLAnchorElement) {
     setNavOpen(false);
+    navDropdowns.forEach((dropdown) => setDropdownOpen(dropdown, false));
+  }
+});
+
+navDropdowns.forEach((dropdown) => {
+  const trigger = dropdown.querySelector("[data-nav-dropdown-trigger]");
+
+  trigger?.addEventListener("click", () => {
+    const isOpen = dropdown.classList.contains("is-open");
+    navDropdowns.forEach((item) => setDropdownOpen(item, false));
+    setDropdownOpen(dropdown, !isOpen);
+  });
+
+  trigger?.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setDropdownOpen(dropdown, false);
+    }
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (
+    event.target instanceof Node &&
+    !Array.from(navDropdowns).some((dropdown) =>
+      dropdown.contains(event.target),
+    )
+  ) {
+    navDropdowns.forEach((dropdown) => setDropdownOpen(dropdown, false));
   }
 });
 
@@ -72,6 +110,26 @@ setupHorizontalScrollHint(
   ".home-sector-collage-frame",
 );
 setupHorizontalScrollHint("[data-home-theme-scroll]", ".home-theme-row-frame");
+
+if (revealItems.length) {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 },
+    );
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
+}
 
 const isPhonePortraitViewport = () => {
   const viewportShortSide = Math.min(window.innerWidth, window.innerHeight);

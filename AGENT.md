@@ -527,6 +527,25 @@
 - Do not launch the Serena dashboard unless explicitly required.
 - Do not repeatedly ask which Python app/interpreter to use; use the existing project configuration unless genuinely blocked.
 
+## 2026-07-06
+
+- Added Corporate Governance as a top-level header dropdown and footer link group across the homepage, Business page, News page, and all article pages.
+- Created `/corporate-governance/board-of-directors/`, `/corporate-governance/executive-management/`, and `/corporate-governance/code-of-conduct/`.
+- Fully built the Board of Directors page with bright editorial governance copy, strategic oversight sections, crawlable text, metadata, schema, and active dropdown state.
+- Fully built the Executive Management page with exactly five leadership profiles: Jakapun Viwatkurkul, Pasit Viwatkurkul, Chief Financial Officer, Paul Pongpichant, and Steven Lou.
+- Copied only the five approved leadership images from `site content pic and video/leadership boar/` into `public/media/leadership/` with clean web-safe filenames.
+- Rendered leadership imagery with non-cropping `object-fit: contain` and center-bottom positioning to preserve each visible pose.
+- Created the Code of Conduct page as a clean linked governance page with SEO, schema, and initial ethical standards content.
+- Added dropdown click behavior, active states, and subtle scroll reveal animation with reduced-motion support.
+- Added the three Corporate Governance pages to Vite build inputs.
+- Grammar-checked new page text and titles before saving.
+- Files changed: `index.html`, `business/index.html`, `news/index.html`, `news/*/index.html`, `corporate-governance/*/index.html`, `src/main.js`, `src/styles.css`, `vite.config.js`, `public/media/leadership/*`, `AGENT.md`, `DESIGNER.md`, and `WEIGHT.md`.
+- Build status: passed.
+- Lint status: passed.
+- Test status: passed.
+- Weight audit status: passed.
+- Browser verification: passed for desktop Executive Management, 390px mobile Executive Management menu/profile layout, Board active state, Code of Conduct active state, footer governance links, and no horizontal overflow on checked governance pages.
+
 ## 2026-06-30
 
 - Fixed GitHub Pages CSS/JS loading by adding a GitHub Pages-specific build base while preserving the Hostinger root build path.

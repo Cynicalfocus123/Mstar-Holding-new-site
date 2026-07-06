@@ -421,6 +421,14 @@
 - Do not create a deployment ZIP unless explicitly requested.
 - Use `npm run weight:audit` before later packaging or upload decisions.
 
+## 2026-07-06 Corporate Governance Pages
+
+- Added five approved leadership images to `public/media/leadership/` for the Executive Management page.
+- Source images were copied only once from the local leadership board folder and renamed with clean lowercase kebab-case filenames.
+- No AI-generated, stock, duplicate, or unused leadership images were added.
+- No existing approved images, videos, logos, icons, article media, layouts, crop intent, article order, or approved design assets were removed, renamed, compressed, or replaced.
+- No deployment ZIP was created for this pass.
+
 ## 2026-06-30 GitHub Pages And Hostinger Build Split
 
 - No new deployment ZIP was created for the GitHub Pages styling fix.

@@ -1,5 +1,20 @@
 # Designer Notes
 
+## 2026-07-06
+
+### Corporate Governance Pages
+
+- Added a Corporate Governance navigation dropdown with Board of Directors, Executive Management, and Code of Conduct links.
+- Added a Corporate Governance footer group while preserving the existing footer brand hierarchy and copyright line.
+- Board of Directors, Executive Management, and Code of Conduct use the bright institutional design language: white/off-white backgrounds, charcoal typography, restrained Mstar gold lines, and open editorial spacing.
+- The Board page uses a no-box oversight layout with thin gold accents and crawlable governance copy instead of fake board portraits or invented directors.
+- The Executive Management page uses exactly five leadership slots and the approved local leadership images.
+- Leadership images use spacious editorial media areas with `object-fit: contain` and center-bottom positioning so visible body, clothing, hands, and pose details are preserved instead of cropped into headshots.
+- Profile text sits directly on the page background with thin vertical gold accents beside names and titles; no biography cards, boxed text panels, or dashboard modules were added.
+- Desktop alternates image and text rhythm for executive profiles; tablet and mobile stack safely without horizontal overflow.
+- Subtle fade-in reveal animation uses opacity and small vertical movement only, and reduced-motion users receive static visible content.
+- The Code of Conduct page is intentionally simple and consistent, leaving room for formal legal content later without overbuilding placeholder material.
+
 ## 2026-07-02 Homepage Growth Card Row Scroll Fix
 
 - Fixed the mobile/tablet horizontal swipe behavior for the homepage growth-theme row only: Infrastructure, Investment, Innovation, Asia Growth Opportunities, and Strategic Partnerships.

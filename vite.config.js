@@ -10,6 +10,18 @@ export default defineConfig({
         about: resolve(__dirname, "about/index.html"),
         business: resolve(__dirname, "business/index.html"),
         news: resolve(__dirname, "news/index.html"),
+        governanceBoard: resolve(
+          __dirname,
+          "corporate-governance/board-of-directors/index.html",
+        ),
+        governanceExecutive: resolve(
+          __dirname,
+          "corporate-governance/executive-management/index.html",
+        ),
+        governanceConduct: resolve(
+          __dirname,
+          "corporate-governance/code-of-conduct/index.html",
+        ),
         newsDefenseContract: resolve(
           __dirname,
           "news/mstar-defense-major-contract-asia-africa-ipo/index.html",
