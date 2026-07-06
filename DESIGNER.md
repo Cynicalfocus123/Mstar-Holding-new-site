@@ -1,5 +1,10 @@
 # Designer Notes
 
+## Permanent Design Documentation Rule
+
+- Every site change must update `DESIGNER.md` with concise design intent, visual behavior, responsive behavior, and any asset/crop/motion notes relevant to the change.
+- Keep design notes concise and avoid large implementation logs.
+
 ## 2026-07-06
 
 ### Corporate Governance Pages

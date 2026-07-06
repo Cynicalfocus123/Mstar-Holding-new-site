@@ -4,6 +4,7 @@
 
 - After every committed site change, refresh the existing `mstar-latest-changes-deploy.zip` from the current Hostinger/root `dist/` build unless the user explicitly says not to update the live file.
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
+- Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
 ## 2026-07-06 Corporate Governance Live File Refresh
 
