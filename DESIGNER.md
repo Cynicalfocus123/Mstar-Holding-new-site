@@ -7,6 +7,14 @@
 
 ## 2026-07-06
 
+### Corporate Governance Navigation And Leadership Refinement
+
+- Refined the Corporate Governance pages back to a bright white/soft-white institutional background with only a barely visible warm white gradient.
+- Executive Management leadership media now sits on transparent page background with no colored image boxes, no hard photo panels, and contained full-pose image fitting.
+- Desktop governance dropdown now uses a light premium surface and a hover-safe bridge so the submenu remains available while moving from the parent item into the dropdown.
+- Mobile/tablet governance submenu is collapsed by default and opens only from the Corporate Governance tap state, preserving a closed hamburger menu on page load.
+- Governance submenu order is Executive Management, Board of Directors, then Code of Conduct across headers and footer governance groups.
+
 ### Corporate Governance Pages
 
 - Added a Corporate Governance navigation dropdown with Board of Directors, Executive Management, and Code of Conduct links.

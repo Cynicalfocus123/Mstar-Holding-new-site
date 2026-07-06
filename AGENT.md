@@ -6,6 +6,17 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-06 Governance Navigation And Leadership Refinement
+
+- Fixed Corporate Governance page surfaces to use a clean white/soft-white page system instead of tinted beige/gray/dark backgrounds.
+- Removed colored leadership image panels from Executive Management so the five approved leadership images sit as contained full-pose cutouts on the white page background.
+- Kept Executive Management at exactly five leadership slots: Jakapun Viwatkurkul, Pasit Viwatkurkul, Chief Financial Officer, Paul Pongpichant, and Steven Lou.
+- Reordered Corporate Governance submenu and footer groups everywhere to Executive Management, Board of Directors, then Code of Conduct.
+- Fixed navigation startup behavior so the hamburger menu and governance submenu are closed by default, with mobile/tablet submenu opening only from the Corporate Governance tap state.
+- Improved desktop dropdown behavior with a light premium dropdown surface and hover-safe bridge between the parent item and submenu.
+- Added Escape and outside-click close handling for the shared navigation behavior.
+- Preserved canonical URLs on `https://mstarholding.com/` and did not create any deployment ZIP files because the task explicitly prohibited ZIP creation.
+
 ## 2026-07-06 Corporate Governance Live File Refresh
 
 - Refreshed the existing `mstar-latest-changes-deploy.zip` from the current `dist/` output after the Corporate Governance pages were pushed.

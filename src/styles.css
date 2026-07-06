@@ -215,16 +215,16 @@ body.nav-open .site-header::before {
 
 .nav-submenu {
   position: absolute;
-  top: calc(100% + 22px);
+  top: calc(100% + 14px);
   left: 50%;
   z-index: 24;
   display: grid;
   min-width: 230px;
   padding: 16px 0;
-  border: 1px solid rgba(246, 243, 236, 0.12);
+  border: 1px solid rgba(201, 167, 106, 0.22);
   border-radius: 8px;
-  background: rgba(5, 5, 5, 0.86);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 80px rgba(21, 21, 21, 0.14);
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -8px);
@@ -232,6 +232,15 @@ body.nav-open .site-header::before {
     opacity 180ms ease,
     transform 180ms ease;
   backdrop-filter: blur(18px);
+}
+
+.nav-submenu::before {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 16px;
+  content: "";
 }
 
 .nav-dropdown:hover .nav-submenu,
@@ -245,7 +254,7 @@ body.nav-open .site-header::before {
 .nav-submenu a {
   display: block;
   padding: 12px 18px;
-  color: rgba(246, 243, 236, 0.78);
+  color: rgba(33, 33, 33, 0.78);
   line-height: 1.25;
   white-space: nowrap;
 }
@@ -1133,23 +1142,36 @@ h2 {
 
   .nav-submenu {
     position: static;
+    display: grid;
+    max-height: 0;
     min-width: 0;
-    margin-top: 18px;
+    margin-top: 0;
     padding: 0 0 0 18px;
     border: 0;
     border-left: 1px solid rgba(201, 167, 106, 0.44);
     border-radius: 0;
     background: transparent;
     box-shadow: none;
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
     transform: none;
+    transition:
+      max-height 220ms ease,
+      margin-top 220ms ease,
+      opacity 180ms ease;
     backdrop-filter: none;
   }
 
-  .nav-dropdown:hover .nav-submenu,
-  .nav-dropdown:focus-within .nav-submenu,
+  .nav-submenu::before {
+    display: none;
+  }
+
   .nav-dropdown.is-open .nav-submenu {
+    max-height: 260px;
+    margin-top: 18px;
+    opacity: 1;
+    pointer-events: auto;
     transform: none;
   }
 
@@ -2923,19 +2945,13 @@ h2 {
 }
 
 .governance-page {
-  background: var(--mstar-soft-white);
+  background: #fff;
   color: var(--mstar-ink);
 }
 
 .governance-page main {
   overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 86% 8%,
-      rgba(184, 135, 45, 0.1),
-      transparent 30rem
-    ),
-    linear-gradient(180deg, var(--mstar-soft-white), #f3f1eb 62%, #fffdf8);
+  background: linear-gradient(180deg, #fff 0%, #fffefa 42%, #fff 100%);
 }
 
 .governance-hero,
@@ -3031,19 +3047,8 @@ h2 {
   min-width: 0;
   min-height: clamp(420px, 43vw, 650px);
   margin: 0;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255, 253, 248, 0.1), rgba(184, 135, 45, 0.08)),
-    #f7f4ee;
-}
-
-.governance-profile-media::after {
-  position: absolute;
-  inset: auto 0 0;
-  height: 30%;
-  content: "";
-  background: linear-gradient(180deg, transparent, rgba(248, 246, 241, 0.9));
-  pointer-events: none;
+  overflow: visible;
+  background: transparent;
 }
 
 .governance-profile-media img {

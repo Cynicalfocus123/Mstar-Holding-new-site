@@ -31,6 +31,9 @@ const setDropdownOpen = (dropdown, isOpen) => {
     ?.setAttribute("aria-expanded", String(isOpen));
 };
 
+setNavOpen(false);
+navDropdowns.forEach((dropdown) => setDropdownOpen(dropdown, false));
+
 navToggle?.addEventListener("click", () => {
   setNavOpen(!nav?.classList.contains("is-open"));
 });
@@ -60,11 +63,26 @@ navDropdowns.forEach((dropdown) => {
 
 document.addEventListener("click", (event) => {
   if (
+    nav?.classList.contains("is-open") &&
+    event.target instanceof Node &&
+    !header?.contains(event.target)
+  ) {
+    setNavOpen(false);
+  }
+
+  if (
     event.target instanceof Node &&
     !Array.from(navDropdowns).some((dropdown) =>
       dropdown.contains(event.target),
     )
   ) {
+    navDropdowns.forEach((dropdown) => setDropdownOpen(dropdown, false));
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setNavOpen(false);
     navDropdowns.forEach((dropdown) => setDropdownOpen(dropdown, false));
   }
 });
