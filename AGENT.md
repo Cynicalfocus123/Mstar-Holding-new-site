@@ -1,5 +1,17 @@
 # Agent Changelog
 
+## Live File Rule
+
+- After every committed site change, refresh the existing `mstar-latest-changes-deploy.zip` from the current Hostinger/root `dist/` build unless the user explicitly says not to update the live file.
+- Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
+
+## 2026-07-06 Corporate Governance Live File Refresh
+
+- Refreshed the existing `mstar-latest-changes-deploy.zip` from the current `dist/` output after the Corporate Governance pages were pushed.
+- Did not create a new ZIP filename.
+- Verified the ZIP includes the three Corporate Governance pages and five leadership assets.
+- ZIP verification: 45,511,982 bytes, 105 entries, no wrapper folder, no source/development files, and no bad entries.
+
 ## 2026-07-02 Homepage Growth Card Row Scroll Fix
 
 - Fixed only the homepage mobile/tablet horizontal scrolling issue for the growth-theme card row containing Infrastructure, Investment, Innovation, Asia Growth Opportunities, and Strategic Partnerships.

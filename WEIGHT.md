@@ -1,5 +1,19 @@
 # Weight And Deployment Notes
 
+## Live File Rule
+
+- Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
+- Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
+
+## 2026-07-06 Corporate Governance Live File Refresh
+
+- Refreshed existing `mstar-latest-changes-deploy.zip` from the latest Hostinger/root `dist/` build.
+- ZIP filename was not changed.
+- ZIP size: 45,511,982 bytes.
+- ZIP entries: 105.
+- Required governance entries verified present: Board of Directors page, Executive Management page, Code of Conduct page, and all five leadership images.
+- Exclusion check passed: no wrapper folder, no source/development files, no docs, no `node_modules/`, no `.git/`, and no bad backslash paths.
+
 ## 2026-07-02 Homepage Growth Card Row Scroll Fix ZIP
 
 - Created small deploy ZIP `mstar-homepage-card-row-scroll-fix.zip` for the homepage mobile/tablet growth card-row scroll fix.
