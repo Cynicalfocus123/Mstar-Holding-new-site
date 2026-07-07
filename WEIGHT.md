@@ -5,6 +5,14 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-06 Leadership Portrait Box Live File Refresh
+
+- Refreshed the existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build after the Executive Management portrait box alignment fix.
+- ZIP filename was not changed and no new ZIP file was created.
+- ZIP size: 45,577,548 bytes.
+- Verified the ZIP Executive Management page references the new CSS asset, keeps exactly five leadership profiles, and the built CSS includes the portrait flex-end alignment, hidden overflow, and center-bottom object positioning rules.
+- Exclusion check passed: no wrapper folder, source folders, development files, docs, `node_modules/`, or `.git/` entries.
+
 ## 2026-07-06 Steven Lou Leadership Image Transparency
 
 - Updated only `public/media/leadership/steven-lou-chief-strategy-officer.png`.
