@@ -6,6 +6,18 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-07 Live Image Asset Weight Optimization
+
+- Optimized seven tracked transparent WebP portrait assets with decoded-pixel-identical lossless WebP recompression only.
+- Optimized files: Pasit Viwatkurkul Executive Management portrait plus Mike Zhao, Jeffrey Qiu, Rayyan Al-Assad, Paul Leung, Antonio Pereira, and Ben King board portraits.
+- Preserved each image's dimensions, transparency/alpha range, decoded RGBA pixels, visible people, suits, poses, proportions, crops, filenames, and public paths.
+- Ran a PNG recompression audit across tracked public PNG images; no PNG candidate was smaller while remaining pixel-identical, so no PNG files were changed.
+- Did not change videos, layouts, page order, text, navigation, metadata, image placement, object-fit behavior, or approved visual appearance.
+- Reduced tracked live image bytes by 146,156 bytes; exact public image total changed from 29,946,142 bytes to 29,799,986 bytes, and `dist/` changed from 56,407,659 bytes to 56,261,503 bytes.
+- Built production and Hostinger/root output, then refreshed the existing `mstar-latest-changes-deploy.zip` in place without creating a new ZIP filename.
+- ZIP verification: 55,608,646 bytes, 111 entries, no wrapper folder, no source/development files, no Windows backslash paths, and optimized portrait assets present.
+- Verification passed: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run build:hostinger`, and `cmd /c npm.cmd run weight:audit`.
+
 ## 2026-07-07 Board Of Directors Profile Grid
 
 - Updated the Board of Directors profile grid with the requested replacement portraits for Paul Leung and Antonio Pereira.

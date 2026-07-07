@@ -7,6 +7,13 @@
 
 ## 2026-07-07
 
+### Live Image Asset Weight Optimization
+
+- No visual design, layout, crop, image placement, color, typography, navigation, or page behavior changed in this pass.
+- Seven transparent portrait WebP assets were recompressed losslessly from their existing decoded pixels, preserving exact dimensions, alpha behavior, and visible RGBA output.
+- The optimized assets remain on the same public paths, so Executive Management and Board of Directors card/image layouts continue to render with the same contained, bottom-aligned portrait behavior.
+- PNG assets were audited for lossless recompression opportunities, but no tracked PNG produced a smaller pixel-identical file, so PNG visuals and binaries were left unchanged.
+
 ### Board Of Directors Profile Grid
 
 - Refined the board grid with the requested replacement portraits for Paul Leung and Antonio Pereira, replacing the old Antonia Espada entry.

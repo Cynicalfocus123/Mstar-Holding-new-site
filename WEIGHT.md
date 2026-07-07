@@ -5,6 +5,57 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-07 Live Image Asset Weight Optimization
+
+- Optimization scope was limited to tracked public PNG/WebP image assets; videos were audited only through the existing weight audit and were not changed.
+- Optimized only candidates that reopened with the same dimensions, the same decoded RGBA pixels, and the same alpha/transparency range.
+- Total tracked live image savings: 146,156 bytes.
+- Public image total: 29,946,142 bytes before, 29,799,986 bytes after.
+- Dist total: 56,407,659 bytes before, 56,261,503 bytes after.
+- Dist image total: 29,946,142 bytes before, 29,799,986 bytes after.
+
+### Files Optimized
+
+| File                                                                              |        Before |         After |        Saved |
+| --------------------------------------------------------------------------------- | ------------: | ------------: | -----------: |
+| `public/media/leadership/board/antonio-pereira-board-member.webp`                 | 591,930 bytes | 579,558 bytes | 12,372 bytes |
+| `public/media/leadership/board/ben-king-board-member.webp`                        | 701,282 bytes | 676,634 bytes | 24,648 bytes |
+| `public/media/leadership/board/jeffrey-qiu-board-member.webp`                     | 702,818 bytes | 657,850 bytes | 44,968 bytes |
+| `public/media/leadership/board/mike-zhao-board-member.webp`                       | 586,148 bytes | 574,278 bytes | 11,870 bytes |
+| `public/media/leadership/board/paul-leung-board-member.webp`                      | 717,634 bytes | 689,782 bytes | 27,852 bytes |
+| `public/media/leadership/board/rayyan-al-assad-board-member.webp`                 | 684,242 bytes | 662,446 bytes | 21,796 bytes |
+| `public/media/leadership/pasit-viwatkurkul-vice-president-ceo-mstar-defense.webp` | 247,660 bytes | 245,010 bytes |  2,650 bytes |
+
+### Largest Images After Optimization
+
+| File                                                          |            Size |
+| ------------------------------------------------------------- | --------------: |
+| `media/leadership/jakapun-viwatkurkul-founder-president.webp` | 6,457,944 bytes |
+| `media/about/jakapun-viwatkurkul-president.webp`              | 2,673,704 bytes |
+| `media/operations-poster.png`                                 | 2,142,994 bytes |
+| `media/growth-poster.png`                                     | 2,074,676 bytes |
+| `media/hero-poster.png`                                       | 1,932,927 bytes |
+| `media/leadership/steven-lou-chief-strategy-officer.png`      | 1,457,219 bytes |
+| `media/leadership/chief-financial-officer.png`                |   966,045 bytes |
+| `media/logos/american-buying-service-logo.png`                |   864,971 bytes |
+| `media/logos/mstar-property-logo.png`                         |   811,198 bytes |
+| `media/about/mstar-holding-logo.png`                          |   722,791 bytes |
+
+### Verification And Live ZIP
+
+- Decoded-pixel verification passed for every optimized file: dimensions unchanged, alpha ranges unchanged, and RGBA pixel comparison identical against the previous committed file.
+- Tracked PNG recompression audit found no smaller pixel-identical PNG candidates, so no PNG files were changed.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run build:hostinger`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Passed: `cmd /c npm.cmd run weight:audit`.
+- Refreshed existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build.
+- ZIP filename was not changed and no new ZIP filename was created.
+- ZIP size: 55,608,646 bytes.
+- ZIP entries: 111.
+- Exclusion check passed: no wrapper folder, source folders, development files, docs, `node_modules/`, `.git/`, Windows backslash paths, or absolute paths.
+
 ## 2026-07-07 Board Of Directors Profile Grid Assets
 
 - Replaced the previous Paul Leung board asset with the requested replacement portrait.

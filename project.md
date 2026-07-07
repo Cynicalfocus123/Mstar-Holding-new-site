@@ -1,5 +1,12 @@
 # Project Changelog
 
+## 2026-07-07 Live Image Asset Weight Optimization
+
+- Optimized seven transparent portrait WebP assets with decoded-pixel-identical recompression only.
+- Preserved dimensions, alpha behavior, visible image output, public filenames, paths, page layouts, image placement, text, navigation, metadata, and videos.
+- Reduced tracked live image bytes by 146,156 bytes and refreshed the existing `mstar-latest-changes-deploy.zip` in place from the Hostinger/root `dist/` build.
+- Passed build, lint, test, Hostinger build, weight audit, and direct-extract ZIP structure verification.
+
 ## 2026-07-07 Board Of Directors Profile Grid
 
 - Updated the board grid with replacement portraits for Paul Leung and Antonio Pereira, replacing the previous Antonia Espada entry.
