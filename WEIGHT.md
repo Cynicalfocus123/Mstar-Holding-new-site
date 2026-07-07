@@ -5,6 +5,13 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-06 Steven Lou Leadership Image Transparency
+
+- Updated only `public/media/leadership/steven-lou-chief-strategy-officer.png`.
+- The corrected transparent PNG keeps the same 1086 x 1448 dimensions and preserves all visible person RGB pixels unchanged.
+- Source/public image size changed from 1,407,047 bytes to 1,457,219 bytes after replacing the baked-in checker/white-gray background pixels with alpha transparency.
+- No ZIP file was created.
+
 ## 2026-07-06 Corporate Governance Live File Refresh
 
 - Refreshed existing `mstar-latest-changes-deploy.zip` from the latest Hostinger/root `dist/` build.

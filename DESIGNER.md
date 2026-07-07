@@ -7,6 +7,12 @@
 
 ## 2026-07-06
 
+### Steven Lou Leadership Image Transparency
+
+- Removed the baked-in checkerboard/white-gray background from the Steven Lou leadership image while preserving the person image unchanged.
+- Steven Lou now renders as a clean transparent cutout on the Executive Management page's white background with the existing contained, center-bottom image treatment.
+- No Executive Management layout, text, navigation, other leadership images, header, footer, or governance page design was changed.
+
 ### Corporate Governance Navigation And Leadership Refinement
 
 - Refined the Corporate Governance pages back to a bright white/soft-white institutional background with only a barely visible warm white gradient.

@@ -17,6 +17,13 @@
 - Added Escape and outside-click close handling for the shared navigation behavior.
 - Preserved canonical URLs on `https://mstarholding.com/` and did not create any deployment ZIP files because the task explicitly prohibited ZIP creation.
 
+## 2026-07-06 Steven Lou Leadership Image Transparency
+
+- Fixed only the Steven Lou Executive Management image background by replacing the baked-in checker/white-gray background pixels with transparent alpha.
+- Preserved the original Steven Lou image dimensions and all visible person RGB pixels unchanged; no crop, zoom, retouching, recoloring, filtering, or pose/body/clothing change was made.
+- Kept the existing Executive Management layout, five leadership slots, text, navigation, header, footer, and other leadership images unchanged.
+- Did not create any ZIP files.
+
 ## 2026-07-06 Corporate Governance Live File Refresh
 
 - Refreshed the existing `mstar-latest-changes-deploy.zip` from the current `dist/` output after the Corporate Governance pages were pushed.
