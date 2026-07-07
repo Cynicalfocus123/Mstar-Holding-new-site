@@ -8,6 +8,8 @@
 
 ## 2026-07-07 Code Of Conduct Content Update
 
+- Fixed Code of Conduct document body visibility by removing the long text wrapper from generic reveal animation and adding a scoped CSS visibility failsafe so all legal text remains visible across desktop, tablet, and mobile.
+- Preserved the full Code of Conduct content, Table of Contents, navigation/footer order, page design, and all unrelated pages/assets.
 - Replaced the short Code of Conduct placeholder with the full provided Code of Business Ethics content for Mstar Holding (Mstar Asia co.ltd).
 - Cleaned pasted text formatting, removed mojibake/odd spacing, corrected obvious capitalization and punctuation issues, and restored the requested section order without changing the intended meaning.
 - Added a formal Table of Contents, Introduction, six numbered ethics sections, and Administration and Implementation content with semantic HTML.
@@ -15,6 +17,7 @@
 - Preserved Corporate Governance dropdown/footer order, header/footer design, Executive Management, Board of Directors, homepage, About, Business, News, media assets, videos, logos, and deployment base paths.
 - Built production and Hostinger/root output, then refreshed the existing `mstar-latest-changes-deploy.zip` in place without creating a new ZIP filename.
 - ZIP verification: 55,614,677 bytes, 111 entries, no wrapper folder, no source/development files, no Windows backslash paths, full Code of Conduct sections present, company name present, and no mojibake in the built Code page.
+- Installed Chrome file-render verification passed at 1440px desktop, 768px tablet, and 390px mobile: 8 conduct sections present, `.conduct-body` opacity `1`, intro/admin paragraphs visible, and no horizontal overflow.
 - Verification passed: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
 
 ## 2026-07-07 Live Image Asset Weight Optimization

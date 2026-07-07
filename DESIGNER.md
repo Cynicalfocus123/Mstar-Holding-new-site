@@ -9,6 +9,8 @@
 
 ### Code Of Conduct Content Update
 
+- Fixed the Code of Conduct document body so the full text is visible by default instead of depending on one long scroll-reveal wrapper.
+- The hero and Table of Contents can still use the existing subtle reveal treatment, while the legal document body stays readable immediately throughout the page.
 - Updated the Code of Conduct page into a formal governance document layout with a polished intro, Table of Contents, numbered content sections, and Administration and Implementation area.
 - The Table of Contents uses a fixed small number column so wrapped titles align cleanly with the first title line instead of falling under the number.
 - Section headings, subsection headings, and paragraphs share a consistent left document edge with restrained gold accents, subtle dividers, charcoal text, and comfortable legal-document spacing.
