@@ -9,6 +9,7 @@
 
 ### Board Of Directors Profile Grid
 
+- Refined the board grid with the requested replacement portraits for Paul Leung and Antonio Pereira, replacing the old Antonia Espada entry.
 - Updated the Board of Directors page from open oversight text rows to small premium profile cards so it visually matches the Executive Management portrait-box language at a board-grid scale.
 - Each board card uses a contained top portrait area, bottom-aligned full-person image fitting, a white/off-white text panel, bold name, role, location, restrained gold accent, subtle border, and soft institutional shadow.
 - Added seven board members in the requested order while keeping large biographies off the page.

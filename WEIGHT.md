@@ -7,18 +7,20 @@
 
 ## 2026-07-07 Board Of Directors Profile Grid Assets
 
+- Replaced the previous Paul Leung board asset with the requested replacement portrait.
+- Replaced the old `antonia-espada-board-member.webp` asset with the requested Antonio Pereira portrait as `antonio-pereira-board-member.webp`.
 - Added six cleaned transparent board portrait assets as lossless WebP files under `public/media/leadership/board/`.
 - Asset sizes:
   - `mike-zhao-board-member.webp`: 586,148 bytes.
   - `jeffrey-qiu-board-member.webp`: 702,818 bytes.
   - `rayyan-al-assad-board-member.webp`: 684,242 bytes.
-  - `paul-leung-board-member.webp`: 601,370 bytes.
-  - `antonia-espada-board-member.webp`: 747,732 bytes.
+  - `paul-leung-board-member.webp`: 717,634 bytes.
+  - `antonio-pereira-board-member.webp`: 591,930 bytes.
   - `ben-king-board-member.webp`: 701,282 bytes.
 - The Board page also reuses the existing approved `jakapun-viwatkurkul-founder-president.webp` leadership image.
 - Refreshed the existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build after verification.
 - ZIP filename was not changed and no new ZIP filename was created.
-- ZIP size: 55,796,313 bytes.
+- ZIP size: 55,756,748 bytes.
 - ZIP entries: 111.
 - Exclusion check passed: no wrapper folder, source folders, development files, docs, `node_modules/`, `.git/`, Windows backslash paths, or absolute paths.
 
