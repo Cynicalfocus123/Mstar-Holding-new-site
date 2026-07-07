@@ -17,6 +17,14 @@
   - `paul-pongpichant-chief-operating-officer.webp`: 16,950 bytes to 160,456 bytes.
   - `steven-lou-chief-strategy-officer.png`: unchanged at 1,457,219 bytes.
 
+## 2026-07-07 Leadership Transparency Live File Refresh
+
+- Refreshed the existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build after making all Executive Management leadership portrait backgrounds transparent.
+- ZIP filename was not changed and no new ZIP file was created.
+- ZIP size: 51,772,511 bytes.
+- Verified the ZIP contains exactly the five active transparent leadership assets, removes the old Pasit JPG, keeps exactly five Executive Management profiles, and preserves `https://mstarholding.com/` canonicals.
+- Exclusion check passed: no wrapper folder, source folders, development files, docs, `node_modules/`, or `.git/` entries.
+
 ## 2026-07-06 Leadership Portrait Box Live File Refresh
 
 - Refreshed the existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build after the Executive Management portrait box alignment fix.
