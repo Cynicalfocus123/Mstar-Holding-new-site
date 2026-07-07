@@ -12,6 +12,14 @@
 - Source/public image size changed from 1,407,047 bytes to 1,457,219 bytes after replacing the baked-in checker/white-gray background pixels with alpha transparency.
 - No ZIP file was created.
 
+## 2026-07-06 Jakapun Biography Live File Refresh
+
+- Refreshed the existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build after the Jakapun Executive Management biography update.
+- ZIP filename was not changed and no new ZIP file was created.
+- ZIP size: 45,577,500 bytes.
+- Verified the ZIP Executive Management page contains the updated Jakapun biography, keeps exactly five leadership profiles, uses `https://mstarholding.com/` canonicals, and contains no GitHub Pages URLs.
+- Exclusion check passed: no wrapper folder, source folders, development files, docs, `node_modules/`, or `.git/` entries.
+
 ## 2026-07-06 Corporate Governance Live File Refresh
 
 - Refreshed existing `mstar-latest-changes-deploy.zip` from the latest Hostinger/root `dist/` build.
