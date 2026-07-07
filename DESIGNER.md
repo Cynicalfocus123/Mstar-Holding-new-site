@@ -7,6 +7,14 @@
 
 ## 2026-07-07
 
+### Legal Pages And Footer Links
+
+- Added Terms of Use and Privacy Policy as formal legal-document pages using the existing Mstar premium corporate language: off-white surface, charcoal body text, restrained gold eyebrow/accent line, and a readable centered document width.
+- Legal headings and paragraphs are left-aligned to the same document edge, with generous section rhythm and subtle dividers so wrapped long headings remain clean.
+- The footer now uses distinct Company, Corporate Governance, Media / Press, and Legal groups, keeping Terms of Service and Privacy Policy in their own Legal group.
+- Desktop lays footer groups in a clean multi-column grid; tablet and mobile stack groups left-aligned with safe wrapping and no intended horizontal overflow.
+- No header design, page content outside the new legal pages, media assets, image crops, videos, or deployment path behavior changed.
+
 ### Code Of Conduct Content Update
 
 - Fixed the Code of Conduct document body so the full text is visible by default instead of depending on one long scroll-reveal wrapper.

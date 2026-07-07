@@ -5,6 +5,20 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-07 Legal Pages And Footer Links
+
+- Scope is HTML/CSS/JS/docs only: two new legal pages, source footer link groups, legal-page responsive CSS, and inner-page header state support for legal pages.
+- No media assets, videos, logos, image crops, deployment base paths, or existing page body content were changed.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run build:hostinger`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Refreshed existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build with no new ZIP filename.
+- ZIP size: 55,627,333 bytes.
+- ZIP entries: 113.
+- Exclusion check passed: no wrapper folder, no source/development files, and no Windows backslash paths.
+- Legal page check passed: `terms-of-service/index.html` and `privacy-policy/index.html` are present in the ZIP.
+
 ## 2026-07-07 Live Image Asset Weight Optimization
 
 - Optimization scope was limited to tracked public PNG/WebP image assets; videos were audited only through the existing weight audit and were not changed.

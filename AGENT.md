@@ -6,6 +6,17 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-07 Legal Pages And Footer Links
+
+- Added root legal pages at `/terms-of-service/` and `/privacy-policy/`.
+- Built the Terms page with the footer label `Terms of Service`, page title `Terms of Use`, and the supplied Terms of Use text cleaned for spacing, punctuation, line breaks, and accidental outside-company wording.
+- Built the Privacy Policy page with the supplied Privacy Policy text cleaned for spacing, punctuation, line breaks, and decoded quote artifacts while preserving meaning.
+- Updated all source page footers with grouped Company, Corporate Governance, Media / Press, and Legal link rows; Terms of Service and Privacy Policy are isolated in the Legal group.
+- Added scoped legal-document CSS for a premium Mstar corporate presentation with off-white background, charcoal text, restrained gold accents, left-aligned headings and paragraphs, readable max-width, and mobile-safe wrapping.
+- Preserved homepage, About, Business, News, Executive Management, Board of Directors, Code of Conduct content, header design, media assets, videos, logos, and deployment base paths.
+- Verification passed: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
+- Refreshed existing `mstar-latest-changes-deploy.zip` in place from Hostinger/root `dist/`; ZIP verification found 113 entries, Terms and Privacy pages present, no wrapper folder, no source/development files, and no Windows backslash paths.
+
 ## 2026-07-07 Code Of Conduct Content Update
 
 - Fixed Code of Conduct document body visibility by removing the long text wrapper from generic reveal animation and adding a scoped CSS visibility failsafe so all legal text remains visible across desktop, tablet, and mobile.

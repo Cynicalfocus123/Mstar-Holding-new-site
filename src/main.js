@@ -11,7 +11,8 @@ const isInnerPage =
   document.body.classList.contains("about-page") ||
   document.body.classList.contains("business-page") ||
   document.body.classList.contains("news-page") ||
-  document.body.classList.contains("governance-page");
+  document.body.classList.contains("governance-page") ||
+  document.body.classList.contains("legal-page");
 
 const setNavOpen = (isOpen) => {
   nav?.classList.toggle("is-open", isOpen);
