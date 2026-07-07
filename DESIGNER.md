@@ -7,6 +7,12 @@
 
 ## 2026-07-06
 
+### Leadership Portrait Box Alignment
+
+- Added subtle white/off-white portrait boxes around Executive Management leadership images so the people feel grounded within a defined image area.
+- Leadership images remain contained and center-bottom aligned with zero bottom padding, making each visible body rest against the bottom inside edge instead of floating.
+- The portrait boxes use a restrained border and light tonal surface only; biography text, page structure, navigation, and image files were not changed.
+
 ### Jakapun Executive Biography Update
 
 - Added Jakapun Viwatkurkul's longer approved Executive Management biography while keeping the premium open editorial profile layout.

@@ -30,6 +30,12 @@
 - Split the longer biography into readable paragraphs and added scoped profile paragraph spacing so the open editorial layout remains readable on desktop, tablet, and mobile.
 - Preserved Jakapun's image, other leadership bios/images, header, footer, governance navigation, Board of Directors page, and Code of Conduct page.
 
+## 2026-07-06 Leadership Portrait Box Alignment
+
+- Added clean portrait boxes to the Executive Management leadership image areas so all five people are visually grounded instead of floating.
+- Bottom-aligned the contained leadership images inside the boxes with zero bottom padding while preserving each original image file, person proportions, pose, clothing, face, and body.
+- Kept biography text, navigation, header, footer, Board of Directors page, and Code of Conduct page unchanged.
+
 ## 2026-07-06 Corporate Governance Live File Refresh
 
 - Refreshed the existing `mstar-latest-changes-deploy.zip` from the current `dist/` output after the Corporate Governance pages were pushed.
