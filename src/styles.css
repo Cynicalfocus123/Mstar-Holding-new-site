@@ -3105,6 +3105,10 @@ h2 {
   line-height: 1.72;
 }
 
+.governance-profile-copy p + p {
+  margin-top: clamp(14px, 1.7vw, 22px);
+}
+
 .governance-profile-text {
   grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
   padding-top: clamp(36px, 5vw, 62px);

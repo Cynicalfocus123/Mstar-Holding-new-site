@@ -7,6 +7,12 @@
 
 ## 2026-07-06
 
+### Jakapun Executive Biography Update
+
+- Added Jakapun Viwatkurkul's longer approved Executive Management biography while keeping the premium open editorial profile layout.
+- The bio is split into readable paragraphs with scoped responsive spacing so desktop, tablet, and mobile views do not become dense, clipped, or horizontally cramped.
+- Jakapun's image, other leadership profiles, governance navigation, header, footer, Board page, and Code of Conduct page were not changed.
+
 ### Steven Lou Leadership Image Transparency
 
 - Removed the baked-in checkerboard/white-gray background from the Steven Lou leadership image while preserving the person image unchanged.

@@ -24,6 +24,12 @@
 - Kept the existing Executive Management layout, five leadership slots, text, navigation, header, footer, and other leadership images unchanged.
 - Did not create any ZIP files.
 
+## 2026-07-06 Jakapun Executive Biography Update
+
+- Replaced only Jakapun Viwatkurkul's Executive Management biography with the approved longer corporate biography.
+- Split the longer biography into readable paragraphs and added scoped profile paragraph spacing so the open editorial layout remains readable on desktop, tablet, and mobile.
+- Preserved Jakapun's image, other leadership bios/images, header, footer, governance navigation, Board of Directors page, and Code of Conduct page.
+
 ## 2026-07-06 Corporate Governance Live File Refresh
 
 - Refreshed the existing `mstar-latest-changes-deploy.zip` from the current `dist/` output after the Corporate Governance pages were pushed.
