@@ -5,6 +5,17 @@
 - Every site change must update `DESIGNER.md` with concise design intent, visual behavior, responsive behavior, and any asset/crop/motion notes relevant to the change.
 - Keep design notes concise and avoid large implementation logs.
 
+## 2026-07-07
+
+### Board Of Directors Profile Grid
+
+- Updated the Board of Directors page from open oversight text rows to small premium profile cards so it visually matches the Executive Management portrait-box language at a board-grid scale.
+- Each board card uses a contained top portrait area, bottom-aligned full-person image fitting, a white/off-white text panel, bold name, role, location, restrained gold accent, subtle border, and soft institutional shadow.
+- Added seven board members in the requested order while keeping large biographies off the page.
+- Cleaned the supplied board portraits into transparent lossless WebP assets so checkerboard and white source backgrounds do not appear inside the cards.
+- Desktop uses a multi-column grid, tablet steps down to fewer columns, and mobile uses compact two-column cards with safe wrapping and no intended horizontal overflow.
+- Corporate Governance dropdown and footer order remains Executive Management, Board of Directors, then Code of Conduct.
+
 ## 2026-07-06
 
 ### Leadership Portrait Background Transparency

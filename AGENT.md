@@ -6,6 +6,19 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-07 Board Of Directors Profile Grid
+
+- Replaced the Board of Directors oversight-copy layout with a compact seven-person profile card grid in the same bright Corporate Governance design system.
+- Added board members in the requested order: Jakapun Viwatkurkul, Mike Zhao, Jeffrey Qiu, Rayyan Al-Assad, Paul Leung, Antonia Espada, and Ben King.
+- Used the approved current Jakapun leadership image and exported six cleaned board portraits as transparent lossless WebP assets under `public/media/leadership/board/`.
+- Removed baked-in checker/white board image backgrounds by changing only border-connected neutral background pixels to transparent alpha; preserved each visible person, pose, clothing, proportions, and RGB pixels.
+- Added scoped board-card CSS with small portrait boxes, off-white text panels, subtle borders/shadows, gold accents, bottom-aligned contained images, and responsive desktop/tablet/mobile columns.
+- Confirmed Corporate Governance dropdown and footer order remains Executive Management, Board of Directors, then Code of Conduct.
+- Preserved Executive Management, Code of Conduct, homepage, About page, Business page, News page, header design, footer design, and deployment base paths.
+- Built production and Hostinger/root output, then refreshed the existing `mstar-latest-changes-deploy.zip` in place without creating a new ZIP filename.
+- ZIP verification: 55,796,313 bytes, 111 entries, no wrapper folder, no source/development files, no Windows backslash paths, and the Board page plus six board WebP assets present.
+- Verification passed: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run build:hostinger`, and `cmd /c npm.cmd run weight:audit`.
+
 ## 2026-07-06 Governance Navigation And Leadership Refinement
 
 - Fixed Corporate Governance page surfaces to use a clean white/soft-white page system instead of tinted beige/gray/dark backgrounds.

@@ -5,6 +5,23 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-07 Board Of Directors Profile Grid Assets
+
+- Added six cleaned transparent board portrait assets as lossless WebP files under `public/media/leadership/board/`.
+- Asset sizes:
+  - `mike-zhao-board-member.webp`: 586,148 bytes.
+  - `jeffrey-qiu-board-member.webp`: 702,818 bytes.
+  - `rayyan-al-assad-board-member.webp`: 684,242 bytes.
+  - `paul-leung-board-member.webp`: 601,370 bytes.
+  - `antonia-espada-board-member.webp`: 747,732 bytes.
+  - `ben-king-board-member.webp`: 701,282 bytes.
+- The Board page also reuses the existing approved `jakapun-viwatkurkul-founder-president.webp` leadership image.
+- Refreshed the existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build after verification.
+- ZIP filename was not changed and no new ZIP filename was created.
+- ZIP size: 55,796,313 bytes.
+- ZIP entries: 111.
+- Exclusion check passed: no wrapper folder, source folders, development files, docs, `node_modules/`, `.git/`, Windows backslash paths, or absolute paths.
+
 ## 2026-07-07 Leadership Portrait Background Transparency
 
 - Updated all five active `public/media/leadership/` Executive Management portrait assets so their image backgrounds are transparent.

@@ -1,5 +1,14 @@
 # Project Changelog
 
+## 2026-07-07 Board Of Directors Profile Grid
+
+- Rebuilt the Board of Directors page as a seven-person profile card grid instead of large board oversight copy sections.
+- Added Jakapun Viwatkurkul, Mike Zhao, Jeffrey Qiu, Rayyan Al-Assad, Paul Leung, Antonia Espada, and Ben King in the requested order with role and location text.
+- Added cleaned transparent board portrait assets under `public/media/leadership/board/` and reused the approved Jakapun leadership image.
+- Added scoped responsive board-card CSS while preserving Executive Management, Code of Conduct, homepage, About, Business, News, navigation order, footer order, and deployment base paths.
+- Rebuilt production/Hostinger output and refreshed the existing `mstar-latest-changes-deploy.zip` in place without creating a new ZIP filename.
+- Passed build, lint, test, Hostinger build, weight audit, and direct-extract ZIP structure verification.
+
 ## 2026-07-02 Homepage Growth Card Row Scroll Fix
 
 - Fixed the homepage mobile/tablet horizontal scrolling issue for the specific growth-theme row containing Infrastructure, Investment, Innovation, Asia Growth Opportunities, and Strategic Partnerships.
