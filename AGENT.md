@@ -36,6 +36,13 @@
 - Bottom-aligned the contained leadership images inside the boxes with zero bottom padding while preserving each original image file, person proportions, pose, clothing, face, and body.
 - Kept biography text, navigation, header, footer, Board of Directors page, and Code of Conduct page unchanged.
 
+## 2026-07-07 Leadership Portrait Background Transparency
+
+- Removed opaque white/near-white source backgrounds from all five Executive Management leadership portrait assets so only the people render inside the portrait boxes.
+- Preserved the people unchanged by keeping the remaining visible portrait pixels' RGB values intact while changing only border-connected background pixels to transparent alpha.
+- Converted Pasit's public leadership portrait from JPG to transparent WebP and updated only that image reference; removed the unused public JPG copy.
+- Kept portrait boxes, bottom alignment, leadership names, biographies, header, footer, and governance navigation unchanged.
+
 ## 2026-07-06 Corporate Governance Live File Refresh
 
 - Refreshed the existing `mstar-latest-changes-deploy.zip` from the current `dist/` output after the Corporate Governance pages were pushed.

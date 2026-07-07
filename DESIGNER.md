@@ -7,6 +7,12 @@
 
 ## 2026-07-06
 
+### Leadership Portrait Background Transparency
+
+- Made all five Executive Management leadership portrait backgrounds transparent so the portrait-box surface shows around each person instead of a white image rectangle.
+- The people remain visually unchanged; only the white/near-white source backgrounds were removed from the public portrait assets.
+- Pasit's portrait now uses a transparent WebP source, while the portrait boxes and bottom-aligned image behavior remain unchanged.
+
 ### Leadership Portrait Box Alignment
 
 - Added subtle white/off-white portrait boxes around Executive Management leadership images so the people feel grounded within a defined image area.

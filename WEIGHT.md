@@ -5,6 +5,18 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-07 Leadership Portrait Background Transparency
+
+- Updated all five active `public/media/leadership/` Executive Management portrait assets so their image backgrounds are transparent.
+- The remaining visible portrait pixels were preserved unchanged in RGB; only border-connected white/near-white background pixels were changed to transparent alpha.
+- Asset size changes:
+  - `jakapun-viwatkurkul-founder-president.webp`: 648,310 bytes to 6,457,944 bytes.
+  - `pasit-viwatkurkul-vice-president-ceo-mstar-defense.jpg`: removed 102,519-byte opaque JPG.
+  - `pasit-viwatkurkul-vice-president-ceo-mstar-defense.webp`: added 247,660-byte transparent WebP.
+  - `chief-financial-officer.png`: 908,100 bytes to 966,045 bytes.
+  - `paul-pongpichant-chief-operating-officer.webp`: 16,950 bytes to 160,456 bytes.
+  - `steven-lou-chief-strategy-officer.png`: unchanged at 1,457,219 bytes.
+
 ## 2026-07-06 Leadership Portrait Box Live File Refresh
 
 - Refreshed the existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build after the Executive Management portrait box alignment fix.
