@@ -6,6 +6,17 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-07 Code Of Conduct Content Update
+
+- Replaced the short Code of Conduct placeholder with the full provided Code of Business Ethics content for Mstar Holding (Mstar Asia co.ltd).
+- Cleaned pasted text formatting, removed mojibake/odd spacing, corrected obvious capitalization and punctuation issues, and restored the requested section order without changing the intended meaning.
+- Added a formal Table of Contents, Introduction, six numbered ethics sections, and Administration and Implementation content with semantic HTML.
+- Added scoped Code of Conduct document CSS for a readable governance/legal layout, consistent max-width, left-aligned paragraphs, section dividers, and clean heading/TOC hanging alignment on desktop, tablet, and mobile.
+- Preserved Corporate Governance dropdown/footer order, header/footer design, Executive Management, Board of Directors, homepage, About, Business, News, media assets, videos, logos, and deployment base paths.
+- Built production and Hostinger/root output, then refreshed the existing `mstar-latest-changes-deploy.zip` in place without creating a new ZIP filename.
+- ZIP verification: 55,614,677 bytes, 111 entries, no wrapper folder, no source/development files, no Windows backslash paths, full Code of Conduct sections present, company name present, and no mojibake in the built Code page.
+- Verification passed: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
+
 ## 2026-07-07 Live Image Asset Weight Optimization
 
 - Optimized seven tracked transparent WebP portrait assets with decoded-pixel-identical lossless WebP recompression only.

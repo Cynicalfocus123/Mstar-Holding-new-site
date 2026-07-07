@@ -7,6 +7,14 @@
 
 ## 2026-07-07
 
+### Code Of Conduct Content Update
+
+- Updated the Code of Conduct page into a formal governance document layout with a polished intro, Table of Contents, numbered content sections, and Administration and Implementation area.
+- The Table of Contents uses a fixed small number column so wrapped titles align cleanly with the first title line instead of falling under the number.
+- Section headings, subsection headings, and paragraphs share a consistent left document edge with restrained gold accents, subtle dividers, charcoal text, and comfortable legal-document spacing.
+- Desktop keeps the content in a readable max-width column; tablet and mobile retain safe gutters, single-column flow, readable font sizes, and no intended horizontal overflow.
+- No media assets, governance navigation order, footer order, Executive Management layout, Board layout, or non-governance page design changed.
+
 ### Live Image Asset Weight Optimization
 
 - No visual design, layout, crop, image placement, color, typography, navigation, or page behavior changed in this pass.
