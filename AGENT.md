@@ -6,6 +6,17 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-08 About Collage Sizing And Fit Refinement
+
+- Refined only the About Mstar Holding collage CSS so the new Jack with prime minister image fits tightly without the large top/bottom white space caused by the old 4:3 contained frame.
+- Enlarged the overall collage and all three visual cards, including larger desktop, tablet, and mobile width caps, while preserving the premium rounded-card overlap style.
+- Updated the main collage image frame to a wide aspect ratio with proportional `object-fit: cover` and centered positioning so the image scales up with the box without stretching or warping.
+- Increased the supporting portrait and logo card sizes and adjusted their overlap/placement so the three-card composition remains balanced and responsive.
+- Preserved About text, President Message portrait, Global Presence, Built Across Industries, homepage, Business, News, governance, legal pages, header, footer, image files, and deployment paths.
+- Verification passed: `cmd /c npx.cmd prettier --write src\styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
+- Static verification confirmed the built CSS contains the larger desktop/tablet/mobile collage sizes, the main image tight-fit rules, and zero broken About page asset references.
+- Refreshed small deploy ZIP `mstar-about-collage-image-update.zip` with the built About page, the new About image, and the current hashed CSS/JS assets required by the updated About page.
+
 ## 2026-07-08 About Collage Prime Minister Image Update
 
 - Replaced only the main About Mstar Holding collage image reference from `jakapun-wallstreet.webp` to the new `jack-with-prime-minister.webp` asset.

@@ -7,6 +7,13 @@
 
 ## 2026-07-08
 
+### About Collage Sizing And Fit Refinement
+
+- Enlarged the About Mstar Holding collage so it has stronger visual presence beside the About copy while keeping the same premium overlapping rounded-card language.
+- The new Jack with prime minister image now sits in a wider main card with proportional cover fitting, removing the large white top/bottom bands without stretching or altering the source image.
+- The portrait and logo cards scale up with the main card, with adjusted overlap and spacing so the three-card composition stays balanced.
+- Desktop, tablet, and mobile collage caps were increased with `min(100%, ...)` sizing so the larger cards remain responsive and avoid intended horizontal overflow.
+
 ### About Collage Prime Minister Image Update
 
 - Replaced only the main About Mstar Holding collage photo with the supplied Jack with prime minister image.
