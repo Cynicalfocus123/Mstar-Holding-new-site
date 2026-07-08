@@ -6,6 +6,15 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-08 Footer Typography And Legal Page Styling
+
+- Refined global footer group headings so Company, Media / Press, Corporate Governance, and Legal are brighter, slightly larger, and heavier than their secondary links while preserving the centered dark premium footer system.
+- Updated Privacy Policy and Terms of Service legal-page CSS to share the Code of Conduct white/off-white document language: 980px document width, large left-aligned heading rhythm, charcoal/muted body text, restrained Mstar gold accents, and mobile-safe padding.
+- Preserved footer link names and order, Code of Conduct content, Privacy/Terms legal text meaning, header, media, images, videos, page content, and deployment paths.
+- Verification passed: `cmd /c npx.cmd prettier --write src\styles.css AGENT.md DESIGNER.md WEIGHT.md`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
+- Built output verification found all four footer group headings on all 15 built pages, confirmed footer text remains centered, and confirmed Privacy Policy, Terms of Service, and Code of Conduct are using the shared white legal/governance document surface families.
+- Refreshed existing `mstar-latest-changes-deploy.zip` in place from Hostinger/root `dist/`; ZIP verification found 113 entries, Terms and Privacy pages present, `.htaccess` present, no wrapper folder, no source/development files, and no Windows backslash paths.
+
 ## 2026-07-07 Global Footer Sync And Centering
 
 - Added `scripts/sync-footer.mjs` as the shared footer source for all static `index.html` pages outside `dist/`.

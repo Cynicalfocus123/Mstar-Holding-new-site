@@ -997,7 +997,10 @@ h2 {
 }
 
 .footer-links span {
-  color: var(--soft);
+  color: rgba(246, 243, 236, 0.9);
+  font-size: 0.8rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
 }
 
 .footer-links a {
@@ -1029,87 +1032,122 @@ h2 {
 }
 
 .legal-main {
-  background:
-    linear-gradient(180deg, rgba(193, 154, 74, 0.08), rgba(246, 243, 236, 0)),
-    var(--soft);
-  color: var(--charcoal);
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff 0%, #fffefa 42%, #fff 100%);
+  color: var(--mstar-ink);
+}
+
+.legal-page {
+  background: #fff;
 }
 
 .legal-hero {
-  padding: clamp(116px, 16vw, 172px) var(--gutter) clamp(42px, 7vw, 78px);
+  position: relative;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: calc(var(--header-height) + clamp(78px, 10vw, 144px)) var(--gutter)
+    clamp(74px, 9vw, 136px);
+}
+
+.legal-hero::before {
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: min(52vw, 720px);
+  height: min(52vw, 720px);
+  content: "";
+  background: radial-gradient(
+    circle,
+    rgba(184, 135, 45, 0.12),
+    transparent 66%
+  );
+  pointer-events: none;
 }
 
 .legal-shell {
-  width: min(920px, 100%);
+  position: relative;
+  z-index: 1;
+  width: min(980px, 100%);
   margin: 0 auto;
 }
 
 .legal-eyebrow {
   display: block;
   margin-bottom: 18px;
-  color: var(--gold-strong);
+  color: var(--mstar-gold);
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 850;
   letter-spacing: 0.16em;
+  line-height: 1.25;
   text-transform: uppercase;
 }
 
 .legal-hero h1 {
-  max-width: 12ch;
-  margin: 0 0 18px;
-  color: var(--charcoal);
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  line-height: 0.92;
-  overflow-wrap: anywhere;
+  max-width: 940px;
+  margin: 0;
+  color: var(--mstar-ink);
+  font-size: clamp(3.35rem, 7vw, 7.2rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1.03;
+  overflow-wrap: normal;
+  text-wrap: balance;
 }
 
 .legal-revised {
-  margin: 0;
-  color: rgba(31, 32, 30, 0.68);
-  font-size: 0.92rem;
+  max-width: 760px;
+  margin: clamp(22px, 2.8vw, 38px) 0 0;
+  color: var(--mstar-muted);
+  font-size: clamp(1.02rem, 1.25vw, 1.24rem);
+  line-height: 1.68;
 }
 
 .legal-document {
-  padding: 0 var(--gutter) clamp(72px, 10vw, 128px);
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(92px, 10vw, 156px);
 }
 
 .legal-document article {
-  width: min(920px, 100%);
+  width: min(100%, 980px);
   margin: 0 auto;
-  padding-top: clamp(34px, 5vw, 58px);
-  border-top: 1px solid rgba(193, 154, 74, 0.38);
 }
 
 .legal-section {
   display: grid;
-  gap: 14px;
-  padding: clamp(26px, 4vw, 42px) 0;
-  border-bottom: 1px solid rgba(31, 32, 30, 0.12);
+  gap: clamp(16px, 2vw, 22px);
+  padding-top: clamp(34px, 5vw, 62px);
+  border-top: 1px solid rgba(201, 167, 106, 0.22);
+}
+
+.legal-section + .legal-section {
+  margin-top: clamp(34px, 5vw, 64px);
 }
 
 .legal-section h2 {
+  max-width: 860px;
   margin: 0;
-  color: var(--charcoal);
-  font-family: var(--font-display);
-  font-size: clamp(1.45rem, 3.4vw, 2.35rem);
-  line-height: 1.05;
+  color: var(--mstar-ink);
+  font-size: clamp(1.8rem, 3.1vw, 3.15rem);
+  font-weight: 450;
   letter-spacing: 0;
+  line-height: 1.16;
   overflow-wrap: anywhere;
   text-align: left;
+  text-wrap: balance;
 }
 
 .legal-section p {
+  max-width: 860px;
   margin: 0;
-  color: rgba(31, 32, 30, 0.82);
-  font-size: clamp(0.98rem, 1.5vw, 1.08rem);
-  line-height: 1.75;
+  color: var(--mstar-muted);
+  font-size: clamp(1rem, 1.08vw, 1.1rem);
+  line-height: 1.78;
   overflow-wrap: anywhere;
   text-align: left;
 }
 
 .legal-section strong {
-  color: var(--charcoal);
+  color: var(--mstar-ink);
   font-weight: 700;
 }
 
@@ -4185,6 +4223,8 @@ h2 {
   }
 
   .news-page-hero,
+  .legal-hero,
+  .legal-document,
   .news-grid-wrap,
   .governance-hero,
   .governance-profile-list,
@@ -4196,6 +4236,7 @@ h2 {
   }
 
   .news-page-title,
+  .legal-hero h1,
   .governance-title {
     font-size: clamp(2.8rem, 12vw, 4.6rem);
   }
@@ -4255,6 +4296,15 @@ h2 {
   }
 
   .conduct-section p {
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .legal-section h2 {
+    font-size: clamp(1.55rem, 8vw, 2.4rem);
+  }
+
+  .legal-section p {
     font-size: 0.98rem;
     line-height: 1.72;
   }

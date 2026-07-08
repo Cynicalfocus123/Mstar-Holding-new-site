@@ -5,6 +5,15 @@
 - Every site change must update `DESIGNER.md` with concise design intent, visual behavior, responsive behavior, and any asset/crop/motion notes relevant to the change.
 - Keep design notes concise and avoid large implementation logs.
 
+## 2026-07-08
+
+### Footer Typography And Legal Page Styling
+
+- Strengthened the shared footer group headings so Company, Media / Press, Corporate Governance, and Legal read as clear section labels above the lighter centered links.
+- Kept the footer dark, restrained, centered, and premium by using contrast, weight, and a small size lift instead of oversized type.
+- Brought Privacy Policy and Terms of Service into the same white/off-white legal document language as Code of Conduct, with matching readable width, left-aligned heading/body rhythm, charcoal text, and subtle Mstar gold accents.
+- Mobile and tablet legal pages keep safe gutters, balanced wrapped headings, and no intended horizontal overflow.
+
 ## 2026-07-07
 
 ### Global Footer Sync And Centering
