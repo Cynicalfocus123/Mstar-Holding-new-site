@@ -12,6 +12,7 @@
 - Adjusted only the desktop layout for the homepage Regional Expansion section so the curved image begins after the left text column, bleeds to the right viewport edge, and meets the growth theme grid below.
 - Tablet and mobile keep the existing stacked curved-image behavior.
 - Added the supplied illuminated Earth image as an internal media layer inside the Global Presence Countries Operated stat card, reusing the existing dimmed stat-card image treatment so the icon, label, and `20+` value remain readable without changing card size or number styling.
+- Refined the Countries Operated image fit so the Earth image fully covers the stat card without changing the card frame, text, or number styling.
 
 ### Global Presence Card Imagery
 

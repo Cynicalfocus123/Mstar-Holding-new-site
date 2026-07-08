@@ -3243,7 +3243,7 @@ h2 {
 }
 
 .presence-page-stat-countries .presence-page-stat-media img {
-  object-fit: contain;
+  object-fit: cover;
   opacity: 0.76;
 }
 
