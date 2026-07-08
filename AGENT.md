@@ -6,6 +6,13 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-08 Home Expansion Bleed And Countries Card Image
+
+- Fixed only the homepage desktop Regional Expansion section so the curved image occupies the right visual area, bleeds to the right viewport edge, and meets the growth theme grid below while preserving the left text column.
+- Added the supplied illuminated Earth image to the standalone Global Presence Countries Operated stat card as an internal decorative media layer.
+- Preserved tablet/mobile homepage behavior, existing Global Presence card size, border radius, number styling, text placement, header, footer, About page, Business page, News pages, and unrelated sections.
+- Honored the request not to open localhost and not to create a ZIP.
+
 ## 2026-07-08 About Collage Spacing Refinement
 
 - Refined only the About Mstar Holding collage CSS to move the main Jack with prime minister card farther left and create cleaner separation from the windmill and Mstar logo cards.

@@ -1987,6 +1987,44 @@ h2 {
   min-height: clamp(340px, 32vw, 520px);
 }
 
+@media (min-width: 1025px) {
+  .home-investing-section {
+    position: relative;
+  }
+
+  .home-investing-section .home-split-media {
+    position: relative;
+    display: block;
+    min-height: clamp(500px, 34vw, 610px);
+  }
+
+  .home-investing-section .home-bright-copy-block {
+    position: relative;
+    z-index: 2;
+    width: 38%;
+    max-width: 520px;
+    padding-top: clamp(18px, 2vw, 34px);
+  }
+
+  .home-investing-section .home-curved-media {
+    position: absolute;
+    inset-block: 0;
+    right: calc(-1 * max(var(--gutter), ((100vw - 1440px) / 2)));
+    left: 42%;
+    z-index: 1;
+    min-height: 0;
+  }
+
+  .home-investing-section .home-curved-media img {
+    min-height: 0;
+    object-position: center center;
+  }
+
+  .home-investing-section .home-theme-row-frame {
+    margin-top: 0;
+  }
+}
+
 .home-curved-media {
   position: relative;
   min-height: clamp(360px, 36vw, 560px);
@@ -3202,6 +3240,11 @@ h2 {
     #101d31 58%,
     #07101e
   );
+}
+
+.presence-page-stat-countries .presence-page-stat-media img {
+  object-fit: contain;
+  opacity: 0.76;
 }
 
 .presence-page-stat-food {
