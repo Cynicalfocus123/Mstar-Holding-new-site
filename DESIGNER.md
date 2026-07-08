@@ -7,6 +7,13 @@
 
 ## 2026-07-08
 
+### Global Presence Dark Globe Panel
+
+- Refined the standalone Global Presence page's dark premium globe panel below the stat cards with a stacked white title, large right-side canvas Earth, radial dot grid, teal/gold legend, soft blue glow, and subtle curved lower arc.
+- Desktop uses a text-left and oversized globe-right layout inside a rounded near-black panel; tablet keeps two columns where space allows.
+- Mobile stacks the copy above the globe with safe gutters, controlled globe sizing, and no intended horizontal overflow.
+- Header, footer, navigation, About page Global Presence map, stat-card values, and unrelated pages were not changed.
+
 ### Home Expansion Bleed And Countries Card Image
 
 - Adjusted only the desktop layout for the homepage Regional Expansion section so the curved image begins after the left text column, bleeds to the right viewport edge, and meets the growth theme grid below.

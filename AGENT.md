@@ -6,6 +6,14 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-08 Global Presence Dark Globe Panel
+
+- Refined the standalone Global Presence page's dark globe panel directly below the statistic cards using the existing canvas Earth renderer.
+- Added the requested stacked `A Presence That Spans / the Globe` heading, retained the approved paragraph and teal/gold legend, and removed the extra kicker label from the panel.
+- Strengthened the premium near-black panel treatment with radial dot grid, soft blue/cyan glow, subtle lower arc, deeper shadow, and an oversized right-side globe.
+- Preserved header, footer, navigation, About page Global Presence map, stat-card values, counter stability rules, deployment base paths, and unrelated pages.
+- Honored the request not to open localhost and not to create a ZIP.
+
 ## 2026-07-08 Home Expansion Bleed And Countries Card Image
 
 - Fixed only the homepage desktop Regional Expansion section so the curved image occupies the right visual area, bleeds to the right viewport edge, and meets the growth theme grid below while preserving the left text column.
