@@ -7,13 +7,13 @@
 
 ## 2026-07-08
 
-### Global Presence Stat Cards And Globe
+### Standalone Global Presence Page
 
-- Rebuilt the About page Global Presence section in the latest bright Mstar direction: white/off-white page surface, charcoal heading, centered `Mstar Holding` eyebrow, and a restrained teal-to-gold accent line.
-- Replaced the old flat map panel with a premium dark navy globe feature using a live canvas Earth component with rotating graticule, teal operational markers, gold partnership markers, and soft blue/teal glow.
-- Redesigned the Global Presence stats as five premium gradient cards with subtle borders, inner highlights, soft shadows, restrained dotted/wave texture, smaller white line icons, animated counters, and proportional USD unit styling.
-- Responsive behavior: desktop uses a balanced 3-card first row and centered 2-card second row; tablet uses 2-2-1 with the final card centered; mobile stacks all five cards full width above a stacked globe panel with safe gutters.
-- Performance notes: no flat screenshot or heavy asset was added; the globe is canvas-rendered, respects reduced-motion by drawing a static state, and the layout uses fluid sizing to avoid intended horizontal overflow.
+- Restored the About page Global Presence section to its original approved map-and-counter design; the new stat-card and globe direction now lives on its own `global-presence/` page.
+- Added a standalone Global Presence page using the latest bright corporate direction: white/off-white page background, charcoal typography, centered Mstar Holding eyebrow, teal/gold accent line, and premium responsive stat cards.
+- Built the dark rounded globe panel as a page-native Earth component with radial dot-grid styling, sparkled lower glow, teal/gold legend, and projected Natural Earth continent shapes so the globe shows actual landmasses.
+- Connected every header and shared footer Global Presence link to `global-presence/` with the correct relative path from each page.
+- Responsive behavior remains desktop 3-card plus centered 2-card rows, tablet 2-2-1, and mobile stacked cards above a contained globe panel with no intended horizontal overflow.
 
 ### About Collage Spacing Refinement
 

@@ -1,5 +1,6 @@
 import "./styles.css";
 import { getArticleBySlug, sortedNewsArticles } from "./news-data.js";
+import { baseWorldPaths, marketCountryPaths } from "./world-map-data.js";
 
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
@@ -10,6 +11,7 @@ const isInnerPage =
   document.body.classList.contains("about-page") ||
   document.body.classList.contains("business-page") ||
   document.body.classList.contains("news-page") ||
+  document.body.classList.contains("global-presence-page") ||
   document.body.classList.contains("governance-page") ||
   document.body.classList.contains("legal-page");
 
@@ -256,34 +258,64 @@ if (aboutCompanySection) {
 }
 
 const globalPresenceSection = document.querySelector("[data-global-presence]");
+const globalMapBase = document.querySelector("[data-global-map-base]");
+const globalMapMarkets = document.querySelector("[data-global-map-markets]");
 const globalPresenceStats = document.querySelector(
   "[data-global-presence-stats]",
 );
 const presenceCounters = document.querySelectorAll("[data-presence-counter]");
-const presenceGlobe = document.querySelector("[data-presence-globe]");
-const presenceGlobeCanvas = presenceGlobe?.querySelector("canvas");
-const presenceNumberFormatter = new Intl.NumberFormat("en-US");
 
-const formatPresenceValue = (value, counter) => {
-  const prefix = counter.dataset.counterPrefix || "";
-  const suffix = counter.dataset.counterSuffix || "";
+const svgNamespace = "http://www.w3.org/2000/svg";
 
-  return `${prefix}${presenceNumberFormatter.format(value)}${suffix}`;
+const buildGlobalPresenceMap = () => {
+  if (!globalMapBase || !globalMapMarkets) {
+    return;
+  }
+
+  baseWorldPaths.forEach(({ id, d }) => {
+    const path = document.createElementNS(svgNamespace, "path");
+
+    path.setAttribute("class", "map-country-shape");
+    path.setAttribute("data-country", id);
+    path.setAttribute("d", d);
+    path.setAttribute("aria-hidden", "true");
+    globalMapBase.append(path);
+  });
+
+  marketCountryPaths.forEach((market, index) => {
+    const group = document.createElementNS(svgNamespace, "g");
+
+    group.setAttribute("class", `map-market-shape market-${market.id}`);
+    group.setAttribute("aria-label", market.label);
+    group.style.setProperty("--map-delay", `${index * 80}ms`);
+
+    if (market.marker) {
+      const marker = document.createElementNS(svgNamespace, "circle");
+
+      marker.setAttribute("cx", String(market.marker.x));
+      marker.setAttribute("cy", String(market.marker.y));
+      marker.setAttribute("r", String(market.marker.r));
+      group.append(marker);
+    } else {
+      const path = document.createElementNS(svgNamespace, "path");
+
+      path.setAttribute("d", market.d);
+      group.append(path);
+    }
+
+    globalMapMarkets.append(group);
+  });
 };
 
 const setPresenceCountersToFinal = () => {
   presenceCounters.forEach((counter) => {
-    const target = Number(counter.dataset.counterTarget);
-
-    if (Number.isFinite(target)) {
-      counter.textContent = formatPresenceValue(target, counter);
-    }
+    counter.textContent = `${counter.dataset.counterTarget}+`;
   });
 };
 
 const resetPresenceCounters = () => {
   presenceCounters.forEach((counter) => {
-    counter.textContent = formatPresenceValue(0, counter);
+    counter.textContent = "0+";
   });
 };
 
@@ -303,12 +335,12 @@ const animatePresenceCounters = () => {
       const progress = Math.min((timestamp - startedAt) / duration, 1);
       const value = Math.round(target * easeOutCubic(progress));
 
-      counter.textContent = formatPresenceValue(value, counter);
+      counter.textContent = `${value}+`;
 
       if (progress < 1) {
         requestAnimationFrame(updateCounter);
       } else {
-        counter.textContent = formatPresenceValue(target, counter);
+        counter.textContent = `${target}+`;
       }
     };
 
@@ -332,7 +364,9 @@ const startPresenceCounters = () => {
   }
 };
 
-if (globalPresenceSection) {
+if (globalPresenceSection && globalMapBase && globalMapMarkets) {
+  buildGlobalPresenceMap();
+
   const revealGlobalPresence = () => {
     globalPresenceSection.classList.add("is-visible");
   };
@@ -356,12 +390,192 @@ if (globalPresenceSection) {
   }
 }
 
-const setupPresenceGlobe = () => {
-  if (!(presenceGlobeCanvas instanceof HTMLCanvasElement)) {
+if (presenceCounters.length) {
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    resetPresenceCounters();
+  }
+
+  if (!globalPresenceStats || !("IntersectionObserver" in window)) {
+    setPresenceCountersToFinal();
+  } else {
+    const globalPresenceStatsObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) {
+          return;
+        }
+
+        startPresenceCounters();
+        observer.disconnect();
+      },
+      { rootMargin: "-10% 0px -20% 0px", threshold: 0.6 },
+    );
+
+    globalPresenceStatsObserver.observe(globalPresenceStats);
+  }
+}
+
+const presencePage = document.querySelector("[data-presence-page]");
+const presencePageStats = document.querySelector("[data-presence-page-stats]");
+const presencePageCounters = document.querySelectorAll(
+  "[data-presence-page-counter]",
+);
+const presencePageGlobeCanvas = document.querySelector(
+  "[data-presence-page-globe] canvas",
+);
+const presencePageNumberFormatter = new Intl.NumberFormat("en-US");
+
+const formatPresencePageValue = (value, counter) => {
+  const prefix = counter.dataset.counterPrefix || "";
+  const suffix = counter.dataset.counterSuffix || "";
+
+  return `${prefix}${presencePageNumberFormatter.format(value)}${suffix}`;
+};
+
+const setPresencePageCountersToFinal = () => {
+  presencePageCounters.forEach((counter) => {
+    const target = Number(counter.dataset.counterTarget);
+
+    if (Number.isFinite(target)) {
+      counter.textContent = formatPresencePageValue(target, counter);
+    }
+  });
+};
+
+const resetPresencePageCounters = () => {
+  presencePageCounters.forEach((counter) => {
+    counter.textContent = formatPresencePageValue(0, counter);
+  });
+};
+
+const animatePresencePageCounters = () => {
+  presencePageCounters.forEach((counter) => {
+    const target = Number(counter.dataset.counterTarget);
+    const duration = Number(counter.dataset.counterDuration);
+
+    if (!Number.isFinite(target) || !Number.isFinite(duration)) {
+      return;
+    }
+
+    const startedAt = performance.now();
+    const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
+
+    const updateCounter = (timestamp) => {
+      const progress = Math.min((timestamp - startedAt) / duration, 1);
+      const value = Math.round(target * easeOutCubic(progress));
+
+      counter.textContent = formatPresencePageValue(value, counter);
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = formatPresencePageValue(target, counter);
+      }
+    };
+
+    requestAnimationFrame(updateCounter);
+  });
+};
+
+let presencePageCountersStarted = false;
+
+const startPresencePageCounters = () => {
+  if (presencePageCountersStarted) {
     return;
   }
 
-  const context = presenceGlobeCanvas.getContext("2d");
+  presencePageCountersStarted = true;
+
+  if (prefersReducedMotion) {
+    setPresencePageCountersToFinal();
+  } else {
+    animatePresencePageCounters();
+  }
+};
+
+if (presencePageCounters.length) {
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    resetPresencePageCounters();
+  }
+
+  if (!presencePageStats || !("IntersectionObserver" in window)) {
+    setPresencePageCountersToFinal();
+  } else {
+    const presencePageStatsObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) {
+          return;
+        }
+
+        startPresencePageCounters();
+        observer.disconnect();
+      },
+      { rootMargin: "-10% 0px -20% 0px", threshold: 0.45 },
+    );
+
+    presencePageStatsObserver.observe(presencePageStats);
+  }
+}
+
+const parseWorldPath = (pathData) => {
+  const tokens = pathData.match(/[MLZ]|-?\d+(?:\.\d+)?/g) || [];
+  const shapes = [];
+  let currentShape = [];
+
+  for (let index = 0; index < tokens.length; index += 1) {
+    const token = tokens[index];
+
+    if (token === "M") {
+      if (currentShape.length) {
+        shapes.push(currentShape);
+      }
+
+      currentShape = [];
+      const x = Number(tokens[index + 1]);
+      const y = Number(tokens[index + 2]);
+
+      if (Number.isFinite(x) && Number.isFinite(y)) {
+        currentShape.push({ x, y });
+      }
+
+      index += 2;
+      continue;
+    }
+
+    if (token === "L") {
+      const x = Number(tokens[index + 1]);
+      const y = Number(tokens[index + 2]);
+
+      if (Number.isFinite(x) && Number.isFinite(y)) {
+        currentShape.push({ x, y });
+      }
+
+      index += 2;
+      continue;
+    }
+
+    if (token === "Z" && currentShape.length) {
+      shapes.push(currentShape);
+      currentShape = [];
+    }
+  }
+
+  if (currentShape.length) {
+    shapes.push(currentShape);
+  }
+
+  return shapes;
+};
+
+const presencePageWorldShapes = baseWorldPaths.flatMap(({ d }) =>
+  parseWorldPath(d),
+);
+
+const setupPresencePageGlobe = () => {
+  if (!(presencePageGlobeCanvas instanceof HTMLCanvasElement)) {
+    return;
+  }
+
+  const context = presencePageGlobeCanvas.getContext("2d");
 
   if (!context) {
     return;
@@ -381,14 +595,19 @@ const setupPresenceGlobe = () => {
     { lat: 48.85, lon: 2.35 },
     { lat: -23.55, lon: -46.63 },
   ];
+  const sparklePoints = Array.from({ length: 120 }, (_, index) => ({
+    x: (index * 47) % 100,
+    y: 62 + ((index * 31) % 38),
+    alpha: 0.18 + ((index * 17) % 42) / 100,
+  }));
 
   const resizeCanvas = () => {
-    const bounds = presenceGlobeCanvas.getBoundingClientRect();
+    const bounds = presencePageGlobeCanvas.getBoundingClientRect();
     const size = Math.max(280, Math.round(bounds.width));
     const ratio = Math.min(window.devicePixelRatio || 1, 2);
 
-    presenceGlobeCanvas.width = Math.round(size * ratio);
-    presenceGlobeCanvas.height = Math.round(size * ratio);
+    presencePageGlobeCanvas.width = Math.round(size * ratio);
+    presencePageGlobeCanvas.height = Math.round(size * ratio);
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
 
     return size;
@@ -404,6 +623,47 @@ const setupPresenceGlobe = () => {
     return { x, y, z };
   };
 
+  const mapPointToGlobe = ({ x, y }, rotation, radius, center) => {
+    const lon = (x / 1000) * 360 - 180;
+    const lat = 90 - (y / 520) * 180;
+
+    return project(lat, lon, rotation, radius, center);
+  };
+
+  const drawWorldContinents = (rotation, radius, center) => {
+    context.fillStyle = "rgba(83, 175, 181, 0.78)";
+    context.strokeStyle = "rgba(171, 230, 232, 0.38)";
+    context.lineWidth = 0.7;
+
+    presencePageWorldShapes.forEach((shape) => {
+      let started = false;
+
+      context.beginPath();
+
+      shape.forEach((point) => {
+        const projected = mapPointToGlobe(point, rotation, radius, center);
+
+        if (projected.z < -0.03) {
+          started = false;
+          return;
+        }
+
+        if (!started) {
+          context.moveTo(projected.x, projected.y);
+          started = true;
+        } else {
+          context.lineTo(projected.x, projected.y);
+        }
+      });
+
+      if (started) {
+        context.closePath();
+        context.fill();
+        context.stroke();
+      }
+    });
+  };
+
   const drawGreatCircle = (start, end, rotation, radius, center) => {
     context.beginPath();
 
@@ -417,7 +677,7 @@ const setupPresenceGlobe = () => {
       const lon = start.lon + (end.lon - start.lon) * progress;
       const point = project(lat, lon, rotation, radius, center);
 
-      if (point.z < -0.15) {
+      if (point.z < -0.1) {
         hasStarted = false;
         continue;
       }
@@ -439,11 +699,24 @@ const setupPresenceGlobe = () => {
 
   const draw = (timestamp) => {
     const elapsed = prefersReducedMotion ? 0 : timestamp - startedAt;
-    const rotation = elapsed * 0.006;
+    const rotation = elapsed * 0.006 - 30;
     const center = size / 2;
     const radius = size * 0.38;
 
     context.clearRect(0, 0, size, size);
+
+    sparklePoints.forEach((point) => {
+      context.fillStyle = `rgba(160, 194, 255, ${point.alpha})`;
+      context.beginPath();
+      context.arc(
+        (point.x / 100) * size,
+        (point.y / 100) * size,
+        0.75,
+        0,
+        Math.PI * 2,
+      );
+      context.fill();
+    });
 
     const glow = context.createRadialGradient(
       center,
@@ -469,7 +742,7 @@ const setupPresenceGlobe = () => {
       center,
       radius,
     );
-    ocean.addColorStop(0, "#173d63");
+    ocean.addColorStop(0, "#1a5180");
     ocean.addColorStop(0.48, "#0d2745");
     ocean.addColorStop(1, "#061323");
     context.fillStyle = ocean;
@@ -482,13 +755,14 @@ const setupPresenceGlobe = () => {
     context.arc(center, center, radius, 0, Math.PI * 2);
     context.clip();
 
-    context.strokeStyle = "rgba(100, 211, 218, 0.25)";
+    context.strokeStyle = "rgba(100, 211, 218, 0.24)";
     context.lineWidth = 1;
 
     for (let lat = -60; lat <= 60; lat += 20) {
       context.beginPath();
       for (let lon = -180; lon <= 180; lon += 4) {
         const point = project(lat, lon, rotation, radius, center);
+
         if (point.z < 0) {
           continue;
         }
@@ -507,6 +781,7 @@ const setupPresenceGlobe = () => {
       let hasStarted = false;
       for (let lat = -84; lat <= 84; lat += 4) {
         const point = project(lat, lon, rotation, radius, center);
+
         if (point.z < 0) {
           hasStarted = false;
           continue;
@@ -522,6 +797,8 @@ const setupPresenceGlobe = () => {
       context.stroke();
     }
 
+    drawWorldContinents(rotation, radius, center);
+
     context.strokeStyle = "rgba(216, 164, 73, 0.34)";
     context.lineWidth = 1.35;
     partnershipMarkers.forEach((marker, index) => {
@@ -536,6 +813,7 @@ const setupPresenceGlobe = () => {
 
     [...operationalMarkers, ...partnershipMarkers].forEach((marker, index) => {
       const point = project(marker.lat, marker.lon, rotation, radius, center);
+
       if (point.z < 0) {
         return;
       }
@@ -583,30 +861,8 @@ const setupPresenceGlobe = () => {
   });
 };
 
-setupPresenceGlobe();
-
-if (presenceCounters.length) {
-  if (!prefersReducedMotion && "IntersectionObserver" in window) {
-    resetPresenceCounters();
-  }
-
-  if (!globalPresenceStats || !("IntersectionObserver" in window)) {
-    setPresenceCountersToFinal();
-  } else {
-    const globalPresenceStatsObserver = new IntersectionObserver(
-      (entries, observer) => {
-        if (!entries.some((entry) => entry.isIntersecting)) {
-          return;
-        }
-
-        startPresenceCounters();
-        observer.disconnect();
-      },
-      { rootMargin: "-10% 0px -20% 0px", threshold: 0.6 },
-    );
-
-    globalPresenceStatsObserver.observe(globalPresenceStats);
-  }
+if (presencePage) {
+  setupPresencePageGlobe();
 }
 
 const aboutMetricsSection = document.querySelector("[data-about-metrics]");

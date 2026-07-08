@@ -50,7 +50,7 @@ const renderFooter = (prefix) => `<footer class="site-footer">
         <span>Company</span>
         <a href="${prefix}about/">About Us</a>
         <a href="${prefix}business/">Our Business</a>
-        <a href="${prefix}#global-presence">Global Presence</a>
+        <a href="${prefix}global-presence/">Global Presence</a>
         <a href="${prefix}#contact">Contact Us</a>
       </nav>
       <nav class="footer-links" aria-label="Media and Press">

@@ -16,15 +16,14 @@
 - Static verification confirmed the built CSS contains the left-shift, separation, and mobile reset rules, and `dist/about/index.html` has zero broken asset references.
 - Refreshed small deploy ZIP `mstar-about-collage-image-update.zip` with the built About page, the new About image, and the current hashed CSS/JS assets required by the updated About page.
 
-## 2026-07-08 Global Presence Stat Cards And Globe
+## 2026-07-08 Standalone Global Presence Page Correction
 
-- Rebuilt the About page Global Presence section with the approved bright corporate direction: centered Mstar Holding eyebrow, Global Presence heading, teal/gold accent line, and the supplied intro copy.
-- Replaced the rejected flat world map with a dark rounded globe panel using a live canvas-rendered Earth/globe component, teal operational markers, gold partnership markers, soft glow, and reduced-motion static drawing behavior.
-- Redesigned the five Global Presence stat cards for Annual Revenue, Countries Operated, Food Serves Globally, Hospitality Clients, and R&D Investment with premium gradients, smaller white line-icon badges, subtle dotted/wave texture, shadows, borders, and animated counters.
-- Responsive behavior matches the brief: desktop 3 cards then 2 centered cards, tablet 2-2-1 with the final card centered, and mobile stacked full-width cards above a stacked globe panel with no intended horizontal overflow.
-- Preserved header, footer, About collage, President Message, Built Across Industries, other pages, media assets, and deployment base paths.
-- Verification passed: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
-- Hostinger/public live files were refreshed through the documented Hostinger-root `dist/` build. No localhost, local preview, browser preview, dev server, or new ZIP file was opened or created.
+- Restored the About page Global Presence section back to its original approved map/counter design after the redesign was incorrectly placed there.
+- Added a new standalone `global-presence/` page for the requested Global Presence stat-card and globe experience.
+- Connected every header and shared footer Global Presence link to the new page using correct relative paths from root, one-level pages, and two-level article/governance pages.
+- Added the new page to the Vite build input list so `dist/global-presence/index.html` is generated for Git/source and Hostinger/public output.
+- Implemented a dedicated canvas Earth/globe renderer for the new page using existing Natural Earth continent path data, so the globe shows actual landmasses with teal operational markers and gold partnership arcs.
+- Preserved About page text, President Message, About collage, original About Global Presence map, Built Across Industries, header/footer visual design, and unrelated pages/assets.
 
 ## 2026-07-08 About Collage Overlap Rebalance
 

@@ -9,6 +9,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         about: resolve(__dirname, "about/index.html"),
         business: resolve(__dirname, "business/index.html"),
+        globalPresence: resolve(__dirname, "global-presence/index.html"),
         news: resolve(__dirname, "news/index.html"),
         governanceBoard: resolve(
           __dirname,
