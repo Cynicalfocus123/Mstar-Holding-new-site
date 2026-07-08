@@ -7,6 +7,13 @@
 
 ## 2026-07-08
 
+### About Collage Prime Minister Image Update
+
+- Replaced only the main About Mstar Holding collage photo with the supplied Jack with prime minister image.
+- The photo keeps its original proportions inside the existing collage frame using the same contained fitting behavior, so there is no stretch, warp, retouch, recolor, or crop change to the source image.
+- About text, President Message, Global Presence, Built Across Industries, navigation, footer, and all non-About pages remain visually unchanged.
+- The small Hostinger ZIP includes only the built About page and the new About image asset required for this visual swap.
+
 ### Safe Deployment Weight Optimization And Hostinger ZIP
 
 - No visual design, layout, copy, image crop, logo rendering, video appearance, portrait transparency, or page content changed.

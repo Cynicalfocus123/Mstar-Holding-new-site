@@ -6,6 +6,16 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-08 About Collage Prime Minister Image Update
+
+- Replaced only the main About Mstar Holding collage image reference from `jakapun-wallstreet.webp` to the new `jack-with-prime-minister.webp` asset.
+- Exported `site content pic and video/jack with prime minister.jpg` to `public/media/about/jack-with-prime-minister.webp` at the original 1879 x 879 dimensions, preserving proportions with no crop, retouch, recolor, AI edit, or layout change.
+- Kept the existing collage frame styling and `object-fit: contain` behavior so the new wide photo is not stretched or warped.
+- Preserved About text, President Message portrait, Global Presence, Built Across Industries, homepage, Business, News, governance, legal pages, header, footer, and deployment paths.
+- Verification passed: `cmd /c npx.cmd prettier --write about\index.html`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
+- Built reference verification confirmed `dist/about/index.html` references `../media/about/jack-with-prime-minister.webp`, the built image exists at 1879 x 879, and `jakapun-wallstreet.webp` is no longer referenced by built HTML/CSS/JS.
+- Created small deploy ZIP `mstar-about-collage-image-update.zip` for this change only, containing the built About page and the new About image asset with no wrapper folder or unrelated heavy media.
+
 ## 2026-07-08 Safe Deployment Weight Optimization And Hostinger ZIP
 
 - Ran the requested size audit and inspected the largest files under `public/`, `dist/`, `public/media/`, `public/videos/`, `public/media/leadership/`, and `public/media/leadership/board/`.

@@ -5,6 +5,22 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-08 About Collage Prime Minister Image Update
+
+- Scope is About page image replacement only: `about/index.html`, one new optimized About WebP asset, documentation, and a small deploy ZIP.
+- Source photo: `site content pic and video/jack with prime minister.jpg`, 1879 x 879, 196,854 bytes.
+- New live asset: `public/media/about/jack-with-prime-minister.webp`, 1879 x 879, 122,326 bytes.
+- Previous main collage image `public/media/about/jakapun-wallstreet.webp` remains in source history but is no longer referenced by the built site after this change; it was not included in the small deploy ZIP.
+- No other images, videos, logos, icons, About sections, text, page layouts, header, footer, or deployment paths were changed.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run build:hostinger`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Built reference verification passed: `dist/about/index.html` references `../media/about/jack-with-prime-minister.webp`, the built image exists, and no built HTML/CSS/JS reference to `jakapun-wallstreet.webp` remains.
+- Small ZIP filename: `mstar-about-collage-image-update.zip`.
+- Small ZIP size: 129,017 bytes.
+- Small ZIP contents are limited to `about/index.html` and `media/about/jack-with-prime-minister.webp`; no full media folder, unrelated videos/images, source files, docs, package files, old ZIP files, wrapper folder, or Windows backslash paths are included.
+
 ## 2026-07-08 Safe Deployment Weight Optimization And Hostinger ZIP
 
 - Ran the requested current audit. `cmd /c "npm.cmd run weight:audit 2>&1 | head -c 4000"` could not run because `head` is unavailable in this Windows shell, so the audit was run with `cmd /c npm.cmd run weight:audit` and output kept concise.
