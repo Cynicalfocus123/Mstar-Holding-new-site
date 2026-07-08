@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "sync:footer": "node scripts/sync-footer.mjs",
+    "prebuild": "npm run sync:footer",
+    "prebuild:github": "npm run sync:footer",
+    "prebuild:hostinger": "npm run sync:footer",
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "build:github": "vite build --base=/Mstar-Holding-new-site/",

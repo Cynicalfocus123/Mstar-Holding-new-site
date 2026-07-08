@@ -6,6 +6,18 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-07 Global Footer Sync And Centering
+
+- Added `scripts/sync-footer.mjs` as the shared footer source for all static `index.html` pages outside `dist/`.
+- Wired `sync:footer` into `prebuild`, `prebuild:github`, and `prebuild:hostinger` so future builds normalize the same full footer across current and future static pages.
+- Normalized all source pages to the same footer groups and order: Company, Media / Press, Corporate Governance, and Legal.
+- Fixed the footer layout from a right-weighted grid to a centered, balanced grid with centered brand text, group headings, links, and copyright.
+- Preserved header design, page body content, governance dropdowns, media assets, videos, images, logos, and deployment base paths.
+- Verification passed: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
+- Dist footer verification passed for 15 built pages, including News index and 6 News article pages: all footer groups present and no old `footer-governance` markup.
+- Built CSS verification confirmed centered footer rules for grid justification, item alignment, and text alignment.
+- Refreshed existing `mstar-latest-changes-deploy.zip` in place from Hostinger/root `dist/`; ZIP verification found 113 entries, Terms and Privacy pages present, no wrapper folder, no source/development files, and no Windows backslash paths.
+
 ## 2026-07-07 Legal Pages And Footer Links
 
 - Added root legal pages at `/terms-of-service/` and `/privacy-policy/`.

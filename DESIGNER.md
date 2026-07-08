@@ -7,6 +7,14 @@
 
 ## 2026-07-07
 
+### Global Footer Sync And Centering
+
+- Centered the global footer system so brand text, group headings, links, and copyright align around the middle of the site instead of pushing the link groups to the right.
+- Rebalanced the desktop footer grid into similarly weighted columns, keeping the Mstar dark premium footer style and restrained spacing.
+- Tablet and mobile footer layouts stack into a centered single-column rhythm with safe wrapping and no intended horizontal overflow.
+- Standardized the footer group order across all pages: Company, Media / Press, Corporate Governance, then Legal.
+- Footer HTML is now generated from one shared sync script before builds, reducing future drift between Home, News, article, governance, and legal pages.
+
 ### Legal Pages And Footer Links
 
 - Added Terms of Use and Privacy Policy as formal legal-document pages using the existing Mstar premium corporate language: off-white surface, charcoal body text, restrained gold eyebrow/accent line, and a readable centered document width.

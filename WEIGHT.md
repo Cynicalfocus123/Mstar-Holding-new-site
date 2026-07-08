@@ -5,6 +5,21 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-07 Global Footer Sync And Centering
+
+- Scope is footer/shared layout only: shared footer sync script, package prebuild hooks, source footer normalization, centered footer CSS, and documentation.
+- No media assets, videos, logos, images, body page content, header design, corporate governance dropdowns, legal/code content, or deployment base paths were changed.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run build:hostinger`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Dist footer verification passed for 15 built pages with all required groups present and no old `footer-governance` markup.
+- Refreshed existing `mstar-latest-changes-deploy.zip` from the Hostinger/root `dist/` build with no new ZIP filename.
+- ZIP size: 55,627,336 bytes.
+- ZIP entries: 113.
+- Exclusion check passed: no wrapper folder, no source/development files, and no Windows backslash paths.
+- Legal page check passed: `terms-of-service/index.html` and `privacy-policy/index.html` are present in the ZIP.
+
 ## 2026-07-07 Legal Pages And Footer Links
 
 - Scope is HTML/CSS/JS/docs only: two new legal pages, source footer link groups, legal-page responsive CSS, and inner-page header state support for legal pages.
