@@ -458,12 +458,16 @@ const animatePresencePageCounters = () => {
 
     const startedAt = performance.now();
     const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
+    let lastValue = -1;
 
     const updateCounter = (timestamp) => {
       const progress = Math.min((timestamp - startedAt) / duration, 1);
       const value = Math.round(target * easeOutCubic(progress));
 
-      counter.textContent = formatPresencePageValue(value, counter);
+      if (value !== lastValue) {
+        counter.textContent = formatPresencePageValue(value, counter);
+        lastValue = value;
+      }
 
       if (progress < 1) {
         requestAnimationFrame(updateCounter);

@@ -16,6 +16,13 @@
 - Static verification confirmed the built CSS contains the left-shift, separation, and mobile reset rules, and `dist/about/index.html` has zero broken asset references.
 - Refreshed small deploy ZIP `mstar-about-collage-image-update.zip` with the built About page, the new About image, and the current hashed CSS/JS assets required by the updated About page.
 
+## 2026-07-08 Global Presence Counter Stability
+
+- Removed the small Mstar Holding eyebrow label from only the standalone Global Presence page hero.
+- Fixed the desktop counter jitter by reserving stable counter widths, applying tabular numeric rendering, keeping the number line-height stable, adding card-level layout containment, and skipping redundant per-frame text writes when the rounded displayed value has not changed.
+- Confirmed the globe is independent from the counter loop and was not replaced; the fix keeps the existing globe design and placement.
+- Preserved header, footer, About page, Business page, News pages, governance/legal pages, and Global Presence responsive layout.
+
 ## 2026-07-08 Standalone Global Presence Page Correction
 
 - Restored the About page Global Presence section back to its original approved map/counter design after the redesign was incorrectly placed there.

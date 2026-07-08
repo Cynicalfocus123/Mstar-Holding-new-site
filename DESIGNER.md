@@ -7,6 +7,12 @@
 
 ## 2026-07-08
 
+### Global Presence Counter Stability
+
+- Removed the small Mstar Holding eyebrow from the standalone Global Presence page hero while keeping the main heading, accent line, and spacing balanced.
+- Stabilized the stat-card counter row with tabular numeric rendering, reserved counter widths, fixed line rhythm, and card-level layout containment so desktop counters do not shift card/page layout while animating.
+- Kept the existing responsive card layout and globe design unchanged; reduced-motion users still receive final static values.
+
 ### Standalone Global Presence Page
 
 - Restored the About page Global Presence section to its original approved map-and-counter design; the new stat-card and globe direction now lives on its own `global-presence/` page.

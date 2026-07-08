@@ -3082,18 +3082,9 @@ h2 {
   text-align: center;
 }
 
-.presence-page-eyebrow {
-  color: #0f7779;
-  font-size: clamp(0.72rem, 0.8vw, 0.84rem);
-  font-weight: 850;
-  letter-spacing: 0.18em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
 .presence-page-heading h1 {
   max-width: 980px;
-  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  margin: 0;
   color: var(--mstar-ink);
   font-size: clamp(3.4rem, 6.2vw, 7rem);
   font-weight: 400;
@@ -3149,6 +3140,7 @@ h2 {
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
     inset 0 -36px 64px rgba(0, 0, 0, 0.12),
     0 22px 48px rgba(14, 24, 34, 0.14);
+  contain: layout paint;
 }
 
 .presence-page-stat:nth-child(4) {
@@ -3303,10 +3295,44 @@ h2 {
   letter-spacing: 0;
   line-height: 0.96;
   overflow-wrap: anywhere;
+  min-block-size: 1em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings:
+    "tnum" 1,
+    "lnum" 1;
   text-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
+.presence-page-stat strong > span[data-presence-page-counter] {
+  display: inline-block;
+  flex: 0 0 auto;
+  min-inline-size: 4.4ch;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings:
+    "tnum" 1,
+    "lnum" 1;
+}
+
+.presence-page-stat-revenue strong > span[data-presence-page-counter] {
+  min-inline-size: 2.2ch;
+}
+
+.presence-page-stat-countries strong > span[data-presence-page-counter],
+.presence-page-stat-clients strong > span[data-presence-page-counter] {
+  min-inline-size: 3.2ch;
+}
+
+.presence-page-stat-food strong > span[data-presence-page-counter] {
+  min-inline-size: 4.6ch;
+}
+
+.presence-page-stat-rd strong > span[data-presence-page-counter] {
+  min-inline-size: 4.2ch;
+}
+
 .presence-page-stat strong small {
+  flex: 0 0 auto;
   max-width: 8.5em;
   color: rgba(255, 255, 255, 0.78);
   font-size: clamp(0.78rem, 1vw, 1rem);
