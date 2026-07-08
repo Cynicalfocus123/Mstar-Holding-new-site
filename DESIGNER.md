@@ -7,6 +7,13 @@
 
 ## 2026-07-08
 
+### Safe Deployment Weight Optimization And Hostinger ZIP
+
+- No visual design, layout, copy, image crop, logo rendering, video appearance, portrait transparency, or page content changed.
+- Approved images/videos/logos/icons were tested conservatively and left unchanged when exact-pixel or no-visible-change savings were not available.
+- The final Hostinger ZIP uses a cleaner deployment structure by excluding unused copied media and old alternate assets from `dist/`, while keeping live referenced assets inside `assets/`, `media/`, and `videos/`.
+- `.htaccess` keeps the live static routing safe with direct file/directory pass-through, compression/cache rules, and canonical governance redirects without GitHub/local development paths.
+
 ### Footer Typography And Legal Page Styling
 
 - Strengthened the shared footer group headings so Company, Media / Press, Corporate Governance, and Legal read as clear section labels above the lighter centered links.

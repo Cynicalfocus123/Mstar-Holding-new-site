@@ -5,6 +5,26 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-08 Safe Deployment Weight Optimization And Hostinger ZIP
+
+- Ran the requested current audit. `cmd /c "npm.cmd run weight:audit 2>&1 | head -c 4000"` could not run because `head` is unavailable in this Windows shell, so the audit was run with `cmd /c npm.cmd run weight:audit` and output kept concise.
+- Source/public optimization result: no tracked image or video binaries were changed. Safe PNG recompression testing produced no smaller exact-pixel output for tracked assets, and the already optimized videos/WebP portraits/logos were left untouched to avoid visual degradation.
+- Current `public/` before optimization: 55,873,519 bytes across 96 files.
+- Current `public/` after optimization: 55,873,519 bytes across 96 files.
+- Generated `dist/` before deploy cleanup: 56,328,119 bytes.
+- Cleaned final `dist/` after unused deploy-asset exclusion and root governance aliases: 48,752,285 bytes across 97 files.
+- Removed from final deploy `dist/`: `media/operations-poster.png`, `media/growth-poster.png`, `media/hero-poster.png`, `videos/business-senior-home-care.mp4`, `videos/business-foodonlines.mp4`, `videos/business-seniorhome-private-nursing-hut.mp4`, and 13 unused SVG logo alternates under `media/logos/`.
+- The three large PNG poster files are untracked local files and unused by the current built site, which references the tracked `.webp` poster files instead; they were not committed and were excluded from the new live ZIP.
+- Added root deployment alias folders in final `dist/`: `executive-management/`, `board-of-directors/`, and `code-of-conduct/`; canonical `corporate-governance/` folders remain present.
+- Largest files before deploy cleanup included `videos/mstar-holding-company-intro.mp4` at 8,023,223 bytes, `media/leadership/jakapun-viwatkurkul-founder-president.webp` at 6,457,944 bytes, `videos/business-mstar-property.mp4` at 3,879,641 bytes, `videos/business-page-header-desktop.mp4` at 3,185,218 bytes, and `media/about/jakapun-viwatkurkul-president.webp` at 2,673,704 bytes.
+- Largest files after deploy cleanup are the same approved live referenced assets, with unused poster PNGs and unused videos no longer included in `dist/`.
+- Verification passed: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run build:hostinger`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run weight:audit`.
+- Built reference verification passed: 76 deploy media/video/brand assets included, 0 unused included assets found, and 0 broken references found across built HTML/CSS/JS.
+- `.htaccess` verification passed: included at ZIP root, no GitHub Pages redirects, no localhost/local IP paths, direct file/directory pass-through remains before any fallback behavior, compression/cache rules remain safe, and root governance shorthand routes redirect to canonical Corporate Governance pages.
+- New ZIP filename: `Mstar-Holding-Hostinger-Latest-Optimized.zip`.
+- New ZIP size: 48,062,899 bytes.
+- ZIP verification passed: 97 entries, contents of `dist/` directly at root, `.htaccess` and `index.html` at root, required page folders present, no wrapper folder, no source files, no `node_modules`, no `.git`, no package files, no docs, no old ZIPs, no screenshots/temp/backups, no unused media assets, no loose misplaced image/text files at root, and no Windows backslash paths.
+
 ## 2026-07-08 Footer Typography And Legal Page Styling
 
 - Scope is CSS/docs/deployment ZIP only: global shared footer heading typography and Privacy/Terms legal document styling.

@@ -7,6 +7,9 @@ DirectoryIndex index.html
   RewriteRule ^about$ /about/ [R=301,L]
   RewriteRule ^business$ /business/ [R=301,L]
   RewriteRule ^news$ /news/ [R=301,L]
+  RewriteRule ^executive-management/?$ /corporate-governance/executive-management/ [R=301,L]
+  RewriteRule ^board-of-directors/?$ /corporate-governance/board-of-directors/ [R=301,L]
+  RewriteRule ^code-of-conduct/?$ /corporate-governance/code-of-conduct/ [R=301,L]
 
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

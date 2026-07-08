@@ -6,6 +6,17 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-08 Safe Deployment Weight Optimization And Hostinger ZIP
+
+- Ran the requested size audit and inspected the largest files under `public/`, `dist/`, `public/media/`, `public/videos/`, `public/media/leadership/`, and `public/media/leadership/board/`.
+- Tested PNG recompression safely with decoded-pixel comparison; no tracked image asset produced a smaller exact-pixel output, so approved images, videos, logos, icons, leadership portraits, board portraits, article images, homepage/business visuals, transparency, crops, and dimensions were left unchanged.
+- Cleaned the generated Hostinger `dist/` only by excluding unused copied assets from the live deployment package: unreferenced legacy poster PNGs, unused duplicate video files, and unused SVG logo alternates.
+- Added safe `.htaccess` live redirects for `/executive-management/`, `/board-of-directors/`, and `/code-of-conduct/` to the existing canonical Corporate Governance URLs, while preserving direct file/directory pass-through, compression, cache rules, and no GitHub/local redirects.
+- Created root deployment alias folders in the final `dist/` package for Executive Management, Board of Directors, and Code of Conduct while keeping the canonical `corporate-governance/` pages present.
+- Verification passed: `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run build:hostinger`, and `cmd /c npm.cmd run weight:audit`.
+- Built reference verification passed with zero broken references and zero unused included media/video/brand assets in `dist/`.
+- Created new direct-extract Hostinger ZIP `Mstar-Holding-Hostinger-Latest-Optimized.zip` from the contents of cleaned `dist/`; ZIP verification found 97 entries, `.htaccess` and `index.html` at root, required page folders present, no wrapper folder, no source/development/package/docs/old ZIP files, and no Windows backslash paths.
+
 ## 2026-07-08 Footer Typography And Legal Page Styling
 
 - Refined global footer group headings so Company, Media / Press, Corporate Governance, and Legal are brighter, slightly larger, and heavier than their secondary links while preserving the centered dark premium footer system.
