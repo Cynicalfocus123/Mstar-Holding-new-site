@@ -4521,6 +4521,10 @@ h2 {
     overflow: hidden;
   }
 
+  .home-investing-section .home-theme-row-frame {
+    margin-top: 0;
+  }
+
   .home-theme-row {
     display: flex;
     flex-wrap: nowrap;

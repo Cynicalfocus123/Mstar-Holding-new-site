@@ -9,6 +9,7 @@
 ## 2026-07-08 Home Expansion Bleed And Countries Card Image
 
 - Fixed only the homepage desktop Regional Expansion section so the curved image occupies the right visual area, bleeds to the right viewport edge, and meets the growth theme grid below while preserving the left text column.
+- Tightened the homepage stacked mobile/tablet Regional Expansion layout so the curved image touches the theme-row top line instead of floating above the boxes.
 - Added the supplied illuminated Earth image to the standalone Global Presence Countries Operated stat card as an internal decorative media layer.
 - Updated the Countries Operated card image fit so the Earth image fully covers the card interior without changing card size, border radius, number styling, or text placement.
 - Preserved tablet/mobile homepage behavior, existing Global Presence card size, border radius, number styling, text placement, header, footer, About page, Business page, News pages, and unrelated sections.
