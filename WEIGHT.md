@@ -5,6 +5,20 @@
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.
 - Refresh this existing ZIP from the Hostinger/root `dist/` build instead of creating a new ZIP filename when the user says not to create a new ZIP.
 
+## 2026-07-08 About Collage Overlap Rebalance
+
+- Scope is About collage CSS and small deploy ZIP refresh only; no image binaries, videos, logos, page text, or non-About sections were changed.
+- Kept the larger collage sizing from the previous pass and refined card placement: main card z-index 2, portrait card z-index 3, logo card z-index 1.
+- Adjusted the main image card to 94% width with a 2.1 aspect ratio and proportional `object-fit: cover` to keep the Jack with prime minister image tight without top/bottom white bands.
+- Adjusted the logo card to 48% width, `right: 24%`, and `bottom: 0` so it remains visible but no longer blocks the main two photo cards.
+- Passed: `cmd /c npm.cmd run build`.
+- Passed: `cmd /c npm.cmd run build:hostinger`.
+- Passed: `cmd /c npm.cmd run lint`.
+- Passed: `cmd /c npm.cmd test`.
+- Built reference verification passed: `dist/about/index.html` references `../media/about/jack-with-prime-minister.webp`, `/assets/main-fwZ5Tofa.js`, and `/assets/main-BUAcpCtW.css`, with 0 broken About asset references.
+- Refreshed small ZIP `mstar-about-collage-image-update.zip` for this About collage change only; it includes the built About page, the new About image asset, and the current hashed CSS/JS assets required by that built page.
+- Refreshed small ZIP size: 208,100 bytes across 4 entries, with no wrapper folder, source files, docs, unrelated media, old ZIPs, or Windows backslash paths.
+
 ## 2026-07-08 About Collage Sizing And Fit Refinement
 
 - Scope is About collage CSS and small deploy ZIP refresh only; no image binaries, videos, logos, page text, or non-About sections were changed.

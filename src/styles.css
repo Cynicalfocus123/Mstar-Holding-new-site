@@ -2659,10 +2659,11 @@ h2 {
 }
 
 .about-company-image-main {
-  top: 2%;
+  z-index: 2;
+  top: 0;
   left: 0;
-  width: 92%;
-  aspect-ratio: 2.05;
+  width: 94%;
+  aspect-ratio: 2.1;
   border-radius: 24% 10% 27% 11% / 16% 22% 18% 28%;
 }
 
@@ -2672,18 +2673,20 @@ h2 {
 }
 
 .about-company-image-portrait {
-  top: 7%;
+  z-index: 3;
+  top: 10%;
   right: 0;
-  width: 38%;
+  width: 39%;
   aspect-ratio: 0.58;
   border-radius: 28px;
   box-shadow: 0 18px 48px rgba(14, 24, 34, 0.16);
 }
 
 .about-company-image-placeholder {
-  right: 12%;
-  bottom: 4%;
-  width: 55%;
+  z-index: 1;
+  right: 24%;
+  bottom: 0;
+  width: 48%;
   aspect-ratio: 1.08;
   padding: clamp(10px, 1.1vw, 16px);
   border-color: rgba(184, 135, 45, 0.22);

@@ -7,6 +7,13 @@
 
 ## 2026-07-08
 
+### About Collage Overlap Rebalance
+
+- Rebalanced the enlarged About collage so the Mstar logo card supports the composition instead of covering the two photo cards.
+- The main and portrait image cards now sit above the logo card, while the logo is lower and slightly tucked behind them for a cleaner layered effect.
+- The Jack with prime minister image keeps a tighter wide frame and proportional cover fit, removing the white bands without stretching or visually editing the image.
+- Responsive card sizing from the prior pass remains intact, preserving larger desktop/tablet/mobile collage presence without intended horizontal overflow.
+
 ### About Collage Sizing And Fit Refinement
 
 - Enlarged the About Mstar Holding collage so it has stronger visual presence beside the About copy while keeping the same premium overlapping rounded-card language.

@@ -6,6 +6,16 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-08 About Collage Overlap Rebalance
+
+- Refined only the About Mstar Holding collage CSS after the first sizing pass so the Mstar logo card no longer blocks the two main image cards.
+- Kept the larger collage/card scale while moving the logo card lower, reducing it to a balanced supporting size, and placing it behind the two photo cards with explicit z-index layering.
+- Tightened the Jack with prime minister main image frame further to a 2.1 wide aspect ratio with proportional cover fitting, preserving image proportions while removing top/bottom white space.
+- Preserved the premium rounded-card collage style, About text, President Message portrait, Global Presence, Built Across Industries, homepage, Business, News, governance, legal pages, header, footer, image files, and deployment paths.
+- Verification passed: `cmd /c npx.cmd prettier --write src\styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
+- Static verification confirmed the built CSS contains the larger responsive collage sizes, tighter main image fit, explicit card z-index layering, lower logo offset, and zero broken About page asset references.
+- Refreshed small deploy ZIP `mstar-about-collage-image-update.zip` with the built About page, the new About image, and the current hashed CSS/JS assets required by the updated About page.
+
 ## 2026-07-08 About Collage Sizing And Fit Refinement
 
 - Refined only the About Mstar Holding collage CSS so the new Jack with prime minister image fits tightly without the large top/bottom white space caused by the old 4:3 contained frame.
