@@ -1,6 +1,5 @@
 import "./styles.css";
 import { getArticleBySlug, sortedNewsArticles } from "./news-data.js";
-import { baseWorldPaths, marketCountryPaths } from "./world-map-data.js";
 
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
@@ -257,64 +256,34 @@ if (aboutCompanySection) {
 }
 
 const globalPresenceSection = document.querySelector("[data-global-presence]");
-const globalMapBase = document.querySelector("[data-global-map-base]");
-const globalMapMarkets = document.querySelector("[data-global-map-markets]");
 const globalPresenceStats = document.querySelector(
   "[data-global-presence-stats]",
 );
 const presenceCounters = document.querySelectorAll("[data-presence-counter]");
+const presenceGlobe = document.querySelector("[data-presence-globe]");
+const presenceGlobeCanvas = presenceGlobe?.querySelector("canvas");
+const presenceNumberFormatter = new Intl.NumberFormat("en-US");
 
-const svgNamespace = "http://www.w3.org/2000/svg";
+const formatPresenceValue = (value, counter) => {
+  const prefix = counter.dataset.counterPrefix || "";
+  const suffix = counter.dataset.counterSuffix || "";
 
-const buildGlobalPresenceMap = () => {
-  if (!globalMapBase || !globalMapMarkets) {
-    return;
-  }
-
-  baseWorldPaths.forEach(({ id, d }) => {
-    const path = document.createElementNS(svgNamespace, "path");
-
-    path.setAttribute("class", "map-country-shape");
-    path.setAttribute("data-country", id);
-    path.setAttribute("d", d);
-    path.setAttribute("aria-hidden", "true");
-    globalMapBase.append(path);
-  });
-
-  marketCountryPaths.forEach((market, index) => {
-    const group = document.createElementNS(svgNamespace, "g");
-
-    group.setAttribute("class", `map-market-shape market-${market.id}`);
-    group.setAttribute("aria-label", market.label);
-    group.style.setProperty("--map-delay", `${index * 80}ms`);
-
-    if (market.marker) {
-      const marker = document.createElementNS(svgNamespace, "circle");
-
-      marker.setAttribute("cx", String(market.marker.x));
-      marker.setAttribute("cy", String(market.marker.y));
-      marker.setAttribute("r", String(market.marker.r));
-      group.append(marker);
-    } else {
-      const path = document.createElementNS(svgNamespace, "path");
-
-      path.setAttribute("d", market.d);
-      group.append(path);
-    }
-
-    globalMapMarkets.append(group);
-  });
+  return `${prefix}${presenceNumberFormatter.format(value)}${suffix}`;
 };
 
 const setPresenceCountersToFinal = () => {
   presenceCounters.forEach((counter) => {
-    counter.textContent = `${counter.dataset.counterTarget}+`;
+    const target = Number(counter.dataset.counterTarget);
+
+    if (Number.isFinite(target)) {
+      counter.textContent = formatPresenceValue(target, counter);
+    }
   });
 };
 
 const resetPresenceCounters = () => {
   presenceCounters.forEach((counter) => {
-    counter.textContent = "0+";
+    counter.textContent = formatPresenceValue(0, counter);
   });
 };
 
@@ -334,12 +303,12 @@ const animatePresenceCounters = () => {
       const progress = Math.min((timestamp - startedAt) / duration, 1);
       const value = Math.round(target * easeOutCubic(progress));
 
-      counter.textContent = `${value}+`;
+      counter.textContent = formatPresenceValue(value, counter);
 
       if (progress < 1) {
         requestAnimationFrame(updateCounter);
       } else {
-        counter.textContent = `${target}+`;
+        counter.textContent = formatPresenceValue(target, counter);
       }
     };
 
@@ -363,9 +332,7 @@ const startPresenceCounters = () => {
   }
 };
 
-if (globalPresenceSection && globalMapBase && globalMapMarkets) {
-  buildGlobalPresenceMap();
-
+if (globalPresenceSection) {
   const revealGlobalPresence = () => {
     globalPresenceSection.classList.add("is-visible");
   };
@@ -388,6 +355,235 @@ if (globalPresenceSection && globalMapBase && globalMapMarkets) {
     globalPresenceObserver.observe(globalPresenceSection);
   }
 }
+
+const setupPresenceGlobe = () => {
+  if (!(presenceGlobeCanvas instanceof HTMLCanvasElement)) {
+    return;
+  }
+
+  const context = presenceGlobeCanvas.getContext("2d");
+
+  if (!context) {
+    return;
+  }
+
+  const operationalMarkers = [
+    { lat: 13.75, lon: 100.5 },
+    { lat: 1.35, lon: 103.82 },
+    { lat: 25.2, lon: 55.27 },
+    { lat: 51.5, lon: -0.12 },
+    { lat: 40.71, lon: -74.01 },
+  ];
+  const partnershipMarkers = [
+    { lat: 35.68, lon: 139.69 },
+    { lat: -33.86, lon: 151.21 },
+    { lat: -1.29, lon: 36.82 },
+    { lat: 48.85, lon: 2.35 },
+    { lat: -23.55, lon: -46.63 },
+  ];
+
+  const resizeCanvas = () => {
+    const bounds = presenceGlobeCanvas.getBoundingClientRect();
+    const size = Math.max(280, Math.round(bounds.width));
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+    presenceGlobeCanvas.width = Math.round(size * ratio);
+    presenceGlobeCanvas.height = Math.round(size * ratio);
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+    return size;
+  };
+
+  const project = (lat, lon, rotation, radius, center) => {
+    const latitude = (lat * Math.PI) / 180;
+    const longitude = ((lon + rotation) * Math.PI) / 180;
+    const x = center + radius * Math.cos(latitude) * Math.sin(longitude);
+    const y = center - radius * Math.sin(latitude);
+    const z = Math.cos(latitude) * Math.cos(longitude);
+
+    return { x, y, z };
+  };
+
+  const drawGreatCircle = (start, end, rotation, radius, center) => {
+    context.beginPath();
+
+    let hasStarted = false;
+    for (let index = 0; index <= 48; index += 1) {
+      const progress = index / 48;
+      const lat =
+        start.lat +
+        (end.lat - start.lat) * progress +
+        Math.sin(progress * Math.PI) * 16;
+      const lon = start.lon + (end.lon - start.lon) * progress;
+      const point = project(lat, lon, rotation, radius, center);
+
+      if (point.z < -0.15) {
+        hasStarted = false;
+        continue;
+      }
+
+      if (!hasStarted) {
+        context.moveTo(point.x, point.y);
+        hasStarted = true;
+      } else {
+        context.lineTo(point.x, point.y);
+      }
+    }
+
+    context.stroke();
+  };
+
+  let size = resizeCanvas();
+  let frameId = 0;
+  let startedAt = performance.now();
+
+  const draw = (timestamp) => {
+    const elapsed = prefersReducedMotion ? 0 : timestamp - startedAt;
+    const rotation = elapsed * 0.006;
+    const center = size / 2;
+    const radius = size * 0.38;
+
+    context.clearRect(0, 0, size, size);
+
+    const glow = context.createRadialGradient(
+      center,
+      center,
+      radius * 0.12,
+      center,
+      center,
+      radius * 1.25,
+    );
+    glow.addColorStop(0, "rgba(78, 209, 219, 0.28)");
+    glow.addColorStop(0.62, "rgba(44, 130, 196, 0.16)");
+    glow.addColorStop(1, "rgba(44, 130, 196, 0)");
+    context.fillStyle = glow;
+    context.beginPath();
+    context.arc(center, center, radius * 1.26, 0, Math.PI * 2);
+    context.fill();
+
+    const ocean = context.createRadialGradient(
+      center - radius * 0.36,
+      center - radius * 0.38,
+      radius * 0.08,
+      center,
+      center,
+      radius,
+    );
+    ocean.addColorStop(0, "#173d63");
+    ocean.addColorStop(0.48, "#0d2745");
+    ocean.addColorStop(1, "#061323");
+    context.fillStyle = ocean;
+    context.beginPath();
+    context.arc(center, center, radius, 0, Math.PI * 2);
+    context.fill();
+
+    context.save();
+    context.beginPath();
+    context.arc(center, center, radius, 0, Math.PI * 2);
+    context.clip();
+
+    context.strokeStyle = "rgba(100, 211, 218, 0.25)";
+    context.lineWidth = 1;
+
+    for (let lat = -60; lat <= 60; lat += 20) {
+      context.beginPath();
+      for (let lon = -180; lon <= 180; lon += 4) {
+        const point = project(lat, lon, rotation, radius, center);
+        if (point.z < 0) {
+          continue;
+        }
+
+        if (lon === -180) {
+          context.moveTo(point.x, point.y);
+        } else {
+          context.lineTo(point.x, point.y);
+        }
+      }
+      context.stroke();
+    }
+
+    for (let lon = -180; lon < 180; lon += 30) {
+      context.beginPath();
+      let hasStarted = false;
+      for (let lat = -84; lat <= 84; lat += 4) {
+        const point = project(lat, lon, rotation, radius, center);
+        if (point.z < 0) {
+          hasStarted = false;
+          continue;
+        }
+
+        if (!hasStarted) {
+          context.moveTo(point.x, point.y);
+          hasStarted = true;
+        } else {
+          context.lineTo(point.x, point.y);
+        }
+      }
+      context.stroke();
+    }
+
+    context.strokeStyle = "rgba(216, 164, 73, 0.34)";
+    context.lineWidth = 1.35;
+    partnershipMarkers.forEach((marker, index) => {
+      drawGreatCircle(
+        operationalMarkers[index % operationalMarkers.length],
+        marker,
+        rotation,
+        radius,
+        center,
+      );
+    });
+
+    [...operationalMarkers, ...partnershipMarkers].forEach((marker, index) => {
+      const point = project(marker.lat, marker.lon, rotation, radius, center);
+      if (point.z < 0) {
+        return;
+      }
+
+      const isOperational = index < operationalMarkers.length;
+      const markerRadius = isOperational ? 4.2 : 3.5;
+
+      context.fillStyle = isOperational ? "#48d2ca" : "#d8a449";
+      context.shadowColor = isOperational
+        ? "rgba(72, 210, 202, 0.85)"
+        : "rgba(216, 164, 73, 0.85)";
+      context.shadowBlur = 14;
+      context.beginPath();
+      context.arc(point.x, point.y, markerRadius, 0, Math.PI * 2);
+      context.fill();
+      context.shadowBlur = 0;
+    });
+
+    context.restore();
+
+    context.strokeStyle = "rgba(142, 219, 230, 0.38)";
+    context.lineWidth = 1.2;
+    context.beginPath();
+    context.arc(center, center, radius, 0, Math.PI * 2);
+    context.stroke();
+
+    if (!prefersReducedMotion) {
+      frameId = requestAnimationFrame(draw);
+    }
+  };
+
+  window.addEventListener("resize", () => {
+    size = resizeCanvas();
+  });
+
+  draw(startedAt);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      cancelAnimationFrame(frameId);
+    } else if (!prefersReducedMotion) {
+      startedAt = performance.now();
+      frameId = requestAnimationFrame(draw);
+    }
+  });
+};
+
+setupPresenceGlobe();
 
 if (presenceCounters.length) {
   if (!prefersReducedMotion && "IntersectionObserver" in window) {
