@@ -7,6 +7,12 @@
 
 ## 2026-07-08
 
+### Global Presence Card Imagery
+
+- Added internal background image layers only to the Food Serves Globally, Hospitality Clients, and R&D Investment stat cards on the standalone Global Presence page.
+- Kept the existing card sizing, rounded corners, number typography, stat layout, and responsive grid behavior intact while using a dim overlay so white labels and values remain readable.
+- Updated the Global Presence intro paragraph to the supplied wording and added the three image assets under `media/global-presence/`.
+
 ### Global Presence Counter Stability
 
 - Removed the small Mstar Holding eyebrow from the standalone Global Presence page hero while keeping the main heading, accent line, and spacing balanced.

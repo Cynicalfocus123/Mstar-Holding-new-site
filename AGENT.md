@@ -16,6 +16,13 @@
 - Static verification confirmed the built CSS contains the left-shift, separation, and mobile reset rules, and `dist/about/index.html` has zero broken asset references.
 - Refreshed small deploy ZIP `mstar-about-collage-image-update.zip` with the built About page, the new About image, and the current hashed CSS/JS assets required by the updated About page.
 
+## 2026-07-08 Global Presence Card Imagery
+
+- Updated only the standalone Global Presence page intro paragraph to the supplied wording: `Mstar Holding global footprint and innovations is pushing us to help society around the world.`
+- Added the supplied FoodOnlines fulfillment, Senior Caring hospitality, and Mstar Defense R&D images as internal decorative media layers inside the matching stat cards.
+- Preserved the existing stat card sizing, rounded corners, number typography, icon/title/number layout, responsive behavior, header, footer, About page, Business page, News pages, and unrelated assets.
+- Added the public image copies under `public/media/global-presence/` for the live build.
+
 ## 2026-07-08 Global Presence Counter Stability
 
 - Removed the small Mstar Holding eyebrow label from only the standalone Global Presence page hero.
