@@ -7,6 +7,13 @@
 
 ## 2026-07-08
 
+### About Collage Spacing Refinement
+
+- Shifted the main Jack with prime minister card farther left so it reads more clearly as the hero image in the collage.
+- Reduced crowding from the windmill and Mstar logo cards while preserving a subtle layered collage effect.
+- Kept all three boxes large, rounded, and premium, with mobile-specific spacing so the composition stays inside the viewport.
+- No image files, crops, page text, or non-collage sections changed.
+
 ### About Collage Overlap Rebalance
 
 - Rebalanced the enlarged About collage so the Mstar logo card supports the composition instead of covering the two photo cards.

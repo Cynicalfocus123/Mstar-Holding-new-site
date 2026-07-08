@@ -6,6 +6,16 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-08 About Collage Spacing Refinement
+
+- Refined only the About Mstar Holding collage CSS to move the main Jack with prime minister card farther left and create cleaner separation from the windmill and Mstar logo cards.
+- Kept all three collage boxes large, rounded, premium, and responsive while reducing overlap so the supporting cards no longer crowd the main image.
+- Added mobile-specific offsets so the larger collage remains inside the viewport, avoids intended horizontal overflow, and keeps the three-card composition readable on phones.
+- Preserved image files, image proportions, About text, President Message portrait, Global Presence, Built Across Industries, homepage, Business, News, governance, legal pages, header, footer, and deployment paths.
+- Verification passed: `cmd /c npx.cmd prettier --write src\styles.css`, `cmd /c npm.cmd run build`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run build:hostinger`.
+- Static verification confirmed the built CSS contains the left-shift, separation, and mobile reset rules, and `dist/about/index.html` has zero broken asset references.
+- Refreshed small deploy ZIP `mstar-about-collage-image-update.zip` with the built About page, the new About image, and the current hashed CSS/JS assets required by the updated About page.
+
 ## 2026-07-08 About Collage Overlap Rebalance
 
 - Refined only the About Mstar Holding collage CSS after the first sizing pass so the Mstar logo card no longer blocks the two main image cards.
