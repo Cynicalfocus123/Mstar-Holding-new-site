@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Tablet Targeted Logo Nudges
+
+- Tablet-only targeted logo offsets moved HIZOZ and Mstar Technology farther right, moved SeniorCaring and American Buying Service outward from their slice edges, and pulled Mstar Defense closer to the Defense slice without changing other logo positions.
+- Mobile, desktop, logo artwork, wheel design, colors, center hub, and company mapping were left unchanged.
+
 ### Business Ecosystem Tablet Individual Logo Placement
 
 - Tablet-only individual logo placement was refined for Mstar Property Development, SeniorCaring, American Buying Service, Mstar Defense, Mstar Technology, and One Tastes based on the marked reference positions.

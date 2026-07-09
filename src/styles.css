@@ -6349,11 +6349,11 @@ h2 {
     grid-column: 1 / -1;
     grid-row: 2;
     justify-self: center;
-    transform: translateX(44px);
+    transform: translateX(84px);
   }
 
   .presence-logo-american {
-    transform: translateX(54px);
+    transform: translateX(100px);
   }
 
   .presence-logo-property {
@@ -6361,11 +6361,15 @@ h2 {
   }
 
   .presence-logo-defense {
-    transform: translateX(-58px);
+    transform: translateX(-100px);
   }
 
   .presence-logo-technology {
-    transform: translateX(78px);
+    transform: translateX(126px);
+  }
+
+  .presence-logo-hizoz {
+    transform: translateX(58px);
   }
 }
 
