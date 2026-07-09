@@ -5645,6 +5645,45 @@ h2 {
   }
 }
 
+/* Final wheel color correction: each sector is one solid slice only. */
+.presence-ecosystem {
+  --ecosystem-slices: conic-gradient(
+    from 0deg,
+    #ffffff 0deg 1.2deg,
+    var(--sector-food-hospitality) 1.2deg 58.8deg,
+    #ffffff 58.8deg 61.2deg,
+    var(--sector-import-export) 61.2deg 118.8deg,
+    #ffffff 118.8deg 121.2deg,
+    var(--sector-defense) 121.2deg 178.8deg,
+    #ffffff 178.8deg 181.2deg,
+    var(--sector-technology) 181.2deg 238.8deg,
+    #ffffff 238.8deg 241.2deg,
+    var(--sector-entertainment) 241.2deg 298.8deg,
+    #ffffff 298.8deg 301.2deg,
+    var(--sector-real-estate) 301.2deg 358.8deg,
+    #ffffff 358.8deg 360deg
+  );
+}
+
+.presence-ecosystem-layout .presence-ecosystem-wheel {
+  background:
+    radial-gradient(circle at center, #ffffff 0 27.5%, transparent 27.8%),
+    var(--ecosystem-slices);
+}
+
+.presence-ecosystem-layout .presence-ecosystem-wheel::before {
+  content: none;
+  background: none;
+}
+
+@media (max-width: 767px) {
+  .presence-ecosystem-layout .presence-ecosystem-wheel {
+    background:
+      radial-gradient(circle at center, #ffffff 0 27.5%, transparent 27.8%),
+      var(--ecosystem-slices);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-base-dots,
   .map-market-shape {

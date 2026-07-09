@@ -19,6 +19,7 @@
 - Follow-up refinement converted the desktop ecosystem from separated side columns to a closer wheel-centered logo orbit, visually hid outside sector headings on desktop, kept sector labels inside the wheel, and rebalanced the center hub so the Mstar logo fits comfortably.
 - Latest correction updated the ecosystem to 12 businesses: added the supplied Mstar Property Development logo to Real Estate, moved HIZOZ.com from Import / Export to Technology, changed Real Estate / Import-Export / Technology wedge counts to 2, removed remaining dot/tick connector markers, and pushed wedge labels outward from the center hub.
 - Latest design correction changed the ecosystem eyebrow to `Company Ecosystem and Sectors`, kept one solid color per wheel slice, centered slice labels more carefully, kept desktop logos outside the wheel with broader perimeter spacing, and added mobile-only logo placement inside each matching slice.
+- Removed the remaining wheel overlay divider bars that visually split each slice and replaced the wheel background with one solid sector color per slice plus narrow white boundary gaps only.
 
 ## 2026-07-08 Global Presence Dark Globe Panel
 
