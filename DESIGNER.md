@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Mobile Logo Fine Alignment
+
+- Moved the Entertainment cluster left, moved Food & Hospitality left and slightly upward, and moved Import / Export upward to clear its sector text.
+- Kept the changes mobile-only; tablet and desktop positions, logo sizes, center-hub clearance, and all other sectors remain unchanged.
+
 ### Business Ecosystem Mobile Logo Pocket Alignment
 
 - Rebalanced the mobile logo cluster anchors inside each wedge after the outer-edge pass placed some clusters outside the wheel.
