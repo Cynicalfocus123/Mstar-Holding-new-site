@@ -7,6 +7,12 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Tablet Logo Clearance
+
+- Tablet-only orbit clearance was refined so BuyHomeForLess and American Buying Service no longer touch the wheel's white outer ring.
+- One Tastes now sits to the left of FoodOnlines inside the Food & Hospitality tablet group, keeping the logo with its correct sector while clearing the slice edge.
+- Mobile, desktop, logo artwork, wheel design, colors, center hub, and company mapping were left unchanged.
+
 ### Business Ecosystem Tablet Sector Proximity
 
 - Tablet-only logo orbit was tightened for Real Estate, Food & Hospitality, Technology, and Defense so those groups sit closer to their wheel sectors like Entertainment and Import / Export.

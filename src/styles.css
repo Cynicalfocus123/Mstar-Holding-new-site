@@ -6281,12 +6281,12 @@ h2 {
 
   .presence-ecosystem-callouts-left .ecosystem-sector--real-estate {
     top: 13%;
-    left: 13%;
+    left: 4%;
   }
 
   .presence-ecosystem-callouts-right .ecosystem-sector--food-hospitality {
     top: 13%;
-    right: 13%;
+    right: 4%;
   }
 
   .presence-ecosystem-callouts-right .ecosystem-sector--import-export {
@@ -6295,13 +6295,13 @@ h2 {
   }
 
   .presence-ecosystem-callouts-right .ecosystem-sector--defense {
-    right: 13%;
+    right: 4%;
     bottom: 13%;
   }
 
   .presence-ecosystem-callouts-left .ecosystem-sector--technology {
     bottom: 13%;
-    left: 13%;
+    left: 4%;
   }
 
   .presence-ecosystem-callouts-left .ecosystem-sector--entertainment {
@@ -6322,6 +6322,36 @@ h2 {
   .presence-logo-technology img {
     max-width: clamp(108px, 15vw, 188px);
     max-height: clamp(48px, 6.8vw, 86px);
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--food-hospitality {
+    width: clamp(250px, 29vw, 330px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    column-gap: clamp(10px, 1.4vw, 18px);
+    row-gap: clamp(8px, 1vw, 12px);
+  }
+
+  .presence-logo-one-taste {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .presence-logo-foodonlines {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .presence-logo-senior {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .presence-logo-american {
+    transform: translateX(14px);
   }
 }
 

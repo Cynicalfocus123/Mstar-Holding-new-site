@@ -1,5 +1,12 @@
 # Project Changelog
 
+## 2026-07-09 Business Ecosystem Tablet Logo Clearance
+
+- Refined only the standalone Global Presence Business Ecosystem tablet breakpoint for logo clearance.
+- Moved BuyHomeForLess and American Buying Service away from the wheel's white outer ring and arranged One Tastes to the left of FoodOnlines inside the Food & Hospitality group.
+- Preserved mobile behavior, desktop behavior, logo artwork, company mapping, sector colors, center hub, heading text, page background, and no-card logo rendering.
+- No localhost preview was opened, no local IP was opened, and no ZIP was created.
+
 ## 2026-07-09 Business Ecosystem Tablet Sector Proximity
 
 - Tightened only the standalone Global Presence Business Ecosystem tablet breakpoint for Real Estate, Food & Hospitality, Technology, and Defense logo proximity.
