@@ -4336,6 +4336,563 @@ h2 {
   }
 }
 
+/* Rebuilt open Business Ecosystem infographic. */
+.presence-ecosystem {
+  --sector-real-estate: #1463d8;
+  --sector-food-hospitality: #10a86b;
+  --sector-import-export: #00afcb;
+  --sector-defense: #f26a21;
+  --sector-technology: #6e42d8;
+  --sector-entertainment: #f5b400;
+  width: min(100%, 1500px);
+  margin: clamp(76px, 7vw, 120px) auto clamp(82px, 8vw, 132px);
+  padding: 0 var(--gutter);
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.presence-ecosystem-heading {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.presence-ecosystem-heading span {
+  color: #1b5f79;
+  font-size: clamp(0.76rem, 0.85vw, 0.9rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.presence-ecosystem-heading h2 {
+  max-width: 820px;
+  margin: 12px auto 0;
+  color: #102846;
+  font-size: clamp(2.05rem, 4vw, 4rem);
+  font-weight: 850;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.presence-ecosystem-heading i {
+  width: clamp(96px, 11vw, 162px);
+  height: 3px;
+  margin-top: clamp(18px, 2vw, 28px);
+  background: var(--mstar-gold);
+  border-radius: 999px;
+}
+
+.presence-ecosystem-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 300px)
+    minmax(500px, 640px)
+    minmax(260px, 360px);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(46px, 5vw, 86px);
+  margin-top: clamp(48px, 5.5vw, 84px);
+}
+
+.presence-ecosystem-callouts {
+  display: grid;
+  align-content: center;
+  gap: clamp(28px, 3.2vw, 48px);
+  min-width: 0;
+}
+
+.presence-ecosystem-callouts-left {
+  justify-items: end;
+}
+
+.presence-ecosystem-callouts-right {
+  justify-items: start;
+}
+
+.presence-ecosystem-group {
+  position: relative;
+  display: grid;
+  width: min(100%, 320px);
+  gap: clamp(12px, 1.5vw, 18px);
+  padding-block: 0;
+  border-top: 0;
+}
+
+.presence-ecosystem-group h3 {
+  position: relative;
+  display: inline-grid;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding-top: 10px;
+  color: #102846;
+  font-size: clamp(0.78rem, 0.85vw, 0.95rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.presence-ecosystem-group h3::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(100%, 92px);
+  height: 3px;
+  content: "";
+  background: var(--sector-color);
+  border-radius: 999px;
+}
+
+.presence-ecosystem-group::before,
+.presence-ecosystem-group::after {
+  position: absolute;
+  top: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.presence-ecosystem-group::before {
+  width: clamp(22px, 3vw, 46px);
+  height: 2px;
+  background: var(--sector-color);
+  opacity: 0.78;
+}
+
+.presence-ecosystem-group::after {
+  width: 9px;
+  height: 9px;
+  background: var(--sector-color);
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.92);
+  transform: translateY(-50%);
+}
+
+.presence-ecosystem-callouts-left .presence-ecosystem-group {
+  justify-items: end;
+  text-align: right;
+}
+
+.presence-ecosystem-callouts-left .presence-ecosystem-group h3::before {
+  right: 0;
+  left: auto;
+}
+
+.presence-ecosystem-callouts-left .presence-ecosystem-group::before {
+  left: calc(100% + 14px);
+}
+
+.presence-ecosystem-callouts-left .presence-ecosystem-group::after {
+  left: calc(100% + clamp(38px, 3vw, 60px));
+}
+
+.presence-ecosystem-callouts-right .presence-ecosystem-group::before {
+  right: calc(100% + 14px);
+}
+
+.presence-ecosystem-callouts-right .presence-ecosystem-group::after {
+  right: calc(100% + clamp(38px, 3vw, 60px));
+}
+
+.presence-ecosystem-layout .presence-ecosystem-wheel-wrap {
+  display: grid;
+  justify-items: center;
+  min-width: 0;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-wheel {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: min(100%, 620px);
+  min-width: 0;
+  aspect-ratio: 1;
+  border: clamp(7px, 0.8vw, 10px) solid #ffffff;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #ffffff 0 23.5%, transparent 23.9%),
+    conic-gradient(
+      from -30deg,
+      var(--sector-food-hospitality) 0deg 60deg,
+      var(--sector-import-export) 60deg 120deg,
+      var(--sector-defense) 120deg 180deg,
+      var(--sector-technology) 180deg 240deg,
+      var(--sector-entertainment) 240deg 300deg,
+      var(--sector-real-estate) 300deg 360deg
+    );
+  box-shadow:
+    inset 0 0 0 3px rgba(255, 255, 255, 0.72),
+    0 26px 62px rgba(16, 40, 70, 0.16);
+  transform: none;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-wheel::before {
+  position: absolute;
+  inset: -1px;
+  content: "";
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 49.35%,
+      #ffffff 49.35% 50.65%,
+      transparent 50.65%
+    ),
+    linear-gradient(
+      30deg,
+      transparent 49.35%,
+      #ffffff 49.35% 50.65%,
+      transparent 50.65%
+    ),
+    linear-gradient(
+      150deg,
+      transparent 49.35%,
+      #ffffff 49.35% 50.65%,
+      transparent 50.65%
+    );
+  pointer-events: none;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-wheel::after {
+  position: absolute;
+  inset: 29%;
+  content: "";
+  background: #ffffff;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 2px rgba(16, 40, 70, 0.08),
+    0 12px 28px rgba(17, 19, 20, 0.14);
+  pointer-events: none;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-center {
+  position: absolute;
+  inset: 32%;
+  z-index: 3;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  color: #102846;
+  text-align: center;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-center img {
+  width: min(78%, 150px);
+  height: auto;
+  object-fit: contain;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-center strong {
+  display: block;
+  margin-top: 6px;
+  font-size: clamp(0.76rem, 1.05vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.16;
+}
+
+.presence-ecosystem-layout .presence-sector-label {
+  z-index: 2;
+  width: 28%;
+  justify-items: center;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 2px 11px rgba(0, 0, 0, 0.3);
+}
+
+.presence-ecosystem-layout .presence-sector-label::before {
+  display: grid;
+  width: clamp(34px, 4vw, 48px);
+  height: clamp(34px, 4vw, 48px);
+  margin-bottom: 8px;
+  place-items: center;
+  color: #ffffff;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  line-height: 1;
+  background: var(--sector-color);
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  border-radius: 999px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+.presence-ecosystem-layout .presence-sector-label span {
+  font-size: clamp(0.76rem, 1vw, 0.98rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.06;
+  text-transform: uppercase;
+}
+
+.presence-ecosystem-layout .presence-sector-label small {
+  margin-top: 4px;
+  font-size: clamp(0.62rem, 0.78vw, 0.78rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.16;
+}
+
+.presence-ecosystem-layout .presence-sector-real-estate {
+  top: 16.5%;
+  left: 18%;
+}
+
+.presence-ecosystem-layout .presence-sector-food {
+  top: 16.5%;
+  right: 18%;
+}
+
+.presence-ecosystem-layout .presence-sector-import {
+  top: 47%;
+  right: 6%;
+}
+
+.presence-ecosystem-layout .presence-sector-defense {
+  right: 18%;
+  bottom: 16.5%;
+}
+
+.presence-ecosystem-layout .presence-sector-technology {
+  bottom: 16.5%;
+  left: 18%;
+}
+
+.presence-ecosystem-layout .presence-sector-entertainment {
+  top: 47%;
+  left: 6%;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-logo,
+.presence-ecosystem-logo {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: flex;
+  width: auto;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+}
+
+.presence-ecosystem-logo::before,
+.presence-ecosystem-logo::after,
+.presence-ecosystem-layout .presence-ecosystem-logo::before,
+.presence-ecosystem-layout .presence-ecosystem-logo::after {
+  content: none;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-logo img,
+.presence-ecosystem-logo img {
+  display: block;
+  width: auto;
+  max-width: clamp(118px, 14vw, 220px);
+  max-height: clamp(48px, 5.8vw, 82px);
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(16, 40, 70, 0.08));
+}
+
+.presence-logo-foodonlines img,
+.presence-logo-american img,
+.presence-logo-one-taste img,
+.presence-logo-technology img {
+  max-width: clamp(148px, 16vw, 250px);
+  max-height: clamp(54px, 6vw, 90px);
+}
+
+.presence-logo-buyhome img,
+.presence-logo-defense img {
+  max-width: clamp(154px, 17vw, 260px);
+  max-height: clamp(58px, 6.5vw, 96px);
+}
+
+.presence-ecosystem-footer {
+  margin-top: clamp(46px, 5vw, 78px);
+  color: #102846;
+  text-align: center;
+}
+
+.presence-ecosystem-footer span {
+  display: grid;
+  width: min(380px, 72%);
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+  color: var(--mstar-gold);
+  font-size: 0.92rem;
+  letter-spacing: 0;
+}
+
+.presence-ecosystem-footer span::before,
+.presence-ecosystem-footer span::after {
+  height: 2px;
+  content: "";
+  background: var(--mstar-gold);
+}
+
+.presence-ecosystem-footer p {
+  max-width: 760px;
+  margin: 12px auto 0;
+  color: #102846;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2.1vw, 1.9rem);
+  line-height: 1.25;
+}
+
+@media (max-width: 1199px) {
+  .presence-ecosystem {
+    margin-block: clamp(66px, 8vw, 100px);
+  }
+
+  .presence-ecosystem-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(30px, 5vw, 50px);
+    justify-items: center;
+  }
+
+  .presence-ecosystem-wheel-wrap {
+    order: 1;
+    width: min(100%, 620px);
+  }
+
+  .presence-ecosystem-callouts {
+    width: min(100%, 880px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: stretch;
+    gap: clamp(24px, 4vw, 38px);
+  }
+
+  .presence-ecosystem-callouts-left {
+    order: 2;
+  }
+
+  .presence-ecosystem-callouts-right {
+    order: 3;
+  }
+
+  .presence-ecosystem-group,
+  .presence-ecosystem-callouts-left .presence-ecosystem-group {
+    width: 100%;
+    justify-items: center;
+    padding-top: 16px;
+    text-align: center;
+    border-top: 3px solid var(--sector-color);
+  }
+
+  .presence-ecosystem-group h3 {
+    padding-top: 0;
+  }
+
+  .presence-ecosystem-group h3::before,
+  .presence-ecosystem-group::before,
+  .presence-ecosystem-group::after {
+    content: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .presence-ecosystem {
+    margin-block: 58px 76px;
+    padding-inline: var(--gutter);
+  }
+
+  .presence-ecosystem-heading {
+    max-width: 360px;
+  }
+
+  .presence-ecosystem-heading h2 {
+    font-size: clamp(1.85rem, 10vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .presence-ecosystem-layout {
+    margin-top: 34px;
+    gap: 34px;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-wheel {
+    width: min(100%, 360px);
+  }
+
+  .presence-ecosystem-layout .presence-sector-label {
+    width: 29%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-label::before {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+    font-size: 0.78rem;
+  }
+
+  .presence-ecosystem-layout .presence-sector-label span {
+    font-size: clamp(0.52rem, 2.35vw, 0.7rem);
+    line-height: 1.02;
+  }
+
+  .presence-ecosystem-layout .presence-sector-label small {
+    margin-top: 2px;
+    font-size: clamp(0.48rem, 2vw, 0.6rem);
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center {
+    inset: 33%;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center img {
+    width: 74%;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center strong {
+    margin-top: 4px;
+    font-size: clamp(0.55rem, 2.3vw, 0.72rem);
+  }
+
+  .presence-ecosystem-callouts {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .presence-ecosystem-callouts-left,
+  .presence-ecosystem-callouts-right {
+    width: 100%;
+  }
+
+  .presence-ecosystem-group,
+  .presence-ecosystem-callouts-left .presence-ecosystem-group {
+    gap: 16px;
+    padding-top: 18px;
+  }
+
+  .presence-ecosystem-group h3 {
+    font-size: 0.86rem;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-logo img,
+  .presence-ecosystem-logo img {
+    max-width: min(70vw, 210px);
+    max-height: 76px;
+  }
+
+  .presence-ecosystem-footer {
+    margin-top: 38px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-base-dots,
   .map-market-shape {

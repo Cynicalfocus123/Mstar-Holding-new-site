@@ -6,6 +6,17 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-09 Business Ecosystem Section Rebuild
+
+- Rebuilt the standalone Global Presence Business Ecosystem section with a clean open page-background layout and no outer box, background circle, boxed dashboard wrapper, or white logo cards.
+- Added explicit sector labels to each company group and corrected the ZOZ.com accessible label while preserving the existing original logo image files.
+- Fixed the company-to-sector mapping: BuyHomeForLess under Real Estate; FoodOnlines, SeniorCaring, and One Tastes under Food & Hospitality; ABS Fulfillment, American Buying Service, and ZOZ.com under Import / Export; Mstar Defense under Defense; Mstar Technology under Technology; Mstar Airsoft and Boogoo under Entertainment.
+- Reworked desktop into left company groups, centered wheel, and right company groups with greater spacing and clean sector-colored connector ticks.
+- Reworked tablet/mobile so the wheel stacks above labeled sector groups instead of a cramped ungrouped logo list.
+- Locked the exact semantic sector colors across wheel wedges, connector ticks, sector labels, and responsive group accents.
+- Preserved every logo as an untouched proportional `<img>` asset with `object-fit: contain`; no logo was recolored, cropped, warped, redrawn, edited, or converted.
+- Honored the request not to open localhost and not to create a ZIP.
+
 ## 2026-07-08 Global Presence Dark Globe Panel
 
 - Refined the standalone Global Presence page's dark globe panel directly below the statistic cards using the existing canvas Earth renderer.

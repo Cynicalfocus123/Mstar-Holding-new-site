@@ -5,6 +5,17 @@
 - Every site change must update `DESIGNER.md` with concise design intent, visual behavior, responsive behavior, and any asset/crop/motion notes relevant to the change.
 - Keep design notes concise and avoid large implementation logs.
 
+## 2026-07-09
+
+### Business Ecosystem Section Rebuild
+
+- Rebuilt the standalone Global Presence Business Ecosystem section to sit directly on the page background with no large outer box, card, or background circle.
+- Fixed company-to-sector grouping so each company appears only under its correct sector, with transparent logo placement instead of white logo cards.
+- Desktop now uses clearer left company groups, centered wheel, and right company groups with more space between logos and the wheel.
+- Tablet and mobile stack the wheel above labeled sector groups so each sector has its own title, color accent, and correct logos.
+- Kept all company logos as original untouched image assets with proportional `object-fit: contain` rendering only.
+- Applied the strict semantic sector color system across wheel wedges, connector ticks, and responsive sector group accents.
+
 ## 2026-07-08
 
 ### Global Presence Dark Globe Panel
