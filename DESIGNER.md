@@ -7,6 +7,12 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Tablet Orbit Rework
+
+- Tablet ecosystem logo layout was reworked again to better match desktop orbit logic.
+- Logos were enlarged for readability, moved closer to their respective sectors, kept outside the wheel, and spaced so they do not touch the wheel or overlap each other.
+- Mobile and desktop behaviors were left unchanged.
+
 ### Business Ecosystem Tablet Logo Orbit Spacing
 
 - Tablet-only Business Ecosystem logo orbit was adjusted to follow desktop spacing logic, moving logos farther outside the wheel with more breathing room while leaving mobile and desktop behavior unchanged.
