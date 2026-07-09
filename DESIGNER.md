@@ -21,6 +21,14 @@
 - Tablet and mobile convert the ecosystem into a stacked wheel-plus-logo-card flow to avoid horizontal overflow while preserving all supplied brand logos.
 - Header, footer, navigation, stat-card values, About page Global Presence map, and unrelated pages were not changed.
 
+### Business Ecosystem Diagram Layout Fix
+
+- Reworked the ecosystem diagram so it sits directly on the page background instead of inside a large boxed/card wrapper.
+- Locked the six-sector color system to semantic variables for Real Estate, Food & Hospitality, Import / Export, Defense, Technology, and Entertainment; wheel wedges, callout connectors, and mobile group accents use the same sector colors.
+- Reduced the center hub and repositioned sector labels so the logo no longer covers text and the Import / Export wedge remains readable.
+- Rebuilt desktop placement into left callouts, center wheel, and right callouts so logo cards stay outside the circle; tablet/mobile stack safely without horizontal overflow.
+- Logos remain original image assets and are only proportionally contained inside neutral logo cards.
+
 ### Home Expansion Bleed And Countries Card Image
 
 - Adjusted only the desktop layout for the homepage Regional Expansion section so the curved image begins after the left text column, bleeds to the right viewport edge, and meets the growth theme grid below.
