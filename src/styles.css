@@ -5941,6 +5941,120 @@ h2 {
   }
 }
 
+/* Corrected sector label placement: outward in each slice with normal word wrapping. */
+.presence-ecosystem-layout .presence-sector-label {
+  width: clamp(132px, 29%, 176px);
+  overflow: visible;
+  text-wrap: balance;
+}
+
+.presence-ecosystem-layout .presence-sector-label span,
+.presence-ecosystem-layout .presence-sector-label small {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: manual;
+  white-space: normal;
+}
+
+.presence-ecosystem-layout .presence-sector-label span {
+  font-size: clamp(0.82rem, 1.08vw, 1.08rem);
+  line-height: 1.04;
+}
+
+.presence-ecosystem-layout .presence-sector-label small {
+  margin-top: 4px;
+  font-size: clamp(0.6rem, 0.76vw, 0.76rem);
+  line-height: 1.08;
+}
+
+.presence-ecosystem-layout .presence-sector-food {
+  top: 22%;
+  left: 71%;
+  right: auto;
+}
+
+.presence-ecosystem-layout .presence-sector-import {
+  top: 50%;
+  left: 83%;
+  right: auto;
+}
+
+.presence-ecosystem-layout .presence-sector-defense {
+  top: 78%;
+  right: auto;
+  bottom: auto;
+  left: 71%;
+}
+
+.presence-ecosystem-layout .presence-sector-technology {
+  top: 78%;
+  bottom: auto;
+  left: 29%;
+}
+
+.presence-ecosystem-layout .presence-sector-entertainment {
+  top: 50%;
+  left: 17%;
+}
+
+.presence-ecosystem-layout .presence-sector-real-estate {
+  top: 22%;
+  left: 29%;
+}
+
+@media (max-width: 1199px) {
+  .presence-ecosystem-layout .presence-sector-label {
+    width: clamp(104px, 27%, 150px);
+  }
+}
+
+@media (max-width: 767px) {
+  .presence-ecosystem-layout .presence-sector-label {
+    width: clamp(76px, 24%, 96px);
+  }
+
+  .presence-ecosystem-layout .presence-sector-label span {
+    font-size: clamp(0.48rem, 1.95vw, 0.66rem);
+    line-height: 1.02;
+  }
+
+  .presence-ecosystem-layout .presence-sector-label small {
+    margin-top: 2px;
+    font-size: clamp(0.38rem, 1.45vw, 0.5rem);
+    line-height: 1.04;
+  }
+
+  .presence-ecosystem-layout .presence-sector-food {
+    top: 22%;
+    left: 71%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-import {
+    top: 50%;
+    left: 83%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-defense {
+    top: 78%;
+    left: 71%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-technology {
+    top: 78%;
+    left: 29%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-entertainment {
+    top: 50%;
+    left: 17%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-real-estate {
+    top: 22%;
+    left: 29%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-base-dots,
   .map-market-shape {
