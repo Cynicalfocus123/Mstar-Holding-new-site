@@ -372,3 +372,4 @@
 - Fine-tuned the mobile Entertainment, Food & Hospitality, and Import / Export logo positions for sector-edge and label clearance.
 - Adjusted only the mobile Mstar Defense logo down and right to clear the Defense label.
 - Shifted only the mobile Mstar Defense logo left to the supplied arrow endpoint while preserving its vertical clearance.
+- Removed all per-sector business-count labels across mobile, tablet, and desktop while preserving the center ecosystem summary.

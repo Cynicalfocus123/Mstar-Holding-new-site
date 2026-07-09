@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Sector Count Removal
+
+- Removed the per-sector business-count lines from all six ecosystem wedge labels across mobile, tablet, and desktop.
+- Preserved the sector names and the center hub summary `12 Businesses Across / 6 Sectors`.
+
 ### Business Ecosystem Mobile Defense Arrow Alignment
 
 - Moved only the mobile Mstar Defense logo left to the endpoint shown by the supplied arrow, preserving its current vertical position and label clearance.
