@@ -7,6 +7,13 @@
 
 ## 2026-07-09
 
+### Global Presence Full-Width Globe Band
+
+- Changed the standalone Global Presence rotating globe panel from a centered rounded card into a full-width dark horizontal band.
+- Preserved the rotating Earth, title, paragraph, legend, radial dot grid, glow, lower arc, and responsive motion behavior.
+- Kept the inner text-and-globe composition constrained for readability while allowing the dark background to reach both page edges.
+- Header, footer, stat cards, and the Business Ecosystem section were not changed.
+
 ### Business Ecosystem Section Rebuild
 
 - Rebuilt the standalone Global Presence Business Ecosystem section to sit directly on the page background with no large outer box, card, or background circle.

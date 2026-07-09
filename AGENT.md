@@ -6,6 +6,13 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-09 Global Presence Full-Width Globe Band
+
+- Updated only the standalone Global Presence dark rotating Earth panel so its dark background spans the full viewport width instead of reading as a centered rounded card.
+- Preserved the rotating Earth renderer, Earth motion, title, paragraph, legend, radial dot grid, glow, lower arc, stat cards above, Business Ecosystem below, header, footer, and unrelated pages.
+- Kept the inner text-and-globe layout constrained with responsive gutters while removing the panel's side radius and side borders for a full-width horizontal band feel.
+- Honored the request not to open localhost and not to create a ZIP.
+
 ## 2026-07-09 Business Ecosystem Section Rebuild
 
 - Rebuilt the standalone Global Presence Business Ecosystem section with a clean open page-background layout and no outer box, background circle, boxed dashboard wrapper, or white logo cards.
