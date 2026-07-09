@@ -723,6 +723,7 @@
 - Commit hash: reported in final handoff after commit/push.
 - Tablet ecosystem logo clearance was corrected again for ABS Fulfillment, SeniorCaring, American Buying Service, and Mstar Defense using small sector-relative offsets only; all other logo positions and non-tablet behavior remain unchanged.
 - Tablet Mstar Defense was nudged left and upward to align more closely with the centerline of the Defense wedge; no other logo or breakpoint was changed.
+- Increased only the mobile in-wheel company logo sizes to medium readable caps; tablet and desktop logo sizing and positioning remain unchanged.
 
 ## 2026-07-01 About Global Presence Map Refinement
 

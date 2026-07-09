@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Mobile Logo Scale
+
+- Increased only the mobile in-wheel company logo caps from tiny thumbnail sizing to a medium readable size across every sector.
+- Widened only the mobile logo clusters enough to keep multi-company sectors grouped without changing their positions, the tablet/desktop orbit, wheel, labels, or sector mapping.
+
 ### Business Ecosystem Tablet Defense Logo Alignment
 
 - Moved only the Mstar Defense logo left and upward on tablet so it sits closer to and more centrally aligned with the Defense wedge while remaining outside the wheel.
