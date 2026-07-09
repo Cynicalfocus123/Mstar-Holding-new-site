@@ -27,6 +27,7 @@
 - Removed the RE/FH/IE/D/T/E mini marker circles and repositioned the remaining sector name/count labels toward the center of each slice.
 - Tightened sector label boxes with centered wrapping and smaller responsive type so long labels stay inside their slices without touching the center hub or slice edges.
 - Moved sector label anchors outward into the open area of each slice and restored normal word wrapping so labels do not break words like `Hospitality` or `Entertainment`.
+- Reduced the ecosystem center hub and nudged the Import / Export and Entertainment labels farther outward so side-slice text no longer crosses into the white middle circle.
 
 ## 2026-07-08
 

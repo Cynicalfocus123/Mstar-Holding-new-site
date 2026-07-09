@@ -6055,6 +6055,79 @@ h2 {
   }
 }
 
+/* Side-slice clearance: smaller hub and outward side labels. */
+.presence-ecosystem-layout .presence-ecosystem-wheel {
+  background:
+    radial-gradient(circle at center, #ffffff 0 23.8%, transparent 24.1%),
+    var(--ecosystem-slices);
+}
+
+.presence-ecosystem-layout .presence-ecosystem-wheel::after {
+  inset: 23.8%;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-center {
+  inset: 27.2%;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-center img {
+  width: min(54%, 104px);
+}
+
+.presence-ecosystem-layout .presence-ecosystem-center strong {
+  max-width: 82%;
+  font-size: clamp(0.58rem, 0.74vw, 0.74rem);
+  line-height: 1.1;
+}
+
+.presence-ecosystem-layout .presence-sector-import {
+  left: 85.5%;
+}
+
+.presence-ecosystem-layout .presence-sector-entertainment {
+  left: 14.5%;
+}
+
+@media (min-width: 1200px) {
+  .presence-ecosystem-layout .presence-ecosystem-wheel {
+    background:
+      radial-gradient(circle at center, #ffffff 0 23.8%, transparent 24.1%),
+      var(--ecosystem-slices);
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-wheel::after {
+    inset: 23.8%;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center {
+    inset: 27.2%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-import {
+    left: 85.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-entertainment {
+    left: 14.5%;
+  }
+}
+
+@media (max-width: 767px) {
+  .presence-ecosystem-layout .presence-ecosystem-wheel {
+    background:
+      radial-gradient(circle at center, #ffffff 0 23.8%, transparent 24.1%),
+      var(--ecosystem-slices);
+  }
+
+  .presence-ecosystem-layout .presence-sector-import {
+    left: 85%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-entertainment {
+    left: 15%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-base-dots,
   .map-market-shape {
