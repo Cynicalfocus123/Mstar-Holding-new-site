@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Mobile Logo And Label Separation
+
+- Moved the six mobile logo clusters into the unused outer pockets of their matching wedges so they no longer sit behind sector labels.
+- Kept the clusters farther from the white center hub and preserved medium sizing; tablet and desktop layout rules remain unchanged.
+
 ### Business Ecosystem Mobile Sector Containment
 
 - Repositioned only the mobile in-wheel logo clusters outward within their matching pie wedges so enlarged logos do not bleed across diagonal sector edges.

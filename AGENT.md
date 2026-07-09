@@ -725,6 +725,7 @@
 - Tablet Mstar Defense was nudged left and upward to align more closely with the centerline of the Defense wedge; no other logo or breakpoint was changed.
 - Increased only the mobile in-wheel company logo sizes to medium readable caps; tablet and desktop logo sizing and positioning remain unchanged.
 - Repositioned only the mobile logo clusters outward within their own sectors to prevent edge bleeding; no cluster was moved toward the white center hub, and tablet/desktop behavior remains unchanged.
+- Moved the mobile logo clusters away from the sector-label anchors into the outer wedge areas; center-hub clearance and tablet/desktop behavior remain unchanged.
 
 ## 2026-07-01 About Global Presence Map Refinement
 

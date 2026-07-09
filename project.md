@@ -367,3 +367,4 @@
 - Nudged only the tablet Mstar Defense logo left and upward for closer Defense-slice alignment.
 - Increased only the mobile in-wheel company logo caps to medium size while preserving all tablet and desktop behavior.
 - Moved only the mobile logo clusters outward within their matching slices to prevent cross-sector bleeding without reducing center-hub clearance.
+- Separated the mobile logo clusters from the sector text by placing them in the outer portions of their matching wedges.
