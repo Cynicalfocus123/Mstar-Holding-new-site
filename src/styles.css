@@ -5637,33 +5637,33 @@ h2 {
   }
 
   .presence-mobile-logo-real-estate {
-    top: 12%;
-    left: 22%;
+    top: 14%;
+    left: 27%;
   }
 
   .presence-mobile-logo-food {
-    top: 12%;
-    left: 78%;
+    top: 14%;
+    left: 73%;
   }
 
   .presence-mobile-logo-import {
-    top: 50%;
-    left: 88%;
-  }
-
-  .presence-mobile-logo-defense {
-    top: 88%;
+    top: 46%;
     left: 78%;
   }
 
+  .presence-mobile-logo-defense {
+    top: 82%;
+    left: 73%;
+  }
+
   .presence-mobile-logo-technology {
-    top: 88%;
-    left: 22%;
+    top: 82%;
+    left: 27%;
   }
 
   .presence-mobile-logo-entertainment {
-    top: 50%;
-    left: 12%;
+    top: 60%;
+    left: 23%;
   }
 }
 

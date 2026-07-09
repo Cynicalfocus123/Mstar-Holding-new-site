@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Mobile Logo Pocket Alignment
+
+- Rebalanced the mobile logo cluster anchors inside each wedge after the outer-edge pass placed some clusters outside the wheel.
+- Kept medium logos away from the white hub and sector labels while keeping every cluster inside its matching pie slice; tablet and desktop remain unchanged.
+
 ### Business Ecosystem Mobile Logo And Label Separation
 
 - Moved the six mobile logo clusters into the unused outer pockets of their matching wedges so they no longer sit behind sector labels.
