@@ -40,6 +40,7 @@
 - Nudged HIZOZ and Mstar Technology closer to the Technology wedge while preserving a clear non-touching gap from the wheel edge.
 - Fine-tuned the Technology logos so HIZOZ moves slightly right and Mstar Technology sits just outside the wheel with a clearer gap from the purple sector edge.
 - Moved only HIZOZ 3% farther right to create more separation from Mstar Technology while preserving the existing Mstar Technology placement.
+- Moved only HIZOZ farther right again so the Technology logos have clearer separation while Mstar Technology remains fixed.
 
 ## 2026-07-08
 
