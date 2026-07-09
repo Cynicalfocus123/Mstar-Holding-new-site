@@ -29,6 +29,7 @@
 - Added a tablet-only outside-wheel logo orbit so each company group remains near its correct sector slice instead of stacking below the wheel.
 - Latest arrow-based logo placement update moved the desktop/tablet orbit positions for Mstar Property, One Tastes, ABS Fulfillment, HIZOZ, and Mstar Technology while preserving original logo image files, the wheel, sector labels, and mobile in-slice grouping.
 - Follow-up correction restored the intended sector-safe logo positions: ABS Fulfillment sits with Import / Export, One Tastes sits with Food & Hospitality, and HIZOZ plus Mstar Technology sit outside the wheel under Technology without touching the diagram.
+- Latest spacing correction spread HIZOZ and Mstar Technology apart while moving both closer to the Technology slice, and moved One Tastes farther away from FoodOnlines toward the supplied arrow position.
 
 ## 2026-07-08 Global Presence Dark Globe Panel
 
