@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Tablet Logo Orbit Spacing
+
+- Tablet-only Business Ecosystem logo orbit was adjusted to follow desktop spacing logic, moving logos farther outside the wheel with more breathing room while leaving mobile and desktop behavior unchanged.
+- Kept the centered wheel, sector colors, center hub, company-to-sector mapping, and original proportional logo artwork untouched.
+
 ### Business Ecosystem Mobile And Tablet Logo Fix
 
 - Re-contained mobile Business Ecosystem logos inside their respective wheel slices so they no longer bleed into adjacent sectors.

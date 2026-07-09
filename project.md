@@ -1,5 +1,11 @@
 # Project Changelog
 
+## 2026-07-09 Business Ecosystem Tablet Logo Orbit Spacing
+
+- Adjusted only the standalone Global Presence Business Ecosystem tablet breakpoint so logos use a desktop-like outside orbit with more breathing room from the wheel.
+- Preserved mobile behavior, desktop behavior, logo artwork, company-to-sector mapping, sector colors, center hub, heading text, page background, and no-card logo rendering.
+- No localhost preview was opened, no local IP was opened, and no ZIP was created.
+
 ## 2026-07-09 Business Ecosystem Mobile And Tablet Logo Fix
 
 - Refined only the standalone Global Presence Business Ecosystem responsive logo layout.
