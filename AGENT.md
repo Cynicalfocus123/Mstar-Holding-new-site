@@ -6,6 +6,14 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-09 Business Ecosystem Mobile And Tablet Logo Fix
+
+- Updated only the standalone Global Presence Business Ecosystem responsive logo layout for mobile and tablet.
+- Re-contained mobile in-slice logos with smaller proportional caps and sector-specific safe-zone positions so logos remain inside their correct wedges instead of bleeding into neighboring sectors, divider lines, or the center hub.
+- Tightened tablet outside-wheel logo orbit spacing and reduced tablet-only logo transforms so groups sit closer to their matching sectors with desktop-like proximity.
+- Preserved desktop behavior, sector colors, sector text, center hub content, company-to-sector mapping, original logo artwork, header, footer, stat cards, Business Ecosystem headings, and unrelated pages.
+- Honored the request not to open localhost and not to create a ZIP.
+
 ## 2026-07-09 Global Presence Full-Width Globe Band
 
 - Updated only the standalone Global Presence dark rotating Earth panel so its dark background spans the full viewport width instead of reading as a centered rounded card.

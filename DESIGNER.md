@@ -7,6 +7,12 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Mobile And Tablet Logo Fix
+
+- Re-contained mobile Business Ecosystem logos inside their respective wheel slices so they no longer bleed into adjacent sectors.
+- Tightened the tablet ecosystem logo orbit to match desktop spacing and proximity more closely while preserving correct sector mapping.
+- Kept all logo artwork untouched; only proportional responsive placement and sizing were adjusted.
+
 ### Global Presence Full-Width Globe Band
 
 - Changed the standalone Global Presence rotating globe panel from a centered rounded card into a full-width dark horizontal band.

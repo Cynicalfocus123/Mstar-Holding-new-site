@@ -1,5 +1,13 @@
 # Project Changelog
 
+## 2026-07-09 Business Ecosystem Mobile And Tablet Logo Fix
+
+- Refined only the standalone Global Presence Business Ecosystem responsive logo layout.
+- Re-contained mobile in-slice company logos inside their correct sector wedges with smaller proportional logo caps and sector-specific safe-zone positions.
+- Tightened tablet outside-wheel logo orbit placement so logo groups sit closer to their matching sectors with a desktop-like spacing rhythm.
+- Preserved desktop behavior, sector colors, center hub text, headings, company-to-sector mapping, original logo artwork, header, footer, stat cards, and unrelated pages.
+- No localhost preview was opened and no ZIP was created.
+
 ## 2026-07-07 Live Image Asset Weight Optimization
 
 - Optimized seven transparent portrait WebP assets with decoded-pixel-identical recompression only.

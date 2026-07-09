@@ -5605,51 +5605,65 @@ h2 {
 
   .presence-mobile-logo-group {
     position: absolute;
+    right: auto;
+    bottom: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 3px 4px;
-    width: 22%;
+    gap: 2px 3px;
+    width: min(18%, 68px);
+    transform: translate(-50%, -50%);
   }
 
   .presence-mobile-logo-group img {
     display: block;
     width: auto;
-    max-width: 32px;
-    max-height: 15px;
+    max-width: clamp(22px, 7vw, 28px);
+    max-height: clamp(10px, 3.4vw, 14px);
     object-fit: contain;
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
   }
 
+  .presence-mobile-logo-food,
+  .presence-mobile-logo-import {
+    width: min(19%, 72px);
+  }
+
+  .presence-mobile-logo-food img,
+  .presence-mobile-logo-import img {
+    max-width: clamp(20px, 6.4vw, 26px);
+    max-height: clamp(9px, 3vw, 12px);
+  }
+
   .presence-mobile-logo-real-estate {
-    top: 29%;
-    left: 15%;
+    top: 32%;
+    left: 30%;
   }
 
   .presence-mobile-logo-food {
-    top: 29%;
-    right: 15%;
+    top: 32%;
+    left: 70%;
   }
 
   .presence-mobile-logo-import {
-    top: 58%;
-    right: 9%;
+    top: 41%;
+    left: 78%;
   }
 
   .presence-mobile-logo-defense {
-    right: 22%;
-    bottom: 27%;
+    top: 68%;
+    left: 70%;
   }
 
   .presence-mobile-logo-technology {
-    bottom: 27%;
-    left: 22%;
+    top: 68%;
+    left: 30%;
   }
 
   .presence-mobile-logo-entertainment {
-    top: 58%;
-    left: 9%;
+    top: 59%;
+    left: 22%;
   }
 }
 
@@ -6204,18 +6218,18 @@ h2 {
 /* Tablet orbit: keep logos outside and adjacent to their matching wheel slices. */
 @media (min-width: 768px) and (max-width: 1199px) {
   .presence-ecosystem {
-    width: min(100%, 1060px);
-    padding-inline: clamp(18px, 3vw, 34px);
+    width: min(100%, 980px);
+    padding-inline: clamp(14px, 2.4vw, 28px);
   }
 
   .presence-ecosystem-layout {
     position: relative;
     display: grid;
-    min-height: clamp(700px, 82vw, 860px);
+    min-height: clamp(620px, 72vw, 760px);
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 0;
-    margin-top: clamp(38px, 5vw, 60px);
+    margin-top: clamp(34px, 4.5vw, 54px);
   }
 
   .presence-ecosystem-layout .presence-ecosystem-wheel-wrap {
@@ -6223,7 +6237,7 @@ h2 {
     z-index: 2;
     order: 1;
     align-self: center;
-    width: min(62vw, 560px);
+    width: min(58vw, 520px);
   }
 
   .presence-ecosystem-callouts {
@@ -6244,8 +6258,8 @@ h2 {
   .presence-ecosystem-callouts-left .presence-ecosystem-group {
     position: absolute;
     display: grid;
-    width: clamp(116px, 18vw, 178px);
-    gap: clamp(8px, 1.2vw, 12px);
+    width: clamp(112px, 16vw, 164px);
+    gap: clamp(7px, 1vw, 11px);
     justify-items: center;
     padding-top: 0;
     text-align: center;
@@ -6266,39 +6280,39 @@ h2 {
   }
 
   .presence-ecosystem-callouts-left .ecosystem-sector--real-estate {
-    top: 7%;
-    left: 9%;
+    top: 10%;
+    left: 17%;
   }
 
   .presence-ecosystem-callouts-right .ecosystem-sector--food-hospitality {
-    top: 7%;
-    right: 8%;
+    top: 10%;
+    right: 15%;
   }
 
   .presence-ecosystem-callouts-right .ecosystem-sector--import-export {
     top: 42%;
-    right: 0;
+    right: 7%;
   }
 
   .presence-ecosystem-callouts-right .ecosystem-sector--defense {
-    right: 9%;
-    bottom: 7%;
+    right: 17%;
+    bottom: 10%;
   }
 
   .presence-ecosystem-callouts-left .ecosystem-sector--technology {
-    bottom: 7%;
-    left: 9%;
+    bottom: 10%;
+    left: 17%;
   }
 
   .presence-ecosystem-callouts-left .ecosystem-sector--entertainment {
     top: 42%;
-    left: 0;
+    left: 7%;
   }
 
   .presence-ecosystem-layout .presence-ecosystem-logo img,
   .presence-ecosystem-logo img {
-    max-width: clamp(82px, 13vw, 150px);
-    max-height: clamp(34px, 5.5vw, 58px);
+    max-width: clamp(78px, 11vw, 138px);
+    max-height: clamp(32px, 4.8vw, 54px);
   }
 
   .presence-logo-property img,
@@ -6306,8 +6320,8 @@ h2 {
   .presence-logo-american img,
   .presence-logo-foodonlines img,
   .presence-logo-technology img {
-    max-width: clamp(96px, 14vw, 166px);
-    max-height: clamp(38px, 6vw, 64px);
+    max-width: clamp(90px, 12vw, 150px);
+    max-height: clamp(36px, 5.2vw, 58px);
   }
 }
 
@@ -8037,5 +8051,32 @@ h2 {
 
   .presence-ecosystem-layout .presence-logo-technology {
     transform: translate(12%, 84%);
+  }
+}
+
+/* Tablet-only tightening: preserve the desktop orbit idea without scattered spacing. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .presence-ecosystem-layout .presence-logo-property {
+    transform: translate(28%, -28%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-foodonlines {
+    transform: translate(-6%, 0);
+  }
+
+  .presence-ecosystem-layout .presence-logo-one-taste {
+    transform: translate(-30%, -38%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-abs {
+    transform: translate(12%, -8%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-hizoz {
+    transform: translate(28%, 8%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-technology {
+    transform: translate(0, 20%);
   }
 }
