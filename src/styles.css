@@ -6336,6 +6336,7 @@ h2 {
     grid-column: 1;
     grid-row: 1;
     justify-self: end;
+    transform: translateX(-34px);
   }
 
   .presence-logo-foodonlines {
@@ -6348,10 +6349,23 @@ h2 {
     grid-column: 1 / -1;
     grid-row: 2;
     justify-self: center;
+    transform: translateX(44px);
   }
 
   .presence-logo-american {
-    transform: translateX(14px);
+    transform: translateX(54px);
+  }
+
+  .presence-logo-property {
+    transform: translate(58px, 24px);
+  }
+
+  .presence-logo-defense {
+    transform: translateX(-58px);
+  }
+
+  .presence-logo-technology {
+    transform: translateX(78px);
   }
 }
 

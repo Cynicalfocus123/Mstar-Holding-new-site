@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Tablet Individual Logo Placement
+
+- Tablet-only individual logo placement was refined for Mstar Property Development, SeniorCaring, American Buying Service, Mstar Defense, Mstar Technology, and One Tastes based on the marked reference positions.
+- No unmentioned logos, mobile behavior, desktop behavior, wheel design, colors, center hub, company mapping, or original logo artwork were changed.
+
 ### Business Ecosystem Tablet Logo Clearance
 
 - Tablet-only orbit clearance was refined so BuyHomeForLess and American Buying Service no longer touch the wheel's white outer ring.
