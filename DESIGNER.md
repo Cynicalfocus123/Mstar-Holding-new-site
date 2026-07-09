@@ -30,6 +30,7 @@
 - Reduced the ecosystem center hub and nudged the Import / Export and Entertainment labels farther outward so side-slice text no longer crosses into the white middle circle.
 - Corrected the hub sizing math by increasing the white circle inset, actually reducing the center circle and giving the side labels more visible slice space.
 - Reduced and re-centered only the side-slice labels so Entertainment and Import / Export no longer touch the outer white slice boundary.
+- Added a tablet-only outside-wheel orbit so company logo groups stay near their correct sector slices instead of falling into detached stacked rows.
 
 ## 2026-07-08
 

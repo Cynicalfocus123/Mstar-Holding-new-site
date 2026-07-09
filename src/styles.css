@@ -6193,6 +6193,116 @@ h2 {
   }
 }
 
+/* Tablet orbit: keep logos outside and adjacent to their matching wheel slices. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .presence-ecosystem {
+    width: min(100%, 1060px);
+    padding-inline: clamp(18px, 3vw, 34px);
+  }
+
+  .presence-ecosystem-layout {
+    position: relative;
+    display: grid;
+    min-height: clamp(700px, 82vw, 860px);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0;
+    margin-top: clamp(38px, 5vw, 60px);
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-wheel-wrap {
+    position: relative;
+    z-index: 2;
+    order: 1;
+    align-self: center;
+    width: min(62vw, 560px);
+  }
+
+  .presence-ecosystem-callouts {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .presence-ecosystem-callouts-left,
+  .presence-ecosystem-callouts-right {
+    width: auto;
+  }
+
+  .presence-ecosystem-group,
+  .presence-ecosystem-callouts-left .presence-ecosystem-group {
+    position: absolute;
+    display: grid;
+    width: clamp(116px, 18vw, 178px);
+    gap: clamp(8px, 1.2vw, 12px);
+    justify-items: center;
+    padding-top: 0;
+    text-align: center;
+    border-top: 0;
+    pointer-events: auto;
+  }
+
+  .presence-ecosystem-group h3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .presence-ecosystem-callouts-left .ecosystem-sector--real-estate {
+    top: 7%;
+    left: 9%;
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--food-hospitality {
+    top: 7%;
+    right: 8%;
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--import-export {
+    top: 42%;
+    right: 0;
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--defense {
+    right: 9%;
+    bottom: 7%;
+  }
+
+  .presence-ecosystem-callouts-left .ecosystem-sector--technology {
+    bottom: 7%;
+    left: 9%;
+  }
+
+  .presence-ecosystem-callouts-left .ecosystem-sector--entertainment {
+    top: 42%;
+    left: 0;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-logo img,
+  .presence-ecosystem-logo img {
+    max-width: clamp(82px, 13vw, 150px);
+    max-height: clamp(34px, 5.5vw, 58px);
+  }
+
+  .presence-logo-property img,
+  .presence-logo-defense img,
+  .presence-logo-american img,
+  .presence-logo-foodonlines img,
+  .presence-logo-technology img {
+    max-width: clamp(96px, 14vw, 166px);
+    max-height: clamp(38px, 6vw, 64px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-base-dots,
   .map-market-shape {

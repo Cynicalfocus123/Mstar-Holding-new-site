@@ -26,6 +26,7 @@
 - Reduced the ecosystem center hub and moved the Import / Export and Entertainment labels farther outward to prevent side labels from crossing into the white middle circle.
 - Corrected the hub sizing direction by increasing the center circle inset, genuinely reducing the white hub and shrinking the center logo/text proportionally.
 - Reduced the Import / Export and Entertainment label width/type and pulled them back from the outer rim so side text no longer touches the white slice boundary.
+- Added a tablet-only outside-wheel logo orbit so each company group remains near its correct sector slice instead of stacking below the wheel.
 
 ## 2026-07-08 Global Presence Dark Globe Panel
 
