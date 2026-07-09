@@ -36,6 +36,8 @@
 - Increased the desktop and tablet spacing between HIZOZ and Mstar Technology while nudging both closer to the Technology wedge, and pulled One Tastes farther left/up so it separates clearly from FoodOnlines.
 - Refined the latest logo spacing so HIZOZ and Mstar Technology sit closer to the Technology wedge but outside the circle, while One Tastes sits above Food & Hospitality with a visible gap from the wheel edge.
 - Shifted the FoodOnlines logo farther left within the Food & Hospitality orbit on desktop and tablet, keeping its vertical rhythm and leaving the wheel untouched.
+- Reduced the FoodOnlines left shift to a subtle nudge so it separates from the wheel direction without overlapping the One Tastes logo above it.
+- Nudged HIZOZ and Mstar Technology closer to the Technology wedge while preserving a clear non-touching gap from the wheel edge.
 
 ## 2026-07-08
 

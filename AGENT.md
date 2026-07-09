@@ -32,6 +32,8 @@
 - Latest spacing correction spread HIZOZ and Mstar Technology apart while moving both closer to the Technology slice, and moved One Tastes farther away from FoodOnlines toward the supplied arrow position.
 - Follow-up spacing correction moved HIZOZ and Mstar Technology closer to the Technology slice without touching the wheel, and lifted One Tastes farther away from the Food & Hospitality circle edge.
 - Latest Food & Hospitality refinement moved only the FoodOnlines desktop/tablet logo farther left while preserving the wheel, other logo positions, and mobile grouping.
+- Follow-up FoodOnlines correction reduced that left shift to a small nudge so it no longer overlaps One Tastes.
+- Follow-up Technology spacing correction nudged HIZOZ and Mstar Technology closer to the Technology circle edge while keeping a visible gap from the wheel.
 
 ## 2026-07-08 Global Presence Dark Globe Panel
 
