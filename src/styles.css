@@ -3572,6 +3572,455 @@ h2 {
   height: 100%;
 }
 
+.presence-ecosystem {
+  position: relative;
+  margin: clamp(46px, 5.5vw, 82px) auto 0;
+  padding: clamp(34px, 4vw, 58px) clamp(18px, 3vw, 38px) clamp(34px, 4vw, 58px);
+  overflow: hidden;
+  border: 1px solid rgba(17, 19, 20, 0.08);
+  border-radius: clamp(22px, 2.6vw, 32px);
+  background:
+    radial-gradient(
+      circle at 15% 16%,
+      rgba(15, 138, 136, 0.1),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(184, 135, 45, 0.12),
+      transparent 22rem
+    ),
+    linear-gradient(180deg, #fffefa, #f8f7f1 58%, #fffefa);
+  box-shadow: 0 26px 70px rgba(17, 19, 20, 0.1);
+}
+
+.presence-ecosystem-heading {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.presence-ecosystem-heading span {
+  color: #0f8a72;
+  font-size: clamp(0.76rem, 0.95vw, 0.9rem);
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.presence-ecosystem-heading h2 {
+  max-width: 980px;
+  margin: 12px 0 0;
+  color: #102846;
+  font-size: clamp(2.4rem, 4.4vw, 4.8rem);
+  font-weight: 850;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-align: center;
+}
+
+.presence-ecosystem-heading i {
+  width: clamp(110px, 16vw, 210px);
+  height: 3px;
+  margin-top: clamp(20px, 2.6vw, 34px);
+  border-radius: 999px;
+  background: var(--mstar-gold);
+}
+
+.presence-ecosystem-map {
+  position: relative;
+  min-height: clamp(640px, 64vw, 840px);
+  margin-top: clamp(36px, 5vw, 72px);
+}
+
+.presence-ecosystem-wheel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(50vw, 620px);
+  min-width: 520px;
+  aspect-ratio: 1;
+  border: clamp(8px, 1vw, 12px) solid #ffffff;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #ffffff 0 28%, transparent 28.4%),
+    conic-gradient(
+      from -30deg,
+      #10a963 0 60deg,
+      #1188d6 60deg 120deg,
+      #f27716 120deg 180deg,
+      #7041c8 180deg 240deg,
+      #f5b90e 240deg 300deg,
+      #07599d 300deg 360deg
+    );
+  box-shadow:
+    inset 0 0 0 3px rgba(255, 255, 255, 0.78),
+    0 24px 64px rgba(17, 19, 20, 0.14);
+  transform: translate(-50%, -47%);
+}
+
+.presence-ecosystem-wheel::before,
+.presence-ecosystem-wheel::after {
+  position: absolute;
+  inset: -1px;
+  content: "";
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.presence-ecosystem-wheel::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 49.35%,
+      #ffffff 49.35% 50.65%,
+      transparent 50.65%
+    ),
+    linear-gradient(
+      30deg,
+      transparent 49.35%,
+      #ffffff 49.35% 50.65%,
+      transparent 50.65%
+    ),
+    linear-gradient(
+      150deg,
+      transparent 49.35%,
+      #ffffff 49.35% 50.65%,
+      transparent 50.65%
+    );
+}
+
+.presence-ecosystem-wheel::after {
+  inset: 27.6%;
+  background: #ffffff;
+  box-shadow:
+    inset 0 0 0 2px rgba(16, 40, 70, 0.08),
+    0 10px 34px rgba(17, 19, 20, 0.16);
+}
+
+.presence-ecosystem-center {
+  position: absolute;
+  inset: 31%;
+  z-index: 3;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  color: #102846;
+  text-align: center;
+}
+
+.presence-ecosystem-center img {
+  width: min(82%, 190px);
+  height: auto;
+  object-fit: contain;
+}
+
+.presence-ecosystem-center strong {
+  display: block;
+  margin-top: 8px;
+  font-size: clamp(1rem, 1.55vw, 1.32rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.18;
+}
+
+.presence-sector-label {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  width: 34%;
+  justify-items: center;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.26);
+}
+
+.presence-sector-label::before {
+  display: grid;
+  width: clamp(42px, 5vw, 58px);
+  height: clamp(42px, 5vw, 58px);
+  margin-bottom: 10px;
+  place-items: center;
+  font-size: clamp(1.25rem, 1.8vw, 1.7rem);
+  line-height: 1;
+  border: 2px solid rgba(255, 255, 255, 0.86);
+  border-radius: 999px;
+}
+
+.presence-sector-label span {
+  font-size: clamp(0.92rem, 1.25vw, 1.2rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.presence-sector-label small {
+  margin-top: 5px;
+  font-size: clamp(0.72rem, 0.95vw, 0.9rem);
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.presence-sector-real-estate {
+  top: 17%;
+  left: 19%;
+}
+
+.presence-sector-real-estate::before {
+  content: "RE";
+}
+
+.presence-sector-food {
+  top: 17%;
+  right: 16%;
+}
+
+.presence-sector-food::before {
+  content: "FH";
+}
+
+.presence-sector-import {
+  top: 49%;
+  right: 6%;
+}
+
+.presence-sector-import::before {
+  content: "IE";
+}
+
+.presence-sector-defense {
+  right: 17%;
+  bottom: 16%;
+}
+
+.presence-sector-defense::before {
+  content: "D";
+}
+
+.presence-sector-technology {
+  bottom: 16%;
+  left: 18%;
+}
+
+.presence-sector-technology::before {
+  content: "T";
+}
+
+.presence-sector-entertainment {
+  top: 49%;
+  left: 5%;
+}
+
+.presence-sector-entertainment::before {
+  content: "E";
+}
+
+.presence-ecosystem-logo {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  width: clamp(170px, 18vw, 270px);
+  min-height: clamp(74px, 7vw, 104px);
+  place-items: center;
+  padding: clamp(12px, 1.5vw, 18px);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(16, 40, 70, 0.08);
+  border-radius: 12px;
+  box-shadow:
+    0 14px 34px rgba(17, 19, 20, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.presence-ecosystem-logo::before {
+  position: absolute;
+  top: 50%;
+  width: clamp(42px, 5vw, 72px);
+  height: 2px;
+  content: "";
+  background: var(--line-color, #0f8a88);
+}
+
+.presence-ecosystem-logo::after {
+  position: absolute;
+  top: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  content: "";
+  background: var(--line-color, #0f8a88);
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.75);
+}
+
+.presence-ecosystem-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: clamp(42px, 5.2vw, 70px);
+  object-fit: contain;
+}
+
+.presence-logo-buyhome,
+.presence-logo-airsoft,
+.presence-logo-boogoo,
+.presence-logo-technology {
+  --line-color: #07539b;
+}
+
+.presence-logo-foodonlines,
+.presence-logo-senior,
+.presence-logo-one-taste {
+  --line-color: #18a564;
+}
+
+.presence-logo-abs,
+.presence-logo-american,
+.presence-logo-hizoz {
+  --line-color: #1785d7;
+}
+
+.presence-logo-defense {
+  --line-color: #ef7422;
+}
+
+.presence-logo-airsoft,
+.presence-logo-boogoo {
+  --line-color: #f3b40a;
+}
+
+.presence-logo-technology {
+  --line-color: #7440c8;
+}
+
+.presence-logo-buyhome {
+  top: 13%;
+  left: 0;
+}
+
+.presence-logo-airsoft {
+  top: 40%;
+  left: 0;
+}
+
+.presence-logo-boogoo {
+  top: 56%;
+  left: 0;
+}
+
+.presence-logo-technology {
+  bottom: 8%;
+  left: 0;
+  width: clamp(210px, 22vw, 320px);
+}
+
+.presence-logo-foodonlines {
+  top: 6%;
+  right: 0;
+}
+
+.presence-logo-senior {
+  top: 20%;
+  right: 0;
+}
+
+.presence-logo-one-taste {
+  top: 34%;
+  right: 0;
+}
+
+.presence-logo-abs {
+  top: 48%;
+  right: 0;
+}
+
+.presence-logo-american {
+  top: 62%;
+  right: 0;
+}
+
+.presence-logo-hizoz {
+  top: 76%;
+  right: 0;
+}
+
+.presence-logo-defense {
+  right: 2%;
+  bottom: 7%;
+  width: clamp(210px, 21vw, 300px);
+}
+
+.presence-logo-buyhome::before,
+.presence-logo-airsoft::before,
+.presence-logo-boogoo::before,
+.presence-logo-technology::before {
+  left: 100%;
+}
+
+.presence-logo-buyhome::after,
+.presence-logo-airsoft::after,
+.presence-logo-boogoo::after,
+.presence-logo-technology::after {
+  right: -78px;
+}
+
+.presence-logo-foodonlines::before,
+.presence-logo-senior::before,
+.presence-logo-one-taste::before,
+.presence-logo-abs::before,
+.presence-logo-american::before,
+.presence-logo-hizoz::before,
+.presence-logo-defense::before {
+  right: 100%;
+}
+
+.presence-logo-foodonlines::after,
+.presence-logo-senior::after,
+.presence-logo-one-taste::after,
+.presence-logo-abs::after,
+.presence-logo-american::after,
+.presence-logo-hizoz::after,
+.presence-logo-defense::after {
+  left: -78px;
+}
+
+.presence-ecosystem-footer {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  margin-top: clamp(16px, 2.6vw, 34px);
+  color: #102846;
+  text-align: center;
+}
+
+.presence-ecosystem-footer span {
+  display: grid;
+  width: min(460px, 72%);
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  color: var(--mstar-gold);
+  font-size: 1rem;
+  letter-spacing: 0.35em;
+}
+
+.presence-ecosystem-footer span::before,
+.presence-ecosystem-footer span::after {
+  height: 2px;
+  content: "";
+  background: var(--mstar-gold);
+}
+
+.presence-ecosystem-footer p {
+  margin-top: 12px;
+  color: #102846;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.4vw, 2.2rem);
+  line-height: 1.2;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-base-dots,
   .map-market-shape {
@@ -4372,6 +4821,79 @@ h2 {
     transform: translate(8%, -2%);
   }
 
+  .presence-ecosystem-map {
+    display: grid;
+    min-height: 0;
+    gap: 22px;
+    justify-items: center;
+  }
+
+  .presence-ecosystem-wheel,
+  .presence-ecosystem-logo {
+    position: relative;
+    inset: auto;
+    transform: none;
+  }
+
+  .presence-ecosystem-wheel {
+    order: 1;
+    width: min(100%, 560px);
+    min-width: 0;
+  }
+
+  .presence-ecosystem-logo {
+    width: min(100%, 320px);
+    min-height: 88px;
+  }
+
+  .presence-ecosystem-logo::before,
+  .presence-ecosystem-logo::after {
+    content: none;
+  }
+
+  .presence-logo-buyhome,
+  .presence-logo-foodonlines,
+  .presence-logo-senior,
+  .presence-logo-one-taste,
+  .presence-logo-abs,
+  .presence-logo-american,
+  .presence-logo-hizoz,
+  .presence-logo-defense,
+  .presence-logo-technology,
+  .presence-logo-airsoft,
+  .presence-logo-boogoo {
+    width: min(100%, 320px);
+  }
+
+  .presence-logo-buyhome {
+    order: 2;
+  }
+
+  .presence-logo-foodonlines,
+  .presence-logo-senior,
+  .presence-logo-one-taste {
+    order: 3;
+  }
+
+  .presence-logo-abs,
+  .presence-logo-american,
+  .presence-logo-hizoz {
+    order: 4;
+  }
+
+  .presence-logo-defense {
+    order: 5;
+  }
+
+  .presence-logo-technology {
+    order: 6;
+  }
+
+  .presence-logo-airsoft,
+  .presence-logo-boogoo {
+    order: 7;
+  }
+
   .about-metric-card-feature,
   .about-metric-card-wide {
     grid-column: span 2;
@@ -4777,6 +5299,69 @@ h2 {
     width: min(112%, 380px);
     margin: 0 auto -22px;
     transform: none;
+  }
+
+  .presence-ecosystem {
+    margin-top: 34px;
+    padding: 28px 14px 30px;
+    border-radius: 22px;
+  }
+
+  .presence-ecosystem-heading h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .presence-ecosystem-map {
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .presence-ecosystem-wheel {
+    width: min(100%, 360px);
+  }
+
+  .presence-sector-label::before {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 6px;
+    font-size: 1rem;
+  }
+
+  .presence-sector-label span {
+    font-size: clamp(0.58rem, 2.4vw, 0.78rem);
+    line-height: 1.05;
+  }
+
+  .presence-sector-label small {
+    margin-top: 3px;
+    font-size: clamp(0.52rem, 2.1vw, 0.68rem);
+  }
+
+  .presence-ecosystem-center img {
+    width: 72%;
+  }
+
+  .presence-ecosystem-center strong {
+    margin-top: 4px;
+    font-size: clamp(0.58rem, 2.35vw, 0.78rem);
+  }
+
+  .presence-ecosystem-logo {
+    width: 100%;
+    min-height: 78px;
+    border-radius: 10px;
+  }
+
+  .presence-ecosystem-logo img {
+    max-height: 54px;
+  }
+
+  .presence-ecosystem-footer span {
+    width: min(100%, 300px);
+  }
+
+  .presence-ecosystem-footer p {
+    font-size: clamp(1.05rem, 5.8vw, 1.45rem);
   }
 
   .about-metrics-heading h2 {

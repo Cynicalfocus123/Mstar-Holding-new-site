@@ -14,6 +14,13 @@
 - Mobile stacks the copy above the globe with safe gutters, controlled globe sizing, and no intended horizontal overflow.
 - Header, footer, navigation, About page Global Presence map, stat-card values, and unrelated pages were not changed.
 
+### Global Presence Business Ecosystem Diagram
+
+- Added the requested Mstar Holding Business Ecosystem diagram below the dark globe panel on the standalone Global Presence page.
+- The desktop view uses a central six-sector color wheel, Mstar center mark, external logo cards, connector lines, and the `One Group. Multiple Sectors. Built for Growth.` footer line.
+- Tablet and mobile convert the ecosystem into a stacked wheel-plus-logo-card flow to avoid horizontal overflow while preserving all supplied brand logos.
+- Header, footer, navigation, stat-card values, About page Global Presence map, and unrelated pages were not changed.
+
 ### Home Expansion Bleed And Countries Card Image
 
 - Adjusted only the desktop layout for the homepage Regional Expansion section so the curved image begins after the left text column, bleeds to the right viewport edge, and meets the growth theme grid below.

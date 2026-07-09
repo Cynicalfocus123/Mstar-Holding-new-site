@@ -11,6 +11,7 @@
 - Refined the standalone Global Presence page's dark globe panel directly below the statistic cards using the existing canvas Earth renderer.
 - Added the requested stacked `A Presence That Spans / the Globe` heading, retained the approved paragraph and teal/gold legend, and removed the extra kicker label from the panel.
 - Strengthened the premium near-black panel treatment with radial dot grid, soft blue/cyan glow, subtle lower arc, deeper shadow, and an oversized right-side globe.
+- Added the requested Mstar Holding Business Ecosystem diagram below the dark globe panel with a six-sector color wheel, central Mstar mark, external logo cards, connector lines, and responsive stacked logo flow on tablet/mobile.
 - Preserved header, footer, navigation, About page Global Presence map, stat-card values, counter stability rules, deployment base paths, and unrelated pages.
 - Honored the request not to open localhost and not to create a ZIP.
 
