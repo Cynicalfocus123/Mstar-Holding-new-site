@@ -729,6 +729,7 @@
 - Rebalanced the mobile cluster anchors into the safe interior pockets of each wedge after visual review; no cluster moves toward the hub, and tablet/desktop behavior remains unchanged.
 - Fine-tuned only the mobile Entertainment, Food & Hospitality, and Import / Export logo anchors for left, upward, and text-clear placement; tablet/desktop behavior remains unchanged.
 - Moved only the mobile Mstar Defense cluster down and right for label clearance; all other sectors and tablet/desktop behavior remain unchanged.
+- Moved only the mobile Mstar Defense cluster left to the supplied arrow endpoint while preserving its vertical position; all other sectors and breakpoints remain unchanged.
 
 ## 2026-07-01 About Global Presence Map Refinement
 

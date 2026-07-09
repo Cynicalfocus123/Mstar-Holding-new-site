@@ -371,3 +371,4 @@
 - Rebalanced mobile cluster anchors so the medium logos remain inside their matching wedges without crossing the wheel edge or sector labels.
 - Fine-tuned the mobile Entertainment, Food & Hospitality, and Import / Export logo positions for sector-edge and label clearance.
 - Adjusted only the mobile Mstar Defense logo down and right to clear the Defense label.
+- Shifted only the mobile Mstar Defense logo left to the supplied arrow endpoint while preserving its vertical clearance.

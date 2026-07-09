@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Mobile Defense Arrow Alignment
+
+- Moved only the mobile Mstar Defense logo left to the endpoint shown by the supplied arrow, preserving its current vertical position and label clearance.
+- All other sectors, tablet/desktop layouts, sizing, and center-hub clearance remain unchanged.
+
 ### Business Ecosystem Mobile Defense Logo Clearance
 
 - Moved only the mobile Mstar Defense logo slightly down and right within the Defense wedge to separate it from the sector label.
