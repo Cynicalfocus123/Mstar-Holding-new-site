@@ -366,3 +366,4 @@
 - Corrected the active tablet Business Ecosystem overrides so ABS Fulfillment, SeniorCaring, American Buying Service, and Mstar Defense sit outside their matching slices with small, even spacing.
 - Nudged only the tablet Mstar Defense logo left and upward for closer Defense-slice alignment.
 - Increased only the mobile in-wheel company logo caps to medium size while preserving all tablet and desktop behavior.
+- Moved only the mobile logo clusters outward within their matching slices to prevent cross-sector bleeding without reducing center-hub clearance.
