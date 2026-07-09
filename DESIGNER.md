@@ -31,6 +31,7 @@
 - Corrected the hub sizing math by increasing the white circle inset, actually reducing the center circle and giving the side labels more visible slice space.
 - Reduced and re-centered only the side-slice labels so Entertainment and Import / Export no longer touch the outer white slice boundary.
 - Added a tablet-only outside-wheel orbit so company logo groups stay near their correct sector slices instead of falling into detached stacked rows.
+- Fine-tuned the desktop and tablet logo orbit to follow the supplied arrow references: Mstar Property shifts up/right, One Tastes and ABS Fulfillment visually trade right-side positions, and HIZOZ plus Mstar Technology move closer to the Technology slice while mobile keeps the in-slice logo grouping.
 
 ## 2026-07-08
 

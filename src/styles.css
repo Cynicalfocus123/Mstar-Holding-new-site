@@ -7978,3 +7978,48 @@ h2 {
     flex-basis: 144px;
   }
 }
+
+/* Final ecosystem logo orbit placement from the supplied arrow references. */
+@media (min-width: 768px) {
+  .presence-ecosystem-layout .presence-logo-property {
+    transform: translate(150%, -150%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-one-taste {
+    transform: translate(70%, 160%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-abs {
+    transform: translate(-62%, -160%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-hizoz {
+    transform: translate(150%, -92%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-technology {
+    transform: translate(118%, 106%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .presence-ecosystem-layout .presence-logo-property {
+    transform: translate(230%, -210%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-one-taste {
+    transform: translate(85%, 204%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-abs {
+    transform: translate(-73%, -204%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-hizoz {
+    transform: translate(210%, -112%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-technology {
+    transform: translate(160%, 136%);
+  }
+}
