@@ -34,6 +34,7 @@
 - Fine-tuned the desktop and tablet logo orbit to follow the supplied arrow references: Mstar Property shifts up/right, One Tastes and ABS Fulfillment visually trade right-side positions, and HIZOZ plus Mstar Technology move closer to the Technology slice while mobile keeps the in-slice logo grouping.
 - Corrected the logo orbit after visual review so ABS Fulfillment remains aligned with Import / Export, One Tastes returns to the Food & Hospitality side, and HIZOZ plus Mstar Technology sit below the Technology slice outside the wheel with clear breathing room.
 - Increased the desktop and tablet spacing between HIZOZ and Mstar Technology while nudging both closer to the Technology wedge, and pulled One Tastes farther left/up so it separates clearly from FoodOnlines.
+- Refined the latest logo spacing so HIZOZ and Mstar Technology sit closer to the Technology wedge but outside the circle, while One Tastes sits above Food & Hospitality with a visible gap from the wheel edge.
 
 ## 2026-07-08
 
