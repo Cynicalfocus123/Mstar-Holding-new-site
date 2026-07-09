@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Mobile Defense Logo Clearance
+
+- Moved only the mobile Mstar Defense logo slightly down and right within the Defense wedge to separate it from the sector label.
+- All other sector logos, tablet/desktop positions, sizing, and center-hub clearance remain unchanged.
+
 ### Business Ecosystem Mobile Logo Fine Alignment
 
 - Moved the Entertainment cluster left, moved Food & Hospitality left and slightly upward, and moved Import / Export upward to clear its sector text.
