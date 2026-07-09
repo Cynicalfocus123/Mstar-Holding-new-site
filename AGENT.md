@@ -6,6 +6,13 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-09 Business Ecosystem Tablet Sector Proximity
+
+- Updated only the standalone Global Presence Business Ecosystem tablet breakpoint from 768px through 1199px.
+- Pulled the Real Estate, Food & Hospitality, Technology, and Defense logo groups closer to their matching wheel sectors, using the closer Entertainment and Import / Export orbit spacing as the visual reference.
+- Preserved mobile behavior, desktop behavior, wheel design/colors, center hub, company-to-sector mapping, heading text, page background, original logo artwork, and transparent no-card logo rendering.
+- Honored the request not to open localhost, not to open a local IP, and not to create a ZIP.
+
 ## 2026-07-09 Business Ecosystem Tablet Orbit Rework
 
 - Updated only the standalone Global Presence Business Ecosystem tablet breakpoint from 768px through 1199px.
