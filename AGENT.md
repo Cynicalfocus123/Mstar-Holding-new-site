@@ -21,6 +21,7 @@
 - Latest design correction changed the ecosystem eyebrow to `Company Ecosystem and Sectors`, kept one solid color per wheel slice, centered slice labels more carefully, kept desktop logos outside the wheel with broader perimeter spacing, and added mobile-only logo placement inside each matching slice.
 - Removed the remaining wheel overlay divider bars that visually split each slice and replaced the wheel background with one solid sector color per slice plus narrow white boundary gaps only.
 - Removed the RE/FH/IE/D/T/E mini marker circles and moved sector name/count labels to centered slice positions.
+- Tightened the ecosystem sector label boxes with centered wrapping and responsive type so long labels remain inside their wedges and away from the center hub.
 
 ## 2026-07-08 Global Presence Dark Globe Panel
 

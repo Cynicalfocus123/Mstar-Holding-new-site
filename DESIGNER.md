@@ -25,6 +25,7 @@
 - Added a mobile-only in-wheel logo layer so company logos sit inside their matching sector slices on phones; desktop keeps logos outside the wheel with wider perimeter spacing.
 - Removed the wheel's old overlay divider bars and rebuilt slice coloring as one solid color per sector with only narrow white boundary gaps.
 - Removed the RE/FH/IE/D/T/E mini marker circles and repositioned the remaining sector name/count labels toward the center of each slice.
+- Tightened sector label boxes with centered wrapping and smaller responsive type so long labels stay inside their slices without touching the center hub or slice edges.
 
 ## 2026-07-08
 
