@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Tablet Defense Logo Alignment
+
+- Moved only the Mstar Defense logo left and upward on tablet so it sits closer to and more centrally aligned with the Defense wedge while remaining outside the wheel.
+- All other logo positions, desktop/mobile behavior, wheel artwork, labels, and sector mappings remain unchanged.
+
 ### Business Ecosystem Tablet Logo Clearance Correction
 
 - Corrected only the tablet offsets for ABS Fulfillment, SeniorCaring, American Buying Service, and Mstar Defense after visual review.

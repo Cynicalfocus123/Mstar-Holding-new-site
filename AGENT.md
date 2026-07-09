@@ -722,6 +722,7 @@
 - Deployment ZIP refreshed from the latest `dist/` output as `mstar-about-page-live-deploy-2026-07-01.zip`.
 - Commit hash: reported in final handoff after commit/push.
 - Tablet ecosystem logo clearance was corrected again for ABS Fulfillment, SeniorCaring, American Buying Service, and Mstar Defense using small sector-relative offsets only; all other logo positions and non-tablet behavior remain unchanged.
+- Tablet Mstar Defense was nudged left and upward to align more closely with the centerline of the Defense wedge; no other logo or breakpoint was changed.
 
 ## 2026-07-01 About Global Presence Map Refinement
 
