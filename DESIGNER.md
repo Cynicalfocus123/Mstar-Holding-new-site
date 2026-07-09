@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Tablet Arrow Placement Correction
+
+- Tablet-only offsets for Mstar Property Development, SeniorCaring, American Buying Service, Mstar Defense, Mstar Technology, and HIZOZ were increased to visibly match the marked arrow directions on the GitHub Pages tablet view.
+- Unmentioned logos, mobile behavior, desktop behavior, wheel design, colors, center hub, company mapping, and original logo artwork were left unchanged.
+
 ### Business Ecosystem Tablet Targeted Logo Nudges
 
 - Tablet-only targeted logo offsets moved HIZOZ and Mstar Technology farther right, moved SeniorCaring and American Buying Service outward from their slice edges, and pulled Mstar Defense closer to the Defense slice without changing other logo positions.
