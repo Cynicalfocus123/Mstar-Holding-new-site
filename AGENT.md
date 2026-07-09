@@ -31,6 +31,7 @@
 - Follow-up correction restored the intended sector-safe logo positions: ABS Fulfillment sits with Import / Export, One Tastes sits with Food & Hospitality, and HIZOZ plus Mstar Technology sit outside the wheel under Technology without touching the diagram.
 - Latest spacing correction spread HIZOZ and Mstar Technology apart while moving both closer to the Technology slice, and moved One Tastes farther away from FoodOnlines toward the supplied arrow position.
 - Follow-up spacing correction moved HIZOZ and Mstar Technology closer to the Technology slice without touching the wheel, and lifted One Tastes farther away from the Food & Hospitality circle edge.
+- Latest Food & Hospitality refinement moved only the FoodOnlines desktop/tablet logo farther left while preserving the wheel, other logo positions, and mobile grouping.
 
 ## 2026-07-08 Global Presence Dark Globe Panel
 

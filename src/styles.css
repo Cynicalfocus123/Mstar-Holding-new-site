@@ -7985,6 +7985,10 @@ h2 {
     transform: translate(150%, -150%);
   }
 
+  .presence-ecosystem-layout .presence-logo-foodonlines {
+    transform: translate(-72%, 0);
+  }
+
   .presence-ecosystem-layout .presence-logo-one-taste {
     transform: translate(-225%, -285%);
   }
@@ -8005,6 +8009,10 @@ h2 {
 @media (min-width: 1200px) {
   .presence-ecosystem-layout .presence-logo-property {
     transform: translate(230%, -210%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-foodonlines {
+    transform: translate(-96%, 0);
   }
 
   .presence-ecosystem-layout .presence-logo-one-taste {
