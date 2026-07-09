@@ -6128,6 +6128,71 @@ h2 {
   }
 }
 
+/* Side label edge clearance: keep Import / Export and Entertainment inside slice edges. */
+.presence-ecosystem-layout .presence-sector-import,
+.presence-ecosystem-layout .presence-sector-entertainment {
+  width: clamp(108px, 23%, 138px);
+}
+
+.presence-ecosystem-layout .presence-sector-import span,
+.presence-ecosystem-layout .presence-sector-entertainment span {
+  font-size: clamp(0.72rem, 0.92vw, 0.94rem);
+  line-height: 1.02;
+}
+
+.presence-ecosystem-layout .presence-sector-import small,
+.presence-ecosystem-layout .presence-sector-entertainment small {
+  font-size: clamp(0.54rem, 0.66vw, 0.68rem);
+}
+
+.presence-ecosystem-layout .presence-sector-import {
+  left: 82.5%;
+}
+
+.presence-ecosystem-layout .presence-sector-entertainment {
+  left: 17.5%;
+}
+
+@media (min-width: 1200px) {
+  .presence-ecosystem-layout .presence-sector-import,
+  .presence-ecosystem-layout .presence-sector-entertainment {
+    width: clamp(112px, 22%, 142px);
+  }
+
+  .presence-ecosystem-layout .presence-sector-import {
+    left: 82.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-entertainment {
+    left: 17.5%;
+  }
+}
+
+@media (max-width: 767px) {
+  .presence-ecosystem-layout .presence-sector-import,
+  .presence-ecosystem-layout .presence-sector-entertainment {
+    width: clamp(66px, 20%, 84px);
+  }
+
+  .presence-ecosystem-layout .presence-sector-import span,
+  .presence-ecosystem-layout .presence-sector-entertainment span {
+    font-size: clamp(0.42rem, 1.65vw, 0.56rem);
+  }
+
+  .presence-ecosystem-layout .presence-sector-import small,
+  .presence-ecosystem-layout .presence-sector-entertainment small {
+    font-size: clamp(0.34rem, 1.35vw, 0.46rem);
+  }
+
+  .presence-ecosystem-layout .presence-sector-import {
+    left: 82.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-entertainment {
+    left: 17.5%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-base-dots,
   .map-market-shape {

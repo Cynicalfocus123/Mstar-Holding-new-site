@@ -29,6 +29,7 @@
 - Moved sector label anchors outward into the open area of each slice and restored normal word wrapping so labels do not break words like `Hospitality` or `Entertainment`.
 - Reduced the ecosystem center hub and nudged the Import / Export and Entertainment labels farther outward so side-slice text no longer crosses into the white middle circle.
 - Corrected the hub sizing math by increasing the white circle inset, actually reducing the center circle and giving the side labels more visible slice space.
+- Reduced and re-centered only the side-slice labels so Entertainment and Import / Export no longer touch the outer white slice boundary.
 
 ## 2026-07-08
 
