@@ -16,6 +16,7 @@
 - Locked the exact semantic sector colors across wheel wedges, connector ticks, sector labels, and responsive group accents.
 - Preserved every logo as an untouched proportional `<img>` asset with `object-fit: contain`; no logo was recolored, cropped, warped, redrawn, edited, or converted.
 - Honored the request not to open localhost and not to create a ZIP.
+- Follow-up refinement converted the desktop ecosystem from separated side columns to a closer wheel-centered logo orbit, visually hid outside sector headings on desktop, kept sector labels inside the wheel, and rebalanced the center hub so the Mstar logo fits comfortably.
 
 ## 2026-07-08 Global Presence Dark Globe Panel
 

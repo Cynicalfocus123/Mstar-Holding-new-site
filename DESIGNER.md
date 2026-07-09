@@ -15,6 +15,8 @@
 - Tablet and mobile stack the wheel above labeled sector groups so each sector has its own title, color accent, and correct logos.
 - Kept all company logos as original untouched image assets with proportional `object-fit: contain` rendering only.
 - Applied the strict semantic sector color system across wheel wedges, connector ticks, and responsive sector group accents.
+- Refined the desktop ecosystem into a closer wheel-centered orbit, visually hiding outside sector headings so the primary sector labels live inside the wheel.
+- Rebalanced the center hub so the Mstar logo and `11 Businesses Across / 6 Sectors` text fit comfortably inside the middle circle.
 
 ## 2026-07-08
 

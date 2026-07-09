@@ -4893,6 +4893,232 @@ h2 {
   }
 }
 
+/* Close-orbit refinement: wheel remains the anchor; outside sector titles stay mobile-only. */
+@media (min-width: 1200px) {
+  .presence-ecosystem {
+    width: min(100%, 1280px);
+  }
+
+  .presence-ecosystem-layout {
+    position: relative;
+    display: grid;
+    min-height: clamp(660px, 56vw, 760px);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0;
+    margin-top: clamp(42px, 5vw, 72px);
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-wheel-wrap {
+    position: relative;
+    z-index: 2;
+    align-self: center;
+    width: min(52vw, 590px);
+  }
+
+  .presence-ecosystem-callouts {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .presence-ecosystem-group {
+    position: absolute;
+    width: clamp(150px, 14vw, 230px);
+    gap: 10px;
+    pointer-events: auto;
+  }
+
+  .presence-ecosystem-group h3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .presence-ecosystem-group h3::before {
+    content: none;
+  }
+
+  .presence-ecosystem-callouts-left .presence-ecosystem-group,
+  .presence-ecosystem-callouts-right .presence-ecosystem-group {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .presence-ecosystem-group::before {
+    width: clamp(14px, 1.8vw, 24px);
+    opacity: 0.64;
+  }
+
+  .presence-ecosystem-group::after {
+    width: 7px;
+    height: 7px;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9);
+  }
+
+  .presence-ecosystem-callouts-left .ecosystem-sector--real-estate {
+    top: 13%;
+    left: 14%;
+  }
+
+  .presence-ecosystem-callouts-left .ecosystem-sector--entertainment {
+    top: 42%;
+    left: 5%;
+  }
+
+  .presence-ecosystem-callouts-left .ecosystem-sector--technology {
+    bottom: 12%;
+    left: 15%;
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--food-hospitality {
+    top: 10%;
+    right: 10%;
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--import-export {
+    top: 41%;
+    right: 2%;
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--defense {
+    right: 13%;
+    bottom: 12%;
+  }
+
+  .presence-ecosystem-callouts-left .presence-ecosystem-group::before {
+    right: -28px;
+    left: auto;
+  }
+
+  .presence-ecosystem-callouts-left .presence-ecosystem-group::after {
+    right: -36px;
+    left: auto;
+  }
+
+  .presence-ecosystem-callouts-right .presence-ecosystem-group::before {
+    right: auto;
+    left: -28px;
+  }
+
+  .presence-ecosystem-callouts-right .presence-ecosystem-group::after {
+    right: auto;
+    left: -36px;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-logo img,
+  .presence-ecosystem-logo img {
+    max-width: clamp(104px, 10vw, 174px);
+    max-height: clamp(42px, 4.8vw, 68px);
+  }
+
+  .presence-logo-foodonlines img,
+  .presence-logo-american img,
+  .presence-logo-one-taste img,
+  .presence-logo-technology img {
+    max-width: clamp(122px, 11vw, 198px);
+    max-height: clamp(46px, 5vw, 74px);
+  }
+
+  .presence-logo-buyhome img,
+  .presence-logo-defense img {
+    max-width: clamp(130px, 12vw, 210px);
+    max-height: clamp(50px, 5.4vw, 82px);
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-wheel {
+    width: 100%;
+    background:
+      radial-gradient(circle at center, #ffffff 0 27%, transparent 27.4%),
+      conic-gradient(
+        from -30deg,
+        var(--sector-food-hospitality) 0deg 60deg,
+        var(--sector-import-export) 60deg 120deg,
+        var(--sector-defense) 120deg 180deg,
+        var(--sector-technology) 180deg 240deg,
+        var(--sector-entertainment) 240deg 300deg,
+        var(--sector-real-estate) 300deg 360deg
+      );
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-wheel::after {
+    inset: 27%;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center {
+    inset: 30%;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center img {
+    width: min(68%, 128px);
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center strong {
+    max-width: 82%;
+    margin-top: 5px;
+    font-size: clamp(0.68rem, 0.92vw, 0.88rem);
+    line-height: 1.14;
+  }
+
+  .presence-ecosystem-layout .presence-sector-label {
+    width: 25%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-label::before {
+    width: clamp(30px, 3vw, 42px);
+    height: clamp(30px, 3vw, 42px);
+    margin-bottom: 7px;
+    font-size: clamp(0.78rem, 1vw, 1rem);
+  }
+
+  .presence-ecosystem-layout .presence-sector-label span {
+    font-size: clamp(0.68rem, 0.82vw, 0.86rem);
+  }
+
+  .presence-ecosystem-layout .presence-sector-label small {
+    font-size: clamp(0.56rem, 0.68vw, 0.7rem);
+  }
+
+  .presence-ecosystem-layout .presence-sector-real-estate {
+    top: 17%;
+    left: 18.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-food {
+    top: 17%;
+    right: 18.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-import {
+    top: 47%;
+    right: 7%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-defense {
+    right: 18.5%;
+    bottom: 17%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-technology {
+    bottom: 17%;
+    left: 18.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-entertainment {
+    top: 47%;
+    left: 7%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-base-dots,
   .map-market-shape {
