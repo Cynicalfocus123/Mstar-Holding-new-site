@@ -5119,6 +5119,231 @@ h2 {
   }
 }
 
+/* Latest ecosystem correction: inside-wheel labels only, no dot/tick connectors. */
+.presence-ecosystem-group h3,
+.presence-ecosystem-group h3::before,
+.presence-ecosystem-group::before,
+.presence-ecosystem-group::after {
+  content: none;
+}
+
+.presence-ecosystem-group h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.presence-ecosystem-group {
+  border-top: 0;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-wheel {
+  background:
+    radial-gradient(circle at center, #ffffff 0 28.5%, transparent 28.9%),
+    conic-gradient(
+      from -30deg,
+      var(--sector-food-hospitality) 0deg 60deg,
+      var(--sector-import-export) 60deg 120deg,
+      var(--sector-defense) 120deg 180deg,
+      var(--sector-technology) 180deg 240deg,
+      var(--sector-entertainment) 240deg 300deg,
+      var(--sector-real-estate) 300deg 360deg
+    );
+}
+
+.presence-ecosystem-layout .presence-ecosystem-wheel::after {
+  inset: 28.5%;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-center {
+  inset: 32%;
+}
+
+.presence-ecosystem-layout .presence-ecosystem-center img {
+  width: min(64%, 124px);
+}
+
+.presence-ecosystem-layout .presence-ecosystem-center strong {
+  max-width: 82%;
+  font-size: clamp(0.62rem, 0.86vw, 0.84rem);
+  line-height: 1.12;
+}
+
+.presence-ecosystem-layout .presence-sector-label {
+  width: 24%;
+}
+
+.presence-ecosystem-layout .presence-sector-real-estate {
+  top: 11.5%;
+  left: 11%;
+}
+
+.presence-ecosystem-layout .presence-sector-food {
+  top: 11.5%;
+  right: 11%;
+}
+
+.presence-ecosystem-layout .presence-sector-import {
+  top: 46%;
+  right: 0.5%;
+}
+
+.presence-ecosystem-layout .presence-sector-defense {
+  right: 11%;
+  bottom: 11.5%;
+}
+
+.presence-ecosystem-layout .presence-sector-technology {
+  bottom: 11.5%;
+  left: 11%;
+}
+
+.presence-ecosystem-layout .presence-sector-entertainment {
+  top: 46%;
+  left: 0.5%;
+}
+
+.presence-logo-property img {
+  max-width: clamp(132px, 12vw, 212px);
+  max-height: clamp(58px, 6vw, 86px);
+}
+
+@media (min-width: 1200px) {
+  .presence-ecosystem-layout {
+    min-height: clamp(610px, 51vw, 700px);
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-wheel-wrap {
+    width: min(50vw, 570px);
+  }
+
+  .presence-ecosystem-callouts-left .ecosystem-sector--real-estate {
+    top: 10%;
+    left: 18%;
+  }
+
+  .presence-ecosystem-callouts-left .ecosystem-sector--entertainment {
+    top: 42%;
+    left: 12%;
+  }
+
+  .presence-ecosystem-callouts-left .ecosystem-sector--technology {
+    bottom: 9%;
+    left: 18%;
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--food-hospitality {
+    top: 8%;
+    right: 18%;
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--import-export {
+    top: 43%;
+    right: 12%;
+  }
+
+  .presence-ecosystem-callouts-right .ecosystem-sector--defense {
+    right: 18%;
+    bottom: 9%;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-wheel {
+    background:
+      radial-gradient(circle at center, #ffffff 0 28.5%, transparent 28.9%),
+      conic-gradient(
+        from -30deg,
+        var(--sector-food-hospitality) 0deg 60deg,
+        var(--sector-import-export) 60deg 120deg,
+        var(--sector-defense) 120deg 180deg,
+        var(--sector-technology) 180deg 240deg,
+        var(--sector-entertainment) 240deg 300deg,
+        var(--sector-real-estate) 300deg 360deg
+      );
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-wheel::after {
+    inset: 28.5%;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center {
+    inset: 31.5%;
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center img {
+    width: min(62%, 116px);
+  }
+
+  .presence-ecosystem-layout .presence-ecosystem-center strong {
+    font-size: clamp(0.6rem, 0.78vw, 0.76rem);
+  }
+
+  .presence-ecosystem-layout .presence-sector-label {
+    width: 23%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-real-estate {
+    top: 11%;
+    left: 10.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-food {
+    top: 11%;
+    right: 10.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-import {
+    top: 46%;
+    right: 0.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-defense {
+    right: 10.5%;
+    bottom: 11%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-technology {
+    bottom: 11%;
+    left: 10.5%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-entertainment {
+    top: 46%;
+    left: 0.5%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .presence-ecosystem-group,
+  .presence-ecosystem-callouts-left .presence-ecosystem-group {
+    padding-top: 0;
+    border-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .presence-ecosystem-layout .presence-ecosystem-wheel {
+    width: min(100%, 370px);
+  }
+
+  .presence-ecosystem-layout .presence-sector-label {
+    width: 23%;
+  }
+
+  .presence-ecosystem-layout .presence-sector-label span {
+    font-size: clamp(0.48rem, 2.1vw, 0.64rem);
+  }
+
+  .presence-ecosystem-layout .presence-sector-label small {
+    font-size: clamp(0.44rem, 1.85vw, 0.56rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-base-dots,
   .map-market-shape {

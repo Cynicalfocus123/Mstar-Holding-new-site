@@ -16,7 +16,10 @@
 - Kept all company logos as original untouched image assets with proportional `object-fit: contain` rendering only.
 - Applied the strict semantic sector color system across wheel wedges, connector ticks, and responsive sector group accents.
 - Refined the desktop ecosystem into a closer wheel-centered orbit, visually hiding outside sector headings so the primary sector labels live inside the wheel.
-- Rebalanced the center hub so the Mstar logo and `11 Businesses Across / 6 Sectors` text fit comfortably inside the middle circle.
+- Rebalanced the center hub so the Mstar logo and `12 Businesses Across / 6 Sectors` text fit comfortably inside the middle circle.
+- Corrected the ecosystem to 12 businesses by adding Mstar Property Development to Real Estate and moving HIZOZ.com to Technology.
+- Removed the remaining connector dot/tick marker logic and pushed wedge labels outward so sector text sits in the middle band of each wedge instead of crowding the center hub.
+- Kept the Mstar Property Development logo as the supplied original black-background image, displayed proportionally without image editing.
 
 ## 2026-07-08
 
