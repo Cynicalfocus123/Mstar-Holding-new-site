@@ -32,6 +32,7 @@
 - Reduced and re-centered only the side-slice labels so Entertainment and Import / Export no longer touch the outer white slice boundary.
 - Added a tablet-only outside-wheel orbit so company logo groups stay near their correct sector slices instead of falling into detached stacked rows.
 - Fine-tuned the desktop and tablet logo orbit to follow the supplied arrow references: Mstar Property shifts up/right, One Tastes and ABS Fulfillment visually trade right-side positions, and HIZOZ plus Mstar Technology move closer to the Technology slice while mobile keeps the in-slice logo grouping.
+- Corrected the logo orbit after visual review so ABS Fulfillment remains aligned with Import / Export, One Tastes returns to the Food & Hospitality side, and HIZOZ plus Mstar Technology sit below the Technology slice outside the wheel with clear breathing room.
 
 ## 2026-07-08
 

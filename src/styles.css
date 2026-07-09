@@ -7986,19 +7986,19 @@ h2 {
   }
 
   .presence-ecosystem-layout .presence-logo-one-taste {
-    transform: translate(70%, 160%);
+    transform: translate(-120%, -210%);
   }
 
   .presence-ecosystem-layout .presence-logo-abs {
-    transform: translate(-62%, -160%);
+    transform: translate(34%, -28%);
   }
 
   .presence-ecosystem-layout .presence-logo-hizoz {
-    transform: translate(150%, -92%);
+    transform: translate(-62%, 120%);
   }
 
   .presence-ecosystem-layout .presence-logo-technology {
-    transform: translate(118%, 106%);
+    transform: translate(-60%, 220%);
   }
 }
 
@@ -8008,18 +8008,18 @@ h2 {
   }
 
   .presence-ecosystem-layout .presence-logo-one-taste {
-    transform: translate(85%, 204%);
+    transform: translate(-150%, -230%);
   }
 
   .presence-ecosystem-layout .presence-logo-abs {
-    transform: translate(-73%, -204%);
+    transform: translate(34%, -34%);
   }
 
   .presence-ecosystem-layout .presence-logo-hizoz {
-    transform: translate(210%, -112%);
+    transform: translate(-74%, 132%);
   }
 
   .presence-ecosystem-layout .presence-logo-technology {
-    transform: translate(160%, 136%);
+    transform: translate(-76%, 266%);
   }
 }
