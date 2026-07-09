@@ -20,6 +20,9 @@
 - Corrected the ecosystem to 12 businesses by adding Mstar Property Development to Real Estate and moving HIZOZ.com to Technology.
 - Removed the remaining connector dot/tick marker logic and pushed wedge labels outward so sector text sits in the middle band of each wedge instead of crowding the center hub.
 - Kept the Mstar Property Development logo as the supplied original black-background image, displayed proportionally without image editing.
+- Updated the section eyebrow to `Company Ecosystem and Sectors` while keeping the main heading `One Group. Multiple Sectors.`
+- Refined slice label positions so sector names and counts sit centered within the colored wedge area and away from the white center hub.
+- Added a mobile-only in-wheel logo layer so company logos sit inside their matching sector slices on phones; desktop keeps logos outside the wheel with wider perimeter spacing.
 
 ## 2026-07-08
 
