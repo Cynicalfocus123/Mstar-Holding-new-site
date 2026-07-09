@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Tablet Logo Clearance Correction
+
+- Corrected only the tablet offsets for ABS Fulfillment, SeniorCaring, American Buying Service, and Mstar Defense after visual review.
+- Kept ABS and American outside the Import / Export ring, kept SeniorCaring with Food & Hospitality, and placed Mstar Defense just outside Defense without changing any other logo or desktop/mobile behavior.
+
 ### Business Ecosystem Tablet Final Override Fix
 
 - Corrected the final tablet-only CSS override block so the GitHub Pages version uses the requested logo offsets for Mstar Property Development, HIZOZ, Mstar Technology, SeniorCaring, American Buying Service, and Mstar Defense.

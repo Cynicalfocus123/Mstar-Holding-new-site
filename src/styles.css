@@ -8117,7 +8117,7 @@ h2 {
   }
 
   .presence-ecosystem-layout .presence-logo-abs {
-    transform: translate(12%, -8%);
+    transform: translate(24px, -8px);
   }
 
   .presence-ecosystem-layout .presence-logo-hizoz {
@@ -8129,14 +8129,14 @@ h2 {
   }
 
   .presence-ecosystem-layout .presence-logo-senior {
-    transform: translateX(150px);
+    transform: translateX(36px);
   }
 
   .presence-ecosystem-layout .presence-logo-american {
-    transform: translate(170px, 18px);
+    transform: translate(24px, 12px);
   }
 
   .presence-ecosystem-layout .presence-logo-defense {
-    transform: translate(-160px, -28px);
+    transform: translate(18px, 18px);
   }
 }

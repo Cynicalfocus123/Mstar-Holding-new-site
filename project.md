@@ -363,3 +363,4 @@
 - Registered the About page in the Vite production build and updated site navigation links.
 - Added one-shot, reduced-motion-aware IntersectionObserver reveal animation.
 - Created the production deployment ZIP from the final `dist/` build output.
+- Corrected the active tablet Business Ecosystem overrides so ABS Fulfillment, SeniorCaring, American Buying Service, and Mstar Defense sit outside their matching slices with small, even spacing.
