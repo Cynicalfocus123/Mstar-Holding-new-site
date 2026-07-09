@@ -7,6 +7,11 @@
 
 ## 2026-07-09
 
+### Business Ecosystem Tablet Final Override Fix
+
+- Corrected the final tablet-only CSS override block so the GitHub Pages version uses the requested logo offsets for Mstar Property Development, HIZOZ, Mstar Technology, SeniorCaring, American Buying Service, and Mstar Defense.
+- Unmentioned logos, mobile behavior, desktop behavior, wheel design, colors, center hub, company mapping, and original logo artwork were left unchanged.
+
 ### Business Ecosystem Tablet Arrow Placement Correction
 
 - Tablet-only offsets for Mstar Property Development, SeniorCaring, American Buying Service, Mstar Defense, Mstar Technology, and HIZOZ were increased to visibly match the marked arrow directions on the GitHub Pages tablet view.

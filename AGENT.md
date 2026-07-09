@@ -6,6 +6,13 @@
 - Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
+## 2026-07-09 Business Ecosystem Tablet Final Override Fix
+
+- Updated only the final standalone Global Presence Business Ecosystem tablet override block from 768px through 1199px, which was overriding the earlier per-logo tablet offsets.
+- Set the active final tablet transforms for Mstar Property Development, HIZOZ, Mstar Technology, SeniorCaring, American Buying Service, and Mstar Defense so the GitHub Pages build reflects the requested arrow movement.
+- Preserved all unmentioned logo positions, mobile behavior, desktop behavior, wheel design/colors, center hub, company-to-sector mapping, heading text, page background, original logo artwork, and transparent no-card logo rendering.
+- Honored the request not to open localhost, not to open a local IP, and not to create a ZIP.
+
 ## 2026-07-09 Business Ecosystem Tablet Arrow Placement Correction
 
 - Updated only the standalone Global Presence Business Ecosystem tablet breakpoint from 768px through 1199px.

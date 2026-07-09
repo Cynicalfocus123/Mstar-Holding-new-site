@@ -8105,7 +8105,7 @@ h2 {
 /* Tablet-only tightening: preserve the desktop orbit idea without scattered spacing. */
 @media (min-width: 768px) and (max-width: 1199px) {
   .presence-ecosystem-layout .presence-logo-property {
-    transform: translate(28%, -28%);
+    transform: translate(95%, 45%);
   }
 
   .presence-ecosystem-layout .presence-logo-foodonlines {
@@ -8121,10 +8121,22 @@ h2 {
   }
 
   .presence-ecosystem-layout .presence-logo-hizoz {
-    transform: translate(28%, 8%);
+    transform: translate(100%, 8%);
   }
 
   .presence-ecosystem-layout .presence-logo-technology {
-    transform: translate(0, 20%);
+    transform: translate(140%, 20%);
+  }
+
+  .presence-ecosystem-layout .presence-logo-senior {
+    transform: translateX(150px);
+  }
+
+  .presence-ecosystem-layout .presence-logo-american {
+    transform: translate(170px, 18px);
+  }
+
+  .presence-ecosystem-layout .presence-logo-defense {
+    transform: translate(-160px, -28px);
   }
 }
