@@ -7,6 +7,34 @@
 
 ## 2026-07-09
 
+### FFmpeg Video Delivery Pass
+
+- Tested video delivery compression without replacing any MP4 because the valid re-encodes were larger than the existing files.
+- Preserved all video dimensions, crops, motion, frame rates, visual placement, autoplay/muted/loop/playsinline/preload/lazy-loading behavior, layout, CSS, responsive behavior, logos, copy, and page structure.
+
+## 2026-07-09
+
+### Responsive Leadership Image Delivery Optimization
+
+- Added responsive WebP `srcset` variants for Executive Management, Board of Directors, and About images without changing image boxes, crops, object-fit behavior, layout, breakpoints, or copy.
+- Preserved transparent portrait edges and kept original full-quality files in `public/` as source/fallback assets; final deployment excludes only unreferenced originals.
+- First visible Executive, Board, and About portrait images use eager/high-priority loading; remaining portraits and collage images remain lazy/async.
+
+### Hostinger ZIP Path Correction
+
+- Final deployment ZIP uses direct root entries and standard forward-slash paths so Hostinger extracts `assets/`, `media/`, `videos/`, and page folders correctly inside the existing `public_html` folder.
+- No visual design, CSS, layout, responsive behavior, media, logo, copy, or page structure changed.
+
+### Hostinger File Manager Package Correction
+
+- Repackaged the optimized site with one `public_html/` parent folder so all assets preserve their correct relative paths when extracted through Hostinger File Manager.
+- No visual design, CSS, layout, responsive behavior, media, logo, copy, or page structure changed.
+
+### Hostinger Deployment Packaging Optimization
+
+- Rebuilt the Hostinger package from the latest `dist/` output without changing layout, CSS, responsive positions, video styling, image crops, logos, copy, or page structure.
+- Removed only unused copied assets from `dist/`; all active media and HTML5 video behavior were preserved.
+
 ### Business Ecosystem Sector Count Removal
 
 - Removed the per-sector business-count lines from all six ecosystem wedge labels across mobile, tablet, and desktop.

@@ -1,5 +1,34 @@
 # Agent Changelog
 
+## 2026-07-09 FFmpeg Video Delivery Pass
+
+- Installed FFmpeg 8.1.2 with `winget` and tested fast-start copies plus bounded H.264 re-encodes for all 17 built video references; every re-encode was larger, so no MP4 was replaced.
+- Preserved every video filename/path, dimension, aspect ratio, duration, frame rate, pixel format, HTML5 attribute, and visual placement.
+- Rebuilt and cleaned final `dist/` to 41,463,806 bytes across 130 files, removing only 34 files confirmed unused by built HTML/CSS/JS; created `mstar-hostinger-public_html-ready-optimized.zip` with direct forward-slash paths.
+- Passed build, lint, test, weight audit, broken-reference, unused-media, FFprobe, Hostinger ZIP, `.htaccess`, and deployment-safety verification.
+
+## 2026-07-09 Responsive Leadership Image Delivery Optimization
+
+- Added 44 responsive WebP variants and `srcset`/`sizes` to Executive Management, Board of Directors, and About images without changing layout or image CSS.
+- Cleaned only unreferenced originals and duplicate assets from final `dist/`; originals remain in `public/`.
+- Passed build, lint, test, and weight audit. No commit, push, localhost, or local IP.
+
+## 2026-07-09 Hostinger ZIP Path Correction
+
+- Created `mstar-hostinger-public_html-ready.zip` with direct root entries from `dist/` and standard forward-slash paths.
+- The archive is designed to be uploaded inside the existing `public_html` folder and extracted there, merging files into their correct folders without a wrapper or literal backslash filenames.
+
+## 2026-07-09 Hostinger File Manager Package Correction
+
+- Rebuilt the deployment archive as `mstar-hostinger-public_html-deploy.zip` with exactly one top-level `public_html/` folder.
+- Preserved nested paths such as `public_html/assets/brand/`, `public_html/media/`, and `public_html/videos/` for direct File Manager extraction; no commit or push was made.
+
+## 2026-07-09 Hostinger Deployment Packaging Optimization
+
+- Ran `build:hostinger`, lint, test, and weight audit successfully.
+- Removed 20 unused copied assets from `dist/` only, verified zero broken references, and rebuilt `mstar-latest-changes-deploy.zip` as a direct-extract package.
+- Preserved all source assets, CSS, layout, responsive behavior, HTML5 video attributes, and page structure; no commit or push was made.
+
 ## Live File Rule
 
 - After every committed site change, refresh the existing `mstar-latest-changes-deploy.zip` from the current Hostinger/root `dist/` build unless the user explicitly says not to update the live file.

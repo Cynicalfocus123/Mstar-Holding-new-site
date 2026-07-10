@@ -1,5 +1,58 @@
 # Weight And Deployment Notes
 
+## 2026-07-09 FFmpeg Video Delivery Pass
+
+- Before audit: `public/` 65,603,387 bytes across 146 files; `dist/` 41,463,806 bytes across 130 files.
+- Video totals before/after: source `public/` MP4 26,014,020 / 26,014,020 bytes across 20 files; final `dist/` MP4 24,532,551 / 24,532,551 bytes across 17 files. Savings: 0 bytes because every valid bounded re-encode was larger than its original.
+- Fast-start copy tested all 20 source MP4s. Re-encode-tested referenced files: `mstar-holding-company-intro.mp4`, `business-page-header-desktop.mp4`, `business-page-header-mobile.mp4`, `business-mstar-property.mp4`, `business-buyhomeforless.mp4`, `business-senior-home.mp4`, `business-foodonlines-2.mp4`, `business-one-taste.mp4`, `business-hospitality-senior-home-care.mp4`, `business-american-buying-service.mp4`, `business-abs-fulfillment.mp4`, `business-mstar-defense.mp4`, `business-ecommerce-foodonlines.mp4`, `business-hizoz.mp4`, `business-mstar-technology.mp4`, `business-boogoo.mp4`, and `business-mstar-airsoft.mp4`; no source MP4 was replaced.
+- Before/after final `dist/`: 41,463,806 / 41,463,806 bytes. Before/after requested ZIP `mstar-hostinger-public_html-ready-optimized.zip`: 40,492,803 / 40,492,803 bytes.
+- Final `dist/` largest remaining files: `videos/mstar-holding-company-intro.mp4` 8,023,223; `videos/business-mstar-property.mp4` 3,879,641; `videos/business-page-header-desktop.mp4` 3,185,218; `media/global-presence/food-serves-globally.png` 2,508,811; `media/global-presence/hospitality-clients.png` 2,036,465; `media/global-presence/rd-investment.png` 2,021,577; `videos/business-page-header-mobile.mp4` 1,864,385; `videos/business-american-buying-service.mp4` 1,205,627; `videos/business-senior-home.mp4` 963,206; `media/logos/american-buying-service-logo.png` 864,971.
+- Commands: `winget install --id Gyan.FFmpeg.Shared -e`; `ffmpeg -version`; `ffprobe -version`; `npm run build:hostinger`; `npm run lint`; `npm test`; `npm run weight:audit`.
+- Passed: zero broken references, zero unused included media/video files, all 17 final MP4s decoded and passed FFprobe metadata checks, no localhost/local IP/GitHub Pages URLs, no forbidden dist files, no Windows backslash paths, all 12 required Hostinger roots, and `.htaccess` compression/cache/no-cache/pass-through checks.
+- ZIP passed: 130 entries exactly matching final `dist/`, direct root, forward-slash paths, no `dist/` or `public_html/` wrapper, no source/docs/node_modules/package files, old ZIPs, screenshots, or backups.
+
+## 2026-07-09 Fresh Optimized Hostinger ZIP
+
+- Before cleaned `dist/`: 55,431,548 bytes. Final cleaned `dist/`: 41,463,806 bytes across 130 files.
+- Previous outdated `mstar-hostinger-public_html-ready.zip`: 54,417,748 bytes. New `mstar-hostinger-public_html-ready-optimized.zip`: 40,492,803 bytes.
+- No video re-encoding was possible because FFmpeg and ffprobe were unavailable; existing MP4 files and HTML5 playback behavior were preserved.
+- Reused the 44 responsive WebP variants and removed only the 34 confirmed-unreferenced deploy files from `dist/`.
+- ZIP verification passed: direct `dist/` contents, root `.htaccess` and `index.html`, all required folders, 130 entries, no wrapper, no backslash paths, no source/docs/package/node_modules/.git files, and no old ZIPs.
+- Passed: `npm run build:hostinger`, `npm run lint`, `npm test`, and `npm run weight:audit`.
+- Confirmed: zero broken references, zero unused included media/video files, no localhost/local IP/GitHub Pages references, and no commit or push.
+
+## 2026-07-09 Responsive Leadership Image Delivery Optimization
+
+- Before: `public/` 62,992,133 bytes; final cleaned `dist/` 55,431,548 bytes.
+- After: `public/` 65,603,387 bytes including 44 responsive variants; final cleaned `dist/` 41,463,806 bytes across 130 files.
+- Added 44 WebP variants: 17 Executive Management, 18 Board of Directors, and 9 About images. Originals remain in `public/` as source/fallback files.
+- Largest source originals retained: founder portrait 6,457,944 bytes; About president portrait 2,673,704 bytes; Steven Lou PNG 1,457,219 bytes; CFO PNG 966,045 bytes.
+- Excluded those unreferenced originals from final `dist/` after switching built HTML fallbacks to responsive variants. Removed 34 unused deploy files total, including old poster PNG copies, retired originals, unused SVG logo alternates, and duplicate MP4s.
+- No video files were re-encoded because FFmpeg/ffprobe were unavailable. Existing HTML5 video behavior and `.htaccess` delivery rules were preserved.
+- Passed: `npm run build:hostinger`, `npm run lint`, `npm test`, and `npm run weight:audit`.
+- Verified: 0 broken references, 0 unused included media/video files, 0 localhost/GitHub/source/docs/node_modules references, and preserved alpha on transparent portrait variants.
+- No ZIP was created in this optimization run; existing `mstar-hostinger-public_html-ready.zip` remains 54,417,748 bytes.
+- No commit or push was made.
+
+## 2026-07-09 Hostinger ZIP Path Correction
+
+- Final archive is `mstar-hostinger-public_html-ready.zip`, containing direct `dist/` contents with standard forward-slash paths.
+- Upload it inside the existing `public_html` folder and extract there; no wrapper folder or Windows backslash filenames are present.
+
+## 2026-07-09 Hostinger File Manager Package Correction
+
+- Rebuilt the final archive as `mstar-hostinger-public_html-deploy.zip` with a single `public_html/` root folder for Hostinger File Manager extraction.
+- Preserved nested asset paths, including `public_html/assets/brand/`; no source media or design files changed.
+
+## 2026-07-09 Hostinger Deployment Packaging Optimization
+
+- Passed: `cmd /c npm.cmd run build:hostinger`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, and `cmd /c npm.cmd run weight:audit`.
+- Removed only unused copied assets from final `dist/`: 3 PNG poster copies, 1 retired About WebP, 13 unused SVG logo alternates, and 3 unused MP4 files.
+- Previous `dist/`: 63,536,241 bytes. Final `dist/`: 55,431,548 bytes.
+- Previous `mstar-latest-changes-deploy.zip`: 62,476,913 bytes. Final ZIP: 54,417,748 bytes.
+- No source images or videos were re-encoded; `ffmpeg` was unavailable. Layout, CSS, responsive behavior, media rendering, video attributes, page copy, and structure were unchanged.
+- Verified zero broken references, required Hostinger root structure, no wrapper folder, and no commit or push.
+
 ## Live File Rule
 
 - Keep `mstar-latest-changes-deploy.zip` aligned with the latest committed site change.

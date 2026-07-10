@@ -1,5 +1,34 @@
 # Project Changelog
 
+## 2026-07-09 FFmpeg Video Delivery Pass
+
+- Installed and verified FFmpeg 8.1.2; fast-start copy and CRF 27/30 plus slower CRF 28/32 H.264 tests produced no smaller valid output, so existing MP4 files remain unchanged.
+- Before/after source MP4 total: 26,014,020 bytes / 20 files; before/after final Hostinger MP4 total: 24,532,551 bytes / 17 files.
+- Rebuilt final Hostinger output at 41,463,806 bytes across 130 files and created the direct-root `mstar-hostinger-public_html-ready-optimized.zip`.
+- Preserved layout, CSS, responsive behavior, images, crops, logos, copy, video placement, HTML5 behavior, and page structure; passed build, lint, test, audit, FFprobe, reference, and ZIP verification.
+
+## 2026-07-09 Responsive Leadership Image Delivery Optimization
+
+- Added 44 responsive WebP variants for leadership, board, and About images; final cleaned `dist/` reduced to 41,463,806 bytes.
+- Kept source originals in `public/`, preserved transparency and image CSS behavior, and removed only unreferenced deployment copies.
+- No ZIP was created, committed, or pushed for this optimization run.
+
+## 2026-07-09 Hostinger ZIP Path Correction
+
+- Created `mstar-hostinger-public_html-ready.zip` with direct `dist/` contents, forward-slash archive paths, and no `public_html/` wrapper.
+- Verified extraction produces the correct folders inside an existing `public_html` directory.
+
+## 2026-07-09 Hostinger File Manager Package Correction
+
+- Created `mstar-hostinger-public_html-deploy.zip` with one top-level `public_html/` folder and preserved nested `assets/brand/`, `media/`, and `videos/` paths.
+- Verified the archive contains no files outside `public_html/` and no extra wrapper folder.
+
+## 2026-07-09 Hostinger Deployment Packaging Optimization
+
+- Rebuilt the Hostinger deployment with `npm run build:hostinger` and removed only 20 unused copied files from `dist/`.
+- Final `dist/` size: 55,431,548 bytes; final `mstar-latest-changes-deploy.zip` size: 54,417,748 bytes.
+- Verified direct extraction, required root folders, zero broken references, preserved HTML5 video attributes, and no commit/push.
+
 ## 2026-07-09 Business Ecosystem Tablet Final Override Fix
 
 - Corrected the final active tablet CSS override for the standalone Global Presence Business Ecosystem logo orbit.
