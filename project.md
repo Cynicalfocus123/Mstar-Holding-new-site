@@ -1,5 +1,12 @@
 # Project Changelog
 
+## 2026-07-09 Aggressive Media Weight Optimization
+
+- Reduced source `public/` from 65,603,387 to 55,851,064 bytes and final `dist/` from 41,463,806 to 25,144,633 bytes.
+- Replaced 17 referenced MP4s with validated H.264/yuv420p outputs and converted three referenced Global Presence PNG photos to q80 WebP; no approved logos or leadership portraits changed.
+- Created `mstar-hostinger-public_html-ready-20mb-target.zip` at 24,352,472 bytes, achieving the primary under-25-MB target. The stretch under-20-MB target was not pursued further because it would require additional visible quality loss or altering approved assets.
+- Preserved page layout, CSS, responsive behavior, text, routing, media placement, and lazy-loading behavior; build, lint, test, audit, FFprobe, reference, and ZIP checks passed.
+
 ## 2026-07-09 FFmpeg Video Delivery Pass
 
 - Installed and verified FFmpeg 8.1.2; fast-start copy and CRF 27/30 plus slower CRF 28/32 H.264 tests produced no smaller valid output, so existing MP4 files remain unchanged.

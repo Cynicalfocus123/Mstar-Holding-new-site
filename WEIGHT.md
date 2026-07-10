@@ -1,5 +1,20 @@
 # Weight And Deployment Notes
 
+## 2026-07-09 Aggressive Media Weight Optimization
+
+- Before: `public/` 65,603,387 bytes / 146 files; final `dist/` 41,463,806 bytes / 130 files; previous ZIP `mstar-hostinger-public_html-ready-optimized.zip` 40,492,803 bytes.
+- After: `public/` 55,851,064 bytes / 149 files; final `dist/` 25,144,633 bytes / 130 files; new ZIP `mstar-hostinger-public_html-ready-20mb-target.zip` 24,352,472 bytes. Under 30 MB: yes. Under 25 MB: yes. Under 20 MB: no.
+- MP4 total: source `public/` 26,014,020 → 15,933,683 bytes across 20 files; final `dist/` 24,532,551 → 14,452,214 bytes across 17 files.
+- Optimized MP4s: `mstar-holding-company-intro.mp4`, `business-page-header-desktop.mp4`, `business-page-header-mobile.mp4`, `business-mstar-property.mp4`, `business-buyhomeforless.mp4`, `business-senior-home.mp4`, `business-foodonlines-2.mp4`, `business-one-taste.mp4`, `business-hospitality-senior-home-care.mp4`, `business-american-buying-service.mp4`, `business-abs-fulfillment.mp4`, `business-mstar-defense.mp4`, `business-ecommerce-foodonlines.mp4`, `business-hizoz.mp4`, `business-mstar-technology.mp4`, `business-boogoo.mp4`, and `business-mstar-airsoft.mp4`.
+- Video methods: fast-start tested; final MP4s use H.264, yuv420p, no audio, `-movflags +faststart`; hero/header used 960px CRF31, 960px desktop header, 540px mobile header; below-fold cards use 576px CRF35; Mstar Property is 60 seconds; American Buying Service and Senior Home are 45 seconds. All final MP4s retained aspect ratio and frame rate and passed FFprobe/decode checks.
+- Image methods: converted referenced `food-serves-globally.png`, `hospitality-clients.png`, and `rd-investment.png` to q80 WebP with unchanged dimensions/crops; removed only their unreferenced PNG copies from final `dist/`. No logos or leadership portraits were altered. Poster/lazy-load behavior unchanged.
+- Removed 37 files from final `dist/` only after built HTML/CSS/JS reference audit confirmed them unused, including the three replaced PNGs, three unreferenced source MP4s, old poster PNGs, retired originals, and unused logo alternates. Zero broken references and zero unused included media/video files remain.
+- Largest remaining final `dist/` files: `videos/mstar-holding-company-intro.mp4` 5,076,962; `videos/business-page-header-desktop.mp4` 2,403,265; `videos/business-page-header-mobile.mp4` 1,108,477; `media/logos/american-buying-service-logo.png` 864,971; `videos/business-mstar-property.mp4` 841,762; `media/logos/mstar-property-logo.png` 811,198; `media/about/mstar-holding-logo.png` 722,791; `videos/business-buyhomeforless.mp4` 597,844; `videos/business-senior-home.mp4` 569,871; `videos/business-boogoo.mp4` 543,727.
+- Commands: `winget install --id Gyan.FFmpeg.Shared -e`; `ffmpeg -version`; `ffprobe -version`; `npm run build:hostinger`; `npm run lint`; `npm test`; `npm run weight:audit`; FFmpeg profile tests with H.264 CRF/bitrate/scale variants; System.IO.Compression ZIP creation.
+- Passed: build, lint, test, audit, all 17 final MP4 FFprobe/decode checks, zero broken references, zero unused included media/video files, zero localhost/local IP/GitHub Pages references, zero forbidden dist files, zero Windows backslash paths, all required Hostinger roots, and `.htaccess` compression/cache/no-cache/pass-through checks.
+- ZIP passed: 130 entries exactly matching final `dist/`, direct root, forward-slash paths, no wrapper, source/docs/node_modules/package files, screenshots, temp tools, FFmpeg binaries, or old ZIPs.
+- Under 20 MB blocker: remaining safe package weight is concentrated in the strong-quality homepage/header videos and approved logo/portrait assets. Further reduction would require more aggressive hero quality/resolution or changing approved assets, which was outside the safe visual constraints.
+
 ## 2026-07-09 FFmpeg Video Delivery Pass
 
 - Before audit: `public/` 65,603,387 bytes across 146 files; `dist/` 41,463,806 bytes across 130 files.

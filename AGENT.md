@@ -1,5 +1,12 @@
 # Agent Changelog
 
+## 2026-07-09 Aggressive Media Weight Optimization
+
+- Replaced all 17 referenced MP4s with validated H.264/yuv420p outputs: 576px CRF35 below-fold cards, 60s Mstar Property and 45s American Buying Service/Senior Home loops, 960px CRF31 homepage hero, 960px desktop header, and 540px mobile header.
+- Converted referenced Global Presence photos to q80 WebP: `food-serves-globally.webp`, `hospitality-clients.webp`, and `rd-investment.webp`; original PNGs remain in `public/` but are excluded from final `dist/` as unreferenced.
+- Reduced final `dist/` from 41,463,806 to 25,144,633 bytes and ZIP from 40,492,803 to 24,352,472 bytes; primary under-25-MB target achieved.
+- Preserved layout, CSS, responsive behavior, approved logos, leadership portraits, text, routing, poster/lazy-load behavior, and HTML5 video playback; all final MP4s passed decode validation.
+
 ## 2026-07-09 FFmpeg Video Delivery Pass
 
 - Installed FFmpeg 8.1.2 with `winget` and tested fast-start copies plus bounded H.264 re-encodes for all 17 built video references; every re-encode was larger, so no MP4 was replaced.

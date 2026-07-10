@@ -7,6 +7,14 @@
 
 ## 2026-07-09
 
+### Aggressive Media Weight Optimization
+
+- Reduced video resolution/bitrate and shortened only selected below-fold loops while preserving the same card placement, aspect ratios, autoplay, muted, loop, playsinline, preload-none, and IntersectionObserver behavior.
+- Converted three referenced Global Presence photos to q80 WebP without changing their boxes or crops; approved logos and leadership portraits were not changed.
+- No layout, CSS, spacing, breakpoints, responsive behavior, copy, navigation, or section design changed.
+
+## 2026-07-09
+
 ### FFmpeg Video Delivery Pass
 
 - Tested video delivery compression without replacing any MP4 because the valid re-encodes were larger than the existing files.
