@@ -5,6 +5,15 @@
 - Every site change must update `DESIGNER.md` with concise design intent, visual behavior, responsive behavior, and any asset/crop/motion notes relevant to the change.
 - Keep design notes concise and avoid large implementation logs.
 
+## 2026-07-12
+
+### Responsive Leadership Image Delivery Completion
+
+- Completed the responsive delivery wiring for About, Executive Management, and Board of Directors imagery without changing visible layout, crops, object-fit behavior, typography, spacing, or breakpoints.
+- The browser can now choose smaller WebP variants through `srcset`/`sizes` while the same portrait and collage frames maintain their approved visual composition.
+- First visible leadership/About portrait images keep eager/high-priority loading; remaining responsive images stay lazy/async.
+- Deployment cleanup excludes unreferenced original-size copies from the final upload only; source originals remain available in `public/`.
+
 ## 2026-07-09
 
 ### Aggressive Media Weight Optimization

@@ -1,5 +1,15 @@
 # Weight And Deployment Notes
 
+## 2026-07-12 Responsive Leadership Image Delivery Completion
+
+- Current source `public/`: 55,851,064 bytes across 149 files, including the 44 responsive WebP variants for About, Executive Management, and Board of Directors.
+- Raw Hostinger/root Vite `dist/` before deploy cleanup: 56,401,049 bytes across 167 files.
+- Cleaned final `dist/`: 25,144,633 bytes across 130 files after removing only 37 files confirmed unreferenced by built HTML/CSS/JS.
+- Removed deploy-only copies included original full-size leadership/About images now replaced by responsive variants, old poster PNGs, replaced Global Presence PNGs, three unreferenced MP4s, and unused SVG logo alternates. Source files in `public/` were not deleted.
+- Refreshed `mstar-hostinger-public_html-ready-20mb-target.zip` in place from the cleaned `dist/`; ZIP size is 24,352,472 bytes with 130 direct-root entries.
+- Verification passed: `cmd /c npm.cmd run build:hostinger`, `cmd /c npm.cmd run lint`, `cmd /c npm.cmd test`, `cmd /c npm.cmd run weight:audit`, static reference scan with `MISSING=0`, unused deploy scan with `UNUSED_COUNT=0`, and ZIP checks for no wrapper, no backslash paths, no source/dev files, and required responsive image entries present.
+- Target status: under 30 MB yes, under 25 MB yes, under 20 MB no. Further reduction would require stronger homepage/header video compression or changing approved high-value logo/media assets.
+
 ## 2026-07-09 Aggressive Media Weight Optimization
 
 - Before: `public/` 65,603,387 bytes / 146 files; final `dist/` 41,463,806 bytes / 130 files; previous ZIP `mstar-hostinger-public_html-ready-optimized.zip` 40,492,803 bytes.

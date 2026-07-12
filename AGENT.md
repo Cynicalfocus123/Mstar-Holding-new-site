@@ -1,5 +1,12 @@
 # Agent Changelog
 
+## 2026-07-12 Responsive Leadership Image Delivery Completion
+
+- Continued the responsive image delivery pass for About, Executive Management, and Board of Directors by keeping the 44 generated WebP variants wired through `srcset`/`sizes`.
+- Refreshed the Hostinger/root build, removed only 37 confirmed-unreferenced files from `dist/`, and rebuilt `mstar-hostinger-public_html-ready-20mb-target.zip` in place.
+- Updated deployment weight notes with exact current numbers: `public/` 55,851,064 bytes across 149 files, cleaned `dist/` 25,144,633 bytes across 130 files, and ZIP 24,352,472 bytes.
+- Passed `build:hostinger`, lint, test, weight audit, static broken-reference verification, unused-deploy-asset verification, and ZIP structure verification.
+
 ## 2026-07-09 Aggressive Media Weight Optimization
 
 - Replaced all 17 referenced MP4s with validated H.264/yuv420p outputs: 576px CRF35 below-fold cards, 60s Mstar Property and 45s American Buying Service/Senior Home loops, 960px CRF31 homepage hero, 960px desktop header, and 540px mobile header.

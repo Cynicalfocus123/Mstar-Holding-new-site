@@ -1,5 +1,12 @@
 # Project Changelog
 
+## 2026-07-12 Responsive Leadership Image Delivery Completion
+
+- Completed the responsive image delivery pass for About, Executive Management, and Board of Directors with 44 WebP variants wired through `srcset` and `sizes`.
+- Preserved the approved visual design: no layout, CSS, crop, object-fit, typography, or breakpoint changes.
+- Rebuilt and cleaned the Hostinger output to 25,144,633 bytes across 130 files, then refreshed `mstar-hostinger-public_html-ready-20mb-target.zip` at 24,352,472 bytes.
+- Passed build, lint, test, weight audit, broken-reference, unused-deploy-asset, and ZIP structure checks.
+
 ## 2026-07-09 Aggressive Media Weight Optimization
 
 - Reduced source `public/` from 65,603,387 to 55,851,064 bytes and final `dist/` from 41,463,806 to 25,144,633 bytes.
