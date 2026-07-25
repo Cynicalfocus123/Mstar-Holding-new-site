@@ -1,5 +1,11 @@
 # Designer Notes
 
+## 2026-07-25 News Article Reading Layout
+
+- Reworked article detail pages into one clean, left-aligned reading flow at desktop, tablet, and mobile sizes: headline and metadata lead, followed by the supplied article image at its natural portrait composition.
+- Reduced the oversized desktop headline scale so long news titles wrap naturally instead of breaking into isolated words beside the image.
+- Removed the horizontal rules between article paragraphs; the story now reads as continuous editorial copy with measured paragraph spacing.
+
 ## 2026-07-25 Finance And Real Estate News Article
 
 - Added one new first-position News card using the existing Mstar brand social image, preserving the established news-card design.

@@ -1,5 +1,10 @@
 # Weight And Deployment Notes
 
+## 2026-07-25 News Article Reading Layout
+
+- CSS-only responsive article-layout correction; no image, video, font, or other media asset changed.
+- Rebuilt the cleaned Hostinger output: `dist/` is 49,939,736 bytes across 132 files and the direct-root ZIP is 49,165,932 bytes.
+
 ## 2026-07-25 Finance And Real Estate News Article
 
 - Added one small HTML article page and shared JavaScript content only; no video or existing media file was changed.

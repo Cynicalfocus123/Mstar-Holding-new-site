@@ -1,5 +1,11 @@
 # Agent Changelog
 
+## 2026-07-25 News Article Reading Layout
+
+- Corrected the shared article detail layout for desktop and tablet: headlines now use the full reading column above the image instead of being squeezed into a narrow side column.
+- Removed paragraph separator lines and retained only consistent editorial paragraph spacing.
+- This is a CSS-only, responsive change; article text, cards, images, video, and routes are unchanged. Rebuilt and ZIP-verified the matching direct-root Hostinger package.
+
 ## 2026-07-25 Finance And Real Estate News Article
 
 - Added the July 24, 2026 Mstar Finance and escrow proposal article as the first item in the shared news data and at `news/mstar-finance-real-estate-escrow-system/`.
