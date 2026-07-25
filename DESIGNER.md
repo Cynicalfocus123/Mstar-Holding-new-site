@@ -1,5 +1,10 @@
 # Designer Notes
 
+## 2026-07-25 Uniform News Card Grid
+
+- Set News & Media cards to equal-height rows at every breakpoint: four columns on wide desktop, three on compact desktop, two on tablet, and one on mobile.
+- Kept the existing image crop, card styling, titles, metadata, and hover behavior while clamping only overflow copy inside a fixed editorial card frame.
+
 ## 2026-07-25 News Article Reading Layout
 
 - Reworked article detail pages into one clean, left-aligned reading flow at desktop, tablet, and mobile sizes: headline and metadata lead, followed by the supplied article image at its natural portrait composition.

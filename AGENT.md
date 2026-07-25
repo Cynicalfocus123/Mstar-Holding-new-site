@@ -1,5 +1,11 @@
 # Agent Changelog
 
+## 2026-07-25 Uniform News Card Grid
+
+- Standardized News & Media card heights by breakpoint and changed compact desktop from four narrow columns to three readable columns.
+- Long card titles and excerpts are safely clamped inside the fixed card frame, preserving equal row heights and keeping each card's metadata aligned at the bottom.
+- This is a CSS-only responsive change; cards, article data, images, video, and routes are unchanged. The matching Hostinger ZIP was rebuilt from the cleaned production output.
+
 ## 2026-07-25 News Article Reading Layout
 
 - Corrected the shared article detail layout for desktop and tablet: headlines now use the full reading column above the image instead of being squeezed into a narrow side column.

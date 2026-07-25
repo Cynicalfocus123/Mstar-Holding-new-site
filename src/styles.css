@@ -6398,11 +6398,33 @@ h2 {
 .news-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 580px;
   gap: clamp(18px, 2vw, 28px);
 }
 
 .news-article-card {
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+}
+
+.news-article-body {
+  min-height: 0;
+  padding: clamp(20px, 2vw, 28px);
+}
+
+.news-article-title,
+.news-article-excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.news-article-title {
+  -webkit-line-clamp: 6;
+}
+
+.news-article-excerpt {
+  -webkit-line-clamp: 5;
 }
 
 .news-placeholder-label {
@@ -7115,6 +7137,11 @@ h2 {
 }
 
 @media (max-width: 1180px) {
+  .news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 580px;
+  }
+
   .about-president-inner {
     grid-template-columns: minmax(0, 0.74fr) minmax(240px, 0.26fr);
   }
@@ -7345,6 +7372,11 @@ h2 {
 }
 
 @media (max-width: 900px) {
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 600px;
+  }
+
   .president-message-card,
   .president-portrait-card {
     transform: translateY(28px);
@@ -7433,10 +7465,6 @@ h2 {
 
   .home-news-card-media {
     min-height: 260px;
-  }
-
-  .news-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -7918,6 +7946,7 @@ h2 {
 
   .news-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: 590px;
   }
 
   .home-bright-cta {

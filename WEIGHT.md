@@ -1,5 +1,10 @@
 # Weight And Deployment Notes
 
+## 2026-07-25 Uniform News Card Grid
+
+- CSS-only News & Media card-grid correction; no image, video, font, or other media asset changed.
+- Rebuilt the cleaned Hostinger output: `dist/` is 49,940,150 bytes across 132 files and the direct-root ZIP is 49,165,986 bytes.
+
 ## 2026-07-25 News Article Reading Layout
 
 - CSS-only responsive article-layout correction; no image, video, font, or other media asset changed.
