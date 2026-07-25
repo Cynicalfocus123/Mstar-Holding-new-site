@@ -25,6 +25,10 @@ export default defineConfig({
         ),
         termsOfService: resolve(__dirname, "terms-of-service/index.html"),
         privacyPolicy: resolve(__dirname, "privacy-policy/index.html"),
+        newsFinanceEscrow: resolve(
+          __dirname,
+          "news/mstar-finance-real-estate-escrow-system/index.html",
+        ),
         newsDefenseContract: resolve(
           __dirname,
           "news/mstar-defense-major-contract-asia-africa-ipo/index.html",

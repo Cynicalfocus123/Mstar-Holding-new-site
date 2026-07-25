@@ -1,5 +1,26 @@
 # Project Changelog
 
+## 2026-07-25 Finance And Real Estate News Article
+
+- Added the July 24, 2026 finance and real estate proposal article to the shared news system and a separate internal article page.
+- Added the supplied press-release photograph as the new article's Home, News & Media, and detail-page image.
+- It appears first on the Home and News & Media pages while retaining the prior Home news cards; the deployment ZIP was refreshed at 49,165,940 bytes with the supplied press-release image.
+
+## 2026-07-25 Clean Hostinger Deployment Package
+
+- Removed 34 files confirmed unreferenced from the production `dist/` only; no live page, video, source asset, or visual behavior changed.
+- Replaced the 76,004,600-byte deployment archive with the verified 46,469,878-byte direct-root Hostinger ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`.
+
+## 2026-07-24 Balanced FFmpeg Video Delivery
+
+- Activated 17 balanced FFmpeg video files on the homepage and Business page, using matching versioned `*-v3.mp4` paths.
+- Built and verified `mstar-hostinger-public_html-ready-balanced-video.zip` as a 76,004,600-byte direct-root Hostinger deployment package; no commit or push.
+
+## 2026-07-24 Source-Master Video Collection
+
+- Added `mstar websites use video/` with the highest-quality project source exports for all 17 active homepage and Business videos.
+- The collection is a local master backup for future optimized Hostinger encodes; it does not alter current pages, video URLs, `public/videos/`, `dist/`, or the deployment ZIP.
+
 ## 2026-07-12 Responsive Leadership Image Delivery Completion
 
 - Completed the responsive image delivery pass for About, Executive Management, and Board of Directors with 44 WebP variants wired through `srcset` and `sizes`.

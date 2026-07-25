@@ -1,5 +1,42 @@
 export const newsArticles = [
   {
+    category: "Finance & Real Estate",
+    title:
+      "Mstar Holding and Thai Government Partner to Advance New Finance and Real Estate System",
+    date: "July 24, 2026",
+    dateSort: "2026-07-24",
+    source: "Mstar Holding",
+    excerpt:
+      "Mstar Holding is advancing a proposed finance and escrow framework intended to make high-value transactions safer, clearer, and more dependable across Thailand.",
+    image: "media/news/mstar-finance-real-estate-escrow-system.webp",
+    slug: "mstar-finance-real-estate-escrow-system",
+    detailUrl: "news/mstar-finance-real-estate-escrow-system/",
+    body: [
+      {
+        text: "Mstar Holding is advancing a proposal to establish a modern finance and escrow framework designed to make high-value transactions safer, clearer, and more dependable across Thailand. Working with relevant Thai government and regulatory stakeholders, the group aims to develop a trusted middleman system that can protect buyers, sellers, business owners, homeowners, and investors while money and legal documents are being transferred.",
+      },
+      {
+        text: "Under the proposed structure, Mstar Finance and Mstar Bank would act as neutral escrow intermediaries. Funds would be securely held until every agreed condition of a transaction has been completed and verified. Payment would then be released only after both parties have met their contractual responsibilities. This process is intended to reduce fraud, payment disputes, hidden conditions, document irregularities, and the risk of either party being unfairly pressured or financially harmed during a sale.",
+      },
+      {
+        text: "The proposed system could support transactions involving businesses, homes, land, commercial property, vehicles, equipment, and other valuable assets. It would provide participants with a clearer record of each transaction, including the agreed price, required documents, payment status, deadlines, and final transfer of ownership. By placing an independent financial institution between the buyer and seller, Mstar Holding believes the framework can make transactions easier to understand and significantly improve trust.",
+      },
+      {
+        text: "For small and medium-sized businesses, the framework could also simplify acquisitions, supplier agreements, and equipment sales by ensuring funds are available before assets change hands. This would encourage confident commerce while helping honest operators compete on fairer terms nationwide.",
+      },
+      {
+        text: "Thailand’s real estate market is expected to be one of the largest beneficiaries. Property transactions can involve multiple agents, complex ownership structures, international buyers, and significant transfers of money. A regulated escrow framework could strengthen due diligence, improve transparency, and help prevent fraud, unlawful transactions, unauthorized intermediaries, and attempts to avoid Thai ownership or investment rules. Legitimate international investors would also benefit from a clearer and more reliable process.",
+      },
+      {
+        text: "Mstar Holding intends to work with Thai authorities to develop the legal, regulatory, compliance, and consumer-protection requirements needed for the proposed system. Any escrow or banking services would operate only after receiving all required government and financial approvals.",
+      },
+      {
+        text: "The initiative reflects Mstar Holding’s broader goal of modernizing financial infrastructure and supporting fair business practices throughout Thailand. By combining secure payments, verified documentation, regulatory oversight, and transparent asset transfers, the proposed platform aims to give every participant greater confidence from the beginning of a transaction through its final completion.",
+      },
+    ],
+    isPlaceholder: false,
+  },
+  {
     category: "Defense",
     title:
       "Thailand Defense Giant Mstar Defense Lands Major Contract, Expands Across Asia and Africa Ahead of $2.9B IPO",

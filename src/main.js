@@ -1010,7 +1010,7 @@ const businessSectors = [
         description:
           "We develop affordable family homes to large-scale luxury mansion communities, creating quality residential projects designed for modern living, long-term value, and premium locations.",
         mediaType: "video",
-        mediaSrc: "../videos/business-mstar-property.mp4",
+        mediaSrc: "../videos/business-mstar-property-v3.mp4",
         poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1022,7 +1022,7 @@ const businessSectors = [
         description:
           "We offer a wide range of land, homes, and condos, from affordable properties to high-end real estate for sale, rent, and development opportunities.",
         mediaType: "video",
-        mediaSrc: "../videos/business-buyhomeforless.mp4",
+        mediaSrc: "../videos/business-buyhomeforless-v3.mp4",
         poster: "../media/operations-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1034,7 +1034,7 @@ const businessSectors = [
         description:
           "Asia and Thailand's leading senior care home developer, creating comfortable, affordable communities with spacious open-floor-plan designs tailored to the unique needs of seniors.",
         mediaType: "video",
-        mediaSrc: "../videos/business-senior-home.mp4",
+        mediaSrc: "../videos/business-senior-home-v3.mp4",
         poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1055,7 +1055,7 @@ const businessSectors = [
         name: "Foodonlines.com",
         description: "We bring groceries to your door for less.",
         mediaType: "video",
-        mediaSrc: "../videos/business-foodonlines-2.mp4",
+        mediaSrc: "../videos/business-foodonlines-2-v3.mp4",
         poster: "../media/operations-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1067,7 +1067,7 @@ const businessSectors = [
         description:
           "One Taste provides ready-to-eat MRE meal solutions designed for military troops, emergency response, disaster relief, and remote operations where fast, reliable nutrition is essential.",
         mediaType: "video",
-        mediaSrc: "../videos/business-one-taste.mp4",
+        mediaSrc: "../videos/business-one-taste-v3.mp4",
         poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1079,7 +1079,7 @@ const businessSectors = [
         description:
           "Hospitality-adjacent support designed around comfort, accessibility, and quality daily living.",
         mediaType: "video",
-        mediaSrc: "../videos/business-hospitality-senior-home-care.mp4",
+        mediaSrc: "../videos/business-hospitality-senior-home-care-v3.mp4",
         poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1101,7 +1101,7 @@ const businessSectors = [
         description:
           "Buying and sourcing support for cross-border commerce, distribution needs, and international partnerships.",
         mediaType: "video",
-        mediaSrc: "../videos/business-american-buying-service.mp4",
+        mediaSrc: "../videos/business-american-buying-service-v3.mp4",
         poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1113,7 +1113,7 @@ const businessSectors = [
         description:
           "Fulfillment operations supporting trade flows, practical logistics, and scalable distribution activity.",
         mediaType: "video",
-        mediaSrc: "../videos/business-abs-fulfillment.mp4",
+        mediaSrc: "../videos/business-abs-fulfillment-v3.mp4",
         poster: "../media/operations-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1135,7 +1135,7 @@ const businessSectors = [
         description:
           "Defense-focused operations supporting strategic industry partnerships, manufacturing, and technology development.",
         mediaType: "video",
-        mediaSrc: "../videos/business-mstar-defense.mp4",
+        mediaSrc: "../videos/business-mstar-defense-v3.mp4",
         poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1157,7 +1157,7 @@ const businessSectors = [
         description:
           "Digital food commerce designed to support modern customer access, practical ordering, and market reach.",
         mediaType: "video",
-        mediaSrc: "../videos/business-ecommerce-foodonlines.mp4",
+        mediaSrc: "../videos/business-ecommerce-foodonlines-v3.mp4",
         poster: "../media/operations-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1169,7 +1169,7 @@ const businessSectors = [
         description:
           "A digital platform initiative built around scalable technology, modern operations, and growth potential.",
         mediaType: "video",
-        mediaSrc: "../videos/business-hizoz.mp4",
+        mediaSrc: "../videos/business-hizoz-v3.mp4",
         poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1181,7 +1181,7 @@ const businessSectors = [
         description:
           "Technology operations supporting platform development, digital infrastructure, and future-ready growth.",
         mediaType: "video",
-        mediaSrc: "../videos/business-mstar-technology.mp4",
+        mediaSrc: "../videos/business-mstar-technology-v3.mp4",
         poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1203,7 +1203,7 @@ const businessSectors = [
         description:
           "Event-focused entertainment shaped around destination experiences, audiences, and lifestyle-driven growth.",
         mediaType: "video",
-        mediaSrc: "../videos/business-boogoo.mp4",
+        mediaSrc: "../videos/business-boogoo-v3.mp4",
         poster: "../media/growth-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1215,7 +1215,7 @@ const businessSectors = [
         description:
           "Entertainment operations focused on active destination experiences, events, and audience engagement.",
         mediaType: "video",
-        mediaSrc: "../videos/business-mstar-airsoft.mp4",
+        mediaSrc: "../videos/business-mstar-airsoft-v3.mp4",
         poster: "../media/hero-poster.webp",
         ctaLabel: "View Company",
         ctaHref: "#",
@@ -1300,16 +1300,22 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
       </span>
   `;
 
-  if (!article.url) {
+  const detailHref = article.detailUrl
+    ? withPathPrefix(article.detailUrl, assetPrefix)
+    : "";
+  const cardHref = detailHref || article.url;
+  const externalAttributes = detailHref
+    ? ""
+    : ' target="_blank" rel="noopener noreferrer"';
+
+  if (!cardHref) {
     return `<article class="${cardClass}">${cardContent}</article>`;
   }
 
   return `
     <a
       class="${cardClass}"
-      href="${escapeHtml(article.url)}"
-      target="_blank"
-      rel="noopener noreferrer"
+      href="${escapeHtml(cardHref)}"${externalAttributes}
     >
       ${cardContent}
     </a>
@@ -1319,7 +1325,7 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
 const renderNewsArticles = () => {
   if (homeNewsRoot) {
     homeNewsRoot.innerHTML = sortedNewsArticles
-      .slice(0, 4)
+      .slice(0, 5)
       .map((article) =>
         renderNewsArticleCard(article, "home", {
           assetPrefix: homeNewsRoot.dataset.newsAssetPrefix || "",
@@ -1376,7 +1382,7 @@ const renderNewsDetail = () => {
     .map(
       (section) => `
         <section class="news-detail-body-section">
-          <h2>${escapeHtml(section.heading)}</h2>
+          ${section.heading ? `<h2>${escapeHtml(section.heading)}</h2>` : ""}
           <p>${escapeHtml(section.text)}</p>
         </section>
       `,

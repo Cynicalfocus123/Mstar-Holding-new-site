@@ -1,5 +1,26 @@
 # Designer Notes
 
+## 2026-07-25 Finance And Real Estate News Article
+
+- Added one new first-position News card using the existing Mstar brand social image, preserving the established news-card design.
+- Replaced the temporary brand image with the supplied press-release photograph for the new card and article page; existing card design and image crop behavior are unchanged.
+- The new item has its own responsive article page; existing Home and News & Media cards, layout, styling, and behavior remain unchanged.
+
+## 2026-07-25 Clean Hostinger Deployment Package
+
+- Removed deployment-only copies of files not referenced by the live built site.
+- No visible design, layout, responsive behavior, image crop, poster, logo, animation, video, or content changed.
+
+## 2026-07-24 Balanced FFmpeg Video Delivery
+
+- Activated balanced FFmpeg video copies for the homepage and Business sections, preserving source detail at native frame rates while reducing delivery weight.
+- Preserved video placement, crop behavior, posters, autoplay, loop, muted playback, responsive switching, layout, spacing, and design.
+
+## 2026-07-24 Source-Master Video Collection
+
+- Collected full-quality source exports for all active homepage and Business videos in `mstar websites use video/` for future delivery work.
+- This is a non-rendered backup/source collection only: no live video file, placement, crop, object-fit, poster, autoplay, responsive switch, layout, or page design changed.
+
 ## Permanent Design Documentation Rule
 
 - Every site change must update `DESIGNER.md` with concise design intent, visual behavior, responsive behavior, and any asset/crop/motion notes relevant to the change.

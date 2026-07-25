@@ -1,5 +1,61 @@
 # Agent Changelog
 
+## 2026-07-25 Finance And Real Estate News Article
+
+- Added the July 24, 2026 Mstar Finance and escrow proposal article as the first item in the shared news data and at `news/mstar-finance-real-estate-escrow-system/`.
+- Added the supplied press-release image to the new article's Home, News & Media, and detail-page card media.
+- The new card appears first on Home and News & Media; the Home section now retains its four existing cards plus the new first card.
+- Added an internal detail-page link for this article only. Existing news-card links and content remain unchanged.
+- Rebuilt, cleaned, and replaced the direct-root Hostinger ZIP: 49,165,940 bytes across 132 files, including the supplied press-release image, with SHA-256 extraction parity.
+
+## 2026-07-25 Clean Hostinger Deployment Package
+
+- Rebuilt `dist/` from the current source, then removed 34 files proven unreferenced by built HTML, CSS, or JavaScript; no source asset, page, video, or layout was altered.
+- Active `*-v3.mp4` delivery files remain unchanged at 36,545,733 bytes.
+- Verified `MISSING_COUNT=0` and `UNUSED_COUNT=0`; final `dist/` is 47,238,120 bytes across 130 files.
+- Replaced the prior 76,004,600-byte ZIP with `mstar-hostinger-public_html-ready-balanced-video.zip`, 46,469,878 bytes, with 130 direct-root entries and SHA-256 parity after extraction.
+
+## 2026-07-24 Balanced FFmpeg Video Delivery
+
+- Activated the verified 17-file `*-v3.mp4` FFmpeg set for the homepage and all active Business video sections.
+- Each active reference now resolves to its matching versioned video; the Business header retains desktop/mobile runtime selection and card videos retain lazy loading.
+- Native 24/30 FPS, silent H.264/yuv420p fast-start delivery keeps the approved 60/45-second loops and reduces active video weight to 36,545,733 bytes.
+- Verified direct-root Hostinger package: `mstar-hostinger-public_html-ready-balanced-video.zip`, 76,004,600 bytes, with 164 files matching `dist/` by SHA-256.
+- No commit or push was made.
+
+## 2026-07-24 Source-Master Video Collection
+
+- Created `mstar websites use video/` as the local master-video collection for the 17 active homepage and Business videos.
+- The collection contains direct, full-quality project source exports: mainly 1280x720, Business mobile header 1080x1920, BuyHomeForLess 1920x818, and FoodOnlines 1920x876; total 197,989,489 bytes.
+- This master folder is backup/source material only. Keep it out of `public/`, `dist/`, and Hostinger deployment ZIPs; the live site continues to use optimized `public/videos/` copies.
+- No page source, video references, design, build output, or deployment ZIP was changed.
+
+## Permanent Token-Saving Rules
+
+- Keep commentary, command output, documentation updates, and final handoffs concise. Report outcomes, measurements, failures, and required next actions without repeating unchanged context.
+- Prefer targeted `rg`, file-specific reads, counts, and verification summaries over recursive listings or full-log dumps.
+- Cap routine shell output with `cmd /c <command> 2>&1 | Select-Object -First 100`. If the cap hides a failure, rerun a narrower command that exposes the relevant lines.
+- Do not print complete build logs, generated bundles, large diffs, archive listings, or entire long documents when a focused query can answer the question.
+- Record only verified results. Never hide warnings or failures to save tokens.
+- Keep permanent documentation current and compact. Replace obsolete rules instead of adding parallel instructions or large historical logs.
+
+## Permanent Hostinger Deployment ZIP Rules
+
+- The newest verified production `dist/` is the only valid deployment input. Repository source, `public/`, old ZIPs, timestamps, and previous extraction folders are not proof of current production output.
+- The current canonical archive is `mstar-hostinger-public_html-ready-balanced-video.zip`. Refresh this file in place unless the user explicitly provides a replacement filename; do not create extra dated or duplicate deployment ZIPs.
+- Build the archive from the contents of final `dist/` only. Its root must directly contain `.htaccess`, `index.html`, `assets/`, `media/`, `videos/`, and the built page folders, with no `dist/` or `public_html/` wrapper.
+- Use standard forward-slash ZIP entry paths. Do not use a ZIP method that stores Windows backslashes.
+- Before delivery, verify archive listing and extraction, CRC/readability, safe and unique paths, full file-count and SHA-256 parity with final `dist/`, required root entries, and absence of source files, documentation, package files, `node_modules`, `.git`, source maps, screenshots, backups, old ZIPs, and temporary tools.
+- A ZIP build is not proof of an external upload. Do not claim that Hostinger was updated without direct evidence.
+- Hostinger handoff instruction: upload the canonical ZIP inside the existing `public_html` folder, extract it there with overwrite enabled, and do not delete the existing `public_html` folder first.
+- User directive: after a requested site change passes verification, refresh `dist/` and the canonical ZIP, then commit and push the matching source, assets, documentation, and ZIP to `origin/main`.
+
+## 2026-07-24 Agent And Deployment Rule Consolidation
+
+- Added concise token-saving rules adapted from the FoodOnlines agent guide.
+- Consolidated Hostinger delivery around one verified direct-root ZIP that can be extracted with overwrite enabled inside the existing `public_html` folder.
+- No site source, design, media, build output, or deployment ZIP was changed.
+
 ## 2026-07-12 Responsive Leadership Image Delivery Completion
 
 - Continued the responsive image delivery pass for About, Executive Management, and Board of Directors by keeping the 44 generated WebP variants wired through `srcset`/`sizes`.
@@ -45,8 +101,8 @@
 
 ## Live File Rule
 
-- After every committed site change, refresh the existing `mstar-latest-changes-deploy.zip` from the current Hostinger/root `dist/` build unless the user explicitly says not to update the live file.
-- Do not create a new ZIP filename when the user says not to create a new ZIP; overwrite the existing live deployment ZIP in place.
+- After every committed site change, refresh the canonical `mstar-hostinger-public_html-ready-20mb-target.zip` from the current verified Hostinger/root `dist/` build unless the user explicitly says not to update the live file.
+- Do not create a new ZIP filename unless the user explicitly requests one; overwrite the canonical deployment ZIP in place.
 - Always update `DESIGNER.md` for every site change with concise design intent and responsive behavior notes.
 
 ## 2026-07-09 Business Ecosystem Tablet Final Override Fix

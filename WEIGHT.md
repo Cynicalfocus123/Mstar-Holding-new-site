@@ -1,5 +1,33 @@
 # Weight And Deployment Notes
 
+## 2026-07-25 Finance And Real Estate News Article
+
+- Added one small HTML article page and shared JavaScript content only; no video or existing media file was changed.
+- Added the supplied 2,691,978-byte WebP press-release image for the new article only.
+- Final cleaned `dist/`: 49,939,873 bytes across 132 files. Final direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 49,165,940 bytes, including the supplied 2,691,978-byte press-release WebP.
+- Verification passed: Hostinger build, lint/test, static reference audit (`MISSING_COUNT=0`), unused-deploy audit (`UNUSED_COUNT=0`), ZIP read/CRC, safe paths, required new article page, and SHA-256 extraction parity.
+
+## 2026-07-25 Clean Hostinger Deployment Package
+
+- Active videos remain unchanged: 17 `*-v3.mp4` files totaling 36,545,733 bytes.
+- Removed 34 unreferenced files from `dist/` only, saving 29,774,947 bytes; `public/` and all source/master files remain intact.
+- Final `dist/`: 47,238,120 bytes across 130 files. Final direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 46,469,878 bytes (44.32 MiB), down from 76,004,600 bytes.
+- Verification passed: production build, Prettier lint, static reference audit (`MISSING_COUNT=0`), unused-deploy audit (`UNUSED_COUNT=0`), ZIP read/CRC, safe forward-slash paths, required Hostinger root entries, and SHA-256 extraction parity.
+
+## 2026-07-24 Balanced FFmpeg Video Delivery
+
+- Active delivery videos: 17 versioned `*-v3.mp4` files, 36,545,733 bytes total; H.264/yuv420p, silent, fast-start, native 24/30 FPS, 1280px headers, and 720px card videos.
+- Verification passed: FFprobe metadata, full FFmpeg decode, fast-start, built-reference verification, and SHA-256 ZIP parity.
+- Final `dist/`: 77,013,067 bytes across 164 files. Final direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 76,004,600 bytes (72.48 MiB).
+- Source masters remain outside `public/`, `dist/`, Git, and the ZIP. No raw source file is included in deployment.
+
+## 2026-07-24 Source-Master Video Collection
+
+- Added a local-only `mstar websites use video/` source-master collection: 17 files, 197,989,489 bytes.
+- Full-quality dimensions: 1280x720 for most files; 1080x1920 Business mobile header; 1920x818 BuyHomeForLess; 1920x876 FoodOnlines.
+- These are direct source exports, not uncompressed camera RAW files. They are intentionally excluded from `public/`, final `dist/`, and Hostinger ZIPs so the current optimized site delivery remains lightweight.
+- No deployment-size measurement, production asset, or Hostinger package changed in this collection pass.
+
 ## 2026-07-12 Responsive Leadership Image Delivery Completion
 
 - Current source `public/`: 55,851,064 bytes across 149 files, including the 44 responsive WebP variants for About, Executive Management, and Board of Directors.
