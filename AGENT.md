@@ -6,9 +6,10 @@
 - Final title everywhere: `Mstar Holding Brings Asia’s Largest Airsoft Festival to Thailand in 2027`. The retired working title has zero repository and built-output matches.
 - Shared `dateSort` ordering is Finance (July 24) → Airsoft (May 28) → Defense (January 26). Home now renders six cards; News & Media renders eight articles; JSON-LD positions are sequential 1–8 with Airsoft at position 2.
 - Replaced the Airsoft responsive set with one high-quality 2048x3141 WebP: `media/news/mstar-airsoft-press-release-updated-top-bottom-v2.webp` (249,656 bytes). Homepage, News, article, Open Graph, and Twitter/X all reference that one file; the six variants and interim byte-copy were removed.
-- Airsoft alone sets `imageFit: "contain"`: its full portrait artwork is visible in the unchanged equal-height Home and News cards on a matching gray background, and at its natural portrait ratio on the detail page. Other News articles retain their existing responsive crop behavior.
+- Airsoft alone sets `imageFit: "contain"`: its full portrait artwork is visible in the unchanged equal-height Home card on a matching gray background and at its natural portrait ratio on the detail page. Other News articles retain their existing responsive crop behavior.
+- On News & Media only, the Airsoft card now uses the standard full-card crop at desktop, tablet, and mobile, focused at the top group photo like the Finance card. Its Home card and detail image remain full-image, and no other article is changed.
 - Corrected the Hostinger ZIP entry separators from Windows backslashes to web-safe forward slashes. This restores `/assets/main-*.css` and `/assets/main-*.js` delivery; source, styling, scripts, media, and optimized assets are unchanged.
-- Build, lint, tests, weight audit, reference cleanup, static SEO/path checks, and ZIP extraction parity pass. Clean `dist/`: 47,964,967 bytes / 150 files; ZIP: 47,173,915 bytes / 150 direct-root entries with SHA-256 extraction parity.
+- Build, lint, tests, weight audit, reference cleanup, static SEO/path checks, and ZIP extraction parity pass. Clean `dist/`: 47,965,119 bytes / 150 files; ZIP: 47,173,990 bytes / 150 direct-root entries with SHA-256 extraction parity.
 
 ## 2026-07-26 Premier Escrow Services Finance Sector
 

@@ -2382,6 +2382,10 @@ h2 {
   transform: none;
 }
 
+.news-article-media.news-media-focus-top img {
+  object-position: center top;
+}
+
 .home-news-card-body,
 .news-article-body {
   display: flex;

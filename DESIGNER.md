@@ -3,7 +3,8 @@
 ## 2026-07-26 Mstar Airsoft Festival Article Finalization
 
 - Added one Airsoft article card and detail route through the existing News system. Existing card grid, equal heights, crops, title/excerpt clamping, metadata placement, article reading layout, paragraph spacing, header, footer, and responsive breakpoints are unchanged.
-- Airsoft uses a scoped no-crop presentation only: complete portrait art is contained in the existing equal-size Home and News cards with a matching gray background, while its article image keeps its full portrait ratio. All other News card crops remain unchanged.
+- Airsoft uses a scoped no-crop presentation only: complete portrait art is contained in the existing equal-size Home card with a matching gray background, while its article image keeps its full portrait ratio. All other News card crops remain unchanged.
+- On the News & Media listing, the Airsoft card uses the existing full-frame image treatment and top photo focal point across desktop, tablet, and mobile, matching the Finance card's filled visual weight. Home and article detail retain the full artwork.
 - Hostinger deployment package paths use forward slashes, so the unchanged compiled stylesheet and JavaScript bundles load from `/assets/` correctly after extraction.
 - The supplied press-release artwork is delivered as one high-quality optimized WebP on cards, the article page, Open Graph, and Twitter/X. Its dimensions and top-and-bottom composition are unchanged.
 

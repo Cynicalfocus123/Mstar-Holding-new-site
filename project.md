@@ -7,6 +7,7 @@
 - Replaced the Airsoft responsive variants with one high-quality 2048x3141 optimized WebP for cards, article, Open Graph, and Twitter/X; no CSS or video change. Build, lint, test, weight/reference audits, SEO/JSON-LD order, and ZIP parity checks pass.
 - Corrected that article's display without changing its asset: Airsoft alone now contains the full portrait image in equal-size Home/News cards and uses the full portrait ratio on the detail page. Other article media behavior is unchanged.
 - Rebuilt the canonical Hostinger package with forward-slash entry paths, restoring the existing compiled CSS and JavaScript from `/assets/` without changing any source style, layout, scripts, videos, or optimized media.
+- Adjusted the Airsoft News & Media card focal point to fill the existing frame with its top group photo at desktop, tablet, and mobile. The Home card and full article image remain no-crop.
 
 ## 2026-07-25 Finance And Real Estate News Article
 
