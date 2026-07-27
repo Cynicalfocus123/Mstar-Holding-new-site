@@ -1,5 +1,12 @@
 # Weight And Deployment Notes
 
+## 2026-07-26 Business Delivery, Global Counters, And Finance Sector
+
+- No delivery video was re-encoded, renamed, replaced, or changed; the 17 active `*-v3.mp4` files remain unchanged.
+- Converted the supplied 1,921,165-byte 1672x941 Finance PNG into referenced WebPs: 480x270 (14,756 bytes), 800x450 (28,864 bytes), and 1280x720 (54,722 bytes), all WebP quality 80.
+- The original PNG remains outside `public/` and is excluded from `dist`; only the responsive WebP derivatives are deployed and use existing long-lived static cache rules.
+- Final cleaned `dist/`: 50,040,584 bytes across 135 files. Refreshed canonical direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 49,265,285 bytes.
+
 ## 2026-07-25 Uniform News Card Grid
 
 - CSS-only News & Media card-grid correction; no image, video, font, or other media asset changed.

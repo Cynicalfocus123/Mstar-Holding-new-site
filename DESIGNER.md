@@ -1,5 +1,11 @@
 # Designer Notes
 
+## 2026-07-26 Business Delivery, Global Counters, And Finance Sector
+
+- Business media now stays visually behind its existing poster until a usable video frame is available, then fades in without changing the approved crop, aspect ratio, card dimensions, or responsive behavior.
+- Global Presence figures begin immediately while retaining stable-width, tabular-number styling and all existing cards, icons, colors, globe, and ecosystem layout.
+- Added one Finance slanted homepage sector card using the supplied handshake image with centered handshake focus, the existing border/label/gold-accent treatment, and the current tablet/mobile sector-row behavior.
+
 ## 2026-07-25 Uniform News Card Grid
 
 - Set News & Media cards to equal-height rows at every breakpoint: four columns on wide desktop, three on compact desktop, two on tablet, and one on mobile.

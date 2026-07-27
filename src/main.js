@@ -168,6 +168,32 @@ const isPhonePortraitViewport = () => {
 
 const businessHeroVideo = document.querySelector("[data-business-hero-video]");
 
+const playBusinessHeroVideo = () => {
+  if (
+    !(businessHeroVideo instanceof HTMLVideoElement) ||
+    prefersReducedMotion
+  ) {
+    return;
+  }
+
+  void businessHeroVideo.play().catch(() => {});
+};
+
+const markBusinessHeroVideoReady = () => {
+  if (businessHeroVideo instanceof HTMLVideoElement) {
+    businessHeroVideo.classList.add("is-ready");
+  }
+};
+
+if (businessHeroVideo instanceof HTMLVideoElement) {
+  businessHeroVideo.addEventListener("loadeddata", markBusinessHeroVideoReady);
+  businessHeroVideo.addEventListener("canplay", markBusinessHeroVideoReady);
+  businessHeroVideo.addEventListener("canplay", playBusinessHeroVideo);
+  businessHeroVideo.addEventListener("error", () => {
+    businessHeroVideo.classList.remove("is-ready");
+  });
+}
+
 const updateBusinessHeroVideo = () => {
   if (!(businessHeroVideo instanceof HTMLVideoElement)) {
     return;
@@ -188,12 +214,10 @@ const updateBusinessHeroVideo = () => {
     return;
   }
 
+  businessHeroVideo.classList.remove("is-ready");
   source.src = selectedSrc;
   businessHeroVideo.load();
-
-  if (!prefersReducedMotion) {
-    void businessHeroVideo.play().catch(() => {});
-  }
+  playBusinessHeroVideo();
 };
 
 const scheduleBusinessHeroVideoUpdate = () => {
@@ -415,7 +439,6 @@ if (presenceCounters.length) {
 }
 
 const presencePage = document.querySelector("[data-presence-page]");
-const presencePageStats = document.querySelector("[data-presence-page-stats]");
 const presencePageCounters = document.querySelectorAll(
   "[data-presence-page-counter]",
 );
@@ -497,26 +520,13 @@ const startPresencePageCounters = () => {
 };
 
 if (presencePageCounters.length) {
-  if (!prefersReducedMotion && "IntersectionObserver" in window) {
-    resetPresencePageCounters();
-  }
-
-  if (!presencePageStats || !("IntersectionObserver" in window)) {
+  if (prefersReducedMotion) {
     setPresencePageCountersToFinal();
   } else {
-    const presencePageStatsObserver = new IntersectionObserver(
-      (entries, observer) => {
-        if (!entries.some((entry) => entry.isIntersecting)) {
-          return;
-        }
-
-        startPresencePageCounters();
-        observer.disconnect();
-      },
-      { rootMargin: "-10% 0px -20% 0px", threshold: 0.45 },
-    );
-
-    presencePageStatsObserver.observe(presencePageStats);
+    requestAnimationFrame(() => {
+      resetPresencePageCounters();
+      startPresencePageCounters();
+    });
   }
 }
 
@@ -1424,6 +1434,13 @@ const renderCompanyMedia = (company) => {
 
   if (company.mediaType === "video") {
     return `
+      <img
+        class="company-media-poster"
+        src="${escapeHtml(poster)}"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
       <video
         class="company-media-video"
         autoplay
@@ -1478,7 +1495,10 @@ const renderCompanyBlock = (company) => `
 `;
 
 const loadCompanyMediaVideo = (video) => {
-  if (!(video instanceof HTMLVideoElement) || video.dataset.loaded === "true") {
+  if (
+    !(video instanceof HTMLVideoElement) ||
+    video.dataset.prepared === "true"
+  ) {
     return;
   }
 
@@ -1492,8 +1512,31 @@ const loadCompanyMediaVideo = (video) => {
   source.src = src;
   source.type = "video/mp4";
   video.append(source);
-  video.dataset.loaded = "true";
+  video.dataset.prepared = "true";
+
+  const markVideoReady = () => {
+    video.classList.add("is-ready");
+
+    if (video.dataset.playRequested === "true") {
+      void video.play().catch(() => {});
+    }
+  };
+
+  video.addEventListener("loadeddata", markVideoReady, { once: true });
+  video.addEventListener("canplay", markVideoReady, { once: true });
+  video.addEventListener(
+    "error",
+    () => {
+      video.classList.remove("is-ready");
+      video.dataset.playRequested = "false";
+    },
+    { once: true },
+  );
   video.load();
+
+  if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+    markVideoReady();
+  }
 };
 
 const playCompanyMediaVideo = (video) => {
@@ -1502,14 +1545,28 @@ const playCompanyMediaVideo = (video) => {
   }
 
   loadCompanyMediaVideo(video);
+  video.dataset.playRequested = "true";
 
-  const playVideo = () => {
+  if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
     void video.play().catch(() => {});
-  };
+  }
+};
 
-  playVideo();
-  requestAnimationFrame(playVideo);
-  window.setTimeout(playVideo, 250);
+const pauseCompanyMediaVideo = (video) => {
+  if (!(video instanceof HTMLVideoElement)) {
+    return;
+  }
+
+  video.dataset.playRequested = "false";
+  video.pause();
+};
+
+const isCompanyMediaVideoNearViewport = (video, margin) => {
+  const rect = video.getBoundingClientRect();
+  const viewportHeight =
+    window.innerHeight || document.documentElement.clientHeight;
+
+  return rect.bottom >= -margin && rect.top <= viewportHeight + margin;
 };
 
 const lazyLoadCompanyMediaVideos = (root = document) => {
@@ -1524,23 +1581,66 @@ const lazyLoadCompanyMediaVideos = (root = document) => {
   }
 
   if (!("IntersectionObserver" in window)) {
-    videos.forEach(playCompanyMediaVideo);
+    const syncCompanyMediaVideos = () => {
+      videos.forEach((video) => {
+        if (isCompanyMediaVideoNearViewport(video, 700)) {
+          loadCompanyMediaVideo(video);
+        }
+
+        if (isCompanyMediaVideoNearViewport(video, 0)) {
+          playCompanyMediaVideo(video);
+        } else {
+          pauseCompanyMediaVideo(video);
+        }
+      });
+    };
+
+    syncCompanyMediaVideos();
+    window.addEventListener("scroll", syncCompanyMediaVideos, {
+      passive: true,
+    });
+    window.addEventListener("resize", syncCompanyMediaVideos);
     return;
   }
 
-  const observer = new IntersectionObserver(
+  const prepareObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadCompanyMediaVideo(entry.target);
+          prepareObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "700px 0px", threshold: 0.01 },
+  );
+
+  const playObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           playCompanyMediaVideo(entry.target);
-          observer.unobserve(entry.target);
+        } else {
+          pauseCompanyMediaVideo(entry.target);
         }
       });
     },
-    { rootMargin: "450px 0px", threshold: 0.01 },
+    { rootMargin: "140px 0px", threshold: 0.01 },
   );
 
-  videos.forEach((video) => observer.observe(video));
+  videos.forEach((video) => {
+    prepareObserver.observe(video);
+    playObserver.observe(video);
+
+    if (isCompanyMediaVideoNearViewport(video, 700)) {
+      loadCompanyMediaVideo(video);
+      prepareObserver.unobserve(video);
+    }
+
+    if (isCompanyMediaVideoNearViewport(video, 0)) {
+      playCompanyMediaVideo(video);
+    }
+  });
 };
 
 const renderBusinessSectors = () => {

@@ -1,5 +1,13 @@
 # Agent Changelog
 
+## 2026-07-26 Business Delivery, Global Counters, And Finance Sector
+
+- Kept all current `*-v3.mp4` files byte-for-byte unchanged while adding a poster-first Business video lifecycle: prepare within a 700px observer margin, reveal only after a decoded frame, play near the viewport, and pause off-screen without unloading or resetting.
+- The Business desktop/mobile header still attaches only the selected source and now keeps its poster visible until a frame is ready.
+- Started standalone Global Presence counters in the first animation frame, without an observer or load-event wait; HTML keeps the final values for no-JavaScript and reduced-motion fallback.
+- Added one Finance homepage sector card using responsive WebP derivatives of the supplied handshake PNG. No other sector image, label, or content changed.
+- Rebuilt the cleaned direct-root Hostinger package and verified its extracted files match `dist/`; source and package are ready for the required `origin/main` commit.
+
 ## 2026-07-25 Uniform News Card Grid
 
 - Standardized News & Media card heights by breakpoint and changed compact desktop from four narrow columns to three readable columns.
