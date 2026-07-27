@@ -1,5 +1,11 @@
 # Agent Changelog
 
+## 2026-07-26 Finance Card Desktop Sharpness
+
+- Fixed the tall, narrow desktop Finance sector card selecting a 480px responsive image based only on card width and then stretching it vertically.
+- The card now always uses its 1280x720, 54,722-byte WebP delivery image. Its crop, position, labels, layout, and all other sector cards are unchanged.
+- Rebuilt the direct-root Hostinger package: 147 files / 47,687,918 bytes in `dist/`; ZIP has 147 entries / 46,909,525 bytes with SHA-256 extraction parity.
+
 ## 2026-07-26 Route Media Priority And Delivery Audit
 
 - Kept all active `*-v3.mp4` bytes unchanged. Home and Business hero videos now preload only on their own route, retain their poster until a decoded frame is available, and then reveal/play safely. Business below-fold videos prepare 1200px before view and play only near view.

@@ -1,5 +1,10 @@
 # Weight And Deployment Notes
 
+## 2026-07-26 Finance Card Desktop Sharpness
+
+- Finance now serves its 54,722-byte 1280x720 WebP directly in the unusually tall sector card. The 480px and 800px source copies remain outside the deployment package because they are no longer referenced.
+- Cleaned `dist/`: 47,687,918 bytes across 147 files. Direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 46,909,525 bytes across 147 entries, SHA-verified against `dist/`.
+
 ## 2026-07-26 Route Media Priority And Delivery Audit
 
 - Active `*-v3.mp4` delivery files are byte-for-byte unchanged. Home and Business only request their selected hero source on their own route; Business lower-page videos still use poster-first deferred delivery.

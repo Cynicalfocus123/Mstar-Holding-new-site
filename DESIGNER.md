@@ -1,5 +1,10 @@
 # Designer Notes
 
+## 2026-07-26 Finance Card Desktop Sharpness
+
+- Kept the Finance card’s existing tall, slanted desktop composition and handshake-centered crop, while supplying the sharp 1280px image rather than stretching a small responsive source.
+- No other sector image, card dimensions, labels, overlay, crop, or responsive layout changed.
+
 ## 2026-07-26 Route Media Priority And Delivery Audit
 
 - Preserved every approved layout, crop, typography, color, animation, and responsive breakpoint. Home and Business heroes remain poster-first, preventing a black/blank video frame before visual media is ready.
