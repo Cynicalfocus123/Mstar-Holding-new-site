@@ -7,7 +7,8 @@
 - Shared `dateSort` ordering is Finance (July 24) → Airsoft (May 28) → Defense (January 26). Home now renders six cards; News & Media renders eight articles; JSON-LD positions are sequential 1–8 with Airsoft at position 2.
 - Replaced the Airsoft responsive set with one high-quality 2048x3141 WebP: `media/news/mstar-airsoft-press-release-updated-top-bottom-v2.webp` (249,656 bytes). Homepage, News, article, Open Graph, and Twitter/X all reference that one file; the six variants and interim byte-copy were removed.
 - Airsoft alone sets `imageFit: "contain"`: its full portrait artwork is visible in the unchanged equal-height Home and News cards on a matching gray background, and at its natural portrait ratio on the detail page. Other News articles retain their existing responsive crop behavior.
-- Build, lint, tests, weight audit, reference cleanup, static SEO/path checks, and ZIP extraction parity pass. Clean `dist/`: 47,964,967 bytes / 150 files; ZIP: 47,174,147 bytes / 152 entries (two directory entries, all deployment files at ZIP root).
+- Corrected the Hostinger ZIP entry separators from Windows backslashes to web-safe forward slashes. This restores `/assets/main-*.css` and `/assets/main-*.js` delivery; source, styling, scripts, media, and optimized assets are unchanged.
+- Build, lint, tests, weight audit, reference cleanup, static SEO/path checks, and ZIP extraction parity pass. Clean `dist/`: 47,964,967 bytes / 150 files; ZIP: 47,173,915 bytes / 150 direct-root entries with SHA-256 extraction parity.
 
 ## 2026-07-26 Premier Escrow Services Finance Sector
 

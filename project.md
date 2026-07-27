@@ -6,6 +6,7 @@
 - It is the second shared-date-sorted item after the July 24 Finance article and before the January 26 Defense article. Home displays six News cards; News & Media displays eight.
 - Replaced the Airsoft responsive variants with one high-quality 2048x3141 optimized WebP for cards, article, Open Graph, and Twitter/X; no CSS or video change. Build, lint, test, weight/reference audits, SEO/JSON-LD order, and ZIP parity checks pass.
 - Corrected that article's display without changing its asset: Airsoft alone now contains the full portrait image in equal-size Home/News cards and uses the full portrait ratio on the detail page. Other article media behavior is unchanged.
+- Rebuilt the canonical Hostinger package with forward-slash entry paths, restoring the existing compiled CSS and JavaScript from `/assets/` without changing any source style, layout, scripts, videos, or optimized media.
 
 ## 2026-07-25 Finance And Real Estate News Article
 
