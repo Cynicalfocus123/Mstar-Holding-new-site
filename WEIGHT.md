@@ -1,5 +1,11 @@
 # Weight And Deployment Notes
 
+## 2026-07-26 Premier Escrow Services Finance Sector
+
+- Added only `public/media/logos/premier-escrow-services-logo-v1.webp`: 320x186, lossless WebP with alpha, 15,568 bytes. The supplied 2688x1568, 37,826-byte source remains outside `public/`, `dist/`, and the deployment ZIP.
+- Finance reuses the already deployed 54,722-byte approved handshake image as its still media fallback. No video was added, re-encoded, renamed, or changed because no approved Finance/Premier Escrow video exists in the project.
+- Cleaned `dist/`: 47,704,860 bytes across 148 files. Direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 46,925,630 bytes across 148 entries, SHA-verified against `dist/`.
+
 ## 2026-07-26 Finance Card Desktop Sharpness
 
 - Finance now serves its 54,722-byte 1280x720 WebP directly in the unusually tall sector card. The 480px and 800px source copies remain outside the deployment package because they are no longer referenced.

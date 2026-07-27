@@ -1,5 +1,12 @@
 # Agent Changelog
 
+## 2026-07-26 Premier Escrow Services Finance Sector
+
+- Added exactly one Finance sector between Real Estate and Food & Hospitality through the existing `businessSectors` data array; the existing shared nav, section rendering, active-state, scrolling, touch, and responsive logic now include it automatically.
+- Added Premier Escrow Services with the supplied exact description and a 320x186, 15,568-byte lossless WebP logo derivative at `public/media/logos/premier-escrow-services-logo-v1.webp`. It retains alpha, is uncropped, has explicit intrinsic dimensions, and uses the existing 220x86 `object-fit: contain` logo treatment.
+- No approved Finance/Premier Escrow video exists in the project. The Finance media box therefore uses the approved Finance handshake image as a safe poster-style fallback; no existing video or media was repurposed or changed.
+- Production build, formatting/lint, tests, weight audit, and deploy reference audit pass. Static verification confirms one Finance entry, the required order, exact description, deployed logo presence, and no Finance video reference. The refreshed direct-root ZIP has 148 entries / 46,925,630 bytes with SHA-256 extraction parity.
+
 ## 2026-07-26 Finance Card Desktop Sharpness
 
 - Fixed the tall, narrow desktop Finance sector card selecting a 480px responsive image based only on card width and then stretching it vertically.

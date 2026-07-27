@@ -1,5 +1,11 @@
 # Designer Notes
 
+## 2026-07-26 Premier Escrow Services Finance Sector
+
+- Added one Finance sector directly after Real Estate, using the existing Business section, company card, logo box, media box, and responsive layout without creating new CSS or changing any existing sector.
+- The supplied Premier Escrow Services artwork is represented by an uncropped, transparent 320x186 lossless WebP derivative in the same 220x86 contain-fitted logo position used by every Business company.
+- Because no approved Finance video was supplied, the matching Finance handshake image fills the unchanged media box as a safe still fallback; it does not imitate or replace another sector’s video.
+
 ## 2026-07-26 Finance Card Desktop Sharpness
 
 - Kept the Finance card’s existing tall, slanted desktop composition and handshake-centered crop, while supplying the sharp 1280px image rather than stretching a small responsive source.

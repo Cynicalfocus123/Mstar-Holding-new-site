@@ -1143,6 +1143,29 @@ const businessSectors = [
     ],
   },
   {
+    name: "Finance",
+    id: "finance",
+    headline: "Finance",
+    description:
+      "Premier Escrow Service serves as a neutral third party, protecting client interests and facilitating secure, transparent, and efficient real estate, investment, and M&A transactions.",
+    poster: "../media/homepage/sector-finance-1280.webp",
+    companies: [
+      {
+        name: "Premier Escrow Services",
+        description:
+          "Premier Escrow Service serves as a neutral third party, protecting client interests and facilitating secure, transparent, and efficient real estate, investment, and M&A transactions.",
+        mediaType: "image",
+        mediaSrc: "../media/homepage/sector-finance-1280.webp",
+        ctaLabel: "View Company",
+        ctaHref: "#",
+        logo: "../media/logos/premier-escrow-services-logo-v1.webp",
+        logoAlt: "Premier Escrow Services",
+        logoWidth: 320,
+        logoHeight: 186,
+      },
+    ],
+  },
+  {
     name: "Food & Hospitality",
     id: "food-hospitality",
     headline: "Elevating Experiences Every Day",
@@ -1645,11 +1668,16 @@ const renderCompanyLogo = (company) => {
     return "";
   }
 
+  const dimensions =
+    company.logoWidth && company.logoHeight
+      ? ` width="${company.logoWidth}" height="${company.logoHeight}"`
+      : "";
+
   return `
     <img
       class="business-company-logo"
       src="${escapeHtml(company.logo)}"
-      alt="${escapeHtml(company.logoAlt || `${company.name} logo`)}"
+      alt="${escapeHtml(company.logoAlt || `${company.name} logo`)}"${dimensions}
       loading="lazy"
       decoding="async"
     />
