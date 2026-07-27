@@ -75,37 +75,9 @@ export const newsArticles = [
     source: "Mstar Holding",
     excerpt:
       "Mstar Holding and Mstar Airsoft will host Asia’s largest international airsoft festival in Thailand from January 8–10, 2027.",
-    image: "media/news/mstar-airsoft-mega-festival-thailand-960.webp",
+    image: "media/news/mstar-airsoft-press-release-updated-top-bottom-v2.webp",
     imageWidth: 2048,
     imageHeight: 3141,
-    imageSrcSet: [
-      {
-        src: "media/news/mstar-airsoft-mega-festival-thailand-480.webp",
-        width: 480,
-      },
-      {
-        src: "media/news/mstar-airsoft-mega-festival-thailand-960.webp",
-        width: 960,
-      },
-      {
-        src: "media/news/mstar-airsoft-mega-festival-thailand-1280.webp",
-        width: 1280,
-      },
-    ],
-    imageAvifSrcSet: [
-      {
-        src: "media/news/mstar-airsoft-mega-festival-thailand-480.avif",
-        width: 480,
-      },
-      {
-        src: "media/news/mstar-airsoft-mega-festival-thailand-960.avif",
-        width: 960,
-      },
-      {
-        src: "media/news/mstar-airsoft-mega-festival-thailand-1280.avif",
-        width: 1280,
-      },
-    ],
     slug: "mstar-airsoft-mega-festival-thailand-2027",
     detailUrl: "news/mstar-airsoft-mega-festival-thailand-2027/",
     url: "https://www.mstarairsoft.com/",
