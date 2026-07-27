@@ -3,6 +3,7 @@
 ## 2026-07-26 Mstar Airsoft Festival Article Finalization
 
 - Added one Airsoft article card and detail route through the existing News system. Existing card grid, equal heights, crops, title/excerpt clamping, metadata placement, article reading layout, paragraph spacing, header, footer, and responsive breakpoints are unchanged.
+- Airsoft uses a scoped no-crop presentation only: complete portrait art is contained in the existing equal-size Home and News cards with a matching gray background, while its article image keeps its full portrait ratio. All other News card crops remain unchanged.
 - The supplied press-release artwork is delivered as one high-quality optimized WebP on cards, the article page, Open Graph, and Twitter/X. Its dimensions and top-and-bottom composition are unchanged.
 
 ## 2026-07-26 Premier Escrow Services Finance Sector

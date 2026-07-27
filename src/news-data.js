@@ -78,6 +78,7 @@ export const newsArticles = [
     image: "media/news/mstar-airsoft-press-release-updated-top-bottom-v2.webp",
     imageWidth: 2048,
     imageHeight: 3141,
+    imageFit: "contain",
     slug: "mstar-airsoft-mega-festival-thailand-2027",
     detailUrl: "news/mstar-airsoft-mega-festival-thailand-2027/",
     url: "https://www.mstarairsoft.com/",

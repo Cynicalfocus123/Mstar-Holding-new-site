@@ -1410,6 +1410,8 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
   const cardClass = variant === "home" ? "home-news-card" : "news-article-card";
   const mediaClass =
     variant === "home" ? "home-news-card-media" : "news-article-media";
+  const mediaFitClass =
+    article.imageFit === "contain" ? " news-media-contain" : "";
   const bodyClass =
     variant === "home" ? "home-news-card-body" : "news-article-body";
   const categoryClass =
@@ -1434,7 +1436,7 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
     ? `<span class="${sourceClass}">${escapeHtml(article.source)}</span>`
     : "";
   const cardContent = `
-      <span class="${mediaClass}">
+      <span class="${mediaClass}${mediaFitClass}">
         ${renderArticleImage(article, {
           assetPrefix,
           loading: options.priority ? "eager" : "lazy",
@@ -1619,7 +1621,7 @@ const renderNewsDetail = () => {
           </div>
           ${originalLink}
         </div>
-        <figure class="news-detail-media">
+        <figure class="news-detail-media${article.imageFit === "contain" ? " news-media-contain" : ""}">
           ${renderArticleImage(article, {
             assetPrefix,
             alt: article.title,

@@ -3,8 +3,9 @@
 ## 2026-07-26 Mstar Airsoft Festival Article Finalization
 
 - Added one high-quality 2048x3141 WebP under `public/media/news/`: `mstar-airsoft-press-release-updated-top-bottom-v2.webp`, 249,656 bytes (1,943,944 bytes lighter than the uploaded source). Removed the six 480/960/1280px AVIF/WebP variants and interim byte-copy from source and deployment.
+- The Airsoft no-crop presentation is CSS/data-only and adds no media files or image weight. It uses the same single 249,656-byte WebP in every placement.
 - The single optimized WebP is used by cards, article, Open Graph, and Twitter/X. CSS and video files were unchanged.
-- Clean `dist/`: 47,964,196 bytes across 150 files. Direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 47,173,821 bytes across 150 entries, SHA-verified against `dist/`.
+- Clean `dist/`: 47,964,967 bytes across 150 files. Direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 47,174,147 bytes across 152 entries (150 files plus two directories), SHA-verified against `dist/`.
 
 ## 2026-07-26 Premier Escrow Services Finance Sector
 
