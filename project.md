@@ -1,5 +1,11 @@
 # Project Changelog
 
+## 2026-07-26 Mstar Airsoft Festival Article Finalization
+
+- Added the missing single Mstar Airsoft article at `news/mstar-airsoft-mega-festival-thailand-2027/` with the final approved title, May 28, 2026 date, internal card route, and safe external `Visit Mstar Airsoft` CTA.
+- It is the second shared-date-sorted item after the July 24 Finance article and before the January 26 Defense article. Home displays six News cards; News & Media displays eight.
+- Added and verified six responsive Airsoft AVIF/WebP variants; no CSS change. Build, lint, test, weight/reference audits, SEO/JSON-LD order, and ZIP parity checks pass.
+
 ## 2026-07-25 Finance And Real Estate News Article
 
 - Added the July 24, 2026 finance and real estate proposal article to the shared news system and a separate internal article page.

@@ -29,6 +29,10 @@ export default defineConfig({
           __dirname,
           "news/mstar-finance-real-estate-escrow-system/index.html",
         ),
+        newsAirsoftFestival: resolve(
+          __dirname,
+          "news/mstar-airsoft-mega-festival-thailand-2027/index.html",
+        ),
         newsDefenseContract: resolve(
           __dirname,
           "news/mstar-defense-major-contract-asia-africa-ipo/index.html",

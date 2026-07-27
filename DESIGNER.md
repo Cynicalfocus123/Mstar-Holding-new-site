@@ -1,5 +1,10 @@
 # Designer Notes
 
+## 2026-07-26 Mstar Airsoft Festival Article Finalization
+
+- Added one Airsoft article card and detail route through the existing News system. Existing card grid, equal heights, crops, title/excerpt clamping, metadata placement, article reading layout, paragraph spacing, header, footer, and responsive breakpoints are unchanged.
+- The supplied press-release artwork is delivered as proportional portrait AVIF/WebP sources at 480px, 960px, and 1280px. Its top-and-bottom composition is unchanged on cards and the article page.
+
 ## 2026-07-26 Premier Escrow Services Finance Sector
 
 - Added one Finance sector directly after Real Estate, using the existing Business section, company card, logo box, media box, and responsive layout without creating new CSS or changing any existing sector.

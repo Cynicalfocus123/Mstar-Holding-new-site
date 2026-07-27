@@ -1480,7 +1480,7 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
 const renderNewsArticles = () => {
   if (homeNewsRoot) {
     homeNewsRoot.innerHTML = sortedNewsArticles
-      .slice(0, 5)
+      .slice(0, 6)
       .map((article, index) =>
         renderNewsArticleCard(article, "home", {
           assetPrefix: homeNewsRoot.dataset.newsAssetPrefix || "",
@@ -1584,21 +1584,25 @@ const renderNewsDetail = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span>Read original article</span>
+        <span>${escapeHtml(article.ctaLabel || "Read original article")}</span>
         <span class="cta-arrow" aria-hidden="true"></span>
       </a>
     `
     : "";
 
   const bodySections = article.body
-    .map(
-      (section) => `
+    .map((section) => {
+      const link = section.link
+        ? ` <a href="${escapeHtml(section.link.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(section.link.label)}</a>.`
+        : "";
+
+      return `
         <section class="news-detail-body-section">
           ${section.heading ? `<h2>${escapeHtml(section.heading)}</h2>` : ""}
-          <p>${escapeHtml(section.text)}</p>
+          <p>${escapeHtml(section.text)}${link}</p>
         </section>
-      `,
-    )
+      `;
+    })
     .join("");
 
   newsDetailRoot.innerHTML = `

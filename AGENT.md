@@ -1,5 +1,13 @@
 # Agent Changelog
 
+## 2026-07-26 Mstar Airsoft Festival Article Finalization
+
+- The claimed prior Airsoft article was absent from every local and remote Git ref, so added exactly one shared May 28, 2026 article and route: `news/mstar-airsoft-mega-festival-thailand-2027/`.
+- Final title everywhere: `Mstar Holding Brings Asia’s Largest Airsoft Festival to Thailand in 2027`. The retired working title has zero repository and built-output matches.
+- Shared `dateSort` ordering is Finance (July 24) → Airsoft (May 28) → Defense (January 26). Home now renders six cards; News & Media renders eight articles; JSON-LD positions are sequential 1–8 with Airsoft at position 2.
+- Added the six required responsive Airsoft AVIF/WebP variants from the supplied image, preserved its portrait composition, and retained existing card/detail image delivery and CSS. The external CTA is `Visit Mstar Airsoft` and safely links to `https://www.mstarairsoft.com/`.
+- Build, lint, tests, weight audit, reference cleanup, static SEO/path checks, and ZIP extraction parity pass. Clean `dist/`: 48,184,799 bytes / 155 files; ZIP: 47,396,939 bytes / 155 entries.
+
 ## 2026-07-26 Premier Escrow Services Finance Sector
 
 - Added exactly one Finance sector between Real Estate and Food & Hospitality through the existing `businessSectors` data array; the existing shared nav, section rendering, active-state, scrolling, touch, and responsive logic now include it automatically.

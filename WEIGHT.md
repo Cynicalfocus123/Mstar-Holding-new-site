@@ -1,5 +1,11 @@
 # Weight And Deployment Notes
 
+## 2026-07-26 Mstar Airsoft Festival Article Finalization
+
+- Added six required responsive image files under `public/media/news/`: 480/960/1280px AVIF and WebP, 469,895 bytes total. The supplied 2,193,600-byte original remains outside `public/`, `dist/`, and the ZIP.
+- The 960px WebP is the article’s normal fallback; cards retain existing eager/priority behavior only when first visible, while lower-priority cards stay lazy. CSS was unchanged.
+- Clean `dist/`: 48,184,799 bytes across 155 files. Direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 47,396,939 bytes across 155 entries, SHA-verified against `dist/`.
+
 ## 2026-07-26 Premier Escrow Services Finance Sector
 
 - Added only `public/media/logos/premier-escrow-services-logo-v1.webp`: 320x186, lossless WebP with alpha, 15,568 bytes. The supplied 2688x1568, 37,826-byte source remains outside `public/`, `dist/`, and the deployment ZIP.

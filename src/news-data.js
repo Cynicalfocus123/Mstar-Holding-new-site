@@ -67,6 +67,79 @@ export const newsArticles = [
     isPlaceholder: false,
   },
   {
+    category: "Entertainment",
+    title:
+      "Mstar Holding Brings Asia’s Largest Airsoft Festival to Thailand in 2027",
+    date: "May 28, 2026",
+    dateSort: "2026-05-28",
+    source: "Mstar Holding",
+    excerpt:
+      "Mstar Holding and Mstar Airsoft will host Asia’s largest international airsoft festival in Thailand from January 8–10, 2027.",
+    image: "media/news/mstar-airsoft-mega-festival-thailand-960.webp",
+    imageWidth: 2048,
+    imageHeight: 3141,
+    imageSrcSet: [
+      {
+        src: "media/news/mstar-airsoft-mega-festival-thailand-480.webp",
+        width: 480,
+      },
+      {
+        src: "media/news/mstar-airsoft-mega-festival-thailand-960.webp",
+        width: 960,
+      },
+      {
+        src: "media/news/mstar-airsoft-mega-festival-thailand-1280.webp",
+        width: 1280,
+      },
+    ],
+    imageAvifSrcSet: [
+      {
+        src: "media/news/mstar-airsoft-mega-festival-thailand-480.avif",
+        width: 480,
+      },
+      {
+        src: "media/news/mstar-airsoft-mega-festival-thailand-960.avif",
+        width: 960,
+      },
+      {
+        src: "media/news/mstar-airsoft-mega-festival-thailand-1280.avif",
+        width: 1280,
+      },
+    ],
+    slug: "mstar-airsoft-mega-festival-thailand-2027",
+    detailUrl: "news/mstar-airsoft-mega-festival-thailand-2027/",
+    url: "https://www.mstarairsoft.com/",
+    ctaLabel: "Visit Mstar Airsoft",
+    body: [
+      {
+        text: "BANGKOK, THAILAND, May 28, 2026 — Mstar Holding, through its entertainment division and Mstar Airsoft, has announced plans to host Asia’s largest international airsoft festival in Thailand from January 8–10, 2027. The event will feature three days and three nights of military simulation activities, bringing together airsoft players, teams, brands, and enthusiasts from across Asia, Europe, and other international markets.",
+      },
+      {
+        text: "The festival is being developed as a major sports-tourism and entertainment event designed to strengthen Thailand’s position as a regional destination for airsoft and military simulation experiences. Participants will take part in organized, team-based scenarios created for both experienced players and newcomers. Further information regarding the venue, registration, ticketing, gameplay rules, spectator access, and safety requirements will be announced as planning progresses.",
+      },
+      {
+        text: "With cooperation from relevant Thai government agencies and support from local authorities, Mstar Holding aims to deliver a professionally managed international event focused on safety, organization, responsible participation, and fair play. The company expects the festival to attract international visitors while generating economic opportunities for hotels, restaurants, transportation providers, tourism operators, event workers, and other local businesses.",
+      },
+      {
+        text: "The initiative is part of Mstar Holding’s broader plan to support Thailand’s growth as one of Asia’s leading destinations for international entertainment and large-scale events. Thailand is already widely recognized for its tourism, hospitality, culture, music festivals, and trade exhibitions. By introducing a large international airsoft festival, Mstar Holding hopes to expand the country’s entertainment offering and attract a growing community of airsoft and milsim enthusiasts.",
+      },
+      {
+        text: "Mstar Holding also views airsoft as a recreational sport that promotes teamwork, communication, discipline, strategy, and responsible competition. The festival will provide an opportunity for Thailand’s airsoft community to connect with international players, exchange knowledge, and build stronger relationships through a shared interest in organized military simulation events.",
+      },
+      {
+        text: "The January 2027 festival represents an important expansion for Mstar Holding’s entertainment division and Mstar Airsoft. Working with government stakeholders, local authorities, industry partners, and participating communities, the company intends to develop the event into a recurring international attraction for Thailand.",
+      },
+      {
+        text: "Official announcements, registration updates, venue information, and future ticket details will be published at",
+        link: {
+          href: "https://www.mstarairsoft.com/",
+          label: "www.mstarairsoft.com",
+        },
+      },
+    ],
+    isPlaceholder: false,
+  },
+  {
     category: "Defense",
     title:
       "Thailand Defense Giant Mstar Defense Lands Major Contract, Expands Across Asia and Africa Ahead of $2.9B IPO",
