@@ -196,7 +196,7 @@
           muted
           loop
           playsinline
-          preload="metadata"
+          preload="auto"
           poster="../media/operations-poster.webp"
           aria-hidden="true"
         >
@@ -209,6 +209,8 @@
           width="1792"
           height="1024"
           loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="section-shade section-shade-hero"></div>
         <div class="section-content hero-content">

@@ -338,6 +338,15 @@ body.nav-open .site-header::before {
   z-index: -3;
 }
 
+.home-hero-video {
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.home-hero-video.is-ready {
+  opacity: 1;
+}
+
 .section-poster {
   z-index: -4;
 }

@@ -174,7 +174,8 @@
                   alt=""
                   width="512"
                   height="512"
-                  loading="lazy"
+                  loading="eager"
+                  fetchpriority="high"
                   decoding="async"
                 />
               </span>
@@ -201,14 +202,26 @@
 
             <article class="presence-page-stat presence-page-stat-food">
               <span class="presence-page-stat-media" aria-hidden="true">
-                <img
-                  src="../media/global-presence/food-serves-globally.webp"
-                  alt=""
-                  width="1677"
-                  height="943"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <picture>
+                  <source
+                    type="image/avif"
+                    data-srcset="../media/global-presence/food-serves-globally-480-v2.avif 480w, ../media/global-presence/food-serves-globally-768-v2.avif 768w"
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                  />
+                  <source
+                    type="image/webp"
+                    data-srcset="../media/global-presence/food-serves-globally-480-v2.webp 480w, ../media/global-presence/food-serves-globally-768-v2.webp 768w"
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                  />
+                  <img
+                    data-src="../media/global-presence/food-serves-globally-768-v2.webp"
+                    alt=""
+                    width="1677"
+                    height="943"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </span>
               <span class="presence-page-stat-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" role="img">
@@ -236,14 +249,26 @@
 
             <article class="presence-page-stat presence-page-stat-clients">
               <span class="presence-page-stat-media" aria-hidden="true">
-                <img
-                  src="../media/global-presence/hospitality-clients.webp"
-                  alt=""
-                  width="1677"
-                  height="943"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <picture>
+                  <source
+                    type="image/avif"
+                    data-srcset="../media/global-presence/hospitality-clients-480-v2.avif 480w, ../media/global-presence/hospitality-clients-768-v2.avif 768w"
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                  />
+                  <source
+                    type="image/webp"
+                    data-srcset="../media/global-presence/hospitality-clients-480-v2.webp 480w, ../media/global-presence/hospitality-clients-768-v2.webp 768w"
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                  />
+                  <img
+                    data-src="../media/global-presence/hospitality-clients-768-v2.webp"
+                    alt=""
+                    width="1677"
+                    height="943"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </span>
               <span class="presence-page-stat-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" role="img">
@@ -273,14 +298,26 @@
 
             <article class="presence-page-stat presence-page-stat-rd">
               <span class="presence-page-stat-media" aria-hidden="true">
-                <img
-                  src="../media/global-presence/rd-investment.webp"
-                  alt=""
-                  width="1536"
-                  height="1024"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <picture>
+                  <source
+                    type="image/avif"
+                    data-srcset="../media/global-presence/rd-investment-480-v2.avif 480w, ../media/global-presence/rd-investment-768-v2.avif 768w"
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                  />
+                  <source
+                    type="image/webp"
+                    data-srcset="../media/global-presence/rd-investment-480-v2.webp 480w, ../media/global-presence/rd-investment-768-v2.webp 768w"
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                  />
+                  <img
+                    data-src="../media/global-presence/rd-investment-768-v2.webp"
+                    alt=""
+                    width="1536"
+                    height="1024"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </span>
               <span class="presence-page-stat-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" role="img">

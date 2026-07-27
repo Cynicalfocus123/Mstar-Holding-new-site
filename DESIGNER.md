@@ -1,5 +1,11 @@
 # Designer Notes
 
+## 2026-07-26 Route Media Priority And Delivery Audit
+
+- Preserved every approved layout, crop, typography, color, animation, and responsive breakpoint. Home and Business heroes remain poster-first, preventing a black/blank video frame before visual media is ready.
+- Global Presence keeps its established card imagery and composition; non-hero imagery is only requested shortly before its existing section enters view.
+- The first News image keeps its existing art direction and card/detail crop while delivering the right 480px, 960px, or 1280px responsive source for the rendered space.
+
 ## 2026-07-26 Business Delivery, Global Counters, And Finance Sector
 
 - Business media now stays visually behind its existing poster until a usable video frame is available, then fades in without changing the approved crop, aspect ratio, card dimensions, or responsive behavior.

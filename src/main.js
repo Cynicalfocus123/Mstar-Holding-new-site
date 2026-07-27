@@ -166,6 +166,41 @@ const isPhonePortraitViewport = () => {
   return (viewportLooksPhone || screenLooksPhone) && isPortrait;
 };
 
+const homeHeroVideo = document.querySelector("[data-home-hero-video]");
+
+const playHomeHeroVideo = () => {
+  if (!(homeHeroVideo instanceof HTMLVideoElement) || prefersReducedMotion) {
+    return;
+  }
+
+  void homeHeroVideo.play().catch(() => {});
+};
+
+if (homeHeroVideo instanceof HTMLVideoElement) {
+  const revealHomeHeroVideo = () => {
+    homeHeroVideo.classList.add("is-ready");
+    playHomeHeroVideo();
+  };
+
+  homeHeroVideo.addEventListener("loadeddata", revealHomeHeroVideo, {
+    once: true,
+  });
+  homeHeroVideo.addEventListener("canplay", revealHomeHeroVideo, {
+    once: true,
+  });
+  homeHeroVideo.addEventListener(
+    "error",
+    () => homeHeroVideo.classList.remove("is-ready"),
+    { once: true },
+  );
+
+  if (homeHeroVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+    revealHomeHeroVideo();
+  } else {
+    playHomeHeroVideo();
+  }
+}
+
 const businessHeroVideo = document.querySelector("[data-business-hero-video]");
 
 const playBusinessHeroVideo = () => {
@@ -527,6 +562,60 @@ if (presencePageCounters.length) {
       resetPresencePageCounters();
       startPresencePageCounters();
     });
+  }
+}
+
+const deferredMediaImages = Array.from(
+  document.querySelectorAll("img[data-src], img[data-srcset]"),
+);
+
+const loadDeferredMediaImage = (image) => {
+  if (!(image instanceof HTMLImageElement) || image.dataset.loaded === "true") {
+    return;
+  }
+
+  const picture = image.closest("picture");
+
+  if (picture) {
+    picture.querySelectorAll("source[data-srcset]").forEach((source) => {
+      source.srcset = source.dataset.srcset || "";
+      source.removeAttribute("data-srcset");
+    });
+  }
+
+  if (image.dataset.srcset) {
+    image.srcset = image.dataset.srcset;
+    image.removeAttribute("data-srcset");
+  }
+
+  if (image.dataset.src) {
+    image.src = image.dataset.src;
+    image.removeAttribute("data-src");
+  }
+
+  image.loading = "eager";
+  image.dataset.loaded = "true";
+};
+
+if (deferredMediaImages.length) {
+  if (!("IntersectionObserver" in window)) {
+    deferredMediaImages.forEach(loadDeferredMediaImage);
+  } else {
+    const deferredMediaObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadDeferredMediaImage(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "1200px 0px", threshold: 0.01 },
+    );
+
+    deferredMediaImages.forEach((image) =>
+      deferredMediaObserver.observe(image),
+    );
   }
 }
 
@@ -1260,6 +1349,39 @@ const withPathPrefix = (path, prefix = "") => {
   return `${prefix}${path}`;
 };
 
+const renderArticleImage = (article, options = {}) => {
+  const assetPrefix = options.assetPrefix || "";
+  const srcSet = (entries) =>
+    entries
+      .map(
+        ({ src, width }) =>
+          `${escapeHtml(withPathPrefix(src, assetPrefix))} ${width}w`,
+      )
+      .join(", ");
+  const avifSource = article.imageAvifSrcSet
+    ? `\n          <source type="image/avif" srcset="${srcSet(article.imageAvifSrcSet)}" sizes="${options.sizes}" />`
+    : "";
+  const webpSource = article.imageSrcSet
+    ? `\n          <source type="image/webp" srcset="${srcSet(article.imageSrcSet)}" sizes="${options.sizes}" />`
+    : "";
+  const dimensions =
+    article.imageWidth && article.imageHeight
+      ? ` width="${article.imageWidth}" height="${article.imageHeight}"`
+      : "";
+  const fetchPriority = options.priority ? ' fetchpriority="high"' : "";
+
+  return `
+        <picture>${avifSource}${webpSource}
+          <img
+            src="${escapeHtml(withPathPrefix(article.image, assetPrefix))}"
+            alt="${escapeHtml(options.alt || "")}"${dimensions}
+            loading="${options.loading || "lazy"}"${fetchPriority}
+            decoding="async"
+          />
+        </picture>
+  `;
+};
+
 const renderNewsArticleCard = (article, variant, options = {}) => {
   const assetPrefix = options.assetPrefix || "";
   const cardClass = variant === "home" ? "home-news-card" : "news-article-card";
@@ -1290,12 +1412,12 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
     : "";
   const cardContent = `
       <span class="${mediaClass}">
-        <img
-          src="${escapeHtml(withPathPrefix(article.image, assetPrefix))}"
-          alt=""
-          loading="lazy"
-          decoding="async"
-        />
+        ${renderArticleImage(article, {
+          assetPrefix,
+          loading: options.priority ? "eager" : "lazy",
+          priority: options.priority,
+          sizes: "(max-width: 640px) 100vw, (max-width: 1180px) 50vw, 25vw",
+        })}
       </span>
       <span class="${bodyClass}">
         <span class="${categoryClass}">${escapeHtml(article.category)}</span>
@@ -1336,9 +1458,10 @@ const renderNewsArticles = () => {
   if (homeNewsRoot) {
     homeNewsRoot.innerHTML = sortedNewsArticles
       .slice(0, 5)
-      .map((article) =>
+      .map((article, index) =>
         renderNewsArticleCard(article, "home", {
           assetPrefix: homeNewsRoot.dataset.newsAssetPrefix || "",
+          priority: index === 0,
         }),
       )
       .join("");
@@ -1346,14 +1469,70 @@ const renderNewsArticles = () => {
 
   if (newsGridRoot) {
     newsGridRoot.innerHTML = sortedNewsArticles
-      .map((article) =>
+      .map((article, index) =>
         renderNewsArticleCard(article, "news", {
           assetPrefix: newsGridRoot.dataset.newsAssetPrefix || "",
+          priority: index === 0,
         }),
       )
       .join("");
   }
 };
+
+const routeCriticalMedia = new Map([
+  ["/", "/media/hero-poster.webp"],
+  [
+    "/about/",
+    "/media/about/responsive/jakapun-viwatkurkul-president-1024.webp",
+  ],
+  ["/business/", "/media/operations-poster.webp"],
+  ["/global-presence/", "/media/global-presence/countries-operated-earth.jpg"],
+  [
+    "/corporate-governance/board-of-directors/",
+    "/media/leadership/responsive/jakapun-viwatkurkul-founder-president-1024.webp",
+  ],
+  [
+    "/corporate-governance/executive-management/",
+    "/media/leadership/responsive/jakapun-viwatkurkul-founder-president-1024.webp",
+  ],
+  ["/news/", "/media/news/mstar-finance-real-estate-escrow-system-960-v2.webp"],
+]);
+const prefetchedRouteMedia = new Set();
+
+const prefetchCriticalRouteMedia = (anchor) => {
+  const destination = new URL(anchor.href, window.location.href);
+
+  if (destination.origin !== window.location.origin) {
+    return;
+  }
+
+  const pathname = destination.pathname.endsWith("/")
+    ? destination.pathname
+    : `${destination.pathname}/`;
+  const mediaPath = routeCriticalMedia.get(pathname);
+
+  if (!mediaPath || prefetchedRouteMedia.has(mediaPath)) {
+    return;
+  }
+
+  const link = document.createElement("link");
+  link.rel = "prefetch";
+  link.as = "image";
+  link.href = mediaPath;
+  document.head.append(link);
+  prefetchedRouteMedia.add(mediaPath);
+};
+
+document.querySelectorAll("a[href]").forEach((anchor) => {
+  const prefetch = () => prefetchCriticalRouteMedia(anchor);
+
+  anchor.addEventListener("pointerenter", prefetch, { once: true });
+  anchor.addEventListener("focus", prefetch, { once: true });
+  anchor.addEventListener("touchstart", prefetch, {
+    once: true,
+    passive: true,
+  });
+});
 
 const renderNewsDetail = () => {
   if (!newsDetailRoot) {
@@ -1414,11 +1593,13 @@ const renderNewsDetail = () => {
           ${originalLink}
         </div>
         <figure class="news-detail-media">
-          <img
-            src="${escapeHtml(withPathPrefix(article.image, assetPrefix))}"
-            alt="${escapeHtml(article.title)}"
-            loading="eager"
-          />
+          ${renderArticleImage(article, {
+            assetPrefix,
+            alt: article.title,
+            loading: "eager",
+            priority: true,
+            sizes: "(min-width: 1181px) 760px, calc(100vw - 48px)",
+          })}
         </figure>
       </header>
       <div class="news-detail-body">
@@ -1506,6 +1687,12 @@ const loadCompanyMediaVideo = (video) => {
 
   if (!src) {
     return;
+  }
+
+  const poster = video.parentElement?.querySelector(".company-media-poster");
+
+  if (poster instanceof HTMLImageElement) {
+    poster.loading = "eager";
   }
 
   const source = document.createElement("source");
@@ -1612,7 +1799,7 @@ const lazyLoadCompanyMediaVideos = (root = document) => {
         }
       });
     },
-    { rootMargin: "700px 0px", threshold: 0.01 },
+    { rootMargin: "1200px 0px", threshold: 0.01 },
   );
 
   const playObserver = new IntersectionObserver(
@@ -1632,7 +1819,7 @@ const lazyLoadCompanyMediaVideos = (root = document) => {
     prepareObserver.observe(video);
     playObserver.observe(video);
 
-    if (isCompanyMediaVideoNearViewport(video, 700)) {
+    if (isCompanyMediaVideoNearViewport(video, 1200)) {
       loadCompanyMediaVideo(video);
       prepareObserver.unobserve(video);
     }

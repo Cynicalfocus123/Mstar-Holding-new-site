@@ -1,5 +1,13 @@
 # Agent Changelog
 
+## 2026-07-26 Route Media Priority And Delivery Audit
+
+- Kept all active `*-v3.mp4` bytes unchanged. Home and Business hero videos now preload only on their own route, retain their poster until a decoded frame is available, and then reveal/play safely. Business below-fold videos prepare 1200px before view and play only near view.
+- Made the first visible image on Home, Business, Global Presence, About, Governance/Leadership, and News explicit priority media; all other Global Presence stat images use one 1200px deferred-image observer.
+- Replaced the 2,691,978-byte first News image delivery with responsive 480/960/1280 AVIF and WebP variants. The 960px WebP fallback is 88,962 bytes; the full original remains a local source file only and is excluded from `dist/`.
+- Added intent-only prefetch for one critical destination image after navigation hover, keyboard focus, or touch. It never preloads videos or bulk page media.
+- Production build, format/lint, tests, weight audit, and reference audit pass. The cleaned build has 149 files / 47,731,783 bytes; the direct-root Hostinger ZIP has 149 entries / 46,953,541 bytes with SHA-256 extraction parity. Actual production Lighthouse results remain a post-upload browser check, not a claimed local measurement.
+
 ## 2026-07-26 Business Delivery, Global Counters, And Finance Sector
 
 - Kept all current `*-v3.mp4` files byte-for-byte unchanged while adding a poster-first Business video lifecycle: prepare within a 700px observer margin, reveal only after a decoded frame, play near the viewport, and pause off-screen without unloading or resetting.

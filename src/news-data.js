@@ -8,7 +8,37 @@ export const newsArticles = [
     source: "Mstar Holding",
     excerpt:
       "Mstar Holding is advancing a proposed finance and escrow framework intended to make high-value transactions safer, clearer, and more dependable across Thailand.",
-    image: "media/news/mstar-finance-real-estate-escrow-system.webp",
+    image: "media/news/mstar-finance-real-estate-escrow-system-960-v2.webp",
+    imageWidth: 2048,
+    imageHeight: 1912,
+    imageSrcSet: [
+      {
+        src: "media/news/mstar-finance-real-estate-escrow-system-480-v2.webp",
+        width: 480,
+      },
+      {
+        src: "media/news/mstar-finance-real-estate-escrow-system-960-v2.webp",
+        width: 960,
+      },
+      {
+        src: "media/news/mstar-finance-real-estate-escrow-system-1280-v2.webp",
+        width: 1280,
+      },
+    ],
+    imageAvifSrcSet: [
+      {
+        src: "media/news/mstar-finance-real-estate-escrow-system-480-v2.avif",
+        width: 480,
+      },
+      {
+        src: "media/news/mstar-finance-real-estate-escrow-system-960-v2.avif",
+        width: 960,
+      },
+      {
+        src: "media/news/mstar-finance-real-estate-escrow-system-1280-v2.avif",
+        width: 1280,
+      },
+    ],
     slug: "mstar-finance-real-estate-escrow-system",
     detailUrl: "news/mstar-finance-real-estate-escrow-system/",
     body: [

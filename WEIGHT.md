@@ -1,5 +1,12 @@
 # Weight And Deployment Notes
 
+## 2026-07-26 Route Media Priority And Delivery Audit
+
+- Active `*-v3.mp4` delivery files are byte-for-byte unchanged. Home and Business only request their selected hero source on their own route; Business lower-page videos still use poster-first deferred delivery.
+- Global Presence delivery now uses 480px/768px AVIF+WebP variants for Food, Hospitality, and R&D. These 12 variants total 241,137 bytes; the replaced original card WebPs and raw PNGs are omitted from the cleaned deployment output.
+- The first News image uses responsive 480px/960px/1280px AVIF+WebP variants (464,026 bytes total). Its 960px WebP fallback is 88,962 bytes versus the prior 2,691,978-byte full-size WebP. The original stays in `public/` as a source fallback only and is removed from `dist/` by the deploy-reference cleanup.
+- Cleaned `dist/` after the audit: 47,731,783 bytes across 149 files. Canonical direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 46,953,541 bytes across 149 entries, with SHA-256 extraction parity. Static cache rules are unchanged (HTML no-cache, versioned media long-cache).
+
 ## 2026-07-26 Business Delivery, Global Counters, And Finance Sector
 
 - No delivery video was re-encoded, renamed, replaced, or changed; the 17 active `*-v3.mp4` files remain unchanged.
