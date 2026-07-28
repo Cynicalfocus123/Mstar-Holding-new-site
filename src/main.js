@@ -203,15 +203,51 @@ if (homeHeroVideo instanceof HTMLVideoElement) {
 
 const businessHeroVideo = document.querySelector("[data-business-hero-video]");
 
-const playBusinessHeroVideo = () => {
+const configureBusinessVideoPlayback = (video) => {
+  if (!(video instanceof HTMLVideoElement)) {
+    return;
+  }
+
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.loop = true;
+};
+
+const requestBusinessVideoPlayback = (video) => {
   if (
-    !(businessHeroVideo instanceof HTMLVideoElement) ||
-    prefersReducedMotion
+    !(video instanceof HTMLVideoElement) ||
+    prefersReducedMotion ||
+    document.visibilityState === "hidden" ||
+    video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA ||
+    video.dataset.playPending === "true"
   ) {
     return;
   }
 
-  void businessHeroVideo.play().catch(() => {});
+  configureBusinessVideoPlayback(video);
+  video.dataset.playPending = "true";
+
+  try {
+    const playback = video.play();
+
+    if (playback && typeof playback.then === "function") {
+      void playback
+        .catch(() => {})
+        .finally(() => {
+          video.dataset.playPending = "false";
+        });
+      return;
+    }
+  } catch {
+    // Browsers may reject autoplay despite muted inline playback.
+  }
+
+  video.dataset.playPending = "false";
+};
+
+const playBusinessHeroVideo = () => {
+  requestBusinessVideoPlayback(businessHeroVideo);
 };
 
 const markBusinessHeroVideoReady = () => {
@@ -221,8 +257,8 @@ const markBusinessHeroVideoReady = () => {
 };
 
 if (businessHeroVideo instanceof HTMLVideoElement) {
-  businessHeroVideo.addEventListener("loadeddata", markBusinessHeroVideoReady);
-  businessHeroVideo.addEventListener("canplay", markBusinessHeroVideoReady);
+  configureBusinessVideoPlayback(businessHeroVideo);
+  businessHeroVideo.addEventListener("playing", markBusinessHeroVideoReady);
   businessHeroVideo.addEventListener("canplay", playBusinessHeroVideo);
   businessHeroVideo.addEventListener("error", () => {
     businessHeroVideo.classList.remove("is-ready");
@@ -246,9 +282,11 @@ const updateBusinessHeroVideo = () => {
   const selectedUrl = new URL(selectedSrc, window.location.href).href;
 
   if (source.src === selectedUrl) {
+    playBusinessHeroVideo();
     return;
   }
 
+  configureBusinessVideoPlayback(businessHeroVideo);
   businessHeroVideo.classList.remove("is-ready");
   source.src = selectedSrc;
   businessHeroVideo.load();
@@ -265,6 +303,11 @@ scheduleBusinessHeroVideoUpdate();
 window.addEventListener("resize", updateBusinessHeroVideo);
 window.addEventListener("orientationchange", updateBusinessHeroVideo);
 window.addEventListener("pageshow", scheduleBusinessHeroVideoUpdate);
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    playBusinessHeroVideo();
+  }
+});
 
 const aboutPresidentSection = document.querySelector("[data-about-president]");
 const aboutMessageCard = document.querySelector("[data-about-message-card]");
@@ -1158,7 +1201,6 @@ const businessSectors = [
         mediaSrc: "../videos/business-premier-escrow-services-v3.mp4",
         poster:
           "../media/business/business-premier-escrow-services-poster-v3.webp",
-        deferMedia: true,
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/premier-escrow-services-logo-v1.webp",
@@ -1668,11 +1710,11 @@ const renderCompanyMedia = (company) => {
         muted
         loop
         playsinline
-        preload="${company.deferMedia ? "none" : "metadata"}"
+        preload="none"
         poster="${escapeHtml(poster)}"
         aria-label="${escapeHtml(label)}"
       >
-        <source ${company.deferMedia ? "data-src" : "src"}="${escapeHtml(company.mediaSrc)}" type="video/mp4" />
+        <source data-src="${escapeHtml(company.mediaSrc)}" type="video/mp4" />
       </video>
     `;
   }
@@ -1740,57 +1782,67 @@ const initializeCompanyMediaVideo = (video) => {
     return;
   }
 
+  configureBusinessVideoPlayback(video);
+
   if (!source.getAttribute("src")) {
     source.setAttribute("src", sourceUrl);
   }
 
   video.dataset.prepared = "true";
+  video.dataset.playRequested = "true";
 
-  const markVideoReady = () => {
-    video.classList.add("is-ready");
-
-    if (video.dataset.playRequested === "true") {
-      void video.play().catch(() => {});
-    }
+  const requestPlaybackWhenReady = () => {
+    requestBusinessVideoPlayback(video);
   };
 
-  video.addEventListener("loadeddata", markVideoReady, { once: true });
-  video.addEventListener("canplay", markVideoReady, { once: true });
+  const revealVideoAfterPlaybackStarts = () => {
+    video.classList.add("is-ready");
+    video.dataset.hasPlayed = "true";
+    video.dataset.pauseRecoveryAttempted = "false";
+  };
+
+  const recoverUnexpectedPause = () => {
+    if (
+      video.dataset.hasPlayed !== "true" ||
+      video.dataset.pauseRecoveryAttempted === "true" ||
+      document.visibilityState === "hidden" ||
+      prefersReducedMotion
+    ) {
+      return;
+    }
+
+    video.dataset.pauseRecoveryAttempted = "true";
+    requestBusinessVideoPlayback(video);
+  };
+
+  video.addEventListener("loadeddata", requestPlaybackWhenReady, {
+    once: true,
+  });
+  video.addEventListener("canplay", requestPlaybackWhenReady, { once: true });
+  video.addEventListener("playing", revealVideoAfterPlaybackStarts);
+  video.addEventListener("pause", recoverUnexpectedPause);
   video.addEventListener(
     "error",
     () => {
       video.classList.remove("is-ready");
-      video.dataset.playRequested = "false";
     },
     { once: true },
   );
   video.load();
 
   if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-    markVideoReady();
+    requestPlaybackWhenReady();
   }
 };
 
 const playCompanyMediaVideo = (video) => {
-  if (!(video instanceof HTMLVideoElement) || prefersReducedMotion) {
+  if (!(video instanceof HTMLVideoElement)) {
     return;
   }
 
   initializeCompanyMediaVideo(video);
   video.dataset.playRequested = "true";
-
-  if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-    void video.play().catch(() => {});
-  }
-};
-
-const pauseCompanyMediaVideo = (video) => {
-  if (!(video instanceof HTMLVideoElement)) {
-    return;
-  }
-
-  video.dataset.playRequested = "false";
-  video.pause();
+  requestBusinessVideoPlayback(video);
 };
 
 const isCompanyMediaVideoNearViewport = (video, margin) => {
@@ -1799,71 +1851,6 @@ const isCompanyMediaVideoNearViewport = (video, margin) => {
     window.innerHeight || document.documentElement.clientHeight;
 
   return rect.bottom >= -margin && rect.top <= viewportHeight + margin;
-};
-
-const connectionAllowsBackgroundVideoPreparation = () => {
-  const connection =
-    navigator.connection ||
-    navigator.mozConnection ||
-    navigator.webkitConnection;
-
-  return !(
-    connection?.saveData ||
-    connection?.effectiveType === "slow-2g" ||
-    connection?.effectiveType === "2g"
-  );
-};
-
-const scheduleCompanyMediaWarmup = (videos) => {
-  if (!connectionAllowsBackgroundVideoPreparation()) {
-    return;
-  }
-
-  let nextVideoIndex = 0;
-
-  const runWhenIdle = (callback) => {
-    if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(callback);
-      return;
-    }
-
-    window.requestAnimationFrame(callback);
-  };
-
-  const warmNextVideo = () => {
-    const video = videos[nextVideoIndex];
-    nextVideoIndex += 1;
-
-    if (!(video instanceof HTMLVideoElement)) {
-      return;
-    }
-
-    video.preload = "auto";
-    video.load();
-
-    const continueWarmup = () => {
-      if (video.dataset.warmupComplete === "true") {
-        return;
-      }
-
-      video.dataset.warmupComplete = "true";
-      runWhenIdle(warmNextVideo);
-    };
-    video.addEventListener("canplay", continueWarmup, { once: true });
-    video.addEventListener("error", continueWarmup, { once: true });
-
-    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-      continueWarmup();
-    }
-  };
-
-  const startWarmup = () => runWhenIdle(warmNextVideo);
-
-  if (document.readyState === "complete") {
-    startWarmup();
-  } else {
-    window.addEventListener("load", startWarmup, { once: true });
-  }
 };
 
 const prepareCompanyMediaVideos = (root = document) => {
@@ -1877,64 +1864,66 @@ const prepareCompanyMediaVideos = (root = document) => {
     return;
   }
 
-  const immediatelyAvailableVideos = videos.filter((video) =>
-    video.querySelector("source")?.getAttribute("src"),
-  );
-
-  immediatelyAvailableVideos.forEach(initializeCompanyMediaVideo);
-  scheduleCompanyMediaWarmup(immediatelyAvailableVideos);
-
   if (!("IntersectionObserver" in window)) {
-    const syncCompanyMediaPlayback = () => {
+    const prepareNearbyCompanyMediaVideos = () => {
       videos.forEach((video) => {
-        if (isCompanyMediaVideoNearViewport(video, 700)) {
-          initializeCompanyMediaVideo(video);
-        }
-
-        if (isCompanyMediaVideoNearViewport(video, 0)) {
+        if (isCompanyMediaVideoNearViewport(video, 1600)) {
           playCompanyMediaVideo(video);
-        } else {
-          pauseCompanyMediaVideo(video);
         }
       });
     };
 
-    syncCompanyMediaPlayback();
-    window.addEventListener("scroll", syncCompanyMediaPlayback, {
+    prepareNearbyCompanyMediaVideos();
+    window.addEventListener("scroll", prepareNearbyCompanyMediaVideos, {
       passive: true,
     });
-    window.addEventListener("resize", syncCompanyMediaPlayback);
+    window.addEventListener("resize", prepareNearbyCompanyMediaVideos);
     return;
   }
 
-  const playObserver = new IntersectionObserver(
+  const preparationObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          initializeCompanyMediaVideo(entry.target);
-
-          if (isCompanyMediaVideoNearViewport(entry.target, 140)) {
-            playCompanyMediaVideo(entry.target);
-          }
-        } else {
-          pauseCompanyMediaVideo(entry.target);
+          playCompanyMediaVideo(entry.target);
         }
       });
     },
-    { rootMargin: "700px 0px", threshold: 0.01 },
+    { rootMargin: "1600px 0px", threshold: 0.01 },
   );
 
   videos.forEach((video) => {
-    playObserver.observe(video);
+    preparationObserver.observe(video);
 
-    if (isCompanyMediaVideoNearViewport(video, 700)) {
-      initializeCompanyMediaVideo(video);
-    }
-
-    if (isCompanyMediaVideoNearViewport(video, 0)) {
+    if (isCompanyMediaVideoNearViewport(video, 1600)) {
       playCompanyMediaVideo(video);
     }
   });
+
+  const resumePreparedCompanyMediaVideos = () => {
+    if (document.visibilityState !== "visible") {
+      return;
+    }
+
+    videos.forEach((video) => {
+      if (video.dataset.prepared === "true") {
+        requestBusinessVideoPlayback(video);
+      } else if (isCompanyMediaVideoNearViewport(video, 1600)) {
+        playCompanyMediaVideo(video);
+      }
+    });
+  };
+
+  window.addEventListener("pageshow", resumePreparedCompanyMediaVideos);
+  window.addEventListener("resize", resumePreparedCompanyMediaVideos);
+  window.addEventListener(
+    "orientationchange",
+    resumePreparedCompanyMediaVideos,
+  );
+  document.addEventListener(
+    "visibilitychange",
+    resumePreparedCompanyMediaVideos,
+  );
 };
 
 const renderBusinessSectors = () => {

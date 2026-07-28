@@ -1,5 +1,10 @@
 # Designer Notes
 
+## 2026-07-28 Business Company Video Playback Continuity
+
+- Corrected playback behavior only: videos now continue looping while the visitor moves between Business sectors. Posters remain visible until the `playing` event, then the decoded video replaces them without changing the media frame.
+- No Business layout, crop, object fit/position, responsive breakpoint, sticky behavior, scrolling, typography, logo, or content rule changed.
+
 ## 2026-07-28 Finance / Premier Escrow Services Media
 
 - The Finance company media now uses the supplied vertical Premier Escrow Services video and its dedicated 720x1280 WebP poster. The existing landscape company-media frame, `object-fit: cover`, centered crop, spacing, grid, sticky sector behavior, and breakpoints remain exactly shared with the other Business companies.
