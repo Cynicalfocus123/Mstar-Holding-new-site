@@ -5,10 +5,11 @@
 - Fixed the shared Business observer, which paused company videos on every exit callback during scrolling. It now prepares and starts nearby videos but never pauses them merely because a section leaves the viewport.
 - Every company video now starts with `data-src` and `preload="none"`; one 1600px shared preparation observer attaches each source and calls `load()` once. Initialized videos retain their DOM node, source, current time, loop, and playback while the visitor remains on Business.
 - The guarded playback helper enforces muted/default-muted/inline/loop before source assignment, waits for usable media data, safely handles promise rejections, retries on visible `pageshow`/tab return/layout changes, and attempts one restart after an unexpected visible-page pause. The poster stays on top until `playing` fires.
-- Production build, lint, test, weight audit, zero-missing/zero-unused deploy audit, and ZIP SHA-256 extraction parity pass. Clean `dist/` is 52,098,705 bytes across 152 files; the refreshed canonical ZIP is 51,315,122 bytes with 187 file/directory entries.
+- Production build, lint, test, weight audit, zero-missing/zero-unused deploy audit, and ZIP SHA-256 extraction parity pass. After the balanced Finance-video replacement, clean `dist/` is 51,229,754 bytes across 152 files; the refreshed canonical ZIP is 50,445,837 bytes with 187 file/directory entries.
 
 ## 2026-07-28 Premier Escrow Services Finance Video
 
+- Rebalanced only `videos/business-premier-escrow-services-v3.mp4` with the same 720x1280, 60 FPS, silent H.264/yuv420p, fast-start profile at CRF 25/preset slow. It is now 3,190,726 bytes (66.71% below the 9,584,323-byte source); no page code, layout, poster, or other video changed.
 - Replaced only the Finance company handshake image with `videos/business-premier-escrow-services-v3.mp4`; the Finance order, company logo, copy, shared media frame, and other Business media are unchanged.
 - Verified source: 1080x1920, 24 FPS H.264/yuv420p with AAC, 19.958333 seconds, 9,584,323 bytes. Delivery output is silent 720x1280 H.264/yuv420p, CFR 60 FPS, 19.966667 seconds, 4,059,677 bytes (57.64% smaller), made with Lanczos scaling, CRF 23, preset slow, and MP4 fast-start.
 - Added `media/business/business-premier-escrow-services-poster-v3.webp` (720x1280, quality 82, 73,076 bytes). The existing company-media cover frame and centered crop apply unchanged at every breakpoint.

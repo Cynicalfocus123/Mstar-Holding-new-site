@@ -3,12 +3,12 @@
 ## 2026-07-28 Business Company Video Playback Continuity
 
 - No media bytes, filenames, posters, or codecs changed. Company MP4 sources are deferred with `data-src`/`preload="none"` and attached by the one 1600px shared preparation observer, preventing distant Business videos from downloading at initial entry.
-- The cleanup audit remains zero-missing and zero-unused after the playback-only JavaScript update. Final cleaned `dist/` is 52,098,705 bytes across 152 files; the refreshed canonical ZIP is 51,315,122 bytes with 187 file/directory entries and SHA-256 extraction parity.
+- The cleanup audit remains zero-missing and zero-unused after the playback-only JavaScript update. After the balanced Finance-video replacement, final cleaned `dist/` is 51,229,754 bytes across 152 files; the refreshed canonical ZIP is 50,445,837 bytes with 187 file/directory entries and SHA-256 extraction parity.
 
 ## 2026-07-28 Premier Escrow Services Finance Video
 
 - Source master remains outside public delivery: `mstar websites use video/escrow compnay.mp4` is 9,584,323 bytes (1080x1920, 24 FPS, H.264/yuv420p, AAC).
-- Added only the optimized public delivery assets: `videos/business-premier-escrow-services-v3.mp4` is 4,059,677 bytes (720x1280, 60 FPS, silent H.264/yuv420p, fast-start) and `media/business/business-premier-escrow-services-poster-v3.webp` is 73,076 bytes. The video is 57.64% smaller than the supplied source.
+- Added only the optimized public delivery assets: `videos/business-premier-escrow-services-v3.mp4` is 3,190,726 bytes (720x1280, 60 FPS, silent H.264/yuv420p, fast-start, CRF 25/preset slow) and `media/business/business-premier-escrow-services-poster-v3.webp` is 73,076 bytes. The video is 66.71% smaller than the supplied source.
 - Finance uses the same shared Business lazy lifecycle as every company video: `data-src` and `preload="none"` avoid initial media download; the 1600px observer prepares it early and the poster covers decode or playback failure.
 - Final cleaned `dist/`: 52,098,785 bytes across 152 files. The refreshed canonical `mstar-hostinger-public_html-ready-balanced-video.zip` is 51,315,243 bytes, has 187 direct-root file/directory entries with forward slashes, and its 152 extracted files match `dist/` by SHA-256.
 
