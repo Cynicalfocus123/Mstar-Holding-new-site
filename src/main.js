@@ -1154,8 +1154,11 @@ const businessSectors = [
         name: "Premier Escrow Services",
         description:
           "Premier Escrow Service serves as a neutral third party, protecting client interests and facilitating secure, transparent, and efficient real estate, investment, and M&A transactions.",
-        mediaType: "image",
-        mediaSrc: "../media/homepage/sector-finance-1280.webp",
+        mediaType: "video",
+        mediaSrc: "../videos/business-premier-escrow-services-v3.mp4",
+        poster:
+          "../media/business/business-premier-escrow-services-poster-v3.webp",
+        deferMedia: true,
         ctaLabel: "View Company",
         ctaHref: "#",
         logo: "../media/logos/premier-escrow-services-logo-v1.webp",
@@ -1665,11 +1668,11 @@ const renderCompanyMedia = (company) => {
         muted
         loop
         playsinline
-        preload="metadata"
+        preload="${company.deferMedia ? "none" : "metadata"}"
         poster="${escapeHtml(poster)}"
         aria-label="${escapeHtml(label)}"
       >
-        <source src="${escapeHtml(company.mediaSrc)}" type="video/mp4" />
+        <source ${company.deferMedia ? "data-src" : "src"}="${escapeHtml(company.mediaSrc)}" type="video/mp4" />
       </video>
     `;
   }
@@ -1727,8 +1730,18 @@ const initializeCompanyMediaVideo = (video) => {
 
   const source = video.querySelector("source");
 
-  if (!(source instanceof HTMLSourceElement) || !source.src) {
+  if (!(source instanceof HTMLSourceElement)) {
     return;
+  }
+
+  const sourceUrl = source.getAttribute("src") || source.dataset.src;
+
+  if (!sourceUrl) {
+    return;
+  }
+
+  if (!source.getAttribute("src")) {
+    source.setAttribute("src", sourceUrl);
   }
 
   video.dataset.prepared = "true";
@@ -1864,12 +1877,20 @@ const prepareCompanyMediaVideos = (root = document) => {
     return;
   }
 
-  videos.forEach(initializeCompanyMediaVideo);
-  scheduleCompanyMediaWarmup(videos);
+  const immediatelyAvailableVideos = videos.filter((video) =>
+    video.querySelector("source")?.getAttribute("src"),
+  );
+
+  immediatelyAvailableVideos.forEach(initializeCompanyMediaVideo);
+  scheduleCompanyMediaWarmup(immediatelyAvailableVideos);
 
   if (!("IntersectionObserver" in window)) {
     const syncCompanyMediaPlayback = () => {
       videos.forEach((video) => {
+        if (isCompanyMediaVideoNearViewport(video, 700)) {
+          initializeCompanyMediaVideo(video);
+        }
+
         if (isCompanyMediaVideoNearViewport(video, 0)) {
           playCompanyMediaVideo(video);
         } else {
@@ -1890,17 +1911,25 @@ const prepareCompanyMediaVideos = (root = document) => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          playCompanyMediaVideo(entry.target);
+          initializeCompanyMediaVideo(entry.target);
+
+          if (isCompanyMediaVideoNearViewport(entry.target, 140)) {
+            playCompanyMediaVideo(entry.target);
+          }
         } else {
           pauseCompanyMediaVideo(entry.target);
         }
       });
     },
-    { rootMargin: "140px 0px", threshold: 0.01 },
+    { rootMargin: "700px 0px", threshold: 0.01 },
   );
 
   videos.forEach((video) => {
     playObserver.observe(video);
+
+    if (isCompanyMediaVideoNearViewport(video, 700)) {
+      initializeCompanyMediaVideo(video);
+    }
 
     if (isCompanyMediaVideoNearViewport(video, 0)) {
       playCompanyMediaVideo(video);

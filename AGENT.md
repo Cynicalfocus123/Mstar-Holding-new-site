@@ -1,5 +1,13 @@
 # Agent Changelog
 
+## 2026-07-28 Premier Escrow Services Finance Video
+
+- Replaced only the Finance company handshake image with `videos/business-premier-escrow-services-v3.mp4`; the Finance order, company logo, copy, shared media frame, and other Business media are unchanged.
+- Verified source: 1080x1920, 24 FPS H.264/yuv420p with AAC, 19.958333 seconds, 9,584,323 bytes. Delivery output is silent 720x1280 H.264/yuv420p, CFR 60 FPS, 19.966667 seconds, 4,059,677 bytes (57.64% smaller), made with Lanczos scaling, CRF 23, preset slow, and MP4 fast-start.
+- Added `media/business/business-premier-escrow-services-poster-v3.webp` (720x1280, quality 82, 73,076 bytes). The existing company-media cover frame and centered crop apply unchanged at every breakpoint.
+- Finance alone uses `data-src` and `preload="none"`. The existing shared Business observer attaches its source and calls `load()` 700px before view; it keeps the poster until decoded data is available, plays safely near view, and pauses without unloading when out of view.
+- `build:hostinger`, lint, test, weight audit, FFprobe, full decode, reference audit, and ZIP parity pass. Clean `dist/` is 52,098,785 bytes across 152 files; the refreshed canonical direct-root ZIP is 51,315,243 bytes with 187 file/directory entries and SHA-256 extraction parity.
+
 ## 2026-07-27 Home, News, And Article Media Readiness
 
 - Diagnosed Home: the hero was already critical, but 14 lightweight static Home images and all six rendered News-card images used native lazy loading. Sources already existed in markup; no Home image observer or image opacity rule delayed them.

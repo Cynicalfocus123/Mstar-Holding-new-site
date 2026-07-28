@@ -1,5 +1,12 @@
 # Designer Notes
 
+## 2026-07-28 Finance / Premier Escrow Services Media
+
+- The Finance company media now uses the supplied vertical Premier Escrow Services video and its dedicated 720x1280 WebP poster. The existing landscape company-media frame, `object-fit: cover`, centered crop, spacing, grid, sticky sector behavior, and breakpoints remain exactly shared with the other Business companies.
+- The poster remains visible while the video is prepared and until a decoded frame is ready; a failed playback leaves the poster in place. No Finance-specific sizing, zoom, blurred background, or breakpoint override was added.
+- Delivery file: `videos/business-premier-escrow-services-v3.mp4` (720x1280 H.264/yuv420p, CFR 60 FPS, silent, 4,059,677 bytes). Poster: `media/business/business-premier-escrow-services-poster-v3.webp` (73,076 bytes).
+- Static responsive verification confirms the shared desktop 21:9 frame, tablet, and mobile company-media rules still apply; Finance adds no company-media CSS selector or breakpoint override.
+
 ## 2026-07-27 Home, News, And Article Media Readiness
 
 - Home, News & Media, and article design, content, crops, card dimensions, routes, responsive layout, and animations are unchanged.
