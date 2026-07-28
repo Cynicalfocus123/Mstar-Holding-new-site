@@ -1,5 +1,14 @@
 # Agent Changelog
 
+## 2026-07-27 Home, News, And Article Media Readiness
+
+- Diagnosed Home: the hero was already critical, but 14 lightweight static Home images and all six rendered News-card images used native lazy loading. Sources already existed in markup; no Home image observer or image opacity rule delayed them.
+- Diagnosed News & Media: the shared renderer made only the first of eight card images eager; the other seven remained native-lazy after render. There is no separate `/media/` route in this project, so News & Media is the Media-page surface and receives the same correction.
+- Diagnosed article pages: the shared detail renderer already gives every hero image `loading="eager"` and `fetchpriority="high"`, with stable media aspect ratios. This behavior remains unchanged; the Airsoft route still uses only `media/news/mstar-airsoft-press-release-updated-top-bottom-v2.webp` and the approved title.
+- Home now eager-loads the 14 small static images (about 2.2 MB total) and all six News thumbnails. News & Media eager-loads all eight optimized card images. Only the first card on each listing remains high priority; no other listing image receives high priority.
+- `.htaccess` now gives hashed CSS/JS one-year immutable caching and changeable media/font files a 30-day non-immutable cache. No media bytes or layouts changed.
+- Production headless rendering verified 20 eager Home images, eight eager News & Media images, and one high-priority Airsoft article hero. Build, lint, tests, weight audit, reference cleanup, and `git diff --check` pass.
+
 ## 2026-07-27 Business Sector Media Readiness
 
 - Diagnosed the delayed Business media: all company logos and posters used `loading="lazy"`; each company video used `preload="none"`, had no initial source, and received its source only inside a 1200px preparation observer. The video layer also faded in after decode.

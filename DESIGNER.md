@@ -1,5 +1,10 @@
 # Designer Notes
 
+## 2026-07-27 Home, News, And Article Media Readiness
+
+- Home, News & Media, and article design, content, crops, card dimensions, routes, responsive layout, and animations are unchanged.
+- Home static imagery and all rendered News-card images now begin loading at page render, so the existing card/section motion never reveals a blank image. Article hero behavior remains unchanged and critical.
+
 ## 2026-07-27 Business Sector Media Readiness
 
 - Preserved the entire Business-page visual design, logos, logo sizing, colors, media crops, spacing, responsive breakpoints, and sector order.

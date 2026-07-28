@@ -1,5 +1,9 @@
 # Project Changelog
 
+## 2026-07-27 Home, News, and article media readiness
+
+- Expanded the Business media-readiness policy across Home, News & Media, and shared article pages. Home and News thumbnails now load at initial render without increasing high-priority contention; every article hero remains critical. Updated cache policy keeps hashed code immutable while allowing non-versioned production media to refresh safely.
+
 ## 2026-07-27 Business sector media readiness
 
 - Corrected the Business page's delayed sector media without changing its design or assets. Logos and posters now start immediately; every video source is present at initial render with metadata loading, and a connection-aware sequential idle warm-up prepares later video frames while intersection remains playback-only.

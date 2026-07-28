@@ -1445,7 +1445,7 @@ const renderNewsArticleCard = (article, variant, options = {}) => {
       <span class="${mediaClass}${mediaFitClass}${mediaPositionClass}">
         ${renderArticleImage(article, {
           assetPrefix,
-          loading: options.priority ? "eager" : "lazy",
+          loading: options.loading || (options.priority ? "eager" : "lazy"),
           priority: options.priority,
           sizes: "(max-width: 640px) 100vw, (max-width: 1180px) 50vw, 25vw",
         })}
@@ -1492,6 +1492,7 @@ const renderNewsArticles = () => {
       .map((article, index) =>
         renderNewsArticleCard(article, "home", {
           assetPrefix: homeNewsRoot.dataset.newsAssetPrefix || "",
+          loading: "eager",
           priority: index === 0,
         }),
       )
@@ -1503,6 +1504,7 @@ const renderNewsArticles = () => {
       .map((article, index) =>
         renderNewsArticleCard(article, "news", {
           assetPrefix: newsGridRoot.dataset.newsAssetPrefix || "",
+          loading: "eager",
           priority: index === 0,
         }),
       )

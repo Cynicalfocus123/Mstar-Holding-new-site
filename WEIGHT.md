@@ -1,5 +1,11 @@
 # Weight And Deployment Notes
 
+## 2026-07-27 Home, News, And Article Media Readiness
+
+- No image or video file was added, resized, converted, or re-encoded. The Home static-image set moved from native lazy loading to eager delivery; its total remains about 2.2 MB. News card assets retain their existing responsive WebP/AVIF behavior and single-image Airsoft treatment.
+- Final clean `dist/`: 47,965,660 bytes across 150 files. Direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 47,174,157 bytes across 150 entries with forward slashes and SHA-256 extraction parity.
+- Hashed CSS/JS now have one-year immutable caching. Non-versioned image, video, and font files use 30-day caching without `immutable`, avoiding stale production media after future uploads.
+
 ## 2026-07-27 Business Sector Media Readiness
 
 - No media assets were added, resized, re-encoded, or duplicated. The loading fix changes only Business-page HTML generation, JavaScript delivery timing, and the video opacity transition.
