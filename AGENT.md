@@ -1,5 +1,13 @@
 # Agent Changelog
 
+## 2026-07-27 Business Sector Media Readiness
+
+- Diagnosed the delayed Business media: all company logos and posters used `loading="lazy"`; each company video used `preload="none"`, had no initial source, and received its source only inside a 1200px preparation observer. The video layer also faded in after decode.
+- All 15 sector logos, 14 video posters, sector background posters, and the Finance image now use immediate eager delivery with existing dimensions/stable CSS sizing and meaningful existing alt text. No logo, video, poster, layout, or media bytes changed.
+- All 14 company video `<source>` elements now exist on initial Business render with `preload="metadata"`. After page load, a connection-aware idle queue warms one video at a time on suitable connections; Save-Data, 2G, and slow-2G skip that background full-media warm-up. Intersection observers now control only playback/pause.
+- Poster-to-video replacement no longer fades. Production headless desktop and mobile rendering confirmed all 43 Business media nodes are present on initial render, with no missing source paths.
+- Required build, lint, tests, weight audit, reference cleanup, and `git diff --check` pass. The direct-root Hostinger ZIP has 150 forward-slash entries, including `.htaccess`, the generated CSS and JavaScript, and SHA-256 extraction parity with 150-file `dist/`.
+
 ## 2026-07-26 Mstar Airsoft Festival Article Finalization
 
 - The claimed prior Airsoft article was absent from every local and remote Git ref, so added exactly one shared May 28, 2026 article and route: `news/mstar-airsoft-mega-festival-thailand-2027/`.

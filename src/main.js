@@ -1654,7 +1654,7 @@ const renderCompanyMedia = (company) => {
         class="company-media-poster"
         src="${escapeHtml(poster)}"
         alt=""
-        loading="lazy"
+        loading="eager"
         decoding="async"
       />
       <video
@@ -1663,16 +1663,16 @@ const renderCompanyMedia = (company) => {
         muted
         loop
         playsinline
-        preload="none"
+        preload="metadata"
         poster="${escapeHtml(poster)}"
-        data-src="${escapeHtml(company.mediaSrc)}"
         aria-label="${escapeHtml(label)}"
       >
+        <source src="${escapeHtml(company.mediaSrc)}" type="video/mp4" />
       </video>
     `;
   }
 
-  return `<img src="${escapeHtml(company.mediaSrc)}" alt="${escapeHtml(label)}" loading="lazy" decoding="async" />`;
+  return `<img src="${escapeHtml(company.mediaSrc)}" alt="${escapeHtml(label)}" loading="eager" decoding="async" />`;
 };
 
 const renderCompanyLogo = (company) => {
@@ -1690,7 +1690,7 @@ const renderCompanyLogo = (company) => {
       class="business-company-logo"
       src="${escapeHtml(company.logo)}"
       alt="${escapeHtml(company.logoAlt || `${company.name} logo`)}"${dimensions}
-      loading="lazy"
+      loading="eager"
       decoding="async"
     />
   `;
@@ -1715,7 +1715,7 @@ const renderCompanyBlock = (company) => `
   </article>
 `;
 
-const loadCompanyMediaVideo = (video) => {
+const initializeCompanyMediaVideo = (video) => {
   if (
     !(video instanceof HTMLVideoElement) ||
     video.dataset.prepared === "true"
@@ -1723,22 +1723,12 @@ const loadCompanyMediaVideo = (video) => {
     return;
   }
 
-  const src = video.dataset.src;
+  const source = video.querySelector("source");
 
-  if (!src) {
+  if (!(source instanceof HTMLSourceElement) || !source.src) {
     return;
   }
 
-  const poster = video.parentElement?.querySelector(".company-media-poster");
-
-  if (poster instanceof HTMLImageElement) {
-    poster.loading = "eager";
-  }
-
-  const source = document.createElement("source");
-  source.src = src;
-  source.type = "video/mp4";
-  video.append(source);
   video.dataset.prepared = "true";
 
   const markVideoReady = () => {
@@ -1771,7 +1761,7 @@ const playCompanyMediaVideo = (video) => {
     return;
   }
 
-  loadCompanyMediaVideo(video);
+  initializeCompanyMediaVideo(video);
   video.dataset.playRequested = "true";
 
   if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
@@ -1796,7 +1786,72 @@ const isCompanyMediaVideoNearViewport = (video, margin) => {
   return rect.bottom >= -margin && rect.top <= viewportHeight + margin;
 };
 
-const lazyLoadCompanyMediaVideos = (root = document) => {
+const connectionAllowsBackgroundVideoPreparation = () => {
+  const connection =
+    navigator.connection ||
+    navigator.mozConnection ||
+    navigator.webkitConnection;
+
+  return !(
+    connection?.saveData ||
+    connection?.effectiveType === "slow-2g" ||
+    connection?.effectiveType === "2g"
+  );
+};
+
+const scheduleCompanyMediaWarmup = (videos) => {
+  if (!connectionAllowsBackgroundVideoPreparation()) {
+    return;
+  }
+
+  let nextVideoIndex = 0;
+
+  const runWhenIdle = (callback) => {
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(callback);
+      return;
+    }
+
+    window.requestAnimationFrame(callback);
+  };
+
+  const warmNextVideo = () => {
+    const video = videos[nextVideoIndex];
+    nextVideoIndex += 1;
+
+    if (!(video instanceof HTMLVideoElement)) {
+      return;
+    }
+
+    video.preload = "auto";
+    video.load();
+
+    const continueWarmup = () => {
+      if (video.dataset.warmupComplete === "true") {
+        return;
+      }
+
+      video.dataset.warmupComplete = "true";
+      runWhenIdle(warmNextVideo);
+    };
+    video.addEventListener("canplay", continueWarmup, { once: true });
+    video.addEventListener("error", continueWarmup, { once: true });
+
+    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      continueWarmup();
+    }
+  };
+
+  const startWarmup = () => runWhenIdle(warmNextVideo);
+
+  if (document.readyState === "complete") {
+    startWarmup();
+  } else {
+    window.addEventListener("load", startWarmup, { once: true });
+  }
+};
+
+const prepareCompanyMediaVideos = (root = document) => {
   if (!root) {
     return;
   }
@@ -1807,13 +1862,12 @@ const lazyLoadCompanyMediaVideos = (root = document) => {
     return;
   }
 
-  if (!("IntersectionObserver" in window)) {
-    const syncCompanyMediaVideos = () => {
-      videos.forEach((video) => {
-        if (isCompanyMediaVideoNearViewport(video, 700)) {
-          loadCompanyMediaVideo(video);
-        }
+  videos.forEach(initializeCompanyMediaVideo);
+  scheduleCompanyMediaWarmup(videos);
 
+  if (!("IntersectionObserver" in window)) {
+    const syncCompanyMediaPlayback = () => {
+      videos.forEach((video) => {
         if (isCompanyMediaVideoNearViewport(video, 0)) {
           playCompanyMediaVideo(video);
         } else {
@@ -1822,25 +1876,13 @@ const lazyLoadCompanyMediaVideos = (root = document) => {
       });
     };
 
-    syncCompanyMediaVideos();
-    window.addEventListener("scroll", syncCompanyMediaVideos, {
+    syncCompanyMediaPlayback();
+    window.addEventListener("scroll", syncCompanyMediaPlayback, {
       passive: true,
     });
-    window.addEventListener("resize", syncCompanyMediaVideos);
+    window.addEventListener("resize", syncCompanyMediaPlayback);
     return;
   }
-
-  const prepareObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          loadCompanyMediaVideo(entry.target);
-          prepareObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { rootMargin: "1200px 0px", threshold: 0.01 },
-  );
 
   const playObserver = new IntersectionObserver(
     (entries) => {
@@ -1856,13 +1898,7 @@ const lazyLoadCompanyMediaVideos = (root = document) => {
   );
 
   videos.forEach((video) => {
-    prepareObserver.observe(video);
     playObserver.observe(video);
-
-    if (isCompanyMediaVideoNearViewport(video, 1200)) {
-      loadCompanyMediaVideo(video);
-      prepareObserver.unobserve(video);
-    }
 
     if (isCompanyMediaVideoNearViewport(video, 0)) {
       playCompanyMediaVideo(video);
@@ -1895,7 +1931,7 @@ const renderBusinessSectors = () => {
             <img
               src="${escapeHtml(sector.poster)}"
               alt=""
-              loading="lazy"
+              loading="eager"
               decoding="async"
             />
           </div>
@@ -1921,7 +1957,7 @@ const renderBusinessSectors = () => {
 renderNewsArticles();
 renderNewsDetail();
 renderBusinessSectors();
-lazyLoadCompanyMediaVideos(businessSectorsRoot);
+prepareCompanyMediaVideos(businessSectorsRoot);
 
 if (prefersReducedMotion) {
   document.querySelectorAll("video").forEach((video) => {

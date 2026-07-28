@@ -1,5 +1,11 @@
 # Weight And Deployment Notes
 
+## 2026-07-27 Business Sector Media Readiness
+
+- No media assets were added, resized, re-encoded, or duplicated. The loading fix changes only Business-page HTML generation, JavaScript delivery timing, and the video opacity transition.
+- Every company video begins with `preload="metadata"`; the post-load idle queue promotes only one video at a time and is disabled for Save-Data, 2G, and slow-2G connections, avoiding simultaneous full-video downloads.
+- Final clean `dist/`: 47,965,516 bytes across 150 files. Direct-root ZIP: `mstar-hostinger-public_html-ready-balanced-video.zip`, 47,174,154 bytes across 150 entries with forward slashes and SHA-256 extraction parity.
+
 ## 2026-07-26 Mstar Airsoft Festival Article Finalization
 
 - Added one high-quality 2048x3141 WebP under `public/media/news/`: `mstar-airsoft-press-release-updated-top-bottom-v2.webp`, 249,656 bytes (1,943,944 bytes lighter than the uploaded source). Removed the six 480/960/1280px AVIF/WebP variants and interim byte-copy from source and deployment.

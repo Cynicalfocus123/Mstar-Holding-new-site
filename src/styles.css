@@ -903,7 +903,6 @@ h2 {
 .company-media-video {
   z-index: 1;
   opacity: 0;
-  transition: opacity 240ms ease;
 }
 
 .company-media-video.is-ready {

@@ -1,5 +1,10 @@
 # Designer Notes
 
+## 2026-07-27 Business Sector Media Readiness
+
+- Preserved the entire Business-page visual design, logos, logo sizing, colors, media crops, spacing, responsive breakpoints, and sector order.
+- All Business logos and posters begin loading on initial render. Video playback still starts and pauses by viewport, while posters remain visible until an available video frame replaces them without a visible fade.
+
 ## 2026-07-26 Mstar Airsoft Festival Article Finalization
 
 - Added one Airsoft article card and detail route through the existing News system. Existing card grid, equal heights, crops, title/excerpt clamping, metadata placement, article reading layout, paragraph spacing, header, footer, and responsive breakpoints are unchanged.

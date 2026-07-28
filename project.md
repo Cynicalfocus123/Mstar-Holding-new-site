@@ -1,5 +1,9 @@
 # Project Changelog
 
+## 2026-07-27 Business sector media readiness
+
+- Corrected the Business page's delayed sector media without changing its design or assets. Logos and posters now start immediately; every video source is present at initial render with metadata loading, and a connection-aware sequential idle warm-up prepares later video frames while intersection remains playback-only.
+
 ## 2026-07-26 Mstar Airsoft Festival Article Finalization
 
 - Added the missing single Mstar Airsoft article at `news/mstar-airsoft-mega-festival-thailand-2027/` with the final approved title, May 28, 2026 date, internal card route, and safe external `Visit Mstar Airsoft` CTA.
